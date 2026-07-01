@@ -1,0 +1,340 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!60!black,
+  citecolor=blue!60!black,
+  urlcolor=blue!60!black
+}
+
+\newcommand{\Ds}{D_s}
+\newcommand{\Dsone}{D_{s1}}
+\newcommand{\GeV}{\mathrm{GeV}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\ee}{\mathrm{e}}
+\newcommand{\Tr}{\mathrm{Tr}}
+\newcommand{\slashp}[1]{#1\!\!\!/}
+\newcommand{\qbar}{\bar q}
+\newcommand{\sbar}{\bar s}
+\newcommand{\vev}[1]{\left\langle #1 \right\rangle}
+
+\title{Working Notes for $\Dsone \to \Ds \gamma$ in Light-Cone QCD Sum Rules}
+\author{Ds gamma project}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+These notes are a living derivation for the light-cone QCD sum-rule
+calculation of $\Dsone(2460)\to\Ds\gamma$ and
+$\Dsone(2536)\to\Ds\gamma$.  The purpose is pedagogical as well as practical:
+each step is written so that a master's student can follow the choices,
+conventions, and algebra before the final paper-level formulas are assembled.
+\end{abstract}
+
+\section{Conventions}
+
+We use the mostly-minus metric
+\begin{equation}
+  g_{\mu\nu}=\mathrm{diag}(+1,-1,-1,-1),
+\end{equation}
+and
+\begin{equation}
+  \{\gamma_\mu,\gamma_\nu\}=2g_{\mu\nu},\qquad
+  \sigma_{\mu\nu}=\frac{\ii}{2}[\gamma_\mu,\gamma_\nu],
+  \qquad
+  \gamma_5=\ii\gamma^0\gamma^1\gamma^2\gamma^3 .
+\end{equation}
+The Levi-Civita convention is
+\begin{equation}
+  \epsilon^{0123}=+1,\qquad \epsilon_{0123}=-1,
+\end{equation}
+so that
+\begin{equation}
+  \Tr[\gamma_5\gamma_\mu\gamma_\nu\gamma_\alpha\gamma_\beta]
+  =-4\ii\,\epsilon_{\mu\nu\alpha\beta}.
+\end{equation}
+Our Fourier convention for a propagator is
+\begin{equation}
+  S(x)=\int\frac{d^4 k}{(2\pi)^4}\,\ee^{-\ii k\cdot x}\,\widetilde S(k).
+\end{equation}
+
+\section{Currents and Momentum Assignment}
+
+The external momenta are
+\begin{equation}
+  P=p+q,
+\end{equation}
+where $P$ is the initial axial-meson momentum, $p$ is the final pseudoscalar
+$\Ds$ momentum, and $q$ is the real-photon momentum.
+
+The pseudoscalar interpolating current is
+\begin{equation}
+  J_{\Ds}(x)=\sbar(x)\,\ii\gamma_5\,Q(x).
+\end{equation}
+For the axial channel we use two independent currents,
+\begin{align}
+  J^{(0)}_{A\mu}(x)
+  &= \sbar(x)\gamma_\mu\gamma_5 Q(x),\\
+  J^{(0)}_{B\mu}(x)
+  &= \frac{\ii}{m_Q+m_s}\,
+     \sbar(x)\sigma_{\mu\alpha}P^\alpha\gamma_5 Q(x).
+\end{align}
+The tensor current contracts with $P^\alpha$, not $p^\alpha$, because it
+interpolates the initial axial state.  The factor $1/(m_Q+m_s)$ restores the
+same mass dimension as the axial-vector current.
+
+\section{Correlation Function}
+
+For a generic axial current $\Gamma_\mu\in\{\gamma_\mu\gamma_5,\,
+\ii\sigma_{\mu\alpha}P^\alpha\gamma_5/(m_Q+m_s)\}$ we study
+\begin{equation}
+  \Pi_\mu(p,q)
+  =
+  \ii\int d^4x\,\ee^{\ii p\cdot x}
+  \langle \gamma(q,\varepsilon)|
+  T\{ \sbar(x)\Gamma_\mu Q(x)\,
+       \bar Q(0)\ii\gamma_5 s(0)\}
+  |0\rangle .
+  \label{eq:correlator}
+\end{equation}
+The target Lorentz structure for the $1^+\to0^-\gamma$ transition is
+\begin{equation}
+  (\eta\cdot\varepsilon^*)(p\cdot q)
+  -(\eta\cdot q)(p\cdot\varepsilon^*).
+\end{equation}
+On the correlator side we therefore project onto an equivalent transverse
+structure built from the open axial index and the photon polarization.
+
+\section{Wick Contraction and OPE Bookkeeping}
+
+The OPE is separated into a hard-photon sector and a soft-photon sector:
+\begin{equation}
+  \Pi_\mu^{\mathrm{OPE}}
+  =
+  \Pi_\mu^{\mathrm{hard}}
+  +
+  \Pi_\mu^{\mathrm{soft}}.
+\end{equation}
+This split is important because the two terms describe different physics and
+must not be double counted.
+
+\subsection{Hard photon emission}
+
+In the hard sector the photon is emitted perturbatively from either the heavy
+quark or the strange quark.  After Wick contraction one obtains
+\begin{equation}
+  \Pi_\mu^{\mathrm{hard}}
+  =
+  \ii N_c\int d^4x\,\ee^{\ii p\cdot x}
+  \Tr_D\!\left[
+    \Gamma_\mu S_Q^\gamma(x)\,\ii\gamma_5\,S_s^0(-x)
+    +
+    \Gamma_\mu S_Q^0(x)\,\ii\gamma_5\,S_s^\gamma(-x)
+  \right],
+  \label{eq:hard-wick}
+\end{equation}
+where $N_c=3$ and $\Tr_D$ denotes the Dirac trace.  The free massive propagator is
+\begin{equation}
+  S_q^0(x)
+  =
+  \int\frac{d^4k}{(2\pi)^4}\,\ee^{-\ii k\cdot x}
+  \frac{\ii(\slashp{k}+m_q)}{k^2-m_q^2}.
+\end{equation}
+We keep explicit powers of $m_s$, including possible $m_s^2$ terms.
+
+The first-order electromagnetic background-field correction for a generic quark
+flavor $q$ is
+\begin{align}
+  S_q^\gamma(x)
+  &=
+  -\ii e_q
+  \int\frac{d^4k}{(2\pi)^4}\,\ee^{-\ii k\cdot x}
+  \int_0^1du
+  \Bigg[
+    \frac{\slashp{k}+m_q}{2(m_q^2-k^2)^2}
+    F^{\alpha\beta}(ux)\sigma_{\alpha\beta}
+    +
+    \frac{u x_\alpha}{m_q^2-k^2}
+    F^{\alpha\beta}(ux)\gamma_\beta
+  \Bigg].
+  \label{eq:em-propagator}
+\end{align}
+In Eq.~\eqref{eq:hard-wick} this generic formula is used twice:
+\begin{align}
+  S_Q^\gamma(x)
+  &= S_q^\gamma(x)\big|_{q\to Q,\;m_q\to m_Q,\;e_q\to e_Q},\\
+  S_s^\gamma(x)
+  &= S_q^\gamma(x)\big|_{q\to s,\;m_q\to m_s,\;e_q\to e_s}.
+\end{align}
+Thus the hard sector contains both heavy-line and strange-line electromagnetic
+background-field insertions.
+For a real photon we write
+\begin{equation}
+  F^{\alpha\beta}(ux)
+  =
+  \ii(\varepsilon^\alpha q^\beta-\varepsilon^\beta q^\alpha)
+  \ee^{\ii u q\cdot x},
+\end{equation}
+with the overall phase kept consistent with the Fourier convention.
+
+Equation~\eqref{eq:em-propagator} is not a vacuum-condensate correction.  It is
+the quark propagator in an external electromagnetic field and is included in
+the base analysis.  What we do not include in the base hard sector are the
+ordinary SVZ-style condensate-expanded propagator terms such as
+$\langle\bar s s\rangle$, $\langle\bar s g_s\sigma Gs\rangle$, or
+$\langle G^2\rangle$ propagator corrections.
+
+\subsection{Equivalent momentum-space vertex form}
+
+For FeynCalc trace checks it is often simpler to use the equivalent explicit
+photon-vertex representation.  With photon index $\nu$,
+\begin{align}
+  N_{Q,\mu\nu}
+  &=
+  \Tr_D\!\left[
+    \Gamma_\mu
+    (\slashp{k}+\slashp{q}+m_Q)
+    \gamma_\nu
+    (\slashp{k}+m_Q)
+    \ii\gamma_5
+    (\slashp{k}-\slashp{p}+m_s)
+  \right],
+  \\
+  N_{s,\mu\nu}
+  &=
+  \Tr_D\!\left[
+    \Gamma_\mu
+    (\slashp{k}+m_Q)
+    \ii\gamma_5
+    (\slashp{k}-\slashp{p}+m_s)
+    \gamma_\nu
+    (\slashp{k}-\slashp{p}+\slashp{q}+m_s)
+  \right].
+\end{align}
+These numerators are accompanied by the denominators
+\begin{align}
+  D_Q &=
+  [(k+q)^2-m_Q^2][k^2-m_Q^2][(k-p)^2-m_s^2],\\
+  D_s &=
+  [k^2-m_Q^2][(k-p)^2-m_s^2][(k-p+q)^2-m_s^2].
+\end{align}
+The explicit-vertex form and the background-field form represent the same hard
+emission physics.  We must not add both as independent contributions.
+
+\subsection{Soft photon emission: two-particle photon DAs}
+
+In the soft sector the photon is represented by its light-cone distribution
+amplitudes.  Contracting only the heavy quark gives
+\begin{equation}
+  \Pi_\mu^{\mathrm{soft},2p}
+  =
+  \ii\int d^4x\,\ee^{\ii p\cdot x}
+  [\Gamma_\mu S_Q^0(x)\ii\gamma_5]_{\alpha\beta}
+  \langle\gamma(q,\varepsilon)|
+  \sbar_\alpha(x)s_\beta(0)
+  |0\rangle .
+\end{equation}
+Fierz rearrangement converts the open spinor indices to a basis of Dirac
+bilinears,
+\begin{equation}
+  \sbar_\alpha(x)s_\beta(0)
+  =
+  -\frac14\sum_i(\Gamma_i)_{\beta\alpha}
+  \sbar(x)\Gamma_i s(0),
+\end{equation}
+so that
+\begin{equation}
+  \Pi_\mu^{\mathrm{soft},2p}
+  =
+  -\frac{\ii}{4}
+  \int d^4x\,\ee^{\ii p\cdot x}
+  \sum_i
+  \Tr_D[\Gamma_\mu S_Q^0(x)\ii\gamma_5\Gamma_i]\,
+  \langle\gamma(q,\varepsilon)|
+  \sbar(x)\Gamma_i s(0)
+  |0\rangle .
+\end{equation}
+The photon matrix elements are then expressed in terms of two-particle photon
+DAs.  Parameters such as $\chi\langle\bar s s\rangle$ enter here as part of the
+photon wavefunction normalization; they are not condensate corrections to the
+hard propagator.
+
+\subsection{Soft photon emission: three-particle photon DAs}
+
+To include three-particle photon DAs we must also allow one background gluon to
+come from the heavy-quark propagator,
+\begin{align}
+  S_Q^G(x)
+  &=
+  -\ii g_s
+  \int\frac{d^4k}{(2\pi)^4}\,\ee^{-\ii k\cdot x}
+  \int_0^1du
+  \Bigg[
+    \frac{\slashp{k}+m_Q}{2(m_Q^2-k^2)^2}
+    G^{\alpha\beta}(ux)\sigma_{\alpha\beta}
+    +
+    \frac{u x_\alpha}{m_Q^2-k^2}
+    G^{\alpha\beta}(ux)\gamma_\beta
+  \Bigg].
+  \label{eq:gluon-propagator}
+\end{align}
+This term is not a gluon-condensate correction.  It is an operator insertion
+that combines with photon matrix elements of the form
+\begin{equation}
+  \langle\gamma(q,\varepsilon)|
+  \sbar(x)\Gamma_i g_sG_{\alpha\beta}(ux)s(0)
+  |0\rangle ,
+\end{equation}
+which define the three-particle photon DAs.
+
+\section{Staged Calculation Plan}
+
+We proceed in two stages.
+
+\paragraph{Stage 1.}
+Include the hard photon emission terms and the two-particle photon DAs:
+\begin{equation}
+  \Pi_\mu^{\mathrm{Stage\ 1}}
+  =
+  \Pi_\mu^{\mathrm{hard}}
+  +
+  \Pi_\mu^{\mathrm{soft},2p}.
+\end{equation}
+This stage keeps all explicit $m_s$ terms and omits ordinary
+condensate-expanded propagators.
+
+\paragraph{Stage 2.}
+Add the three-particle photon DA contributions generated by
+$S_Q^G$ and the corresponding light-cone matrix elements:
+\begin{equation}
+  \Pi_\mu^{\mathrm{Stage\ 2}}
+  =
+  \Pi_\mu^{\mathrm{Stage\ 1}}
+  +
+  \Pi_\mu^{\mathrm{soft},3p}.
+\end{equation}
+This staging keeps the derivation auditable: first we verify the core hard and
+two-particle DA structures, then we add the more involved background-gluon
+terms.
+
+\section{Current FeynCalc Artifacts}
+
+The script \texttt{scripts/step2\_current\_building\_blocks.wl} checks the
+basic Dirac conventions and defines the current vertices.  The script
+\texttt{scripts/step2\_hard\_photon\_numerators.wl} computes numerator-level
+hard-photon traces in the explicit photon-vertex representation.  These traces
+are stored in \texttt{outputs/step2\_hard\_photon\_numerators.txt}.
+
+\end{document}

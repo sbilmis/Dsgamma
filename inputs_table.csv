@@ -1,0 +1,29 @@
+quantity,symbol,value,unit,source,notes
+Fine structure const,alpha_em,1/137.036,-,PDG,q^2=0 (real photon)
+Charm quark mass (MSbar),m_c,1.27 ± 0.02,GeV,PDG 2024; Pullin-Zwicky use mc(mc),running mass
+Bottom quark mass (MSbar),m_b,4.18 ± 0.03,GeV,PDG 2024,for Bs sector
+Strange quark mass,m_s,0.093 ± 0.011,GeV,PDG 2024 (2 GeV),KEPT in full incl. m_s^2
+Ds1(2460) mass,M_Ds1_2460,2.4595 ± 0.0006,GeV,PDG,initial 1+ state (J^P=1+)
+Ds1(2536) mass,M_Ds1_2536,2.53511 ± 0.00006,GeV,PDG,initial 1+ state
+Ds mass,m_Ds,1.96835 ± 0.00007,GeV,PDG,final 0- state
+Bs mass,m_Bs,5.36692 ± 0.00010,GeV,PDG,final 0- (bottom sector)
+Bs1(5830) mass,M_Bs1_5830,5.8287 ± 0.0004,GeV,PDG,bottom 1+ counterpart
+Bs1(5721) mass,M_Bs1_5721,5.72857 ± 0.00040,GeV,PDG,bottom 1+ counterpart
+Ds decay constant,f_Ds,0.2499 ± 0.0005,GeV,PDG/FLAG lattice; Colangelo used 0.266±0.032,J_Ds=q̄iγ5Q
+Ds1 axial dc (J_A),f_Ds1_A,0.225 ± 0.025,GeV,Colangelo (f_Ds0'~fDs1); PZ f_D1 class,<0|J_A|Ds1>=f_A m η
+Ds*_s tensor/axial dc scale,f^T,0.256 ± 0.017,GeV,Pullin-Zwicky Table 8 (D*_s T),cross-ref for J_B normalization
+Bs decay constant,f_Bs,0.230 ± 0.013,GeV,PZ Table 8 (Bs=0.225); FLAG 0.230,J_Bs
+Bs1 axial dc,f_Bs1,0.305 ± 0.027,GeV,Pullin-Zwicky Table 8 (B1s=0.305),<0|J_A|Bs1>
+Quark condensate,<qq>,-(0.24 GeV)^3 = -0.01382,GeV^3,standard SVZ; Colangelo Appendix,up/down
+Strange condensate ratio,kappa=<ss>/<qq>,0.8 ± 0.1,-,standard,<ss>=kappa<qq>
+Mixed condensate m0^2,m0^2,0.8 ± 0.2,GeV^2,standard,<q gσG q>=m0^2<qq>
+Gluon condensate,<g^2 G^2>,0.88 ± 0.25,GeV^4,SVZ; <alpha_s/pi G^2>=0.012,(0.47±0.09)^4-ish
+Magnetic susceptibility,chi(1 GeV),+3.15 ± 0.3 (or +2.85±0.5),GeV^-2,Colangelo [25]=3.15; Rohrwild=2.85,KEY photon-DA param
+3-particle photon coupling,f_3gamma,-0.0039 ± 0.0020,GeV^2,Ball-Braun-Kivel; Rohrwild,twist-3
+twist-4 param omega^V_gamma,omega_V,3.8 ± 1.8,-,BBK,3-particle
+twist-4 param omega^A_gamma,omega_A,-2.1 ± 1.0,-,BBK,3-particle
+twist-2 asymptotic phi_gamma,phi_gamma(u),6 u (1-u),-,BBK asymptotic,normalization ∫phi=1
+3P1-1P1 mixing angle,theta,SCAN; ideal 35.3°,deg,Yang 2007; HQ limit,physical states via Eq.(2)
+strange quark charge,e_s,-1/3,e,QED,hard light-quark photon emission (a1)
+charm quark charge,e_c,+2/3,e,QED,hard heavy-quark photon emission (b1)
+bottom quark charge,e_b,-1/3,e,QED,Bs sector hard heavy emission
