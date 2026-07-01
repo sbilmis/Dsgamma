@@ -473,4 +473,146 @@ amplitudes can be sensitive to the tensor-current normalization.  This is why
 the next step is to finish the full $G_B$ sum rule before quoting final mixed
 widths.
 
+\section{Tensor-Current Hard Term: Triangle Reduction}
+
+The hard tensor-current numerator is more complicated than the axial one because
+the $J_B$ current introduces an extra factor of $P^\alpha$ and therefore higher
+powers of the loop momentum after E1 projection.  The script
+\texttt{scripts/step3\_tensor\_hard\_triangle\_reduction.wl} rewrites scalar
+products such as $k^2$, $k\cdot p$, and $k\cdot q$ in terms of inverse
+propagator denominators.  For the heavy-line photon emission we define
+\begin{align}
+  d_{H1}&=(k+q)^2-m_Q^2,\\
+  d_{H2}&=k^2-m_Q^2,\\
+  d_{H3}&=(k-p)^2-m_s^2,
+\end{align}
+and similarly for the strange-line photon emission.  Setting
+$d_{Hi}=0$ isolates the genuine three-denominator triangle core.  For the
+tensor current this gives
+\begin{align}
+  N_{B,H}^{\rm core}
+  &=
+  \frac{-8\ii m_Q^2+4\ii m_Qm_s}{m_Q+m_s}
+  -
+  \frac{4\ii m_Q^2 p^2}{(m_Q+m_s)(p\cdot q)},\\
+  N_{B,s}^{\rm core}
+  &=
+  \frac{-4\ii m_Qm_s}{m_Q+m_s}
+  -
+  \frac{4\ii m_s^2 p^2}{(m_Q+m_s)(p\cdot q)}.
+\end{align}
+
+The same reduction was also performed for the axial current in
+\texttt{scripts/step3\_axial\_hard\_triangle\_reduction.wl}.  This is a useful
+calibration because the axial hard term has a known published spectral density.
+
+\subsection{Why denominator-cancellation terms are separated}
+
+Terms proportional to one or more inverse denominators cancel one or more
+propagators.  After such a cancellation the loop integral contains at most two
+propagators.  These reduced integrals depend on at most one of the two external
+virtualities, $p^2$ or $(p+q)^2$, and therefore do not generate the double-pole
+structure selected by the double Borel transform.  They are recorded in the
+output files for auditability, but the double-pole sum rule is built from the
+three-denominator triangle core.
+
+This observation narrows the remaining hard-tensor task: derive the double
+spectral density associated with the tensor-current triangle core and match it
+to the same E1 invariant amplitude used for the axial-current benchmark.
+
+\section{First Hard-Tensor Spectral Density Candidate}
+
+The next step is to translate the triangle core into a perturbative spectral
+density.  We do this by calibrating against the known axial-current result.
+For one photon-emitting line, let $m_i$ be the emitting-quark mass and $m_j$ the
+spectator mass.  The axial triangle core has the schematic form
+\begin{equation}
+  N_i^{A,\rm core}
+  =
+  -4\ii
+  \left[
+    a_i+\frac{b_i}{p\cdot q}
+  \right].
+\end{equation}
+Comparing with the published axial spectral density fixes the replacement
+\begin{align}
+  -4\ii\,a_i
+  &\longrightarrow
+  2a_i
+  \log\frac{s-m_j^2+m_i^2-\lambda^{1/2}(s,m_j^2,m_i^2)}
+           {s-m_j^2+m_i^2+\lambda^{1/2}(s,m_j^2,m_i^2)},\\
+  -4\ii\,\frac{b_i}{p\cdot q}
+  &\longrightarrow
+  \frac{b_i}{m_i^2}\,
+  \frac{m_j^2-m_i^2-s}{s^2}\,
+  \lambda^{1/2}(s,m_j^2,m_i^2).
+\end{align}
+The overall factor is $-3/(8\pi^2)$, and the total axial density is assembled
+as the strange-emission contribution minus the heavy-emission contribution,
+with the corresponding charges.  The script
+\begin{center}
+  \texttt{scripts/stage1\_tensor\_gb\_hard\_candidate.py}
+\end{center}
+first applies these rules back to the axial current and reproduces
+Colangelo's $\rho^P(s)$ with a maximum numerical difference
+$1.4\times10^{-17}$ on the test grid.
+
+For the tensor current the core contains $p^2/(p\cdot q)$:
+\begin{align}
+  N_{B,H}^{\rm core}
+  &=
+  -4\ii
+  \left[
+    \frac{2m_Q^2-m_Qm_s}{m_Q+m_s}
+    +
+    \frac{m_Q^2p^2}{(m_Q+m_s)(p\cdot q)}
+  \right],\\
+  N_{B,s}^{\rm core}
+  &=
+  -4\ii
+  \left[
+    \frac{m_Qm_s}{m_Q+m_s}
+    +
+    \frac{m_s^2p^2}{(m_Q+m_s)(p\cdot q)}
+  \right].
+\end{align}
+In the first candidate implementation we use the diagonal double-dispersion
+identification $p^2\to s$ inside this numerator.  This is the remaining point
+that should be independently checked from the double spectral representation.
+
+Combining this hard candidate with the tensor-DA two-particle soft contribution
+gives, over the same $M^2$ and $s_0$ windows,
+\begin{align}
+  G_B^{\rm hard}
+  &\simeq -0.831\text{ to }-0.673\ \mathrm{GeV}^{-1},
+  &
+  G_B^{\rm Stage\ 1}
+  &\simeq -0.510\text{ to }-0.440\ \mathrm{GeV}^{-1},
+  &&(f_B=f_T),\\
+  G_B^{\rm hard}
+  &\simeq -0.460\text{ to }-0.373\ \mathrm{GeV}^{-1},
+  &
+  G_B^{\rm Stage\ 1}
+  &\simeq -0.283\text{ to }-0.244\ \mathrm{GeV}^{-1},
+  &&\left(f_B=f_T\frac{m_{D_{s1}}}{m_c+m_s}\right).
+\end{align}
+At $\theta=35.3^\circ$, the corresponding candidate mixed widths are
+\begin{align}
+  \Gamma[D_{s1}(2460)\to D_s\gamma]
+  &\simeq 62.5\text{ to }87.9\ \mathrm{keV},
+  &
+  \Gamma[D_{s1}(2536)\to D_s\gamma]
+  &\simeq 0.00\text{ to }0.30\ \mathrm{keV},
+  &&(f_B=f_T),\\
+  \Gamma[D_{s1}(2460)\to D_s\gamma]
+  &\simeq 30.9\text{ to }44.7\ \mathrm{keV},
+  &
+  \Gamma[D_{s1}(2536)\to D_s\gamma]
+  &\simeq 4.0\text{ to }8.2\ \mathrm{keV},
+  &&\left(f_B=f_T\frac{m_{D_{s1}}}{m_c+m_s}\right).
+\end{align}
+These numbers should be read as a controlled Stage 1 candidate, not yet as the
+final result, because Stage 2 and the independent double-spectral check of the
+$p^2/(p\cdot q)$ term remain.
+
 \end{document}

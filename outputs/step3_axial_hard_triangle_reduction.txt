@@ -1,0 +1,15 @@
+Axial-current hard E1 projection: triangle reduction
+====================================================
+
+Heavy-line triangle core:
+(-4*I)*mQ - ((4*I)*mQ^3)/pq + ((4*I)*mQ^2*ms)/pq
+
+Strange-line triangle core:
+(-4*I)*ms - ((4*I)*mQ*ms^2)/pq + ((4*I)*ms^3)/pq
+
+Heavy-line denominator-cancellation part:
+(I*dH1*dH2*mQ)/pq^2 - (I*dH2^2*mQ)/pq^2 - (I*dH1*dH3*mQ)/pq^2 + (I*dH2*dH3*mQ)/pq^2 + (I*dH1*mQ^3)/pq^2 - (I*dH2*mQ^3)/pq^2 - (I*dH1*dH2*ms)/pq^2 + (I*dH2^2*ms)/pq^2 + (I*dH1*dH3*ms)/pq^2 - (I*dH2*dH3*ms)/pq^2 - (I*dH1*mQ^2*ms)/pq^2 + (I*dH2*mQ^2*ms)/pq^2 - (I*dH1*mQ*ms^2)/pq^2 + (I*dH2*mQ*ms^2)/pq^2 + (I*dH1*ms^3)/pq^2 - (I*dH2*ms^3)/pq^2 + (I*dH2*ms*p2)/pq^2 + (I*dH1*mQ*(p2 + 2*pq))/pq^2 - (I*dH1*ms*(p2 + 2*pq))/pq^2 - (I*dH2*mQ*(p2 + 6*pq))/pq^2
+
+Strange-line denominator-cancellation part:
+((-I)*dS1*dS2*mQ)/pq^2 + (I*dS2^2*mQ)/pq^2 + (I*dS1*dS3*mQ)/pq^2 - (I*dS2*dS3*mQ)/pq^2 - (I*dS2*mQ^3)/pq^2 + (I*dS3*mQ^3)/pq^2 + (I*dS1*dS2*ms)/pq^2 - (I*dS2^2*ms)/pq^2 - (I*dS1*dS3*ms)/pq^2 + (I*dS2*dS3*ms)/pq^2 + (I*dS2*mQ^2*ms)/pq^2 - (I*dS3*mQ^2*ms)/pq^2 + (I*dS2*mQ*ms^2)/pq^2 - (I*dS3*mQ*ms^2)/pq^2 - (I*dS2*ms^3)/pq^2 + (I*dS3*ms^3)/pq^2 + (I*dS2*mQ*p2)/pq^2 - (I*dS2*ms*(p2 - 6*pq))/pq^2 - (I*dS3*mQ*(p2 - 2*pq))/pq^2 + (I*dS3*ms*(p2 - 2*pq))/pq^2
+
