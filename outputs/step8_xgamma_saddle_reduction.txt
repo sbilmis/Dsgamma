@@ -1,0 +1,21 @@
+Saddle reduction of x_alpha gamma_beta ratio checks
+===================================================
+Substitution: k = p + a q, q^2 = 0, so
+  k.q = p.q, k.p = p^2 + a p.q, (k.x-p.x)/(q.x)=a.
+
+Ratios are defined as B_kernel / [(mQ/(mQ+ms)) A_kernel].
+They would equal 1 if the simple trace-ratio rule held.
+
+S: (p^2 + (a+1) p.q) / m_Q^2
+S with k^2=mQ^2=p^2+2 a p.q: (p^2 + (a+1) p.q) / (p^2 + 2a p.q)
+T1: (p^2 + (3a+2) p.q) / (3 m_Q^2)
+T1 with k^2=mQ^2=p^2+2 a p.q: (p^2 + (3a+2) p.q) / (3[p^2 + 2a p.q])
+T2: (p^2 + (2-a) p.q) / m_Q^2
+T2 with k^2=mQ^2=p^2+2 a p.q: (p^2 + (2-a) p.q) / (p^2 + 2a p.q)
+T3: (p^2 + 2a p.q) / m_Q^2
+T3 with k^2=mQ^2=p^2+2 a p.q: 1
+
+Conclusion: the x_alpha gamma_beta term has nontrivial a and
+virtuality dependence at the raw saddle level.  Its contribution
+must be obtained by applying the Fourier/Borel derivative rules,
+not by multiplying the axial F1 term by mQ/(mQ+ms).

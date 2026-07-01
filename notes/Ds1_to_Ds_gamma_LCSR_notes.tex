@@ -858,4 +858,34 @@ perform the Fourier/Borel replacement of the explicit $x_\alpha/(q\cdot x)$
 factors, including the derivative action on the heavy-quark denominator, and
 then recombine the result with the photon DA structures.
 
+As a diagnostic, we can impose only the light-cone momentum routing
+\begin{equation}
+  k=p+a q,\qquad a=\alpha_{\bar q}+v\alpha_g,\qquad q^2=0,
+\end{equation}
+without yet applying the derivative replacement.  The script
+\begin{center}
+  \texttt{scripts/step8\_xgamma\_saddle\_reduction.py}
+\end{center}
+reduces the raw ratios $K_B/[(m_Q/(m_Q+m_s))K_A]$ to
+\begin{align}
+  R_{\cal S}
+  &=
+  \frac{p^2+(a+1)p\cdot q}{m_Q^2},\\
+  R_{{\cal T}_1}
+  &=
+  \frac{p^2+(3a+2)p\cdot q}{3m_Q^2},\\
+  R_{{\cal T}_2}
+  &=
+  \frac{p^2+(2-a)p\cdot q}{m_Q^2},\\
+  R_{{\cal T}_3}
+  &=
+  \frac{p^2+2a\,p\cdot q}{m_Q^2}.
+\end{align}
+If one additionally uses the heavy-line on-shell relation
+$m_Q^2=k^2=p^2+2a\,p\cdot q$, only $R_{{\cal T}_3}$ becomes exactly one.
+The other ratios remain nontrivial.  This confirms that the
+$x_\alpha\gamma_\beta$ term must be treated with the full Fourier/Borel
+derivative machinery.  It is not controlled by the simple trace-ratio argument
+used for the $\sigma_{\alpha\beta}$ part.
+
 \end{document}
