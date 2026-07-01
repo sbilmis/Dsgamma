@@ -888,4 +888,66 @@ $x_\alpha\gamma_\beta$ term must be treated with the full Fourier/Borel
 derivative machinery.  It is not controlled by the simple trace-ratio argument
 used for the $\sigma_{\alpha\beta}$ part.
 
+\section{Stage 2 Tensor: Derivative Reduction of \(x_\alpha\gamma_\beta\)}
+
+The next step applies the Fourier derivative rules to the raw
+$x_\alpha\gamma_\beta$ kernels.  With phase
+\begin{equation}
+  \exp[\ii(p+a q-k)\cdot x],
+\end{equation}
+integration over $x$ gives, up to a common phase convention,
+\begin{align}
+  p\cdot x &\to -\ii\,p\cdot\partial_k,\\
+  q\cdot x &\to -\ii\,q\cdot\partial_k,\\
+  k\cdot x\,F(k)
+  &\to
+  -\ii\,\partial_{k_\mu}\!\left[k_\mu F(k)\right]
+  =
+  -\ii\left[4F(k)+k\cdot\partial_k F(k)\right].
+\end{align}
+The script
+\begin{center}
+  \texttt{scripts/step9\_xgamma\_derivative\_reduction.wl}
+\end{center}
+applies these rules to the scalar kernels multiplying
+$1/(m_Q^2-k^2)$.  After the light-cone routing $k=p+a q$, the reduced axial
+kernels are proportional to
+\begin{align}
+  A_{\cal S}^{x\gamma}
+  &=
+  \frac{-8m_Q}{[-m_Q^2+p^2+2a\,p\cdot q]^2},\\
+  A_{{\cal T}_1}^{x\gamma}
+  &=
+  \frac{48\ii m_Q}{[-m_Q^2+p^2+2a\,p\cdot q]^2},\\
+  A_{{\cal T}_2}^{x\gamma}
+  &=
+  \frac{16\ii m_Q}{[-m_Q^2+p^2+2a\,p\cdot q]^2},\\
+  A_{{\cal T}_3}^{x\gamma}
+  &=
+  \frac{-16\ii m_Q}{[-m_Q^2+p^2+2a\,p\cdot q]^2}.
+\end{align}
+The corresponding tensor-current kernels are not obtained by a universal
+$m_Q/(m_Q+m_s)$ multiplication.  The ratios after derivative reduction are
+\begin{align}
+  R_{\cal S}^{\partial}
+  &=
+  1+\frac{(1-a)p\cdot q}{m_Q^2},\\
+  R_{{\cal T}_1}^{\partial}
+  &=
+  \frac{2m_Q^2+p^2+(2-a)p\cdot q}{3m_Q^2},\\
+  R_{{\cal T}_2}^{\partial}
+  &=
+  -2+\frac{3p^2+(2+3a)p\cdot q}{m_Q^2},\\
+  R_{{\cal T}_3}^{\partial}
+  &=
+  \frac{2m_Q^2-p^2-2a\,p\cdot q}{m_Q^2}.
+\end{align}
+All these reduced kernels carry the squared heavy-quark denominator, so they
+are double-pole-type contributions and should survive the double Borel
+projection.  Consequently the current Stage 2 tensor numerical result remains
+an estimate: the remaining task is not another Dirac trace, but matching these
+derivative-reduced kernels to the same normalization that produces the known
+axial ${\cal F}_1$ combination, and then integrating the resulting tensor
+combination over $(v,\alpha_g)$.
+
 \end{document}

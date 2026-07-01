@@ -1,0 +1,80 @@
+Fourier-derivative reduction of xgamma kernels
+==============================================
+
+Derivative rules use phase Exp[I(p+a q-k).x]. Overall common phases are not physical here.
+
+Reduced kernels before saddle substitution:
+A_S:
+(-8*kq*mQ)/((k2 - mQ^2)^2*pq)
+
+A_T1:
+((48*I)*kq*mQ)/((k2 - mQ^2)^2*pq)
+
+A_T2:
+((16*I)*kq*mQ)/((k2 - mQ^2)^2*pq)
+
+A_T3:
+((-16*I)*kq*mQ)/((k2 - mQ^2)^2*pq)
+
+A_T4:
+0
+
+B_S:
+(4*(k2 - 2*mQ^2)*pq^2 - 4*kq^2*(p2 + 2*pq))/((k2 - mQ^2)^2*(mQ + ms)*pq^2)
+
+B_T1:
+((8*I)*(kq^2*p2 + 4*kq*(kp + kq)*pq + (-3*k2 + 4*mQ^2)*pq^2))/((k2 - mQ^2)^2*(mQ + ms)*pq^2)
+
+B_T2:
+((8*I)*(kq^2*p2 + 4*kq*(kp + kq)*pq + (k2 - 4*mQ^2)*pq^2))/((k2 - mQ^2)^2*(mQ + ms)*pq^2)
+
+B_T3:
+((16*I)*(k2 - 2*mQ^2))/((k2 - mQ^2)^2*(mQ + ms))
+
+B_T4:
+((-8*I)*((k2 - 2*mQ^2)*pq^2 + kq^2*(p2 + 2*pq)))/((k2 - mQ^2)^2*(mQ + ms)*pq^2)
+
+Reduced kernels after k=p+a q:
+A_S:
+(-8*mQ)/(-mQ^2 + p2 + 2*a*pq)^2
+
+A_T1:
+((48*I)*mQ)/(-mQ^2 + p2 + 2*a*pq)^2
+
+A_T2:
+((16*I)*mQ)/(-mQ^2 + p2 + 2*a*pq)^2
+
+A_T3:
+((-16*I)*mQ)/(-mQ^2 + p2 + 2*a*pq)^2
+
+A_T4:
+0
+
+B_S:
+(-8*(mQ^2 + pq - a*pq))/((mQ + ms)*(-mQ^2 + p2 + 2*a*pq)^2)
+
+B_T1:
+((16*I)*(2*mQ^2 + p2 - (-2 + a)*pq))/((mQ + ms)*(-mQ^2 + p2 + 2*a*pq)^2)
+
+B_T2:
+((16*I)*(-2*mQ^2 + 3*p2 + (2 + 3*a)*pq))/((mQ + ms)*(-mQ^2 + p2 + 2*a*pq)^2)
+
+B_T3:
+((16*I)*(-2*mQ^2 + p2 + 2*a*pq))/((mQ + ms)*(-mQ^2 + p2 + 2*a*pq)^2)
+
+B_T4:
+((-16*I)*(-mQ^2 + p2 + pq + a*pq))/((mQ + ms)*(-mQ^2 + p2 + 2*a*pq)^2)
+
+Ratio checks B / [(mQ/(mQ+ms)) A] after k=p+a q:
+S: 1 + (pq - a*pq)/mQ^2
+T1: (2*mQ^2 + p2 + 2*pq - a*pq)/(3*mQ^2)
+T2: -2 + (3*p2 + 2*pq + 3*a*pq)/mQ^2
+T3: -((-2*mQ^2 + p2 + 2*a*pq)/mQ^2)
+T4: "A zero"
+
+Ratio checks with mQ^2=p^2+2 a p.q:
+S: 1 + (pq - a*pq)/mQ^2
+T1: (3*p2 + 2*pq + 3*a*pq)/(3*mQ^2)
+T2: -2 + (3*p2 + 2*pq + 3*a*pq)/mQ^2
+T3: (p2 + 2*a*pq)/mQ^2
+T4: "A zero"
