@@ -1254,4 +1254,111 @@ be substantially smaller.
   \label{fig:literature-comparison}
 \end{figure}
 
+\section{Validation Checks Before the \(B_{s1}\) Extension}
+
+The script
+\begin{center}
+  \texttt{scripts/validation\_checks.py}
+\end{center}
+collects several checks that should be repeated whenever the numerical
+implementation is modified.  The first check is an axial-current benchmark
+against Colangelo, De Fazio and Ozpineci, using paper-like input choices and
+the BBK value $\kappa=0.2$ for the relevant photon DA parameter.  Over
+$3\leq M^2\leq 6~\GeV^2$ and
+$2.50\leq \sqrt{s_0}\leq2.60~\GeV$, the present controlled benchmark gives
+\begin{equation}
+  g_1=-0.340\text{ to }-0.237~\GeV^{-1},\qquad
+  \Gamma=11.8\text{ to }24.3~\mathrm{keV}.
+\end{equation}
+The published comparison band is
+$g_1=-0.37\text{ to }-0.29~\GeV^{-1}$ and
+$\Gamma=19\text{ to }29~\mathrm{keV}$.  This is close enough in sign and
+scale to validate the implementation, but it also shows that an exact
+literature reproduction requires matching every convention and input choice.
+We should present this as a benchmark check, not as an independent final
+phenomenological result.
+
+The same validation script checks the photon DA normalization and the
+three-particle integration closure:
+\begin{align}
+  \int_0^1 du\,\varphi_\gamma(u)&=1.0000000000,\\
+  \max_u|\psi^a(u)-\psi^a(1-u)|&=4.44\times 10^{-15},\\
+  \max_u|\psi^v(u)+\psi^v(1-u)|&=1.78\times 10^{-15},\\
+  F_1-F_1^{(1)}-F_1^{(2)}&=0.
+\end{align}
+These are numerical quadrature checks of the DA implementation and the split
+integration domains.
+
+At the central point $M^2=4.5~\GeV^2$ and
+$\sqrt{s_0}=2.55~\GeV$, the hard tensor-current charge decomposition is
+\begin{align}
+  G_B^{\mathrm{hard}}&=-4.092\times10^{-1}~\GeV^{-1},\\
+  G_B^{\mathrm{hard}}(e_c\text{ line})&=-2.499\times10^{-1}~\GeV^{-1},\\
+  G_B^{\mathrm{hard}}(e_s\text{ line})&=-1.594\times10^{-1}~\GeV^{-1}.
+\end{align}
+This confirms that hard photon emission from both quark lines is numerically
+important and must remain in the baseline.
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{lrrrr}
+    \toprule
+    Diagnostic case & $G_A$ & $G_B$ & $\Gamma_{2460}$ & $\Gamma_{2536}$\\
+    & \multicolumn{2}{c}{($\GeV^{-1}$)} & \multicolumn{2}{c}{(keV)}\\
+    \midrule
+    central & $-0.357$ & $-0.263$ & $37.18$ & $6.04$\\
+    $m_s\to0$ numerical proxy & $-0.175$ & $-0.210$ & $15.59$ & $0.15$\\
+    $m_s=m_c$ toy & $+0.535$ & $+0.273$ & $59.46$ & $24.22$\\
+    $e_c=0$ toy & $+0.102$ & $-0.013$ & $0.50$ & $2.57$\\
+    $e_s=0$ toy & $-0.459$ & $-0.250$ & $46.30$ & $16.48$\\
+    light-$u$ OPE toy & $-1.040$ & $-0.438$ & $192.96$ & $110.02$\\
+    light-$d$ OPE toy & $-0.109$ & $-0.176$ & $8.94$ & $0.05$\\
+    \bottomrule
+  \end{tabular}
+  \caption{Limiting-case diagnostics from
+  \texttt{outputs/validation\_limiting\_cases.csv}.  The $m_s\to0$ and
+  light-quark rows use $m_q=10^{-4}~\GeV$ as a numerical regulator of the
+  present hard-line spectral-density representation.  The light-$u$ and
+  light-$d$ rows are OPE-level charge and condensate substitutions only, not
+  physical nonstrange $D_1\to D\gamma$ predictions.}
+  \label{tab:validation-limits}
+\end{table}
+
+\section{Missing Or Useful Paper Material}
+
+Before moving from the $D_{s1}$ paper draft to the $B_{s1}$ extension, the
+following items are useful to add or verify.
+
+\begin{itemize}
+  \item A compact input table in the paper text: masses, decay constants,
+  condensates, $\chi$, DA parameters, Borel windows, and continuum thresholds.
+  The final numerical scan already uses these values, but the paper needs a
+  reader-facing table.
+  \item A short paragraph on convention matching.  The sign of $\chi$, the
+  Levi-Civita convention, and the tensor-current normalization
+  $f_B=f_Tm_{D_{s1}}/(m_c+m_s)$ should be stated explicitly because they move
+  signs and absolute normalizations.
+  \item A transversality/Ward-identity check.  The extracted E1 structure is
+  transverse by construction, but the paper should include either a symbolic
+  replacement $\epsilon_\gamma\to q$ at the invariant-amplitude level or a
+  short explanation of how contact terms are absent in the chosen projected
+  structure.
+  \item A clearer uncertainty budget.  The current global scan varies
+  $M^2$, $s_0$, $\chi$, decay constants, quark masses, condensates, and the
+  mixing angle in the broad scan.  A one-at-a-time error table would show that
+  the large uncertainty is driven mainly by mixing-angle and threshold
+  sensitivity, not by missing ordinary condensate terms in the propagator.
+  \item A physical light-quark counterpart requires new hadronic input tables.
+  The OPE-level light-$u$ and light-$d$ diagnostics above are useful algebra
+  checks, but physical $D_1\to D\gamma$ or $B_1\to B\gamma$ predictions need
+  the corresponding hadron masses, decay constants, thresholds, Borel windows,
+  condensates, and mixing convention.
+  \item For the $B_{s1}$ extension, the same code structure can be reused after
+  replacing $m_c\to m_b$, $m_{D_s}\to m_{B_s}$,
+  $m_{D_{s1}}\to m_{B_{s1}}$, and updating the tensor decay constant and
+  threshold window.  The hard-photon terms should be recomputed rather than
+  scaled by hand, because the charm and bottom propagator denominators weight
+  the heavy-line emission differently.
+\end{itemize}
+
 \end{document}
