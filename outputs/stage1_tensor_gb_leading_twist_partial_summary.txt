@@ -1,0 +1,7 @@
+Partial Stage-1 tensor-current leading-twist estimate
+====================================================
+Only the chi phi_gamma contribution to G_B is included.
+These are not final physical widths.
+fB_equal_fT: GB_tw2 +0.2048 to +0.2726 GeV^-1; G2460(partial) -0.0517 to +0.0318; Gamma2460(partial) 0.00 to 0.56 keV
+fB_converted_fT_M_over_msum: GB_tw2 +0.1135 to +0.1511 GeV^-1; G2460(partial) -0.1314 to -0.0634; Gamma2460(partial) 0.84 to 3.63 keV
+Wrote grid to /Users/sbilmis/Dsgamma/outputs/stage1_tensor_gb_leading_twist_partial.csv

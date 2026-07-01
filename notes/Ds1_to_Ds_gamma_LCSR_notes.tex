@@ -423,4 +423,54 @@ This is not yet the physical mixed-state result.  It is the axial-current
 baseline that will be combined with the tensor-current form factor after the
 $J_B$ sum rule is derived.
 
+\section{First Tensor-Current Step: Leading-Twist Soft Contribution}
+
+The tensor-current calculation starts from the trace-level identity produced by
+\texttt{scripts/step3\_soft\_2p\_e1\_projection.wl}.  For the two-particle
+tensor photon DA matrix element, the E1 projections are
+\begin{align}
+  {\cal P}_{E1}\!\left[
+    \Tr(J_A\,S_Q\,i\gamma_5\,\sigma_{\rho\lambda})
+    (\varepsilon^\rho q^\lambda-\varepsilon^\lambda q^\rho)
+  \right]
+  &=
+  8\,\frac{k\cdot q}{p\cdot q},\\
+  {\cal P}_{E1}\!\left[
+    \Tr(J_B\,S_Q\,i\gamma_5\,\sigma_{\rho\lambda})
+    (\varepsilon^\rho q^\lambda-\varepsilon^\lambda q^\rho)
+  \right]
+  &=
+  8\,\frac{m_Q}{m_Q+m_s}.
+\end{align}
+After the two-particle DA Fourier integral and double Borel transform,
+$k=p+\bar u q$, hence $k\cdot q=p\cdot q$ for $q^2=0$.  Therefore, before the
+hadronic decay-constant normalization, the leading-twist tensor-current OPE
+piece is
+\begin{equation}
+  \Pi_{B}^{\chi\phi_\gamma}
+  =
+  \frac{m_Q}{m_Q+m_s}\,
+  \Pi_{A}^{\chi\phi_\gamma}.
+\end{equation}
+
+The exploratory script
+\texttt{scripts/stage1\_tensor\_gb\_leading\_twist.py} uses this relation to
+estimate only the $\chi\phi_\gamma$ part of $G_B$.  This is not the final
+tensor-current sum rule.  It omits the tensor-current hard contribution, the
+vector DA contribution, and the Stage 2 three-particle DA terms.
+
+Using the project inputs, the partial leading-twist estimate gives
+\begin{align}
+  G_B^{\chi\phi_\gamma}
+  &\simeq +0.205\text{ to }+0.273\ \mathrm{GeV}^{-1},
+  &&\text{if } f_B=f_T,\\
+  G_B^{\chi\phi_\gamma}
+  &\simeq +0.114\text{ to }+0.151\ \mathrm{GeV}^{-1},
+  &&\text{if } f_B=f_T\,\frac{m_{D_{s1}}}{m_c+m_s}.
+\end{align}
+The sizeable sign difference relative to $G_A$ means that the physical mixed
+amplitudes can be sensitive to the tensor-current normalization.  This is why
+the next step is to finish the full $G_B$ sum rule before quoting final mixed
+widths.
+
 \end{document}

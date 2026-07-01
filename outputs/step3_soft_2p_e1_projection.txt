@@ -1,0 +1,15 @@
+E1 projection of two-particle soft photon-DA traces
+===================================================
+
+Tensor DA contraction, A current:
+(8*Pair[Momentum[k], Momentum[q]])/Pair[Momentum[p], Momentum[q]]
+
+Tensor DA contraction, B current:
+(8*mQ)/(mQ + ms)
+
+Vector DA contraction, A current:
+((-6*I)*mQ)/Pair[Momentum[p], Momentum[q]]
+
+Vector DA contraction, B current:
+((-2*I)*(Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[p]] + 2*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[p], Momentum[q]] + 3*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[q]]))/((mQ + ms)*Pair[Momentum[p], Momentum[q]]^2)
+
