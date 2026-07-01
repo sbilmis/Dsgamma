@@ -256,11 +256,29 @@ def A_3p(aq, aqb):
 #  These verify the normalizations and symmetries a student should check.
 # ============================================================================
 if __name__ == "__main__":
-    from scipy.integrate import quad, dblquad
     print("=== Photon DA module self-tests (mu = 1 GeV) ===\n")
 
+    def quad01(f, n=300):
+        x, w = np.polynomial.legendre.leggauss(n)
+        u = 0.5*(x + 1.0)
+        return 0.5*np.sum(w*f(u))
+
+    def simplex_int(f, n=80):
+        # Map aq in [0,1], t in [0,1] to aqb=(1-aq)t.
+        # Jacobian is (1-aq).
+        x, wx = np.polynomial.legendre.leggauss(n)
+        aq = 0.5*(x + 1.0)
+        wa = 0.5*wx
+        t = aq.copy()
+        wt = wa.copy()
+        total = 0.0
+        for ai, wai in zip(aq, wa):
+            aqb = (1.0 - ai)*t
+            total += wai*np.sum(wt*(1.0 - ai)*f(ai, aqb))
+        return float(total)
+
     # (1) leading-twist normalization
-    n_phi, _ = quad(lambda u: phi_gamma(u), 0, 1)
+    n_phi = quad01(phi_gamma)
     print(f"int phi_gamma du            = {n_phi:.6f}   (expect 1)")
 
     # (2) twist-3 symmetry properties
@@ -275,10 +293,6 @@ if __name__ == "__main__":
 
     # (4) three-particle support/normalization spot-checks
     # integrate S_3p over the simplex aq,aqb>0, aq+aqb<1
-    def simplex_int(f):
-        val_, _ = dblquad(lambda aqb, aq: f(aq, aqb),
-                          0, 1, lambda aq: 0, lambda aq: 1-aq)
-        return val_
     print(f"int_simplex S_3p           = {simplex_int(S_3p):.4e}")
     print(f"int_simplex A_3p           = {simplex_int(A_3p):.4e}")
     print(f"int_simplex V_3p           = {simplex_int(V_3p):.4e}  (expect ~0, odd in aq-aqb)")

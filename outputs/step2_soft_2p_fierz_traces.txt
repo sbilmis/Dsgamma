@@ -1,0 +1,35 @@
+Two-particle photon-DA Fierz traces
+===================================
+
+Overall soft prefactor not included: -i/4 and heavy denominator.
+
+Basis: scalar_1
+  A-current trace:
+    (-4*I)*Pair[LorentzIndex[mu], Momentum[k]]
+  B-current trace:
+    0
+
+Basis: pseudoscalar_i_gamma5
+  A-current trace:
+    0
+  B-current trace:
+    0
+
+Basis: vector_gamma_rho
+  A-current trace:
+    (4*I)*mQ*Pair[LorentzIndex[mu], LorentzIndex[rho]]
+  B-current trace:
+    ((-4*I)*Pair[LorentzIndex[mu], Momentum[k]]*(Pair[LorentzIndex[rho], Momentum[p]] + Pair[LorentzIndex[rho], Momentum[q]]))/(mQ + ms) + ((4*I)*Pair[LorentzIndex[mu], LorentzIndex[rho]]*(Pair[Momentum[k], Momentum[p]] + Pair[Momentum[k], Momentum[q]]))/(mQ + ms)
+
+Basis: axial_gamma_rho_gamma5
+  A-current trace:
+    0
+  B-current trace:
+    (-4*Eps[LorentzIndex[mu], LorentzIndex[rho], Momentum[k], Momentum[P]])/(mQ + ms)
+
+Basis: tensor_sigma_rho_lambda
+  A-current trace:
+    -4*Pair[LorentzIndex[lambda], Momentum[k]]*Pair[LorentzIndex[mu], LorentzIndex[rho]] + 4*Pair[LorentzIndex[lambda], LorentzIndex[mu]]*Pair[LorentzIndex[rho], Momentum[k]]
+  B-current trace:
+    (-4*mQ*(Pair[LorentzIndex[lambda], Momentum[p]] + Pair[LorentzIndex[lambda], Momentum[q]])*Pair[LorentzIndex[mu], LorentzIndex[rho]])/(mQ + ms) + (4*mQ*Pair[LorentzIndex[lambda], LorentzIndex[mu]]*(Pair[LorentzIndex[rho], Momentum[p]] + Pair[LorentzIndex[rho], Momentum[q]]))/(mQ + ms)
+

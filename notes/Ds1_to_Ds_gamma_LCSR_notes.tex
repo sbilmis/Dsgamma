@@ -337,6 +337,24 @@ basic Dirac conventions and defines the current vertices.  The script
 hard-photon traces in the explicit photon-vertex representation.  These traces
 are stored in \texttt{outputs/step2\_hard\_photon\_numerators.txt}.
 
+The script \texttt{scripts/step2\_e1\_project\_hard\_numerators.wl} applies the
+E1 projector
+\begin{equation}
+  {\cal P}^{\mu\nu}_{E1}
+  =
+  \frac{p^\nu q^\mu-(p\cdot q)g^{\mu\nu}}{2(p\cdot q)^2},
+\end{equation}
+which satisfies ${\cal P}_{E1}^{\mu\nu}
+[p_\nu q_\mu-(p\cdot q)g_{\mu\nu}]=1$ for $q^2=0$.  The projected hard
+numerators are stored in
+\texttt{outputs/step2\_e1\_projected\_hard\_numerators.txt}.
+
+The script \texttt{scripts/step2\_soft\_2p\_fierz\_traces.wl} computes the
+trace factors multiplying the two-particle photon DA matrix elements after the
+Fierz rearrangement.  The output
+\texttt{outputs/step2\_soft\_2p\_fierz\_traces.txt} shows which bilinears feed
+the axial current and which feed the tensor current.
+
 \section{Stage 1 Axial-Current Numerical Baseline}
 
 Before deriving the tensor-current sum rule, we implemented the known
