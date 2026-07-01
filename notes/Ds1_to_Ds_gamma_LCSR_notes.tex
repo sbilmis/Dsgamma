@@ -812,4 +812,50 @@ the three-particle correction is numerically small.  They should still be
 labeled as an estimate until the explicitly $x$-dependent ${\cal T}_3$,
 ${\cal T}_4$, and $x_\alpha\gamma_\beta$ kernels are reduced for $J_B$.
 
+\section{Stage 2 Tensor: Explicit \(x\)-Dependent Kernels}
+
+The next audit step keeps the coordinate vector $x$ explicit.  For the
+$\sigma_{\alpha\beta}$ part of $S_Q^G$, the raw E1 projections of the
+${\cal T}_3$ and ${\cal T}_4$ structures are
+\begin{align}
+  K_A[{\cal T}_3]&=+16\ii\,\frac{k\cdot q}{p\cdot q},
+  &
+  K_B[{\cal T}_3]&=+16\ii\,\frac{m_Q}{m_Q+m_s},\\
+  K_A[{\cal T}_4]&=-16\ii\,\frac{k\cdot q}{p\cdot q},
+  &
+  K_B[{\cal T}_4]&=-16\ii\,\frac{m_Q}{m_Q+m_s}.
+\end{align}
+Thus these two structures also obey the same ratio
+$K_B/K_A=m_Q/(m_Q+m_s)$ after $k\cdot q=p\cdot q$.  This check is recorded in
+\begin{center}
+  \texttt{scripts/step6\_soft\_3p\_x\_dependent\_kernels.wl}.
+\end{center}
+
+The genuinely new complication comes from the second term in the background
+propagator,
+\begin{equation}
+  \frac{u\,x_\alpha}{m_Q^2-k^2}G^{\alpha\beta}(ux)\gamma_\beta .
+\end{equation}
+The script
+\begin{center}
+  \texttt{scripts/step7\_soft\_3p\_xgamma\_kernels.wl}
+\end{center}
+computes the raw kernels with $x$ kept explicit.  Unlike the previous kernels,
+the tensor-to-axial ratio is not a constant at this stage.  For example the
+${\cal S}$ ratio after only $k\cdot q\to p\cdot q$ contains
+\begin{equation}
+  \frac{
+    (p\cdot q)\,(k\cdot x-p\cdot x)
+    +(k\cdot p+p^2+2p\cdot q)(q\cdot x)
+  }{
+    2m_Q^2(q\cdot x)
+  },
+\end{equation}
+and analogous expressions occur for ${\cal T}_1$, ${\cal T}_2$, and
+${\cal T}_3$.  Therefore the tensor Stage 2 three-particle result cannot yet
+be promoted from an estimate to a final term.  The remaining calculation is to
+perform the Fourier/Borel replacement of the explicit $x_\alpha/(q\cdot x)$
+factors, including the derivative action on the heavy-quark denominator, and
+then recombine the result with the photon DA structures.
+
 \end{document}

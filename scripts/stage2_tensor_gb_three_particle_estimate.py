@@ -11,9 +11,11 @@ script uses that relation to estimate the tensor-current three-particle
 correction from the calibrated axial F1 contribution.
 
 Important limitation:
-  The x-dependent T3/T4 structures and the x_alpha gamma_beta part of S_Q^G
-  are not yet independently reduced for J_B.  Therefore this is an estimate,
-  not the final tensor-current Stage-2 result.
+  The sigma_{ab} part of S_Q^G has now been checked also for the explicit
+  x-dependent T3/T4 structures.  The unresolved piece is the separate
+  x_alpha G^{alpha beta} gamma_beta term, whose raw tensor/axial ratio is not a
+  constant before the Fourier/Borel derivative replacement.  Therefore this is
+  still an estimate, not the final tensor-current Stage-2 result.
 """
 
 from __future__ import annotations
@@ -114,8 +116,9 @@ def main():
     lines = [
         "Stage-2 tensor-current three-particle DA estimate",
         "=================================================",
-        "Uses B/A trace ratio m_c/(m_c+m_s) for local S,T1,T2 kernels.",
-        "x-dependent T3/T4 and x_alpha gamma_beta kernels remain to be derived.",
+        "Uses B/A trace ratio m_c/(m_c+m_s) for the sigma_ab part of S_Q^G.",
+        "This includes local S,T1,T2 and explicit-x T3,T4 kernels.",
+        "The separate x_alpha G^{alpha beta} gamma_beta term remains to be derived.",
     ]
     for scheme in fB_options:
         subset = [r for r in rows if r["fB_scheme"] == scheme]

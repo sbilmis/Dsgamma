@@ -1,0 +1,20 @@
+x-dependent three-particle soft photon-DA E1 kernels
+====================================================
+
+Scope: sigma_{ab} part of S_Q^G; x kept explicit.
+
+A_T3_x_raw:
+((16*I)*Pair[Momentum[k], Momentum[q]])/Pair[Momentum[p], Momentum[q]]
+
+A_T4_x_raw:
+((-16*I)*Pair[Momentum[k], Momentum[q]])/Pair[Momentum[p], Momentum[q]]
+
+B_T3_x_raw:
+((16*I)*mQ)/(mQ + ms)
+
+B_T4_x_raw:
+((-16*I)*mQ)/(mQ + ms)
+
+Ratio check after k.q -> p.q:
+B_T3 / [(mQ/(mQ+ms)) A_T3] = 1
+B_T4 / [(mQ/(mQ+ms)) A_T4] = 1

@@ -1,0 +1,48 @@
+x_alpha gamma_beta three-particle soft photon-DA E1 kernels
+============================================================
+
+Scope: x_alpha G^{alpha beta} gamma_beta part of S_Q^G; x kept explicit.
+
+A_S_xgamma_raw:
+((-4*I)*mQ*Pair[Momentum[q], Momentum[x]])/Pair[Momentum[p], Momentum[q]]
+
+A_Stilde_xgamma_raw:
+0
+
+A_T1_xgamma_raw:
+(-24*mQ*Pair[Momentum[q], Momentum[x]])/Pair[Momentum[p], Momentum[q]]
+
+A_T2_xgamma_raw:
+(-8*mQ*Pair[Momentum[q], Momentum[x]])/Pair[Momentum[p], Momentum[q]]
+
+A_T3_xgamma_raw:
+(8*mQ*Pair[Momentum[q], Momentum[x]])/Pair[Momentum[p], Momentum[q]]
+
+A_T4_xgamma_raw:
+0
+
+B_S_xgamma_raw:
+((-2*I)*(Pair[Momentum[k], Momentum[x]]*Pair[Momentum[p], Momentum[q]]^2 - Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[q]]*Pair[Momentum[p], Momentum[x]] + Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[p]]*Pair[Momentum[q], Momentum[x]] + Pair[Momentum[k], Momentum[p]]*Pair[Momentum[p], Momentum[q]]*Pair[Momentum[q], Momentum[x]] + 2*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[q]]*Pair[Momentum[q], Momentum[x]]))/((mQ + ms)*Pair[Momentum[p], Momentum[q]]^2)
+
+B_Stilde_xgamma_raw:
+((2*I)*(Eps[Momentum[k], Momentum[P], Momentum[q], Momentum[x]]*Pair[Momentum[p], Momentum[q]] - Eps[Momentum[k], Momentum[p], Momentum[P], Momentum[q]]*Pair[Momentum[q], Momentum[x]]))/((mQ + ms)*Pair[Momentum[p], Momentum[q]]^2)
+
+B_T1_xgamma_raw:
+(-4*(Pair[Momentum[k], Momentum[x]]*Pair[Momentum[p], Momentum[q]]^2 - Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[q]]*Pair[Momentum[p], Momentum[x]] + Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[p]]*Pair[Momentum[q], Momentum[x]] + 5*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[p], Momentum[q]]*Pair[Momentum[q], Momentum[x]] + 4*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[q]]*Pair[Momentum[q], Momentum[x]]))/((mQ + ms)*Pair[Momentum[p], Momentum[q]]^2)
+
+B_T2_xgamma_raw:
+(4*(3*Pair[Momentum[k], Momentum[x]]*Pair[Momentum[p], Momentum[q]]^2 - 3*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[q]]*Pair[Momentum[p], Momentum[x]] - Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[p]]*Pair[Momentum[q], Momentum[x]] - Pair[Momentum[k], Momentum[p]]*Pair[Momentum[p], Momentum[q]]*Pair[Momentum[q], Momentum[x]] - 4*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[q]]*Pair[Momentum[q], Momentum[x]]))/((mQ + ms)*Pair[Momentum[p], Momentum[q]]^2)
+
+B_T3_xgamma_raw:
+(8*(Pair[Momentum[k], Momentum[x]]*Pair[Momentum[p], Momentum[q]] - Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[x]] + Pair[Momentum[k], Momentum[p]]*Pair[Momentum[q], Momentum[x]]))/((mQ + ms)*Pair[Momentum[p], Momentum[q]])
+
+B_T4_xgamma_raw:
+(-4*(Pair[Momentum[k], Momentum[x]]*Pair[Momentum[p], Momentum[q]]^2 - Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[q]]*Pair[Momentum[p], Momentum[x]] - Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[p]]*Pair[Momentum[q], Momentum[x]] + Pair[Momentum[k], Momentum[p]]*Pair[Momentum[p], Momentum[q]]*Pair[Momentum[q], Momentum[x]] - 2*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[q]]*Pair[Momentum[q], Momentum[x]]))/((mQ + ms)*Pair[Momentum[p], Momentum[q]]^2)
+
+Ratio checks after k.q -> p.q:
+S: (Pair[Momentum[p], Momentum[q]]*(Pair[Momentum[k], Momentum[x]] - Pair[Momentum[p], Momentum[x]]) + (Pair[Momentum[k], Momentum[p]] + Pair[Momentum[p], Momentum[p]] + 2*Pair[Momentum[p], Momentum[q]])*Pair[Momentum[q], Momentum[x]])/(2*mQ^2*Pair[Momentum[q], Momentum[x]])
+Stilde: "A zero"
+T1: (Pair[Momentum[p], Momentum[q]]*(Pair[Momentum[k], Momentum[x]] - Pair[Momentum[p], Momentum[x]]) + (5*Pair[Momentum[k], Momentum[p]] + Pair[Momentum[p], Momentum[p]] + 4*Pair[Momentum[p], Momentum[q]])*Pair[Momentum[q], Momentum[x]])/(6*mQ^2*Pair[Momentum[q], Momentum[x]])
+T2: (3*Pair[Momentum[p], Momentum[q]]*(-Pair[Momentum[k], Momentum[x]] + Pair[Momentum[p], Momentum[x]]) + (Pair[Momentum[k], Momentum[p]] + Pair[Momentum[p], Momentum[p]] + 4*Pair[Momentum[p], Momentum[q]])*Pair[Momentum[q], Momentum[x]])/(2*mQ^2*Pair[Momentum[q], Momentum[x]])
+T3: (Pair[Momentum[k], Momentum[p]] + (Pair[Momentum[p], Momentum[q]]*(Pair[Momentum[k], Momentum[x]] - Pair[Momentum[p], Momentum[x]]))/Pair[Momentum[q], Momentum[x]])/mQ^2
+T4: "A zero"
