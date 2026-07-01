@@ -1,0 +1,13 @@
+decay,rank,group,half_width_keV
+Gamma2460,1,condensates_and_chi,9.694037573589226
+Gamma2460,2,decay_constants,4.7477264715673435
+Gamma2460,3,borel_threshold,4.041625862199279
+Gamma2460,4,theta,2.9681653315537204
+Gamma2460,5,quark_and_hadron_masses,2.0318607279806074
+Gamma2460,6,photon_DA_shape,1.0658141036401503e-14
+Gamma2536,1,theta,4.381809596640613
+Gamma2536,2,decay_constants,2.971421849376791
+Gamma2536,3,condensates_and_chi,2.557188604950529
+Gamma2536,4,quark_and_hadron_masses,1.171287600305435
+Gamma2536,5,borel_threshold,0.9749292713413755
+Gamma2536,6,photon_DA_shape,9.325873406851315e-15

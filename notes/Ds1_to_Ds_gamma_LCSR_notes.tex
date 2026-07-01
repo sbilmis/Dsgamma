@@ -1162,6 +1162,46 @@ The full scan table is written to
 \begin{center}
   \texttt{outputs/final\_stage2\_uncertainty\_scan.csv}.
 \end{center}
+For visualization the script
+\begin{center}
+  \texttt{scripts/uncertainty\_publication\_plots.py}
+\end{center}
+also fits Gaussian curves to the Monte Carlo width histograms using the sample
+mean and sample standard deviation.  These fits are descriptive rather than
+the primary quoted uncertainties, because the width distribution is mildly
+right-tailed, especially for $D_{s1}(2536)$.  For the fixed-angle ensemble the
+Gaussian summaries are
+\begin{align}
+  \Gamma_{2460}&=38.99\pm12.76~\mathrm{keV},\\
+  \Gamma_{2536}&=7.39\pm5.67~\mathrm{keV},
+\end{align}
+while for $25^\circ\le\theta\le45^\circ$ they are
+\begin{align}
+  \Gamma_{2460}&=38.47\pm12.78~\mathrm{keV},\\
+  \Gamma_{2536}&=7.79\pm6.76~\mathrm{keV}.
+\end{align}
+The corresponding publication histograms are shown in
+Figs.~\ref{fig:mc-hist-fixed} and~\ref{fig:mc-hist-scan}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/mc_width_histograms_theta_fixed.pdf}
+  \caption{Monte Carlo width distributions for fixed
+  $\theta=35.3^\circ$.  The black curves are Gaussian overlays using the
+  sample mean and standard deviation; the dashed vertical lines mark the
+  16--84 percentile interval.}
+  \label{fig:mc-hist-fixed}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/mc_width_histograms_theta_scan.pdf}
+  \caption{Monte Carlo width distributions when the mixing angle is sampled
+  uniformly over $25^\circ\le\theta\le45^\circ$.  The black curves are
+  Gaussian overlays using the sample mean and standard deviation; the dashed
+  vertical lines mark the 16--84 percentile interval.}
+  \label{fig:mc-hist-scan}
+\end{figure}
 
 The diagnostic script
 \begin{center}
@@ -1199,6 +1239,15 @@ $D_{s1}(2460)$ width is most sensitive to condensate/$\chi$ inputs and decay
 constants, while the $D_{s1}(2536)$ width is particularly sensitive to the
 mixing angle because the physical amplitude contains a cancellation between
 the axial and tensor-current components.
+The same ranking is visualized in Fig.~\ref{fig:uncertainty-budget-ranked}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/uncertainty_budget_ranked.pdf}
+  \caption{Ranked one-at-a-time uncertainty sources.  The plotted quantity is
+  half of the 16--84 percentile width for each group.}
+  \label{fig:uncertainty-budget-ranked}
+\end{figure}
 
 \section{Central Borel Stability}
 
