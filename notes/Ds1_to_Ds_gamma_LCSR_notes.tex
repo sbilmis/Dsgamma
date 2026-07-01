@@ -117,6 +117,23 @@ The target Lorentz structure for the $1^+\to0^-\gamma$ transition is
 \end{equation}
 On the correlator side we therefore project onto an equivalent transverse
 structure built from the open axial index and the photon polarization.
+With open indices this structure is represented by
+\begin{equation}
+  T_{\mu\nu}=(p\cdot q)g_{\mu\nu}-q_\mu p_\nu,
+  \qquad
+  S_{\mu\nu}\equiv -T_{\mu\nu}=p_\nu q_\mu-(p\cdot q)g_{\mu\nu}.
+\end{equation}
+For a real photon, $q^2=0$, it obeys
+\begin{equation}
+  q^\nu S_{\mu\nu}=0,
+\end{equation}
+so the projected invariant amplitude is gauge invariant under
+$\varepsilon_\nu\to\varepsilon_\nu+\lambda q_\nu$.  In scalar form the same
+statement is
+\begin{equation}
+  (\eta\cdot q)(p\cdot q)-(\eta\cdot q)(p\cdot q)=0
+\end{equation}
+after replacing $\varepsilon\to q$.
 
 \section{Wick Contraction and OPE Bookkeeping}
 
@@ -349,6 +366,11 @@ which satisfies ${\cal P}_{E1}^{\mu\nu}
 [p_\nu q_\mu-(p\cdot q)g_{\mu\nu}]=1$ for $q^2=0$.  The projected hard
 numerators are stored in
 \texttt{outputs/step2\_e1\_projected\_hard\_numerators.txt}.
+
+The companion script \texttt{scripts/ward\_transversality\_check.wl} verifies
+the Ward/transversality properties of the same E1 tensor with FeynCalc.  Its
+output is stored in
+\texttt{outputs/ward\_transversality\_check.txt}.
 
 The script \texttt{scripts/step2\_soft\_2p\_fierz\_traces.wl} computes the
 trace factors multiplying the two-particle photon DA matrix elements after the
@@ -1289,6 +1311,22 @@ three-particle integration closure:
 These are numerical quadrature checks of the DA implementation and the split
 integration domains.
 
+The independent FeynCalc script
+\texttt{scripts/ward\_transversality\_check.wl} checks the selected E1 tensor
+$S_{\mu\nu}=p_\nu q_\mu-(p\cdot q)g_{\mu\nu}$.  With
+$q^2=0$, $\varepsilon\cdot q=0$, $P=p+q$, and $\eta\cdot P=0$, it gives
+\begin{align}
+  S_{\mu\nu}q^\nu &=0,\\
+  \left[(\eta\cdot\varepsilon)(p\cdot q)
+    -(\eta\cdot q)(p\cdot\varepsilon)\right]_{\varepsilon\to q}
+  &=0,\\
+  P^\mu S_{\mu\nu}\varepsilon^\nu&=0,\\
+  \frac{S_{\mu\nu}S^{\mu\nu}}{2(p\cdot q)^2}&=1.
+\end{align}
+The first two equations are the photon Ward check, the third confirms
+compatibility with the physical initial axial-meson polarization, and the last
+line is the projector normalization.
+
 At the central point $M^2=4.5~\GeV^2$ and
 $\sqrt{s_0}=2.55~\GeV$, the hard tensor-current charge decomposition is
 \begin{align}
@@ -1338,11 +1376,6 @@ following items are useful to add or verify.
   Levi-Civita convention, and the tensor-current normalization
   $f_B=f_Tm_{D_{s1}}/(m_c+m_s)$ should be stated explicitly because they move
   signs and absolute normalizations.
-  \item A transversality/Ward-identity check.  The extracted E1 structure is
-  transverse by construction, but the paper should include either a symbolic
-  replacement $\epsilon_\gamma\to q$ at the invariant-amplitude level or a
-  short explanation of how contact terms are absent in the chosen projected
-  structure.
   \item A clearer uncertainty budget.  The current global scan varies
   $M^2$, $s_0$, $\chi$, decay constants, quark masses, condensates, and the
   mixing angle in the broad scan.  A one-at-a-time error table would show that

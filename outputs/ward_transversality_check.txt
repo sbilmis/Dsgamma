@@ -1,0 +1,12 @@
+Ward/transversality check for the E1 tensor
+==========================================
+
+E1 tensor S_mu_nu = p_nu q_mu - (p.q) g_mu_nu
+Assumptions: q^2=0, eps.q=0, P=p+q, eta.P=0.
+
+Photon-index Ward contraction S_mu_nu q^nu = 0
+Scalar structure after eps -> q = 0
+Physical initial-polarization contraction P^mu S_mu_nu eps^nu = 0
+Projector normalization S_mu_nu S^(mu nu)/(2 (p.q)^2) = 1
+
+PASS iff the first three entries are 0 and the normalization is 1.
