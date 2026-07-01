@@ -473,6 +473,62 @@ amplitudes can be sensitive to the tensor-current normalization.  This is why
 the next step is to finish the full $G_B$ sum rule before quoting final mixed
 widths.
 
+\section{Decay-Constant Normalization Before Mixing}
+
+The labels $f_A$, $f_B$, and $f_T$ must not be mixed casually.  The axial
+current couples to the axial basis state through
+\begin{equation}
+  \langle 0|J_A^\mu|D_{s1}^{A}(P,\eta)\rangle
+  =
+  f_A m_A \eta^\mu ,
+\end{equation}
+whereas our tensor-derived current is
+\begin{equation}
+  J_B^\mu
+  =
+  \frac{\ii}{m_c+m_s}\,
+  \bar s\sigma^{\mu\alpha}P_\alpha\gamma_5 c .
+\end{equation}
+The corresponding decay constant is defined by
+\begin{equation}
+  \langle 0|J_B^\mu|D_{s1}^{B}(P,\eta)\rangle
+  =
+  f_B m_B \eta^\mu .
+\end{equation}
+Therefore $f_B=f_T$ is not a physical statement by itself.  It is only true if
+the tabulated $f_T$ is already defined for the same current $J_B^\mu$ and with
+the same mass normalization.  If instead the input table gives the more common
+tensor-current matrix element
+\begin{equation}
+  \langle 0|\bar s\sigma_{\mu\nu}\gamma_5 c|D_{s1}^{B}(P,\eta)\rangle
+  =
+  f_T(\eta_\mu P_\nu-\eta_\nu P_\mu),
+\end{equation}
+then contraction with $P^\nu/(m_c+m_s)$ gives the effective normalization
+\begin{equation}
+  f_B^{\rm eff}
+  \simeq
+  f_T\,\frac{m_{D_{s1}}}{m_c+m_s},
+\end{equation}
+up to the sign fixed by the precise convention for
+$\sigma_{\mu\nu}\gamma_5$ and by the transverse condition $\eta\cdot P=0$.
+
+Only after $G_A$ and $G_B$ have been computed with their own basis-current
+decay constants do we form the physical amplitudes:
+\begin{align}
+  G_{2460}
+  &=
+  \sin\theta\,G_A+\cos\theta\,G_B,\\
+  G_{2536}
+  &=
+  \cos\theta\,G_A-\sin\theta\,G_B.
+\end{align}
+Thus the sine--cosine factors belong to the physical-state mixing of amplitudes,
+not to an arbitrary identification $f_B=f_T$.  In the numerical scripts,
+$f_B=f_T$ is kept only as a diagnostic.  The converted
+$f_B=f_T m_{D_{s1}}/(m_c+m_s)$ option is the safer central normalization unless
+the input-table definition of $f_T$ is changed.
+
 \section{Tensor-Current Hard Term: Triangle Reduction}
 
 The hard tensor-current numerator is more complicated than the axial one because
@@ -576,9 +632,24 @@ For the tensor current the core contains $p^2/(p\cdot q)$:
     \frac{m_s^2p^2}{(m_Q+m_s)(p\cdot q)}
   \right].
 \end{align}
-In the first candidate implementation we use the diagonal double-dispersion
-identification $p^2\to s$ inside this numerator.  This is the remaining point
-that should be independently checked from the double spectral representation.
+The diagonal double-dispersion representation explains how the $p^2$ numerator
+is treated.  For the double-pole part one has
+\begin{equation}
+  \frac{p^2}{(s-p^2)(s-P^2)}
+  =
+  \frac{s}{(s-p^2)(s-P^2)}
+  -
+  \frac{1}{s-P^2},
+  \qquad P=p+q .
+\end{equation}
+The second term has only a single pole and is removed by the double Borel
+projection in $p^2$ and $P^2$.  Therefore, inside the double-pole sum rule,
+$p^2$ in the hard numerator can be replaced by the spectral variable $s$.  The
+same argument gives $P^2\to s$ for any numerator factor of $P^2$.  The script
+\begin{center}
+  \texttt{scripts/step4\_double\_pole\_p2\_reduction.py}
+\end{center}
+records this identity as a short audit check.
 
 Combining this hard candidate with the tensor-DA two-particle soft contribution
 gives, over the same $M^2$ and $s_0$ windows,
@@ -612,7 +683,71 @@ At $\theta=35.3^\circ$, the corresponding candidate mixed widths are
   &&\left(f_B=f_T\frac{m_{D_{s1}}}{m_c+m_s}\right).
 \end{align}
 These numbers should be read as a controlled Stage 1 candidate, not yet as the
-final result, because Stage 2 and the independent double-spectral check of the
-$p^2/(p\cdot q)$ term remain.
+final result, because Stage 2 three-particle photon DAs remain.  The
+$p^2\to s$ step is justified for the double-pole part; any single-pole remnants
+belong outside the double-Borel sum rule.
+
+\section{Stage 2 Axial Three-Particle DA Check}
+
+Before deriving the tensor-current three-particle terms, we implemented the
+known axial-current correction as a Stage 2 calibration.  The published axial
+sum rule contains the combination
+\begin{equation}
+  {\cal F}_1
+  =
+  {\cal S}+\tilde{\cal S}-{\cal T}_1-{\cal T}_2
+  +{\cal T}_3+{\cal T}_4
+  +2v(-{\cal S}-{\cal T}_3+{\cal T}_2),
+\end{equation}
+integrated over the two standard regions
+\begin{align}
+  0\le v\le 1-u_0,
+  \qquad
+  0\le \alpha_g\le \frac{u_0}{1-v},\\
+  1-u_0\le v\le 1,
+  \qquad
+  0\le \alpha_g\le \frac{1-u_0}{v},
+\end{align}
+with
+\begin{equation}
+  \alpha_q=u_0-(1-v)\alpha_g,
+  \qquad
+  \alpha_{\bar q}=1-u_0-v\alpha_g .
+\end{equation}
+The script
+\begin{center}
+  \texttt{scripts/stage2\_axial\_g1\_three\_particle.py}
+\end{center}
+evaluates this integral using the three-particle photon DAs in
+\texttt{photon\_da.py}.  For $u_0=1/2$ it finds
+\begin{align}
+  \int{\cal F}_1
+  &=
+  +7.033\times10^{-2},\\
+  \Delta G_A^{{\cal F}_1}
+  &\simeq
+  +0.0012\text{ to }+0.0020\ \mathrm{GeV}^{-1}.
+\end{align}
+Thus the axial Stage 2 result over the same Borel and threshold window is
+\begin{equation}
+  -0.398
+  \le
+  G_A^{\rm Stage\ 2}
+  \le
+  -0.312
+  \qquad \mathrm{GeV}^{-1},
+\end{equation}
+corresponding to
+\begin{equation}
+  20.5\,\mathrm{keV}
+  \le
+  \Gamma_A^{\rm Stage\ 2}[D_{s1}(2460)\to D_s\gamma]
+  \le
+  33.3\,\mathrm{keV}.
+\end{equation}
+This small correction is a useful calibration, but it does not yet complete
+Stage 2 for the mixed physical amplitudes.  The remaining Stage 2 task is to
+derive the tensor-current analog of the three-particle photon DA contribution
+from the background-gluon insertion and project it onto the same E1 invariant.
 
 \end{document}

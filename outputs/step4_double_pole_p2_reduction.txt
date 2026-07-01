@@ -1,0 +1,21 @@
+Double-pole reduction for tensor hard numerator
+================================================
+Let P^2=(p+q)^2 and use the diagonal spectral form
+  1/[(s-p^2)(s-P^2)].
+
+Then
+  p^2/[(s-p^2)(s-P^2)]
+    = s/[(s-p^2)(s-P^2)] - 1/(s-P^2),
+
+and
+  P^2/[(s-p^2)(s-P^2)]
+    = s/[(s-p^2)(s-P^2)] - 1/(s-p^2).
+
+The second term in each identity is a single pole.  It is removed by
+the double Borel projection in p^2 and P^2.  Therefore, for the
+double-pole sum rule, p^2 -> s and P^2 -> s inside numerator factors.
+
+Conclusion: the p^2 -> s replacement used in
+scripts/stage1_tensor_gb_hard_candidate.py is justified at the
+double-pole level.  Denominator-cancellation and single-pole pieces
+should remain excluded from the final double-Borel sum rule.
