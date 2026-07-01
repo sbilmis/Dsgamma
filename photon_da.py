@@ -68,6 +68,50 @@ def phi_gamma(u):
 # CHECK: int_0^1 6u(1-u) du = 6*(1/2 - 1/3) = 1.  (normalization)
 
 # ============================================================================
+#  COLANGELO/BBK CONVENTION HELPERS
+#  The Colangelo-De Fazio-Ozpineci g1 sum rule uses the Appendix convention
+#  printed in hep-ph/0505195.  It differs from the Rohrwild-labelled helpers
+#  below for psi^v and A(u), so the numerical Stage-1 benchmark must call these
+#  explicitly named functions.
+# ============================================================================
+def gegenbauer_c2_half(x):
+    """C_2^{1/2}(x) = P_2(x), used in h_gamma."""
+    x = np.asarray(x, dtype=float)
+    return 0.5 * (3.0*x**2 - 1.0)
+
+def A_t4_colangelo(u):
+    """Twist-4 two-particle DA mathbb{A}(u), Colangelo Appendix / BBK."""
+    u = np.asarray(u, dtype=float)
+    ub = 1.0 - u
+    k, kp = val("kappa"), val("kappa_p")
+    z2, z2p = val("zeta2"), val("zeta2_p")
+    lnu = np.log(np.clip(u, 1e-12, 1.0))
+    lnub = np.log(np.clip(ub, 1e-12, 1.0))
+    bracket = (
+        u*ub*(2.0 + 13.0*u*ub)
+        + 2.0*u**3*(10.0 - 15.0*u + 6.0*u**2)*lnu
+        + 2.0*ub**3*(10.0 - 15.0*ub + 6.0*ub**2)*lnub
+    )
+    return 40.0*u**2*ub**2*(3.0*k - kp + 1.0) + 8.0*(z2p - 3.0*z2)*bracket
+
+def h_gamma_colangelo(u):
+    """Twist-4 h_gamma(u), Colangelo Appendix / BBK."""
+    u = np.asarray(u, dtype=float)
+    t = 2.0*u - 1.0
+    return -10.0*(1.0 + 2.0*val("kappa_p"))*gegenbauer_c2_half(t)
+
+def psi_v_colangelo(u):
+    """Twist-3 vector DA psi^v(u), Colangelo Appendix / BBK."""
+    u = np.asarray(u, dtype=float)
+    t = 2.0*u - 1.0
+    wA, wV = val("omegaA"), val("omegaV")
+    return (
+        5.0*(3.0*t**2 - 1.0)
+        + (3.0/64.0)*(15.0*wV - 5.0*wA)
+        *(3.0 - 30.0*t**2 + 35.0*t**4)
+    )
+
+# ============================================================================
 #  TWIST-3  (2-particle)  --  psi^v(u), psi^a(u)
 #  Rohrwild Eqs.(63),(64). These come with the coupling f3gamma.
 # ============================================================================

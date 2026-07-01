@@ -337,4 +337,72 @@ basic Dirac conventions and defines the current vertices.  The script
 hard-photon traces in the explicit photon-vertex representation.  These traces
 are stored in \texttt{outputs/step2\_hard\_photon\_numerators.txt}.
 
+\section{Stage 1 Axial-Current Numerical Baseline}
+
+Before deriving the tensor-current sum rule, we implemented the known
+single-axial-current result for
+$D_{s1}(2460)\to D_s\gamma$ as a benchmark.  This is the coupling called
+$g_1$ by Colangelo, De Fazio, and Ozpineci.  In our notation this is the
+axial-current form factor $G_A$.
+
+The Stage 1 version contains
+\begin{equation}
+  G_A^{\mathrm{Stage\ 1}}
+  =
+  G_A^{\mathrm{pert}}
+  +
+  G_A^{\chi\phi_\gamma}
+  +
+  G_A^{\mathbb A,\bar H_\gamma}
+  +
+  G_A^{f_{3\gamma}\Psi^v},
+\end{equation}
+where the three-particle DA integral usually denoted by ${\cal F}_1$ is omitted
+until Stage 2.
+
+The numerical script is
+\begin{center}
+  \texttt{scripts/stage1\_axial\_g1\_baseline.py}.
+\end{center}
+It writes the full Borel/threshold grid to
+\begin{center}
+  \texttt{outputs/stage1\_axial\_g1\_baseline.csv}.
+\end{center}
+
+\subsection{Magnetic-susceptibility sign convention}
+
+The Colangelo paper prints $\chi=-(3.15\pm0.30)\,\mathrm{GeV}^{-2}$ in its
+matrix-element convention.  In this project we store the BBK magnitude as
+\begin{equation}
+  \chi(1\,\mathrm{GeV})=+3.15\pm0.30\,\mathrm{GeV}^{-2}.
+\end{equation}
+Therefore the sign of the $\chi\phi_\gamma$ term in the implemented sum rule is
+flipped relative to the literal printed formula.  This is a convention
+translation, not a physical change.  A diagnostic run that inserts positive
+$\chi$ into the printed negative-$\chi$ formula gives a much larger width and is
+kept only as a warning check.
+
+\subsection{Preliminary Stage 1 result}
+
+Using the project inputs, $u_0=1/2$, $3\le M^2\le6\,\mathrm{GeV}^2$, and
+$s_0=(2.50,2.55,2.60)^2\,\mathrm{GeV}^2$, the axial-current Stage 1 grid gives
+\begin{equation}
+  -0.399 \le G_A^{\mathrm{Stage\ 1}} \le -0.314\quad \mathrm{GeV}^{-1}.
+\end{equation}
+With
+\begin{equation}
+  \Gamma=\frac{\alpha_{\rm em}}{3}G^2|\vec q_\gamma|^3,
+\end{equation}
+this corresponds to
+\begin{equation}
+  20.8\,\mathrm{keV}
+  \le
+  \Gamma_A^{\mathrm{Stage\ 1}}[D_{s1}(2460)\to D_s\gamma]
+  \le
+  33.5\,\mathrm{keV}.
+\end{equation}
+This is not yet the physical mixed-state result.  It is the axial-current
+baseline that will be combined with the tensor-current form factor after the
+$J_B$ sum rule is derived.
+
 \end{document}
