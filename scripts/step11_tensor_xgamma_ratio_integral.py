@@ -12,8 +12,10 @@ to the axial xgamma combination
     F1_xgamma = 2 v (-S - T3 + T2).
 
 The T4 tensor kernel has no axial partner in this E1 projection
-(A_T4 = 0, B_T4 != 0), so it is reported as unresolved and is not added to the
-matched integral here.
+(A_T4 = 0, B_T4 != 0).  Its normalization is therefore fixed directly from its
+double-pole residue relative to the axial T2 unit:
+
+    B_T4 / [(m_c/(m_c+m_s)) A_T2] = -(1-a) p.q / m_c^2.
 """
 
 from __future__ import annotations
@@ -61,12 +63,11 @@ def tensor_xgamma_matched_piece(aq: float, aqb: float, v: float, p2: float, pq: 
     )
 
 
-def t4_residue_indicator(aq: float, aqb: float, v: float, p2: float, pq: float, mc: float):
-    """Dimensionless shape of the unresolved T4 tensor-only residue.
+def t4_tensor_only_piece(aq: float, aqb: float, v: float, p2: float, pq: float, mc: float):
+    """Dimensionless tensor-only T4 residue normalized to the axial T2 unit.
 
     The derivative reduction gives B_T4 proportional to -(1-a) p.q after
-    dropping the single-pole D/D^2 part.  This is not normalized to an axial
-    partner, so it is diagnostic only.
+    dropping the single-pole D/D^2 part.
     """
     ag = 1.0 - aq - aqb
     a = aqb + v * ag
@@ -120,7 +121,8 @@ def main():
         "Partial tensor xgamma matched integral",
         "=======================================",
         "Matched structures: S, T2, T3.",
-        "Unresolved structure: T4 has A_T4 = 0 but B_T4 != 0.",
+        "Tensor-only structure: T4 has A_T4 = 0 but B_T4 != 0.",
+        "T4 is normalized relative to the axial T2 unit by its double-pole residue.",
         f"Axial xgamma calibration integral = {axial_total:+.10e}",
         f"  domain 1 = {axial_d1:+.10e}",
         f"  domain 2 = {axial_d2:+.10e}",
@@ -133,12 +135,13 @@ def main():
             ),
             u0=0.5,
         )
-        t4_diag, t4_d1, t4_d2 = integrate_xgamma(
-            lambda aq, aqb, v, p2=p2, pq=pq: t4_residue_indicator(
+        t4_piece, t4_d1, t4_d2 = integrate_xgamma(
+            lambda aq, aqb, v, p2=p2, pq=pq: t4_tensor_only_piece(
                 aq, aqb, v, p2, pq, mc
             ),
             u0=0.5,
         )
+        total = matched + t4_piece
         ratios_mid = residue_ratios(0.5, p2, pq, mc)
         lines.extend(
             [
@@ -153,9 +156,10 @@ def main():
                 f"  matched S,T2,T3 integral = {matched:+.10e}",
                 f"    domain 1 = {d1:+.10e}",
                 f"    domain 2 = {d2:+.10e}",
-                f"  diagnostic T4 shape integral = {t4_diag:+.10e}",
+                f"  tensor-only T4 integral = {t4_piece:+.10e}",
                 f"    domain 1 = {t4_d1:+.10e}",
                 f"    domain 2 = {t4_d2:+.10e}",
+                f"  full tensor xgamma integral = {total:+.10e}",
             ]
         )
 

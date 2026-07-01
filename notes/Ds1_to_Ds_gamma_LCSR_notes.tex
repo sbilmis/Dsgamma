@@ -1014,21 +1014,47 @@ to the known axial normalization
   {\cal F}_1^{x\gamma}=2v(-{\cal S}-{\cal T}_3+{\cal T}_2).
 \end{equation}
 With the heavy-line residue condition and physical $p\cdot q$ in the E1
-invariant, the matched integral is
+invariant, the matched ${\cal S},{\cal T}_2,{\cal T}_3$ integral is
 \begin{equation}
   \int{\cal F}_{1,B}^{x\gamma}[{\cal S},{\cal T}_2,{\cal T}_3]
   =
   +2.5818\times 10^{-1}.
 \end{equation}
-Together with the sigma-like part this gives
+The tensor-current derivative reduction also produces a ${\cal T}_4$ residue
+even though the axial E1 kernel has $A_{{\cal T}_4}^{x\gamma}=0$.  This is not
+an obstacle: its normalization can be fixed directly relative to the axial
+${\cal T}_2$ unit.  On the double-pole residue,
+\begin{equation}
+  \frac{
+    B_{{\cal T}_4}^{x\gamma}
+  }{
+    [m_Q/(m_Q+m_s)]\,A_{{\cal T}_2}^{x\gamma}
+  }
+  =
+  -\frac{(1-a)p\cdot q}{m_Q^2}.
+\end{equation}
+This gives the tensor-only contribution
+\begin{equation}
+  \int{\cal F}_{1,B}^{x\gamma}[{\cal T}_4]
+  =
+  -4.2136\times 10^{-2},
+\end{equation}
+and therefore
+\begin{equation}
+  \int{\cal F}_{1,B}^{x\gamma}
+  =
+  +2.1605\times 10^{-1}.
+\end{equation}
+Together with the sigma-like part this gives the full matched tensor
+three-particle integral
 \begin{equation}
   \int\left(
     {\cal F}_{1,B}^{\sigma}
     +
-    {\cal F}_{1,B}^{x\gamma}[{\cal S},{\cal T}_2,{\cal T}_3]
+    {\cal F}_{1,B}^{x\gamma}
   \right)
   =
-  +1.0193\times 10^{-1}.
+  +5.9796\times 10^{-2}.
 \end{equation}
 For comparison, the axial total is
 $\int{\cal F}_1=+7.0330\times 10^{-2}$.  A diagnostic calculation that instead
@@ -1036,40 +1062,81 @@ inserts the physical hadron value $p^2=m_{D_s}^2$ directly into the OPE
 residue ratios gives a much larger integral, $+1.5072$, so we do not use it as
 the working tensor estimate.
 
-There remains one important caveat.  The tensor-current derivative reduction
-produces a ${\cal T}_4$ residue even though the axial E1 kernel has
-$A_{{\cal T}_4}^{x\gamma}=0$.  The dimensionless diagnostic shape integral for
-this tensor-only term is
-\begin{equation}
-  \int{\cal T}_4^{\rm diagnostic}
-  =
-  -4.2136\times 10^{-2},
-\end{equation}
-but this is not yet a properly normalized sum-rule contribution.  Therefore
-the best current Stage 2 tensor estimate includes the sigma-like part plus the
-matched ${\cal S},{\cal T}_2,{\cal T}_3$ $x\gamma$ part, while the
-${\cal T}_4$ tensor-only residue remains the last analytic item.
-
 Numerically, for the central decay-constant normalization
-$f_B=f_Tm_{D_{s1}}/(m_c+m_s)$, the partial matched Stage 2 tensor-current
-result gives
+$f_B=f_Tm_{D_{s1}}/(m_c+m_s)$, the full matched Stage 2 tensor-current result
+gives
 \begin{align}
   \Delta G_B^{3p}
   &=
-  +0.00076\text{ to }+0.00132\ \mathrm{GeV}^{-1},\\
+  +0.00044\text{ to }+0.00078\ \mathrm{GeV}^{-1},\\
   G_B^{\rm Stage\ 2}
   &=
-  -0.2818\text{ to }-0.2433\ \mathrm{GeV}^{-1}.
+  -0.2821\text{ to }-0.2436\ \mathrm{GeV}^{-1}.
 \end{align}
 At $\theta=35.3^\circ$ this corresponds to
 \begin{align}
   \Gamma[D_{s1}(2460)\to D_s\gamma]
   &=
-  30.5\text{ to }44.5\ \mathrm{keV},\\
+  30.6\text{ to }44.5\ \mathrm{keV},\\
   \Gamma[D_{s1}(2536)\to D_s\gamma]
   &=
-  4.0\text{ to }8.1\ \mathrm{keV},
+  4.0\text{ to }8.1\ \mathrm{keV}.
 \end{align}
-before adding the unresolved ${\cal T}_4$ piece.
+The final matched result is close to the older full-ratio diagnostic, but the
+derivation is now explicit about which pieces come from the
+$\sigma_{\alpha\beta}$ part, which come from
+$x_\alpha G^{\alpha\beta}\gamma_\beta$, and how the tensor-only
+${\cal T}_4$ term is normalized.
+
+\section{Final Stage 2 Uncertainty Scan}
+
+The script
+\begin{center}
+  \texttt{scripts/final\_stage2\_uncertainty\_scan.py}
+\end{center}
+performs a first independent-input uncertainty scan around the completed
+matched Stage 2 baseline.  Each random point samples the Borel parameter
+$M^2\in[3,6]~\mathrm{GeV}^2$, the continuum threshold
+$\sqrt{s_0}\in[2.50,2.60]~\mathrm{GeV}$, and the numerical inputs listed in
+\texttt{inputs\_table.csv}.  The tensor-current decay constant is converted as
+\begin{equation}
+  f_B=f_T\frac{m_{D_{s1}}}{m_c+m_s}.
+\end{equation}
+The scan is not yet a correlated global error analysis; it is a transparent
+first error budget for the present sum rule.
+
+For fixed $\theta=35.3^\circ$, using 400 random points, the scan gives
+\begin{align}
+  G[D_{s1}(2460)\to D_s\gamma]
+  &=
+  -0.427^{+0.065}_{-0.063}\ \mathrm{GeV}^{-1},\\
+  G[D_{s1}(2536)\to D_s\gamma]
+  &=
+  -0.140^{+0.045}_{-0.053}\ \mathrm{GeV}^{-1},
+\end{align}
+where the uncertainty indicates the 16--84 percentile interval.  The
+corresponding width estimates are
+\begin{align}
+  \Gamma[D_{s1}(2460)\to D_s\gamma]
+  &=
+  38.3^{+12.3}_{-10.7}\ \mathrm{keV},\\
+  \Gamma[D_{s1}(2536)\to D_s\gamma]
+  &=
+  6.1^{+5.5}_{-3.3}\ \mathrm{keV}.
+\end{align}
+If instead the mixing angle is sampled uniformly over
+$25^\circ\le\theta\le45^\circ$, the same scan gives
+\begin{align}
+  \Gamma[D_{s1}(2460)\to D_s\gamma]
+  &=
+  34.6^{+12.8}_{-8.7}\ \mathrm{keV},\\
+  \Gamma[D_{s1}(2536)\to D_s\gamma]
+  &=
+  4.9^{+7.1}_{-3.6}\ \mathrm{keV}.
+\end{align}
+The full scan table is written to
+\begin{center}
+  \texttt{outputs/final\_stage2\_uncertainty\_scan.csv}.
+\end{center}
 
 \end{document}

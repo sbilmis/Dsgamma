@@ -1,7 +1,8 @@
 Partial tensor xgamma matched integral
 =======================================
 Matched structures: S, T2, T3.
-Unresolved structure: T4 has A_T4 = 0 but B_T4 != 0.
+Tensor-only structure: T4 has A_T4 = 0 but B_T4 != 0.
+T4 is normalized relative to the axial T2 unit by its double-pole residue.
 Axial xgamma calibration integral = +2.2657985002e-01
   domain 1 = -8.0460074992e-02
   domain 2 = +3.0703992501e-01
@@ -16,9 +17,10 @@ Kinematics option: hadron_p2_physical_pq
   matched S,T2,T3 integral = +1.5072443301e+00
     domain 1 = -4.7971428307e-01
     domain 2 = +1.9869586131e+00
-  diagnostic T4 shape integral = -4.2135643242e-02
+  tensor-only T4 integral = -4.2135643242e-02
     domain 1 = +1.0533910810e-02
     domain 2 = -5.2669554052e-02
+  full tensor xgamma integral = +1.4651086868e+00
 
 Kinematics option: heavy_residue_p2_physical_pq
   p2 = +5.25530736e-01 GeV^2
@@ -30,6 +32,7 @@ Kinematics option: heavy_residue_p2_physical_pq
   matched S,T2,T3 integral = +2.5818158245e-01
     domain 1 = -9.2047376884e-02
     domain 2 = +3.5022895933e-01
-  diagnostic T4 shape integral = -4.2135643242e-02
+  tensor-only T4 integral = -4.2135643242e-02
     domain 1 = +1.0533910810e-02
     domain 2 = -5.2669554052e-02
+  full tensor xgamma integral = +2.1604593921e-01

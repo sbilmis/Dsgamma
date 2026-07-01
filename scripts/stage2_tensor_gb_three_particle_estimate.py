@@ -11,18 +11,18 @@ for the local S, T1 and T2 structures after the Borel saddle k.q = p.q.
 This script reports two versions:
   - sigma-part matched: applies the trace ratio only to the sigma_ab part of
     S_Q^G, whose local and explicit-x kernels have been checked;
-  - sigma plus matched xgamma: adds the derivative-residue matched S,T2,T3
-    part of x_alpha G^{alpha beta} gamma_beta, using the heavy-line double-pole
-    residue condition;
+  - full matched xgamma: adds the derivative-residue matched S,T2,T3 part of
+    x_alpha G^{alpha beta} gamma_beta plus the tensor-only T4 residue,
+    normalized relative to the axial T2 unit;
   - full-ratio diagnostic: the older estimate that multiplies the full axial F1
     correction by m_c/(m_c+m_s).
 
 Important limitation:
   The sigma_{ab} part of S_Q^G has now been checked also for the explicit
   x-dependent T3/T4 structures.  The separate x_alpha G^{alpha beta} gamma_beta
-  term has been derivative-reduced and the S,T2,T3 pieces are now matched to
-  the axial normalization.  The T4 tensor-only residue has no axial partner in
-  the E1 projection, so the complete Stage-2 tensor result is still not final.
+  term has been derivative-reduced.  The S,T2,T3 pieces are matched to the
+  axial normalization, and the T4 tensor-only residue is normalized relative to
+  the axial T2 unit using its double-pole residue.
 """
 
 from __future__ import annotations
@@ -50,7 +50,7 @@ from step11_tensor_xgamma_ratio_integral import (
     integrate_xgamma,
     kinematics_options,
     tensor_xgamma_matched_piece,
-    t4_residue_indicator,
+    t4_tensor_only_piece,
 )
 
 
@@ -90,13 +90,14 @@ def main():
         ),
         u0=0.5,
     )
-    f1_t4_diagnostic, _, _ = integrate_xgamma(
-        lambda aq, aqb, v: t4_residue_indicator(
+    f1_t4_tensor_only, _, _ = integrate_xgamma(
+        lambda aq, aqb, v: t4_tensor_only_piece(
             aq, aqb, v, p2_residue, pq_residue, inputs["mc"]
         ),
         u0=0.5,
     )
-    f1_sigma_plus_xgamma_matched = f1_sigma + f1_xgamma_matched
+    f1_xgamma_full_matched = f1_xgamma_matched + f1_t4_tensor_only
+    f1_stage2_full_matched = f1_sigma + f1_xgamma_full_matched
     fT = 0.256
     fB_options = {
         "fB_equal_fT_diagnostic": fT,
@@ -122,25 +123,22 @@ def main():
                 GB_3p_xgamma_matched = gb_three_particle_from_integral(
                     axial2, inputs, fB, f1_xgamma_matched
                 )
-                GB_3p_sigma_plus_xgamma_matched = gb_three_particle_from_integral(
-                    axial2, inputs, fB, f1_sigma_plus_xgamma_matched
+                GB_3p_t4_tensor_only = gb_three_particle_from_integral(
+                    axial2, inputs, fB, f1_t4_tensor_only
+                )
+                GB_3p_full_matched = gb_three_particle_from_integral(
+                    axial2, inputs, fB, f1_stage2_full_matched
                 )
                 GB_3p_full_ratio = gb_three_particle_from_integral(axial2, inputs, fB, f1_total)
 
                 GB_sigma_matched = GB_hard + GB_soft2p + GB_3p_sigma
-                GB_sigma_plus_xgamma = (
-                    GB_hard + GB_soft2p + GB_3p_sigma_plus_xgamma_matched
-                )
+                GB_full_matched = GB_hard + GB_soft2p + GB_3p_full_matched
                 GB_full_ratio = GB_hard + GB_soft2p + GB_3p_full_ratio
 
                 G2460_sigma = math.sin(theta) * GA2 + math.cos(theta) * GB_sigma_matched
                 G2536_sigma = math.cos(theta) * GA2 - math.sin(theta) * GB_sigma_matched
-                G2460_sigma_plus_xgamma = (
-                    math.sin(theta) * GA2 + math.cos(theta) * GB_sigma_plus_xgamma
-                )
-                G2536_sigma_plus_xgamma = (
-                    math.cos(theta) * GA2 - math.sin(theta) * GB_sigma_plus_xgamma
-                )
+                G2460_full_matched = math.sin(theta) * GA2 + math.cos(theta) * GB_full_matched
+                G2536_full_matched = math.cos(theta) * GA2 - math.sin(theta) * GB_full_matched
                 G2460_full = math.sin(theta) * GA2 + math.cos(theta) * GB_full_ratio
                 G2536_full = math.cos(theta) * GA2 - math.sin(theta) * GB_full_ratio
                 rows.append(
@@ -155,16 +153,17 @@ def main():
                         "GB_3p_sigma_matched": GB_3p_sigma,
                         "GB_3p_xgamma_unmatched_axial_ratio": GB_3p_xgamma_unmatched,
                         "GB_3p_xgamma_matched_S_T2_T3": GB_3p_xgamma_matched,
-                        "GB_3p_sigma_plus_xgamma_matched_S_T2_T3": GB_3p_sigma_plus_xgamma_matched,
+                        "GB_3p_xgamma_T4_tensor_only": GB_3p_t4_tensor_only,
+                        "GB_3p_full_matched": GB_3p_full_matched,
                         "GB_3p_full_ratio_diagnostic": GB_3p_full_ratio,
                         "GB_stage2_sigma_matched": GB_sigma_matched,
-                        "GB_stage2_sigma_plus_xgamma_matched_S_T2_T3": GB_sigma_plus_xgamma,
+                        "GB_stage2_full_matched": GB_full_matched,
                         "GB_stage2_full_ratio_diagnostic": GB_full_ratio,
                         "hard_qcd_side": hard_qcd,
                         "G2460_sigma_matched": G2460_sigma,
                         "G2536_sigma_matched": G2536_sigma,
-                        "G2460_sigma_plus_xgamma_matched_S_T2_T3": G2460_sigma_plus_xgamma,
-                        "G2536_sigma_plus_xgamma_matched_S_T2_T3": G2536_sigma_plus_xgamma,
+                        "G2460_full_matched": G2460_full_matched,
+                        "G2536_full_matched": G2536_full_matched,
                         "G2460_full_ratio_diagnostic": G2460_full,
                         "G2536_full_ratio_diagnostic": G2536_full,
                         "Gamma2460_keV_sigma_matched": width_keV(
@@ -173,11 +172,11 @@ def main():
                         "Gamma2536_keV_sigma_matched": width_keV(
                             2.53511, inputs["m_ds"], G2536_sigma
                         ),
-                        "Gamma2460_keV_sigma_plus_xgamma_matched_S_T2_T3": width_keV(
-                            inputs["m_ds1"], inputs["m_ds"], G2460_sigma_plus_xgamma
+                        "Gamma2460_keV_full_matched": width_keV(
+                            inputs["m_ds1"], inputs["m_ds"], G2460_full_matched
                         ),
-                        "Gamma2536_keV_sigma_plus_xgamma_matched_S_T2_T3": width_keV(
-                            2.53511, inputs["m_ds"], G2536_sigma_plus_xgamma
+                        "Gamma2536_keV_full_matched": width_keV(
+                            2.53511, inputs["m_ds"], G2536_full_matched
                         ),
                         "Gamma2460_keV_full_ratio_diagnostic": width_keV(
                             inputs["m_ds1"], inputs["m_ds"], G2460_full
@@ -203,28 +202,25 @@ def main():
         f"F1 sigma-like integral = {f1_sigma:+.6e}",
         f"F1 xgamma-like axial calibration integral = {f1_xgamma:+.6e}",
         f"F1 xgamma matched S,T2,T3 integral = {f1_xgamma_matched:+.6e}",
-        f"F1 sigma + xgamma matched S,T2,T3 integral = {f1_sigma_plus_xgamma_matched:+.6e}",
-        f"T4 unresolved diagnostic shape integral = {f1_t4_diagnostic:+.6e}",
+        f"F1 xgamma T4 tensor-only integral = {f1_t4_tensor_only:+.6e}",
+        f"F1 xgamma full matched integral = {f1_xgamma_full_matched:+.6e}",
+        f"F1 Stage-2 full matched integral = {f1_stage2_full_matched:+.6e}",
         f"F1 total integral = {f1_total:+.6e}",
         "The xgamma S,T2,T3 pieces use the heavy-line double-pole residue condition.",
-        "The T4 tensor-only residue has no axial partner and remains unresolved.",
+        "The T4 tensor-only residue is normalized relative to the axial T2 unit.",
     ]
     for scheme in fB_options:
         subset = [r for r in rows if r["fB_scheme"] == scheme]
         gb3_sigma = np.array([r["GB_3p_sigma_matched"] for r in subset])
-        gb3_sx = np.array([r["GB_3p_sigma_plus_xgamma_matched_S_T2_T3"] for r in subset])
+        gb3_matched = np.array([r["GB_3p_full_matched"] for r in subset])
         gb3_full = np.array([r["GB_3p_full_ratio_diagnostic"] for r in subset])
         gb_sigma = np.array([r["GB_stage2_sigma_matched"] for r in subset])
-        gb_sx = np.array([r["GB_stage2_sigma_plus_xgamma_matched_S_T2_T3"] for r in subset])
+        gb_matched = np.array([r["GB_stage2_full_matched"] for r in subset])
         gb_full = np.array([r["GB_stage2_full_ratio_diagnostic"] for r in subset])
         w2460_sigma = np.array([r["Gamma2460_keV_sigma_matched"] for r in subset])
         w2536_sigma = np.array([r["Gamma2536_keV_sigma_matched"] for r in subset])
-        w2460_sx = np.array(
-            [r["Gamma2460_keV_sigma_plus_xgamma_matched_S_T2_T3"] for r in subset]
-        )
-        w2536_sx = np.array(
-            [r["Gamma2536_keV_sigma_plus_xgamma_matched_S_T2_T3"] for r in subset]
-        )
+        w2460_matched = np.array([r["Gamma2460_keV_full_matched"] for r in subset])
+        w2536_matched = np.array([r["Gamma2536_keV_full_matched"] for r in subset])
         w2460_full = np.array([r["Gamma2460_keV_full_ratio_diagnostic"] for r in subset])
         w2536_full = np.array([r["Gamma2536_keV_full_ratio_diagnostic"] for r in subset])
         lines.append(
@@ -234,10 +230,10 @@ def main():
             f"Gamma2536 {w2536_sigma.min():.2f} to {w2536_sigma.max():.2f} keV"
         )
         lines.append(
-            f"{scheme}, sigma + matched xgamma S,T2,T3: GB_3p {gb3_sx.min():+.5f} to {gb3_sx.max():+.5f}; "
-            f"GB {gb_sx.min():+.4f} to {gb_sx.max():+.4f}; "
-            f"Gamma2460 {w2460_sx.min():.2f} to {w2460_sx.max():.2f} keV; "
-            f"Gamma2536 {w2536_sx.min():.2f} to {w2536_sx.max():.2f} keV"
+            f"{scheme}, full matched Stage-2: GB_3p {gb3_matched.min():+.5f} to {gb3_matched.max():+.5f}; "
+            f"GB {gb_matched.min():+.4f} to {gb_matched.max():+.4f}; "
+            f"Gamma2460 {w2460_matched.min():.2f} to {w2460_matched.max():.2f} keV; "
+            f"Gamma2536 {w2536_matched.min():.2f} to {w2536_matched.max():.2f} keV"
         )
         lines.append(
             f"{scheme}, full-ratio diagnostic: GB_3p {gb3_full.min():+.5f} to {gb3_full.max():+.5f}; "
