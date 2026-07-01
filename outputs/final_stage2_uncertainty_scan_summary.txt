@@ -1,24 +1,24 @@
 Final matched Stage-2 uncertainty scan
 ======================================
-400 random points per ensemble.
+500 random points per ensemble.
 Borel window: M^2 in [3,6] GeV^2.
 Continuum window: sqrt(s0) in [2.50,2.60] GeV.
 Input errors sampled independently from inputs_table.csv.
 
 Ensemble: theta_fixed
-  G2460: median -0.4271; 68% [-0.4899, -0.3616]; min/max [-0.61, -0.1763]
-  G2536: median -0.1403; 68% [-0.193, -0.09577]; min/max [-0.3425, -0.002905]
-  Gamma2460_keV: median +38.34; 68% [+27.61, +50.67]; min/max [+6.519, +78.33]
-  Gamma2536_keV: median +6.111; 68% [+2.846, +11.57]; min/max [+0.002619, +36.4]
-  GA: median -0.3625; 68% [-0.4434, -0.2937]; min/max [-0.6187, -0.1042]
-  GB: median -0.2648; 68% [-0.2992, -0.2311]; min/max [-0.393, -0.1422]
+  G2460: median -0.4244; 68% [-0.491, -0.3598]; min/max [-0.6182, -0.1763]
+  G2536: median -0.1399; 68% [-0.1906, -0.09281]; min/max [-0.3425, -0.002905]
+  Gamma2460_keV: median +37.93; 68% [+27.28, +50.8]; min/max [+6.519, +80.4]
+  Gamma2536_keV: median +6.075; 68% [+2.672, +11.27]; min/max [+0.002619, +36.4]
+  GA: median -0.3602; 68% [-0.4413, -0.2905]; min/max [-0.6239, -0.1042]
+  GB: median -0.2634; 68% [-0.2992, -0.2304]; min/max [-0.393, -0.1422]
 
 Ensemble: theta_scan_25_45
-  G2460: median -0.4057; 68% [-0.4756, -0.3511]; min/max [-0.6239, -0.2093]
-  G2536: median -0.126; 68% [-0.1971, -0.06421]; min/max [-0.3688, +0.004051]
-  Gamma2460_keV: median +34.63; 68% [+25.97, +47.39]; min/max [+9.254, +81.85]
-  Gamma2536_keV: median +4.926; 68% [+1.28, +12.05]; min/max [+0.0005173, +42.17]
-  GA: median -0.3429; 68% [-0.4177, -0.2775]; min/max [-0.6358, -0.1322]
-  GB: median -0.2611; 68% [-0.2932, -0.2272]; min/max [-0.376, -0.1623]
+  G2460: median -0.4188; 68% [-0.4853, -0.3526]; min/max [-0.7039, -0.2111]
+  G2536: median -0.1388; 68% [-0.2094, -0.07857]; min/max [-0.3465, -0.003342]
+  Gamma2460_keV: median +36.9; 68% [+26.1, +49.52]; min/max [+9.388, +103.9]
+  Gamma2536_keV: median +5.976; 68% [+1.916, +13.61]; min/max [+0.003467, +37.25]
+  GA: median -0.3573; 68% [-0.4374, -0.2893]; min/max [-0.6851, -0.1456]
+  GB: median -0.2675; 68% [-0.2992, -0.229]; min/max [-0.3835, -0.1547]
 
 Wrote scan grid to /Users/sbilmis/Dsgamma/outputs/final_stage2_uncertainty_scan.csv

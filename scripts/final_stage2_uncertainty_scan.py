@@ -180,8 +180,9 @@ def main():
     f1_basis = precompute_f1_basis()
 
     rows = []
+    n_points = 500
     for ensemble in ("theta_fixed", "theta_scan_25_45"):
-        for _ in range(400):
+        for _ in range(n_points):
             rows.append(evaluate_point(rng, ensemble, f1_axial_total, f1_basis))
 
     csv_path = OUT / "final_stage2_uncertainty_scan.csv"
@@ -193,7 +194,7 @@ def main():
     lines = [
         "Final matched Stage-2 uncertainty scan",
         "======================================",
-        "400 random points per ensemble.",
+        f"{n_points} random points per ensemble.",
         "Borel window: M^2 in [3,6] GeV^2.",
         "Continuum window: sqrt(s0) in [2.50,2.60] GeV.",
         "Input errors sampled independently from inputs_table.csv.",

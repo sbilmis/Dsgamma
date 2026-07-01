@@ -1126,41 +1126,79 @@ $\sqrt{s_0}\in[2.50,2.60]~\mathrm{GeV}$, and the numerical inputs listed in
   f_B=f_T\frac{m_{D_{s1}}}{m_c+m_s}.
 \end{equation}
 The scan is not yet a correlated global error analysis; it is a transparent
-first error budget for the present sum rule.
+Monte Carlo error budget for the present sum rule.  It is the preferred band to
+quote because it allows all inputs, $M^2$, and $s_0$ to fluctuate together.
 
-For fixed $\theta=35.3^\circ$, using 400 random points, the scan gives
+For fixed $\theta=35.3^\circ$, using 500 random points, the scan gives
 \begin{align}
   G[D_{s1}(2460)\to D_s\gamma]
   &=
-  -0.427^{+0.065}_{-0.063}\ \mathrm{GeV}^{-1},\\
+  -0.424^{+0.065}_{-0.067}\ \mathrm{GeV}^{-1},\\
   G[D_{s1}(2536)\to D_s\gamma]
   &=
-  -0.140^{+0.045}_{-0.053}\ \mathrm{GeV}^{-1},
+  -0.140^{+0.047}_{-0.051}\ \mathrm{GeV}^{-1},
 \end{align}
 where the uncertainty indicates the 16--84 percentile interval.  The
 corresponding width estimates are
 \begin{align}
   \Gamma[D_{s1}(2460)\to D_s\gamma]
   &=
-  38.3^{+12.3}_{-10.7}\ \mathrm{keV},\\
+  37.9^{+12.9}_{-10.7}\ \mathrm{keV},\\
   \Gamma[D_{s1}(2536)\to D_s\gamma]
   &=
-  6.1^{+5.5}_{-3.3}\ \mathrm{keV}.
+  6.1^{+5.2}_{-3.4}\ \mathrm{keV}.
 \end{align}
 If instead the mixing angle is sampled uniformly over
 $25^\circ\le\theta\le45^\circ$, the same scan gives
 \begin{align}
   \Gamma[D_{s1}(2460)\to D_s\gamma]
   &=
-  34.6^{+12.8}_{-8.7}\ \mathrm{keV},\\
+  36.9^{+12.6}_{-10.8}\ \mathrm{keV},\\
   \Gamma[D_{s1}(2536)\to D_s\gamma]
   &=
-  4.9^{+7.1}_{-3.6}\ \mathrm{keV}.
+  6.0^{+7.6}_{-4.1}\ \mathrm{keV}.
 \end{align}
 The full scan table is written to
 \begin{center}
   \texttt{outputs/final\_stage2\_uncertainty\_scan.csv}.
 \end{center}
+
+The diagnostic script
+\begin{center}
+  \texttt{scripts/uncertainty\_budget\_one\_at\_time.py}
+\end{center}
+then varies one input group at a time around the central point.  This is not
+the band to quote as the final uncertainty; it explains which input groups
+drive the Monte Carlo spread.
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{lcc}
+    \toprule
+    Varied group & $\Gamma_{2460}$ (keV) & $\Gamma_{2536}$ (keV)\\
+    \midrule
+    $M^2,\sqrt{s_0}$ & $37.4\,[33.0,41.1]$ & $5.95\,[5.05,7.00]$\\
+    $\theta$ & $37.3\,[33.7,39.6]$ & $5.83\,[2.40,11.2]$\\
+    quark and hadron masses & $37.1\,[35.1,39.1]$ & $6.01\,[4.92,7.27]$\\
+    decay constants & $37.7\,[32.9,42.4]$ & $5.91\,[3.48,9.42]$\\
+    condensates and $\chi$ & $38.7\,[29.2,48.6]$ & $6.40\,[4.00,9.11]$\\
+    photon DA shape & $37.2\,[37.2,37.2]$ & $6.04\,[6.04,6.04]$\\
+    all inputs, fixed $\theta$ & $37.4\,[26.8,50.2]$ & $5.50\,[2.73,11.2]$\\
+    all inputs and $\theta$ & $36.1\,[25.7,48.3]$ & $6.28\,[1.78,14.9]$\\
+    \bottomrule
+  \end{tabular}
+  \caption{One-at-a-time 16--84 percentile uncertainty budget with 500 random
+  points per group.  The photon-shape row is flat in the present matched
+  reduction; it should be read as negligible sensitivity in this implementation,
+  not as a general statement about photon DAs.}
+  \label{tab:one-at-a-time-budget}
+\end{table}
+
+The main lesson from Table~\ref{tab:one-at-a-time-budget} is that the
+$D_{s1}(2460)$ width is most sensitive to condensate/$\chi$ inputs and decay
+constants, while the $D_{s1}(2536)$ width is particularly sensitive to the
+mixing angle because the physical amplitude contains a cancellation between
+the axial and tensor-current components.
 
 \section{Central Borel Stability}
 
@@ -1376,11 +1414,9 @@ following items are useful to add or verify.
   Levi-Civita convention, and the tensor-current normalization
   $f_B=f_Tm_{D_{s1}}/(m_c+m_s)$ should be stated explicitly because they move
   signs and absolute normalizations.
-  \item A clearer uncertainty budget.  The current global scan varies
-  $M^2$, $s_0$, $\chi$, decay constants, quark masses, condensates, and the
-  mixing angle in the broad scan.  A one-at-a-time error table would show that
-  the large uncertainty is driven mainly by mixing-angle and threshold
-  sensitivity, not by missing ordinary condensate terms in the propagator.
+  \item A compact uncertainty table for the paper.  The Monte Carlo and
+  one-at-a-time outputs are now available, but the manuscript should present
+  only the main quoted band and the dominant sources, not every diagnostic row.
   \item A physical light-quark counterpart requires new hadronic input tables.
   The OPE-level light-$u$ and light-$d$ diagnostics above are useful algebra
   checks, but physical $D_1\to D\gamma$ or $B_1\to B\gamma$ predictions need

@@ -1,0 +1,15 @@
+One-at-a-time Stage-2 uncertainty budget
+========================================
+500 random points per group.
+Central point unless the group name is varied.
+
+borel_threshold: Gamma2460 37.4 [33, 41.1] keV; Gamma2536 5.95 [5.05, 7] keV
+theta: Gamma2460 37.3 [33.7, 39.6] keV; Gamma2536 5.83 [2.4, 11.2] keV
+quark_and_hadron_masses: Gamma2460 37.1 [35.1, 39.1] keV; Gamma2536 6.01 [4.92, 7.27] keV
+decay_constants: Gamma2460 37.7 [32.9, 42.4] keV; Gamma2536 5.91 [3.48, 9.42] keV
+condensates_and_chi: Gamma2460 38.7 [29.2, 48.6] keV; Gamma2536 6.4 [4, 9.11] keV
+photon_DA_shape: Gamma2460 37.2 [37.2, 37.2] keV; Gamma2536 6.04 [6.04, 6.04] keV
+all_inputs_fixed_theta: Gamma2460 37.4 [26.8, 50.2] keV; Gamma2536 5.5 [2.73, 11.2] keV
+all_inputs_and_theta: Gamma2460 36.1 [25.7, 48.3] keV; Gamma2536 6.28 [1.78, 14.9] keV
+
+Wrote scan rows to /Users/sbilmis/Dsgamma/outputs/uncertainty_budget_one_at_time.csv
