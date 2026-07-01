@@ -1,0 +1,18 @@
+Axial F1 split into sigma-like and xgamma-like pieces
+====================================================
+F1 total              = +7.0329850016e-02
+  domain 1            = -1.2733507499e-01
+  domain 2            = +1.9766492501e-01
+F1 sigma-like         = -1.5625000000e-01
+  domain 1            = -4.6875000000e-02
+  domain 2            = -1.0937500000e-01
+F1 xgamma-like        = +2.2657985002e-01
+  domain 1            = -8.0460074992e-02
+  domain 2            = +3.0703992501e-01
+closure residual      = +0.000e+00
+
+Interpretation:
+  The xgamma-like piece is the axial calibration target for the
+  derivative-reduced x_alpha G^{alpha beta} gamma_beta kernels.
+  The tensor-current version must be matched to this normalization
+  before it can be added numerically.
