@@ -1,0 +1,6 @@
+method,low,central,high,kind
+This work,27.6,38.3,50.7,band
+Colangelo LCSR,19.0,24.0,29.0,band
+VMD,3.3,3.3,3.3,point
+QM [15],6.2,6.2,6.2,point
+QM [11],5.08,5.08,5.08,point
