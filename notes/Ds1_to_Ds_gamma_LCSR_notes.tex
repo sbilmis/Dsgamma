@@ -1249,6 +1249,71 @@ The same ranking is visualized in Fig.~\ref{fig:uncertainty-budget-ranked}.
   \label{fig:uncertainty-budget-ranked}
 \end{figure}
 
+\subsection{Alternative lattice normalization of the leading-twist photon DA}
+
+The dominant uncertainty in the legacy scan is the combination
+$\chi\langle\bar s s\rangle$ entering the leading-twist photon DA.  The
+Rohrwild/BBK-style baseline treats $\chi$ and $\langle\bar s s\rangle$ as
+separate inputs.  A recent lattice calculation by Bacchio, Becirevic,
+Gagliardi, and Sanfilippo gives the strange-quark normalization directly,
+\begin{equation}
+  f_{\gamma,s}^{\perp}(2~\GeV)=-51.0(1.8)~\mathrm{MeV},
+\end{equation}
+where
+\begin{equation}
+  f_{\gamma,s}^{\perp}(\mu)=
+  \chi_s(\mu)\langle\bar s s\rangle(\mu).
+\end{equation}
+To compare with the working $\mu=1~\GeV$ setup, the script
+\begin{center}
+  \texttt{scripts/lattice\_photon\_normalization\_comparison.py}
+\end{center}
+uses a leading-order tensor-current running factor
+$f_{\gamma,s}^{\perp}(1~\GeV)/f_{\gamma,s}^{\perp}(2~\GeV)=1.08$, giving
+\begin{equation}
+  f_{\gamma,s}^{\perp}(1~\GeV)=-55.1(1.9)~\mathrm{MeV}.
+\end{equation}
+Only the leading-twist normalization is replaced in this comparison; the
+higher-twist and three-particle terms that contain $\langle\bar s s\rangle$
+remain explicit.  This makes the comparison conservative and easy to audit.
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{lcc}
+    \toprule
+    Input scenario & $\Gamma_{2460}$ (keV) & $\Gamma_{2536}$ (keV)\\
+    \midrule
+    Legacy $\chi\langle\bar s s\rangle$, fixed $\theta$
+      & $36.7\,[26.8,50.2]$ & $5.60\,[2.56,11.0]$\\
+    Lattice $f_{\gamma,s}^{\perp}$, fixed $\theta$
+      & $14.4\,[11.4,18.8]$ & $0.68\,[0.12,1.88]$\\
+    Legacy $\chi\langle\bar s s\rangle$, $\theta$ scan
+      & $36.3\,[24.8,50.2]$ & $5.74\,[1.86,12.9]$\\
+    Lattice $f_{\gamma,s}^{\perp}$, $\theta$ scan
+      & $14.6\,[11.3,18.6]$ & $0.64\,[0.06,2.50]$\\
+    \bottomrule
+  \end{tabular}
+  \caption{Comparison of the legacy photon-DA normalization with the
+  lattice-normalized leading-twist photon DA.  The intervals are 16--84
+  percentiles from 500 random points per ensemble.}
+  \label{tab:lattice-fperp-comparison}
+\end{table}
+
+The lattice-normalized scenario substantially reduces the uncertainty and also
+shifts the central widths downward.  This should be presented as an important
+alternative input scenario rather than folded silently into the legacy result,
+because it changes the central leading-twist normalization.  The corresponding
+histograms are shown in Fig.~\ref{fig:lattice-fperp-comparison}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/lattice_fperp_comparison_histograms.pdf}
+  \caption{Fixed-angle Monte Carlo comparison between the legacy
+  $\chi\langle\bar s s\rangle$ treatment and the lattice-normalized
+  $f_{\gamma,s}^{\perp}$ treatment.}
+  \label{fig:lattice-fperp-comparison}
+\end{figure}
+
 \section{Central Borel Stability}
 
 For the central input set and $\theta=35.3^\circ$, the script
