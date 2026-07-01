@@ -750,4 +750,66 @@ Stage 2 for the mixed physical amplitudes.  The remaining Stage 2 task is to
 derive the tensor-current analog of the three-particle photon DA contribution
 from the background-gluon insertion and project it onto the same E1 invariant.
 
+\section{First Tensor-Current Stage 2 Trace Pass}
+
+For the tensor-current three-particle term we first separated the local
+$\sigma_{\alpha\beta}$ part of the heavy-quark background-gluon propagator from
+the explicitly $x_\alpha\gamma_\beta$ part.  The script
+\begin{center}
+  \texttt{scripts/step5\_soft\_3p\_trace\_kernels.wl}
+\end{center}
+computes the E1-projected traces for the local piece against the
+${\cal S}$, $\tilde{\cal S}$, ${\cal T}_1$, and ${\cal T}_2$ Lorentz
+structures.  The nonzero local kernels are
+\begin{align}
+  K_A[{\cal S}]&=8\,\frac{k\cdot q}{p\cdot q},
+  &
+  K_B[{\cal S}]&=8\,\frac{m_Q}{m_Q+m_s},\\
+  K_A[{\cal T}_1]&=-32\ii\,\frac{k\cdot q}{p\cdot q},
+  &
+  K_B[{\cal T}_1]&=-32\ii\,\frac{m_Q}{m_Q+m_s},\\
+  K_A[{\cal T}_2]&=+32\ii\,\frac{k\cdot q}{p\cdot q},
+  &
+  K_B[{\cal T}_2]&=+32\ii\,\frac{m_Q}{m_Q+m_s}.
+\end{align}
+The $\tilde{\cal S}$ kernel vanishes for this local part.  After the
+three-particle light-cone Fourier integral and double Borel projection,
+$k\cdot q=p\cdot q$, so the local trace ratio is again
+\begin{equation}
+  \frac{K_B}{K_A}
+  =
+  \frac{m_Q}{m_Q+m_s}.
+\end{equation}
+This is the same ratio encountered in the two-particle tensor-DA family.
+
+Using this ratio as a first estimate for the tensor-current
+three-particle correction gives
+\begin{align}
+  \Delta G_B^{3p}
+  &\simeq +0.00094\text{ to }+0.00165\ \mathrm{GeV}^{-1},
+  &&(f_B=f_T\ \text{diagnostic}),\\
+  \Delta G_B^{3p}
+  &\simeq +0.00052\text{ to }+0.00091\ \mathrm{GeV}^{-1},
+  &&\left(f_B=f_T\frac{m_{D_{s1}}}{m_c+m_s}\ \text{central}\right).
+\end{align}
+The resulting Stage 2 mixed-width estimate at $\theta=35.3^\circ$ is
+\begin{align}
+  \Gamma[D_{s1}(2460)\to D_s\gamma]
+  &\simeq 61.9\text{ to }87.5\ \mathrm{keV},
+  &
+  \Gamma[D_{s1}(2536)\to D_s\gamma]
+  &\simeq 0.00\text{ to }0.29\ \mathrm{keV},
+  &&(f_B=f_T\ \text{diagnostic}),\\
+  \Gamma[D_{s1}(2460)\to D_s\gamma]
+  &\simeq 30.5\text{ to }44.5\ \mathrm{keV},
+  &
+  \Gamma[D_{s1}(2536)\to D_s\gamma]
+  &\simeq 4.0\text{ to }8.1\ \mathrm{keV},
+  &&\left(f_B=f_T\frac{m_{D_{s1}}}{m_c+m_s}\ \text{central}\right).
+\end{align}
+These numbers are very close to the Stage 1 tensor-current candidate because
+the three-particle correction is numerically small.  They should still be
+labeled as an estimate until the explicitly $x$-dependent ${\cal T}_3$,
+${\cal T}_4$, and $x_\alpha\gamma_\beta$ kernels are reduced for $J_B$.
+
 \end{document}

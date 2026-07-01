@@ -1,0 +1,7 @@
+Stage-2 tensor-current three-particle DA estimate
+=================================================
+Uses B/A trace ratio m_c/(m_c+m_s) for local S,T1,T2 kernels.
+x-dependent T3/T4 and x_alpha gamma_beta kernels remain to be derived.
+fB_equal_fT_diagnostic: GB_3p +0.00094 to +0.00165; GB_stage2 -0.5089 to -0.4394; Gamma2460 61.89 to 87.51 keV; Gamma2536 0.00 to 0.29 keV
+fB_converted_fT_M_over_msum_central: GB_3p +0.00052 to +0.00091; GB_stage2 -0.2820 to -0.2435; Gamma2460 30.54 to 44.49 keV; Gamma2536 3.95 to 8.11 keV
+Wrote grid to /Users/sbilmis/Dsgamma/outputs/stage2_tensor_gb_three_particle_estimate.csv
