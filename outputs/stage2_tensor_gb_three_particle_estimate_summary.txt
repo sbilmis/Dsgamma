@@ -4,11 +4,16 @@ Uses B/A trace ratio m_c/(m_c+m_s) for the sigma_ab part of S_Q^G.
 This includes local S,T1,T2 and explicit-x T3,T4 kernels.
 F1 sigma-like integral = -1.562500e-01
 F1 xgamma-like axial calibration integral = +2.265799e-01
+F1 xgamma matched S,T2,T3 integral = +2.581816e-01
+F1 sigma + xgamma matched S,T2,T3 integral = +1.019316e-01
+T4 unresolved diagnostic shape integral = -4.213564e-02
 F1 total integral = +7.032985e-02
-The separate x_alpha G^{alpha beta} gamma_beta term has double-pole derivative kernels.
-It remains to match those kernels to the axial F1 normalization and integrate them.
+The xgamma S,T2,T3 pieces use the heavy-line double-pole residue condition.
+The T4 tensor-only residue has no axial partner and remains unresolved.
 fB_equal_fT_diagnostic, sigma-matched only: GB_3p -0.00366 to -0.00210; GB -0.5120 to -0.4425; Gamma2460 62.89 to 88.18 keV; Gamma2536 0.00 to 0.26 keV
+fB_equal_fT_diagnostic, sigma + matched xgamma S,T2,T3: GB_3p +0.00137 to +0.00239; GB -0.5085 to -0.4390; Gamma2460 61.76 to 87.41 keV; Gamma2536 0.00 to 0.29 keV
 fB_equal_fT_diagnostic, full-ratio diagnostic: GB_3p +0.00094 to +0.00165; GB -0.5089 to -0.4394; Gamma2460 61.89 to 87.51 keV; Gamma2536 0.00 to 0.29 keV
 fB_converted_fT_M_over_msum_central, sigma-matched only: GB_3p -0.00203 to -0.00116; GB -0.2837 to -0.2452; Gamma2460 30.93 to 44.75 keV; Gamma2536 3.83 to 8.01 keV
+fB_converted_fT_M_over_msum_central, sigma + matched xgamma S,T2,T3: GB_3p +0.00076 to +0.00132; GB -0.2818 to -0.2433; Gamma2460 30.49 to 44.45 keV; Gamma2536 3.97 to 8.12 keV
 fB_converted_fT_M_over_msum_central, full-ratio diagnostic: GB_3p +0.00052 to +0.00091; GB -0.2820 to -0.2435; Gamma2460 30.54 to 44.49 keV; Gamma2536 3.95 to 8.11 keV
 Wrote grid to /Users/sbilmis/Dsgamma/outputs/stage2_tensor_gb_three_particle_estimate.csv

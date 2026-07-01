@@ -992,12 +992,84 @@ $m_Q/(m_Q+m_s)$ multiplication.  The ratios after derivative reduction are
   &=
   \frac{2m_Q^2-p^2-2a\,p\cdot q}{m_Q^2}.
 \end{align}
-All these reduced kernels carry the squared heavy-quark denominator, so they
-are double-pole-type contributions and should survive the double Borel
-projection.  Consequently the current Stage 2 tensor numerical result remains
-an estimate: the remaining task is not another Dirac trace, but matching these
-derivative-reduced kernels to the same normalization that produces the known
-axial ${\cal F}_1$ combination, and then integrating the resulting tensor
-combination over $(v,\alpha_g)$.
+All these reduced kernels carry the squared heavy-quark denominator.  For the
+double-pole residue we drop numerator terms proportional to
+$D=-m_Q^2+p^2+2a\,p\cdot q$, equivalently using
+$m_Q^2=p^2+2a\,p\cdot q$ in the residue.  In the three-particle integration
+domains,
+\begin{equation}
+  a=\alpha_{\bar q}+v\alpha_g=1-u_0,
+\end{equation}
+so for the symmetric Borel point $u_0=1/2$ this residue is evaluated at
+$a=1/2$.
+
+The script
+\begin{center}
+  \texttt{scripts/step11\_tensor\_xgamma\_ratio\_integral.py}
+\end{center}
+uses these residue ratios to match the ${\cal S}$, ${\cal T}_2$, and
+${\cal T}_3$ pieces of the tensor-current $x_\alpha\gamma_\beta$ contribution
+to the known axial normalization
+\begin{equation}
+  {\cal F}_1^{x\gamma}=2v(-{\cal S}-{\cal T}_3+{\cal T}_2).
+\end{equation}
+With the heavy-line residue condition and physical $p\cdot q$ in the E1
+invariant, the matched integral is
+\begin{equation}
+  \int{\cal F}_{1,B}^{x\gamma}[{\cal S},{\cal T}_2,{\cal T}_3]
+  =
+  +2.5818\times 10^{-1}.
+\end{equation}
+Together with the sigma-like part this gives
+\begin{equation}
+  \int\left(
+    {\cal F}_{1,B}^{\sigma}
+    +
+    {\cal F}_{1,B}^{x\gamma}[{\cal S},{\cal T}_2,{\cal T}_3]
+  \right)
+  =
+  +1.0193\times 10^{-1}.
+\end{equation}
+For comparison, the axial total is
+$\int{\cal F}_1=+7.0330\times 10^{-2}$.  A diagnostic calculation that instead
+inserts the physical hadron value $p^2=m_{D_s}^2$ directly into the OPE
+residue ratios gives a much larger integral, $+1.5072$, so we do not use it as
+the working tensor estimate.
+
+There remains one important caveat.  The tensor-current derivative reduction
+produces a ${\cal T}_4$ residue even though the axial E1 kernel has
+$A_{{\cal T}_4}^{x\gamma}=0$.  The dimensionless diagnostic shape integral for
+this tensor-only term is
+\begin{equation}
+  \int{\cal T}_4^{\rm diagnostic}
+  =
+  -4.2136\times 10^{-2},
+\end{equation}
+but this is not yet a properly normalized sum-rule contribution.  Therefore
+the best current Stage 2 tensor estimate includes the sigma-like part plus the
+matched ${\cal S},{\cal T}_2,{\cal T}_3$ $x\gamma$ part, while the
+${\cal T}_4$ tensor-only residue remains the last analytic item.
+
+Numerically, for the central decay-constant normalization
+$f_B=f_Tm_{D_{s1}}/(m_c+m_s)$, the partial matched Stage 2 tensor-current
+result gives
+\begin{align}
+  \Delta G_B^{3p}
+  &=
+  +0.00076\text{ to }+0.00132\ \mathrm{GeV}^{-1},\\
+  G_B^{\rm Stage\ 2}
+  &=
+  -0.2818\text{ to }-0.2433\ \mathrm{GeV}^{-1}.
+\end{align}
+At $\theta=35.3^\circ$ this corresponds to
+\begin{align}
+  \Gamma[D_{s1}(2460)\to D_s\gamma]
+  &=
+  30.5\text{ to }44.5\ \mathrm{keV},\\
+  \Gamma[D_{s1}(2536)\to D_s\gamma]
+  &=
+  4.0\text{ to }8.1\ \mathrm{keV},
+\end{align}
+before adding the unresolved ${\cal T}_4$ piece.
 
 \end{document}
