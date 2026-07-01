@@ -7,6 +7,7 @@
 \usepackage{amsmath,amssymb,mathtools}
 \usepackage{bm}
 \usepackage{booktabs}
+\usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{xcolor}
 
@@ -1138,5 +1139,48 @@ The full scan table is written to
 \begin{center}
   \texttt{outputs/final\_stage2\_uncertainty\_scan.csv}.
 \end{center}
+
+\section{Central Borel Stability}
+
+For the central input set and $\theta=35.3^\circ$, the script
+\begin{center}
+  \texttt{scripts/stage2\_stability\_plots.py}
+\end{center}
+produces the Borel-stability curves shown in Fig.~\ref{fig:stage2-stability}.
+The curves are smooth over $3\le M^2\le6~\mathrm{GeV}^2$.  At fixed
+$\sqrt{s_0}$, the dependence on $M^2$ is mild; changing $\sqrt{s_0}$ from
+$2.50$ to $2.60~\mathrm{GeV}$ shifts the normalization more visibly and should
+therefore remain part of the quoted systematic uncertainty.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/stage2_stability_central.pdf}
+  \caption{Central matched Stage 2 stability for
+  $\Dsone(2460)\to\Ds\gamma$ and $\Dsone(2536)\to\Ds\gamma$ at
+  $\theta=35.3^\circ$.  The three curves correspond to
+  $\sqrt{s_0}=2.50,2.55,2.60~\mathrm{GeV}$.}
+  \label{fig:stage2-stability}
+\end{figure}
+
+Across the full displayed window the central ranges are
+\begin{align}
+  \Gamma[D_{s1}(2460)\to D_s\gamma]
+  &=
+  30.6\text{ to }44.5~\mathrm{keV},\\
+  \Gamma[D_{s1}(2536)\to D_s\gamma]
+  &=
+  3.95\text{ to }8.10~\mathrm{keV}.
+\end{align}
+The corresponding amplitude spans are smaller:
+\begin{align}
+  G_{2460}
+  &=
+  -0.460\text{ to }-0.381~\mathrm{GeV}^{-1},\\
+  G_{2536}
+  &=
+  -0.162\text{ to }-0.113~\mathrm{GeV}^{-1}.
+\end{align}
+This is the expected pattern: the widths amplify the residual sum-rule
+variation because $\Gamma\propto G^2|\vec q|^3$.
 
 \end{document}

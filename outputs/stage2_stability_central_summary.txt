@@ -1,0 +1,12 @@
+Central matched Stage-2 stability
+=================================
+Inputs fixed to central values; theta = 35.3 deg.
+Curves use sqrt(s0) = 2.50, 2.55, 2.60 GeV and M^2 in [3,6] GeV^2.
+G2460: min -0.460105; max -0.381302; relative span 0.187
+Gamma2460_keV: min +30.5614; max +44.4989; relative span 0.371
+G2536: min -0.161613; max -0.11277; relative span 0.356
+Gamma2536_keV: min +3.94626; max +8.10497; relative span 0.690
+GA: min -0.397773; max -0.312374; relative span 0.241
+GB: min -0.28212; max -0.243599; relative span 0.147
+Wrote table to /Users/sbilmis/Dsgamma/outputs/stage2_stability_central.csv
+Wrote figures to /Users/sbilmis/Dsgamma/outputs/stage2_stability_central.png and /Users/sbilmis/Dsgamma/outputs/stage2_stability_central.pdf

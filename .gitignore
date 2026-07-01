@@ -19,3 +19,4 @@ __pycache__/
 # Local scratch outputs
 tmp/
 scratch/
+outputs/.matplotlib/
