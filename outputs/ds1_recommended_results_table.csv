@@ -1,0 +1,5 @@
+scenario,theta_treatment,photon_normalization,chi_effective_GeV_minus2,scale_check,Gamma2460_keV_median,Gamma2460_keV_minus,Gamma2460_keV_plus,Gamma2460_keV_p16,Gamma2460_keV_p84,Gamma2536_keV_median,Gamma2536_keV_minus,Gamma2536_keV_plus,Gamma2536_keV_p16,Gamma2536_keV_p84,comment
+legacy_chi_condensate,fixed_theta_35p3,chi_s(1 GeV)=3.15+-0.30 GeV^-2 (Rohrwild/BBK),3.15 [2.89,3.47],mixed-scale input,36.65,9.90,13.52,26.75,50.17,5.60,3.04,5.38,2.56,10.97,Conservative Rohrwild/BBK-style baseline
+legacy_chi_condensate,theta_scan_25_45,chi_s(1 GeV)=3.15+-0.30 GeV^-2 (Rohrwild/BBK),3.16 [2.86,3.42],mixed-scale input,36.33,11.51,13.91,24.82,50.24,5.74,3.88,7.14,1.86,12.87,Legacy normalization with mixing-angle systematic
+lattice_fperp_s,fixed_theta_35p3,f_gamma_s^perp(1 GeV)=-55.1+-1.9 MeV (Bacchio et al.),4.99 [4.24,6.05],mixed-scale input,14.43,2.99,4.34,11.44,18.77,0.68,0.56,1.20,0.12,1.88,Recent lattice leading-twist normalization
+lattice_fperp_s,theta_scan_25_45,f_gamma_s^perp(1 GeV)=-55.1+-1.9 MeV (Bacchio et al.),5.02 [4.25,6.09],mixed-scale input,14.61,3.35,4.00,11.26,18.61,0.64,0.58,1.86,0.06,2.50,Lattice normalization with mixing-angle systematic

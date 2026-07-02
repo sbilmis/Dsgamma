@@ -31,3 +31,12 @@ lattice_fperp_s, theta_scan_25_45:
   G2460: median -0.2636; 68% [-0.2975, -0.2316]; mean -0.2645 +/- 0.03339
   G2536: median -0.04549; 68% [-0.0898, -0.0101]; mean -0.04898 +/- 0.03882
 
+Lattice-normalized Gaussian overlay summaries:
+  theta_fixed Gamma2460_keV: mean 14.91 keV, sigma 3.692 keV; median 14.43 keV
+  theta_fixed Gamma2536_keV: mean 0.9717 keV, sigma 0.9659 keV; median 0.6805 keV
+  theta_scan_25_45 Gamma2460_keV: mean 14.94 keV, sigma 3.767 keV; median 14.61 keV
+  theta_scan_25_45 Gamma2536_keV: mean 1.211 keV, sigma 1.446 keV; median 0.6449 keV
+
+Updated lattice-normalized MC figures:
+  /Users/sbilmis/Dsgamma/outputs/lattice_fperp_mc_width_histograms_theta_fixed.pdf
+  /Users/sbilmis/Dsgamma/outputs/lattice_fperp_mc_width_histograms_theta_scan.pdf

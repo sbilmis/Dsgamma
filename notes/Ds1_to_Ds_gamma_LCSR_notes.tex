@@ -20,6 +20,8 @@
 
 \newcommand{\Ds}{D_s}
 \newcommand{\Dsone}{D_{s1}}
+\newcommand{\Bs}{B_s}
+\newcommand{\Bsone}{B_{s1}}
 \newcommand{\GeV}{\mathrm{GeV}}
 \newcommand{\ii}{\mathrm{i}}
 \newcommand{\ee}{\mathrm{e}}
@@ -1314,6 +1316,125 @@ histograms are shown in Fig.~\ref{fig:lattice-fperp-comparison}.
   \label{fig:lattice-fperp-comparison}
 \end{figure}
 
+For direct comparison with the legacy Monte Carlo histograms in
+Figs.~\ref{fig:mc-hist-fixed} and~\ref{fig:mc-hist-scan}, the same script also
+produces Gaussian-overlay plots for the lattice-normalized scenario.  For fixed
+$\theta=35.3^\circ$, the descriptive Gaussian summaries are
+\begin{align}
+  \Gamma_{2460}^{\mathrm{lat.\ }f_\gamma^\perp}
+  &=14.91\pm3.69~\mathrm{keV},\\
+  \Gamma_{2536}^{\mathrm{lat.\ }f_\gamma^\perp}
+  &=0.97\pm0.97~\mathrm{keV}.
+\end{align}
+For the mixing-angle scan they are
+\begin{align}
+  \Gamma_{2460}^{\mathrm{lat.\ }f_\gamma^\perp}
+  &=14.94\pm3.77~\mathrm{keV},\\
+  \Gamma_{2536}^{\mathrm{lat.\ }f_\gamma^\perp}
+  &=1.21\pm1.45~\mathrm{keV}.
+\end{align}
+The $D_{s1}(2536)$ distribution is visibly non-Gaussian near zero because the
+amplitude is cancellation-driven, so the percentile intervals in
+Table~\ref{tab:lattice-fperp-comparison} remain the safer quoted uncertainties.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/lattice_fperp_mc_width_histograms_theta_fixed.pdf}
+  \caption{Lattice-normalized Monte Carlo width distributions for fixed
+  $\theta=35.3^\circ$.  The black curves are Gaussian overlays using the sample
+  mean and standard deviation; dashed vertical lines mark the 16--84 percentile
+  interval.}
+  \label{fig:lattice-mc-hist-fixed}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/lattice_fperp_mc_width_histograms_theta_scan.pdf}
+  \caption{Lattice-normalized Monte Carlo width distributions when the mixing
+  angle is sampled over $25^\circ\le\theta\le45^\circ$.}
+  \label{fig:lattice-mc-hist-scan}
+\end{figure}
+
+\subsection{Recommended \(D_{s1}\) results table}
+
+For the manuscript, the safest way to report the width predictions is not a
+Gaussian mean and standard deviation, but the median with asymmetric
+16--84 percentile intervals.  This is especially important for
+$D_{s1}(2536)$, where the width is positive definite and the amplitude can pass
+close to zero because of the axial--tensor cancellation.
+
+There is also a scale-convention issue that should be stated explicitly.  The
+photon-DA normalizations in the table are quoted at $\mu=1~\GeV$, whereas the
+quark masses used in the hard amplitudes are the usual $\overline{\mathrm{MS}}$
+inputs, e.g. $m_s(2~\GeV)$ and $m_c(m_c)$.  This is a standard phenomenological
+input convention, but it is not a fully matched single-scale setup.  A strict
+scale-consistent variant would evolve $m_s$, $\langle\bar s s\rangle$, and
+either $\chi_s$ or $f_{\gamma,s}^{\perp}$ to a common factorization scale
+before rerunning the sum rule.  We therefore flag the present rows as
+mixed-scale inputs rather than interpreting them as a separate scale-consistent
+prediction.
+
+\begin{table}[htbp]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{lllllcc}
+    \toprule
+    Scenario & Photon input & implied $\chi_s$ & Mixing input
+    & Scale check
+    & $\Gamma_{2460}$ (keV) & $\Gamma_{2536}$ (keV)\\
+    \midrule
+    Legacy
+      & $\chi_s(1~\GeV)=3.15\pm0.30$ (Rohrwild/BBK)
+      & $3.15\,[2.89,3.47]$
+      & $\theta=35.3^\circ$
+      & mixed-scale input
+      & $36.7^{+13.5}_{-9.9}$
+      & $5.60^{+5.38}_{-3.04}$\\
+    Legacy
+      & $\chi_s(1~\GeV)=3.15\pm0.30$ (Rohrwild/BBK)
+      & $3.16\,[2.86,3.42]$
+      & $25^\circ\le\theta\le45^\circ$
+      & mixed-scale input
+      & $36.3^{+13.9}_{-11.5}$
+      & $5.74^{+7.14}_{-3.88}$\\
+    Lattice
+      & $f_{\gamma,s}^{\perp}(1~\GeV)=-55.1\pm1.9~\mathrm{MeV}$ (Bacchio et al.)
+      & $4.99\,[4.24,6.05]$
+      & $\theta=35.3^\circ$
+      & mixed-scale input
+      & $14.4^{+4.3}_{-3.0}$
+      & $0.68^{+1.20}_{-0.56}$\\
+    Lattice
+      & $f_{\gamma,s}^{\perp}(1~\GeV)=-55.1\pm1.9~\mathrm{MeV}$ (Bacchio et al.)
+      & $5.02\,[4.25,6.09]$
+      & $25^\circ\le\theta\le45^\circ$
+      & mixed-scale input
+      & $14.6^{+4.0}_{-3.4}$
+      & $0.64^{+1.86}_{-0.58}$\\
+    \bottomrule
+  \end{tabular}%
+  }
+  \caption{Recommended reporting table for the $D_{s1}\to D_s\gamma$ widths.
+  Entries are medians with 16--84 percentile intervals.  The lattice scenario
+  replaces only the leading-twist normalization
+  $\chi_s\langle\bar s s\rangle$ by $f_{\gamma,s}^{\perp}$; higher-twist
+  condensate terms are left explicit.  The implied $\chi_s$ column is derived
+  from $f_{\gamma,s}^{\perp}/\langle\bar s s\rangle$ in the lattice rows, so it
+  inherits the strange-condensate spread.  The scale-check column records that
+  the present numerical rows use conventional mixed-scale phenomenological
+  inputs; a fully matched-scale prediction should be generated as a separate
+  rerun.}
+  \label{tab:recommended-ds1-results}
+\end{table}
+
+The legacy rows should be retained for comparison with the older photon-DA
+literature.  The lattice-normalized rows are the more modern input scenario and
+give a much tighter prediction for $D_{s1}(2460)$, while
+$D_{s1}(2536)$ remains best described by an asymmetric interval because the
+central amplitude is cancellation-suppressed.  The machine-readable version of
+Table~\ref{tab:recommended-ds1-results} is
+\texttt{outputs/ds1\_recommended\_results\_table.csv}.
+
 \section{Central Borel Stability}
 
 For the central input set and $\theta=35.3^\circ$, the script
@@ -1513,6 +1634,244 @@ important and must remain in the baseline.
   physical nonstrange $D_1\to D\gamma$ predictions.}
   \label{tab:validation-limits}
 \end{table}
+
+\section{First \(B_{s1}\to B_s\gamma\) Extension}
+
+The same matched Stage-2 machinery can be reused for the bottom-strange system
+after the replacement $m_c\to m_b$ and $e_c\to e_b=-1/3$.  The script
+\begin{center}
+  \texttt{scripts/bs1\_stage2\_baseline.py}
+\end{center}
+performs this first pass.  Internally the reusable functions still use the key
+\texttt{mc}; in this section it should be read as $m_b$.
+
+The first-pass numerical inputs are deliberately conservative working inputs:
+$m_b(m_b)=4.18~\GeV$, $m_s(2~\GeV)=0.093~\GeV$,
+$m_{B_s}=5.36692~\GeV$, and $f_{B_s}=0.2303~\GeV$
+(FLAG Review 2024).  For the axial and tensor
+$B_{s1}$ decay constants we use the temporary heavy-quark scaling estimate
+$f_H\sqrt{m_H}=\mathrm{const.}$ from the $D_{s1}$ central values.  Thus these
+rows are not yet final paper predictions; they are a controlled baseline for
+the bottom-sector calculation.
+
+Two mass targets are shown.  The observed narrow state is treated as the
+high-combination state,
+\begin{equation}
+  G_{\mathrm{high}}=\cos\theta\,G_A-\sin\theta\,G_B,
+  \qquad m_{\Bsone}=5.82870~\GeV.
+\end{equation}
+Because the lower $1^+$ bottom-strange partner is not firmly established, the
+second row uses $m_{\Bsone}=5.720~\GeV$ only as a lower-partner diagnostic, with
+\begin{equation}
+  G_{\mathrm{low}}=\sin\theta\,G_A+\cos\theta\,G_B.
+\end{equation}
+The scan uses $8\le M^2\le14~\GeV^2$, $\theta=35.3^\circ$, and
+$\sqrt{s_0}=6.05,6.15,6.25~\GeV$ for the observed state
+($5.95,6.05,6.15~\GeV$ for the lower diagnostic state).
+
+\begin{table}[htbp]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{llcc}
+    \toprule
+    Target & Photon input & $G$ ($\GeV^{-1}$) & $\Gamma$ (keV)\\
+    \midrule
+    $\Bsone(5830)$ high combo
+      & legacy $\chi_s$ (Rohrwild/BBK)
+      & $0.0358\,[0.0218,0.0688]$
+      & $0.27\,[0.10,1.01]$\\
+    $\Bsone(5830)$ high combo
+      & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
+      & $0.1496\,[0.119,0.216]$
+      & $4.75\,[3.02,9.88]$\\
+    lower $1^+$ diagnostic
+      & legacy $\chi_s$ (Rohrwild/BBK)
+      & $0.589\,[0.502,0.761]$
+      & $33.8\,[24.6,56.5]$\\
+    lower $1^+$ diagnostic
+      & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
+      & $0.847\,[0.725,1.09]$
+      & $69.9\,[51.2,116]$\\
+    \bottomrule
+  \end{tabular}%
+  }
+  \caption{First matched Stage-2 $B_{s1}\to B_s\gamma$ baseline.  Brackets show
+  the range over the Borel and continuum-threshold grid, not a full uncertainty
+  interval.  The $B_{s1}$ decay constants are working heavy-quark-scaled inputs,
+  so these values should be refined after dedicated $B_{s1}$ hadronic inputs are
+  fixed.}
+  \label{tab:bs1-first-baseline}
+\end{table}
+
+The qualitative behavior mirrors the $D_{s1}$ calculation: the observed
+high-combination state is cancellation-sensitive, while the lower-combination
+diagnostic is much larger.  The difference between the legacy and lattice
+photon-normalization rows is again substantial, so the bottom-sector analysis
+should keep both scenarios until the input convention is finalized.  The
+machine-readable grid is
+\texttt{outputs/bs1\_stage2\_baseline.csv}.
+
+The companion script
+\begin{center}
+  \texttt{scripts/bs1\_uncertainty\_and\_plots.py}
+\end{center}
+performs a 500-point Monte Carlo scan for each state, photon-input scenario,
+and mixing-angle treatment.  The observed $\Bsone(5830)$ row samples
+$8\le M^2\le14~\GeV^2$,
+$6.05\le\sqrt{s_0}\le6.25~\GeV$, the same quark and photon-DA inputs used in
+the $D_{s1}$ scan, and assigns a conservative $20\%$ width to the temporary
+heavy-quark-scaled $B_{s1}$ axial and tensor decay constants.  The lower-state
+diagnostic uses the lattice-inspired model mass
+$m_{\Bsone}=5.750\pm0.026~\GeV$ from Lang, Mohler, Prelovsek and Woloshyn.
+
+\begin{table}[htbp]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{llllcc}
+    \toprule
+    Target & Photon input & Mixing input & implied $\chi_s$
+    & $G$ ($\GeV^{-1}$) & $\Gamma$ (keV)\\
+    \midrule
+    $\Bsone(5830)$ high combo
+      & legacy $\chi_s$ (Rohrwild/BBK)
+      & $\theta=35.3^\circ$
+      & $3.12\,[2.83,3.40]$
+      & $+0.0273\,[-0.0592,+0.133]$
+      & $1.04\,[0.068,4.45]$\\
+    $\Bsone(5830)$ high combo
+      & legacy $\chi_s$ (Rohrwild/BBK)
+      & $25^\circ\le\theta\le45^\circ$
+      & $3.14\,[2.84,3.47]$
+      & $+0.0242\,[-0.0992,+0.158]$
+      & $1.51\,[0.149,7.76]$\\
+    $\Bsone(5830)$ high combo
+      & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
+      & $\theta=35.3^\circ$
+      & $5.03\,[4.26,6.06]$
+      & $+0.143\,[+0.0076,+0.298]$
+      & $5.30\,[0.454,18.9]$\\
+    $\Bsone(5830)$ high combo
+      & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
+      & $25^\circ\le\theta\le45^\circ$
+      & $5.04\,[4.22,5.96]$
+      & $+0.146\,[-0.019,+0.337]$
+      & $5.32\,[0.588,24.7]$\\
+    lower $1^+$ diagnostic
+      & legacy $\chi_s$ (Rohrwild/BBK)
+      & $\theta=35.3^\circ$
+      & $3.16\,[2.85,3.44]$
+      & $+0.609\,[+0.487,+0.793]$
+      & $45.8\,[28.3,78.7]$\\
+    lower $1^+$ diagnostic
+      & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
+      & $\theta=35.3^\circ$
+      & $4.97\,[4.23,6.00]$
+      & $+0.885\,[+0.738,+1.08]$
+      & $97.0\,[64.6,156]$\\
+    \bottomrule
+  \end{tabular}%
+  }
+  \caption{Monte Carlo $B_{s1}\to B_s\gamma$ baseline.  Entries are medians
+  with 16--84 percentile intervals.  The observed $\Bsone(5830)$ amplitude is
+  cancellation-sensitive, so the width should be quoted with asymmetric
+  percentile intervals rather than a Gaussian error.}
+  \label{tab:bs1-mc-baseline}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/bs1_5830_mc_width_histograms.pdf}
+  \caption{Monte Carlo width distributions for the observed
+  $\Bsone(5830)\to\Bs\gamma$ high-combination state.  The legacy and
+  lattice-normalized photon inputs are shown separately for fixed
+  $\theta=35.3^\circ$ and for the mixing-angle scan.}
+  \label{fig:bs1-mc-hist}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/bs1_5830_stability.pdf}
+  \caption{Central $B_{s1}(5830)\to B_s\gamma$ stability curves for the
+  high-combination amplitude, width, and unmixed $G_A,G_B$ components.}
+  \label{fig:bs1-stability}
+\end{figure}
+
+The most important lesson from Table~\ref{tab:bs1-mc-baseline} is that the
+observed $\Bsone(5830)$ amplitude can pass close to zero over the accepted input
+range.  This makes the legacy scenario compatible with a sub-keV-to-few-keV
+width, while the lattice-normalized leading-twist input shifts the median to
+about $5~\mathrm{keV}$ but leaves a long upper tail.  A final quoted
+$B_{s1}$ prediction therefore needs dedicated $B_{s1}$ decay constants before
+we should advertise the central value too strongly.  The machine-readable
+Monte Carlo outputs are \texttt{outputs/bs1\_stage2\_mc\_scan.csv} and
+\texttt{outputs/bs1\_stage2\_mc\_summary.csv}.
+
+\section{Combined \(D_{s1}\) and \(B_{s1}\) Summary}
+
+Table~\ref{tab:combined-ds-bs-summary} collects the current headline width
+predictions in one place.  The $D_{s1}$ rows are the current final baseline of
+this note.  The $B_{s1}$ rows are working baseline results because the axial and
+tensor $B_{s1}$ decay constants are still temporary heavy-quark-scaled inputs.
+All entries are medians with 16--84 percentile intervals.
+
+\begin{table}[htbp]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{llllc}
+    \toprule
+    Sector & Decay & Photon input & Mixing input & $\Gamma$ (keV)\\
+    \midrule
+    $D_s$ final
+      & $\Dsone(2460)\to\Ds\gamma$
+      & legacy $\chi_s$ (Rohrwild/BBK)
+      & $\theta=35.3^\circ$
+      & $36.7^{+13.5}_{-9.9}$\\
+    $D_s$ final
+      & $\Dsone(2536)\to\Ds\gamma$
+      & legacy $\chi_s$ (Rohrwild/BBK)
+      & $\theta=35.3^\circ$
+      & $5.60^{+5.38}_{-3.04}$\\
+    $D_s$ final
+      & $\Dsone(2460)\to\Ds\gamma$
+      & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
+      & $\theta=35.3^\circ$
+      & $14.4^{+4.3}_{-3.0}$\\
+    $D_s$ final
+      & $\Dsone(2536)\to\Ds\gamma$
+      & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
+      & $\theta=35.3^\circ$
+      & $0.68^{+1.20}_{-0.56}$\\
+    $B_s$ working
+      & $\Bsone(5830)\to\Bs\gamma$
+      & legacy $\chi_s$ (Rohrwild/BBK)
+      & $\theta=35.3^\circ$
+      & $1.04^{+3.41}_{-0.97}$\\
+    $B_s$ working
+      & $\Bsone(5830)\to\Bs\gamma$
+      & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
+      & $\theta=35.3^\circ$
+      & $5.30^{+13.6}_{-4.85}$\\
+    $B_s$ working
+      & $\Bsone(5830)\to\Bs\gamma$
+      & legacy $\chi_s$ (Rohrwild/BBK)
+      & $25^\circ\le\theta\le45^\circ$
+      & $1.51^{+6.25}_{-1.36}$\\
+    $B_s$ working
+      & $\Bsone(5830)\to\Bs\gamma$
+      & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
+      & $25^\circ\le\theta\le45^\circ$
+      & $5.32^{+19.4}_{-4.73}$\\
+    \bottomrule
+  \end{tabular}%
+  }
+  \caption{Current combined summary of $D_{s1}$ and $B_{s1}$ radiative widths.
+  The $B_s$ rows should be treated as working results until dedicated
+  $B_{s1}$ decay constants replace the heavy-quark-scaled temporary inputs.}
+  \label{tab:combined-ds-bs-summary}
+\end{table}
+
+The machine-readable version of Table~\ref{tab:combined-ds-bs-summary} is
+\texttt{outputs/combined\_recommended\_results\_table.csv}.
 
 \section{Missing Or Useful Paper Material}
 

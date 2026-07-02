@@ -1,0 +1,16 @@
+Bs1 -> Bs gamma first matched Stage-2 baseline
+================================================
+Internal key mc is used as m_b in this script.
+Hard photon, two-particle DAs, and matched three-particle DAs are included.
+Borel window: M^2 in [8,14] GeV^2.
+The Bs1 decay constants are working HQ-scaled estimates, not final inputs.
+
+State target: Bs1_5830_observed_high_combo (observed narrow B_s1(5830))
+  legacy_chi_condensate: G_quoted 0.03583 GeV^-1 [0.02176, 0.06883]; Gamma 0.2724 keV [0.1005, 1.005]; GA 0.3926 GeV^-1 [0.3278, 0.5299]; GB 0.4928 GeV^-1 [0.4253, 0.6293]; chi_eff 3.15 GeV^-2 [3.15, 3.15]
+  lattice_fperp_s: G_quoted 0.1496 GeV^-1 [0.1192, 0.2158]; Gamma 4.75 keV [3.017, 9.88]; GA 0.6454 GeV^-1 [0.5435, 0.8551]; GB 0.651 GeV^-1 [0.5612, 0.8343]; chi_eff 4.98 GeV^-2 [4.98, 4.98]
+
+State target: Bs1_lower_model_5720_low_combo (model lower 1+ partner diagnostic)
+  legacy_chi_condensate: G_quoted 0.5885 GeV^-1 [0.5022, 0.7612]; Gamma 33.75 keV [24.58, 56.47]; GA 0.361 GeV^-1 [0.3012, 0.4846]; GB 0.4655 GeV^-1 [0.4021, 0.5895]; chi_eff 3.15 GeV^-2 [3.15, 3.15]
+  lattice_fperp_s: G_quoted 0.8469 GeV^-1 [0.7246, 1.092]; Gamma 69.9 keV [51.17, 116.1]; GA 0.5955 GeV^-1 [0.503, 0.7845]; GB 0.6161 GeV^-1 [0.5317, 0.7821]; chi_eff 4.98 GeV^-2 [4.98, 4.98]
+
+Wrote grid to /Users/sbilmis/Dsgamma/outputs/bs1_stage2_baseline.csv

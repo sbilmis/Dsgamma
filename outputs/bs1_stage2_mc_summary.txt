@@ -1,0 +1,19 @@
+Bs1 matched Stage-2 Monte Carlo scan
+====================================
+500 points per state/scenario/ensemble.
+Observed Bs1(5830) is quoted as the high-combination state.
+Lower 1+ row is a model-mass diagnostic.
+The Bs1 axial and tensor decay constants are assigned 20% widths.
+
+State: Bs1_lower_model_5750_low_combo
+  legacy_chi_condensate, theta_fixed: G=+0.6085 [+0.4869,+0.7928] GeV^-1; Gamma=45.76 [28.34,78.66] keV; chi=3.16 [2.85,3.44]
+  legacy_chi_condensate, theta_scan_25_45: G=+0.6065 [+0.4726,+0.7839] GeV^-1; Gamma=44.12 [25.83,78.36] keV; chi=3.13 [2.85,3.41]
+  lattice_fperp_s, theta_fixed: G=+0.8852 [+0.7378,+1.081] GeV^-1; Gamma=97.04 [64.62,155.8] keV; chi=4.97 [4.23,6]
+  lattice_fperp_s, theta_scan_25_45: G=+0.9033 [+0.7364,+1.086] GeV^-1; Gamma=97.79 [62.89,149] keV; chi=4.99 [4.12,5.99]
+
+State: Bs1_5830_observed_high_combo
+  legacy_chi_condensate, theta_fixed: G=+0.02731 [-0.05922,+0.1328] GeV^-1; Gamma=1.035 [0.06751,4.45] keV; chi=3.12 [2.83,3.4]
+  legacy_chi_condensate, theta_scan_25_45: G=+0.02423 [-0.09924,+0.1576] GeV^-1; Gamma=1.514 [0.1488,7.757] keV; chi=3.14 [2.84,3.47]
+  lattice_fperp_s, theta_fixed: G=+0.1431 [+0.007568,+0.2978] GeV^-1; Gamma=5.3 [0.4542,18.88] keV; chi=5.03 [4.26,6.06]
+  lattice_fperp_s, theta_scan_25_45: G=+0.1463 [-0.01902,+0.3374] GeV^-1; Gamma=5.32 [0.5879,24.68] keV; chi=5.04 [4.22,5.96]
+

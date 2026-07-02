@@ -160,6 +160,10 @@ def summarize(values):
     }
 
 
+def gaussian_pdf(x, mean, sigma):
+    return np.exp(-0.5 * ((x - mean) / sigma) ** 2) / (sigma * math.sqrt(2.0 * math.pi))
+
+
 def run_scan():
     rng = np.random.default_rng(SEED)
     f1_axial_total, _, _ = F1_integral(u0=0.5)
@@ -244,10 +248,81 @@ def comparison_plot(rows):
     fig.savefig(OUT / "lattice_fperp_comparison_histograms.pdf")
 
 
+def lattice_gaussian_histograms(rows):
+    summary_rows = []
+    for ensemble, suffix, title_extra in (
+        ("theta_fixed", "theta_fixed", r"$\theta=35.3^\circ$"),
+        ("theta_scan_25_45", "theta_scan", r"$25^\circ\leq\theta\leq45^\circ$"),
+    ):
+        subset = [
+            r for r in rows
+            if r["scenario"] == "lattice_fperp_s" and r["ensemble"] == ensemble
+        ]
+        fig, axes = plt.subplots(1, 2, figsize=(9.2, 3.9))
+        for ax, key, label, color in (
+            (axes[0], "Gamma2460_keV", r"$\Gamma_{2460}$", "#1f77b4"),
+            (axes[1], "Gamma2536_keV", r"$\Gamma_{2536}$", "#d62728"),
+        ):
+            values = np.array([float(r[key]) for r in subset], dtype=float)
+            mean = float(np.mean(values))
+            sigma = float(np.std(values, ddof=1))
+            median = float(np.percentile(values, 50.0))
+            p16 = float(np.percentile(values, 16.0))
+            p84 = float(np.percentile(values, 84.0))
+            spread = float(np.ptp(values))
+            x_min = max(0.0, float(values.min()) - 0.08 * spread)
+            x_max = float(values.max()) + 0.08 * spread
+            x = np.linspace(x_min, x_max, 400)
+
+            ax.hist(values, bins=28, density=True, alpha=0.45, color=color, edgecolor="white")
+            ax.plot(x, gaussian_pdf(x, mean, sigma), color="black", linewidth=1.8)
+            ax.axvline(mean, color="black", linestyle="-", linewidth=1.0)
+            ax.axvline(p16, color=color, linestyle="--", linewidth=1.0)
+            ax.axvline(p84, color=color, linestyle="--", linewidth=1.0)
+            ax.set_xlabel(r"$\Gamma$ [keV]")
+            ax.set_ylabel("density")
+            ax.set_title(label)
+            ax.grid(True, alpha=0.25, linewidth=0.7)
+            ax.text(
+                0.97,
+                0.93,
+                "\n".join(
+                    [
+                        rf"$\mu={mean:.2f}$ keV",
+                        rf"$\sigma={sigma:.2f}$ keV",
+                        rf"med. $={median:.2f}$ keV",
+                    ]
+                ),
+                transform=ax.transAxes,
+                ha="right",
+                va="top",
+                fontsize=9,
+                bbox={"boxstyle": "round,pad=0.25", "facecolor": "white", "alpha": 0.82, "edgecolor": "none"},
+            )
+            summary_rows.append(
+                {
+                    "scenario": "lattice_fperp_s",
+                    "ensemble": ensemble,
+                    "observable": key,
+                    "mean_keV": mean,
+                    "sigma_keV": sigma,
+                    "median_keV": median,
+                    "p16_keV": p16,
+                    "p84_keV": p84,
+                }
+            )
+        fig.suptitle(f"Lattice-normalized Monte Carlo width distribution, {title_extra}")
+        fig.tight_layout()
+        fig.savefig(OUT / f"lattice_fperp_mc_width_histograms_{suffix}.png", dpi=220)
+        fig.savefig(OUT / f"lattice_fperp_mc_width_histograms_{suffix}.pdf")
+    return summary_rows
+
+
 def main():
     rows = run_scan()
     write_csv(OUT / "lattice_fperp_comparison_scan.csv", rows)
     comparison_plot(rows)
+    lattice_hist_summary = lattice_gaussian_histograms(rows)
 
     summary_rows = []
     lines = [
@@ -305,6 +380,22 @@ def main():
             lines.append("")
 
     write_csv(OUT / "lattice_fperp_comparison_summary.csv", summary_rows)
+    write_csv(OUT / "lattice_fperp_gaussian_fit_summary.csv", lattice_hist_summary)
+    lines.extend(["Lattice-normalized Gaussian overlay summaries:"])
+    for row in lattice_hist_summary:
+        lines.append(
+            f"  {row['ensemble']} {row['observable']}: "
+            f"mean {row['mean_keV']:.4g} keV, sigma {row['sigma_keV']:.4g} keV; "
+            f"median {row['median_keV']:.4g} keV"
+        )
+    lines.extend(
+        [
+            "",
+            "Updated lattice-normalized MC figures:",
+            f"  {OUT / 'lattice_fperp_mc_width_histograms_theta_fixed.pdf'}",
+            f"  {OUT / 'lattice_fperp_mc_width_histograms_theta_scan.pdf'}",
+        ]
+    )
     summary_path = OUT / "lattice_fperp_comparison_summary.txt"
     summary_path.write_text("\n".join(lines) + "\n")
     print("\n".join(lines))
