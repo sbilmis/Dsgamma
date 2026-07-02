@@ -161,18 +161,22 @@ The residue model is calibrated with the working Stage-3 anchor
 $f_1=0.345\pm0.017~\GeV$; the same two-point overlap model predicts
 $f_2\simeq0.38~\GeV$.  As a verification, we compare the mixed-current model
 with the pure axial-current local-QCDSR benchmark
-$f_A(D_{s1})=0.245\pm0.017~\GeV$ from Wang's Table~1 \cite{Wang2015}.  In the
-limiting-current cases the model reproduces $f_1=f_A$ at $\theta=90^\circ$ and
-$f_2=f_A$ at $\theta=0^\circ$.  At the physical angle, the Wang-like target
-requires a strongly negative $AA/BB$ overlap and is therefore treated as a
-diagnostic benchmark, not as a direct determination of the physical mixed
-residues.  The comparison is summarized in Table~\ref{tab:wang-residue-comparison}.
+$f_A(D_{s1})=0.245\pm0.017~\GeV$ from Wang's Table~1 \cite{Wang2015}.  Since
+Wang uses the pure axial current $J_A$, the direct comparison is only to our
+limiting-current cases: $J_1=J_A$ at $\theta=90^\circ$ or $J_2=J_A$ at
+$\theta=0^\circ$.  Our working pure-axial input
+$f_A=0.225\pm0.025~\GeV$ is compatible with Wang's value within uncertainties.
+At the physical angle, the Wang-like target requires a strongly negative
+$AA/BB$ overlap and is therefore treated as a diagnostic benchmark, not as a
+direct determination of the physical mixed residues.  The comparison is
+summarized in Table~\ref{tab:wang-residue-comparison}.
 For the bottom-strange channel
 we quote a Pullin--Zwicky decay-constant scenario,
 $f_{\Bsone}^{\rm PZ}=0.305\pm0.027~\GeV$ and
 $f_{\Bsone}^{T,\rm PZ}=0.285\pm0.027~\GeV$ \cite{PullinZwicky2021}.  We do not
-interpret the bottom effective mixed residue as an independently derived
-local two-point $f_1$ or $f_2$.
+interpret the bottom effective mixed residue as an independently derived local
+two-point $f_1$ or $f_2$; it is the normalization entering the PZ
+decay-constant scenario.
 
 \section{Numerical Inputs}
 
@@ -224,24 +228,24 @@ normalization scenario uses Bacchio et al. \cite{Bacchio2024}.
 \begin{table}[htbp]
   \centering
   \resizebox{\textwidth}{!}{%
-  \begin{tabular}{llllll}
+  \begin{tabular}{lllllll}
     \toprule
-    Case & Current/target & $\theta$ & $\rho_{AB}$ & $f_1$ & $f_2$\\
+    Case & Current/target & $\theta$ & $\rho_{AB}$ & $f_A$ & $f_1$ & $f_2$\\
     \midrule
-    Wang benchmark & pure $J_A$ two-point current & -- & -- & -- & --\\
-    our pure-$J_1$ axial limit & $J_1=J_A$ & $90^\circ$ & $0$ & $0.225$ & $0.462$\\
-    our pure-$J_2$ axial limit & $J_2=J_A$ & $0^\circ$ & $0$ & $0.462$ & $0.225$\\
-    physical angle, Wang-like target & target $f_1=0.245$ & $35.3^\circ$ & $-1.00$ & $0.247$ & $0.451$\\
-    physical angle, Wang $f_A$ & target $f_1=f_A=0.245$ & $35.3^\circ$ & $-0.957$ & $0.245$ & $0.462$\\
-    current Stage-3 anchor & target $f_1=0.345$ & $35.3^\circ$ & $-0.408$ & $0.345$ & $0.381$\\
+    Wang benchmark & pure $J_A$ two-point current & -- & -- & $0.245(17)$ & -- & --\\
+    our pure-$J_1$ axial limit & $J_1=J_A$ & $90^\circ$ & $0$ & $0.225$ & $0.225$ & $0.462$\\
+    our pure-$J_2$ axial limit & $J_2=J_A$ & $0^\circ$ & $0$ & $0.225$ & $0.462$ & $0.225$\\
+    physical angle, Wang-like target & target $f_1=0.245$ & $35.3^\circ$ & $-1.00$ & $0.225$ & $0.247$ & $0.451$\\
+    physical angle, Wang $f_A$ & target $f_1=f_A=0.245$ & $35.3^\circ$ & $-0.957$ & $0.245$ & $0.245$ & $0.462$\\
+    current Stage-3 anchor & target $f_1=0.345$ & $35.3^\circ$ & $-0.408$ & $0.225$ & $0.345$ & $0.381$\\
     \bottomrule
   \end{tabular}%
   }
   \caption{Pure axial-current benchmark and limiting cases of the mixed-current
   residue model.  Wang's pure axial result is
-  $f_A(D_{s1})=0.245\pm0.017~\GeV$; it tests the $J_A$ scale, while the physical
-  mixed-current residues require an assumption about $\rho_{AB}$.  All listed
-  residues are in GeV.}
+  $f_A(D_{s1})=0.245\pm0.017~\GeV$; it tests the $J_A$ scale through the
+  pure-current limits, while the physical mixed-current residues require an
+  assumption about $\rho_{AB}$.  All listed residues are in GeV.}
   \label{tab:wang-residue-comparison}
 \end{table}
 

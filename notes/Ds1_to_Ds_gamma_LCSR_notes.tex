@@ -1464,12 +1464,18 @@ As a separate verification check, we compared the mixed-current residue model
 with the pure axial-current local-QCDSR benchmark in Wang's Table~1,
 $f_A(D_{s1})=0.245\pm0.017~\GeV$.  This benchmark is not treated as an
 authority for the physical mixed residues $f_1$ and $f_2$, because it uses the
-pure current $\bar Q\gamma_\mu\gamma_5 q$.  It is nevertheless a useful
-limiting-current test.  The model gives $f_1=f_A$ at $\theta=90^\circ$, where
-$J_1=J_A$, and $f_2=f_A$ at $\theta=0^\circ$, where $J_2=J_A$.  At the physical
-angle $\theta=35.3^\circ$, the Wang-like pure-axial target lies near the lower
-edge of the mixed-current residue range and requires a strongly negative
-overlap, $\rho_{AB}\simeq-1$ with our working $f_A=0.225~\GeV$, or
+pure current $\bar Q\gamma_\mu\gamma_5 q$.  Therefore the comparison must be
+made only in a limiting-current configuration where one of our physical
+currents becomes $J_A$.  The model gives $f_1=f_A$ at $\theta=90^\circ$, where
+$J_1=J_A$, and $f_2=f_A$ at $\theta=0^\circ$, where $J_2=J_A$.  Our working
+pure-axial input, $f_A=0.225\pm0.025~\GeV$, is close to Wang's
+$0.245\pm0.017~\GeV$ and agrees within the combined uncertainty; the small
+central-value difference is naturally attributable to different quark masses,
+condensates, continuum thresholds, Borel windows, OPE truncations, and
+normalization conventions.  At the physical angle $\theta=35.3^\circ$, the
+Wang-like pure-axial target lies near the lower edge of the mixed-current
+residue range and requires a strongly negative overlap,
+$\rho_{AB}\simeq-1$ with our working $f_A=0.225~\GeV$, or
 $\rho_{AB}\simeq-0.96$ if the Wang value is also used as the basis $f_A$.  By
 contrast, the headline Stage-3 anchor $f_1=0.345~\GeV$ corresponds to
 $\rho_{AB}\simeq-0.41$ and $f_2\simeq0.381~\GeV$.  The check is stored in
@@ -1505,9 +1511,11 @@ $\rho_{AB}\simeq-0.41$ and $f_2\simeq0.381~\GeV$.  The check is stored in
   }
   \caption{Comparison of Wang's pure axial-current benchmark with limiting
   cases of the present mixed-current residue model.  Wang's number checks the
-  pure $J_A$ scale.  The physical mixed-current residues require assumptions
-  about the $AA/BB$ overlap and are therefore not directly determined by the
-  pure axial-current benchmark.  All decay constants are in GeV.  A
+  pure $J_A$ scale, so the appropriate comparison is the pure-$J_1$ axial
+  limit at $\theta=90^\circ$ or the pure-$J_2$ axial limit at
+  $\theta=0^\circ$.  The physical mixed-current residues require assumptions
+  about the $AA/BB$ overlap and are therefore not directly determined by
+  Wang's pure axial-current benchmark.  All decay constants are in GeV.  A
   machine-readable version is
   \texttt{outputs/wang\_pure\_axial\_residue\_comparison\_table.csv}.}
   \label{tab:wang-residue-comparison}
@@ -1977,13 +1985,27 @@ are \texttt{outputs/stage3\_bs1\_pz\_decay\_constant\_scan.csv} and
 \texttt{outputs/bs1\_stage2\_mc\_summary.csv} file is retained as the
 HQ-scaled diagnostic.
 
+The same warning about current normalization applies in the bottom sector, but
+there we do not presently have an analogue of the charm Stage-3 two-point
+calibration.  The PZ inputs test the axial and tensor basis-current scales,
+not a fully derived mixed-current residue matrix.  Consequently the bottom
+quantity denoted $f_{\rm eff}$ in the combined tables should be read as the
+sampled effective normalization entering the quoted high- or low-combination
+amplitude.  It is not an independently extracted local two-point residue
+$f_1$ or $f_2$.  A future bottom two-point calculation would require the
+complete $AA$, $BB$, and $AB$ correlator matrix, exactly as in the charm
+discussion above.
+
 \section{Combined \(D_{s1}\) and \(B_{s1}\) Summary}
 
 Table~\ref{tab:combined-ds-bs-summary} collects the current width predictions
 in one place.  The $D_{s1}$ rows include the Stage-3 physical-current residue
 normalization described above.  The $B_{s1}$ rows use the Stage-3
 Pullin--Zwicky decay-constant scenario.  All entries are medians with 16--84
-percentile intervals.
+percentile intervals.  The table is intentionally explicit about the photon
+input, mixing input, normalization status, normalization constants, form factor
+$G$, and width $\Gamma$, so that no reader has to infer which scenario is being
+quoted.
 
 \begin{table}[htbp]
   \centering
