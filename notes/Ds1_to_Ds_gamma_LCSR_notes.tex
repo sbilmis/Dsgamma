@@ -1958,34 +1958,152 @@ searches, not as a test against an existing radiative measurement.
 The machine-readable version of Table~\ref{tab:experimental-comparison} is
 \texttt{outputs/experimental\_comparison\_table.csv}.
 
-\section{Missing Or Useful Paper Material}
+\section{Paper-Ready Ingredients Before Writing}
 
-Before moving from the $D_{s1}$ paper draft to the $B_{s1}$ extension, the
-following items are useful to add or verify.
+This section collects the compact version of the calculation choices that
+should be carried into the manuscript.  It is deliberately shorter than the
+derivation above: the purpose is to state what a reader must know before
+looking at the final numerical tables.
+
+\subsection{Compact Input Table}
+
+\begin{table}[htbp]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{llll}
+    \toprule
+    Quantity & Symbol & Value & Comment\\
+    \midrule
+    charm mass & $m_c$ & $1.27\pm0.02~\GeV$ & $\overline{\mathrm{MS}}$ input for $D_s$ sector\\
+    bottom mass & $m_b$ & $4.18\pm0.03~\GeV$ & $\overline{\mathrm{MS}}$ input for $B_s$ sector\\
+    strange mass & $m_s$ & $0.093\pm0.011~\GeV$ & retained explicitly, including $m_s^2$ terms\\
+    $\Dsone(2460),\Dsone(2536),\Ds$ masses
+      & $M_{2460},M_{2536},m_{\Ds}$
+      & $2.4595,\;2.53511,\;1.96835~\GeV$
+      & physical charm-strange masses\\
+    $\Bsone(5830),\Bs$ masses
+      & $M_{5830},m_{\Bs}$
+      & $5.82870,\;5.36692~\GeV$
+      & observed bottom-strange channel\\
+    lower $\Bsone$ diagnostic mass
+      & $M_{\Bsone}^{\rm low}$
+      & $5.750\pm0.026~\GeV$
+      & expected, not-yet-established lower $1^+$ partner\\
+    $\Ds$ and $\Dsone$ decay constants
+      & $f_{\Ds},f_{\Dsone,A},f^T_{\Dsone}$
+      & $0.2499,\;0.225,\;0.256~\GeV$
+      & hadronic-side inputs\\
+    $\Bs$ and working $\Bsone$ decay constants
+      & $f_{\Bs},f_{\Bsone,A},f^T_{\Bsone}$
+      & $0.2303,\;0.146,\;0.164~\GeV$
+      & $\Bsone$ values are temporary HQ-scaled inputs\\
+    condensates
+      & $\langle\bar q q\rangle,\kappa$
+      & $-(0.240~\GeV)^3,\;0.8\pm0.1$
+      & $\langle\bar s s\rangle=\kappa\langle\bar q q\rangle$\\
+    legacy photon input
+      & $\chi_s(1~\GeV)$
+      & $+3.15\pm0.30~\GeV^{-2}$
+      & Rohrwild/BBK-style comparison scenario\\
+    lattice photon input
+      & $f_{\gamma,s}^{\perp}(1~\GeV)$
+      & $-55.1\pm1.9~\mathrm{MeV}$
+      & preferred leading-twist normalization scenario\\
+    mixing angle
+      & $\theta$
+      & $35.3^\circ$ central, $25^\circ$--$45^\circ$ scan
+      & ${}^3P_1$--${}^1P_1$ physical-state mixing\\
+    $D_s$ sum-rule window
+      & $M^2,\sqrt{s_0}$
+      & $3$--$6~\GeV^2,\;2.50$--$2.60~\GeV$
+      & charm-sector stability/uncertainty scan\\
+    $B_s$ sum-rule window
+      & $M^2,\sqrt{s_0}$
+      & $8$--$14~\GeV^2,\;6.05$--$6.25~\GeV$
+      & observed $\Bsone(5830)$ scan\\
+    \bottomrule
+  \end{tabular}%
+  }
+  \caption{Compact input table for the manuscript.  The complete
+  machine-readable version is \texttt{outputs/paper\_input\_summary\_table.csv};
+  the longer bookkeeping table is \texttt{inputs\_table.csv}.}
+  \label{tab:paper-input-summary}
+\end{table}
+
+\subsection{Convention Checklist For The Paper}
 
 \begin{itemize}
-  \item A compact input table in the paper text: masses, decay constants,
-  condensates, $\chi$, DA parameters, Borel windows, and continuum thresholds.
-  The final numerical scan already uses these values, but the paper needs a
-  reader-facing table.
-  \item A short paragraph on convention matching.  The sign of $\chi$, the
-  Levi-Civita convention, and the tensor-current normalization
-  $f_B=f_Tm_{D_{s1}}/(m_c+m_s)$ should be stated explicitly because they move
-  signs and absolute normalizations.
-  \item A compact uncertainty table for the paper.  The Monte Carlo and
-  one-at-a-time outputs are now available, but the manuscript should present
-  only the main quoted band and the dominant sources, not every diagnostic row.
-  \item A physical light-quark counterpart requires new hadronic input tables.
-  The OPE-level light-$u$ and light-$d$ diagnostics above are useful algebra
-  checks, but physical $D_1\to D\gamma$ or $B_1\to B\gamma$ predictions need
-  the corresponding hadron masses, decay constants, thresholds, Borel windows,
-  condensates, and mixing convention.
-  \item For the $B_{s1}$ extension, the same code structure can be reused after
-  replacing $m_c\to m_b$, $m_{D_s}\to m_{B_s}$,
-  $m_{D_{s1}}\to m_{B_{s1}}$, and updating the tensor decay constant and
-  threshold window.  The hard-photon terms should be recomputed rather than
-  scaled by hand, because the charm and bottom propagator denominators weight
-  the heavy-line emission differently.
+  \item We use the mostly-minus metric and $\epsilon^{0123}=+1$.
+  \item The initial axial-meson momentum is $P=p+q$; $p$ is the outgoing
+  pseudoscalar momentum and $q$ is the photon momentum.
+  \item The tensor current is
+  $\ii\,\bar s\sigma_{\mu\alpha}P^\alpha\gamma_5 Q/(m_Q+m_s)$, so the
+  momentum entering the tensor current is the initial-state momentum $P$.
+  \item The physical amplitudes are
+  $G_{\rm low}=\sin\theta\,G_A+\cos\theta\,G_B$ and
+  $G_{\rm high}=\cos\theta\,G_A-\sin\theta\,G_B$ in our convention.
+  \item The width is computed from
+  $\Gamma=\alpha_{\rm em}G^2|\vec q_\gamma|^3/3$.
+  \item We store $\chi_s(1~\GeV)$ as a positive Rohrwild/BBK magnitude,
+  $\chi_s=+3.15~\GeV^{-2}$; this must not be mixed with papers that print the
+  opposite sign convention.
+\end{itemize}
+
+\subsection{Propagator And Condensate Statement}
+
+The base propagators in the hard calculation are not expanded in ordinary
+vacuum condensates.  Instead, we use the quark propagators in an external
+electromagnetic field for hard photon emission and the background-gluon
+propagator term for the three-particle photon DAs.  The condensates that appear
+in the final formulas are therefore part of the photon matrix elements and
+photon DA normalizations, such as
+$\chi_s\langle\bar s s\rangle$, not separate SVZ condensate corrections to the
+free propagator.  This distinction should be stated clearly in the paper
+because it is one of the main convention choices of the calculation.
+
+\subsection{Quoting Strategy}
+
+For the final paper tables, the lattice-normalized
+$f_{\gamma,s}^{\perp}$ scenario should be presented as the preferred modern
+input choice, while the legacy $\chi_s\langle\bar s s\rangle$ scenario should
+be kept for comparison with the older photon-DA literature.  Uncertainties
+should be quoted as medians with 16--84 percentile intervals.  This is
+essential for $\Dsone(2536)$ and $\Bsone(5830)$ because their amplitudes can
+pass close to zero, making Gaussian errors misleading.
+
+For the bottom-strange sector, the observed $\Bsone(5830)$ prediction is a
+future-search target.  The lower $\Bsone$ row is a prediction for an expected
+but not yet experimentally established $1^+$ state; it should not be described
+as an observed resonance.  Its role in the manuscript is to show that the lower
+combination is constructive and can have a much larger radiative width than the
+observed high-combination state.
+
+\subsection{Reference Map}
+
+The manuscript reference list should connect each input family to its source:
+PDG for masses and quark charges, FLAG Review 2024 for $f_{\Bs}$ and related
+lattice decay-constant context, Rohrwild/BBK for the legacy photon DAs,
+Bacchio et al. for the lattice $f_{\gamma,s}^{\perp}$ normalization, Colangelo,
+De Fazio and Ozpineci for the original charm-strange LCSR benchmark, Pullin and
+Zwicky for heavy-light decay-constant cross-checks, Lang--Mohler--Prelovsek--
+Woloshyn for the lower $\Bsone$ diagnostic mass, BaBar for the
+$\Dsone(2460)$ branching fraction and $\Dsone(2536)$ total width, and CMS/LHCb
+for the observed $\Bsone(5830)$ spectroscopy.
+
+\section{Remaining Manuscript Tasks}
+
+The core calculation is complete at the level needed to start writing.  The
+remaining tasks are editorial:
+\begin{itemize}
+  \item decide journal style and create the manuscript source file;
+  \item convert the working-note equations into a shorter derivation section;
+  \item select only the final numerical tables and the most useful stability,
+  uncertainty, and comparison figures;
+  \item build a proper BibTeX file and cite every input in
+  Table~\ref{tab:paper-input-summary};
+  \item decide whether the $\Bsone$ predictions remain in the main text or in a
+  separate phenomenology subsection, because their decay constants are still
+  working HQ-scaled inputs.
 \end{itemize}
 
 \end{document}
