@@ -1,0 +1,30 @@
+Stage-3 Ds1 physical-current residue normalization
+===================================================
+The off-diagonal two-point overlap rho_AB is calibrated from
+f1 = f_Ds1(2460) = 0.345 +- 0.017 GeV (Wang 2015).
+The calibrated rho_AB then predicts f2 and the physical G2536.
+
+legacy_chi_condensate, theta_fixed, n=500
+  f1=0.344 [0.329,0.363] GeV; f2=0.380 [0.339,0.423] GeV; rho=-0.412 [-0.621,-0.206]
+  G2460=-0.4235 [-0.4844,-0.3596] GeV^-1; Gamma2460=37.73 [27.19,49.22] keV
+  G2536=+0.01184 [+0.001428,+0.02333] GeV^-1; Gamma2536=0.04465 [0.004603,0.1688] keV
+  clipped f1-target fraction: 0.000
+
+legacy_chi_condensate, theta_scan_25_45, n=500
+  f1=0.346 [0.330,0.361] GeV; f2=0.374 [0.332,0.417] GeV; rho=-0.399 [-0.707,-0.148]
+  G2460=-0.4245 [-0.4785,-0.3536] GeV^-1; Gamma2460=37.81 [26.3,48.13] keV
+  G2536=+0.01254 [-0.03679,+0.05473] GeV^-1; Gamma2536=0.3498 [0.03827,1.102] keV
+  clipped f1-target fraction: 0.030
+
+lattice_fperp_s, theta_fixed, n=500
+  f1=0.345 [0.330,0.364] GeV; f2=0.379 [0.338,0.423] GeV; rho=-0.392 [-0.604,-0.205]
+  G2460=-0.2768 [-0.3121,-0.2429] GeV^-1; Gamma2460=16.1 [12.4,20.48] keV
+  G2536=+0.04029 [+0.01945,+0.05965] GeV^-1; Gamma2536=0.5038 [0.1266,1.104] keV
+  clipped f1-target fraction: 0.006
+
+lattice_fperp_s, theta_scan_25_45, n=500
+  f1=0.346 [0.331,0.364] GeV; f2=0.380 [0.332,0.421] GeV; rho=-0.370 [-0.714,-0.116]
+  G2460=-0.2745 [-0.315,-0.2408] GeV^-1; Gamma2460=15.84 [12.19,20.86] keV
+  G2536=+0.03936 [+0.005238,+0.07147] GeV^-1; Gamma2536=0.4979 [0.04078,1.585] keV
+  clipped f1-target fraction: 0.032
+

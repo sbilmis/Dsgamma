@@ -1450,12 +1450,15 @@ Gaussian mean and standard deviation, but the median with asymmetric
 16--84 percentile intervals.  This is especially important for
 $D_{s1}(2536)$, where the width is positive definite and the amplitude can pass
 close to zero because of the axial--tensor cancellation.
-The entries in Table~\ref{tab:recommended-ds1-results} should be kept as the
-completed Stage-1 plus Stage-2 \emph{basis-current normalization baseline}.
-They should not be discarded, but the final paper should either quote them with
-this label or replace the $G$ values by the physical-current normalized
-couplings of Eqs.~\eqref{eq:physical-current-g1}--\eqref{eq:physical-current-g2}
-after the two-point residues $f_1$ and $f_2$ are determined.
+Table~\ref{tab:recommended-ds1-results} now uses the Stage-3
+physical-current residue normalization.  In this first implementation the
+off-diagonal two-point overlap is calibrated from the local-QCDSR value
+$f_1=f_{D_{s1}(2460)}=0.345\pm0.017~\GeV$ from Wang, and the same overlap then
+predicts $f_2$.  Numerically this gives
+$f_2\simeq0.38~\GeV$ and a negative overlap
+$\rho_{AB}\simeq-0.4$.  The previous basis-current table remains useful as a
+pre-residue diagnostic, but it should no longer be used as the headline
+$D_{s1}$ result.
 
 There is also a scale-convention issue that should be stated explicitly.  The
 photon-DA normalizations in the table are quoted at $\mu=1~\GeV$, whereas the
@@ -1482,29 +1485,29 @@ prediction.
       & $3.15\,[2.89,3.47]$
       & $\theta=35.3^\circ$
       & mixed-scale input
-      & $36.7^{+13.5}_{-9.9}$
-      & $5.60^{+5.38}_{-3.04}$\\
+      & $37.7^{+11.5}_{-10.5}$
+      & $0.045^{+0.124}_{-0.040}$\\
     Legacy
       & $\chi_s(1~\GeV)=3.15\pm0.30$ (Rohrwild/BBK)
       & $3.16\,[2.86,3.42]$
       & $25^\circ\le\theta\le45^\circ$
       & mixed-scale input
-      & $36.3^{+13.9}_{-11.5}$
-      & $5.74^{+7.14}_{-3.88}$\\
+      & $37.8^{+10.3}_{-11.5}$
+      & $0.350^{+0.752}_{-0.312}$\\
     Lattice
       & $f_{\gamma,s}^{\perp}(1~\GeV)=-55.1\pm1.9~\mathrm{MeV}$ (Bacchio et al.)
       & $4.99\,[4.24,6.05]$
       & $\theta=35.3^\circ$
       & mixed-scale input
-      & $14.4^{+4.3}_{-3.0}$
-      & $0.68^{+1.20}_{-0.56}$\\
+      & $16.1^{+4.4}_{-3.7}$
+      & $0.504^{+0.600}_{-0.377}$\\
     Lattice
       & $f_{\gamma,s}^{\perp}(1~\GeV)=-55.1\pm1.9~\mathrm{MeV}$ (Bacchio et al.)
       & $5.02\,[4.25,6.09]$
       & $25^\circ\le\theta\le45^\circ$
       & mixed-scale input
-      & $14.6^{+4.0}_{-3.4}$
-      & $0.64^{+1.86}_{-0.58}$\\
+      & $15.8^{+5.0}_{-3.7}$
+      & $0.498^{+1.087}_{-0.457}$\\
     \bottomrule
   \end{tabular}%
   }
@@ -1516,8 +1519,9 @@ prediction.
   from $f_{\gamma,s}^{\perp}/\langle\bar s s\rangle$ in the lattice rows, so it
   inherits the strange-condensate spread.  The scale-check column records that
   the present numerical rows use conventional mixed-scale phenomenological
-  inputs; a fully matched-scale prediction should be generated as a separate
-  rerun.}
+  inputs.  The widths include the Stage-3 physical-current residue correction
+  calibrated with $f_{D_{s1}(2460)}=0.345\pm0.017~\GeV$; a fully matched-scale
+  prediction should be generated as a separate rerun.}
   \label{tab:recommended-ds1-results}
 \end{table}
 
@@ -1528,6 +1532,10 @@ $D_{s1}(2536)$ remains best described by an asymmetric interval because the
 central amplitude is cancellation-suppressed.  The machine-readable version of
 Table~\ref{tab:recommended-ds1-results} is
 \texttt{outputs/ds1\_recommended\_results\_table.csv}.
+The full Stage-3 residue-normalization scan is stored in
+\texttt{outputs/stage3\_ds1\_physical\_residue\_scan.csv}, with the compact
+summary in
+\texttt{outputs/stage3\_ds1\_physical\_residue\_summary.csv}.
 
 \section{Central Borel Stability}
 
@@ -1902,13 +1910,12 @@ Monte Carlo outputs are \texttt{outputs/bs1\_stage2\_mc\_scan.csv} and
 
 \section{Combined \(D_{s1}\) and \(B_{s1}\) Summary}
 
-Table~\ref{tab:combined-ds-bs-summary} collects the current baseline width
-predictions in one place.  The $D_{s1}$ rows are completed Stage-1 plus
-Stage-2 basis-current normalization baselines; the final physical-current
-normalization requires the two-point residues $f_1$ and $f_2$ discussed above.
-The $B_{s1}$ rows are working baseline results because the axial and tensor
-$B_{s1}$ decay constants are still temporary heavy-quark-scaled inputs.  All
-entries are medians with 16--84 percentile intervals.
+Table~\ref{tab:combined-ds-bs-summary} collects the current width predictions
+in one place.  The $D_{s1}$ rows include the Stage-3 physical-current residue
+normalization described above.  The $B_{s1}$ rows remain working baseline
+results because the axial and tensor $B_{s1}$ decay constants are still
+temporary heavy-quark-scaled inputs.  All entries are medians with 16--84
+percentile intervals.
 
 \begin{table}[htbp]
   \centering
@@ -1923,30 +1930,30 @@ entries are medians with 16--84 percentile intervals.
       & $\Dsone(2460)\to\Ds\gamma$
       & legacy $\chi_s$ (Rohrwild/BBK)
       & $\theta=35.3^\circ$
-      & basis-current baseline
-      & $-0.418\,[-0.489,-0.357]$
-      & $36.7^{+13.5}_{-9.9}$\\
+      & Stage-3 residue calibrated
+      & $-0.424\,[-0.484,-0.360]$
+      & $37.7^{+11.5}_{-10.5}$\\
     $D_s$ final
       & $\Dsone(2536)\to\Ds\gamma$
       & legacy $\chi_s$ (Rohrwild/BBK)
       & $\theta=35.3^\circ$
-      & basis-current baseline
-      & $-0.134\,[-0.188,-0.0908]$
-      & $5.60^{+5.38}_{-3.04}$\\
+      & Stage-3 residue calibrated
+      & $+0.0118\,[+0.00143,+0.0233]$
+      & $0.045^{+0.124}_{-0.040}$\\
     $D_s$ final
       & $\Dsone(2460)\to\Ds\gamma$
       & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
       & $\theta=35.3^\circ$
-      & basis-current baseline
-      & $-0.262\,[-0.298,-0.233]$
-      & $14.4^{+4.3}_{-3.0}$\\
+      & Stage-3 residue calibrated
+      & $-0.277\,[-0.312,-0.243]$
+      & $16.1^{+4.4}_{-3.7}$\\
     $D_s$ final
       & $\Dsone(2536)\to\Ds\gamma$
       & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
       & $\theta=35.3^\circ$
-      & basis-current baseline
-      & $-0.0468\,[-0.0778,-0.0200]$
-      & $0.68^{+1.20}_{-0.56}$\\
+      & Stage-3 residue calibrated
+      & $+0.0403\,[+0.0194,+0.0596]$
+      & $0.504^{+0.600}_{-0.377}$\\
     $B_s$ working
       & $\Bsone(5830)\to\Bs\gamma$
       & legacy $\chi_s$ (Rohrwild/BBK)
@@ -1980,10 +1987,10 @@ entries are medians with 16--84 percentile intervals.
   }
   \caption{Current combined summary of $D_{s1}$ and $B_{s1}$ radiative form
   factors and widths.  The $G$ column is the E1 coupling in the convention of
-  Eq.~\eqref{eq:width}.  The $D_s$ rows are basis-current normalized baselines
-  pending a two-point normalization update for $f_1$ and $f_2$.  The $B_s$ rows
-  should be treated as working results until dedicated $B_{s1}$ decay constants
-  replace the heavy-quark-scaled temporary inputs.}
+  Eq.~\eqref{eq:width}.  The $D_s$ rows include the Stage-3 physical-current
+  residue correction.  The $B_s$ rows should be treated as working results until
+  dedicated $B_{s1}$ decay constants replace the heavy-quark-scaled temporary
+  inputs.}
   \label{tab:combined-ds-bs-summary}
 \end{table}
 
@@ -2098,6 +2105,10 @@ looking at the final numerical tables.
       & $f_{\Ds},f_{\Dsone,A},f^T_{\Dsone}$
       & $0.2499,\;0.225,\;0.256~\GeV$
       & hadronic-side inputs\\
+    $\Dsone$ physical-current residues
+      & $f_1,\;f_2$
+      & $0.345\pm0.017,\;\simeq0.38~\GeV$
+      & $f_1$ from local QCDSR; $f_2$ from Stage-3 overlap calibration\\
     $\Bs$ and working $\Bsone$ decay constants
       & $f_{\Bs},f_{\Bsone,A},f^T_{\Bsone}$
       & $0.2303,\;0.146,\;0.164~\GeV$
@@ -2201,16 +2212,20 @@ for the observed $\Bsone(5830)$ spectroscopy.
 
 \section{Remaining Manuscript Tasks}
 
-The Stage-1 and Stage-2 three-point OPE calculation is complete at the level
-needed to start writing.  Before presenting the numerical tables as final
-physical-current predictions, however, the physical-current two-point
-normalization should be completed:
+The Stage-1 and Stage-2 three-point OPE calculation is complete, and the
+$D_{s1}$ numerical table now includes a Stage-3 physical-current residue
+normalization calibrated from the available local-QCDSR value of
+$f_{D_{s1}(2460)}$.  Before the manuscript is frozen, the remaining physics
+refinement is to replace this calibration by a fully independent local
+two-point calculation of the complete current matrix:
 \begin{itemize}
-  \item evaluate the two-point sum rules for $J_1$ and $J_2$, using
-  $\Pi_{AA}$, $\Pi_{BB}$ and $\Pi_{AB}$, and extract $f_1$ and $f_2$;
-  \item update the headline $G$ and $\Gamma$ values from the basis-current
-  baseline to the physical-current normalization if the extracted residues
-  differ from the basis normalization;
+  \item derive the local two-point OPE for $\Pi_{AA}$, $\Pi_{BB}$ and
+  $\Pi_{AB}$, including the ordinary SVZ condensates appropriate to a
+  two-point decay-constant sum rule;
+  \item compare the extracted $f_1$ and $f_2$ with the Stage-3 calibrated
+  values, $f_1\simeq0.345~\GeV$ and $f_2\simeq0.38~\GeV$;
+  \item rerun the $D_{s1}$ headline table only if the independent two-point
+  residues differ appreciably from the calibrated values;
   \item decide journal style and create the manuscript source file;
   \item convert the working-note equations into a shorter derivation section;
   \item select only the final numerical tables and the most useful stability,

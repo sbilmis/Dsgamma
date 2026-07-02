@@ -12,6 +12,8 @@ Bs1 lower 1+ diagnostic mass,M_Bs1_low_diag,5.750 ± 0.026,GeV,Lang-Mohler-Prelo
 Ds decay constant,f_Ds,0.2499 ± 0.0005,GeV,PDG/FLAG lattice; Colangelo used 0.266±0.032,J_Ds=q̄iγ5Q
 Ds1 axial dc (J_A),f_Ds1_A,0.225 ± 0.025,GeV,Colangelo (f_Ds0'~fDs1); PZ f_D1 class,<0|J_A|Ds1>=f_A m η
 Ds*_s tensor/axial dc scale,f^T,0.256 ± 0.017,GeV,Pullin-Zwicky Table 8 (D*_s T),cross-ref for J_B normalization
+Ds1 physical-current residue input,f1_Ds1_2460,0.345 ± 0.017,GeV,Wang 2015 local QCDSR,Stage-3 calibration input for J1 residue
+Ds1 physical-current residue output,f2_Ds1_2536,0.38 approx,GeV,derived in this work,Stage-3 output from calibrated two-point overlap rho_AB
 Bs decay constant,f_Bs,0.2303 ± 0.0013,GeV,FLAG Review 2024,central input for Bs sector
 Bs1 axial dc working input,f_Bs1_A_working,0.146 ± 0.029,GeV,HQ scaling from f_Ds1_A: f sqrt(M)=const,temporary Bs1 input used in scripts; assign 20 percent uncertainty
 Bs1 tensor dc working input,f_Bs1_T_working,0.164 ± 0.033,GeV,HQ scaling from f_Ds1_T: f sqrt(M)=const,temporary Bs1 tensor-current input used in scripts; assign 20 percent uncertainty

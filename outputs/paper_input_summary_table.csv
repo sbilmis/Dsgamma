@@ -12,6 +12,8 @@ Hadron mass,Bs,m_Bs,5.36692+-0.00010,GeV,Final pseudoscalar
 Decay constant,Ds,f_Ds,0.2499+-0.0005,GeV,Hadronic side
 Decay constant,Ds1 axial,f_Ds1_A,0.225+-0.025,GeV,Axial-current coupling
 Decay constant,Ds1 tensor scale,f_Ds1_T,0.256+-0.017,GeV,Tensor-current coupling
+Decay constant,Ds1 physical residue input,f1_Ds1_2460,0.345+-0.017,GeV,Stage-3 calibration input for J1
+Decay constant,Ds1 physical residue output,f2_Ds1_2536,0.38 approx,GeV,Stage-3 derived residue for J2
 Decay constant,Bs,f_Bs,0.2303+-0.0013,GeV,Hadronic side
 Decay constant,Bs1 axial working,f_Bs1_A_working,0.146+-0.029,GeV,HQ-scaled temporary bottom input
 Decay constant,Bs1 tensor working,f_Bs1_T_working,0.164+-0.033,GeV,HQ-scaled temporary bottom input
