@@ -1,31 +1,31 @@
 category,quantity,symbol,value,unit,role
-QED,Fine structure constant,alpha_em,1/137.036,,Width normalization
-Quark mass,Charm mass,m_c,1.27+-0.02,GeV,Ds hard amplitudes
-Quark mass,Bottom mass,m_b,4.18+-0.03,GeV,Bs hard amplitudes
-Quark mass,Strange mass,m_s,0.093+-0.011,GeV,Kept explicitly including m_s^2 terms
-Hadron mass,Ds1(2460),M_Ds1_2460,2.4595+-0.0006,GeV,Initial Ds low state
-Hadron mass,Ds1(2536),M_Ds1_2536,2.53511+-0.00006,GeV,Initial Ds high state
-Hadron mass,Ds,m_Ds,1.96835+-0.00007,GeV,Final pseudoscalar
-Hadron mass,Bs1(5830),M_Bs1_5830,5.82870+-0.00020,GeV,Observed bottom-strange high state
-Hadron mass,Bs1 lower diagnostic,M_Bs1_low_diag,5.750+-0.026,GeV,Expected lower 1+ bottom-strange partner
-Hadron mass,Bs,m_Bs,5.36692+-0.00010,GeV,Final pseudoscalar
-Decay constant,Ds,f_Ds,0.2499+-0.0005,GeV,Hadronic side
-Decay constant,Ds1 axial,f_Ds1_A,0.225+-0.025,GeV,Axial-current coupling
-Decay constant,Ds1 tensor scale,f_Ds1_T,0.256+-0.017,GeV,Tensor-current coupling
-Decay constant,Ds1 physical residue input,f1_Ds1_2460,0.345+-0.017,GeV,Stage-3 calibration input for J1
+QED,Fine structure constant,alpha_em,1/137.036,,Width normalization; PDG2024
+Quark mass,Charm mass,m_c,1.27+-0.02,GeV,Ds hard amplitudes; PDG2024
+Quark mass,Bottom mass,m_b,4.18+-0.03,GeV,Bs hard amplitudes; PDG2024
+Quark mass,Strange mass,m_s,0.093+-0.011,GeV,Kept explicitly including m_s^2 terms; PDG2024
+Hadron mass,Ds1(2460),M_Ds1_2460,2.4595+-0.0006,GeV,Initial Ds low state; PDG2024
+Hadron mass,Ds1(2536),M_Ds1_2536,2.53511+-0.00006,GeV,Initial Ds high state; PDG2024
+Hadron mass,Ds,m_Ds,1.96835+-0.00007,GeV,Final pseudoscalar; PDG2024
+Hadron mass,Bs1(5830),M_Bs1_5830,5.82870+-0.00020,GeV,Observed bottom-strange high state; PDG2024/CMS2018
+Hadron mass,Bs1 lower diagnostic,M_Bs1_low_diag,5.750+-0.026,GeV,Expected lower 1+ bottom-strange partner; Lang2015
+Hadron mass,Bs,m_Bs,5.36692+-0.00010,GeV,Final pseudoscalar; PDG2024
+Decay constant,Ds,f_Ds,0.2499+-0.0005,GeV,Hadronic side; FLAG2024
+Decay constant,Ds1 axial,f_Ds1_A,0.225+-0.025,GeV,Axial-current coupling; Colangelo2005
+Decay constant,Ds1 tensor scale,f_Ds1_T,0.256+-0.017,GeV,Tensor-current coupling; PullinZwicky2021
+Decay constant,Ds1 physical residue input,f1_Ds1_2460,0.345+-0.017,GeV,Stage-3 calibration input for J1; Wang2015
 Decay constant,Ds1 physical residue output,f2_Ds1_2536,0.38 approx,GeV,Stage-3 derived residue for J2
-Decay constant,Bs,f_Bs,0.2303+-0.0013,GeV,Hadronic side
+Decay constant,Bs,f_Bs,0.2303+-0.0013,GeV,Hadronic side; FLAG2024
 Decay constant,Bs1 axial working,f_Bs1_A_working,0.146+-0.029,GeV,HQ-scaled temporary bottom input
 Decay constant,Bs1 tensor working,f_Bs1_T_working,0.164+-0.033,GeV,HQ-scaled temporary bottom input
-Decay constant,Bs1 axial PZ scenario,f_Bs1_A_PZ,0.305+-0.027,GeV,Stage-3 bottom input scenario
-Decay constant,Bs1 tensor PZ scenario,f_Bs1_T_PZ,0.285+-0.027,GeV,Stage-3 bottom input scenario
+Decay constant,Bs1 axial PZ scenario,f_Bs1_A_PZ,0.305+-0.027,GeV,Stage-3 bottom input scenario; PullinZwicky2021
+Decay constant,Bs1 tensor PZ scenario,f_Bs1_T_PZ,0.285+-0.027,GeV,Stage-3 bottom input scenario; PullinZwicky2021
 Condensate,Light condensate,<qbar q>,-(0.240 GeV)^3,GeV^3,Photon DA/higher-twist input
 Condensate,Strange condensate ratio,kappa=<sbar s>/<qbar q>,0.8+-0.1,,Photon DA/higher-twist input
-Photon DA,Legacy susceptibility,chi_s(1 GeV),+3.15+-0.30,GeV^-2,Legacy/Rohrwild-BBK scenario
-Photon DA,Lattice transverse normalization,f_gamma_s^perp(1 GeV),-55.1+-1.9,MeV,Preferred leading-twist normalization scenario
-Photon DA,Three-particle coupling,f_3gamma,-0.0039+-0.0020,GeV^2,Twist-3 photon DA
-Photon DA,Twist-4 parameter,omega_V,3.8+-1.8,,Photon DA shape
-Photon DA,Twist-4 parameter,omega_A,-2.1+-1.0,,Photon DA shape
+Photon DA,Legacy susceptibility,chi_s(1 GeV),+3.15+-0.30,GeV^-2,Legacy/Rohrwild-BBK scenario; BBK2002/Rohrwild2007
+Photon DA,Lattice transverse normalization,f_gamma_s^perp(1 GeV),-55.1+-1.9,MeV,Preferred leading-twist normalization scenario; Bacchio2024
+Photon DA,Three-particle coupling,f_3gamma,-0.0039+-0.0020,GeV^2,Twist-3 photon DA; BBK2002/Rohrwild2007
+Photon DA,Twist-4 parameter,omega_V,3.8+-1.8,,Photon DA shape; BBK2002
+Photon DA,Twist-4 parameter,omega_A,-2.1+-1.0,,Photon DA shape; BBK2002
 Mixing,3P1-1P1 mixing angle,theta,35.3 central and 25-45 scan,deg,Physical axial-state amplitudes
 Sum-rule window,Ds Borel window,M2_Ds1,3 to 6,GeV^2,Ds uncertainty/stability scan
 Sum-rule window,Ds continuum window,sqrt_s0_Ds1,2.50 to 2.60,GeV,Ds uncertainty/stability scan

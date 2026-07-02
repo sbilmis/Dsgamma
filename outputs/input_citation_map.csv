@@ -1,0 +1,13 @@
+key,input_family,citation,identifier_or_url,used_for
+PDG2024,masses quark masses charges alpha_em,"S. Navas et al. (Particle Data Group), Review of Particle Physics, Phys. Rev. D 110, 030001 (2024)",https://pdg.lbl.gov,PDG masses/quark charges/alpha_em and quark masses
+FLAG2024,lattice decay constants and condensate context,"Y. Aoki et al. (FLAG), FLAG Review 2024",https://arxiv.org/abs/2411.04268,f_Ds and f_Bs lattice decay-constant context
+Colangelo2005,Ds radiative LCSR benchmark and axial input,"P. Colangelo, F. De Fazio, A. Ozpineci, Radiative transitions of D_sJ states, hep-ph/0505195",https://arxiv.org/abs/hep-ph/0505195,legacy Ds1 LCSR comparison and axial-current normalization context
+BBK2002,photon distribution amplitudes,"P. Ball, V. M. Braun, N. Kivel, Photon Distribution Amplitudes in QCD",https://arxiv.org/abs/hep-ph/0207307,twist-2 to twist-4 photon DAs and legacy parameters
+Rohrwild2007,magnetic susceptibility,"J. Rohrwild, Determination of the magnetic susceptibility of the quark condensate using radiative heavy meson decays",https://arxiv.org/abs/0708.1405,legacy chi_s comparison and photon-DA update context
+Bacchio2024,lattice photon normalization,"S. Bacchio, D. Becirevic, G. Gagliardi, F. Sanfilippo, Lattice QCD determination of the normalization of the leading-twist photon DA",https://arxiv.org/abs/2404.10644,lattice f_gamma_s^perp scenario
+PullinZwicky2021,heavy-light vector/tensor decay constants,"B. Pullin, R. Zwicky, Radiative Decays of Heavy-light Mesons and the f decay constants",https://arxiv.org/abs/2106.13617,Ds tensor scale and Bs1 PZ decay-constant scenario
+Wang2015,heavy-light decay constants,"Z.-G. Wang, Analysis of the masses and decay constants of the heavy-light mesons with QCD sum rules",https://arxiv.org/abs/1506.01993,Stage-3 f1_Ds1_2460 calibration
+Lang2015,lower Bs1 diagnostic mass,"C. B. Lang, D. Mohler, S. Prelovsek, R. M. Woloshyn, Predicting positive parity B_s mesons from lattice QCD",https://arxiv.org/abs/1501.01646,lower Bs1 diagnostic mass
+BaBar2006,Ds1(2460) branching fraction,"B. Aubert et al. (BABAR), Study of B -> D(*) D_sJ(*) decays and measurement of D_sJ branching fractions",https://arxiv.org/abs/hep-ex/0605036,Ds1(2460)->Ds gamma branching fraction
+BaBar2011,Ds1(2536) total width,"J. P. Lees et al. (BABAR), Measurement of the mass and width of the Ds1(2536)+ meson",https://arxiv.org/abs/1103.2675,Ds1(2536) total-width comparison
+CMS2018,Bs1(5830) spectroscopy,"CMS Collaboration, Studies of Bs2*(5840)0 and Bs1(5830)0 mesons",https://arxiv.org/abs/1809.03578,Bs1(5830) spectroscopy comparison
