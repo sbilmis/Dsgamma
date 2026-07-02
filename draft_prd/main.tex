@@ -203,8 +203,13 @@ condensates enter the OPE.
 For completeness we spell out the invariant amplitudes used in the numerical
 analysis.  The explicit expressions below are written at the symmetric Borel
 point used in the calculation, $u_0=M_1^2/(M_1^2+M_2^2)=1/2$, with the effective
-Borel parameter denoted by $M^2$.  The axial-current invariant amplitude is
-decomposed as
+Borel parameter denoted by $M^2$.  We use Rohrwild's notation for the photon
+DAs: the two-particle functions are denoted by
+$\phi_\gamma(u)$, $\psi^{(v)}(u)$, ${\cal A}(u)$ and ${\cal B}(u)$, while the
+three-particle twist-4 DAs are
+${\cal S}$, $\widetilde{\cal S}$ and ${\cal T}_{1,\ldots,4}$
+\cite{Rohrwild:2007yt}.  In this notation the axial-current invariant
+amplitude is decomposed as
 \begin{align}
   \widehat\Pi_A
   &=
@@ -222,12 +227,12 @@ decomposed as
   &\quad
   -e_s\,\ssbar\,e^{-m_c^2/M^2}
   \left[
-    -\frac14\left(\mathbb A(u_0)-8\bar H_\gamma(u_0)\right)
+    -\frac14\left({\cal A}(u_0)+{\cal B}(u_0)\right)
     \left(1+\frac{m_c^2}{M^2}\right)
   \right]
   \notag\\
   &\quad
-  +2e_s f_{3\gamma}m_c\,e^{-m_c^2/M^2}\Psi^v(u_0)
+  +2e_s f_{3\gamma}m_c\,e^{-m_c^2/M^2}\Psi^{(v)}(u_0)
   \notag\\
   &\quad
   +e_s\,\ssbar\,e^{-m_c^2/M^2}\,{\cal I}_{F_1}(u_0).
@@ -235,12 +240,17 @@ decomposed as
 \end{align}
 Here
 \begin{align}
-  \bar H_\gamma(u_0)
-  &=\int_0^{u_0}du\,(u_0-u)h_\gamma(u),&
-  \Psi^v(u_0)
-  &=\int_0^{u_0}du\,\psi^v(u),
-  \label{eq:hbar-psi-def}
+  {\cal B}(u_0)
+  &=-8\int_0^{u_0}du\,(u_0-u)h_\gamma(u),
+  &
+  \Psi^{(v)}(u_0)
+  &=\int_0^{u_0}du\,\psi^{(v)}(u).
+  \label{eq:b-psi-def}
 \end{align}
+The first relation is only a notation dictionary: it rewrites the
+two-particle twist-4 combination used in the numerical code,
+${\cal A}-8\bar H_\gamma$, as Rohrwild's
+${\cal A}+{\cal B}$.
 and the three-particle photon-DA integral is
 \begin{align}
   {\cal I}_{F_1}(u_0)
@@ -290,13 +300,13 @@ The tensor-current invariant amplitude is written in the same notation as
   &=
   \int_{(m_c+m_s)^2}^{s_0}ds\,e^{-s/M^2}\rho_B(s)
   +\frac{m_c}{m_c+m_s}\,
-  \widehat\Pi_A^{(\chi\phi_\gamma,\mathbb A,\bar H_\gamma)}
+  \widehat\Pi_A^{(\chi\phi_\gamma,{\cal A},{\cal B})}
   +\widehat\Pi_B^{(3p)} .
   \label{eq:pi-b-explicit}
 \end{align}
 The second term denotes the tensor two-particle photon-DA family inherited from
 the axial expression in Eq.~\eqref{eq:pi-a-explicit}, namely the
-$\chi_s\phi_\gamma$ and $\mathbb A,\bar H_\gamma$ pieces.  The perturbative
+$\chi_s\phi_\gamma$ and ${\cal A},{\cal B}$ pieces.  The perturbative
 tensor spectral density is
 \begin{align}
   \rho_B(s)
