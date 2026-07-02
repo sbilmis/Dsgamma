@@ -435,6 +435,7 @@ $s_0=(2.50,2.55,2.60)^2\,\mathrm{GeV}^2$, the axial-current Stage 1 grid gives
 With
 \begin{equation}
   \Gamma=\frac{\alpha_{\rm em}}{3}G^2|\vec q_\gamma|^3,
+  \label{eq:width}
 \end{equation}
 this corresponds to
 \begin{equation}
@@ -1817,56 +1818,67 @@ All entries are medians with 16--84 percentile intervals.
 \begin{table}[htbp]
   \centering
   \resizebox{\textwidth}{!}{%
-  \begin{tabular}{llllc}
+  \begin{tabular}{llllcc}
     \toprule
-    Sector & Decay & Photon input & Mixing input & $\Gamma$ (keV)\\
+    Sector & Decay & Photon input & Mixing input
+    & $G$ ($\GeV^{-1}$) & $\Gamma$ (keV)\\
     \midrule
     $D_s$ final
       & $\Dsone(2460)\to\Ds\gamma$
       & legacy $\chi_s$ (Rohrwild/BBK)
       & $\theta=35.3^\circ$
+      & $-0.418\,[-0.489,-0.357]$
       & $36.7^{+13.5}_{-9.9}$\\
     $D_s$ final
       & $\Dsone(2536)\to\Ds\gamma$
       & legacy $\chi_s$ (Rohrwild/BBK)
       & $\theta=35.3^\circ$
+      & $-0.134\,[-0.188,-0.0908]$
       & $5.60^{+5.38}_{-3.04}$\\
     $D_s$ final
       & $\Dsone(2460)\to\Ds\gamma$
       & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
       & $\theta=35.3^\circ$
+      & $-0.262\,[-0.298,-0.233]$
       & $14.4^{+4.3}_{-3.0}$\\
     $D_s$ final
       & $\Dsone(2536)\to\Ds\gamma$
       & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
       & $\theta=35.3^\circ$
+      & $-0.0468\,[-0.0778,-0.0200]$
       & $0.68^{+1.20}_{-0.56}$\\
     $B_s$ working
       & $\Bsone(5830)\to\Bs\gamma$
       & legacy $\chi_s$ (Rohrwild/BBK)
       & $\theta=35.3^\circ$
+      & $+0.0273\,[-0.0592,+0.133]$
       & $1.04^{+3.41}_{-0.97}$\\
     $B_s$ working
       & $\Bsone(5830)\to\Bs\gamma$
       & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
       & $\theta=35.3^\circ$
+      & $+0.143\,[+0.0076,+0.298]$
       & $5.30^{+13.6}_{-4.85}$\\
     $B_s$ working
       & $\Bsone(5830)\to\Bs\gamma$
       & legacy $\chi_s$ (Rohrwild/BBK)
       & $25^\circ\le\theta\le45^\circ$
+      & $+0.0242\,[-0.0992,+0.158]$
       & $1.51^{+6.25}_{-1.36}$\\
     $B_s$ working
       & $\Bsone(5830)\to\Bs\gamma$
       & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
       & $25^\circ\le\theta\le45^\circ$
+      & $+0.146\,[-0.0190,+0.337]$
       & $5.32^{+19.4}_{-4.73}$\\
     \bottomrule
   \end{tabular}%
   }
-  \caption{Current combined summary of $D_{s1}$ and $B_{s1}$ radiative widths.
-  The $B_s$ rows should be treated as working results until dedicated
-  $B_{s1}$ decay constants replace the heavy-quark-scaled temporary inputs.}
+  \caption{Current combined summary of $D_{s1}$ and $B_{s1}$ radiative form
+  factors and widths.  The $G$ column is the E1 coupling in the convention of
+  Eq.~\eqref{eq:width}.  The $B_s$ rows should be treated as working results
+  until dedicated $B_{s1}$ decay constants replace the heavy-quark-scaled
+  temporary inputs.}
   \label{tab:combined-ds-bs-summary}
 \end{table}
 
