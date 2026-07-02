@@ -1,0 +1,9 @@
+check,theta_deg,rho_AB,fA_input_GeV,fB_input_GeV,target_f1_GeV,target_description,rho_clipped,f1_GeV,f2_GeV
+fixed_rho_working_basis,90.0,0.0,0.225,0.4619457079970653,,J1 is pure axial; f1 must equal fA,,0.225,0.4619457079970653
+fixed_rho_working_basis,0.0,0.0,0.225,0.4619457079970653,,J2 is pure axial; f2 must equal fA,,0.4619457079970653,0.225
+fixed_rho_working_basis,35.3,-1.0,0.225,0.4619457079970653,,maximally anticorrelated AA/BB overlap,,0.24699329138630963,0.45056980718537665
+fixed_rho_working_basis,35.3,0.0,0.225,0.4619457079970653,,orthogonal AA/BB basis residues,,0.3988009016512501,0.324001046262292
+fixed_rho_working_basis,35.3,1.0,0.225,0.4619457079970653,,maximally correlated AA/BB overlap,,0.5070292223588869,0.0833078916493045
+physical_angle_fit_wang_pure_axial_with_working_fA,35.3,-1.0,0.225,0.4619457079970653,0.245,physical angle; choose rho_AB so f1 matches Wang Table-1 pure axial value,1,0.24699329138630963,0.45056980718537665
+physical_angle_fit_wang_pure_axial_with_wang_fA,35.3,-0.9569574807230927,0.245,0.4619457079970653,0.245,same check but use Wang value also as fA basis input,0,0.24500000000000002,0.4619457079970653
+physical_angle_fit_stage3_anchor_with_working_fA,35.3,-0.4081864418895571,0.225,0.4619457079970653,0.345,current headline Stage-3 f1-anchor scenario,0,0.345,0.3807805629715229

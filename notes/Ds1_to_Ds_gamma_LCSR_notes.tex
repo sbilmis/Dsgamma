@@ -1452,13 +1452,28 @@ $D_{s1}(2536)$, where the width is positive definite and the amplitude can pass
 close to zero because of the axial--tensor cancellation.
 Table~\ref{tab:recommended-ds1-results} now uses the Stage-3
 physical-current residue normalization.  In this first implementation the
-off-diagonal two-point overlap is calibrated from the local-QCDSR value
-$f_1=f_{D_{s1}(2460)}=0.345\pm0.017~\GeV$ from Wang, and the same overlap then
-predicts $f_2$.  Numerically this gives
+off-diagonal two-point overlap is calibrated from the working Stage-3 anchor
+$f_1=0.345\pm0.017~\GeV$, and the same overlap then predicts $f_2$.
+Numerically this gives
 $f_2\simeq0.38~\GeV$ and a negative overlap
 $\rho_{AB}\simeq-0.4$.  The previous basis-current table remains useful as a
 pre-residue diagnostic, but it should no longer be used as the headline
 $D_{s1}$ result.
+
+As a separate verification check, we compared the mixed-current residue model
+with the pure axial-current local-QCDSR benchmark in Wang's Table~1,
+$f_A(D_{s1})=0.245\pm0.017~\GeV$.  This benchmark is not treated as an
+authority for the physical mixed residues $f_1$ and $f_2$, because it uses the
+pure current $\bar Q\gamma_\mu\gamma_5 q$.  It is nevertheless a useful
+limiting-current test.  The model gives $f_1=f_A$ at $\theta=90^\circ$, where
+$J_1=J_A$, and $f_2=f_A$ at $\theta=0^\circ$, where $J_2=J_A$.  At the physical
+angle $\theta=35.3^\circ$, the Wang-like pure-axial target lies near the lower
+edge of the mixed-current residue range and requires a strongly negative
+overlap, $\rho_{AB}\simeq-1$ with our working $f_A=0.225~\GeV$, or
+$\rho_{AB}\simeq-0.96$ if the Wang value is also used as the basis $f_A$.  By
+contrast, the headline Stage-3 anchor $f_1=0.345~\GeV$ corresponds to
+$\rho_{AB}\simeq-0.41$ and $f_2\simeq0.381~\GeV$.  The check is stored in
+\texttt{outputs/stage3\_residue\_benchmark\_checks.csv}.
 
 There is also a scale-convention issue that should be stated explicitly.  The
 photon-DA normalizations in the table are quoted at $\mu=1~\GeV$, whereas the
@@ -1520,7 +1535,7 @@ prediction.
   inherits the strange-condensate spread.  The scale-check column records that
   the present numerical rows use conventional mixed-scale phenomenological
   inputs.  The widths include the Stage-3 physical-current residue correction
-  calibrated with $f_{D_{s1}(2460)}=0.345\pm0.017~\GeV$; a fully matched-scale
+  calibrated with the working Stage-3 anchor $f_1=0.345\pm0.017~\GeV$; a fully matched-scale
   prediction should be generated as a separate rerun.}
   \label{tab:recommended-ds1-results}
 \end{table}
@@ -2133,7 +2148,7 @@ looking at the final numerical tables.
     $\Dsone$ physical-current residues
       & $f_1,\;f_2$
       & $0.345\pm0.017,\;\simeq0.38~\GeV$
-      & $f_1$ from local QCDSR; $f_2$ from Stage-3 overlap calibration; Wang2015\\
+      & working Stage-3 anchor; $f_2$ from overlap calibration; checked against Wang2015 pure axial benchmark\\
     $\Bs$ and working $\Bsone$ decay constants
       & $f_{\Bs},f_{\Bsone,A},f^T_{\Bsone}$
       & $0.2303,\;0.146,\;0.164~\GeV$
@@ -2261,7 +2276,7 @@ for the observed $\Bsone(5830)$ spectroscopy.
     PullinZwicky2021 & heavy-light vector/tensor decay constants
       & $D_s$ tensor scale cross-check and preferred $\Bsone$ PZ scenario\\
     Wang2015 & heavy-light decay constants from QCDSR
-      & Stage-3 $f_1=f_{D_{s1}(2460)}$ calibration\\
+      & pure axial-current $f_A(D_{s1})$ benchmark for the Stage-3 residue check\\
     Lang2015 & positive-parity $B_s$ spectroscopy
       & lower $\Bsone$ diagnostic mass\\
     BaBar2006 & $\Dsone(2460)$ branching data
@@ -2290,7 +2305,9 @@ level used in these working notes.  The completed items are:
   \item explicit retention of the $m_s$ and $m_s^2$ terms used by the present
   Mathematica/Python kernels;
   \item $D_{s1}$ Stage~3 physical-current normalization using the calibrated
-  residues $f_1\simeq0.345~\GeV$ and $f_2\simeq0.38~\GeV$;
+  residues $f_1\simeq0.345~\GeV$ and $f_2\simeq0.38~\GeV$, while using
+  Wang2015 only as a pure-axial benchmark rather than as a direct authority for
+  the mixed residues;
   \item $B_{s1}$ Stage~3 normalization with the Pullin--Zwicky
   decay-constant scenario, plus the lower-state diagnostic channel;
   \item one-at-a-time uncertainty diagnostics, Monte Carlo uncertainty scans,

@@ -9,9 +9,11 @@ the residues f1 and f2 of the mixed currents
 
 We do not yet have a dedicated local two-point OPE calculation for the full
 AA/BB/AB matrix.  As a controlled first implementation, we calibrate the
-off-diagonal two-point overlap rho_AB from the literature QCDSR residue for the
-low state, f1 ~= f_Ds1(2460) = 0.345(17) GeV (Wang 2015).  The same rho_AB then
-predicts f2 and the physical-current G2536.
+off-diagonal two-point overlap rho_AB from a working Stage-3 anchor for the low
+state, f1 ~= f_Ds1(2460) = 0.345(17) GeV.  The same rho_AB then predicts f2 and
+the physical-current G2536.  The separate script
+stage3_residue_benchmark_checks.py compares this anchor with pure-axial
+benchmarks such as Wang's local-QCDSR f_A value.
 
 This makes the normalization assumption explicit and numerically testable,
 while preserving the completed Stage-1/2 OPE kernels.
@@ -32,8 +34,8 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "outputs"
 OUT.mkdir(exist_ok=True)
 
-F1_WANG = 0.345
-F1_WANG_ERR = 0.017
+F1_STAGE3_ANCHOR = 0.345
+F1_STAGE3_ANCHOR_ERR = 0.017
 
 
 def clipped_normal(rng, mean, sigma, lo=None, hi=None):
@@ -109,7 +111,7 @@ def physical_couplings(row, rng, scenario):
         m_initial = float(row.get("input_m_ds1", 2.4595))
         fB = fT * m_initial / (mc + ms)
 
-    f1_target = clipped_normal(rng, F1_WANG, F1_WANG_ERR, 0.250, 0.450)
+    f1_target = clipped_normal(rng, F1_STAGE3_ANCHOR, F1_STAGE3_ANCHOR_ERR, 0.250, 0.450)
     calibrated = calibrate_from_f1(theta, fA, fB, f1_target)
     if calibrated is None:
         return None
@@ -189,7 +191,7 @@ def main():
         "Stage-3 Ds1 physical-current residue normalization",
         "===================================================",
         "The off-diagonal two-point overlap rho_AB is calibrated from",
-        f"f1 = f_Ds1(2460) = {F1_WANG:.3f} +- {F1_WANG_ERR:.3f} GeV (Wang 2015).",
+        f"the working Stage-3 anchor f1 = {F1_STAGE3_ANCHOR:.3f} +- {F1_STAGE3_ANCHOR_ERR:.3f} GeV.",
         "The calibrated rho_AB then predicts f2 and the physical G2536.",
         "",
     ]

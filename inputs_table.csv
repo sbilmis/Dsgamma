@@ -12,7 +12,8 @@ Bs1 lower 1+ diagnostic mass,M_Bs1_low_diag,5.750 ± 0.026,GeV,Lang2015,model/la
 Ds decay constant,f_Ds,0.2499 ± 0.0005,GeV,FLAG2024; PDG2024; Colangelo2005 used 0.266±0.032,J_Ds=q̄iγ5Q
 Ds1 axial dc (J_A),f_Ds1_A,0.225 ± 0.025,GeV,Colangelo2005; PullinZwicky2021 f_D1 class,<0|J_A|Ds1>=f_A m η
 Ds*_s tensor/axial dc scale,f^T,0.256 ± 0.017,GeV,PullinZwicky2021 Table 8 (D*_s T),cross-ref for J_B normalization
-Ds1 physical-current residue input,f1_Ds1_2460,0.345 ± 0.017,GeV,Wang2015 local QCDSR,Stage-3 calibration input for J1 residue
+Ds1 physical-current residue input,f1_Ds1_2460,0.345 ± 0.017,GeV,working Stage-3 anchor scenario,Stage-3 calibration input for J1 residue; compare against Wang2015 pure axial f_A=0.245±0.017
+Ds1 pure axial benchmark,f_Ds1_A_Wang,0.245 ± 0.017,GeV,Wang2015 Table 1,pure axial-current two-point benchmark; not directly f1 or f2
 Ds1 physical-current residue output,f2_Ds1_2536,0.38 approx,GeV,derived in this work,Stage-3 output from calibrated two-point overlap rho_AB
 Bs decay constant,f_Bs,0.2303 ± 0.0013,GeV,FLAG2024,central input for Bs sector
 Bs1 axial dc working input,f_Bs1_A_working,0.146 ± 0.029,GeV,HQ scaling from f_Ds1_A: f sqrt(M)=const,temporary Bs1 input used in scripts; assign 20 percent uncertainty

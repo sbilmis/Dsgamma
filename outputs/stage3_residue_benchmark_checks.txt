@@ -1,0 +1,26 @@
+Stage-3 mixed-current residue benchmark checks
+================================================
+theta_phys = 35.3 deg
+working fA = 0.225 +- 0.025 GeV
+working fB = fT*M/(mc+ms) = 0.462 GeV
+Wang Table-1 pure axial benchmark = 0.245 +- 0.017 GeV
+current Stage-3 f1 anchor = 0.345 +- 0.017 GeV
+
+fixed_rho_working_basis: theta=90 deg, rho=0, fA=0.225, fB=0.461946, target=, f1=0.225, f2=0.461946, clipped=
+  J1 is pure axial; f1 must equal fA
+fixed_rho_working_basis: theta=0 deg, rho=0, fA=0.225, fB=0.461946, target=, f1=0.461946, f2=0.225, clipped=
+  J2 is pure axial; f2 must equal fA
+fixed_rho_working_basis: theta=35.3 deg, rho=-1, fA=0.225, fB=0.461946, target=, f1=0.246993, f2=0.45057, clipped=
+  maximally anticorrelated AA/BB overlap
+fixed_rho_working_basis: theta=35.3 deg, rho=0, fA=0.225, fB=0.461946, target=, f1=0.398801, f2=0.324001, clipped=
+  orthogonal AA/BB basis residues
+fixed_rho_working_basis: theta=35.3 deg, rho=1, fA=0.225, fB=0.461946, target=, f1=0.507029, f2=0.0833079, clipped=
+  maximally correlated AA/BB overlap
+physical_angle_fit_wang_pure_axial_with_working_fA: theta=35.3 deg, rho=-1, fA=0.225, fB=0.461946, target=0.245, f1=0.246993, f2=0.45057, clipped=1
+  physical angle; choose rho_AB so f1 matches Wang Table-1 pure axial value
+physical_angle_fit_wang_pure_axial_with_wang_fA: theta=35.3 deg, rho=-0.956957, fA=0.245, fB=0.461946, target=0.245, f1=0.245, f2=0.461946, clipped=0
+  same check but use Wang value also as fA basis input
+physical_angle_fit_stage3_anchor_with_working_fA: theta=35.3 deg, rho=-0.408186, fA=0.225, fB=0.461946, target=0.345, f1=0.345, f2=0.380781, clipped=0
+  current headline Stage-3 f1-anchor scenario
+
+Interpretation: the pure-current limits reproduce fA by construction. At the physical angle, a Wang-like pure-axial target lies near the lower edge of the mixed-current residue range and requires a strongly negative AA/BB overlap.  The current Stage-3 anchor is therefore a separate normalization scenario, not a direct consequence of Wang's pure axial current.

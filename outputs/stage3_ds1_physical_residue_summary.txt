@@ -1,7 +1,7 @@
 Stage-3 Ds1 physical-current residue normalization
 ===================================================
 The off-diagonal two-point overlap rho_AB is calibrated from
-f1 = f_Ds1(2460) = 0.345 +- 0.017 GeV (Wang 2015).
+the working Stage-3 anchor f1 = 0.345 +- 0.017 GeV.
 The calibrated rho_AB then predicts f2 and the physical G2536.
 
 legacy_chi_condensate, theta_fixed, n=500
