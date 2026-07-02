@@ -555,6 +555,93 @@ $f_B=f_T$ is kept only as a diagnostic.  The converted
 $f_B=f_T m_{D_{s1}}/(m_c+m_s)$ option is the safer central normalization unless
 the input-table definition of $f_T$ is changed.
 
+\subsection{Physical-current two-point normalization check}
+
+There is one further normalization issue that should be separated from the
+three-point OPE calculation.  The two basis currents $J_A^\mu$ and $J_B^\mu$
+are not necessarily the same as the physical currents that interpolate only
+$\Dsone(2460)$ or only $\Dsone(2536)$.  If we define
+\begin{align}
+  J_1^\mu &= \sin\theta\,J_A^\mu+\cos\theta\,J_B^\mu,\\
+  J_2^\mu &= \cos\theta\,J_A^\mu-\sin\theta\,J_B^\mu,
+\end{align}
+then the physical decay constants should be defined by
+\begin{align}
+  \langle0|J_1^\mu|\Dsone(2460)(P,\eta)\rangle
+  &= f_1 M_{2460}\eta^\mu,\\
+  \langle0|J_2^\mu|\Dsone(2536)(P,\eta)\rangle
+  &= f_2 M_{2536}\eta^\mu .
+\end{align}
+These constants are, in principle, obtained from two-point sum rules, not by
+identifying them directly with $f_A$ and $f_B$.  For the transverse invariant
+amplitudes of the two-point functions one has schematically
+\begin{align}
+  \Pi_{11}
+  &= \sin^2\theta\,\Pi_{AA}
+     +\cos^2\theta\,\Pi_{BB}
+     +2\sin\theta\cos\theta\,\Pi_{AB},\\
+  \Pi_{22}
+  &= \cos^2\theta\,\Pi_{AA}
+     +\sin^2\theta\,\Pi_{BB}
+     -2\sin\theta\cos\theta\,\Pi_{AB},
+\end{align}
+and after Borel transformation and continuum subtraction,
+\begin{align}
+  f_1^2 M_{2460}^2\,\exp(-M_{2460}^2/M^2)
+  &=
+  \widehat{\mathcal B}\,\Pi_{11}^{\rm OPE},\\
+  f_2^2 M_{2536}^2\,\exp(-M_{2536}^2/M^2)
+  &=
+  \widehat{\mathcal B}\,\Pi_{22}^{\rm OPE}.
+\end{align}
+The mixed off-diagonal invariant
+\begin{equation}
+  \Pi_{12}
+  =\sin\theta\cos\theta\,(\Pi_{AA}-\Pi_{BB})
+   +(\cos^2\theta-\sin^2\theta)\Pi_{AB}
+\end{equation}
+is a useful diagnostic: for an exactly diagonal physical-current basis it
+should be small in the chosen Borel window, or it can be used to determine the
+preferred mixing angle.
+
+This affects only the final hadronic normalization, not the hard-photon or
+photon-DA OPE kernels already derived in the three-point calculation.  If the
+three-point invariant amplitudes for the basis currents are written as
+\begin{align}
+  \Pi_A^{(3pt)} &\propto f_A\,G_A,\\
+  \Pi_B^{(3pt)} &\propto f_B\,G_B,
+\end{align}
+then the physical-current normalized couplings are
+\begin{align}
+  G_{2460}^{\rm phys}
+  &=
+  \frac{\sin\theta\,f_A\,G_A+\cos\theta\,f_B\,G_B}{f_1},
+  \label{eq:physical-current-g1}\\
+  G_{2536}^{\rm phys}
+  &=
+  \frac{\cos\theta\,f_A\,G_A-\sin\theta\,f_B\,G_B}{f_2},
+  \label{eq:physical-current-g2}
+\end{align}
+up to the obvious mass factors if the two basis-current residues are defined
+with different hadron-mass normalizations.  The numerical tables above instead
+use the basis-current-normalized combination
+\begin{align}
+  G_{2460}^{\rm basis}
+  &= \sin\theta\,G_A+\cos\theta\,G_B,\\
+  G_{2536}^{\rm basis}
+  &= \cos\theta\,G_A-\sin\theta\,G_B.
+\end{align}
+Therefore the existing results should be kept, but labeled as the
+``basis-current normalization baseline''.  They are not invalid: they contain
+the completed Stage-1 and Stage-2 OPE calculation, and they are the correct
+starting point for phenomenology.  A final physical-current normalization
+update requires evaluating the two-point sum rules for $f_1$ and $f_2$ using
+$\Pi_{AA}$, $\Pi_{BB}$ and $\Pi_{AB}$.  If $f_1$ and $f_2$ are close to the
+effective residues assumed in the basis normalization, the present tables will
+change only mildly; if not, the couplings in
+Eqs.~\eqref{eq:physical-current-g1}--\eqref{eq:physical-current-g2} should
+replace the basis-current values in the final paper tables.
+
 \section{Tensor-Current Hard Term: Triangle Reduction}
 
 The hard tensor-current numerator is more complicated than the axial one because
@@ -1363,6 +1450,12 @@ Gaussian mean and standard deviation, but the median with asymmetric
 16--84 percentile intervals.  This is especially important for
 $D_{s1}(2536)$, where the width is positive definite and the amplitude can pass
 close to zero because of the axial--tensor cancellation.
+The entries in Table~\ref{tab:recommended-ds1-results} should be kept as the
+completed Stage-1 plus Stage-2 \emph{basis-current normalization baseline}.
+They should not be discarded, but the final paper should either quote them with
+this label or replace the $G$ values by the physical-current normalized
+couplings of Eqs.~\eqref{eq:physical-current-g1}--\eqref{eq:physical-current-g2}
+after the two-point residues $f_1$ and $f_2$ are determined.
 
 There is also a scale-convention issue that should be stated explicitly.  The
 photon-DA normalizations in the table are quoted at $\mu=1~\GeV$, whereas the
@@ -1810,10 +1903,12 @@ Monte Carlo outputs are \texttt{outputs/bs1\_stage2\_mc\_scan.csv} and
 \section{Combined \(D_{s1}\) and \(B_{s1}\) Summary}
 
 Table~\ref{tab:combined-ds-bs-summary} collects the current headline width
-predictions in one place.  The $D_{s1}$ rows are the current final baseline of
-this note.  The $B_{s1}$ rows are working baseline results because the axial and
-tensor $B_{s1}$ decay constants are still temporary heavy-quark-scaled inputs.
-All entries are medians with 16--84 percentile intervals.
+predictions in one place.  The $D_{s1}$ rows are completed Stage-1 plus
+Stage-2 basis-current normalization baselines; the final physical-current
+normalization requires the two-point residues $f_1$ and $f_2$ discussed above.
+The $B_{s1}$ rows are working baseline results because the axial and tensor
+$B_{s1}$ decay constants are still temporary heavy-quark-scaled inputs.  All
+entries are medians with 16--84 percentile intervals.
 
 \begin{table}[htbp]
   \centering
@@ -1876,9 +1971,10 @@ All entries are medians with 16--84 percentile intervals.
   }
   \caption{Current combined summary of $D_{s1}$ and $B_{s1}$ radiative form
   factors and widths.  The $G$ column is the E1 coupling in the convention of
-  Eq.~\eqref{eq:width}.  The $B_s$ rows should be treated as working results
-  until dedicated $B_{s1}$ decay constants replace the heavy-quark-scaled
-  temporary inputs.}
+  Eq.~\eqref{eq:width}.  The $D_s$ rows are basis-current normalized baselines
+  pending a two-point normalization update for $f_1$ and $f_2$.  The $B_s$ rows
+  should be treated as working results until dedicated $B_{s1}$ decay constants
+  replace the heavy-quark-scaled temporary inputs.}
   \label{tab:combined-ds-bs-summary}
 \end{table}
 
@@ -2041,7 +2137,11 @@ looking at the final numerical tables.
   momentum entering the tensor current is the initial-state momentum $P$.
   \item The physical amplitudes are
   $G_{\rm low}=\sin\theta\,G_A+\cos\theta\,G_B$ and
-  $G_{\rm high}=\cos\theta\,G_A-\sin\theta\,G_B$ in our convention.
+  $G_{\rm high}=\cos\theta\,G_A-\sin\theta\,G_B$ in the basis-current
+  normalization convention.
+  \item For the physical currents $J_1$ and $J_2$, the final couplings should
+  be divided by the corresponding two-point residues $f_1$ and $f_2$ as in
+  Eqs.~\eqref{eq:physical-current-g1}--\eqref{eq:physical-current-g2}.
   \item The width is computed from
   $\Gamma=\alpha_{\rm em}G^2|\vec q_\gamma|^3/3$.
   \item We store $\chi_s(1~\GeV)$ as a positive Rohrwild/BBK magnitude,
@@ -2092,9 +2192,16 @@ for the observed $\Bsone(5830)$ spectroscopy.
 
 \section{Remaining Manuscript Tasks}
 
-The core calculation is complete at the level needed to start writing.  The
-remaining tasks are editorial:
+The Stage-1 and Stage-2 three-point OPE calculation is complete at the level
+needed to start writing.  Before presenting the numerical tables as final
+physical-current predictions, however, the physical-current two-point
+normalization should be completed:
 \begin{itemize}
+  \item evaluate the two-point sum rules for $J_1$ and $J_2$, using
+  $\Pi_{AA}$, $\Pi_{BB}$ and $\Pi_{AB}$, and extract $f_1$ and $f_2$;
+  \item update the headline $G$ and $\Gamma$ values from the basis-current
+  baseline to the physical-current normalization if the extracted residues
+  differ from the basis normalization;
   \item decide journal style and create the manuscript source file;
   \item convert the working-note equations into a shorter derivation section;
   \item select only the final numerical tables and the most useful stability,
