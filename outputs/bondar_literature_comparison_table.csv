@@ -1,0 +1,9 @@
+sector,transition,Godfrey2005,GoityRoberts2001,GreenRepkoRadford2017,RadfordRepkoSaelim2009,Chen2020,KornerPirjolSchilcher1993,LiNiZhong2021,GodfreyMoatsSwanson2016,LuPanWang2016,BondarMilstein2025,This_work
+Ds,Ds1(2536)->Ds gamma,15,25.2-31.1,61.2,54.5,18.18-18.85,1.6+-2.3,,,,12,"0.504 [0.127,1.104] preferred; 0.045 [0.0046,0.169] legacy"
+Ds,Ds1(2536)->Ds* gamma,5.6,14.6-22.8,9.21,8.9,2.96-3.02,10.4+-1,,,,29,not computed
+Ds,Ds1(2460)->Ds gamma,6.2,10.3-17.2,13.2,12.8,3.53-3.61,,,,297,"16.1 [12.4,20.5] preferred; 37.7 [27.2,49.2] legacy"
+Ds,Ds1(2460)->Ds* gamma,5.5,14.0-25.1,17.4,15.5,4.74-4.79,,,,104,not computed
+Bs,Bs1(5748)->Bs gamma,,,,,,,37,70.6,97.7,47,"27.8 [20.1,39.4] preferred; 14.2 [8.9,21.2] legacy"
+Bs,Bs1(5748)->Bs* gamma,,,,,,,56,36.9,39.5,20,not computed
+Bs,Bs1(5829)->Bs gamma,,,,,,,27,47.8,56.6,28,"0.272 [0.028,1.024] preferred; 0.109 [0.008,0.413] legacy"
+Bs,Bs1(5829)->Bs* gamma,,,,,,,53,57.3,98.8,41,not computed

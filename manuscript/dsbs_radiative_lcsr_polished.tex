@@ -359,6 +359,55 @@ mode is difficult to observe.
   \label{tab:interference-polished}
 \end{table}
 
+Table~\ref{tab:literature-polished} places the preferred photon-normalized
+results next to representative quark-model and phenomenological predictions
+collected by Bondar and Milstein.  For channels with a vector final state,
+$D_s^*\gamma$ or $B_s^*\gamma$, we quote the literature values but leave our
+entry blank because those transitions require separate LCSR correlators and are
+not part of the present calculation.
+
+\begin{table}[htbp]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{llllll}
+    \toprule
+    Channel & Early QM & Rel. QM & Recent QM & Bondar--Milstein & This work\\
+    \midrule
+    $\Dsone(2536)\to\Ds\gamma$
+      & $15$ \cite{Godfrey2005DsPwave}
+      & $25.2$--$31.1$ \cite{GoityRoberts2001}
+      & $18.18$--$18.85$ \cite{Chen2020Electric}
+      & $12$ \cite{BondarMilstein2025}
+      & $0.504[0.127,1.104]$\\
+    $\Dsone(2460)\to\Ds\gamma$
+      & $6.2$ \cite{Godfrey2005DsPwave}
+      & $10.3$--$17.2$ \cite{GoityRoberts2001}
+      & $3.53$--$3.61$ \cite{Chen2020Electric}
+      & $297$ \cite{BondarMilstein2025}
+      & $16.1[12.4,20.5]$\\
+    $\Bsone^{\rm low}(5750)\to\Bs\gamma$
+      & $37$ \cite{LiNiZhong2021}
+      & $70.6$ \cite{GodfreyMoatsSwanson2016}
+      & $97.7$ \cite{LuPanWang2016}
+      & $47$ \cite{BondarMilstein2025}
+      & $27.8[20.1,39.4]$\\
+    $\Bsone(5830)\to\Bs\gamma$
+      & $27$ \cite{LiNiZhong2021}
+      & $47.8$ \cite{GodfreyMoatsSwanson2016}
+      & $56.6$ \cite{LuPanWang2016}
+      & $28$ \cite{BondarMilstein2025}
+      & $0.272[0.028,1.024]$\\
+    \bottomrule
+  \end{tabular}%
+  }
+  \caption{Representative literature comparison for the channels computed in
+  this work.  Widths are in keV.  Our entries use the preferred lattice photon
+  normalization.  A complete machine-readable table, including the uncomputed
+  vector-final-state channels quoted in Ref.~\cite{BondarMilstein2025}, is
+  stored in \texttt{outputs/bondar\_literature\_comparison\_table.csv}.}
+  \label{tab:literature-polished}
+\end{table}
+
 For complementarity with the bottom-sector discussion of
 Ref.~\cite{BondarMilstein2025}, we also keep a lower-partner diagnostic in the
 Stage-3 scan.  This row uses a model mass near $5.75~\GeV$ and should not be

@@ -2135,6 +2135,65 @@ is being quoted.
 The machine-readable version of Table~\ref{tab:combined-ds-bs-summary} is
 \texttt{outputs/combined\_recommended\_results\_table.csv}.
 
+\subsection{Comparison With Bondar--Milstein Literature Tables}
+
+Bondar and Milstein collect several quark-model predictions for the
+$D_{s1}$ and $B_{s1}$ radiative widths.  Their charm table uses Godfrey,
+Goity--Roberts, Green--Repko--Radford, Radford--Repko--Saelim,
+Chen--Liu--Zhou--Chen, and Korner--Pirjol--Schilcher for the comparison
+columns.  Their bottom table uses Li--Ni--Zhong, Godfrey--Moats--Swanson, and
+Lu--Pan--Wang--Wang--Li.  We cite these papers explicitly in the manuscript,
+because otherwise the comparison would look like a citation only to
+Bondar--Milstein's summary table.
+
+Table~\ref{tab:bondar-literature-comparison} gives a compact version restricted
+to channels computed in the present LCSR analysis.  The full machine-readable
+table also stores the $D_s^*\gamma$ and $B_s^*\gamma$ rows from the literature;
+our entry is marked as not computed for those channels because they require
+separate vector-final-state correlators.
+
+\begin{table}[htbp]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{llllll}
+    \toprule
+    Channel & Early QM & Rel. QM & Recent QM & Bondar--Milstein & This work\\
+    \midrule
+    $\Dsone(2536)\to\Ds\gamma$
+      & $15$ (Godfrey2005)
+      & $25.2$--$31.1$ (Goity--Roberts2001)
+      & $18.18$--$18.85$ (Chen2020)
+      & $12$ (Bondar--Milstein2025)
+      & $0.504[0.127,1.104]$\\
+    $\Dsone(2460)\to\Ds\gamma$
+      & $6.2$ (Godfrey2005)
+      & $10.3$--$17.2$ (Goity--Roberts2001)
+      & $3.53$--$3.61$ (Chen2020)
+      & $297$ (Bondar--Milstein2025)
+      & $16.1[12.4,20.5]$\\
+    $\Bsone^{\rm low}(5750)\to\Bs\gamma$
+      & $37$ (Li--Ni--Zhong2021)
+      & $70.6$ (Godfrey--Moats--Swanson2016)
+      & $97.7$ (Lu--Pan--Wang2016)
+      & $47$ (Bondar--Milstein2025)
+      & $27.8[20.1,39.4]$\\
+    $\Bsone(5830)\to\Bs\gamma$
+      & $27$ (Li--Ni--Zhong2021)
+      & $47.8$ (Godfrey--Moats--Swanson2016)
+      & $56.6$ (Lu--Pan--Wang2016)
+      & $28$ (Bondar--Milstein2025)
+      & $0.272[0.028,1.024]$\\
+    \bottomrule
+  \end{tabular}%
+  }
+  \caption{Representative comparison with the radiative-width literature
+  summarized by Bondar--Milstein.  Widths are in keV.  The entries in the last
+  column use our preferred lattice photon normalization.  The complete
+  bookkeeping table is
+  \texttt{outputs/bondar\_literature\_comparison\_table.csv}.}
+  \label{tab:bondar-literature-comparison}
+\end{table}
+
 \section{Comparison With Experimental Information}
 
 The sum rule predicts a partial radiative width,
@@ -2385,6 +2444,16 @@ the lower and higher $B_{s1}$ radiative channels.
       & branching-fraction estimate for the high charm-strange state\\
     CMS2018 & $\Bsone(5830)$ spectroscopy
       & observed bottom-strange mass and phenomenological comparison\\
+    Bondar2025Why & $\Dsone(2536)$ radiative nonobservation
+      & experimental upper-limit motivation for the suppressed high-state mode\\
+    BondarMilstein2025 & $D_{s1}$ and $B_{s1}$ radiative phenomenology
+      & constructive/destructive E1-amplitude mechanism and comparison tables\\
+    Godfrey2005, GoityRoberts2001, Chen2020
+      & $D_{s1}$ radiative-width literature
+      & comparison columns for $\Dsone\to\Ds^{(*)}\gamma$\\
+    LiNiZhong2021, GodfreyMoatsSwanson2016, LuPanWang2016
+      & $B_{s1}$ radiative-width literature
+      & comparison columns for $\Bsone\to\Bs^{(*)}\gamma$\\
     \bottomrule
   \end{tabular}%
   }
