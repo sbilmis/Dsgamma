@@ -166,7 +166,8 @@ limiting-current cases the model reproduces $f_1=f_A$ at $\theta=90^\circ$ and
 $f_2=f_A$ at $\theta=0^\circ$.  At the physical angle, the Wang-like target
 requires a strongly negative $AA/BB$ overlap and is therefore treated as a
 diagnostic benchmark, not as a direct determination of the physical mixed
-residues.  For the bottom-strange channel
+residues.  The comparison is summarized in Table~\ref{tab:wang-residue-comparison}.
+For the bottom-strange channel
 we quote a Pullin--Zwicky decay-constant scenario,
 $f_{\Bsone}^{\rm PZ}=0.305\pm0.027~\GeV$ and
 $f_{\Bsone}^{T,\rm PZ}=0.285\pm0.027~\GeV$ \cite{PullinZwicky2021}.  We do not
@@ -218,6 +219,30 @@ normalization scenario uses Bacchio et al. \cite{Bacchio2024}.
   \texttt{inputs\_table.csv}, \texttt{outputs/paper\_input\_summary\_table.csv},
   and \texttt{outputs/input\_citation\_map.csv}.}
   \label{tab:inputs}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{llllll}
+    \toprule
+    Case & Current/target & $\theta$ & $\rho_{AB}$ & $f_1$ & $f_2$\\
+    \midrule
+    Wang benchmark & pure $J_A$ two-point current & -- & -- & -- & --\\
+    our pure-$J_1$ axial limit & $J_1=J_A$ & $90^\circ$ & $0$ & $0.225$ & $0.462$\\
+    our pure-$J_2$ axial limit & $J_2=J_A$ & $0^\circ$ & $0$ & $0.462$ & $0.225$\\
+    physical angle, Wang-like target & target $f_1=0.245$ & $35.3^\circ$ & $-1.00$ & $0.247$ & $0.451$\\
+    physical angle, Wang $f_A$ & target $f_1=f_A=0.245$ & $35.3^\circ$ & $-0.957$ & $0.245$ & $0.462$\\
+    current Stage-3 anchor & target $f_1=0.345$ & $35.3^\circ$ & $-0.408$ & $0.345$ & $0.381$\\
+    \bottomrule
+  \end{tabular}%
+  }
+  \caption{Pure axial-current benchmark and limiting cases of the mixed-current
+  residue model.  Wang's pure axial result is
+  $f_A(D_{s1})=0.245\pm0.017~\GeV$; it tests the $J_A$ scale, while the physical
+  mixed-current residues require an assumption about $\rho_{AB}$.  All listed
+  residues are in GeV.}
+  \label{tab:wang-residue-comparison}
 \end{table}
 
 \section{Results}

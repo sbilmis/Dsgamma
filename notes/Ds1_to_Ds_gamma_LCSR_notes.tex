@@ -1475,6 +1475,44 @@ contrast, the headline Stage-3 anchor $f_1=0.345~\GeV$ corresponds to
 $\rho_{AB}\simeq-0.41$ and $f_2\simeq0.381~\GeV$.  The check is stored in
 \texttt{outputs/stage3\_residue\_benchmark\_checks.csv}.
 
+\begin{table}[htbp]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{lllllll}
+    \toprule
+    Case & Current/target & $\theta$ & $\rho_{AB}$ & $f_A$ & $f_1$ & $f_2$\\
+    \midrule
+    Wang benchmark
+      & pure $J_A$ two-point current
+      & -- & -- & $0.245\pm0.017$ & -- & --\\
+    our pure-$J_1$ axial limit
+      & $J_1=J_A$
+      & $90^\circ$ & $0$ & $0.225$ & $0.225$ & $0.462$\\
+    our pure-$J_2$ axial limit
+      & $J_2=J_A$
+      & $0^\circ$ & $0$ & $0.225$ & $0.462$ & $0.225$\\
+    physical angle, Wang-like target
+      & target $f_1=0.245$
+      & $35.3^\circ$ & $-1.00$ & $0.225$ & $0.247$ & $0.451$\\
+    physical angle, Wang $f_A$
+      & target $f_1=f_A=0.245$
+      & $35.3^\circ$ & $-0.957$ & $0.245$ & $0.245$ & $0.462$\\
+    current Stage-3 anchor
+      & target $f_1=0.345$
+      & $35.3^\circ$ & $-0.408$ & $0.225$ & $0.345$ & $0.381$\\
+    \bottomrule
+  \end{tabular}%
+  }
+  \caption{Comparison of Wang's pure axial-current benchmark with limiting
+  cases of the present mixed-current residue model.  Wang's number checks the
+  pure $J_A$ scale.  The physical mixed-current residues require assumptions
+  about the $AA/BB$ overlap and are therefore not directly determined by the
+  pure axial-current benchmark.  All decay constants are in GeV.  A
+  machine-readable version is
+  \texttt{outputs/wang\_pure\_axial\_residue\_comparison\_table.csv}.}
+  \label{tab:wang-residue-comparison}
+\end{table}
+
 There is also a scale-convention issue that should be stated explicitly.  The
 photon-DA normalizations in the table are quoted at $\mu=1~\GeV$, whereas the
 quark masses used in the hard amplitudes are the usual $\overline{\mathrm{MS}}$
