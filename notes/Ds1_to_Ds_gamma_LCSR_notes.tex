@@ -1885,6 +1885,79 @@ All entries are medians with 16--84 percentile intervals.
 The machine-readable version of Table~\ref{tab:combined-ds-bs-summary} is
 \texttt{outputs/combined\_recommended\_results\_table.csv}.
 
+\section{Comparison With Experimental Information}
+
+The sum rule predicts a partial radiative width,
+$\Gamma_\gamma\equiv\Gamma(H_1\to H\gamma)$, while experiments often quote
+branching fractions, total widths, or spectroscopy measurements in other decay
+channels.  Therefore the comparison is not always one-to-one.  In
+Table~\ref{tab:experimental-comparison}, the ``interpretation'' column has the
+following meaning:
+\begin{itemize}
+  \item for $\Dsone(2460)$, the measured branching fraction is used to infer the
+  total-width scale that would be implied by our partial radiative width;
+  \item for $\Dsone(2536)$, the measured total width is used to infer the
+  radiative branching fraction implied by our partial width;
+  \item for $\Bsone(5830)$, no direct radiative measurement is available, so the
+  row is a prediction for future experimental searches rather than a numerical
+  comparison.
+\end{itemize}
+
+\begin{table}[htbp]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{llll}
+    \toprule
+    Decay & Theory input & Experimental information & Interpretation\\
+    \midrule
+    $\Dsone(2460)\to\Ds\gamma$
+      & legacy $\chi_s$: $36.7\,[26.8,50.2]~\mathrm{keV}$
+      & $\mathcal B(\Dsone(2460)\to\Ds\gamma)=(16\pm4\pm3)\%$ (BaBar)
+      & implies $\Gamma_{\rm tot}\sim0.23~\mathrm{MeV}$; compatible with a very narrow state\\
+    $\Dsone(2460)\to\Ds\gamma$
+      & lattice $f_{\gamma,s}^{\perp}$: $14.4\,[11.4,18.7]~\mathrm{keV}$
+      & $\mathcal B(\Dsone(2460)\to\Ds\gamma)=(16\pm4\pm3)\%$ (BaBar)
+      & implies $\Gamma_{\rm tot}\sim0.09~\mathrm{MeV}$; also compatible with a very narrow state\\
+    $\Dsone(2536)\to\Ds\gamma$
+      & legacy $\chi_s$: $5.60\,[2.56,10.98]~\mathrm{keV}$
+      & $\Gamma_{\rm tot}(\Dsone(2536))=0.92\pm0.05~\mathrm{MeV}$ (BaBar)
+      & implies $\mathcal B_\gamma\sim0.6\%$; experimentally small channel\\
+    $\Dsone(2536)\to\Ds\gamma$
+      & lattice $f_{\gamma,s}^{\perp}$: $0.68\,[0.12,1.88]~\mathrm{keV}$
+      & $\Gamma_{\rm tot}(\Dsone(2536))=0.92\pm0.05~\mathrm{MeV}$ (BaBar)
+      & implies $\mathcal B_\gamma\sim0.07\%$; strongly cancellation suppressed\\
+    $\Bsone(5830)\to\Bs\gamma$
+      & legacy $\chi_s$: $1.04\,[0.068,4.45]~\mathrm{keV}$
+      & no direct radiative measurement; observed mainly in $B^{(*)}K$ spectroscopy
+      & prediction for future searches; comparison is qualitative\\
+    $\Bsone(5830)\to\Bs\gamma$
+      & lattice $f_{\gamma,s}^{\perp}$: $5.30\,[0.454,18.9]~\mathrm{keV}$
+      & no direct radiative measurement; observed mainly in $B^{(*)}K$ spectroscopy
+      & prediction for future searches; branching fraction depends on the total width\\
+    \bottomrule
+  \end{tabular}%
+  }
+  \caption{Comparison of the present radiative-width predictions with available
+  experimental information.  The BaBar $\Dsone(2460)$ branching fraction is from
+  the $B\to D^{(*)}D_{sJ}^{(*)}$ analysis.  The $\Dsone(2536)$ total width is
+  the BaBar width measurement.  The $\Bsone(5830)$ has no direct radiative
+  branching-fraction measurement at present; CMS and LHCb measurements are
+  spectroscopy measurements in hadronic channels.}
+  \label{tab:experimental-comparison}
+\end{table}
+
+Numerically, the $\Dsone(2460)$ rows say that the present partial-width
+prediction is consistent with a total width well below the MeV scale if the
+measured radiative branching fraction is used.  The $\Dsone(2536)$ rows say
+something sharper: with the measured total width near $0.92~\mathrm{MeV}$, the
+radiative branching fraction is expected to be below the percent level,
+especially in the lattice-normalized photon-input scenario.  For
+$\Bsone(5830)$ the table should be read as a target for future experimental
+searches, not as a test against an existing radiative measurement.
+
+The machine-readable version of Table~\ref{tab:experimental-comparison} is
+\texttt{outputs/experimental\_comparison\_table.csv}.
+
 \section{Missing Or Useful Paper Material}
 
 Before moving from the $D_{s1}$ paper draft to the $B_{s1}$ extension, the
