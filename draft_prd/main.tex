@@ -201,8 +201,50 @@ from the local two-point sum rules for the residues, where the usual SVZ
 condensates enter the OPE.
 
 After the double Borel transformation in $p^2$ and $P^2$ and continuum
-subtraction, the basis-current form factors are denoted by $G_A$ and $G_B$.
-The physical charm-strange couplings are then formed as
+subtraction, we denote by
+$\widehat\Pi_A(M_1^2,M_2^2,s_0)$ and
+$\widehat\Pi_B(M_1^2,M_2^2,s_0)$ the invariant QCD amplitudes multiplying the
+structure in Eq.~\eqref{eq:projector} for the two basis currents.  The
+corresponding basis form factors satisfy
+\begin{align}
+  G_A &=
+  \frac{m_Q+m_s}{m_P^2 f_P\,m_A f_A}
+  \exp\left(\frac{m_A^2}{M_1^2}+\frac{m_P^2}{M_2^2}\right)
+  \widehat\Pi_A(M_1^2,M_2^2,s_0), \notag\\
+  G_B &=
+  \frac{m_Q+m_s}{m_P^2 f_P\,m_A f_B}
+  \exp\left(\frac{m_A^2}{M_1^2}+\frac{m_P^2}{M_2^2}\right)
+  \widehat\Pi_B(M_1^2,M_2^2,s_0).
+  \label{eq:basis-sum-rules}
+\end{align}
+Here $m_A$ is the mass of the axial state used in the corresponding hadronic
+pole, $m_P$ and $f_P$ are the mass and decay constant of the final pseudoscalar
+meson, and $M_1^2$ and $M_2^2$ are the Borel parameters in the axial and
+pseudoscalar channels, respectively.
+
+For the physical charm-strange states, the sum rules for the form factors are
+therefore
+\begin{align}
+  G_1 \equiv G_{2460} &=
+  \frac{m_c+m_s}{m_{\Ds}^2 f_{\Ds}\,m_1 f_1}
+  \exp\left(\frac{m_1^2}{M_1^2}+\frac{m_{\Ds}^2}{M_2^2}\right)
+  \left[
+    \sin\theta\,\widehat\Pi_A^{(2460)}
+    +\cos\theta\,\widehat\Pi_B^{(2460)}
+  \right],
+  \notag\\
+  G_2 \equiv G_{2536} &=
+  \frac{m_c+m_s}{m_{\Ds}^2 f_{\Ds}\,m_2 f_2}
+  \exp\left(\frac{m_2^2}{M_1^2}+\frac{m_{\Ds}^2}{M_2^2}\right)
+  \left[
+    \cos\theta\,\widehat\Pi_A^{(2536)}
+    -\sin\theta\,\widehat\Pi_B^{(2536)}
+  \right],
+  \label{eq:g1-g2-sum-rules}
+\end{align}
+where $m_1=m_{\Dsone(2460)}$ and $m_2=m_{\Dsone(2536)}$.  Equivalently, if the
+basis-current form factors in Eq.~\eqref{eq:basis-sum-rules} are introduced
+first, the same physical couplings are written as
 \begin{align}
   G_{2460} &=
   \frac{\sin\theta\,f_A\,G_A+\cos\theta\,f_B\,G_B}{f_1},\\
