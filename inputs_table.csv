@@ -18,6 +18,7 @@ Bs decay constant,f_Bs,0.2303 ± 0.0013,GeV,FLAG Review 2024,central input for B
 Bs1 axial dc working input,f_Bs1_A_working,0.146 ± 0.029,GeV,HQ scaling from f_Ds1_A: f sqrt(M)=const,temporary Bs1 input used in scripts; assign 20 percent uncertainty
 Bs1 tensor dc working input,f_Bs1_T_working,0.164 ± 0.033,GeV,HQ scaling from f_Ds1_T: f sqrt(M)=const,temporary Bs1 tensor-current input used in scripts; assign 20 percent uncertainty
 Bs1 axial dc literature candidate,f_Bs1_A_PZ,0.305 ± 0.027,GeV,Pullin-Zwicky Table 8 (B1s=0.305),not used in current baseline; keep as alternative scenario to test
+Bs1 tensor dc literature candidate,f_Bs1_T_PZ,0.285 ± 0.027,GeV,Pullin-Zwicky Table 8,Stage-3 Bs1 decay-constant scenario
 Quark condensate,<qq>,-(0.24 GeV)^3 = -0.01382,GeV^3,standard SVZ; Colangelo Appendix,up/down
 Strange condensate ratio,kappa=<ss>/<qq>,0.8 ± 0.1,-,standard,<ss>=kappa<qq>
 Mixed condensate m0^2,m0^2,0.8 ± 0.2,GeV^2,standard,<q gσG q>=m0^2<qq>
