@@ -76,7 +76,7 @@ light-cone QCD sum-rule (LCSR) calculation.
 
 The LCSR method expresses the correlation function near the light cone in
 terms of photon distribution amplitudes (DAs) and hadronic decay constants
-\cite{Shifman:1978bx,Braun:1997kw,Ball:2002ps}.  It is well suited for
+\cite{Shifman:1978bx,Braun:1997kw,Ball:2002ps,Colangelo:2005hv}.  It is well suited for
 exclusive radiative transitions because it keeps the hard photon emission from
 quark lines and the long-distance photon emission encoded in photon DAs in a
 single framework.  In the present analysis we include both quark-line hard
@@ -117,6 +117,28 @@ currents are written as
 Unless stated otherwise we use $\theta=35.3^\circ$ and include the interval
 $25^\circ\leq\theta\leq45^\circ$ as a systematic scan.
 
+Following the notation commonly used in the LCSR analysis of radiative
+$D_{sJ}$ transitions \cite{Colangelo:2005hv}, the hadronic parameters are
+defined by
+\begin{align}
+  \langle 0|\bar s\,\ii\gamma_5 Q|P(p)\rangle
+  &=
+  \frac{m_P^2 f_P}{m_Q+m_s},\label{eq:fp-def}\\
+  \langle0|J_\mu^A|A(P,\eta)\rangle
+  &=f_A m_A\eta_\mu,\label{eq:fa-def}\\
+  \langle0|J_\mu^B|A(P,\eta)\rangle
+  &=f_B m_A\eta_\mu,\label{eq:fb-def}\\
+  \langle0|J_{1\mu}|\Dsone(2460)(P,\eta)\rangle
+  &=f_1 m_1\eta_\mu,\label{eq:f1-def}\\
+  \langle0|J_{2\mu}|\Dsone(2536)(P,\eta)\rangle
+  &=f_2 m_2\eta_\mu.\label{eq:f2-def}
+\end{align}
+Here $m_1=m_{\Dsone(2460)}$ and $m_2=m_{\Dsone(2536)}$.  The constants
+$f_A$ and $f_B$ normalize the two basis-current sum rules, while $f_1$ and
+$f_2$ normalize the physical mixed currents.  This separation is important:
+the LCSR OPE is first derived for $J_\mu^A$ and $J_\mu^B$, and only afterwards
+rotated to the physical $1^+$ states.
+
 The radiative matrix element is parametrized by a single gauge-invariant
 electric-dipole form factor:
 \begin{equation}
@@ -155,6 +177,20 @@ correlator onto
 \end{equation}
 which matches the structure in Eq.~\eqref{eq:e1}.
 
+For later use we write the invariant decomposition as
+\begin{equation}
+  \Pi_\mu^{(i)}(p,q)
+  =
+  \Pi_i(p^2,P^2)
+  \left[(p\cdot q)\varepsilon_\mu^*
+  -(p\cdot\varepsilon^*)q_\mu\right]
+  +\Pi_i^{\rm other}\,q_\mu+\cdots ,
+  \qquad i=A,B .
+  \label{eq:invariant-decomp}
+\end{equation}
+Only the coefficient $\Pi_i$ of the gauge-invariant E1 structure is used in
+the sum rule.
+
 On the hadronic side, isolating the ground-state double pole gives
 \begin{equation}
   \Pi_\mu^{\rm had}=
@@ -167,6 +203,16 @@ On the hadronic side, isolating the ground-state double pole gives
 \end{equation}
 where $i=A,B$ for the basis currents and the ellipsis denotes higher states
 and continuum contributions.
+
+The double Borel transformation and continuum subtraction are performed in
+the variables $P^2$ and $p^2$.  In the symmetric point used numerically,
+\begin{equation}
+  M_1^2=M_2^2=2M^2,\qquad
+  u_0=\frac{M_1^2}{M_1^2+M_2^2}=\frac12 ,
+  \label{eq:borel-defs}
+\end{equation}
+so the common exponential weight in the spectral integrals is
+$\exp(-s/M^2)$.
 
 The QCD side is obtained by expanding near the light cone in the external
 electromagnetic field.  We use the quark propagators in the external photon
@@ -208,8 +254,9 @@ DAs: the two-particle functions are denoted by
 $\phi_\gamma(u)$, $\psi^{(v)}(u)$, ${\cal A}(u)$ and ${\cal B}(u)$, while the
 three-particle twist-4 DAs are
 ${\cal S}$, $\widetilde{\cal S}$ and ${\cal T}_{1,\ldots,4}$
-\cite{Rohrwild:2007yt}.  In this notation the axial-current invariant
-amplitude is decomposed as
+\cite{Rohrwild:2007yt}.  Their explicit forms and numerical parameters are
+collected in Appendix~\ref{app:photon-das}.  In this notation the
+axial-current invariant amplitude is decomposed as
 \begin{align}
   \widehat\Pi_A
   &=
@@ -250,8 +297,7 @@ Here
 The first relation is only a notation dictionary: it rewrites the
 two-particle twist-4 combination used in the numerical code,
 ${\cal A}-8\bar H_\gamma$, as Rohrwild's
-${\cal A}+{\cal B}$.
-and the three-particle photon-DA integral is
+${\cal A}+{\cal B}$.  The three-particle photon-DA integral is
 \begin{align}
   {\cal I}_{F_1}(u_0)
   &=
@@ -343,6 +389,12 @@ representation used numerically is
 \end{equation}
 for the central photon-DA parameters.  The corresponding axial integral is
 ${\cal I}_{F_1}(1/2)=7.03\times10^{-2}$.
+
+The formulas above are the analog of the explicit LCSR expressions written by
+Colangelo, De Fazio, and Ozpineci for the single axial current
+\cite{Colangelo:2005hv}.  The difference in the present work is that the OPE
+is carried out for both basis currents, $J_\mu^A$ and $J_\mu^B$, before the
+physical rotation in Eq.~\eqref{eq:physical-currents}.
 
 After the double Borel transformation in $p^2$ and $P^2$ and continuum
 subtraction, we denote by
@@ -574,6 +626,138 @@ tens-of-keV level, while $\Dsone(2536)\to\Ds\gamma$ is strongly suppressed by
 destructive interference between the two physical-current components.  The
 same cancellation-sensitive pattern appears for the observed $\Bsone(5830)$,
 for which we predict a sub-keV median radiative width.
+
+\appendix
+
+\section{Photon distribution amplitudes}
+\label{app:photon-das}
+
+For the nonperturbative photon matrix elements we use the photon DAs in the
+notation of Rohrwild \cite{Rohrwild:2007yt}, which is based on the BBK
+classification \cite{Ball:2002ps}.  We quote the functions needed in the
+sum-rule expressions of Sec.~\ref{sec:sumrule}.  The variable $u$ is the
+quark momentum fraction, $\bar u=1-u$, and
+$\alpha_q+\alpha_{\bar q}+\alpha_g=1$ for the three-particle DAs.
+
+The leading-twist two-particle DA is taken in the asymptotic form
+\begin{equation}
+  \phi_\gamma(u)=6u\bar u .
+  \label{eq:app-phi}
+\end{equation}
+The twist-3 vector DA entering the axial invariant amplitude is
+\begin{align}
+  \psi^{(v)}(u)
+  &=
+  -20u\bar u(2u-1)
+  +\frac{15}{16}\left(\omega_\gamma^A-3\omega_\gamma^V\right)
+  u\bar u(2u-1)\left[7(2u-1)^2-3\right].
+  \label{eq:app-psiv}
+\end{align}
+For the twist-4 two-particle DAs we use
+\begin{align}
+  {\cal A}(u)
+  &=
+  40u\bar u\left(3\kappa-\kappa^+ +1\right)
+  +8\left(\zeta_2^+-3\zeta_2\right)
+  \Big\{
+  u\bar u(2+13u\bar u)
+  \notag\\
+  &\quad
+  +u^3(10-15u+6u^2)\ln u
+  +\bar u^3(10-15\bar u+6\bar u^2)\ln\bar u
+  \Big\},
+  \label{eq:app-A}\\
+  {\cal B}(u)
+  &=
+  40(1+3\kappa^+)
+  \int_0^u d\alpha\,(u-\alpha)
+  \left[-\frac12+\frac32(2\alpha-1)^2\right].
+  \label{eq:app-B}
+\end{align}
+
+The twist-4 three-particle DAs entering Eq.~\eqref{eq:f1-combination} are
+\begin{align}
+  {\cal S}(\alpha_i)
+  &=
+  30\alpha_g^2
+  \Big[
+  (\kappa+\kappa^+)(1-\alpha_g)
+  +(\zeta_1+\zeta_1^+)(1-\alpha_g)(1-2\alpha_g)
+  \notag\\
+  &\quad
+  +\zeta_2\{3(\alpha_{\bar q}-\alpha_q)^2-\alpha_g(1-\alpha_g)\}
+  \Big],
+  \label{eq:app-S}\\
+  \widetilde{\cal S}(\alpha_i)
+  &=
+  -30\alpha_g^2
+  \Big[
+  (\kappa-\kappa^+)(1-\alpha_g)
+  +(\zeta_1-\zeta_1^+)(1-\alpha_g)(1-2\alpha_g)
+  \notag\\
+  &\quad
+  +\zeta_2\{3(\alpha_{\bar q}-\alpha_q)^2-\alpha_g(1-\alpha_g)\}
+  \Big],
+  \label{eq:app-Stilde}\\
+  {\cal T}_1(\alpha_i)
+  &=
+  -120(3\zeta_2+\zeta_2^+)
+  (\alpha_q-\alpha_{\bar q})\alpha_{\bar q}\alpha_q\alpha_g,
+  \label{eq:app-T1}\\
+  {\cal T}_2(\alpha_i)
+  &=
+  30\alpha_g^2(\alpha_q-\alpha_{\bar q})
+  \Big[
+  \kappa-\kappa^+
+  +(\zeta_1-\zeta_1^+)(1-2\alpha_g)
+  +\zeta_2(3-4\alpha_g)
+  \Big],
+  \label{eq:app-T2}\\
+  {\cal T}_3(\alpha_i)
+  &=
+  -120(3\zeta_2-\zeta_2^+)
+  (\alpha_q-\alpha_{\bar q})\alpha_{\bar q}\alpha_q\alpha_g,
+  \label{eq:app-T3}\\
+  {\cal T}_4(\alpha_i)
+  &=
+  30\alpha_g^2(\alpha_q-\alpha_{\bar q})
+  \Big[
+  \kappa+\kappa^+
+  +(\zeta_1+\zeta_1^+)(1-2\alpha_g)
+  +\zeta_2(3-4\alpha_g)
+  \Big].
+  \label{eq:app-T4}
+\end{align}
+
+\begin{table}[t]
+\caption{Photon-DA parameters used at $\mu=1~\GeV$ in Rohrwild notation.}
+\label{tab:app-photon-params}
+\begin{ruledtabular}
+\begin{tabular}{lll}
+Parameter & Value & Comment\\
+\hline
+$\chi_s$ & $3.15\pm0.30~\GeV^{-2}$ & legacy susceptibility input\\
+$f_{3\gamma}$ & $-(4.0\pm2.0)\times10^{-3}~\GeV^2$ & twist-3 coupling\\
+$\omega_\gamma^A$ & $-2.1\pm1.0$ & twist-3 shape\\
+$\omega_\gamma^V$ & $3.8\pm1.8$ & twist-3 shape\\
+$\kappa$ & $0.15$ & twist-4 shape\\
+$\kappa^+$ & $-0.05$ & twist-4 shape\\
+$\zeta_1$ & $0.40$ & twist-4 shape\\
+$\zeta_1^+$ & $0$ & twist-4 shape\\
+$\zeta_2$ & $0.30$ & twist-4 shape\\
+$\zeta_2^+$ & $0$ & twist-4 shape\\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+In the preferred modern scenario we replace the legacy normalization
+$\chi_s\ssbar$ of the leading-twist matrix element by the lattice-normalized
+$f_{\gamma,s}^{\perp}$ input.  The shapes in this appendix are otherwise kept
+fixed in the same Rohrwild/BBK convention.
+When comparing directly with the single-current formula of
+Ref.~\cite{Colangelo:2005hv}, these definitions are translated into the
+equivalent Colangelo notation used in that benchmark expression; no additional
+DA model is introduced.
 
 \begin{acknowledgments}
 To be added.
