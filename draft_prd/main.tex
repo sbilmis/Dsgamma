@@ -156,6 +156,12 @@ The corresponding width is
   \left(\frac{m_A^2-m_P^2}{2m_A}\right)^3 .
   \label{eq:width}
 \end{equation}
+In Eq.~\eqref{eq:e1} the symbol $G$ denotes the physical transition form
+factor of the state under discussion.  To avoid mixing this physical quantity
+with the intermediate basis-current amplitudes, below we use
+$\mathcal{G}_A$ and $\mathcal{G}_B$ only for the two unmixed basis-current
+form factors, and $G_{2460}$, $G_{2536}$, $G_{5748}$, and $G_{5829}$ for
+physical mesons.
 
 \section{Light-cone sum rule}
 \label{sec:sumrule}
@@ -195,14 +201,15 @@ On the hadronic side, isolating the ground-state double pole gives
 \begin{equation}
   \Pi_\mu^{\rm had}=
   \frac{m_P^2 f_P}{m_Q+m_s}\,
-  \frac{m_A f_A^{(i)}G_i}
+  \frac{m_A f_A^{(i)}\mathcal{G}_i}
   {(m_A^2-P^2)(m_P^2-p^2)}
   \left[(p\cdot q)\varepsilon_\mu^*
   -(p\cdot\varepsilon^*)q_\mu\right]+\cdots ,
   \label{eq:hadronic}
 \end{equation}
-where $i=A,B$ for the basis currents and the ellipsis denotes higher states
-and continuum contributions.
+where $i=A,B$ for the basis currents, so
+$\mathcal{G}_i=\{\mathcal{G}_A,\mathcal{G}_B\}$ at this intermediate stage.
+The ellipsis denotes higher states and continuum contributions.
 
 The double Borel transformation and continuum subtraction are performed in
 the variables $P^2$ and $p^2$.  In the symmetric point used numerically,
@@ -403,11 +410,11 @@ $\widehat\Pi_B(M_1^2,M_2^2,s_0)$ the invariant QCD amplitudes multiplying the
 structure in Eq.~\eqref{eq:projector} for the two basis currents.  The
 corresponding basis form factors satisfy
 \begin{align}
-  G_A &=
+  \mathcal{G}_A &=
   \frac{m_Q+m_s}{m_P^2 f_P\,m_A f_A}
   \exp\left(\frac{m_A^2}{M_1^2}+\frac{m_P^2}{M_2^2}\right)
   \widehat\Pi_A(M_1^2,M_2^2,s_0), \notag\\
-  G_B &=
+  \mathcal{G}_B &=
   \frac{m_Q+m_s}{m_P^2 f_P\,m_A f_B}
   \exp\left(\frac{m_A^2}{M_1^2}+\frac{m_P^2}{M_2^2}\right)
   \widehat\Pi_B(M_1^2,M_2^2,s_0).
@@ -421,7 +428,7 @@ pseudoscalar channels, respectively.
 For the physical charm-strange states, the sum rules for the form factors are
 therefore
 \begin{align}
-  G_1 \equiv G_{2460} &=
+  G_{2460} &=
   \frac{m_c+m_s}{m_{\Ds}^2 f_{\Ds}\,m_1 f_1}
   \exp\left(\frac{m_1^2}{M_1^2}+\frac{m_{\Ds}^2}{M_2^2}\right)
   \left[
@@ -429,7 +436,7 @@ therefore
     +\cos\theta\,\widehat\Pi_B^{(2460)}
   \right],
   \notag\\
-  G_2 \equiv G_{2536} &=
+  G_{2536} &=
   \frac{m_c+m_s}{m_{\Ds}^2 f_{\Ds}\,m_2 f_2}
   \exp\left(\frac{m_2^2}{M_1^2}+\frac{m_{\Ds}^2}{M_2^2}\right)
   \left[
@@ -443,9 +450,11 @@ basis-current form factors in Eq.~\eqref{eq:basis-sum-rules} are introduced
 first, the same physical couplings are written as
 \begin{align}
   G_{2460} &=
-  \frac{\sin\theta\,f_A\,G_A+\cos\theta\,f_B\,G_B}{f_1},\\
+  \frac{\sin\theta\,f_A\,\mathcal{G}_A
+  +\cos\theta\,f_B\,\mathcal{G}_B}{f_1},\\
   G_{2536} &=
-  \frac{\cos\theta\,f_A\,G_A-\sin\theta\,f_B\,G_B}{f_2}.
+  \frac{\cos\theta\,f_A\,\mathcal{G}_A
+  -\sin\theta\,f_B\,\mathcal{G}_B}{f_2}.
   \label{eq:physical-form-factors}
 \end{align}
 Here $f_1$ and $f_2$ are the residues of the mixed physical currents in
