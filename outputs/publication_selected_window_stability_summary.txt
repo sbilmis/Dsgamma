@@ -2,8 +2,8 @@ Publication selected-window stability plot
 ==========================================
 The legacy combined plots are kept for comparison.
 The channel-separated plots are preferred because they avoid solid/dashed overloading.
-Ds g1: 0.35077 to 0.48539 GeV^-1
-Ds g2: 0.01845 to 0.0422 GeV^-1
+Ds g1: 0.35077 to 0.47733 GeV^-1
+Ds g2: 0.019513 to 0.0422 GeV^-1
 Bs quoted g: 0.041117 to 0.41797 GeV^-1
 Wrote /Users/sbilmis/Dsgamma/outputs/publication_selected_window_stability.csv
 Wrote /Users/sbilmis/Dsgamma/outputs/publication_selected_window_stability.pdf

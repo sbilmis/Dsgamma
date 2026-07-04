@@ -36,8 +36,8 @@ from final_stage2_uncertainty_scan import precompute_f1_basis
 DS_WINDOW = {
     "M2": (3.0, 4.5),
     "s0": (7.84, 8.70),
-    "s0_lines": (7.84, 8.27, 8.70),
-    "M2_lines": (3.0, 3.75, 4.5),
+    "s0_lines": (8.0, 8.3, 8.6),
+    "M2_lines": (3.0, 3.5, 4.0),
 }
 
 BS5830_WINDOW = {
@@ -46,7 +46,7 @@ BS5830_WINDOW = {
     "quoted_combo": "high",
     "M2": (10.0, 14.0),
     "s0": (37.82, 40.96),
-    "s0_lines": (37.82, 39.39, 40.96),
+    "s0_lines": (38.0, 39.0, 40.0),
     "M2_lines": (10.0, 12.0, 14.0),
 }
 
@@ -56,7 +56,7 @@ BSLOW_WINDOW = {
     "quoted_combo": "low",
     "M2": (10.0, 14.0),
     "s0": (36.60, 40.32),
-    "s0_lines": (36.60, 38.46, 40.32),
+    "s0_lines": (37.0, 38.0, 39.0),
     "M2_lines": (10.0, 12.0, 14.0),
 }
 
@@ -127,7 +127,13 @@ def style_axis(ax) -> None:
     ax.tick_params(direction="in", top=True, right=True)
 
 
-def loosen_ylim(ax, values: list[float], fraction: float = 0.65) -> None:
+def fmt_scan_value(value: float) -> str:
+    if abs(value - round(value)) < 1.0e-10:
+        return f"{value:.0f}"
+    return f"{value:.1f}"
+
+
+def loosen_ylim(ax, values: list[float], fraction: float = 1.80) -> None:
     """Use a deliberately loose y range so stability is not visually overstated."""
     ymin = min(values)
     ymax = max(values)
@@ -163,6 +169,14 @@ def add_clean_legend(ax, *, title: str) -> None:
     )
 
 
+def set_channel_ylim(ax, spec: dict[str, object], values: list[float]) -> None:
+    if "ylim" in spec:
+        ymin, ymax = spec["ylim"]
+        ax.set_ylim(float(ymin), float(ymax))
+    else:
+        loosen_ylim(ax, values)
+
+
 def plot_publication(rows: list[dict[str, float | str]]) -> None:
     fig, axes = plt.subplots(2, 2, figsize=(10.0, 7.2))
     color_cycle = [COLORS["low"], COLORS["mid"], COLORS["high"]]
@@ -171,7 +185,7 @@ def plot_publication(rows: list[dict[str, float | str]]) -> None:
     ax = axes[0, 0]
     for color, s0 in zip(color_cycle, DS_WINDOW["s0_lines"]):
         subset = [r for r in rows if r["sector"] == "Ds" and r["scan"] == "M2" and abs(float(r["fixed_s0"]) - s0) < 1.0e-10]
-        ax.plot([float(r["M2"]) for r in subset], [float(r["g1_abs"]) for r in subset], color=color, linewidth=1.8, label=rf"$s_0={s0:.2f}$")
+        ax.plot([float(r["M2"]) for r in subset], [float(r["g1_abs"]) for r in subset], color=color, linewidth=1.8, label=rf"$s_0={fmt_scan_value(s0)}$")
         ax.plot([float(r["M2"]) for r in subset], [float(r["g2_abs"]) for r in subset], color=color, linewidth=1.4, linestyle="--")
     ax.set_title(r"$D_{s1}\to D_s\gamma$: Borel stability")
     ax.set_xlabel(r"$M^2$ [GeV$^2$]")
@@ -184,7 +198,7 @@ def plot_publication(rows: list[dict[str, float | str]]) -> None:
     ax = axes[0, 1]
     for color, M2 in zip(color_cycle, DS_WINDOW["M2_lines"]):
         subset = [r for r in rows if r["sector"] == "Ds" and r["scan"] == "s0" and abs(float(r["fixed_M2"]) - M2) < 1.0e-10]
-        ax.plot([float(r["s0"]) for r in subset], [float(r["g1_abs"]) for r in subset], color=color, linewidth=1.8, label=rf"$M^2={M2:.2f}$")
+        ax.plot([float(r["s0"]) for r in subset], [float(r["g1_abs"]) for r in subset], color=color, linewidth=1.8, label=rf"$M^2={fmt_scan_value(M2)}$")
         ax.plot([float(r["s0"]) for r in subset], [float(r["g2_abs"]) for r in subset], color=color, linewidth=1.4, linestyle="--")
     ax.set_title(r"$D_{s1}\to D_s\gamma$: threshold stability")
     ax.set_xlabel(r"$s_0$ [GeV$^2$]")
@@ -207,7 +221,7 @@ def plot_publication(rows: list[dict[str, float | str]]) -> None:
     ax.set_ylabel(r"$|g_{\rm quoted}|$ [GeV$^{-1}$]")
     ax.text(0.03, 0.78, r"solid: $B_{s1}^{low}$" "\n" r"dashed: $B_{s1}(5830)$", transform=ax.transAxes, fontsize=8)
     handles = [plt.Line2D([0], [0], color=c, lw=1.8) for c in color_cycle]
-    labels = [rf"$s_0={s0:.2f}$" for s0 in BS5830_WINDOW["s0_lines"]]
+    labels = [rf"$s_0={fmt_scan_value(s0)}$" for s0 in BS5830_WINDOW["s0_lines"]]
     ax.legend(handles, labels, frameon=False, fontsize=8, title=r"$s_0$ [GeV$^2$]", loc="upper right")
     style_axis(ax)
 
@@ -237,15 +251,15 @@ def plot_publication(rows: list[dict[str, float | str]]) -> None:
 def central_norms(rows: list[dict[str, float | str]]) -> dict[str, float]:
     ds_center = min(
         [r for r in rows if r["sector"] == "Ds"],
-        key=lambda r: abs(float(r["M2"]) - 3.75) + abs(float(r["s0"]) - 8.27),
+        key=lambda r: abs(float(r["M2"]) - 3.5) + abs(float(r["s0"]) - 8.3),
     )
     bs_low_center = min(
         [r for r in rows if r["sector"] == "Bs" and r["state"] == BSLOW_WINDOW["state"]],
-        key=lambda r: abs(float(r["M2"]) - 12.0) + abs(float(r["s0"]) - 38.46),
+        key=lambda r: abs(float(r["M2"]) - 12.0) + abs(float(r["s0"]) - 38.0),
     )
     bs_high_center = min(
         [r for r in rows if r["sector"] == "Bs" and r["state"] == BS5830_WINDOW["state"]],
-        key=lambda r: abs(float(r["M2"]) - 12.0) + abs(float(r["s0"]) - 39.39),
+        key=lambda r: abs(float(r["M2"]) - 12.0) + abs(float(r["s0"]) - 39.0),
     )
     return {
         "Ds2460": abs(float(ds_center["g_2460"])),
@@ -263,7 +277,7 @@ def plot_publication_normalized(rows: list[dict[str, float | str]]) -> None:
     ax = axes[0, 0]
     for color, s0 in zip(color_cycle, DS_WINDOW["s0_lines"]):
         subset = [r for r in rows if r["sector"] == "Ds" and r["scan"] == "M2" and abs(float(r["fixed_s0"]) - s0) < 1.0e-10]
-        ax.plot([float(r["M2"]) for r in subset], [float(r["g1_abs"]) / norms["Ds2460"] for r in subset], color=color, linewidth=1.8, label=rf"$s_0={s0:.2f}$")
+        ax.plot([float(r["M2"]) for r in subset], [float(r["g1_abs"]) / norms["Ds2460"] for r in subset], color=color, linewidth=1.8, label=rf"$s_0={fmt_scan_value(s0)}$")
         ax.plot([float(r["M2"]) for r in subset], [float(r["g2_abs"]) / norms["Ds2536"] for r in subset], color=color, linewidth=1.4, linestyle="--")
     ax.set_title(r"$D_{s1}\to D_s\gamma$: Borel stability")
     ax.set_xlabel(r"$M^2$ [GeV$^2$]")
@@ -275,7 +289,7 @@ def plot_publication_normalized(rows: list[dict[str, float | str]]) -> None:
     ax = axes[0, 1]
     for color, M2 in zip(color_cycle, DS_WINDOW["M2_lines"]):
         subset = [r for r in rows if r["sector"] == "Ds" and r["scan"] == "s0" and abs(float(r["fixed_M2"]) - M2) < 1.0e-10]
-        ax.plot([float(r["s0"]) for r in subset], [float(r["g1_abs"]) / norms["Ds2460"] for r in subset], color=color, linewidth=1.8, label=rf"$M^2={M2:.2f}$")
+        ax.plot([float(r["s0"]) for r in subset], [float(r["g1_abs"]) / norms["Ds2460"] for r in subset], color=color, linewidth=1.8, label=rf"$M^2={fmt_scan_value(M2)}$")
         ax.plot([float(r["s0"]) for r in subset], [float(r["g2_abs"]) / norms["Ds2536"] for r in subset], color=color, linewidth=1.4, linestyle="--")
     ax.set_title(r"$D_{s1}\to D_s\gamma$: threshold stability")
     ax.set_xlabel(r"$s_0$ [GeV$^2$]")
@@ -297,7 +311,7 @@ def plot_publication_normalized(rows: list[dict[str, float | str]]) -> None:
     ax.set_ylabel(r"$|g_{\rm quoted}|/|g_{\rm quoted}|_{\rm c}$")
     ax.text(0.03, 0.78, r"solid: $B_{s1}^{low}$" "\n" r"dashed: $B_{s1}(5830)$", transform=ax.transAxes, fontsize=8)
     handles = [plt.Line2D([0], [0], color=c, lw=1.8) for c in color_cycle]
-    labels = [rf"$s_0={s0:.2f}$" for s0 in BS5830_WINDOW["s0_lines"]]
+    labels = [rf"$s_0={fmt_scan_value(s0)}$" for s0 in BS5830_WINDOW["s0_lines"]]
     ax.legend(handles, labels, frameon=False, fontsize=8, title=r"$s_0$ [GeV$^2$]", loc="upper right")
     style_axis(ax)
 
@@ -335,6 +349,7 @@ CHANNEL_SPECS = [
         "window": DS_WINDOW,
         "state": "",
         "ylabel": r"$|g_1|$ [GeV$^{-1}$]",
+        "ylim": (0.25, 0.60),
     },
     {
         "channel_id": "ds1_2536",
@@ -344,6 +359,7 @@ CHANNEL_SPECS = [
         "window": DS_WINDOW,
         "state": "",
         "ylabel": r"$|g_2|$ [GeV$^{-1}$]",
+        "ylim": (0.00, 0.06),
     },
     {
         "channel_id": "bs1_low_5750",
@@ -352,7 +368,8 @@ CHANNEL_SPECS = [
         "value_key": "g_quoted_abs",
         "window": BSLOW_WINDOW,
         "state": BSLOW_WINDOW["state"],
-        "ylabel": r"$|g_{\rm low}|$ [GeV$^{-1}$]",
+        "ylabel": r"$|g_1|$ [GeV$^{-1}$]",
+        "ylim": (0.25, 0.50),
     },
     {
         "channel_id": "bs1_5830",
@@ -361,7 +378,8 @@ CHANNEL_SPECS = [
         "value_key": "g_quoted_abs",
         "window": BS5830_WINDOW,
         "state": BS5830_WINDOW["state"],
-        "ylabel": r"$|g_{\rm high}|$ [GeV$^{-1}$]",
+        "ylabel": r"$|g_2|$ [GeV$^{-1}$]",
+        "ylim": (0.03, 0.05),
     },
 ]
 
@@ -395,14 +413,14 @@ def plot_channel_absolute(rows: list[dict[str, float | str]], spec: dict[str, ob
             y,
             color=color,
             linewidth=1.8,
-            label=rf"$s_0={float(s0):.2f}$",
+            label=rf"$s_0={fmt_scan_value(float(s0))}$",
         )
     add_inside_title(ax, str(spec["title"]))
     ax.set_xlabel(r"$M^2$ [GeV$^2$]")
     ax.set_ylabel(str(spec["ylabel"]))
-    ax.legend(frameon=False, fontsize=8, title=r"$s_0$ [GeV$^2$]", loc="upper right")
+    ax.legend(frameon=False, fontsize=8, loc="upper right")
     style_axis(ax)
-    loosen_ylim(ax, y_values)
+    set_channel_ylim(ax, spec, y_values)
     fig.tight_layout()
     fig.savefig(OUT / f"{stem}_M2.png", dpi=300)
     fig.savefig(OUT / f"{stem}_M2.pdf")
@@ -418,14 +436,14 @@ def plot_channel_absolute(rows: list[dict[str, float | str]], spec: dict[str, ob
             y,
             color=color,
             linewidth=1.8,
-            label=rf"$M^2={float(M2):.2f}$",
+            label=rf"$M^2={fmt_scan_value(float(M2))}$",
         )
     add_inside_title(ax, str(spec["title"]))
     ax.set_xlabel(r"$s_0$ [GeV$^2$]")
     ax.set_ylabel(str(spec["ylabel"]))
-    ax.legend(frameon=False, fontsize=8, title=r"$M^2$ [GeV$^2$]", loc="upper right")
+    ax.legend(frameon=False, fontsize=8, loc="upper right")
     style_axis(ax)
-    loosen_ylim(ax, y_values)
+    set_channel_ylim(ax, spec, y_values)
     fig.tight_layout()
     fig.savefig(OUT / f"{stem}_s0.png", dpi=300)
     fig.savefig(OUT / f"{stem}_s0.pdf")
