@@ -33,11 +33,11 @@ twist-4 param omega^V_gamma,omega_V,3.8 ± 1.8,-,BBK2002,3-particle
 twist-4 param omega^A_gamma,omega_A,-2.1 ± 1.0,-,BBK2002,3-particle
 twist-2 asymptotic phi_gamma,phi_gamma(u),6 u (1-u),-,BBK2002 asymptotic,normalization ∫phi=1
 3P1-1P1 mixing angle,theta,SCAN; ideal 35.3°,deg,Yang 2007; HQ limit,physical states via Eq.(2)
-Ds1 Borel window,M2_Ds1,3 to 6,GeV^2,working LCSR window,used in Ds1 scans
-Ds1 continuum window,sqrt_s0_Ds1,2.50 to 2.60,GeV,working LCSR window,used in Ds1 scans
-Bs1 Borel window,M2_Bs1,8 to 14,GeV^2,working LCSR window,used in Bs1 scans
-Bs1(5830) continuum window,sqrt_s0_Bs1_5830,6.05 to 6.25,GeV,working LCSR window,used for observed Bs1(5830)
-Bs1 lower diagnostic continuum window,sqrt_s0_Bs1_low,5.95 to 6.15,GeV,working LCSR window,used for lower 1+ diagnostic
+Ds1 Borel window,M2_Ds1,3.0 to 4.5,GeV^2,redo stability diagnostics,preferred Ds1 window after pole-proxy/OPE/stability check
+Ds1 continuum window,s0_Ds1,7.84 to 8.70,GeV^2,redo stability diagnostics,corresponds to sqrt(s0)=2.80 to 2.95 GeV
+Bs1 Borel window,M2_Bs1,10 to 14,GeV^2,redo stability diagnostics,preferred Bs1 window after stability check
+Bs1(5830) continuum window,s0_Bs1_5830,37.82 to 40.96,GeV^2,redo stability diagnostics,corresponds to sqrt(s0)=6.15 to 6.40 GeV
+Bs1 lower diagnostic continuum window,s0_Bs1_low,36.60 to 40.32,GeV^2,redo stability diagnostics,corresponds to sqrt(s0)=6.05 to 6.35 GeV
 strange quark charge,e_s,-1/3,e,QED,hard light-quark photon emission (a1)
 charm quark charge,e_c,+2/3,e,QED,hard heavy-quark photon emission (b1)
 bottom quark charge,e_b,-1/3,e,QED,Bs sector hard heavy emission

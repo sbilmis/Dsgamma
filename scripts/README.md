@@ -12,6 +12,11 @@ This folder contains the symbolic and numerical workflow.
 - `lattice_photon_normalization_comparison.py` - legacy susceptibility versus
   lattice photon normalization.
 - `stage2_stability_plots.py` - Borel and threshold stability plots.
+- `redo_stability_windows.py` - redo Borel and continuum-threshold stability
+  plots with \(s_0\) written as the squared threshold in GeV^2.
+- `window_diagnostics.py` - compares candidate \(M^2,s_0\) windows using
+  perturbative pole-fraction proxies, photon-DA continuum retention, OPE
+  hierarchy, and numerical stability.
 - `publication_plots.py` and `uncertainty_publication_plots.py` - publication
   plotting helpers.
 

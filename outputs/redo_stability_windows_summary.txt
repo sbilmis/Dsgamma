@@ -1,0 +1,46 @@
+Redo stability-window scan
+==========================
+Preferred central scenario: lattice f_gamma,s^perp normalization.
+Thresholds are written as squared s0 in GeV^2; helper functions receive sqrt(s0) internally.
+theta = 35.3 deg.
+
+Suggested plotting/selection convention:
+  Ds broad scan: M2 = 2-7 GeV^2, s0 = 8.12-9.61 GeV^2.
+  Bs broad scan: M2 = 6-18 GeV^2, s0 chosen above each pole.
+  Final uncertainty windows should be selected from the visible plateau.
+
+Ds1 scan
+--------
+grid points: 124
+M2 range: 2.00-7.00 GeV^2; s0 range: 8.12-9.61 GeV^2
+g_2460: min -0.644327; max -0.247743; relative span 0.889
+Gamma_2460_keV: min +12.9014; max +87.2665; relative span 1.485
+g_2536: min -0.0072657; max +0.0704994; relative span 2.460
+Gamma_2536_keV: min +3.25954e-05; max +1.54231; relative span 2.000
+GA_basis: min -0.58094; max -0.122139; relative span 1.305
+GB_basis: min -0.389273; max -0.184586; relative span 0.713
+
+B_{s1}^{low}(5750) scan
+-----------------------
+grid points: 124
+M2 range: 6.00-18.00 GeV^2; s0 range: 36.60-40.32 GeV^2
+g_quoted: min +0.300328; max +0.674922; relative span 0.768
+Gamma_quoted_keV: min +11.1421; max +56.2703; relative span 1.339
+GA_basis: min +0.232392; max +0.565102; relative span 0.834
+GB_basis: min +0.299778; max +0.649556; relative span 0.737
+
+B_{s1}(5830) scan
+-----------------
+grid points: 124
+M2 range: 6.00-18.00 GeV^2; s0 range: 37.82-40.96 GeV^2
+g_quoted: min -0.0463295; max -0.018243; relative span 0.870
+Gamma_quoted_keV: min +0.0706127; max +0.455411; relative span 1.463
+GA_basis: min +0.246621; max +0.60346; relative span 0.840
+GB_basis: min +0.311362; max +0.68377; relative span 0.748
+
+Wrote:
+  /Users/sbilmis/Dsgamma/outputs/redo_ds1_stability_windows.csv
+  /Users/sbilmis/Dsgamma/outputs/redo_ds1_stability_windows.pdf
+  /Users/sbilmis/Dsgamma/outputs/redo_bs1_stability_windows.csv
+  /Users/sbilmis/Dsgamma/outputs/redo_bs1_low_stability_windows.pdf
+  /Users/sbilmis/Dsgamma/outputs/redo_bs1_5830_stability_windows.pdf
