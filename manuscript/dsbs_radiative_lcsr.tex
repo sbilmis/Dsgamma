@@ -46,8 +46,9 @@ strange-quark mass is retained explicitly.  We compare a legacy
 magnetic-susceptibility photon input with a recent lattice normalization of the
 leading-twist photon distribution amplitude.  For the charm-strange channels we
 include a physical-current residue normalization calibrated by local QCD sum
-rules, while for the bottom-strange channel we use a Pullin--Zwicky
-decay-constant scenario.  The preferred lattice-normalized results give a
+rules, while for the bottom-strange channel we use Pullin--Zwicky basis-current
+inputs followed by a mixed-current diagonalization closure.  The preferred
+lattice-normalized results give a
 moderate width for $\Dsone(2460)\to\Ds\gamma$, a strongly cancellation
 suppressed $\Dsone(2536)\to\Ds\gamma$ width, and a sub-keV median prediction
 for $\Bsone(5830)\to\Bs\gamma$.
@@ -170,13 +171,14 @@ At the physical angle, the Wang-like target requires a strongly negative
 $AA/BB$ overlap and is therefore treated as a diagnostic benchmark, not as a
 direct determination of the physical mixed residues.  The comparison is
 summarized in Table~\ref{tab:wang-residue-comparison}.
-For the bottom-strange channel
-we quote a Pullin--Zwicky decay-constant scenario,
-$f_{\Bsone}^{\rm PZ}=0.305\pm0.027~\GeV$ and
-$f_{\Bsone}^{T,\rm PZ}=0.285\pm0.027~\GeV$ \cite{PullinZwicky2021}.  We do not
-interpret the bottom effective mixed residue as an independently derived local
-two-point $f_1$ or $f_2$; it is the normalization entering the PZ
-decay-constant scenario.
+For the bottom-strange channel we use the Pullin--Zwicky basis-current inputs,
+$f_{\Bsone,A}^{\rm PZ}=0.305\pm0.027~\GeV$ and
+$f_{\Bsone}^{T,\rm PZ}=0.285\pm0.027~\GeV$ \cite{PullinZwicky2021}.  We then
+obtain the physical-current decay constants from a mixed-current
+diagonalization closure.  For the observed high-combination state in the
+preferred lattice-photon row this gives
+$f_1^{(B_s)}=0.443[0.384,0.492]~\GeV$ and
+$f_2^{(B_s)}=0.203[0.121,0.291]~\GeV$.
 
 \section{Numerical Inputs}
 
@@ -210,8 +212,10 @@ normalization scenario uses Bacchio et al. \cite{Bacchio2024}.
       & $0.345(17),\,\simeq0.38~\GeV$ & working Stage-3 anchor and predicted partner\\
     pure axial benchmark & $f_A(D_{s1})$
       & $0.245(17)~\GeV$ & local-QCDSR comparison only\\
-    bottom PZ constants & $f_{\Bsone}^{\rm PZ},f_{\Bsone}^{T,\rm PZ}$
-      & $0.305(27),\,0.285(27)~\GeV$ & PZ scenario\\
+    bottom basis constants & $f_{\Bsone,A}^{\rm PZ},f_{\Bsone}^{T,\rm PZ}$
+      & $0.305(27),\,0.285(27)~\GeV$ & Pullin--Zwicky\\
+    bottom physical constants & $f_1^{(B_s)},f_2^{(B_s)}$
+      & $0.443[0.384,0.492],\,0.203[0.121,0.291]~\GeV$ & this work\\
     legacy photon input & $\chi_s(1~\GeV)$
       & $+3.15(30)~\GeV^{-2}$ & comparison scenario\\
     lattice photon input & $f_{\gamma,s}^\perp(1~\GeV)$
@@ -278,17 +282,17 @@ non-Gaussian near zero.
       & $35.3^\circ$ & $f_2=0.379[0.338,0.423]$
       & $+0.0403[+0.0194,+0.0596]$ & $0.504^{+0.600}_{-0.377}$\\
     $B_s$ & $\Bsone(5830)\to\Bs\gamma$ & legacy $\chi_s$
-      & $35.3^\circ$ & PZ constants, $f_{\rm eff}=0.391[0.354,0.428]$
-      & $-0.0140[-0.0387,+0.0155]$ & $0.109^{+0.304}_{-0.101}$\\
+      & $35.3^\circ$ & $f_2^{(B_s)}=0.218[0.138,0.292]$
+      & $-0.0793[-0.130,-0.0537]$ & $1.33^{+2.27}_{-0.72}$\\
     $B_s$ & $\Bsone(5830)\to\Bs\gamma$ & lattice $f_{\gamma,s}^{\perp}$
-      & $35.3^\circ$ & PZ constants, $f_{\rm eff}=0.393[0.354,0.427]$
-      & $+0.0356[+0.0029,+0.0694]$ & $0.272^{+0.752}_{-0.244}$\\
+      & $35.3^\circ$ & $f_2^{(B_s)}=0.203[0.121,0.291]$
+      & $-0.0401[-0.0695,-0.0274]$ & $0.342^{+0.684}_{-0.182}$\\
     $B_s$ & $\Bsone(5830)\to\Bs\gamma$ & legacy $\chi_s$
-      & $25^\circ$--$45^\circ$ & PZ constants, $f_{\rm eff}=0.394[0.356,0.430]$
-      & $-0.0126[-0.0527,+0.0364]$ & $0.249^{+0.570}_{-0.226}$\\
+      & $25^\circ$--$45^\circ$ & $f_2^{(B_s)}=0.246[0.174,0.312]$
+      & $-0.0380[-0.103,+0.0101]$ & $0.349^{+1.908}_{-0.323}$\\
     $B_s$ & $\Bsone(5830)\to\Bs\gamma$ & lattice $f_{\gamma,s}^{\perp}$
-      & $25^\circ$--$45^\circ$ & PZ constants, $f_{\rm eff}=0.387[0.348,0.423]$
-      & $+0.0330[-0.0228,+0.0974]$ & $0.429^{+1.665}_{-0.401}$\\
+      & $25^\circ$--$45^\circ$ & $f_2^{(B_s)}=0.249[0.170,0.307]$
+      & $+0.0137[-0.0612,+0.0657]$ & $0.493^{+1.239}_{-0.441}$\\
     \bottomrule
   \end{tabular}%
   }
@@ -301,10 +305,10 @@ non-Gaussian near zero.
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.47\textwidth]{../outputs/lattice_fperp_mc_width_histograms_theta_fixed.pdf}
-  \includegraphics[width=0.47\textwidth]{../outputs/stage3_bs1_pz_width_histograms.pdf}
+  \includegraphics[width=0.47\textwidth]{../outputs/stage3_bs1_physical_width_histograms.pdf}
   \caption{Monte Carlo width distributions for the charm-strange lattice
-  photon-normalization scenario (left) and the bottom-strange PZ
-  decay-constant scenario (right).}
+  photon-normalization scenario (left) and the bottom-strange physical-current
+  normalization (right).}
   \label{fig:mc-widths}
 \end{figure}
 
@@ -333,10 +337,10 @@ order $5\times10^{-4}$.  The channel is therefore strongly cancellation
 suppressed, which is consistent with the lack of a prominent experimental
 signal.
 
-For $\Bsone(5830)$, there is no direct radiative measurement.  Our PZ-normalized
-prediction is a future-search target.  The median width remains below
-$1~\keV$ in both photon-input scenarios, although the mixing-angle scan leaves
-a long upper tail in the lattice-normalized case.
+For $\Bsone(5830)$, there is no direct radiative measurement.  Our
+physical-current-normalized prediction is a future-search target.  In the
+preferred lattice-normalized scenario the median width remains below $1~\keV$,
+although the mixing-angle scan leaves a long upper tail.
 
 \section{Conclusions}
 
@@ -355,6 +359,6 @@ $\Bsone(5830)$ are cancellation suppressed.
 To be added.
 
 \bibliographystyle{unsrt}
-\bibliography{manuscript/references}
+\bibliography{references}
 
 \end{document}

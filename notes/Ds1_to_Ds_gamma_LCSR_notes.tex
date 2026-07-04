@@ -1889,17 +1889,93 @@ $m_{\Bsone}=5.750\pm0.026~\GeV$ from Lang, Mohler, Prelovsek and Woloshyn.
 
 After the physical-current normalization discussion above, the temporary
 HQ-scaled $B_{s1}$ constants are not the preferred bottom-sector input.  The
-script
+first bottom-sector update used the script
 \begin{center}
   \texttt{scripts/stage3\_bs1\_pz\_decay\_constants.py}
 \end{center}
-therefore reruns the same $B_{s1}$ Monte Carlo scan with the Pullin--Zwicky
+to rerun the same $B_{s1}$ Monte Carlo scan with the Pullin--Zwicky
 heavy-light sum-rule inputs
 $f_{B_{s1}}=0.305\pm0.027~\GeV$ and
-$f^T_{B_{s1}}=0.285\pm0.027~\GeV$.  This is not yet a full mixed-current
-$\Pi_{AA}$--$\Pi_{BB}$--$\Pi_{AB}$ two-point solution, but it replaces the
-naive HQ-scaled decay constants by dedicated bottom-sector hadronic inputs.
-The table below is therefore the preferred $B_{s1}$ scenario at this stage.
+$f^T_{B_{s1}}=0.285\pm0.027~\GeV$.  These numbers should be interpreted as
+basis-current inputs, not directly as the final physical-current decay
+constants.  The follow-up script
+\begin{center}
+  \texttt{scripts/stage3\_bs1\_physical\_decay\_constants.py}
+\end{center}
+uses the same basis-current inputs and closes the two-point matrix by requiring
+the physical currents to be diagonal, $\Pi_{12}=0$.  In this closure model
+\[
+  f_1^2=s_\theta^2 f_A^2+c_\theta^2 f_B^2
+       +2s_\theta c_\theta\,\rho_{AB} f_A f_B,\qquad
+  f_2^2=c_\theta^2 f_A^2+s_\theta^2 f_B^2
+       -2s_\theta c_\theta\,\rho_{AB} f_A f_B,
+\]
+where
+\[
+  \rho_{AB}=
+  -\,\frac{s_\theta c_\theta\,(f_A^2-f_B^2)}
+  {(c_\theta^2-s_\theta^2)f_Af_B}.
+\]
+Here $f_A=f_{B_{s1},A}^{\rm PZ}$ and
+$f_B=f^T_{B_{s1}}m_{B_{s1}}/(m_b+m_s)$ is the effective tensor-current
+normalization in the same dimension as $f_A$.  Samples with $|\rho_{AB}|>1$ or
+negative $f_i^2$ are rejected.  This is still a model closure rather than an
+independent local OPE derivation of $\Pi_{AA}$, $\Pi_{BB}$ and $\Pi_{AB}$, but it
+does calculate the bottom physical-current $f_1$ and $f_2$ from the same
+mixed-current logic used for the charm normalization.  The older PZ-only rows
+are retained as a basis-normalization comparison.
+
+The current bottom-sector physical-current results are:
+
+\begin{table}[htbp]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{llllccc}
+    \toprule
+    Target & Photon input & Mixing input & Physical constants
+    & $\rho_{AB}$ & $g$ ($\GeV^{-1}$) & $\Gamma$ (keV)\\
+    \midrule
+    $\Bsone(5830)$ high combo
+      & legacy $\chi_s$ (Rohrwild/BBK)
+      & $\theta=35.3^\circ$
+      & $f_1=0.436[0.380,0.486]$, $f_2=0.218[0.138,0.292]$
+      & $+0.587[+0.242,+0.835]$
+      & $-0.0793[-0.130,-0.0537]$
+      & $1.33[0.612,3.60]$\\
+    $\Bsone(5830)$ high combo
+      & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
+      & $\theta=35.3^\circ$
+      & $f_1=0.443[0.384,0.492]$, $f_2=0.203[0.121,0.291]$
+      & $+0.631[+0.276,+0.866]$
+      & $-0.0401[-0.0695,-0.0274]$
+      & $0.342[0.160,1.026]$\\
+    lower $1^+$ diagnostic
+      & legacy $\chi_s$ (Rohrwild/BBK)
+      & $\theta=35.3^\circ$
+      & $f_1=0.428[0.367,0.479]$, $f_2=0.226[0.126,0.303]$
+      & $+0.529[+0.215,+0.854]$
+      & $+0.284[+0.227,+0.360]$
+      & $9.50[5.97,17.0]$\\
+    lower $1^+$ diagnostic
+      & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
+      & $\theta=35.3^\circ$
+      & $f_1=0.440[0.381,0.490]$, $f_2=0.216[0.132,0.285]$
+      & $+0.584[+0.286,+0.849]$
+      & $+0.391[+0.331,+0.457]$
+      & $18.4[12.5,28.1]$\\
+    \bottomrule
+  \end{tabular}%
+  }
+  \caption{Bottom-strange physical-current normalization from the
+  mixed-current diagonalization closure.  Entries are medians with 16--84
+  percentile intervals.  The Pullin--Zwicky quantities are used as the basis
+  inputs $f_A$ and $f_T$, while the table reports the derived physical-current
+  $f_1$ and $f_2$.}
+  \label{tab:bs1-physical-normalization}
+\end{table}
+
+For reference, the basis/PZ comparison before the physical-current
+diagonalization was:
 
 \begin{table}[htbp]
   \centering
@@ -1948,22 +2024,20 @@ The table below is therefore the preferred $B_{s1}$ scenario at this stage.
     \bottomrule
   \end{tabular}%
   }
-  \caption{Monte Carlo $B_{s1}\to B_s\gamma$ scan using the Stage-3
-  Pullin--Zwicky decay-constant scenario.  Entries are medians with 16--84
-  percentile intervals.  The observed $\Bsone(5830)$ amplitude is
-  cancellation-sensitive, so the width should be quoted with asymmetric
-  percentile intervals rather than a Gaussian error.}
+  \caption{Basis/PZ comparison scan for $B_{s1}\to B_s\gamma$ before the
+  physical-current diagonalization.  Entries are medians with 16--84 percentile
+  intervals.  These rows are retained as a normalization diagnostic rather than
+  the final physical-current result.}
   \label{tab:bs1-mc-baseline}
 \end{table}
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.95\textwidth]{../outputs/stage3_bs1_pz_width_histograms.pdf}
+  \includegraphics[width=0.95\textwidth]{../outputs/stage3_bs1_physical_width_histograms.pdf}
   \caption{Monte Carlo width distributions for the observed
-  $\Bsone(5830)\to\Bs\gamma$ high-combination state in the PZ
-  decay-constant scenario.  The legacy and lattice-normalized photon inputs
-  are shown separately for fixed $\theta=35.3^\circ$ and for the mixing-angle
-  scan.}
+  $\Bsone(5830)\to\Bs\gamma$ high-combination state after the physical-current
+  diagonalization.  The legacy and lattice-normalized photon inputs are shown
+  separately for fixed $\theta=35.3^\circ$ and for the mixing-angle scan.}
   \label{fig:bs1-mc-hist}
 \end{figure}
 
@@ -1975,33 +2049,24 @@ The table below is therefore the preferred $B_{s1}$ scenario at this stage.
   \label{fig:bs1-stability}
 \end{figure}
 
-The most important lesson from Table~\ref{tab:bs1-mc-baseline} is that the
-observed $\Bsone(5830)$ amplitude can pass close to zero over the accepted input
-range.  With the PZ decay constants the observed-state width is naturally
-sub-keV in both photon-input scenarios, whereas the lower-partner diagnostic
-remains at the tens-of-keV level.  The machine-readable Stage-3 bottom outputs
-are \texttt{outputs/stage3\_bs1\_pz\_decay\_constant\_scan.csv} and
-\texttt{outputs/stage3\_bs1\_pz\_decay\_constant\_summary.csv}; the earlier
-\texttt{outputs/bs1\_stage2\_mc\_summary.csv} file is retained as the
-HQ-scaled diagnostic.
-
-The same warning about current normalization applies in the bottom sector, but
-there we do not presently have an analogue of the charm Stage-3 two-point
-calibration.  The PZ inputs test the axial and tensor basis-current scales,
-not a fully derived mixed-current residue matrix.  Consequently the bottom
-quantity denoted $f_{\rm eff}$ in the combined tables should be read as the
-sampled effective normalization entering the quoted high- or low-combination
-amplitude.  It is not an independently extracted local two-point residue
-$f_1$ or $f_2$.  A future bottom two-point calculation would require the
-complete $AA$, $BB$, and $AB$ correlator matrix, exactly as in the charm
-discussion above.
+The most important lesson from Table~\ref{tab:bs1-physical-normalization} is
+that the observed $\Bsone(5830)$ amplitude remains cancellation-sensitive after
+the physical-current normalization is included.  The preferred
+lattice-normalized row gives a sub-keV median width, while the lower-partner
+diagnostic remains at the tens-of-keV level.  The machine-readable Stage-3
+bottom outputs are
+\texttt{outputs/stage3\_bs1\_physical\_decay\_constant\_scan.csv} and
+\texttt{outputs/stage3\_bs1\_physical\_decay\_constant\_summary.csv}; the
+earlier \texttt{outputs/stage3\_bs1\_pz\_decay\_constant\_summary.csv} file is
+retained as the basis/PZ diagnostic.
 
 \section{Combined \(D_{s1}\) and \(B_{s1}\) Summary}
 
 Table~\ref{tab:combined-ds-bs-summary} collects the current width predictions
 in one place.  The $D_{s1}$ rows include the Stage-3 physical-current residue
-normalization described above.  The $B_{s1}$ rows use the Stage-3
-Pullin--Zwicky decay-constant scenario.  In addition to the observed
+normalization described above.  The $B_{s1}$ rows use Pullin--Zwicky
+basis-current inputs followed by the mixed-current diagonalization closure
+summarized in Table~\ref{tab:bs1-physical-normalization}.  In addition to the observed
 $\Bsone(5830)$ high-combination state, the table now includes the lower
 $1^+$ bottom-strange diagnostic state used for comparison with the
 $\Bsone(5748)$ channel in Bondar--Milstein's phenomenology.  This lower row is
@@ -2057,76 +2122,75 @@ is being quoted.
       & $\Bsone(5830)\to\Bs\gamma$
       & legacy $\chi_s$ (Rohrwild/BBK)
       & $\theta=35.3^\circ$
-      & PZ decay constants
-      & $f_A^{\rm PZ}=0.305(27)$, $f_T^{\rm PZ}=0.285(27)$; $f_{\rm eff}=0.391[0.354,0.428]$
-      & $-0.0140\,[-0.0387,+0.0155]$
-      & $0.109^{+0.304}_{-0.101}$\\
+      & physical-current diagonalized
+      & $f_1=0.436[0.380,0.486]$, $f_2=0.218[0.138,0.292]$
+      & $-0.0793\,[-0.130,-0.0537]$
+      & $1.33^{+2.27}_{-0.72}$\\
     $B_s$ final
       & $\Bsone(5830)\to\Bs\gamma$
       & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
       & $\theta=35.3^\circ$
-      & PZ decay constants
-      & $f_A^{\rm PZ}=0.305(27)$, $f_T^{\rm PZ}=0.285(27)$; $f_{\rm eff}=0.393[0.354,0.427]$
-      & $+0.0356\,[+0.0029,+0.0694]$
-      & $0.272^{+0.752}_{-0.244}$\\
+      & physical-current diagonalized
+      & $f_1=0.443[0.384,0.492]$, $f_2=0.203[0.121,0.291]$
+      & $-0.0401\,[-0.0695,-0.0274]$
+      & $0.342^{+0.684}_{-0.182}$\\
     $B_s$ final
       & $\Bsone(5830)\to\Bs\gamma$
       & legacy $\chi_s$ (Rohrwild/BBK)
       & $25^\circ\le\theta\le45^\circ$
-      & PZ decay constants
-      & $f_A^{\rm PZ}=0.305(27)$, $f_T^{\rm PZ}=0.285(27)$; $f_{\rm eff}=0.394[0.356,0.430]$
-      & $-0.0126\,[-0.0527,+0.0364]$
-      & $0.249^{+0.570}_{-0.226}$\\
+      & physical-current diagonalized
+      & $f_1=0.426[0.368,0.469]$, $f_2=0.246[0.174,0.312]$
+      & $-0.0380\,[-0.103,+0.0101]$
+      & $0.349^{+1.908}_{-0.323}$\\
     $B_s$ final
       & $\Bsone(5830)\to\Bs\gamma$
       & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
       & $25^\circ\le\theta\le45^\circ$
-      & PZ decay constants
-      & $f_A^{\rm PZ}=0.305(27)$, $f_T^{\rm PZ}=0.285(27)$; $f_{\rm eff}=0.387[0.348,0.423]$
-      & $+0.0330\,[-0.0228,+0.0974]$
-      & $0.429^{+1.665}_{-0.401}$\\
+      & physical-current diagonalized
+      & $f_1=0.421[0.371,0.486]$, $f_2=0.249[0.170,0.307]$
+      & $+0.0137\,[-0.0612,+0.0657]$
+      & $0.493^{+1.239}_{-0.441}$\\
     $B_s$ final
       & $\Bsone^{\rm low}(5750)\to\Bs\gamma$
       & legacy $\chi_s$ (Rohrwild/BBK)
       & $\theta=35.3^\circ$
-      & PZ decay constants
-      & $f_A^{\rm PZ}=0.305(27)$, $f_T^{\rm PZ}=0.285(27)$; $f_{\rm eff}=0.384[0.347,0.421]$
-      & $+0.337\,[+0.279,+0.411]$
-      & $14.2^{+7.0}_{-5.2}$\\
+      & physical-current diagonalized
+      & $f_1=0.428[0.367,0.479]$, $f_2=0.226[0.126,0.303]$
+      & $+0.284\,[+0.227,+0.360]$
+      & $9.50^{+7.45}_{-3.53}$\\
     $B_s$ final
       & $\Bsone^{\rm low}(5750)\to\Bs\gamma$
       & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
       & $\theta=35.3^\circ$
-      & PZ decay constants
-      & $f_A^{\rm PZ}=0.305(27)$, $f_T^{\rm PZ}=0.285(27)$; $f_{\rm eff}=0.386[0.350,0.424]$
-      & $+0.474\,[+0.420,+0.546]$
-      & $27.8^{+11.6}_{-7.7}$\\
+      & physical-current diagonalized
+      & $f_1=0.440[0.381,0.490]$, $f_2=0.216[0.132,0.285]$
+      & $+0.391\,[+0.331,+0.457]$
+      & $18.4^{+9.7}_{-5.9}$\\
     $B_s$ final
       & $\Bsone^{\rm low}(5750)\to\Bs\gamma$
       & legacy $\chi_s$ (Rohrwild/BBK)
       & $25^\circ\le\theta\le45^\circ$
-      & PZ decay constants
-      & $f_A^{\rm PZ}=0.305(27)$, $f_T^{\rm PZ}=0.285(27)$; $f_{\rm eff}=0.387[0.348,0.426]$
-      & $+0.325\,[+0.274,+0.400]$
-      & $13.0^{+8.7}_{-4.2}$\\
+      & physical-current diagonalized
+      & $f_1=0.418[0.355,0.475]$, $f_2=0.251[0.161,0.313]$
+      & $+0.295\,[+0.230,+0.384]$
+      & $10.6^{+7.8}_{-4.3}$\\
     $B_s$ final
       & $\Bsone^{\rm low}(5750)\to\Bs\gamma$
       & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
       & $25^\circ\le\theta\le45^\circ$
-      & PZ decay constants
-      & $f_A^{\rm PZ}=0.305(27)$, $f_T^{\rm PZ}=0.285(27)$; $f_{\rm eff}=0.380[0.349,0.419]$
-      & $+0.468\,[+0.416,+0.541]$
-      & $26.7^{+10.9}_{-7.3}$\\
+      & physical-current diagonalized
+      & $f_1=0.416[0.358,0.474]$, $f_2=0.247[0.160,0.312]$
+      & $+0.402\,[+0.339,+0.493]$
+      & $19.6^{+12.6}_{-6.4}$\\
     \bottomrule
   \end{tabular}%
   }
   \caption{Current combined summary of $D_{s1}$ and $B_{s1}$ radiative form
   factors and widths.  The $G$ column is the E1 coupling in the convention of
   Eq.~\eqref{eq:width}.  The $D_s$ rows include the Stage-3 physical-current
-  residue correction.  The $B_s$ rows use the Stage-3 Pullin--Zwicky
-  decay-constant scenario; $f_{\rm eff}$ is the sampled effective mixed-current
-  residue entering the quoted $B_{s1}$ amplitude, not an independently derived
-  local two-point $f_1$ or $f_2$.  The $\Bsone^{\rm low}(5750)$ rows are
+  residue correction.  The $B_s$ rows use Pullin--Zwicky basis-current inputs
+  and the mixed-current diagonalization closure to obtain the physical-current
+  constants $f_1$ and $f_2$.  The $\Bsone^{\rm low}(5750)$ rows are
   lower-partner diagnostics, not observed-state measurements.  The older
   HQ-scaled bottom rows are retained only as diagnostics.}
   \label{tab:combined-ds-bs-summary}
@@ -2181,13 +2245,13 @@ vector-final-state transitions.
       & $70.6$ (Godfrey--Moats--Swanson2016)
       & $97.7$ (Lu--Pan--Wang2016)
       & $47$ (Bondar--Milstein2025)
-      & $27.8[20.1,39.4]$\\
+      & $18.4[12.5,28.1]$\\
     $\Bsone(5830)\to\Bs\gamma$
       & $27$ (Li--Ni--Zhong2021)
       & $47.8$ (Godfrey--Moats--Swanson2016)
       & $56.6$ (Lu--Pan--Wang2016)
       & $28$ (Bondar--Milstein2025)
-      & $0.272[0.028,1.024]$\\
+      & $0.342[0.160,1.026]$\\
     \bottomrule
   \end{tabular}%
   }
@@ -2241,11 +2305,11 @@ following meaning:
       & $\Gamma_{\rm tot}(\Dsone(2536))=0.92\pm0.05~\mathrm{MeV}$ (BaBar)
       & implies $\mathcal B_\gamma\sim0.05\%$; strongly cancellation suppressed\\
     $\Bsone(5830)\to\Bs\gamma$
-      & legacy $\chi_s$: $0.109\,[0.008,0.413]~\mathrm{keV}$
+      & legacy $\chi_s$: $1.33\,[0.612,3.60]~\mathrm{keV}$
       & no direct radiative measurement; observed mainly in $B^{(*)}K$ spectroscopy
-      & prediction for future searches; naturally sub-keV in the PZ scenario\\
+      & prediction for future searches; cancellation-sensitive physical-current amplitude\\
     $\Bsone(5830)\to\Bs\gamma$
-      & lattice $f_{\gamma,s}^{\perp}$: $0.272\,[0.028,1.024]~\mathrm{keV}$
+      & lattice $f_{\gamma,s}^{\perp}$: $0.342\,[0.160,1.026]~\mathrm{keV}$
       & no direct radiative measurement; observed mainly in $B^{(*)}K$ spectroscopy
       & prediction for future searches; high-combination amplitude remains cancellation sensitive\\
     \bottomrule
@@ -2314,10 +2378,14 @@ looking at the final numerical tables.
       & $f_{\Bs},f_{\Bsone,A},f^T_{\Bsone}$
       & $0.2303,\;0.146,\;0.164~\GeV$
       & diagnostic HQ-scaled inputs, retained only as a cross-check\\
-    PZ $\Bsone$ decay-constant scenario
+    PZ $\Bsone$ basis-current inputs
       & $f_{\Bsone,A}^{\rm PZ},f_{\Bsone,T}^{\rm PZ}$
       & $0.305\pm0.027,\;0.285\pm0.027~\GeV$
-      & dedicated bottom-sector input scenario; PullinZwicky2021\\
+      & dedicated bottom-sector basis inputs; PullinZwicky2021\\
+    $\Bsone$ physical-current constants
+      & $f_1^{(B_s)},f_2^{(B_s)}$
+      & $0.443[0.384,0.492],\;0.203[0.121,0.291]~\GeV$
+      & fixed-angle lattice scenario from mixed-current diagonalization closure\\
     condensates
       & $\langle\bar q q\rangle,\kappa$
       & $-(0.240~\GeV)^3,\;0.8\pm0.1$
@@ -2482,8 +2550,9 @@ level used in these working notes.  The completed items are:
   residues $f_1\simeq0.345~\GeV$ and $f_2\simeq0.38~\GeV$, while using
   Wang2015 only as a pure-axial benchmark rather than as a direct authority for
   the mixed residues;
-  \item $B_{s1}$ Stage~3 normalization with the Pullin--Zwicky
-  decay-constant scenario, plus the lower-state diagnostic channel;
+  \item $B_{s1}$ Stage~3 normalization with Pullin--Zwicky basis-current inputs
+  and the mixed-current diagonalization closure, plus the lower-state diagnostic
+  channel;
   \item one-at-a-time uncertainty diagnostics, Monte Carlo uncertainty scans,
   percentile intervals, stability plots in $(M^2,s_0)$, and comparison tables;
   \item experimental interpretation tables for the available $D_{s1}$ and
@@ -2526,9 +2595,10 @@ core calculations:
   \item build a BibTeX file and cite every input in
   Tables~\ref{tab:paper-input-summary} and~\ref{tab:input-citation-map};
   \item decide whether the $\Bsone$ predictions remain in the main text or in a
-  separate phenomenology subsection; the preferred rows now use the
-  Pullin--Zwicky decay-constant scenario, while a fully mixed bottom-sector
-  two-point matrix is best treated as a validation refinement.
+  separate phenomenology subsection; the preferred rows now use
+  Pullin--Zwicky basis-current inputs with the mixed-current diagonalization
+  closure, while an independent local OPE derivation of the bottom two-point
+  matrix is best treated as a validation refinement.
 \end{itemize}
 
 \end{document}

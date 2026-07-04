@@ -18,8 +18,10 @@ Ds1 physical-current residue output,f2_Ds1_2536,0.38 approx,GeV,derived in this 
 Bs decay constant,f_Bs,0.2303 ± 0.0013,GeV,FLAG2024,central input for Bs sector
 Bs1 axial dc working input,f_Bs1_A_working,0.146 ± 0.029,GeV,HQ scaling from f_Ds1_A: f sqrt(M)=const,temporary Bs1 input used in scripts; assign 20 percent uncertainty
 Bs1 tensor dc working input,f_Bs1_T_working,0.164 ± 0.033,GeV,HQ scaling from f_Ds1_T: f sqrt(M)=const,temporary Bs1 tensor-current input used in scripts; assign 20 percent uncertainty
-Bs1 axial dc literature candidate,f_Bs1_A_PZ,0.305 ± 0.027,GeV,PullinZwicky2021 Table 8 (B1s=0.305),Stage-3 Bs1 decay-constant scenario
-Bs1 tensor dc literature candidate,f_Bs1_T_PZ,0.285 ± 0.027,GeV,PullinZwicky2021 Table 8,Stage-3 Bs1 decay-constant scenario
+Bs1 axial basis-current input,f_Bs1_A_PZ,0.305 ± 0.027,GeV,PullinZwicky2021 Table 8 (B1s=0.305),Stage-3 Bs1 basis-current input
+Bs1 tensor basis-current input,f_Bs1_T_PZ,0.285 ± 0.027,GeV,PullinZwicky2021 Table 8,Stage-3 Bs1 basis-current input
+Bs1(5830) physical-current f1,f1_Bs1_5830,0.443 [0.384,0.492],GeV,derived in this work,Stage-3 mixed-current diagonalization closure; fixed theta and lattice photon row
+Bs1(5830) physical-current f2,f2_Bs1_5830,0.203 [0.121,0.291],GeV,derived in this work,Stage-3 mixed-current diagonalization closure; fixed theta and lattice photon row
 Quark condensate,<qq>,-(0.24 GeV)^3 = -0.01382,GeV^3,standard SVZ; Colangelo Appendix,up/down
 Strange condensate ratio,kappa=<ss>/<qq>,0.8 ± 0.1,-,standard,<ss>=kappa<qq>
 Mixed condensate m0^2,m0^2,0.8 ± 0.2,GeV^2,standard,<q gσG q>=m0^2<qq>

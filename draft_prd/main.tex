@@ -96,15 +96,18 @@ studies, and experimental interpretation.  We conclude in Sec.~\ref{sec:concl}.
 
 We consider the transition of an axial strange heavy meson with momentum
 $P=p+q$ into a pseudoscalar strange heavy meson with momentum $p$ and a real
-photon with momentum $q$.  The pseudoscalar interpolating current is
+photon with momentum $q$.  In mass and charge labels, the subscript $q$ denotes
+the light quark and \(Q=c,b\) the heavy quark; for the present applications
+\(q=s\).  The standalone four-vector $q^\mu$ continues to denote the photon
+momentum.  The pseudoscalar interpolating current is
 \begin{equation}
-  J_5=\bar s\,\ii\gamma_5 Q, \qquad Q=c,b .
+  J_5=\bar q\,\ii\gamma_5 Q .
 \end{equation}
 For the axial channel we use the two basis currents
 \begin{align}
-  J^A_\mu &= \bar s\gamma_\mu\gamma_5 Q, \\
-  J^B_\mu &= \frac{\ii}{m_Q+m_s}\,
-  \bar s\sigma_{\mu\alpha}P^\alpha\gamma_5 Q ,
+  J^A_\mu &= \bar q\gamma_\mu\gamma_5 Q, \\
+  J^B_\mu &= \frac{\ii}{m_Q+m_q}\,
+  \bar q\sigma_{\mu\alpha}P^\alpha\gamma_5 Q ,
   \label{eq:basis-currents}
 \end{align}
 where $P^\alpha$ is the momentum of the initial axial meson.  The physical
@@ -121,62 +124,57 @@ Following the notation commonly used in the LCSR analysis of radiative
 $D_{sJ}$ transitions \cite{Colangelo:2005hv}, the hadronic parameters are
 defined by
 \begin{align}
-  \langle 0|\bar s\,\ii\gamma_5 Q|P(p)\rangle
+  \langle 0|\bar q\,\ii\gamma_5 Q|P(p)\rangle
   &=
-  \frac{m_P^2 f_P}{m_Q+m_s},\label{eq:fp-def}\\
-  \langle0|J_\mu^A|A(P,\eta)\rangle
-  &=f_A m_A\eta_\mu,\label{eq:fa-def}\\
-  \langle0|J_\mu^B|A(P,\eta)\rangle
-  &=f_B m_A\eta_\mu,\label{eq:fb-def}\\
+  \frac{m_P^2 f_P}{m_Q+m_q},\label{eq:fp-def}\\
   \langle0|J_{1\mu}|\Dsone(2460)(P,\eta)\rangle
   &=f_1 m_1\eta_\mu,\label{eq:f1-def}\\
   \langle0|J_{2\mu}|\Dsone(2536)(P,\eta)\rangle
   &=f_2 m_2\eta_\mu.\label{eq:f2-def}
 \end{align}
-Here $m_1=m_{\Dsone(2460)}$ and $m_2=m_{\Dsone(2536)}$.  The constants
-$f_A$ and $f_B$ normalize the two basis-current sum rules, while $f_1$ and
-$f_2$ normalize the physical mixed currents.  This separation is important:
-the LCSR OPE is first derived for $J_\mu^A$ and $J_\mu^B$, and only afterwards
-rotated to the physical $1^+$ states.
+Here $m_1=m_{\Dsone(2460)}$ and $m_2=m_{\Dsone(2536)}$, and $f_1$ and $f_2$
+are the leptonic decay constants of the corresponding $\Dsone(2460)$ and
+$\Dsone(2536)$ mesons.  The LCSR OPE is first derived for the basis currents
+$J_\mu^A$ and $J_\mu^B$, and only afterwards rotated to the physical $1^+$
+states.
 
-The radiative matrix element is parametrized by a single gauge-invariant
-electric-dipole form factor:
+For a physical axial meson $X=\Dsone(2460),\Dsone(2536),\Bsone(5748)$, or
+$\Bsone(5830)$, the radiative matrix element is parametrized by a single
+gauge-invariant electric-dipole form factor:
 \begin{equation}
-  \langle P(p)\gamma(q,\varepsilon)|A(P,\eta)\rangle
+  \langle P(p)\gamma(q,\varepsilon)|X(P,\eta)\rangle
   =
-  eG\left[(\eta\cdot\varepsilon^*)(p\cdot q)
+  eg_X\left[(\eta\cdot\varepsilon^*)(p\cdot q)
   -(\eta\cdot q)(p\cdot\varepsilon^*)\right].
   \label{eq:e1}
 \end{equation}
 The corresponding width is
 \begin{equation}
-  \Gamma(A\to P\gamma)
+  \Gamma(X\to P\gamma)
   =
-  \frac{\alpha_{\rm em}}{3}\,G^2
-  \left(\frac{m_A^2-m_P^2}{2m_A}\right)^3 .
+  \frac{\alpha_{\rm em}}{3}\,g_X^2
+  \left(\frac{m_X^2-m_P^2}{2m_X}\right)^3 .
   \label{eq:width}
 \end{equation}
-In Eq.~\eqref{eq:e1} the symbol $G$ denotes the physical transition form
-factor of the state under discussion.  To avoid mixing this physical quantity
-with the intermediate basis-current amplitudes, below we use
-$\mathcal{G}_A$ and $\mathcal{G}_B$ only for the two unmixed basis-current
-form factors, and $G_{2460}$, $G_{2536}$, $G_{5748}$, and $G_{5829}$ for
-physical mesons.
 
 \section{Light-cone sum rule}
 \label{sec:sumrule}
 
-The starting point is the vacuum-to-photon correlation function
+The starting point is the vacuum-to-photon correlation function for the physical
+mixed current,
 \begin{equation}
-  \Pi_\mu(p,q)=\ii\int d^4x\,e^{\ii p\cdot x}
+  \Pi_{i\mu}(p,q)=\ii\int d^4x\,e^{\ii p\cdot x}
   \langle\gamma(q,\varepsilon)|
-  T\{\bar s(x)\Gamma_\mu Q(x)\,\bar Q(0)\ii\gamma_5 s(0)\}
+  T\{J_{i\mu}(x)\,\bar Q(0)\ii\gamma_5 q(0)\}
   |0\rangle ,
+  \qquad i=1,2,
   \label{eq:corr}
 \end{equation}
-where $\Gamma_\mu=\gamma_\mu\gamma_5$ or
-$\Gamma_\mu=\ii\sigma_{\mu\alpha}P^\alpha\gamma_5/(m_Q+m_s)$.  We project the
-correlator onto
+where $J_{1\mu}$ and $J_{2\mu}$ are defined in
+Eq.~\eqref{eq:physical-currents}.  Since these currents are linear combinations
+of $J_\mu^A$ and $J_\mu^B$, the OPE is evaluated for the two basis correlators
+and then combined with the same mixing coefficients.  We project the correlator
+onto
 \begin{equation}
   (p\cdot q)\varepsilon_\mu^*-(p\cdot\varepsilon^*)q_\mu,
   \label{eq:projector}
@@ -185,31 +183,36 @@ which matches the structure in Eq.~\eqref{eq:e1}.
 
 For later use we write the invariant decomposition as
 \begin{equation}
-  \Pi_\mu^{(i)}(p,q)
+  \Pi_{i\mu}(p,q)
   =
   \Pi_i(p^2,P^2)
   \left[(p\cdot q)\varepsilon_\mu^*
   -(p\cdot\varepsilon^*)q_\mu\right]
   +\Pi_i^{\rm other}\,q_\mu+\cdots ,
-  \qquad i=A,B .
+  \qquad i=1,2 .
   \label{eq:invariant-decomp}
 \end{equation}
 Only the coefficient $\Pi_i$ of the gauge-invariant E1 structure is used in
-the sum rule.
+the sum rule.  The basis amplitudes $\Pi_A$ and $\Pi_B$ are defined analogously
+by replacing $J_{i\mu}$ with $J_\mu^A$ and $J_\mu^B$, respectively.
 
 On the hadronic side, isolating the ground-state double pole gives
 \begin{equation}
-  \Pi_\mu^{\rm had}=
-  \frac{m_P^2 f_P}{m_Q+m_s}\,
-  \frac{m_A f_A^{(i)}\mathcal{G}_i}
-  {(m_A^2-P^2)(m_P^2-p^2)}
+  \Pi_{i\mu}^{\rm had}=
+  \frac{m_P^2 f_P}{m_Q+m_q}\,
+  \frac{m_i f_i g_i}
+  {(m_i^2-P^2)(m_P^2-p^2)}
   \left[(p\cdot q)\varepsilon_\mu^*
   -(p\cdot\varepsilon^*)q_\mu\right]+\cdots ,
+  \qquad i=1,2,
   \label{eq:hadronic}
 \end{equation}
-where $i=A,B$ for the basis currents, so
-$\mathcal{G}_i=\{\mathcal{G}_A,\mathcal{G}_B\}$ at this intermediate stage.
-The ellipsis denotes higher states and continuum contributions.
+where $(m_i,f_i,g_i)$ denote the mass, leptonic decay constant, and radiative
+form factor of the meson coupled to $J_{i\mu}$.  The ellipsis denotes higher
+states and continuum contributions.  With our convention $[f_P]=[f_i]=\GeV$ and
+$[g_i]=\GeV^{-1}$; therefore the prefactor in Eq.~\eqref{eq:hadronic} has
+dimension $\GeV^{-1}$, and after multiplication by the tensor structure of
+dimension $\GeV^2$ the correlator has dimension $\GeV$, as required.
 
 The double Borel transformation and continuum subtraction are performed in
 the variables $P^2$ and $p^2$.  In the symmetric point used numerically,
@@ -245,13 +248,11 @@ and gluon background.  For the heavy-quark line the relevant terms are
 \end{align}
 The light-quark propagator is used consistently in the same external-field
 expansion.  Ordinary vacuum-condensate terms are not inserted as independent
-three-point contributions in the photon LCSR.  Instead, the long-distance
-photon emission is described by photon matrix elements such as
-$\langle\gamma|\bar s\sigma_{\mu\nu}s|0\rangle$, whose normalization contains
-the susceptibility combination $\chi_s\ssbar$ or, equivalently, the modern
-lattice normalization $f_{\gamma,s}^{\perp}$.  This convention is distinct
-from the local two-point sum rules for the residues, where the usual SVZ
-condensates enter the OPE.
+three-point contributions in the photon LCSR.  In this calculation their role is
+replaced by vacuum-to-photon matrix elements such as
+$\langle\gamma|\bar q\sigma_{\mu\nu}q|0\rangle$, whose normalization contains
+the susceptibility combination $\chi_q\qqbar$ or, equivalently, the modern
+lattice normalization $f_{\gamma,q}^{\perp}$.
 
 For completeness we spell out the invariant amplitudes used in the numerical
 analysis.  The explicit expressions below are written at the symmetric Borel
@@ -267,29 +268,29 @@ axial-current invariant amplitude is decomposed as
 \begin{align}
   \widehat\Pi_A
   &=
-  \int_{(m_c+m_s)^2}^{s_0}ds\,e^{-s/M^2}\rho_A(s)
-  +e_c\,e^{-m_c^2/M^2}\ssbar
+  \int_{(m_Q+m_q)^2}^{s_0}ds\,e^{-s/M^2}\rho_A(s)
+  +e_Q\,e^{-m_Q^2/M^2}\qqbar
   \left[
-    1-\frac{m_c m_s}{M^2}
-    +\frac{m_s^2}{2M^2}\left(1+\frac{m_c^2}{M^2}\right)
+    1-\frac{m_Q m_q}{M^2}
+    +\frac{m_q^2}{2M^2}\left(1+\frac{m_Q^2}{M^2}\right)
   \right]
   \notag\\
   &\quad
-  +e_s\,\ssbar\left(e^{-m_c^2/M^2}-e^{-s_0/M^2}\right)
-  M^2\chi_s\,\phi_\gamma(u_0)
+  +e_q\,\qqbar\left(e^{-m_Q^2/M^2}-e^{-s_0/M^2}\right)
+  M^2\chi_q\,\phi_\gamma(u_0)
   \notag\\
   &\quad
-  -e_s\,\ssbar\,e^{-m_c^2/M^2}
+  -e_q\,\qqbar\,e^{-m_Q^2/M^2}
   \left[
     -\frac14\left({\cal A}(u_0)+{\cal B}(u_0)\right)
-    \left(1+\frac{m_c^2}{M^2}\right)
+    \left(1+\frac{m_Q^2}{M^2}\right)
   \right]
   \notag\\
   &\quad
-  +2e_s f_{3\gamma}m_c\,e^{-m_c^2/M^2}\Psi^{(v)}(u_0)
+  +2e_q f_{3\gamma}m_Q\,e^{-m_Q^2/M^2}\Psi^{(v)}(u_0)
   \notag\\
   &\quad
-  +e_s\,\ssbar\,e^{-m_c^2/M^2}\,{\cal I}_{F_1}(u_0).
+  +e_q\,\qqbar\,e^{-m_Q^2/M^2}\,{\cal I}_{F_1}(u_0).
   \label{eq:pi-a-explicit}
 \end{align}
 Here
@@ -324,13 +325,13 @@ with
 \end{equation}
 The perturbative spectral density in Eq.~\eqref{eq:pi-a-explicit} is
 \begin{equation}
-  \rho_A(s)=e_s\,{\cal R}(s;m_s,m_c;m_s,m_s^2(m_c-m_s))
-  -e_c\,{\cal R}(s;m_c,m_s;m_c,m_c^2(m_s-m_c)),
+  \rho_A(s)=e_q\,{\cal R}(s,m_q,m_Q,m_q,m_q^2(m_Q-m_q))
+  -e_Q\,{\cal R}(s,m_Q,m_q,m_Q,m_Q^2(m_q-m_Q)),
   \label{eq:rho-a}
 \end{equation}
 where
 \begin{align}
-  {\cal R}(s;m_i,m_j;a,b)
+  {\cal R}(s,m_i,m_j,a,b)
   &=
   -\frac{3}{8\pi^2}
   \left[
@@ -345,36 +346,43 @@ where
   \right],
   \label{eq:r-kernel}
 \end{align}
-and $\lambda(s,m_j^2,m_i^2)=[s-(m_i+m_j)^2][s-(m_i-m_j)^2]$.
+and $\lambda(s,m_j^2,m_i^2)=[s-(m_i+m_j)^2][s-(m_i-m_j)^2]$.  In the argument
+list of ${\cal R}$, $s,m_i,m_j$ specify the kinematics and quark masses, while
+$a$ and $b$ are the mass-polynomial coefficients produced by the Dirac trace and
+the chosen interpolating current; their explicit values are shown in
+Eqs.~\eqref{eq:rho-a} and \eqref{eq:rho-b}.  They have dimensions
+$[a]=\GeV$ and $[b]=\GeV^3$, so both terms in ${\cal R}$ have dimension
+$\GeV$.  Consequently $ds\,\rho_{A,B}(s)$ has dimension $\GeV^3$, matching the
+condensate and photon-DA terms in $\widehat\Pi_{A,B}$.
 
 The tensor-current invariant amplitude is written in the same notation as
 \begin{align}
   \widehat\Pi_B
   &=
-  \int_{(m_c+m_s)^2}^{s_0}ds\,e^{-s/M^2}\rho_B(s)
-  +\frac{m_c}{m_c+m_s}\,
+  \int_{(m_Q+m_q)^2}^{s_0}ds\,e^{-s/M^2}\rho_B(s)
+  +\frac{m_Q}{m_Q+m_q}\,
   \widehat\Pi_A^{(\chi\phi_\gamma,{\cal A},{\cal B})}
   +\widehat\Pi_B^{(3p)} .
   \label{eq:pi-b-explicit}
 \end{align}
 The second term denotes the tensor two-particle photon-DA family inherited from
 the axial expression in Eq.~\eqref{eq:pi-a-explicit}, namely the
-$\chi_s\phi_\gamma$ and ${\cal A},{\cal B}$ pieces.  The perturbative
+$\chi_q\phi_\gamma$ and ${\cal A},{\cal B}$ pieces.  The perturbative
 tensor spectral density is
 \begin{align}
   \rho_B(s)
   &=
-  e_s\,{\cal R}\left(
-    s;m_s,m_c;
-    \frac{m_c m_s}{m_c+m_s},
-    \frac{m_s^2 s}{m_c+m_s}
+  e_q\,{\cal R}\left(
+    s,m_q,m_Q,
+    \frac{m_Q m_q}{m_Q+m_q},
+    \frac{m_q^2 s}{m_Q+m_q}
   \right)
   \notag\\
   &\quad
-  -e_c\,{\cal R}\left(
-    s;m_c,m_s;
-    \frac{2m_c^2-m_c m_s}{m_c+m_s},
-    -\frac{m_c^2 s}{m_c+m_s}
+  -e_Q\,{\cal R}\left(
+    s,m_Q,m_q,
+    \frac{2m_Q^2-m_Q m_q}{m_Q+m_q},
+    -\frac{m_Q^2 s}{m_Q+m_q}
   \right).
   \label{eq:rho-b}
 \end{align}
@@ -388,7 +396,7 @@ representation used numerically is
 \begin{equation}
   \widehat\Pi_B^{(3p)}
   =
-  e_s\,\ssbar\,e^{-m_c^2/M^2}\,
+  e_q\,\qqbar\,e^{-m_Q^2/M^2}\,
   {\cal I}^{B}_{3p}(u_0),
   \qquad
   {\cal I}^{B}_{3p}(1/2)=5.98\times10^{-2},
@@ -407,65 +415,40 @@ After the double Borel transformation in $p^2$ and $P^2$ and continuum
 subtraction, we denote by
 $\widehat\Pi_A(M_1^2,M_2^2,s_0)$ and
 $\widehat\Pi_B(M_1^2,M_2^2,s_0)$ the invariant QCD amplitudes multiplying the
-structure in Eq.~\eqref{eq:projector} for the two basis currents.  The
-corresponding basis form factors satisfy
+structure in Eq.~\eqref{eq:projector} for the two basis currents.  Combining
+these amplitudes according to Eq.~\eqref{eq:physical-currents}, the physical
+charm-strange form factors $g_1$ and $g_2$ for
+$\Dsone(2460)$ and $\Dsone(2536)$ are
 \begin{align}
-  \mathcal{G}_A &=
-  \frac{m_Q+m_s}{m_P^2 f_P\,m_A f_A}
-  \exp\left(\frac{m_A^2}{M_1^2}+\frac{m_P^2}{M_2^2}\right)
-  \widehat\Pi_A(M_1^2,M_2^2,s_0), \notag\\
-  \mathcal{G}_B &=
-  \frac{m_Q+m_s}{m_P^2 f_P\,m_A f_B}
-  \exp\left(\frac{m_A^2}{M_1^2}+\frac{m_P^2}{M_2^2}\right)
-  \widehat\Pi_B(M_1^2,M_2^2,s_0).
-  \label{eq:basis-sum-rules}
-\end{align}
-Here $m_A$ is the mass of the axial state used in the corresponding hadronic
-pole, $m_P$ and $f_P$ are the mass and decay constant of the final pseudoscalar
-meson, and $M_1^2$ and $M_2^2$ are the Borel parameters in the axial and
-pseudoscalar channels, respectively.
-
-For the physical charm-strange states, the sum rules for the form factors are
-therefore
-\begin{align}
-  G_{2460} &=
+  g_1 &=
   \frac{m_c+m_s}{m_{\Ds}^2 f_{\Ds}\,m_1 f_1}
   \exp\left(\frac{m_1^2}{M_1^2}+\frac{m_{\Ds}^2}{M_2^2}\right)
   \left[
-    \sin\theta\,\widehat\Pi_A^{(2460)}
-    +\cos\theta\,\widehat\Pi_B^{(2460)}
+    \sin\theta\,\widehat\Pi_A
+    +\cos\theta\,\widehat\Pi_B
   \right],
   \notag\\
-  G_{2536} &=
+  g_2 &=
   \frac{m_c+m_s}{m_{\Ds}^2 f_{\Ds}\,m_2 f_2}
   \exp\left(\frac{m_2^2}{M_1^2}+\frac{m_{\Ds}^2}{M_2^2}\right)
   \left[
-    \cos\theta\,\widehat\Pi_A^{(2536)}
-    -\sin\theta\,\widehat\Pi_B^{(2536)}
+    \cos\theta\,\widehat\Pi_A
+    -\sin\theta\,\widehat\Pi_B
   \right],
-  \label{eq:g1-g2-sum-rules}
+  \label{eq:physical-sum-rules}
 \end{align}
-where $m_1=m_{\Dsone(2460)}$ and $m_2=m_{\Dsone(2536)}$.  Equivalently, if the
-basis-current form factors in Eq.~\eqref{eq:basis-sum-rules} are introduced
-first, the same physical couplings are written as
-\begin{align}
-  G_{2460} &=
-  \frac{\sin\theta\,f_A\,\mathcal{G}_A
-  +\cos\theta\,f_B\,\mathcal{G}_B}{f_1},\\
-  G_{2536} &=
-  \frac{\cos\theta\,f_A\,\mathcal{G}_A
-  -\sin\theta\,f_B\,\mathcal{G}_B}{f_2}.
-  \label{eq:physical-form-factors}
-\end{align}
-Here $f_1$ and $f_2$ are the residues of the mixed physical currents in
-Eq.~\eqref{eq:physical-currents}.  We use a Stage-3 residue normalization in
-which $f_1=0.345\pm0.017~\GeV$ is used as the working anchor and the same
-two-point overlap model gives $f_2\simeq0.38~\GeV$.  As a check of the basis
-normalization, the pure axial-current limit is compared with the QCD sum-rule
-result of Ref.~\cite{Wang:2015mxa}.  For the bottom-strange channel we use the
-Pullin--Zwicky decay-constant scenario
-$f_{\Bsone}=0.305\pm0.027~\GeV$ and
-$f_{\Bsone}^{T}=0.285\pm0.027~\GeV$ \cite{Pullin:2021ebn}.
+where $m_1=m_{\Dsone(2460)}$ and $m_2=m_{\Dsone(2536)}$.
+Here $f_1$ and $f_2$ are the leptonic decay constants of the corresponding
+$\Dsone(2460)$ and $\Dsone(2536)$ mesons.  We use a Stage-3 decay-constant
+normalization in which $f_1=0.345\pm0.017~\GeV$ is used as the working anchor
+and the same two-point overlap model gives $f_2\simeq0.38~\GeV$.  As a check of
+	the basis normalization, the pure axial-current limit is compared with the QCD
+	sum-rule result of Ref.~\cite{Wang:2015mxa}.  For the bottom-strange channel we
+	use the Pullin--Zwicky basis-current inputs
+	$f_{\Bsone,A}=0.305\pm0.027~\GeV$ and
+	$f_{\Bsone}^{T}=0.285\pm0.027~\GeV$ \cite{Pullin:2021ebn}, and determine the
+	physical-current decay constants from the same mixed-current diagonalization
+	model used for the charm-strange normalization.
 
 \section{Numerical analysis}
 \label{sec:numerics}
@@ -493,8 +476,9 @@ $m_c,m_b,m_s$ & $1.27(2),\,4.18(3),\,0.093(11)~\GeV$ & $\overline{\rm MS}$ input
 $M_{2460},M_{2536},m_{\Ds}$ & $2.4595,\,2.53511,\,1.96835~\GeV$ & PDG \\
 $M_{5830},m_{\Bs}$ & $5.82870,\,5.36692~\GeV$ & PDG/CMS \\
 $f_{\Ds},f_{\Bs}$ & $0.2499,\,0.2303~\GeV$ & FLAG/lattice context \\
-$f_1,f_2$ & $0.345(17),\,\simeq0.38~\GeV$ & charm mixed-current residues \\
-$f_{\Bsone},f_{\Bsone}^{T}$ & $0.305(27),\,0.285(27)~\GeV$ & bottom PZ scenario \\
+$f_1,f_2$ & $0.345(17),\,\simeq0.38~\GeV$ & charm axial-meson decay constants \\
+$f_{\Bsone,A},f_{\Bsone}^{T}$ & $0.305(27),\,0.285(27)~\GeV$ & bottom basis-current inputs \\
+$f_1^{(B_s)},f_2^{(B_s)}$ & $0.443[0.384,0.492],\,0.203[0.121,0.291]~\GeV$ & mixed-current diagonalization \\
 $\chi_s(1~\GeV)$ & $+3.15(30)~\GeV^{-2}$ & legacy photon input \\
 $f_{\gamma,s}^{\perp}(1~\GeV)$ & $-55.1(1.9)~\MeV$ & preferred photon input \\
 \end{tabular}
@@ -533,7 +517,7 @@ our preferred normalization.}
 \scriptsize
 \begin{ruledtabular}
 \begin{tabular}{llllcc}
-Sector & Decay & Photon input & Normalization & $G~(\GeV^{-1})$ & $\Gamma~(\keV)$\\
+Sector & Decay & Photon input & Normalization & $g_X~(\GeV^{-1})$ & $\Gamma~(\keV)$\\
 \hline
 $D_s$ & $\Dsone(2460)\to\Ds\gamma$ & legacy $\chi_s$ & $f_1=0.344[0.329,0.363]$
 & $-0.424[-0.484,-0.360]$ & $37.7^{+11.5}_{-10.5}$\\
@@ -543,10 +527,10 @@ $D_s$ & $\Dsone(2460)\to\Ds\gamma$ & lattice $f_{\gamma,s}^{\perp}$ & $f_1=0.345
 & $-0.277[-0.312,-0.243]$ & $16.1^{+4.4}_{-3.7}$\\
 $D_s$ & $\Dsone(2536)\to\Ds\gamma$ & lattice $f_{\gamma,s}^{\perp}$ & $f_2=0.379[0.338,0.423]$
 & $+0.0403[+0.0194,+0.0596]$ & $0.504^{+0.600}_{-0.377}$\\
-$B_s$ & $\Bsone(5830)\to\Bs\gamma$ & legacy $\chi_s$ & PZ constants
-& $-0.0140[-0.0387,+0.0155]$ & $0.109^{+0.304}_{-0.101}$\\
-$B_s$ & $\Bsone(5830)\to\Bs\gamma$ & lattice $f_{\gamma,s}^{\perp}$ & PZ constants
-& $+0.0356[+0.0029,+0.0694]$ & $0.272^{+0.752}_{-0.244}$\\
+$B_s$ & $\Bsone(5830)\to\Bs\gamma$ & legacy $\chi_s$ & $f_2^{(B_s)}=0.218[0.138,0.292]$
+& $-0.0793[-0.130,-0.0537]$ & $1.33^{+2.27}_{-0.72}$\\
+$B_s$ & $\Bsone(5830)\to\Bs\gamma$ & lattice $f_{\gamma,s}^{\perp}$ & $f_2^{(B_s)}=0.203[0.121,0.291]$
+& $-0.0401[-0.0695,-0.0274]$ & $0.342^{+0.684}_{-0.182}$\\
 \end{tabular}
 \end{ruledtabular}
 \end{table}
@@ -565,10 +549,10 @@ shown in Fig.~\ref{fig:mc}.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.47\textwidth]{../outputs/lattice_fperp_mc_width_histograms_theta_fixed.pdf}
-\includegraphics[width=0.47\textwidth]{../outputs/stage3_bs1_pz_width_histograms.pdf}
+\includegraphics[width=0.47\textwidth]{../outputs/stage3_bs1_physical_width_histograms.pdf}
 \caption{Monte Carlo width distributions.  Left: charm-strange
-lattice-normalized photon input.  Right: bottom-strange PZ decay-constant
-scenario.}
+lattice-normalized photon input.  Right: bottom-strange physical-current
+normalization.}
 \label{fig:mc}
 \end{figure}
 
@@ -601,8 +585,8 @@ Channel & Quark models & Recent QM & Bondar--Milstein & This work\\
 \hline
 $\Dsone(2536)\to\Ds\gamma$ & $15$, $25.2$--$31.1$ & $18.18$--$18.85$ & $12$ & $0.504[0.127,1.104]$\\
 $\Dsone(2460)\to\Ds\gamma$ & $6.2$, $10.3$--$17.2$ & $3.53$--$3.61$ & $297$ & $16.1[12.4,20.5]$\\
-$\Bsone^{\rm low}(5750)\to\Bs\gamma$ & $37$, $70.6$ & $97.7$ & $47$ & $27.8[20.1,39.4]$\\
-$\Bsone(5830)\to\Bs\gamma$ & $27$, $47.8$ & $56.6$ & $28$ & $0.272[0.028,1.024]$\\
+$\Bsone^{\rm low}(5750)\to\Bs\gamma$ & $37$, $70.6$ & $97.7$ & $47$ & $18.4[12.5,28.1]$\\
+$\Bsone(5830)\to\Bs\gamma$ & $27$, $47.8$ & $56.6$ & $28$ & $0.342[0.160,1.026]$\\
 \end{tabular}
 \end{ruledtabular}
 \end{table}
@@ -626,15 +610,16 @@ $\Dsone(2460)\to\Ds\gamma$, $\Dsone(2536)\to\Ds\gamma$, and
 $\Bsone(5830)\to\Bs\gamma$ using light-cone QCD sum rules.  The calculation
 includes hard photon emission, two- and three-particle photon DAs, and
 explicit strange-quark-mass terms.  We separated the basis-current sum rules
-from the physical-current residue normalization and used a lattice-normalized
-photon DA as the preferred modern input.
+from the physical-meson decay-constant normalization and used a
+lattice-normalized photon DA as the preferred modern input.
 
 The main result is the strong hierarchy between the two charm-strange
 radiative widths.  The $\Dsone(2460)$ transition is naturally at the
 tens-of-keV level, while $\Dsone(2536)\to\Ds\gamma$ is strongly suppressed by
 destructive interference between the two physical-current components.  The
-same cancellation-sensitive pattern appears for the observed $\Bsone(5830)$,
-for which we predict a sub-keV median radiative width.
+same cancellation-sensitive pattern appears for the observed $\Bsone(5830)$.
+In the preferred lattice-normalized scenario we predict a sub-keV median
+radiative width.
 
 \appendix
 

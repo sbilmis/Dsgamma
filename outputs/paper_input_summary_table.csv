@@ -18,8 +18,10 @@ Decay constant,Ds1 physical residue output,f2_Ds1_2536,0.38 approx,GeV,Stage-3 d
 Decay constant,Bs,f_Bs,0.2303+-0.0013,GeV,Hadronic side; FLAG2024
 Decay constant,Bs1 axial working,f_Bs1_A_working,0.146+-0.029,GeV,HQ-scaled temporary bottom input
 Decay constant,Bs1 tensor working,f_Bs1_T_working,0.164+-0.033,GeV,HQ-scaled temporary bottom input
-Decay constant,Bs1 axial PZ scenario,f_Bs1_A_PZ,0.305+-0.027,GeV,Stage-3 bottom input scenario; PullinZwicky2021
-Decay constant,Bs1 tensor PZ scenario,f_Bs1_T_PZ,0.285+-0.027,GeV,Stage-3 bottom input scenario; PullinZwicky2021
+Decay constant,Bs1 axial PZ basis input,f_Bs1_A_PZ,0.305+-0.027,GeV,Stage-3 bottom basis-current input; PullinZwicky2021
+Decay constant,Bs1 tensor PZ basis input,f_Bs1_T_PZ,0.285+-0.027,GeV,Stage-3 bottom basis-current input; PullinZwicky2021
+Decay constant,Bs1(5830) physical f1,f1_Bs1_5830,0.443 [0.384,0.492],GeV,Derived from mixed-current diagonalization closure
+Decay constant,Bs1(5830) physical f2,f2_Bs1_5830,0.203 [0.121,0.291],GeV,Derived from mixed-current diagonalization closure
 Condensate,Light condensate,<qbar q>,-(0.240 GeV)^3,GeV^3,Photon DA/higher-twist input
 Condensate,Strange condensate ratio,kappa=<sbar s>/<qbar q>,0.8+-0.1,,Photon DA/higher-twist input
 Photon DA,Legacy susceptibility,chi_s(1 GeV),+3.15+-0.30,GeV^-2,Legacy/Rohrwild-BBK scenario; BBK2002/Rohrwild2007

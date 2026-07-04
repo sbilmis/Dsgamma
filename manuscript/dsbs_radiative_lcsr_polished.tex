@@ -45,8 +45,9 @@ corrections induced by the background-gluon term in the quark propagator.  We
 separate the basis-current sum rules from the physical-current residue
 normalization.  For the charm-strange channel the mixed-current residue model is
 calibrated by a two-point input and checked against a pure axial-current
-benchmark; for the bottom-strange channel we quote a Pullin--Zwicky
-decay-constant scenario.  Using the modern lattice normalization of the
+benchmark; for the bottom-strange channel we use Pullin--Zwicky basis-current
+inputs followed by a mixed-current diagonalization closure.  Using the modern
+lattice normalization of the
 leading-twist photon distribution amplitude, we find
 $\Gamma[\Dsone(2460)\to\Ds\gamma]=16.1^{+4.4}_{-3.7}~\keV$,
 $\Gamma[\Dsone(2536)\to\Ds\gamma]=0.504^{+0.600}_{-0.377}~\keV$, and a sub-keV
@@ -181,12 +182,14 @@ truncation, and normalization conventions.  It is therefore a useful basis-scale
 check, not a direct determination of the physical mixed-current residues at
 $\theta=35.3^\circ$.
 
-For the bottom-strange channel we use the Pullin--Zwicky values
-$f_{\Bsone}^{\rm PZ}=0.305\pm0.027~\GeV$ and
-$f_{\Bsone}^{T,\rm PZ}=0.285\pm0.027~\GeV$ \cite{PullinZwicky2021}.  The bottom
-quantity reported as $f_{\rm eff}$ below is an effective normalization entering
-the chosen PZ scenario.  It is not a separately extracted local two-point
-residue $f_1$ or $f_2$.
+For the bottom-strange channel we use the Pullin--Zwicky basis-current inputs
+$f_{\Bsone,A}^{\rm PZ}=0.305\pm0.027~\GeV$ and
+$f_{\Bsone}^{T,\rm PZ}=0.285\pm0.027~\GeV$ \cite{PullinZwicky2021}.  These
+inputs are converted to physical-current decay constants by the mixed-current
+diagonalization closure.  For the observed high-combination state in the
+preferred lattice-photon row this gives
+$f_1^{(B_s)}=0.443[0.384,0.492]~\GeV$ and
+$f_2^{(B_s)}=0.203[0.121,0.291]~\GeV$.
 
 \section{Numerical Inputs and Scale Convention}
 
@@ -228,8 +231,10 @@ comparison with older analyses.
       & $0.345(17),\,\simeq0.38~\GeV$ & Stage-3 calibration\\
     pure axial benchmark & $f_A(D_{s1})$
       & $0.245(17)~\GeV$ & Wang pure-current check\\
-    bottom PZ constants & $f_{\Bsone}^{\rm PZ},f_{\Bsone}^{T,\rm PZ}$
-      & $0.305(27),\,0.285(27)~\GeV$ & bottom scenario\\
+    bottom basis constants & $f_{\Bsone,A}^{\rm PZ},f_{\Bsone}^{T,\rm PZ}$
+      & $0.305(27),\,0.285(27)~\GeV$ & Pullin--Zwicky\\
+    bottom physical constants & $f_1^{(B_s)},f_2^{(B_s)}$
+      & $0.443[0.384,0.492],\,0.203[0.121,0.291]~\GeV$ & this work\\
     legacy photon input & $\chi_s(1~\GeV)$
       & $+3.15(30)~\GeV^{-2}$ & comparison scenario\\
     lattice photon input & $f_{\gamma,s}^{\perp}(1~\GeV)$
@@ -292,23 +297,23 @@ therefore non-Gaussian.
       & $35.3^\circ$ & $f_2=0.379[0.338,0.423]$
       & $+0.0403[+0.0194,+0.0596]$ & $0.504^{+0.600}_{-0.377}$\\
     $B_s$ & $\Bsone(5830)\to\Bs\gamma$ & legacy $\chi_s$
-      & $35.3^\circ$ & PZ constants, $f_{\rm eff}=0.391[0.354,0.428]$
-      & $-0.0140[-0.0387,+0.0155]$ & $0.109^{+0.304}_{-0.101}$\\
+      & $35.3^\circ$ & $f_2^{(B_s)}=0.218[0.138,0.292]$
+      & $-0.0793[-0.130,-0.0537]$ & $1.33^{+2.27}_{-0.72}$\\
     $B_s$ & $\Bsone(5830)\to\Bs\gamma$ & lattice $f_{\gamma,s}^{\perp}$
-      & $35.3^\circ$ & PZ constants, $f_{\rm eff}=0.393[0.354,0.427]$
-      & $+0.0356[+0.0029,+0.0694]$ & $0.272^{+0.752}_{-0.244}$\\
+      & $35.3^\circ$ & $f_2^{(B_s)}=0.203[0.121,0.291]$
+      & $-0.0401[-0.0695,-0.0274]$ & $0.342^{+0.684}_{-0.182}$\\
     $B_s$ & $\Bsone(5830)\to\Bs\gamma$ & legacy $\chi_s$
-      & $25^\circ$--$45^\circ$ & PZ constants, $f_{\rm eff}=0.394[0.356,0.430]$
-      & $-0.0126[-0.0527,+0.0364]$ & $0.249^{+0.570}_{-0.226}$\\
+      & $25^\circ$--$45^\circ$ & $f_2^{(B_s)}=0.246[0.174,0.312]$
+      & $-0.0380[-0.103,+0.0101]$ & $0.349^{+1.908}_{-0.323}$\\
     $B_s$ & $\Bsone(5830)\to\Bs\gamma$ & lattice $f_{\gamma,s}^{\perp}$
-      & $25^\circ$--$45^\circ$ & PZ constants, $f_{\rm eff}=0.387[0.348,0.423]$
-      & $+0.0330[-0.0228,+0.0974]$ & $0.429^{+1.665}_{-0.401}$\\
+      & $25^\circ$--$45^\circ$ & $f_2^{(B_s)}=0.249[0.170,0.307]$
+      & $+0.0137[-0.0612,+0.0657]$ & $0.493^{+1.239}_{-0.441}$\\
     $B_s$ & $\Bsone^{\rm low}(5750)\to\Bs\gamma$ & legacy $\chi_s$
-      & $35.3^\circ$ & PZ constants, $f_{\rm eff}=0.384[0.347,0.421]$
-      & $+0.337[+0.279,+0.411]$ & $14.2^{+7.0}_{-5.2}$\\
+      & $35.3^\circ$ & $f_2^{(B_s)}=0.226[0.126,0.303]$
+      & $+0.284[+0.227,+0.360]$ & $9.50^{+7.45}_{-3.53}$\\
     $B_s$ & $\Bsone^{\rm low}(5750)\to\Bs\gamma$ & lattice $f_{\gamma,s}^{\perp}$
-      & $35.3^\circ$ & PZ constants, $f_{\rm eff}=0.386[0.350,0.424]$
-      & $+0.474[+0.420,+0.546]$ & $27.8^{+11.6}_{-7.7}$\\
+      & $35.3^\circ$ & $f_2^{(B_s)}=0.216[0.132,0.285]$
+      & $+0.391[+0.331,+0.457]$ & $18.4^{+9.7}_{-5.9}$\\
     \bottomrule
   \end{tabular}%
   }
@@ -325,9 +330,9 @@ partial width.  In contrast, $\Dsone(2536)$ is highly cancellation sensitive:
 the same axial and tensor basis amplitudes enter with the opposite physical
 combination in Eq.~\eqref{eq:stage3}, driving the amplitude close to zero for a
 wide part of the accepted input range.  The observed $\Bsone(5830)$ behaves
-similarly in the bottom sector.  Its median width is sub-keV in the PZ
-decay-constant scenario, although the mixing-angle scan leaves a long upper
-tail.
+similarly in the bottom sector.  Its median width is sub-keV after the
+physical-current normalization, although the mixing-angle scan leaves a long
+upper tail.
 
 Table~\ref{tab:interference-polished} makes this cancellation explicit.  The
 entries are the two normalized pieces of Eq.~\eqref{eq:stage3}.  For
@@ -395,13 +400,13 @@ require separate LCSR correlators and are not part of the present calculation.
       & $70.6$ \cite{GodfreyMoatsSwanson2016}
       & $97.7$ \cite{LuPanWang2016}
       & $47$ \cite{BondarMilstein2025}
-      & $27.8[20.1,39.4]$\\
+      & $18.4[12.5,28.1]$\\
     $\Bsone(5830)\to\Bs\gamma$
       & $27$ \cite{LiNiZhong2021}
       & $47.8$ \cite{GodfreyMoatsSwanson2016}
       & $56.6$ \cite{LuPanWang2016}
       & $28$ \cite{BondarMilstein2025}
-      & $0.272[0.028,1.024]$\\
+      & $0.342[0.160,1.026]$\\
     \bottomrule
   \end{tabular}%
   }
@@ -418,18 +423,18 @@ Ref.~\cite{BondarMilstein2025}, we also keep a lower-partner diagnostic in the
 Stage-3 scan.  This row uses a model mass near $5.75~\GeV$ and should not be
 described as an experimentally established state.  It is nevertheless useful
 because Bondar and Milstein quote both a lower $B_{s1}(5748)$ and the observed
-high state near $5.829~\GeV$.  In our PZ-normalized LCSR scan the lower
+high state near $5.829~\GeV$.  In our physical-current-normalized LCSR scan the lower
 diagnostic state has
 \[
   \Gamma[B_{s1}^{\rm low}\to B_s\gamma]
   =
-  14.2[8.9,21.2]~\keV
+  9.50[5.97,17.0]~\keV
 \]
 for the legacy susceptibility input and
 \[
   \Gamma[B_{s1}^{\rm low}\to B_s\gamma]
   =
-  27.8[20.1,39.4]~\keV
+  18.4[12.5,28.1]~\keV
 \]
 for the lattice photon input.  These values are much larger than our observed
 $\Bsone(5830)$ median widths and are closer in scale to the potential-model
@@ -440,7 +445,7 @@ our setup.
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.47\textwidth]{../outputs/lattice_fperp_mc_width_histograms_theta_fixed.pdf}
-  \includegraphics[width=0.47\textwidth]{../outputs/stage3_bs1_pz_width_histograms.pdf}
+  \includegraphics[width=0.47\textwidth]{../outputs/stage3_bs1_physical_width_histograms.pdf}
   \caption{Monte Carlo width distributions.  Left: charm-strange
   lattice-normalized photon input.  Right: bottom-strange PZ decay-constant
   scenario.}
@@ -491,11 +496,11 @@ gives the corresponding interpretation for each case.
       & $\Gamma_{\rm tot}=0.92\pm0.05~\MeV$ \cite{BaBar2011}
       & $\mathcal B_\gamma\sim0.05\%$\\
     $\Bsone(5830)\to\Bs\gamma$
-      & legacy $\chi_s$: $0.109[0.008,0.413]~\keV$
+      & legacy $\chi_s$: $1.33[0.612,3.60]~\keV$
       & no direct radiative measurement \cite{CMS2018}
       & future-search prediction\\
     $\Bsone(5830)\to\Bs\gamma$
-      & lattice $f_{\gamma,s}^{\perp}$: $0.272[0.028,1.024]~\keV$
+      & lattice $f_{\gamma,s}^{\perp}$: $0.342[0.160,1.026]~\keV$
       & no direct radiative measurement \cite{CMS2018}
       & future-search prediction\\
     \bottomrule
@@ -538,7 +543,7 @@ figure.  The machine-readable version is
     residue benchmark & \texttt{stage3\_residue\_benchmark\_checks.py} & \texttt{stage3\_residue\_benchmark\_checks.csv} & pure-current validation\\
     main result table & Stage-3 charm and bottom scripts & \texttt{combined\_recommended\_results\_table.csv} & final $G$ and $\Gamma$ values\\
     experimental table & manual summary & \texttt{experimental\_comparison\_table.csv} & comparison with measured information\\
-    MC width plots & lattice/PZ scan scripts & \texttt{lattice\_fperp\_...pdf}, \texttt{stage3\_bs1\_...pdf} & uncertainty distributions\\
+    MC width plots & lattice/physical-normalization scan scripts & \texttt{lattice\_fperp\_...pdf}, \texttt{stage3\_bs1\_physical\_...pdf} & uncertainty distributions\\
     stability plots & stability scan scripts & \texttt{stage2\_stability\_central.pdf}, \texttt{bs1\_5830\_stability.pdf} & Borel and threshold checks\\
     validation checks & validation and Ward scripts & \texttt{validation\_checks\_summary.txt}, \texttt{ward\_transversality\_check.txt} & limiting cases and gauge structure\\
     interference diagnostic & \texttt{ds1\_interference\_diagnostic.py} & \texttt{ds1\_interference\_diagnostic\_summary.csv} & constructive/destructive amplitude pieces\\
@@ -556,8 +561,9 @@ staged light-cone QCD sum-rule framework.  The calculation includes hard photon
 emission from both quark lines, two-particle and three-particle photon
 distribution amplitudes, and explicit strange-quark-mass terms.  The charm
 residue normalization has been separated from the basis-current OPE and checked
-against the pure axial-current benchmark.  The bottom result is quoted as a
-PZ-normalized decay-constant scenario.
+against the pure axial-current benchmark.  The bottom result uses
+Pullin--Zwicky basis-current inputs followed by the mixed-current
+diagonalization closure.
 
 The physical pattern is robust.  The $\Dsone(2460)$ radiative mode can naturally
 lie at the tens-of-keV level.  The $\Dsone(2536)$ mode is strongly suppressed by
