@@ -2151,7 +2151,7 @@ is being quoted.
       & $+0.0137\,[-0.0612,+0.0657]$
       & $0.493^{+1.239}_{-0.441}$\\
     $B_s$ final
-      & $\Bsone^{\rm low}(5750)\to\Bs\gamma$
+      & $\Bsone(5750)\to\Bs\gamma$
       & legacy $\chi_s$ (Rohrwild/BBK)
       & $\theta=35.3^\circ$
       & physical-current diagonalized
@@ -2159,7 +2159,7 @@ is being quoted.
       & $+0.284\,[+0.227,+0.360]$
       & $9.50^{+7.45}_{-3.53}$\\
     $B_s$ final
-      & $\Bsone^{\rm low}(5750)\to\Bs\gamma$
+      & $\Bsone(5750)\to\Bs\gamma$
       & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
       & $\theta=35.3^\circ$
       & physical-current diagonalized
@@ -2167,7 +2167,7 @@ is being quoted.
       & $+0.391\,[+0.331,+0.457]$
       & $18.4^{+9.7}_{-5.9}$\\
     $B_s$ final
-      & $\Bsone^{\rm low}(5750)\to\Bs\gamma$
+      & $\Bsone(5750)\to\Bs\gamma$
       & legacy $\chi_s$ (Rohrwild/BBK)
       & $25^\circ\le\theta\le45^\circ$
       & physical-current diagonalized
@@ -2175,7 +2175,7 @@ is being quoted.
       & $+0.295\,[+0.230,+0.384]$
       & $10.6^{+7.8}_{-4.3}$\\
     $B_s$ final
-      & $\Bsone^{\rm low}(5750)\to\Bs\gamma$
+      & $\Bsone(5750)\to\Bs\gamma$
       & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
       & $25^\circ\le\theta\le45^\circ$
       & physical-current diagonalized
@@ -2190,7 +2190,7 @@ is being quoted.
   Eq.~\eqref{eq:width}.  The $D_s$ rows include the Stage-3 physical-current
   residue correction.  The $B_s$ rows use Pullin--Zwicky basis-current inputs
   and the mixed-current diagonalization closure to obtain the physical-current
-  constants $f_1$ and $f_2$.  The $\Bsone^{\rm low}(5750)$ rows are
+  constants $f_1$ and $f_2$.  The $\Bsone(5750)$ rows are
   lower-partner diagnostics, not observed-state measurements.  The older
   HQ-scaled bottom rows are retained only as diagnostics.}
   \label{tab:combined-ds-bs-summary}
@@ -2240,7 +2240,7 @@ vector-final-state transitions.
       & $3.53$--$3.61$ (Chen2020)
       & $297$ (Bondar--Milstein2025)
       & $16.1[12.4,20.5]$\\
-    $\Bsone^{\rm low}(5750)\to\Bs\gamma$
+    $\Bsone(5750)\to\Bs\gamma$
       & $37$ (Li--Ni--Zhong2021)
       & $70.6$ (Godfrey--Moats--Swanson2016)
       & $97.7$ (Lu--Pan--Wang2016)
@@ -2822,12 +2822,37 @@ near cancellation in the physical amplitude; this is a physical sensitivity,
 not by itself a failure of the Borel window.
 
 For \(B_{s1}\), the narrowed interval \(10\le M^2\le14~\GeV^2\) is preferred
-over \(8\le M^2\le14~\GeV^2\).  It preserves the same threshold range but
-reduces the width span for the observed \(B_{s1}(5830)\) channel from \(0.423\)
-to \(0.238\), and similarly improves the lower-state diagnostic from \(0.765\)
-to \(0.478\).  The bottom-sector three-particle fractions are tiny in this
-diagnostic, so the window choice is driven mainly by stability and continuum
-placement.
+over \(8\le M^2\le14~\GeV^2\) if the main criterion is the stability of the
+quoted width.  However, lowering the Borel interval improves the pole proxy, so
+we performed a focused bottom-sector scan with fixed continuum thresholds and
+candidate Borel windows.  The script
+\begin{verbatim}
+python3 scripts/bs1_window_candidate_scan.py
+\end{verbatim}
+writes
+\texttt{outputs/bs1\_borel\_window\_candidate\_summary.csv} and
+\texttt{outputs/bs1\_borel\_window\_candidate\_scan.pdf}.  The compact result is
+\begin{center}
+\begin{tabular}{llcccc}
+\toprule
+State & \(M^2~(\GeV^2)\) & pole \(A\) & pole \(B\) & width span & max 3p\\
+\midrule
+\(B_{s1}^{\rm low}\) & \(8-12\) & 0.456 & 0.705 & 0.641 & 0.0010\\
+\(B_{s1}^{\rm low}\) & \(9-13\) & 0.405 & 0.662 & 0.544 & 0.0010\\
+\(B_{s1}^{\rm low}\) & \(10-14\) & 0.360 & 0.618 & 0.478 & 0.0009\\
+\(B_{s1}(5830)\) & \(8-12\) & 0.475 & 0.736 & 0.415 & 0.0010\\
+\(B_{s1}(5830)\) & \(9-13\) & 0.423 & 0.693 & 0.292 & 0.0009\\
+\(B_{s1}(5830)\) & \(10-14\) & 0.378 & 0.648 & 0.238 & 0.0009\\
+\bottomrule
+\end{tabular}
+\end{center}
+Thus lowering \(M^2\) does move the axial pole proxy closer to the usual
+\(0.5\) guideline, especially for \(8\le M^2\le12~\GeV^2\), but the price is a
+larger width span.  The three-particle fractions remain negligible in all these
+bottom-sector windows.  Therefore the choice is a controlled tradeoff: \(10-14\)
+is the most stable window, while \(9-13\) can be used as a reasonable systematic
+cross-check because it improves the pole proxy without the full instability of
+\(8-12\).
 
 \subsection{Publication Stability Figures}
 

@@ -269,7 +269,7 @@ def main() -> None:
 
     targets = [
         {
-            "state": "B_{s1}^{low}(5750)",
+            "state": "B_{s1}(5750)",
             "mass": 5.750,
             "quoted_combo": "low",
             "s0_values": [6.05**2, 6.15**2, 6.25**2, 6.35**2],

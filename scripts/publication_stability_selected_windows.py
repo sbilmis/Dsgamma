@@ -27,6 +27,7 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import matplotlib.pyplot as plt
+from matplotlib.ticker import FuncFormatter, MaxNLocator
 
 from redo_stability_windows import bs_physical_row, ds_physical_row
 from stage2_axial_g1_three_particle import F1_integral
@@ -51,7 +52,7 @@ BS5830_WINDOW = {
 }
 
 BSLOW_WINDOW = {
-    "state": "B_{s1}^{low}(5750)",
+    "state": "B_{s1}(5750)",
     "mass": 5.750,
     "quoted_combo": "low",
     "M2": (10.0, 14.0),
@@ -133,12 +134,19 @@ def fmt_scan_value(value: float) -> str:
     return f"{value:.1f}"
 
 
-def loosen_ylim(ax, values: list[float], fraction: float = 1.80) -> None:
-    """Use a deliberately loose y range so stability is not visually overstated."""
+def compact_tick_label(value: float, _pos: int) -> str:
+    if abs(value) < 1.0e-12:
+        return "0"
+    return f"{value:.2g}"
+
+
+def loosen_ylim(ax, values: list[float], min_span: float = 0.0, fraction: float = 1.40) -> None:
+    """Center the curves with enough vertical room to avoid overstating slopes."""
     ymin = min(values)
     ymax = max(values)
     center = 0.5 * (ymin + ymax)
     half = 0.5 * (ymax - ymin)
+    half = max(half, 0.5 * min_span)
     if half <= 0.0:
         half = max(abs(center) * 0.15, 1.0e-3)
     half *= 1.0 + fraction
@@ -170,11 +178,9 @@ def add_clean_legend(ax, *, title: str) -> None:
 
 
 def set_channel_ylim(ax, spec: dict[str, object], values: list[float]) -> None:
-    if "ylim" in spec:
-        ymin, ymax = spec["ylim"]
-        ax.set_ylim(float(ymin), float(ymax))
-    else:
-        loosen_ylim(ax, values)
+    loosen_ylim(ax, values, min_span=float(spec.get("min_y_span", 0.0)))
+    ax.yaxis.set_major_locator(MaxNLocator(nbins=5, prune=None))
+    ax.yaxis.set_major_formatter(FuncFormatter(compact_tick_label))
 
 
 def plot_publication(rows: list[dict[str, float | str]]) -> None:
@@ -208,7 +214,7 @@ def plot_publication(rows: list[dict[str, float | str]]) -> None:
 
     # Bs: vary M2 at selected s0.
     ax = axes[1, 0]
-    for target, linestyle, label in ((BSLOW_WINDOW, "-", r"$B_{s1}^{low}$"), (BS5830_WINDOW, "--", r"$B_{s1}(5830)$")):
+    for target, linestyle, label in ((BSLOW_WINDOW, "-", r"$B_{s1}(5750)$"), (BS5830_WINDOW, "--", r"$B_{s1}(5830)$")):
         for color, s0 in zip(color_cycle, target["s0_lines"]):
             subset = [
                 r for r in rows
@@ -219,7 +225,7 @@ def plot_publication(rows: list[dict[str, float | str]]) -> None:
     ax.set_title(r"$B_{s1}\to B_s\gamma$: Borel stability")
     ax.set_xlabel(r"$M^2$ [GeV$^2$]")
     ax.set_ylabel(r"$|g_{\rm quoted}|$ [GeV$^{-1}$]")
-    ax.text(0.03, 0.78, r"solid: $B_{s1}^{low}$" "\n" r"dashed: $B_{s1}(5830)$", transform=ax.transAxes, fontsize=8)
+    ax.text(0.03, 0.78, r"solid: $B_{s1}(5750)$" "\n" r"dashed: $B_{s1}(5830)$", transform=ax.transAxes, fontsize=8)
     handles = [plt.Line2D([0], [0], color=c, lw=1.8) for c in color_cycle]
     labels = [rf"$s_0={fmt_scan_value(s0)}$" for s0 in BS5830_WINDOW["s0_lines"]]
     ax.legend(handles, labels, frameon=False, fontsize=8, title=r"$s_0$ [GeV$^2$]", loc="upper right")
@@ -309,7 +315,7 @@ def plot_publication_normalized(rows: list[dict[str, float | str]]) -> None:
     ax.set_title(r"$B_{s1}\to B_s\gamma$: Borel stability")
     ax.set_xlabel(r"$M^2$ [GeV$^2$]")
     ax.set_ylabel(r"$|g_{\rm quoted}|/|g_{\rm quoted}|_{\rm c}$")
-    ax.text(0.03, 0.78, r"solid: $B_{s1}^{low}$" "\n" r"dashed: $B_{s1}(5830)$", transform=ax.transAxes, fontsize=8)
+    ax.text(0.03, 0.78, r"solid: $B_{s1}(5750)$" "\n" r"dashed: $B_{s1}(5830)$", transform=ax.transAxes, fontsize=8)
     handles = [plt.Line2D([0], [0], color=c, lw=1.8) for c in color_cycle]
     labels = [rf"$s_0={fmt_scan_value(s0)}$" for s0 in BS5830_WINDOW["s0_lines"]]
     ax.legend(handles, labels, frameon=False, fontsize=8, title=r"$s_0$ [GeV$^2$]", loc="upper right")
@@ -349,7 +355,7 @@ CHANNEL_SPECS = [
         "window": DS_WINDOW,
         "state": "",
         "ylabel": r"$|g_1|$ [GeV$^{-1}$]",
-        "ylim": (0.25, 0.60),
+        "min_y_span": 0.12,
     },
     {
         "channel_id": "ds1_2536",
@@ -359,17 +365,17 @@ CHANNEL_SPECS = [
         "window": DS_WINDOW,
         "state": "",
         "ylabel": r"$|g_2|$ [GeV$^{-1}$]",
-        "ylim": (0.00, 0.06),
+        "min_y_span": 0.025,
     },
     {
         "channel_id": "bs1_low_5750",
-        "title": r"$B_{s1}^{low}(5750)\to B_s\gamma$",
+        "title": r"$B_{s1}(5750)\to B_s\gamma$",
         "sector": "Bs",
         "value_key": "g_quoted_abs",
         "window": BSLOW_WINDOW,
         "state": BSLOW_WINDOW["state"],
         "ylabel": r"$|g_1|$ [GeV$^{-1}$]",
-        "ylim": (0.25, 0.50),
+        "min_y_span": 0.06,
     },
     {
         "channel_id": "bs1_5830",
@@ -379,7 +385,7 @@ CHANNEL_SPECS = [
         "window": BS5830_WINDOW,
         "state": BS5830_WINDOW["state"],
         "ylabel": r"$|g_2|$ [GeV$^{-1}$]",
-        "ylim": (0.03, 0.05),
+        "min_y_span": 0.008,
     },
 ]
 

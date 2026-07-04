@@ -104,7 +104,7 @@ WINDOWS = [
     {
         "name": "Bs_low_old_diagnostic",
         "sector": "Bs",
-        "state": "B_{s1}^{low}(5750)",
+        "state": "B_{s1}(5750)",
         "mass": 5.750,
         "M2_min": 8.0,
         "M2_max": 14.0,
@@ -115,7 +115,7 @@ WINDOWS = [
     {
         "name": "Bs_low_candidate",
         "sector": "Bs",
-        "state": "B_{s1}^{low}(5750)",
+        "state": "B_{s1}(5750)",
         "mass": 5.750,
         "M2_min": 10.0,
         "M2_max": 14.0,

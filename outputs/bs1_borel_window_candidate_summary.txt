@@ -1,0 +1,22 @@
+Bs1 Borel-window candidate scan
+================================
+All rows use central lattice photon normalization and theta=35.3 deg.
+The s0 ranges are kept fixed to isolate the M^2-window dependence.
+
+Bslow_M2_8_12: B_{s1}(5750), M2=8.00-12.00, s0=36.60-40.32 GeV^2; poleA=0.456, poleB=0.705, twist2=0.797, Gamma_span=0.641, max3pA=0.0010, max3pB=0.0008
+Bslow_M2_9_13: B_{s1}(5750), M2=9.00-13.00, s0=36.60-40.32 GeV^2; poleA=0.405, poleB=0.662, twist2=0.770, Gamma_span=0.544, max3pA=0.0010, max3pB=0.0008
+Bslow_M2_10_14: B_{s1}(5750), M2=10.00-14.00, s0=36.60-40.32 GeV^2; poleA=0.360, poleB=0.618, twist2=0.745, Gamma_span=0.478, max3pA=0.0009, max3pB=0.0007
+Bslow_M2_8_14: B_{s1}(5750), M2=8.00-14.00, s0=36.60-40.32 GeV^2; poleA=0.360, poleB=0.618, twist2=0.745, Gamma_span=0.765, max3pA=0.0010, max3pB=0.0008
+Bs5830_M2_8_12: B_{s1}(5830), M2=8.00-12.00, s0=37.82-40.96 GeV^2; poleA=0.475, poleB=0.736, twist2=0.817, Gamma_span=0.415, max3pA=0.0010, max3pB=0.0008
+Bs5830_M2_9_13: B_{s1}(5830), M2=9.00-13.00, s0=37.82-40.96 GeV^2; poleA=0.423, poleB=0.693, twist2=0.791, Gamma_span=0.292, max3pA=0.0009, max3pB=0.0008
+Bs5830_M2_10_14: B_{s1}(5830), M2=10.00-14.00, s0=37.82-40.96 GeV^2; poleA=0.378, poleB=0.648, twist2=0.766, Gamma_span=0.238, max3pA=0.0009, max3pB=0.0007
+Bs5830_M2_8_14: B_{s1}(5830), M2=8.00-14.00, s0=37.82-40.96 GeV^2; poleA=0.378, poleB=0.648, twist2=0.766, Gamma_span=0.423, max3pA=0.0010, max3pB=0.0008
+
+Interpretation:
+- Lowering M^2 improves the expected pole contribution only if the minimum pole proxy rises.
+- It is acceptable only if the three-particle fractions stay small and the width span does not worsen too much.
+- The comparison is diagnostic; the quoted window should not be changed merely to satisfy one number.
+
+Wrote /Users/sbilmis/Dsgamma/outputs/bs1_borel_window_candidate_grid.csv
+Wrote /Users/sbilmis/Dsgamma/outputs/bs1_borel_window_candidate_summary.csv
+Wrote /Users/sbilmis/Dsgamma/outputs/bs1_borel_window_candidate_scan.pdf
