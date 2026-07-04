@@ -127,6 +127,42 @@ def style_axis(ax) -> None:
     ax.tick_params(direction="in", top=True, right=True)
 
 
+def loosen_ylim(ax, values: list[float], fraction: float = 0.65) -> None:
+    """Use a deliberately loose y range so stability is not visually overstated."""
+    ymin = min(values)
+    ymax = max(values)
+    center = 0.5 * (ymin + ymax)
+    half = 0.5 * (ymax - ymin)
+    if half <= 0.0:
+        half = max(abs(center) * 0.15, 1.0e-3)
+    half *= 1.0 + fraction
+    ax.set_ylim(center - half, center + half)
+
+
+def add_inside_title(ax, title: str) -> None:
+    ax.text(
+        0.04,
+        0.92,
+        title,
+        transform=ax.transAxes,
+        ha="left",
+        va="top",
+        fontsize=12,
+    )
+
+
+def add_clean_legend(ax, *, title: str) -> None:
+    ax.legend(
+        frameon=True,
+        facecolor="white",
+        framealpha=0.92,
+        edgecolor="white",
+        fontsize=8,
+        title=title,
+        loc="upper right",
+    )
+
+
 def plot_publication(rows: list[dict[str, float | str]]) -> None:
     fig, axes = plt.subplots(2, 2, figsize=(10.0, 7.2))
     color_cycle = [COLORS["low"], COLORS["mid"], COLORS["high"]]
@@ -140,7 +176,7 @@ def plot_publication(rows: list[dict[str, float | str]]) -> None:
     ax.set_title(r"$D_{s1}\to D_s\gamma$: Borel stability")
     ax.set_xlabel(r"$M^2$ [GeV$^2$]")
     ax.set_ylabel(r"$|g|$ [GeV$^{-1}$]")
-    ax.legend(frameon=False, fontsize=8, title=r"$s_0$ [GeV$^2$]")
+    add_clean_legend(ax, title=r"$s_0$ [GeV$^2$]")
     ax.text(0.03, 0.08, r"solid: $2460$" "\n" r"dashed: $2536$", transform=ax.transAxes, fontsize=8)
     style_axis(ax)
 
@@ -153,7 +189,7 @@ def plot_publication(rows: list[dict[str, float | str]]) -> None:
     ax.set_title(r"$D_{s1}\to D_s\gamma$: threshold stability")
     ax.set_xlabel(r"$s_0$ [GeV$^2$]")
     ax.set_ylabel(r"$|g|$ [GeV$^{-1}$]")
-    ax.legend(frameon=False, fontsize=8, title=r"$M^2$ [GeV$^2$]")
+    add_clean_legend(ax, title=r"$M^2$ [GeV$^2$]")
     style_axis(ax)
 
     # Bs: vary M2 at selected s0.
@@ -232,7 +268,7 @@ def plot_publication_normalized(rows: list[dict[str, float | str]]) -> None:
     ax.set_title(r"$D_{s1}\to D_s\gamma$: Borel stability")
     ax.set_xlabel(r"$M^2$ [GeV$^2$]")
     ax.set_ylabel(r"$|g|/|g|_{\rm c}$")
-    ax.legend(frameon=False, fontsize=8, title=r"$s_0$ [GeV$^2$]")
+    ax.legend(frameon=False, fontsize=8, title=r"$s_0$ [GeV$^2$]", loc="upper right")
     ax.text(0.03, 0.08, r"solid: $2460$" "\n" r"dashed: $2536$", transform=ax.transAxes, fontsize=8)
     style_axis(ax)
 
@@ -244,7 +280,7 @@ def plot_publication_normalized(rows: list[dict[str, float | str]]) -> None:
     ax.set_title(r"$D_{s1}\to D_s\gamma$: threshold stability")
     ax.set_xlabel(r"$s_0$ [GeV$^2$]")
     ax.set_ylabel(r"$|g|/|g|_{\rm c}$")
-    ax.legend(frameon=False, fontsize=8, title=r"$M^2$ [GeV$^2$]")
+    ax.legend(frameon=False, fontsize=8, title=r"$M^2$ [GeV$^2$]", loc="upper right")
     style_axis(ax)
 
     ax = axes[1, 0]
@@ -290,13 +326,122 @@ def plot_publication_normalized(rows: list[dict[str, float | str]]) -> None:
     fig.savefig(OUT / "publication_selected_window_stability_normalized.pdf")
 
 
+CHANNEL_SPECS = [
+    {
+        "channel_id": "ds1_2460",
+        "title": r"$D_{s1}(2460)\to D_s\gamma$",
+        "sector": "Ds",
+        "value_key": "g1_abs",
+        "window": DS_WINDOW,
+        "state": "",
+        "ylabel": r"$|g_1|$ [GeV$^{-1}$]",
+    },
+    {
+        "channel_id": "ds1_2536",
+        "title": r"$D_{s1}(2536)\to D_s\gamma$",
+        "sector": "Ds",
+        "value_key": "g2_abs",
+        "window": DS_WINDOW,
+        "state": "",
+        "ylabel": r"$|g_2|$ [GeV$^{-1}$]",
+    },
+    {
+        "channel_id": "bs1_low_5750",
+        "title": r"$B_{s1}^{low}(5750)\to B_s\gamma$",
+        "sector": "Bs",
+        "value_key": "g_quoted_abs",
+        "window": BSLOW_WINDOW,
+        "state": BSLOW_WINDOW["state"],
+        "ylabel": r"$|g_{\rm low}|$ [GeV$^{-1}$]",
+    },
+    {
+        "channel_id": "bs1_5830",
+        "title": r"$B_{s1}(5830)\to B_s\gamma$",
+        "sector": "Bs",
+        "value_key": "g_quoted_abs",
+        "window": BS5830_WINDOW,
+        "state": BS5830_WINDOW["state"],
+        "ylabel": r"$|g_{\rm high}|$ [GeV$^{-1}$]",
+    },
+]
+
+
+def channel_subset(rows: list[dict[str, float | str]], spec: dict[str, object], scan: str, fixed_key: str, fixed_value: float) -> list[dict[str, float | str]]:
+    subset = [
+        r for r in rows
+        if r["sector"] == spec["sector"]
+        and r["scan"] == scan
+        and abs(float(r[fixed_key]) - fixed_value) < 1.0e-10
+    ]
+    if spec["sector"] == "Bs":
+        subset = [r for r in subset if r["state"] == spec["state"]]
+    return subset
+
+
+def plot_channel_absolute(rows: list[dict[str, float | str]], spec: dict[str, object]) -> None:
+    window = spec["window"]
+    value_key = str(spec["value_key"])
+    color_cycle = [COLORS["low"], COLORS["mid"], COLORS["high"]]
+    stem = f"publication_stability_{spec['channel_id']}"
+
+    fig, ax = plt.subplots(figsize=(4.8, 3.7))
+    y_values: list[float] = []
+    for color, s0 in zip(color_cycle, window["s0_lines"]):
+        subset = channel_subset(rows, spec, "M2", "fixed_s0", float(s0))
+        y = [float(r[value_key]) for r in subset]
+        y_values.extend(y)
+        ax.plot(
+            [float(r["M2"]) for r in subset],
+            y,
+            color=color,
+            linewidth=1.8,
+            label=rf"$s_0={float(s0):.2f}$",
+        )
+    add_inside_title(ax, str(spec["title"]))
+    ax.set_xlabel(r"$M^2$ [GeV$^2$]")
+    ax.set_ylabel(str(spec["ylabel"]))
+    ax.legend(frameon=False, fontsize=8, title=r"$s_0$ [GeV$^2$]", loc="upper right")
+    style_axis(ax)
+    loosen_ylim(ax, y_values)
+    fig.tight_layout()
+    fig.savefig(OUT / f"{stem}_M2.png", dpi=300)
+    fig.savefig(OUT / f"{stem}_M2.pdf")
+
+    fig, ax = plt.subplots(figsize=(4.8, 3.7))
+    y_values = []
+    for color, M2 in zip(color_cycle, window["M2_lines"]):
+        subset = channel_subset(rows, spec, "s0", "fixed_M2", float(M2))
+        y = [float(r[value_key]) for r in subset]
+        y_values.extend(y)
+        ax.plot(
+            [float(r["s0"]) for r in subset],
+            y,
+            color=color,
+            linewidth=1.8,
+            label=rf"$M^2={float(M2):.2f}$",
+        )
+    add_inside_title(ax, str(spec["title"]))
+    ax.set_xlabel(r"$s_0$ [GeV$^2$]")
+    ax.set_ylabel(str(spec["ylabel"]))
+    ax.legend(frameon=False, fontsize=8, title=r"$M^2$ [GeV$^2$]", loc="upper right")
+    style_axis(ax)
+    loosen_ylim(ax, y_values)
+    fig.tight_layout()
+    fig.savefig(OUT / f"{stem}_s0.png", dpi=300)
+    fig.savefig(OUT / f"{stem}_s0.pdf")
+
+
+def plot_channel_figures(rows: list[dict[str, float | str]]) -> None:
+    for spec in CHANNEL_SPECS:
+        plot_channel_absolute(rows, spec)
+
+
 def summarize(rows: list[dict[str, float | str]]) -> str:
     lines = [
         "Publication selected-window stability plot",
         "==========================================",
-        "Form factors are plotted as absolute values for visual clarity.",
-        "Ds solid/dashed curves denote Ds1(2460)/Ds1(2536).",
-        "Bs solid/dashed curves denote lower diagnostic/Bs1(5830).",
+        "The legacy combined plots are kept for comparison.",
+        "The channel-separated plots are preferred because they avoid solid/dashed overloading.",
     ]
     for sector, key in (("Ds", "g1_abs"), ("Ds", "g2_abs"), ("Bs", "g_quoted_abs")):
         subset = [r for r in rows if r["sector"] == sector]
@@ -315,8 +460,12 @@ def summarize(rows: list[dict[str, float | str]]) -> str:
             f"Wrote {OUT / 'publication_selected_window_stability.png'}",
             f"Wrote {OUT / 'publication_selected_window_stability_normalized.pdf'}",
             f"Wrote {OUT / 'publication_selected_window_stability_normalized.png'}",
+            "Wrote channel-separated plots:",
         ]
     )
+    for spec in CHANNEL_SPECS:
+        lines.append(f"  {OUT / ('publication_stability_' + str(spec['channel_id']) + '_M2.pdf')}")
+        lines.append(f"  {OUT / ('publication_stability_' + str(spec['channel_id']) + '_s0.pdf')}")
     return "\n".join(lines) + "\n"
 
 
@@ -327,6 +476,7 @@ def main() -> None:
     write_csv(OUT / "publication_selected_window_stability.csv", rows)
     plot_publication(rows)
     plot_publication_normalized(rows)
+    plot_channel_figures(rows)
     summary = summarize(rows)
     (OUT / "publication_selected_window_stability_summary.txt").write_text(summary)
     print(summary)
