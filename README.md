@@ -24,19 +24,19 @@ as a comparison against the older photon-DA literature.
 - `inputs_table.csv` - numerical inputs used in the analysis.
 - `photon_da.py` - photon DA functions through twist 4.
 - `roadmap_Ds1_radiative_LCSR.md` - project roadmap and calculation plan.
-- `manuscript/` - current paper drafts for editing.
-- `draft_prd/` - PRD-style draft with the fuller theory-framework version.
-- `notes/` - full LaTeX working notes and reports compiled to PDF.
+- `notes/` - active calculation notes, redo-analysis plan, and reports compiled to PDF.
+- `draft_prd/` - preserved PRD-style draft with the fuller theory-framework version.
+- `manuscript/` - archived local manuscript drafts; not the active editing target.
 - `scripts/` - Mathematica/FeynCalc and Python scripts for symbolic and numerical work.
 - `outputs/` - generated symbolic outputs, Monte Carlo scans, plots, citation maps,
   and publication-ready tables.
 
-## Paper Editing Entry Points
+## Active Working Entry Points
 
-- Edit `manuscript/dsbs_radiative_lcsr_polished.tex` for the current polished draft.
-- Use `manuscript/dsbs_radiative_lcsr_polished.pdf` to read the compiled version.
-- Keep `manuscript/dsbs_radiative_lcsr.tex` as the shorter compact draft.
-- Use `draft_prd/main.tex` when working on the PRD-style theoretical-framework draft.
+- Use `notes/Ds1_to_Ds_gamma_LCSR_notes.tex` as the active calculation and redo-analysis record.
+- Use `notes/Ds1_to_Ds_gamma_LCSR_notes.pdf` to read the compiled notes.
+- Keep `draft_prd/main.tex` only as a reference copy for the detailed PRD-style derivation.
+- The paper itself will be edited elsewhere; `manuscript/` is retained only as an archived snapshot.
 
 ## Current Headline Outputs
 

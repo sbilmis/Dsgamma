@@ -1,15 +1,18 @@
 # Manuscript Folder
 
-Use this folder when editing the paper.
+This folder is now an archived local snapshot.  It is not the active paper
+editing target.  The active calculation and redo-analysis record is in
+`../notes/Ds1_to_Ds_gamma_LCSR_notes.tex`; the paper itself will be edited
+elsewhere.
 
-## Main Drafts
+## Archived Drafts
 
-- `dsbs_radiative_lcsr_polished.tex` - current polished paper draft.
+- `dsbs_radiative_lcsr_polished.tex` - archived polished draft snapshot.
 - `dsbs_radiative_lcsr_polished.pdf` - compiled polished draft.
 - `dsbs_radiative_lcsr.tex` - shorter compact draft kept for comparison.
 - `references.bib` - bibliography used by both manuscript drafts.
 
-## Build
+## Build If Needed
 
 From this folder:
 

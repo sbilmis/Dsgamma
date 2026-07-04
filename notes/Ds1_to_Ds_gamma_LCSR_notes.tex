@@ -2583,22 +2583,59 @@ the present photon-DA LCSR machinery does not carry over without a new
 formalism.  We keep this only as an internal next-study idea in
 \texttt{notes/internal\_future\_work.md}.
 
-\section{Remaining Manuscript Tasks}
+\section{Redo Analysis and Publication-Quality Plots}
+\label{sec:redo-analysis-publication-plots}
 
-The remaining tasks are now writing and presentation tasks rather than missing
-core calculations:
+From this point onward these notes are the active calculation document.  The
+folder \texttt{draft\_prd/} is kept only as a reference copy of the fuller
+PRD-style derivation, and the folder \texttt{manuscript/} is no longer the
+editing target for the paper.  The paper text will be edited elsewhere; here we
+will keep the reproducible analysis, numerical checks, and plot-generation
+record.
+
+The next analysis pass should be done conservatively.  Existing output files are
+not deleted; revised scans should be written with clear names so that old and
+new results can be compared.  The main goals are:
 \begin{itemize}
-  \item decide journal style and create the manuscript source file;
-  \item convert the working-note equations into a shorter derivation section;
-  \item select only the final numerical tables and the most useful stability,
-  uncertainty, and comparison figures;
-  \item build a BibTeX file and cite every input in
-  Tables~\ref{tab:paper-input-summary} and~\ref{tab:input-citation-map};
-  \item decide whether the $\Bsone$ predictions remain in the main text or in a
-  separate phenomenology subsection; the preferred rows now use
-  Pullin--Zwicky basis-current inputs with the mixed-current diagonalization
-  closure, while an independent local OPE derivation of the bottom two-point
-  matrix is best treated as a validation refinement.
+  \item recheck the final $D_{s1}$ and $B_{s1}$ numerical inputs, especially
+  the photon normalization, physical-current decay constants, Borel windows,
+  continuum thresholds, and mixing-angle treatment;
+  \item rerun the preferred Monte Carlo scans with an explicit random seed and
+  store the seed, accepted sample count, rejected sample count, and percentile
+  definitions in the output summary;
+  \item separate the fixed-angle $\theta=35.3^\circ$ results from the
+  $25^\circ\leq\theta\leq45^\circ$ scan in both tables and plots;
+  \item keep the legacy Rohrwild/BBK susceptibility rows as comparison rows, but
+  make the lattice photon-normalized rows the headline results;
+  \item verify the stability windows by producing publication-quality
+  $(M^2,s_0)$ stability plots for the final quoted channels;
+  \item produce compact uncertainty-budget plots showing the dominant input
+  sources, with the photon normalization, condensate combination, Borel window,
+  continuum threshold, and mixing angle varied in a transparent way;
+  \item produce final comparison tables and figures against the representative
+  $D_{s1}$ and $B_{s1}$ literature values, while clearly marking channels not
+  computed in this LCSR setup;
+  \item record every script command used to regenerate the headline figures and
+  tables, so that the paper plots can be reproduced without relying on memory.
+\end{itemize}
+
+Publication figures should be generated as both PDF and PNG.  The PDF is used
+for the paper, while the PNG is useful for quick inspection.  The preferred plot
+style should be consistent across all figures: readable axis labels, explicit
+units, no crowded legends, and enough whitespace for journal-column scaling.
+The working output directory remains \texttt{outputs/}; if a figure becomes a
+final paper figure, its source script and source data should be listed in
+\texttt{outputs/manuscript\_reproducibility\_map.csv}.
+
+Before any revised result replaces a number in the paper, the following checks
+should be recorded in this section or in a linked table:
+\begin{itemize}
+  \item central-value reproduction from the script output;
+  \item percentile interval definition;
+  \item comparison with the previous stored result;
+  \item stability under the chosen Borel and threshold ranges;
+  \item sign convention and current-normalization convention used for the
+  quoted form factor.
 \end{itemize}
 
 \end{document}
