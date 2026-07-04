@@ -24,18 +24,28 @@ as a comparison against the older photon-DA literature.
 - `inputs_table.csv` - numerical inputs used in the analysis.
 - `photon_da.py` - photon DA functions through twist 4.
 - `roadmap_Ds1_radiative_LCSR.md` - project roadmap and calculation plan.
-- `notes/` - LaTeX notes and reports compiled to PDF.
+- `manuscript/` - current paper drafts for editing.
+- `draft_prd/` - PRD-style draft with the fuller theory-framework version.
+- `notes/` - full LaTeX working notes and reports compiled to PDF.
 - `scripts/` - Mathematica/FeynCalc and Python scripts for symbolic and numerical work.
 - `outputs/` - generated symbolic outputs, Monte Carlo scans, plots, citation maps,
   and publication-ready tables.
+
+## Paper Editing Entry Points
+
+- Edit `manuscript/dsbs_radiative_lcsr_polished.tex` for the current polished draft.
+- Use `manuscript/dsbs_radiative_lcsr_polished.pdf` to read the compiled version.
+- Keep `manuscript/dsbs_radiative_lcsr.tex` as the shorter compact draft.
+- Use `draft_prd/main.tex` when working on the PRD-style theoretical-framework draft.
 
 ## Current Headline Outputs
 
 - `outputs/combined_recommended_results_table.csv` - combined Ds1 and Bs1 form-factor
   and width table.
 - `outputs/ds1_recommended_results_table.csv` - Ds1 Stage-3 physical-current table.
-- `outputs/stage3_bs1_pz_decay_constant_summary.csv` - Bs1 Pullin-Zwicky
-  decay-constant scenario.
+- `outputs/stage3_bs1_physical_decay_constant_summary.csv` - Bs1 physical-current
+  normalization using Pullin-Zwicky basis-current inputs and the mixed-current
+  diagonalization closure.
 - `outputs/experimental_comparison_table.csv` - interpretation against available
   experimental information.
 - `outputs/input_citation_map.csv` - citation map for the numerical inputs.
