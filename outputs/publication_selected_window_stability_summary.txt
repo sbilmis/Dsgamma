@@ -1,0 +1,13 @@
+Publication selected-window stability plot
+==========================================
+Form factors are plotted as absolute values for visual clarity.
+Ds solid/dashed curves denote Ds1(2460)/Ds1(2536).
+Bs solid/dashed curves denote lower diagnostic/Bs1(5830).
+Ds g1: 0.35077 to 0.48539 GeV^-1
+Ds g2: 0.01845 to 0.0422 GeV^-1
+Bs quoted g: 0.041117 to 0.41797 GeV^-1
+Wrote /Users/sbilmis/Dsgamma/outputs/publication_selected_window_stability.csv
+Wrote /Users/sbilmis/Dsgamma/outputs/publication_selected_window_stability.pdf
+Wrote /Users/sbilmis/Dsgamma/outputs/publication_selected_window_stability.png
+Wrote /Users/sbilmis/Dsgamma/outputs/publication_selected_window_stability_normalized.pdf
+Wrote /Users/sbilmis/Dsgamma/outputs/publication_selected_window_stability_normalized.png

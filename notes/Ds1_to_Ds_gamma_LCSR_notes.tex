@@ -2829,4 +2829,36 @@ to \(0.478\).  The bottom-sector three-particle fractions are tiny in this
 diagnostic, so the window choice is driven mainly by stability and continuum
 placement.
 
+\subsection{Publication Stability Figure}
+
+For the manuscript, the cleanest stability demonstration is a two-variable
+plot: vary \(M^2\) at selected fixed \(s_0\), and vary \(s_0\) at selected fixed
+\(M^2\).  The script
+\begin{verbatim}
+python3 scripts/publication_stability_selected_windows.py
+\end{verbatim}
+generates both an absolute form-factor plot and a normalized plot:
+\begin{itemize}
+  \item \texttt{outputs/publication\_selected\_window\_stability.pdf};
+  \item \texttt{outputs/publication\_selected\_window\_stability\_normalized.pdf};
+  \item \texttt{outputs/publication\_selected\_window\_stability.csv}.
+\end{itemize}
+The normalized version is preferred for the paper because the suppressed
+\(D_{s1}(2536)\) and \(B_{s1}(5830)\) channels are much smaller than the
+dominant partner channels.  Plotting \(|g|/|g|_{\rm c}\), where the subscript
+\({\rm c}\) denotes the central point in the selected window, displays the
+relative stability on the same scale for all channels.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/publication_selected_window_stability_normalized.pdf}
+  \caption{Selected-window stability of the physical form factors.  The left
+  column shows the \(M^2\) dependence at selected fixed \(s_0\), and the right
+  column shows the \(s_0\) dependence at selected fixed \(M^2\).  Solid and
+  dashed curves denote the partner channels indicated in each panel.  The
+  \(D_{s1}(2536)\) curves show stronger relative variation because the physical
+  amplitude is close to a cancellation point.}
+  \label{fig:publication-selected-window-stability}
+\end{figure}
+
 \end{document}

@@ -17,6 +17,9 @@ This folder contains the symbolic and numerical workflow.
 - `window_diagnostics.py` - compares candidate \(M^2,s_0\) windows using
   perturbative pole-fraction proxies, photon-DA continuum retention, OPE
   hierarchy, and numerical stability.
+- `publication_stability_selected_windows.py` - publication-style selected
+  window plots, varying \(M^2\) at fixed \(s_0\) and varying \(s_0\) at fixed
+  \(M^2\).
 - `publication_plots.py` and `uncertainty_publication_plots.py` - publication
   plotting helpers.
 
