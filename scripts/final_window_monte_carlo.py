@@ -309,7 +309,6 @@ def make_histograms(rows: list[dict[str, float | str]]) -> None:
             fontsize=9,
             bbox={"boxstyle": "round,pad=0.25", "facecolor": "white", "alpha": 0.82, "edgecolor": "none"},
         )
-    fig.suptitle(r"Final-window Monte Carlo, lattice photon input, $25^\circ\leq\theta\leq45^\circ$")
     fig.tight_layout()
     fig.savefig(OUT / "final_window_mc_width_histograms.png", dpi=240)
     fig.savefig(OUT / "final_window_mc_width_histograms.pdf")
