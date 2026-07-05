@@ -291,10 +291,15 @@ def make_histograms(rows: list[dict[str, float | str]]) -> None:
     for ax, (state_key, title) in zip(axes.flat, panels):
         values = np.asarray([float(r["Gamma_keV"]) for r in plot_rows if r["state_key"] == state_key], dtype=float)
         stats = summarize(values.tolist())
-        ax.hist(values, bins=28, density=True, color="#4c78a8", alpha=0.58, edgecolor="white")
+        x_max = float(np.percentile(values, 97.5))
+        if x_max <= stats["p84"]:
+            x_max = 1.25 * stats["p84"]
+        hist_values = values[values <= x_max]
+        ax.hist(hist_values, bins=24, range=(0.0, x_max), density=True, color="#4c78a8", alpha=0.58, edgecolor="white")
         ax.axvline(stats["median"], color="black", linewidth=1.2)
         ax.axvline(stats["p16"], color="#d62728", linestyle="--", linewidth=1.0)
         ax.axvline(stats["p84"], color="#d62728", linestyle="--", linewidth=1.0)
+        ax.set_xlim(0.0, 1.08 * x_max)
         ax.set_title(title)
         ax.set_xlabel(r"$\Gamma$ [keV]")
         ax.set_ylabel("density")
