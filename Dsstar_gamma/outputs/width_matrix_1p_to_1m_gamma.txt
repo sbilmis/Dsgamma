@@ -1,0 +1,13 @@
+A(1+) -> V(1-) gamma polarization-summed width matrix
+======================================================
+
+Amplitude basis: M = c1 S1 + c2 S2 + cEps Seps.
+Rows/columns are {S1,S2,Seps}.
+
+(1/3) sum_pol S_i S_j =
+{{((mA^2 - mV^2)^2*(mA^2 + mV^2))/(6*mA^2*mV^2), -1/12*(mA^2 - mV^2)^3/mA^2, 0}, {-1/12*(mA^2 - mV^2)^3/mA^2, (mA^2 - mV^2)^4/(24*mA^2), 0}, {0, 0, ((mA^2 - mV^2)^2*(mA^2 + mV^2))/(6*mA^2*mV^2)}}
+
+Phase-space prefactor |q|/(8 pi mA^2) = (mA^2 - mV^2)/(16*mA^3*Pi)
+
+Therefore Gamma = prefactor * {c1,c2,cEps}.H.{c1,c2,cEps}.
+The off-diagonal even/epsilon entries vanish in this basis.

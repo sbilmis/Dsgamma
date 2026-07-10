@@ -1,0 +1,20 @@
+A(1+) -> V(1-) gamma tensor-basis checkpoint
+============================================
+
+Kinematics: P=p+q, q^2=0, eps.q=0, eta.P=0, xi.p=0.
+
+S1 = -(Pair[Momentum[eps], Momentum[xi]]*Pair[Momentum[eta], Momentum[q]]) + Pair[Momentum[eps], Momentum[eta]]*Pair[Momentum[q], Momentum[xi]]
+S2 = Pair[Momentum[eta], Momentum[q]]*(Pair[Momentum[eps], Momentum[xi]]*Pair[Momentum[p], Momentum[q]] - Pair[Momentum[eps], Momentum[p]]*Pair[Momentum[q], Momentum[xi]])
+S3 = (-(Pair[Momentum[eps], Momentum[p]]*Pair[Momentum[eta], Momentum[q]]) + Pair[Momentum[eps], Momentum[eta]]*Pair[Momentum[p], Momentum[q]])*Pair[Momentum[q], Momentum[xi]]
+Odd1 = -Eps[eps, eta, q, xi]
+Ward[S1] = 0
+Ward[S2] = 0
+Ward[S3] = 0
+Ward[Odd1] = 0
+S3 - (p.q) S1 - S2 = 0
+
+Interpretation:
+- Ward[...] entries must vanish for gauge-invariant candidates.
+- The relation S3=(p.q) S1 + S2 is expected after using transversality.
+- S1 and S2 are the first even-sector candidates to project in the OPE.
+- Odd1 is kept as a parity/trace diagnostic for epsilon-tensor output.
