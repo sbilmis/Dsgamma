@@ -1,0 +1,31 @@
+Stage-1 axial-current Ds1 -> Ds* gamma benchmark
+================================================
+The physical rows are axial-only: tensor-current J_B is not included yet.
+Windows used here: M^2 = 3.0...6.0 GeV^2, s0 = 7.5, 8.0, 8.5 GeV^2.
+
+project_inputs_positive_chi:
+  g_A* range -0.2082 to -0.1076
+  axial-only g_1*(2460) range -0.0785 to -0.0405; Gamma 0.052 to 0.196 keV
+  axial-only g_2*(2536) range -0.1009 to -0.0521; Gamma 0.146 to 0.548 keV
+
+project_inputs_printed_chi_sign_diagnostic:
+  g_A* range +0.8502 to +1.0560
+  axial-only g_1*(2460) range +0.3204 to +0.3980; Gamma 3.271 to 5.045 keV
+  axial-only g_2*(2536) range +0.4119 to +0.5116; Gamma 9.130 to 14.084 keV
+
+colangelo_like_positive_chi:
+  g_A* range -0.2648 to -0.1451
+  axial-only g_1*(2460) range -0.1530 to -0.0838; Gamma 0.224 to 0.746 keV
+  axial-only g_2*(2536) range -0.2161 to -0.1184; Gamma 0.755 to 2.512 keV
+
+colangelo_like_printed_chi_sign_diagnostic:
+  g_A* range +0.9016 to +1.0874
+  axial-only g_1*(2460) range +0.5210 to +0.6284; Gamma 8.648 to 12.579 keV
+  axial-only g_2*(2536) range +0.7358 to +0.8875; Gamma 29.131 to 42.375 keV
+
+colangelo_like_original_window_positive_chi:
+  g_A* range -0.1923 to -0.1409
+  axial-only g_1*(2460) range -0.1111 to -0.0814; Gamma 0.211 to 0.393 keV
+  axial-only g_2*(2536) range -0.1569 to -0.1150; Gamma 0.712 to 1.325 keV
+
+Wrote grid to /Users/sbilmis/Dsgamma/Dsstar_gamma/outputs/stage1_axial_colangelo_gstar.csv
