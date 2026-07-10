@@ -12,31 +12,31 @@ Suggested plotting/selection convention:
 Ds1 scan
 --------
 grid points: 124
-M2 range: 2.00-7.00 GeV^2; s0 range: 8.12-9.61 GeV^2
-g_2460: min -0.644327; max -0.247743; relative span 0.889
-Gamma_2460_keV: min +12.9014; max +87.2665; relative span 1.485
-g_2536: min -0.0072657; max +0.0704994; relative span 2.460
-Gamma_2536_keV: min +3.25954e-05; max +1.54231; relative span 2.000
-GA_basis: min -0.58094; max -0.122139; relative span 1.305
-GB_basis: min -0.389273; max -0.184586; relative span 0.713
+M2 range: 2.00-7.00 GeV^2; s0 range: 7.50-9.00 GeV^2
+g_2460: min -0.581828; max -0.222017; relative span 0.895
+Gamma_2460_keV: min +10.3612; max +71.1581; relative span 1.492
+g_2536: min +0.00213452; max +0.0732369; relative span 1.887
+Gamma_2536_keV: min +0.00141384; max +1.66441; relative span 1.997
+GA_basis: min -0.51258; max -0.0955636; relative span 1.371
+GB_basis: min -0.355655; max -0.17021; relative span 0.705
 
-B_{s1}^{low}(5750) scan
------------------------
+B_{s1}(5750) scan
+-----------------
 grid points: 124
-M2 range: 6.00-18.00 GeV^2; s0 range: 36.60-40.32 GeV^2
-g_quoted: min +0.300328; max +0.674922; relative span 0.768
-Gamma_quoted_keV: min +11.1421; max +56.2703; relative span 1.339
-GA_basis: min +0.232392; max +0.565102; relative span 0.834
-GB_basis: min +0.299778; max +0.649556; relative span 0.737
+M2 range: 6.00-18.00 GeV^2; s0 range: 36.50-40.50 GeV^2
+g_quoted: min +0.299204; max +0.675476; relative span 0.772
+Gamma_quoted_keV: min +11.0588; max +56.3627; relative span 1.344
+GA_basis: min +0.231427; max +0.565643; relative span 0.839
+GB_basis: min +0.29871; max +0.650045; relative span 0.741
 
 B_{s1}(5830) scan
 -----------------
 grid points: 124
-M2 range: 6.00-18.00 GeV^2; s0 range: 37.82-40.96 GeV^2
-g_quoted: min -0.0463295; max -0.018243; relative span 0.870
-Gamma_quoted_keV: min +0.0706127; max +0.455411; relative span 1.463
-GA_basis: min +0.246621; max +0.60346; relative span 0.840
-GB_basis: min +0.311362; max +0.68377; relative span 0.748
+M2 range: 6.00-18.00 GeV^2; s0 range: 38.00-41.00 GeV^2
+g_quoted: min -0.0461714; max -0.0182076; relative span 0.869
+Gamma_quoted_keV: min +0.0703387; max +0.452309; relative span 1.462
+GA_basis: min +0.248272; max +0.603581; relative span 0.834
+GB_basis: min +0.313046; max +0.683874; relative span 0.744
 
 Wrote:
   /Users/sbilmis/Dsgamma/outputs/redo_ds1_stability_windows.csv

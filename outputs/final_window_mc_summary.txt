@@ -4,15 +4,15 @@ Seed: 20260705
 Accepted rows: 9869
 Rejected bottom-sector physical-normalization samples: 2131
 Samples per ensemble/channel/scenario/window: 500
-Ds window: M^2=[3.0,4.5] GeV^2, s0=[7.84,8.70] GeV^2.
+Ds window: M^2=[3.0,4.5] GeV^2, s0=[7.5,8.5] GeV^2.
 Bs central window: M^2=[10,14] GeV^2 with state-specific s0 windows.
 Bs cross-check window: M^2=[9,13] GeV^2 with the same s0 windows.
 
 Preferred lattice-photon, theta-scan central-window rows:
-B_{s1}(5750): g=+0.3938 [+0.3501,+0.4616] GeV^-1; Gamma=19.26 [14.16,27.2] keV
-B_{s1}(5830): g=+0.01039 [-0.07929,+0.06009] GeV^-1; Gamma=0.498 [0.05569,1.68] keV
-D_{s1}(2460): g=-0.4143 [-0.4534,-0.3759] GeV^-1; Gamma=36.14 [29.67,43.14] keV
-D_{s1}(2536): g=+0.03016 [-0.01426,+0.07514] GeV^-1; Gamma=0.4221 [0.02588,1.76] keV
+B_{s1}(5750): g=+0.3945 [+0.3505,+0.462] GeV^-1; Gamma=19.34 [14.14,27.26] keV
+B_{s1}(5830): g=+0.01054 [-0.07925,+0.06038] GeV^-1; Gamma=0.5039 [0.05671,1.677] keV
+D_{s1}(2460): g=-0.3943 [-0.433,-0.3557] GeV^-1; Gamma=32.65 [26.48,39.37] keV
+D_{s1}(2536): g=+0.03288 [-0.01035,+0.07554] GeV^-1; Gamma=0.4255 [0.03547,1.777] keV
 
 Outputs:
   /Users/sbilmis/Dsgamma/outputs/final_window_mc_scan.csv

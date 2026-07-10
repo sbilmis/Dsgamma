@@ -259,7 +259,7 @@ def main() -> None:
     f1_axial, _, _ = F1_integral(u0=0.5)
     f1_basis = precompute_f1_basis()
 
-    ds_s0_values = [2.85**2, 2.95**2, 3.05**2, 3.10**2]
+    ds_s0_values = [7.5, 8.0, 8.5, 9.0]
     ds_rows: list[dict[str, float | str]] = []
     for s0 in ds_s0_values:
         for M2 in np.linspace(2.0, 7.0, 31):
@@ -272,14 +272,14 @@ def main() -> None:
             "state": "B_{s1}(5750)",
             "mass": 5.750,
             "quoted_combo": "low",
-            "s0_values": [6.05**2, 6.15**2, 6.25**2, 6.35**2],
+            "s0_values": [36.5, 38.0, 39.5, 40.5],
             "filename": "redo_bs1_low_stability_windows",
         },
         {
             "state": "B_{s1}(5830)",
             "mass": 5.82870,
             "quoted_combo": "high",
-            "s0_values": [6.15**2, 6.25**2, 6.35**2, 6.40**2],
+            "s0_values": [38.0, 39.0, 40.0, 41.0],
             "filename": "redo_bs1_5830_stability_windows",
         },
     ]

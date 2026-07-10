@@ -10,8 +10,8 @@ Ds_old_near_threshold: M2=3.00-6.00, s0=6.25-6.76 GeV^2, sqrt(s0)=2.50-2.60; pol
 Ds_above_pole_broad: M2=2.00-7.00, s0=8.12-9.61 GeV^2, sqrt(s0)=2.85-3.10; pole_axial_min=0.364, pole_tensor_min=0.490, twist2_retention_min=0.605
   spans: Gamma2460=1.485, Gamma2536=2.000, max GA_3p=0.029, max GB_3p=0.007
 
-Ds_preferred_candidate: M2=3.00-4.50, s0=7.84-8.70 GeV^2, sqrt(s0)=2.80-2.95; pole_axial_min=0.523, pole_tensor_min=0.620, twist2_retention_min=0.749
-  spans: Gamma2460=0.628, Gamma2536=1.360, max GA_3p=0.008, max GB_3p=0.003
+Ds_preferred_candidate: M2=3.00-4.50, s0=7.50-8.50 GeV^2, sqrt(s0)=2.74-2.92; pole_axial_min=0.494, pole_tensor_min=0.592, twist2_retention_min=0.730
+  spans: Gamma2460=0.690, Gamma2536=1.298, max GA_3p=0.009, max GB_3p=0.004
 
 Ds_above_pole_upper_candidate: M2=3.50-5.50, s0=8.12-9.00 GeV^2, sqrt(s0)=2.85-3.00; pole_axial_min=0.459, pole_tensor_min=0.570, twist2_retention_min=0.694
   spans: Gamma2460=0.606, Gamma2536=1.749, max GA_3p=0.006, max GB_3p=0.003
@@ -19,23 +19,23 @@ Ds_above_pole_upper_candidate: M2=3.50-5.50, s0=8.12-9.00 GeV^2, sqrt(s0)=2.85-3
 Bs_low_old_diagnostic: M2=8.00-14.00, s0=36.60-40.32 GeV^2, sqrt(s0)=6.05-6.35; pole_axial_min=0.360, pole_tensor_min=0.618, twist2_retention_min=0.745
   spans: Gamma_quoted=0.765, max GA_3p=0.001, max GB_3p=0.001
 
-Bs_low_candidate: M2=10.00-14.00, s0=36.60-40.32 GeV^2, sqrt(s0)=6.05-6.35; pole_axial_min=0.360, pole_tensor_min=0.618, twist2_retention_min=0.745
-  spans: Gamma_quoted=0.478, max GA_3p=0.001, max GB_3p=0.001
+Bs_low_candidate: M2=10.00-14.00, s0=36.50-40.50 GeV^2, sqrt(s0)=6.04-6.36; pole_axial_min=0.359, pole_tensor_min=0.616, twist2_retention_min=0.743
+  spans: Gamma_quoted=0.489, max GA_3p=0.001, max GB_3p=0.001
 
 Bs5830_old_diagnostic: M2=8.00-14.00, s0=37.82-40.96 GeV^2, sqrt(s0)=6.15-6.40; pole_axial_min=0.378, pole_tensor_min=0.648, twist2_retention_min=0.766
   spans: Gamma_quoted=0.423, max GA_3p=0.001, max GB_3p=0.001
 
-Bs5830_candidate: M2=10.00-14.00, s0=37.82-40.96 GeV^2, sqrt(s0)=6.15-6.40; pole_axial_min=0.378, pole_tensor_min=0.648, twist2_retention_min=0.766
-  spans: Gamma_quoted=0.238, max GA_3p=0.001, max GB_3p=0.001
+Bs5830_candidate: M2=10.00-14.00, s0=38.00-41.00 GeV^2, sqrt(s0)=6.16-6.40; pole_axial_min=0.381, pole_tensor_min=0.652, twist2_retention_min=0.769
+  spans: Gamma_quoted=0.234, max GA_3p=0.001, max GB_3p=0.001
 
 Interpretation:
 - A larger pole-fraction proxy is better; values below about 0.5 are a warning.
 - Smaller stability spans are better, but near-zero cancellation channels can have large relative spans.
 - Large three-particle fractions indicate that the chosen M2 range is pushing OPE hierarchy.
 - Preferred redo windows from this pass:
-  Ds1: M2 = 3.0-4.5 GeV^2, s0 = 7.84-8.70 GeV^2.
-  Bs1 lower diagnostic: M2 = 10-14 GeV^2, s0 = 36.60-40.32 GeV^2.
-  Bs1(5830): M2 = 10-14 GeV^2, s0 = 37.82-40.96 GeV^2.
+  Ds1: M2 = 3.0-4.5 GeV^2, s0 = 7.5-8.5 GeV^2.
+  Bs1 lower diagnostic: M2 = 10-14 GeV^2, s0 = 36.5-40.5 GeV^2.
+  Bs1(5830): M2 = 10-14 GeV^2, s0 = 38.0-41.0 GeV^2.
 
 Wrote /Users/sbilmis/Dsgamma/outputs/window_diagnostics_grid.csv
 Wrote /Users/sbilmis/Dsgamma/outputs/window_diagnostics_summary.csv

@@ -2994,4 +2994,61 @@ window is stable against this reasonable Borel-window variation.
   \label{fig:final-window-bs-crosscheck}
 \end{figure}
 
+\subsection{Rounded \(s_0\) Windows Used In The Publication Pass}
+
+After preparing the first draft we decided to express the continuum-threshold
+scan directly in \(s_0\), not in \(\sqrt{s_0}\).  Therefore the final
+publication pass uses ordered half-step \(s_0\) intervals rather than endpoint
+values obtained by squaring a \(\sqrt{s_0}\) interval.  The adopted windows are
+\[
+  D_{s1}(2460),D_{s1}(2536):\quad
+  3.0\le M^2\le4.5~\GeV^2,\qquad
+  7.5\le s_0\le8.5~\GeV^2 ,
+\]
+\[
+  B_{s1}(5750):\quad
+  10.0\le M^2\le14.0~\GeV^2,\qquad
+  36.5\le s_0\le40.5~\GeV^2 ,
+\]
+\[
+  B_{s1}(5830):\quad
+  10.0\le M^2\le14.0~\GeV^2,\qquad
+  38.0\le s_0\le41.0~\GeV^2 .
+\]
+The diagnostic rerun gives the following minimum pole-fraction proxies in the
+preferred windows:
+\[
+\begin{array}{c|ccc}
+\text{channel} & \text{axial spectral proxy} & \text{tensor spectral proxy}
+& \text{twist-2 retention}\\
+\hline
+D_{s1}\to D_s\gamma & 0.494 & 0.592 & 0.730\\
+B_{s1}(5750)\to B_s\gamma & 0.359 & 0.616 & 0.743\\
+B_{s1}(5830)\to B_s\gamma & 0.381 & 0.652 & 0.769
+\end{array}
+\]
+The final preferred lattice-photon, angle-scan Monte Carlo results with these
+rounded windows are
+\[
+\begin{array}{c|cc}
+\text{channel} & g~(\GeV^{-1}) & \Gamma~(\mathrm{keV})\\
+\hline
+D_{s1}(2460)\to D_s\gamma
+& -0.394[-0.433,-0.356] & 32.7[26.5,39.4]\\
+D_{s1}(2536)\to D_s\gamma
+& +0.0329[-0.0103,+0.0755] & 0.425[0.0355,1.78]\\
+B_{s1}(5750)\to B_s\gamma
+& +0.395[+0.351,+0.462] & 19.3[14.1,27.3]\\
+B_{s1}(5830)\to B_s\gamma
+& +0.0105[-0.0792,+0.0604] & 0.504[0.0567,1.68]
+\end{array}
+\]
+The main numerical change relative to the previous square-root-derived window
+is in \(D_{s1}(2460)\to D_s\gamma\), whose preferred median decreases from
+about \(36.1~\mathrm{keV}\) to \(32.7~\mathrm{keV}\).  The bottom-sector medians are essentially
+unchanged within the quoted percentile intervals.  The files regenerated in
+this pass are \texttt{outputs/window\_diagnostics\_summary.*},
+\texttt{outputs/publication\_stability\_*}, and
+\texttt{outputs/final\_window\_mc\_*}.
+
 \end{document}

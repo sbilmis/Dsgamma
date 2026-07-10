@@ -36,8 +36,8 @@ from final_stage2_uncertainty_scan import precompute_f1_basis
 
 DS_WINDOW = {
     "M2": (3.0, 4.5),
-    "s0": (7.84, 8.70),
-    "s0_lines": (8.0, 8.3, 8.6),
+    "s0": (7.5, 8.5),
+    "s0_lines": (7.5, 8.0, 8.5),
     "M2_lines": (3.0, 3.5, 4.0),
 }
 
@@ -46,8 +46,8 @@ BS5830_WINDOW = {
     "mass": 5.82870,
     "quoted_combo": "high",
     "M2": (10.0, 14.0),
-    "s0": (37.82, 40.96),
-    "s0_lines": (38.0, 39.0, 40.0),
+    "s0": (38.0, 41.0),
+    "s0_lines": (38.0, 39.5, 41.0),
     "M2_lines": (10.0, 12.0, 14.0),
 }
 
@@ -56,8 +56,8 @@ BSLOW_WINDOW = {
     "mass": 5.750,
     "quoted_combo": "low",
     "M2": (10.0, 14.0),
-    "s0": (36.60, 40.32),
-    "s0_lines": (37.0, 38.0, 39.0),
+    "s0": (36.5, 40.5),
+    "s0_lines": (36.5, 38.5, 40.5),
     "M2_lines": (10.0, 12.0, 14.0),
 }
 
@@ -257,15 +257,15 @@ def plot_publication(rows: list[dict[str, float | str]]) -> None:
 def central_norms(rows: list[dict[str, float | str]]) -> dict[str, float]:
     ds_center = min(
         [r for r in rows if r["sector"] == "Ds"],
-        key=lambda r: abs(float(r["M2"]) - 3.5) + abs(float(r["s0"]) - 8.3),
+        key=lambda r: abs(float(r["M2"]) - 3.5) + abs(float(r["s0"]) - 8.0),
     )
     bs_low_center = min(
         [r for r in rows if r["sector"] == "Bs" and r["state"] == BSLOW_WINDOW["state"]],
-        key=lambda r: abs(float(r["M2"]) - 12.0) + abs(float(r["s0"]) - 38.0),
+        key=lambda r: abs(float(r["M2"]) - 12.0) + abs(float(r["s0"]) - 38.5),
     )
     bs_high_center = min(
         [r for r in rows if r["sector"] == "Bs" and r["state"] == BS5830_WINDOW["state"]],
-        key=lambda r: abs(float(r["M2"]) - 12.0) + abs(float(r["s0"]) - 39.0),
+        key=lambda r: abs(float(r["M2"]) - 12.0) + abs(float(r["s0"]) - 39.5),
     )
     return {
         "Ds2460": abs(float(ds_center["g_2460"])),

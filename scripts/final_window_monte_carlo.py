@@ -51,8 +51,8 @@ THETA_CENTRAL_DEG = 35.3
 DS_WINDOW = {
     "M2_min": 3.0,
     "M2_max": 4.5,
-    "s0_min": 7.84,
-    "s0_max": 8.70,
+    "s0_min": 7.5,
+    "s0_max": 8.5,
 }
 
 BS_WINDOWS = [
@@ -65,8 +65,8 @@ BS_WINDOWS = [
         "quoted_combo": "low",
         "M2_min": 10.0,
         "M2_max": 14.0,
-        "s0_min": 36.60,
-        "s0_max": 40.32,
+        "s0_min": 36.5,
+        "s0_max": 40.5,
     },
     {
         "window_id": "central_10_14",
@@ -77,8 +77,8 @@ BS_WINDOWS = [
         "quoted_combo": "high",
         "M2_min": 10.0,
         "M2_max": 14.0,
-        "s0_min": 37.82,
-        "s0_max": 40.96,
+        "s0_min": 38.0,
+        "s0_max": 41.0,
     },
     {
         "window_id": "crosscheck_9_13",
@@ -89,8 +89,8 @@ BS_WINDOWS = [
         "quoted_combo": "low",
         "M2_min": 9.0,
         "M2_max": 13.0,
-        "s0_min": 36.60,
-        "s0_max": 40.32,
+        "s0_min": 36.5,
+        "s0_max": 40.5,
     },
     {
         "window_id": "crosscheck_9_13",
@@ -101,8 +101,8 @@ BS_WINDOWS = [
         "quoted_combo": "high",
         "M2_min": 9.0,
         "M2_max": 13.0,
-        "s0_min": 37.82,
-        "s0_max": 40.96,
+        "s0_min": 38.0,
+        "s0_max": 41.0,
     },
 ]
 
@@ -440,7 +440,7 @@ def main() -> None:
         f"Accepted rows: {len(rows)}",
         f"Rejected bottom-sector physical-normalization samples: {rejected_bs}",
         f"Samples per ensemble/channel/scenario/window: {N_POINTS}",
-        "Ds window: M^2=[3.0,4.5] GeV^2, s0=[7.84,8.70] GeV^2.",
+        "Ds window: M^2=[3.0,4.5] GeV^2, s0=[7.5,8.5] GeV^2.",
         "Bs central window: M^2=[10,14] GeV^2 with state-specific s0 windows.",
         "Bs cross-check window: M^2=[9,13] GeV^2 with the same s0 windows.",
         "",
