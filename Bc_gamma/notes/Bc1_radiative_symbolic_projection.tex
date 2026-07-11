@@ -196,6 +196,70 @@ C_{A,V}=e_c C_{A,V}^{(c)}+e_{\bar b}C_{A,V}^{(\bar b)},\qquad
 C_{B,V}=e_c C_{B,V}^{(c)}+e_{\bar b}C_{B,V}^{(\bar b)} .
 \]
 
+\section{First Numerical Hard-Photon Pass}
+
+The script
+\path{Bc_gamma/scripts/bc_radiative_pilot_sumrule.py}
+uses the compact triangle cores above to produce a first hard-photon numerical
+estimate.  For this pass we use the same central heavy-quark inputs and Borel
+window as the submitted \(B_c\)-mixing analysis,
+\[
+m_b=4.18~\GeV,\qquad m_c=1.27~\GeV,\qquad
+\theta=43.3^\circ,
+\]
+\[
+M^2=\{7,8,9\}~\GeV^2,\qquad s_0=\{53,54,55\}~\GeV^2.
+\]
+The decay-constant inputs are
+\[
+f_{\Bc}=0.371~\GeV,\qquad
+f_{\Bcst}=0.384~\GeV,\qquad
+f_{\BcOne}=0.373~\GeV .
+\]
+The first two are standard external benchmark inputs.  The last is a common
+axial-vector benchmark used only for this first pass; separate physical
+\(f_1\) and \(f_2\) residues have not yet been extracted from a two-point
+mixed-current \(B_c\) sum rule in this folder.
+
+\begin{table}[h]
+\centering
+\caption{Pilot hard-photon results in the \(B_c\) sector.  The intervals show
+the envelope over \(M^2=\{7,8,9\}~\GeV^2\) and
+\(s_0=\{53,54,55\}~\GeV^2\).}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{p{0.24\textwidth}p{0.18\textwidth}p{0.29\textwidth}p{0.15\textwidth}}
+\toprule
+Channel & Status & Coupling/projection coefficient & \(\Gamma\) (keV)\\
+\midrule
+\(\BcOne(6743)\to\Bc\gamma\)
+& hard-QCDSR baseline
+& \(+0.0219\,[0.0209,0.0232]~\GeV^{-1}\)
+& \(0.108\,[0.098,0.121]\)\\
+\(\BcOne(6750)\to\Bc\gamma\)
+& hard-QCDSR baseline
+& \(-0.354\,[-0.387,-0.331]~\GeV^{-1}\)
+& \(29.6\,[25.9,35.3]\)\\
+\(\BcOne(6743)\to\Bcst\gamma\)
+& diagonal vector pilot
+& \(-0.0620\,[-0.0669,-0.0583]\)
+& \(46.3\,[41.0,53.8]\)\\
+\(\BcOne(6750)\to\Bcst\gamma\)
+& diagonal vector pilot
+& \(+0.362\,[0.335,0.401]\)
+& \(1.67\,[1.43,2.04]\times10^3\)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The \(\Bc\gamma\) entries are the controlled hard-photon baseline from the
+present calculation.  The \(\Bcst\gamma\) entries should be read as diagnostic
+numbers only.  They are obtained from the gauge-invariant
+\(V_{\mu\nu\rho}\) projection and a diagonal single-variable reduction.  Before
+using them as final paper results one must match this coefficient to the
+physical \(1^+\to1^-\gamma\) tensor basis and carry out the full double-Borel
+analysis, including denominator-cancellation or contact terms.
+
 \section{Next Step}
 
 The double-dispersion variables satisfy

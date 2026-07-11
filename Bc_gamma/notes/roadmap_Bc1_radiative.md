@@ -260,3 +260,40 @@ before Borel transformation.  The diagonal single-variable reduction used in
 the strange-sector scripts is a useful calibration tool, but for \(B_c^\ast\)
 the additional \(1/p_2\) and \(pq/p_2\) structures mean that the double
 dispersion should be written explicitly before numerical work.
+
+## 9. First numerical hard-photon pass
+
+The script `Bc_gamma/scripts/bc_radiative_pilot_sumrule.py` turns the compact
+triangle cores into a first numerical estimate.  The input window is inherited
+from the submitted \(B_c\)-mixing analysis,
+\[
+M^2=\{7,8,9\}\ {\rm GeV}^2,\qquad s_0=\{53,54,55\}\ {\rm GeV}^2,
+\]
+with \(m_b=4.18~{\rm GeV}\), \(m_c=1.27~{\rm GeV}\), and
+\(\theta=43.3^\circ\).  The decay constants used in this first pass are
+\[
+f_{B_c}=0.371~{\rm GeV},\qquad
+f_{B_c^\ast}=0.384~{\rm GeV},\qquad
+f_{B_{c1}}=0.373~{\rm GeV}.
+\]
+The first two are standard external inputs/benchmarks, while the last is a
+common axial-vector benchmark value.  We have not yet extracted separate
+physical \(f_1\) and \(f_2\) residues from a two-point \(B_c\) mixed-current
+sum rule in this folder.
+
+The resulting grid summary is
+
+| Channel | Status | Coupling/projection coefficient | Width |
+|---|---|---:|---:|
+| \(B_{c1}(6743)\to B_c\gamma\) | hard-QCDSR baseline | \(+0.0219\,[0.0209,0.0232]~{\rm GeV}^{-1}\) | \(0.108\,[0.098,0.121]~{\rm keV}\) |
+| \(B_{c1}(6750)\to B_c\gamma\) | hard-QCDSR baseline | \(-0.354\,[ -0.387,-0.331]~{\rm GeV}^{-1}\) | \(29.6\,[25.9,35.3]~{\rm keV}\) |
+| \(B_{c1}(6743)\to B_c^\ast\gamma\) | diagonal vector-pilot | \(-0.0620\,[-0.0669,-0.0583]\) | \(46.3\,[41.0,53.8]~{\rm keV}\) |
+| \(B_{c1}(6750)\to B_c^\ast\gamma\) | diagonal vector-pilot | \(+0.362\,[0.335,0.401]\) | \(1.67\,[1.43,2.04]\times10^3~{\rm keV}\) |
+
+Only the \(B_c\gamma\) entries should be regarded as a controlled hard-photon
+baseline at this stage.  The \(B_c^\ast\gamma\) entries are diagnostic because
+they use the \(V_{\mu\nu\rho}\) gauge-invariant projection and a diagonal
+single-variable reduction.  Before they are promoted to paper results we must
+match the \(V_{\mu\nu\rho}\) coefficient to the physical \(1^+\to1^-\gamma\)
+tensor basis and perform the full double-Borel audit, including the
+denominator-cancellation/contact terms.

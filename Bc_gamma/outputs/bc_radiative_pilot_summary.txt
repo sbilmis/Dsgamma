@@ -1,0 +1,12 @@
+Bc radiative pilot hard-photon sum-rule summary
+================================================
+
+Inputs: mb=4.18 GeV, mc=1.27 GeV, theta=43.3 deg,
+M2 in {7,8,9} GeV^2 and s0 in {53,54,55} GeV^2.
+Decay constants: f_Bc=0.371 GeV, f_Bc*=0.384 GeV, f_Bc1=0.373 GeV.
+Bc* gamma channels are diagonal-pilot estimates pending the full double-Borel audit.
+
+Bc1(6743) -> Bc gamma: g=+0.02191 [+0.02092,+0.02319] GeV^-1, Gamma=0.108 [0.0982,0.121] keV (hard_QCDSR_baseline)
+Bc1(6743) -> Bc* gamma: g=-0.06199 [-0.06686,-0.05833] GeV^-1, Gamma=46.3 [41,53.8] keV (diagonal_pilot_needs_double_Borel_audit)
+Bc1(6750) -> Bc gamma: g=-0.3545 [-0.3871,-0.3312] GeV^-1, Gamma=29.6 [25.9,35.3] keV (hard_QCDSR_baseline)
+Bc1(6750) -> Bc* gamma: g=+0.3621 [+0.3352,+0.4005] GeV^-1, Gamma=1.67e+03 [1.43e+03,2.04e+03] keV (diagonal_pilot_needs_double_Borel_audit)
