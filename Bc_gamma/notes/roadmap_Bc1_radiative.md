@@ -92,6 +92,128 @@ S_Q^{(\gamma)}(x,0)=
 or equivalently in a constant external electromagnetic field. There is no
 replacement of a light-quark line by photon DAs in this heavy-heavy baseline.
 
+## 3.1 Step-by-step derivation checklist
+
+This subsection records the calculation in the order a student should repeat
+it.
+
+**Step 1: choose the physical currents.**  Work with the two basis currents
+\(J_A,J_B\), but remember that the physical currents are the rotated
+combinations \(J_1,J_2\).  The basis-current OPEs are intermediate objects; the
+physical form factors use \(\widehat\Pi_1\) and \(\widehat\Pi_2\).
+
+**Step 2: write the vacuum-to-photon correlators.**  For the \(B_c\gamma\)
+channel the object is
+\[
+\Pi_\mu^{(5,K)}(p,q)=
+i\int d^4x\,e^{ipx}
+\langle\gamma(q,\epsilon)|
+T\{\bar b(x)i\gamma_5 c(x)\,J_{K\mu}^\dagger(0)\}|0\rangle ,
+\qquad K=A,B .
+\]
+For the \(B_c^\ast\gamma\) channel replace the pseudoscalar current by the
+vector current:
+\[
+\Pi_{\mu\nu}^{(V,K)}(p,q)=
+i\int d^4x\,e^{ipx}
+\langle\gamma(q,\epsilon)|
+T\{\bar b(x)\gamma_\nu c(x)\,J_{K\mu}^\dagger(0)\}|0\rangle .
+\]
+
+**Step 3: perform the Wick contractions.**  Since both valence constituents are
+heavy, no light-cone photon DA is inserted.  Instead the photon is emitted from
+the charm line or from the anti-bottom line:
+\[
+\Pi^{(K)}=\Pi^{(K,c{\rm -emission})}+\Pi^{(K,\bar b{\rm -emission})}.
+\]
+In momentum space the free propagator is
+\[
+S_Q^{(0)}(k)=\frac{i(\slashed{k}+m_Q)}{k^2-m_Q^2+i0},
+\]
+and the photon insertion is
+\[
+S_Q^{(\gamma)}(k,k+q)=
+S_Q^{(0)}(k+q)\,i e_Q\slashed{\epsilon}\,S_Q^{(0)}(k).
+\]
+For the anti-bottom line the code uses the effective antiquark charge
+\(e_{\bar b}=+1/3\), while \(e_c=+2/3\).
+
+**Step 4: calculate the Dirac traces.**  For each final state and each basis
+current calculate two traces:
+\[
+{\rm Tr}[J_K\,S_c^{(\gamma)}\,j_{\rm final}\,S_b^{(0)}],
+\qquad
+{\rm Tr}[J_K\,S_c^{(0)}\,j_{\rm final}\,S_b^{(\gamma)}].
+\]
+The FeynCalc files in `Bc_gamma/scripts` do precisely this and store the raw
+and reduced projections in `Bc_gamma/outputs`.
+
+**Step 5: project onto gauge-invariant structures.**  For \(B_c\gamma\) use
+\[
+S_{\mu\nu}=p_\nu q_\mu-(p\cdot q)g_{\mu\nu},
+\qquad
+{\cal P}^{\mu\nu}=\frac{S^{\mu\nu}}{2(p\cdot q)^2},
+\]
+so that \(S_{\mu\nu}{\cal P}^{\mu\nu}=1\).  For \(B_c^\ast\gamma\) the current
+working tensor is
+\[
+V_{\mu\nu\rho}=p_\nu\epsilon_{\mu\rho p q}
+-(p\cdot q)\epsilon_{\mu\nu\rho p},
+\]
+with \(V_{\mu\nu\rho}V^{\mu\nu\rho}=-4p^2(p\cdot q)^2\).  This vector-channel
+projection is still a diagnostic basis; it must be matched to the physical
+\(1^+\to1^-\gamma\) tensor basis before final publication.
+
+**Step 6: reduce loop scalar products to denominators.**  The charm-emission
+routing uses
+\[
+D_1=(k+q)^2-m_c^2,\quad D_2=k^2-m_c^2,\quad
+D_3=(k-p)^2-m_b^2,
+\]
+while the anti-bottom-emission routing uses
+\[
+D_1=k^2-m_c^2,\quad D_2=(k-p)^2-m_b^2,\quad
+D_3=(k-p+q)^2-m_b^2.
+\]
+Terms proportional to the full product \(D_1D_2D_3\) give the triangle
+contribution.  Terms where a numerator cancels one denominator give
+two-denominator/contact contributions.  These must not be silently dropped;
+the present vector-channel pilot is marked unfinished partly for this reason.
+
+**Step 7: write the double dispersion and Borel match.**  The true
+three-point sum rule depends on \(p^2\) and \(P^2=(p+q)^2\).  The relation
+\[
+p\cdot q=\frac{P^2-p^2}{2}
+\]
+must be used before the double Borel transformation.  The pilot numerical
+script uses a diagonal reduction \(M_1^2=M_2^2=2M^2\), which gives the
+exponential factor used in the code,
+\[
+\exp\!\left[\frac{m_i^2+m_f^2}{2M^2}\right].
+\]
+This is acceptable for the first \(B_c\gamma\) hard baseline, but the
+\(B_c^\ast\gamma\) channel needs a full double-Borel audit.
+
+**Step 8: rotate to the physical states.**  After obtaining \(\widehat\Pi_A\)
+and \(\widehat\Pi_B\), form
+\[
+\widehat\Pi_{6743}=\sin\theta\,\widehat\Pi_A+\cos\theta\,\widehat\Pi_B,
+\qquad
+\widehat\Pi_{6750}=\cos\theta\,\widehat\Pi_A-\sin\theta\,\widehat\Pi_B .
+\]
+The numerical pilot uses \(\theta=43.3^\circ\).
+
+**Step 9: convert the form factor to a width.**  For the pseudoscalar final
+state we use
+\[
+\Gamma(1^+\to0^-\gamma)=
+\frac{\alpha_{\rm em}}{3}\,g^2 E_\gamma^3,\qquad
+E_\gamma=\frac{m_i^2-m_f^2}{2m_i}.
+\]
+For the vector final state the current numbers are obtained from the diagnostic
+polarization-summed \(V_{\mu\nu\rho}\) basis, so they should be treated as
+checks, not final quoted widths.
+
 ## 4. Hadronic normalization
 
 The hadronic sides require the decay constants
@@ -297,7 +419,17 @@ from the submitted \(B_c\)-mixing analysis,
 M^2=\{7,8,9\}\ {\rm GeV}^2,\qquad s_0=\{53,54,55\}\ {\rm GeV}^2,
 \]
 with \(m_b=4.18~{\rm GeV}\), \(m_c=1.27~{\rm GeV}\), and
-\(\theta=43.3^\circ\).  The decay constants used in this first pass are
+\(\theta=43.3^\circ\).  More precisely, the submitted \(B_c\)-mixing
+Monte Carlo gives
+\[
+\theta_{\rm mean}=43.295^\circ,\qquad
+\sigma_\theta=0.151^\circ,\qquad
+\theta_{16\%}=43.147^\circ,\qquad
+\theta_{84\%}=43.455^\circ .
+\]
+The pilot table uses the rounded central value \(43.3^\circ\); the
+\(\theta\)-uncertainty has not yet been propagated into the radiative
+uncertainty.  The decay constants used in this first pass are
 \[
 f_{B_c}=0.371~{\rm GeV},\qquad
 f_{B_c^\ast}=0.384~{\rm GeV},\qquad
