@@ -1,0 +1,42 @@
+Full calibrated tensor-current correction for Ds1 -> Ds* gamma
+==============================================================
+N=500 per scenario/ensemble.
+Includes soft tensor-current contribution plus calibrated hard-photon tensor density.
+Hard density is line-by-line calibrated to reproduce the published axial hard rho exactly.
+
+legacy_chi_condensate, theta_fixed, n=500
+  gB_soft: median -0.8948 [-1.195,-0.6442], mean -0.9145, std 0.2905
+  gB_hard: median 0.159 [0.1353,0.1877], mean 0.1615, std 0.02591
+  gB_total: median -0.7409 [-1.015,-0.4981], mean -0.7529, std 0.2817
+  g1_2460_fullAB: median -0.8715 [-1.299,-0.5203], mean -0.8943, std 0.4208
+  Gamma2460_fullAB_keV: median 24.16 [8.631,53.73], mean 31.11, std 26.11
+  g2_2536_fullAB: median 0.426 [0.3276,0.553], mean 0.4383, std 0.1175
+  Gamma2536_fullAB_keV: median 9.739 [5.783,16.47], mean 11.08, std 6.319
+
+legacy_chi_condensate, theta_scan_25_45, n=500
+  gB_soft: median -0.8867 [-1.203,-0.6195], mean -0.9078, std 0.3036
+  gB_hard: median 0.1594 [0.1365,0.1899], mean 0.163, std 0.02845
+  gB_total: median -0.7323 [-1.023,-0.4628], mean -0.7449, std 0.2931
+  g1_2460_fullAB: median -0.867 [-1.302,-0.4531], mean -0.8765, std 0.4315
+  Gamma2460_fullAB_keV: median 23.87 [6.554,54.44], mean 30.4, std 27.43
+  g2_2536_fullAB: median 0.4267 [0.2808,0.5784], mean 0.4335, std 0.1535
+  Gamma2536_fullAB_keV: median 9.798 [4.231,18], mean 11.37, std 8.23
+
+lattice_fperp_s, theta_fixed, n=500
+  gB_soft: median -1.516 [-1.79,-1.269], mean -1.528, std 0.2874
+  gB_hard: median 0.1591 [0.1374,0.1877], mean 0.1622, std 0.02631
+  gB_total: median -1.362 [-1.613,-1.124], mean -1.366, std 0.2691
+  g1_2460_fullAB: median -1.704 [-2.083,-1.367], mean -1.715, std 0.3844
+  Gamma2460_fullAB_keV: median 92.29 [59.74,138.7], mean 98.32, std 42.62
+  g2_2536_fullAB: median 0.6544 [0.5537,0.8079], mean 0.6823, std 0.1438
+  Gamma2536_fullAB_keV: median 22.99 [16.54,35.07], mean 26.16, std 12
+
+lattice_fperp_s, theta_scan_25_45, n=500
+  gB_soft: median -1.528 [-1.832,-1.275], mean -1.552, std 0.2965
+  gB_hard: median 0.1597 [0.1358,0.19], mean 0.1636, std 0.02878
+  gB_total: median -1.371 [-1.657,-1.132], mean -1.388, std 0.2755
+  g1_2460_fullAB: median -1.71 [-2.128,-1.339], mean -1.738, std 0.3966
+  Gamma2460_fullAB_keV: median 93.14 [57.12,145.1], mean 101.3, std 45.4
+  g2_2536_fullAB: median 0.6443 [0.4424,0.8824], mean 0.6638, std 0.2144
+  Gamma2536_fullAB_keV: median 22.29 [10.55,41.82], mean 26.17, std 16.99
+

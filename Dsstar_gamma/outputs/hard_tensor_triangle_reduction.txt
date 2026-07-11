@@ -1,0 +1,30 @@
+Hard-photon epsilon projection: triangle reduction
+==================================================
+
+Target norm:
+-6*Pair[Momentum[p], Momentum[q]]
+
+A heavy triangle core:
+(4*I)*mQ*ms - ((4*I)/3)*ms^2 + ((4*I)/3)*p2 + (((2*I)/3)*mQ^4)/pq - (((4*I)/3)*mQ^2*ms^2)/pq + (((2*I)/3)*ms^4)/pq - (((4*I)/3)*mQ^2*p2)/pq - (((4*I)/3)*ms^2*p2)/pq + (((2*I)/3)*p2^2)/pq
+
+B heavy triangle core:
+(((4*I)/3)*mQ^3)/(mQ + ms) + (((4*I)/3)*mQ^2*ms)/(mQ + ms) - ((4*I)*mQ*ms^2)/(mQ + ms) + (((4*I)/3)*ms^3)/(mQ + ms) - (((4*I)/3)*ms*p2)/(mQ + ms) + (((2*I)/3)*mQ^5)/((mQ + ms)*pq) - (((2*I)/3)*mQ^4*ms)/((mQ + ms)*pq) - (((4*I)/3)*mQ^3*ms^2)/((mQ + ms)*pq) + (((4*I)/3)*mQ^2*ms^3)/((mQ + ms)*pq) + (((2*I)/3)*mQ*ms^4)/((mQ + ms)*pq) - (((2*I)/3)*ms^5)/((mQ + ms)*pq) - (((4*I)/3)*mQ^3*p2)/((mQ + ms)*pq) + (((4*I)/3)*mQ^2*ms*p2)/((mQ + ms)*pq) - (((4*I)/3)*mQ*ms^2*p2)/((mQ + ms)*pq) + (((4*I)/3)*ms^3*p2)/((mQ + ms)*pq) + (((2*I)/3)*mQ*p2^2)/((mQ + ms)*pq) - (((2*I)/3)*ms*p2^2)/((mQ + ms)*pq) - (((4*I)/3)*mQ*pq)/(mQ + ms)
+
+A strange triangle core:
+((-4*I)/3)*mQ^2 + (4*I)*mQ*ms + ((4*I)/3)*p2 + (((2*I)/3)*mQ^4)/pq - (((4*I)/3)*mQ^2*ms^2)/pq + (((2*I)/3)*ms^4)/pq - (((4*I)/3)*mQ^2*p2)/pq - (((4*I)/3)*ms^2*p2)/pq + (((2*I)/3)*p2^2)/pq
+
+B strange triangle core:
+(((-4*I)/3)*mQ^3)/(mQ + ms) + ((4*I)*mQ^2*ms)/(mQ + ms) - (((4*I)/3)*mQ*ms^2)/(mQ + ms) - (((4*I)/3)*ms^3)/(mQ + ms) + (((4*I)/3)*mQ*p2)/(mQ + ms) + (((2*I)/3)*mQ^5)/((mQ + ms)*pq) - (((2*I)/3)*mQ^4*ms)/((mQ + ms)*pq) - (((4*I)/3)*mQ^3*ms^2)/((mQ + ms)*pq) + (((4*I)/3)*mQ^2*ms^3)/((mQ + ms)*pq) + (((2*I)/3)*mQ*ms^4)/((mQ + ms)*pq) - (((2*I)/3)*ms^5)/((mQ + ms)*pq) - (((4*I)/3)*mQ^3*p2)/((mQ + ms)*pq) + (((4*I)/3)*mQ^2*ms*p2)/((mQ + ms)*pq) - (((4*I)/3)*mQ*ms^2*p2)/((mQ + ms)*pq) + (((4*I)/3)*ms^3*p2)/((mQ + ms)*pq) + (((2*I)/3)*mQ*p2^2)/((mQ + ms)*pq) - (((2*I)/3)*ms*p2^2)/((mQ + ms)*pq) + (((4*I)/3)*ms*pq)/(mQ + ms)
+
+A heavy cancellation:
+((-4*I)/3)*dH0 + (((2*I)/3)*dH0^2)/pq - (((2*I)/3)*dH1^2)/pq + (((2*I)/3)*dH0*dH2)/pq - (((2*I)/3)*dH1*dH2)/pq - (((4*I)/3)*dH0*mQ^2)/pq - (((2*I)/3)*dH2*mQ^2)/pq + (((4*I)/3)*dH0*ms^2)/pq + (((2*I)/3)*dH2*ms^2)/pq - (((4*I)/3)*dH0*p2)/pq + (((2*I)/3)*dH1*p2)/pq
+
+B heavy cancellation:
+((-4*I)*dH0*mQ)/(mQ + ms) + (((2*I)/3)*dH1*mQ)/(mQ + ms) + (((2*I)/3)*dH2*mQ)/(mQ + ms) + (((4*I)/3)*dH0*ms)/(mQ + ms) - ((2*I)*dH1*ms)/(mQ + ms) - (((2*I)/3)*dH2*ms)/(mQ + ms) + (((2*I)/3)*dH0^2*mQ)/((mQ + ms)*pq) - (((2*I)/3)*dH0*dH1*mQ)/((mQ + ms)*pq) - (((2*I)/3)*dH0*dH2*mQ)/((mQ + ms)*pq) + (((2*I)/3)*dH1*dH2*mQ)/((mQ + ms)*pq) - (((4*I)/3)*dH0*mQ^3)/((mQ + ms)*pq) + (((2*I)/3)*dH1*mQ^3)/((mQ + ms)*pq) + (((2*I)/3)*dH2*mQ^3)/((mQ + ms)*pq) - (((2*I)/3)*dH0^2*ms)/((mQ + ms)*pq) + (((2*I)/3)*dH0*dH1*ms)/((mQ + ms)*pq) + (((2*I)/3)*dH0*dH2*ms)/((mQ + ms)*pq) - (((2*I)/3)*dH1*dH2*ms)/((mQ + ms)*pq) + (((4*I)/3)*dH0*mQ^2*ms)/((mQ + ms)*pq) - (((2*I)/3)*dH1*mQ^2*ms)/((mQ + ms)*pq) - (((2*I)/3)*dH2*mQ^2*ms)/((mQ + ms)*pq) + (((4*I)/3)*dH0*mQ*ms^2)/((mQ + ms)*pq) - (((2*I)/3)*dH1*mQ*ms^2)/((mQ + ms)*pq) - (((2*I)/3)*dH2*mQ*ms^2)/((mQ + ms)*pq) - (((4*I)/3)*dH0*ms^3)/((mQ + ms)*pq) + (((2*I)/3)*dH1*ms^3)/((mQ + ms)*pq) + (((2*I)/3)*dH2*ms^3)/((mQ + ms)*pq) - (((4*I)/3)*dH0*mQ*p2)/((mQ + ms)*pq) - (((4*I)/3)*dH2*mQ*p2)/((mQ + ms)*pq) + (((4*I)/3)*dH0*ms*p2)/((mQ + ms)*pq) - (((4*I)/3)*dH1*ms*p2)/((mQ + ms)*pq) - (((4*I)/3)*dH2*ms*p2)/((mQ + ms)*pq)
+
+A strange cancellation:
+((-4*I)/3)*dS0 + (((2*I)/3)*dS0^2)/pq + (((2*I)/3)*dS0*dS1)/pq - (((2*I)/3)*dS1*dS2)/pq - (((2*I)/3)*dS2^2)/pq + (((4*I)/3)*dS0*mQ^2)/pq + (((2*I)/3)*dS1*mQ^2)/pq - (((4*I)/3)*dS0*ms^2)/pq - (((2*I)/3)*dS1*ms^2)/pq - (((4*I)/3)*dS0*p2)/pq + (((2*I)/3)*dS2*p2)/pq
+
+B strange cancellation:
+(((-4*I)/3)*dS0*mQ)/(mQ + ms) + (((2*I)/3)*dS1*mQ)/(mQ + ms) + ((2*I)*dS2*mQ)/(mQ + ms) + ((4*I)*dS0*ms)/(mQ + ms) - (((2*I)/3)*dS1*ms)/(mQ + ms) - (((2*I)/3)*dS2*ms)/(mQ + ms) + (((2*I)/3)*dS0^2*mQ)/((mQ + ms)*pq) - (((2*I)/3)*dS0*dS1*mQ)/((mQ + ms)*pq) - (((2*I)/3)*dS0*dS2*mQ)/((mQ + ms)*pq) + (((2*I)/3)*dS1*dS2*mQ)/((mQ + ms)*pq) + (((4*I)/3)*dS0*mQ^3)/((mQ + ms)*pq) - (((2*I)/3)*dS1*mQ^3)/((mQ + ms)*pq) - (((2*I)/3)*dS2*mQ^3)/((mQ + ms)*pq) - (((2*I)/3)*dS0^2*ms)/((mQ + ms)*pq) + (((2*I)/3)*dS0*dS1*ms)/((mQ + ms)*pq) + (((2*I)/3)*dS0*dS2*ms)/((mQ + ms)*pq) - (((2*I)/3)*dS1*dS2*ms)/((mQ + ms)*pq) - (((4*I)/3)*dS0*mQ^2*ms)/((mQ + ms)*pq) + (((2*I)/3)*dS1*mQ^2*ms)/((mQ + ms)*pq) + (((2*I)/3)*dS2*mQ^2*ms)/((mQ + ms)*pq) - (((4*I)/3)*dS0*mQ*ms^2)/((mQ + ms)*pq) + (((2*I)/3)*dS1*mQ*ms^2)/((mQ + ms)*pq) + (((2*I)/3)*dS2*mQ*ms^2)/((mQ + ms)*pq) + (((4*I)/3)*dS0*ms^3)/((mQ + ms)*pq) - (((2*I)/3)*dS1*ms^3)/((mQ + ms)*pq) - (((2*I)/3)*dS2*ms^3)/((mQ + ms)*pq) - (((4*I)/3)*dS0*mQ*p2)/((mQ + ms)*pq) + (((4*I)/3)*dS1*mQ*p2)/((mQ + ms)*pq) + (((4*I)/3)*dS2*mQ*p2)/((mQ + ms)*pq) + (((4*I)/3)*dS0*ms*p2)/((mQ + ms)*pq) + (((4*I)/3)*dS1*ms*p2)/((mQ + ms)*pq)
+

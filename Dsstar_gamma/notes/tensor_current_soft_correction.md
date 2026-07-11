@@ -201,13 +201,11 @@ The lattice-input result is encouraging because it lands near the expected
 literature scale for the \(D_s^\ast\gamma\) channels, unlike the axial-only
 baseline.
 
-## Remaining Formal Caveat
+## Relation To The Full Calibrated Result
 
-The hard-photon tensor-current double spectral density has not yet been
-derived.  The result above should therefore be called the **soft tensor-current
-corrected** prediction, not the mathematically complete \(J_B\) LCSR.  The hard
-piece is expected to be a correction rather than the dominant effect because
-the soft tensor-DA term is enhanced by \(R_T\simeq3.1\) and by the leading
-photon normalization.  Still, a final paper derivation should either include
-the hard \(J_B\) spectral density explicitly or quote this result with the
-corresponding systematic caveat.
+This note was the intermediate soft-only tensor-current checkpoint.  The hard
+photon-emission tensor-current contribution has now been added in
+`tensor_current_hard_calibrated.md`.  The soft piece remains useful because it
+shows where the dominant enhancement enters: the tensor photon-DA family is
+multiplied by \(R_T\simeq3.1\).  The hard contribution is subleading and partly
+reduces the soft-only widths.
