@@ -20,3 +20,4 @@ __pycache__/
 tmp/
 scratch/
 outputs/.matplotlib/
+Dsstar_gamma/outputs/.matplotlib/

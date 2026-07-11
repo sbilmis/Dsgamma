@@ -254,3 +254,78 @@ The next step is therefore deriving \(g_B^\ast\) for
 \(J_\mu^B=i\bar s\sigma_{\mu\alpha}P^\alpha\gamma_5Q/(m_Q+m_s)\), using the
 FeynCalc trace skeleton already stored in
 `Dsstar_gamma/outputs/current_building_blocks_dsstar.txt`.
+
+## Axial-Only Monte Carlo Check
+
+After calculating \(f_{D_s^\ast}\) from the two-point vector-current sum rule,
+we performed a Monte Carlo uncertainty scan for the completed axial-current
+piece.  The script is
+
+```bash
+python3 Dsstar_gamma/scripts/axial_only_monte_carlo.py
+```
+
+and it writes
+
+```text
+Dsstar_gamma/outputs/axial_only_monte_carlo.csv
+Dsstar_gamma/outputs/axial_only_monte_carlo_summary.csv
+Dsstar_gamma/outputs/axial_only_monte_carlo_summary.txt
+Dsstar_gamma/outputs/axial_only_monte_carlo_histograms.pdf
+```
+
+The scan uses \(N=500\) samples per scenario and per mixing-angle treatment.  It
+samples
+
+\[
+3.0\le M^2\le4.5~{\rm GeV}^2,\qquad
+7.5\le s_0\le8.5~{\rm GeV}^2,
+\]
+
+as well as \(m_c\), \(m_s\), \(m_{D_{s1}}\), \(m_{D_s^\ast}\), \(f_A\),
+\(f_{D_s^\ast}=0.227\pm0.028~{\rm GeV}\), \(f_1\), \(f_2\),
+\(\langle\bar ss\rangle\), \(f_{3\gamma}\), \(\omega_\gamma^A\), and
+\(\omega_\gamma^V\).  Two photon-normalization scenarios are shown:
+
+- legacy \(\chi_s\langle\bar ss\rangle\);
+- lattice \(f_{\gamma,s}^{\perp}\).
+
+For fixed \(\theta=35.3^\circ\), the percentile results are
+
+\[
+\begin{array}{c|cc}
+\hbox{photon input}
+& \Gamma_{2460}^{A{\rm -only}}~({\rm keV})
+& \Gamma_{2536}^{A{\rm -only}}~({\rm keV})\\
+\hline
+\chi_s\langle\bar ss\rangle
+& 0.412~[0.049,1.389]
+& 1.164~[0.146,3.988]\\
+f_{\gamma,s}^{\perp}\ {\rm lattice}
+& 1.718~[0.502,3.502]
+& 4.990~[1.397,10.08]
+\end{array}
+\]
+
+When the angle is scanned over \(25^\circ\le\theta\le45^\circ\), the
+corresponding results are
+
+\[
+\begin{array}{c|cc}
+\hbox{photon input}
+& \Gamma_{2460}^{A{\rm -only}}~({\rm keV})
+& \Gamma_{2536}^{A{\rm -only}}~({\rm keV})\\
+\hline
+\chi_s\langle\bar ss\rangle
+& 0.410~[0.036,1.323]
+& 1.228~[0.112,4.033]\\
+f_{\gamma,s}^{\perp}\ {\rm lattice}
+& 1.588~[0.422,3.745]
+& 4.820~[1.366,10.82]
+\end{array}
+\]
+
+These numbers should not be quoted as the final \(D_s^\ast\gamma\) prediction
+until the tensor-current contribution \(g_B^\ast\) is included.  Their role is
+to show that the axial-current part is numerically under control and that the
+dominant uncertainty again comes from the leading photon normalization.

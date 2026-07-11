@@ -1,0 +1,43 @@
+Axial-only Ds1 -> Ds* gamma Monte Carlo
+=======================================
+N=500 per scenario/ensemble.
+This propagates the completed axial-current LCSR only; tensor-current g_B* is not included.
+Sampled M^2 in [3.0,4.5] GeV^2 and s0 in [7.5,8.5] GeV^2.
+Sampled f_Ds*=0.227+-0.028 GeV from the two-point baseline.
+
+legacy_chi_condensate, theta_fixed, n=500
+  g1_2460_axial_only: median -0.09525 [-0.1965,0.05025], mean -0.07856, std 0.1319
+  Gamma2460_axial_only_keV: median 0.4115 [0.04897,1.389], mean 0.7493, std 0.97
+  g2_2536_axial_only: median -0.1206 [-0.2609,0.06754], mean -0.1023, std 0.1747
+  Gamma2536_axial_only_keV: median 1.164 [0.1455,3.988], mean 2.202, std 3.092
+  gA_star: median -0.2579 [-0.5107,0.1338], mean -0.2112, std 0.3562
+  fV_Dsstar_GeV: median 0.2257 [0.197,0.2554], mean 0.2249, std 0.02853
+  chi_effective: median 3.144 [2.822,3.453], mean 3.148, std 0.3024
+
+legacy_chi_condensate, theta_scan_25_45, n=500
+  g1_2460_axial_only: median -0.0852 [-0.1928,0.05349], mean -0.06908, std 0.1299
+  Gamma2460_axial_only_keV: median 0.4101 [0.03621,1.323], mean 0.6881, std 0.8861
+  g2_2536_axial_only: median -0.1116 [-0.2516,0.07552], mean -0.08875, std 0.1763
+  Gamma2536_axial_only_keV: median 1.228 [0.1122,4.033], mean 2.093, std 2.72
+  gA_star: median -0.2291 [-0.5348,0.1593], mean -0.1863, std 0.3561
+  fV_Dsstar_GeV: median 0.2266 [0.1967,0.2545], mean 0.2263, std 0.02834
+  chi_effective: median 3.119 [2.85,3.425], mean 3.134, std 0.2913
+
+lattice_fperp_s, theta_fixed, n=500
+  g1_2460_axial_only: median -0.2317 [-0.332,-0.118], mean -0.2228, std 0.1157
+  Gamma2460_axial_only_keV: median 1.718 [0.5017,3.502], mean 2.006, std 1.543
+  g2_2536_axial_only: median -0.3032 [-0.4335,-0.1533], mean -0.2913, std 0.1562
+  Gamma2536_axial_only_keV: median 4.99 [1.397,10.08], mean 5.876, std 4.792
+  gA_star: median -0.6138 [-0.8968,-0.3109], mean -0.5947, std 0.3226
+  fV_Dsstar_GeV: median 0.2268 [0.2014,0.2562], mean 0.228, std 0.02769
+  chi_effective: median 4.92 [4.128,5.895], mean 5.048, std 0.938
+
+lattice_fperp_s, theta_scan_25_45, n=500
+  g1_2460_axial_only: median -0.2237 [-0.3427,-0.1132], mean -0.2269, std 0.1238
+  Gamma2460_axial_only_keV: median 1.588 [0.4224,3.745], mean 2.127, std 1.885
+  g2_2536_axial_only: median -0.2992 [-0.4487,-0.1574], mean -0.2989, std 0.1584
+  Gamma2536_axial_only_keV: median 4.82 [1.366,10.82], mean 6.156, std 5.297
+  gA_star: median -0.6339 [-0.9134,-0.3259], mean -0.6193, std 0.3322
+  fV_Dsstar_GeV: median 0.2276 [0.1988,0.2573], mean 0.2279, std 0.02857
+  chi_effective: median 4.961 [4.176,5.956], mean 5.102, std 0.9923
+
