@@ -297,3 +297,69 @@ single-variable reduction.  Before they are promoted to paper results we must
 match the \(V_{\mu\nu\rho}\) coefficient to the physical \(1^+\to1^-\gamma\)
 tensor basis and perform the full double-Borel audit, including the
 denominator-cancellation/contact terms.
+
+## 10. Comparison with experiment and other theory
+
+### Experimental status
+
+LHCb has observed a broad peaking structure in the \(B_c^+\gamma\) mass
+spectrum with a significance above seven standard deviations.  A minimal
+two-peak description gives
+\[
+M_1=6704.8\pm5.5\pm2.8\pm0.3~{\rm MeV},\qquad
+M_2=6752.4\pm9.5\pm3.1\pm0.3~{\rm MeV},
+\]
+where the uncertainties are statistical, systematic, and from the \(B_c^+\)
+mass.  LHCb does not measure the individual radiative partial widths.  The
+natural widths are expected to be only a few hundred keV and are neglected in
+the experimental fit because they are small compared with the photon-energy
+resolution.
+
+Therefore the direct comparison is qualitative:
+
+| Quantity | Experiment | Present calculation |
+|---|---:|---:|
+| observed \(B_c(1P)^+\)-like structure | yes, \(>7\sigma\) in \(B_c^+\gamma\) | channels studied explicitly |
+| lower peak location | \(6704.8\pm6.2~{\rm MeV}\) total in quadrature, plus correlations | input state \(6743~{\rm MeV}\) |
+| higher peak location | \(6752.4\pm10.0~{\rm MeV}\) total in quadrature, plus correlations | input state \(6750~{\rm MeV}\) |
+| partial widths | not measured | \(B_c\gamma\) baseline: \(0.108\) and \(29.6~{\rm keV}\) |
+
+The lower experimental peak should not be identified one-to-one with the
+input \(6743~{\rm MeV}\) mass without care.  In the measured \(B_c\gamma\)
+spectrum, decays through \(B_c^\ast\gamma\), followed by an unreconstructed
+soft \(B_c^\ast\to B_c\gamma\), can shift visible peaks by the unknown
+hyperfine splitting.
+
+### Theory comparison
+
+Martín-González et al. collect representative quark-model E1 widths for
+dominant \(P\)-wave \(B_c\) states.  For the row labelled
+\(B_{c1}(1P)\), their table gives
+\[
+\Gamma[B_{c1}(1P)\to B_c\gamma]
+  =1.5\times10^{-4}~{\rm keV},
+\qquad
+\Gamma[B_{c1}(1P)\to B_c^\ast\gamma]=146~{\rm keV},
+\]
+and compares with earlier values
+\[
+\Gamma[B_{c1}(1P)\to B_c\gamma]=13,\ 18.4,\ 0.0~{\rm keV},
+\]
+\[
+\Gamma[B_{c1}(1P)\to B_c^\ast\gamma]=60,\ 78.9,\ 99.5~{\rm keV}.
+\]
+The references in that comparison are Godfrey, Ebert--Faustov--Galkin, and
+Eichten--Quigg.
+
+Our current comparison is
+
+| Channel | Other theory scale | This work | Interpretation |
+|---|---:|---:|---|
+| \(B_{c1}\to B_c\gamma\) | \(0\) to \(18.4~{\rm keV}\) for one quoted \(B_{c1}(1P)\) row | \(0.108~{\rm keV}\) for \(6743\), \(29.6~{\rm keV}\) for \(6750\) | same broad scale for the larger transition, but state assignment/mixing differs |
+| \(B_{c1}\to B_c^\ast\gamma\) | \(60\) to \(146~{\rm keV}\) | \(46.3~{\rm keV}\) for \(6743\), \(1.67~{\rm MeV}\) for \(6750\) | lower-state pilot is plausible; upper-state pilot is too large and flags unfinished vector normalization/double-Borel work |
+
+The most important conclusion is not the numerical agreement yet; it is the
+diagnostic.  The \(B_c\gamma\) baseline can be used as a first result, while
+the \(B_c^\ast\gamma\) calculation must be completed with the physical
+epsilon-tensor normalization and full double-Borel/contact terms before it can
+be compared honestly with experiment or quark models.
