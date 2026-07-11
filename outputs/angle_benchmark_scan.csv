@@ -1,0 +1,15 @@
+family,scenario,target,theta_deg,Gamma2460_keV,Gamma2536_keV,Gamma_keV
+Ds->Ds gamma,lattice_fperp_s,"Bondar pair 2460=297,2536=12",5.0,27.43978818749471,7.179734911177649,
+Ds->Ds gamma,lattice_fperp_s,Colangelo 2460 central 24,62.1,24.001696864024268,11.216829311645707,
+Ds->Ds gamma,legacy_chi_condensate,"Bondar pair 2460=297,2536=12",55.6,60.76070028340027,9.913777592805143,
+Ds->Ds gamma,legacy_chi_condensate,Colangelo 2460 central 24,89.30000000000001,23.97114136785292,53.44265164481124,
+Ds->Ds* gamma,lattice_fperp_s,"Bondar pair 2460=104,2536=29",37.800000000000004,89.14013217417822,28.318980708299208,
+Ds->Ds* gamma,lattice_fperp_s,Bondar 2460 only 104,24.700000000000003,103.98695134707219,6.669241918348794,
+Ds->Ds* gamma,lattice_fperp_s,Bondar 2536 only 29,38.1,88.74199445608527,28.998347457943787,
+Ds->Ds* gamma,legacy_chi_condensate,"Bondar pair 2460=104,2536=29",42.400000000000006,21.083431935979853,14.896508554341615,
+Ds->Ds* gamma,legacy_chi_condensate,Bondar 2460 only 104,8.5,30.924241931610197,0.4247904438215476,
+Ds->Ds* gamma,legacy_chi_condensate,Bondar 2536 only 29,62.800000000000004,10.439105970946141,28.980428980809812,
+B_{s1}(5750)->Bs* gamma,lattice_fperp_s,Bondar 20,21.400000000000002,,,11.006866048426911
+B_{s1}(5830)->Bs* gamma,lattice_fperp_s,Bondar 41,59.400000000000006,,,40.92024241023886
+B_{s1}(5750)->Bs* gamma,legacy_chi_condensate,Bondar 20,6.300000000000001,,,2.491213935417972
+B_{s1}(5830)->Bs* gamma,legacy_chi_condensate,Bondar 41,90.0,,,22.57410511712483
