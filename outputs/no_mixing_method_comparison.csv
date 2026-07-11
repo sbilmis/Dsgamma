@@ -1,0 +1,3 @@
+channel,current_limit,benchmark,benchmark_coupling,our_coupling,benchmark_width,our_width,comment
+D_s1(2460) -> D_s gamma,"pure axial J_A, no J_B mixing",Colangelo et al. LCSR,"[-0.37,-0.29] GeV^-1","[-0.344,-0.245] GeV^-1","[19,29] keV","[12.60,24.92] keV",same-method scale reproduced; residual shift from inputs/window and omitted stage-2 term in this baseline
+D_s1 -> D_s* gamma,"pure axial J_A, no J_B mixing",Colangelo et al. LCSR,"[-0.18,-0.13]","[-0.192,-0.141]",not emphasized in comparison table,"[0.633,1.178] keV",direct normalization/sign benchmark; excellent agreement for g_A*
