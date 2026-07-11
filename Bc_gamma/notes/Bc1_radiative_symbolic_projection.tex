@@ -574,16 +574,56 @@ The scripts which generate these checks are
   \item \path{Bc_gamma/scripts/step3_ps_g2_single_line_bbarphoton.wl};
   \item \path{Bc_gamma/scripts/step3_ps_g2_open_pair_cphoton.wl};
   \item \path{Bc_gamma/scripts/step3_ps_g2_open_pair_bbarphoton.wl};
-  \item \path{Bc_gamma/scripts/step3_ps_g2_projection_summary.py}.
+  \item \path{Bc_gamma/scripts/step3_ps_g2_projection_summary.py};
+  \item \path{Bc_gamma/scripts/step3_ps_g2_denominator_bookkeeping.py}.
 \end{itemize}
 The raw outputs are stored in
 \path{Bc_gamma/outputs/step3_ps_g2_*.txt} and the summary table is stored in
-\path{Bc_gamma/outputs/step3_ps_g2_projection_summary.csv}.
+\path{Bc_gamma/outputs/step3_ps_g2_projection_summary.csv}.  The denominator
+manifest is stored in
+\path{Bc_gamma/outputs/step3_ps_g2_denominator_bookkeeping.csv}.
+
+The denominator bookkeeping is most compact in Schwinger parameters.  For the
+charm-line photon topology we use
+\[
+a\leftrightarrow S_c(k+q),\qquad
+b\leftrightarrow S_c(k),\qquad
+r\leftrightarrow S_b(k-p),\qquad A=a+b+r .
+\]
+After shifting the loop momentum the quadratic form is
+\[
+\Phi_c=
+\frac{r(a+b)}{A}p^2+\frac{2ar}{A}(p\cdot q)
+-(a+b)m_c^2-rm_b^2
+=
+\frac{rb}{A}p^2+\frac{ar}{A}P^2-(a+b)m_c^2-rm_b^2 .
+\]
+For the anti-bottom-line photon topology we use
+\[
+a\leftrightarrow S_c(k),\qquad
+b\leftrightarrow S_b(k-p),\qquad
+r\leftrightarrow S_b(k-p+q),\qquad A=a+b+r ,
+\]
+which gives
+\[
+\Phi_{\bar b}=
+\frac{a(b+r)}{A}p^2+\frac{2r(b+r)}{A}(p\cdot q)
+-a m_c^2-(b+r)m_b^2 .
+\]
+Equivalently, since \(P^2=p^2+2p\cdot q\),
+\[
+\Phi_{\bar b}=
+\frac{(b+r)(a-r)}{A}p^2+\frac{r(b+r)}{A}P^2
+-a m_c^2-(b+r)m_b^2 .
+\]
+For \(S_Q^{(G^2)}\), the selected propagator power is four and the other two
+propagator powers are one.  For \(S^{(G)}S^{(G)}\), the selected pair carries
+powers two and two, while the remaining propagator has power one.
 
 This completes the numerator-projection stage of the radiative
-gluon-condensate workbench.  It is not yet a numerical condensate correction
-to the decay width.  The next step is to attach the denominator powers to each
-projected row, perform the double-dispersion/double-Borel reduction, and
+gluon-condensate workbench and attaches denominator powers to each projected
+row.  It is not yet a numerical condensate correction to the decay width.  The
+next step is to perform the double-dispersion/double-Borel reduction and
 integrate the result over the same Borel and continuum-threshold windows used
 for the perturbative baseline.
 

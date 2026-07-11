@@ -1,0 +1,23 @@
+Bc1 -> Bc gamma G2 denominator bookkeeping
+===========================================
+
+Rows: 24 current-split denominator rows
+
+Schwinger parameters:
+- c_photon: a=c_after_photon, b=c_before_photon, r=b_spectator
+- bbar_photon: a=c_spectator, b=b_before_photon, r=b_after_photon
+
+Quadratic forms after loop-momentum shift:
+- c_photon, p.q form: Phi = r(a+b)/A p^2 + 2 a r/A (p.q) - (a+b)m_c^2 - r m_b^2
+- c_photon, P^2 form: Phi = r b/A p^2 + a r/A P^2 - (a+b)m_c^2 - r m_b^2
+- bbar_photon, p.q form: Phi = a(b+r)/A p^2 + 2 r(b+r)/A (p.q) - a m_c^2 - (b+r)m_b^2
+- bbar_photon, P^2 form: Phi = (b+r)(a-r)/A p^2 + r(b+r)/A P^2 - a m_c^2 - (b+r)m_b^2
+
+Power convention:
+- single_line_G2: selected propagator power is 4; the other two powers are 1.
+- open_pair_GG: selected propagator powers are 2 and 2; the remaining power is 1.
+
+Status:
+- This file attaches denominator powers to the projected numerator rows.
+- The next step is applying the double-Borel delta constraints to these
+  Schwinger-parameter kernels and integrating the remaining parameter.

@@ -677,7 +677,8 @@ The relevant scripts are:
 - `Bc_gamma/scripts/step3_ps_g2_single_line_bbarphoton.wl`;
 - `Bc_gamma/scripts/step3_ps_g2_open_pair_cphoton.wl`;
 - `Bc_gamma/scripts/step3_ps_g2_open_pair_bbarphoton.wl`;
-- `Bc_gamma/scripts/step3_ps_g2_projection_summary.py`.
+- `Bc_gamma/scripts/step3_ps_g2_projection_summary.py`;
+- `Bc_gamma/scripts/step3_ps_g2_denominator_bookkeeping.py`.
 
 The corresponding raw and summary outputs are:
 
@@ -686,11 +687,34 @@ The corresponding raw and summary outputs are:
 - `Bc_gamma/outputs/step3_ps_g2_single_line_bbarphoton.txt`;
 - `Bc_gamma/outputs/step3_ps_g2_open_pair_cphoton.txt`;
 - `Bc_gamma/outputs/step3_ps_g2_open_pair_bbarphoton.txt`;
-- `Bc_gamma/outputs/step3_ps_g2_projection_summary.{txt,csv}`.
+- `Bc_gamma/outputs/step3_ps_g2_projection_summary.{txt,csv}`;
+- `Bc_gamma/outputs/step3_ps_g2_denominator_bookkeeping.{txt,csv}`.
+
+The denominator bookkeeping uses Schwinger parameters \(a,b,r\).  For charm-line
+photon emission,
+\[
+\Phi_c={r(a+b)\over A}p^2+{2ar\over A}(p\cdot q)
+-(a+b)m_c^2-rm_b^2
+={rb\over A}p^2+{ar\over A}P^2-(a+b)m_c^2-rm_b^2 ,
+\]
+where \(A=a+b+r\), \(a\) belongs to \(S_c(k+q)\), \(b\) to \(S_c(k)\), and
+\(r\) to \(S_b(k-p)\).  For anti-bottom-line photon emission,
+\[
+\Phi_{\bar b}={a(b+r)\over A}p^2+{2r(b+r)\over A}(p\cdot q)
+-a m_c^2-(b+r)m_b^2 ,
+\]
+or, after \(P^2=p^2+2p\cdot q\),
+\[
+\Phi_{\bar b}={(b+r)(a-r)\over A}p^2+{r(b+r)\over A}P^2
+-a m_c^2-(b+r)m_b^2 .
+\]
+For \(S_Q^{(G^2)}\) the selected propagator power is four and the other two
+powers are one.  For \(S^{(G)}S^{(G)}\), the selected pair has powers two and
+two, while the third propagator has power one.
 
 This completes the numerator-projection stage of the radiative
-gluon-condensate workbench.  It is not yet a numerical correction to the decay
-width.  The next required step is denominator-power bookkeeping for every row,
-followed by double-dispersion/double-Borel reduction and numerical integration
-over the same Borel and continuum-threshold windows used in the perturbative
+gluon-condensate workbench and attaches the denominator powers to every row.
+It is not yet a numerical correction to the decay width.  The next required
+step is double-dispersion/double-Borel reduction and numerical integration over
+the same Borel and continuum-threshold windows used in the perturbative
 baseline.
