@@ -237,15 +237,22 @@ rules, rather than imported from the strange-sector analysis.
 
 ## 5. Literature benchmarks
 
-Bondar and Milstein quote the following comparison table for
-\(B_{c1}\to B_c^{(*)}\gamma\) widths in keV:
+For comparison with other predictions we should cite each calculation
+separately.  Bondar and Milstein collect several model results for
+\(B_{c1}\to B_c^{(*)}\gamma\); the original sources are listed explicitly
+below.  All entries are widths in keV.
 
-| Channel | Godfrey [22] | Ebert et al. [23] | Fulcher [24] | Gershtein et al. [25] | Li et al. [26] | Li et al. [27] | Li et al. [28] | Eichten-Quigg [29] | Bondar-Milstein |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| \(B_{c1}(6743)\to B_c\gamma\) | 13 | 18.4 | 32.4 | 11.6 | 16.6 | 35 | 30.1 | 9.9 | 22 |
-| \(B_{c1}(6743)\to B_c^\ast\gamma\) | 60 | 78.9 | 75.6 | 77.8 | 49 | 70 | 47.8 | 62.5 | 75 |
-| \(B_{c1}(6750)\to B_c\gamma\) | 80 | 132 | 127.8 | 131.1 | 66.6 | 74 | 64 | 92.3 | 47 |
-| \(B_{c1}(6750)\to B_c^\ast\gamma\) | 11 | 13.6 | 26.2 | 8.1 | 10.5 | 40 | 25.6 | 7.5 | 2 |
+| Publication | \(6743\to B_c\gamma\) | \(6743\to B_c^\ast\gamma\) | \(6750\to B_c\gamma\) | \(6750\to B_c^\ast\gamma\) |
+|---|---:|---:|---:|---:|
+| Godfrey, Phys. Rev. D 70, 054017 (2004) | 13 | 60 | 80 | 11 |
+| Ebert, Faustov, and Galkin, Phys. Rev. D 67, 014027 (2003) | 18.4 | 78.9 | 132 | 13.6 |
+| Fulcher, Phys. Rev. D 60, 074006 (1999) | 32.4 | 75.6 | 127.8 | 26.2 |
+| Gershtein, Kiselev, Likhoded, and Tkabladze, Phys. Rev. D 51, 3613 (1995) | 11.6 | 77.8 | 131.1 | 8.1 |
+| T. Y. Li et al., Phys. Rev. D 108, 034019 (2023) | 16.6 | 49 | 66.6 | 10.5 |
+| Q. Li et al., Phys. Rev. D 99, 096020 (2019) | 35 | 70 | 74 | 40 |
+| X. J. Li et al., Eur. Phys. J. C 83, 1080 (2023) | 30.1 | 47.8 | 64 | 25.6 |
+| Eichten and Quigg, Phys. Rev. D 99, 054025 (2018) | 9.9 | 62.5 | 92.3 | 7.5 |
+| Bondar and Milstein, Phys. Rev. D 111, 114019 (2025) | 22 | 75 | 47 | 2 |
 
 Bondar-Milstein use
 \[
@@ -270,6 +277,27 @@ radiative \(B_{c1}\) decays.
 5. Run uncertainty analysis over masses, thresholds, Borel parameters, decay
    constants, and the mixing angle.
 6. Compare with the literature table above.
+
+For a student reproducing the present pilot, the minimal workflow is:
+
+1. Run `Bc_gamma/scripts/step1_hard_photon_numerators.wl` to generate the raw
+   hard-photon traces.
+2. Run `Bc_gamma/scripts/step2_ps_e1_triangle_reduction.wl` for the
+   \(B_c\gamma\) E1 projector.
+3. Run `Bc_gamma/scripts/step2_vec_epsilon_A_reduction.wl` and
+   `Bc_gamma/scripts/step2_vec_epsilon_B_reduction.wl` for the diagnostic
+   \(B_c^\ast\gamma\) tensor projection.
+4. Check the projector normalizations:
+   \(S_{\mu\nu}{\cal P}^{\mu\nu}=1\) and
+   \(V_{\mu\nu\rho}{\cal P}^{\mu\nu\rho}=1\).
+5. Insert the projected cores into
+   `Bc_gamma/scripts/bc_radiative_pilot_sumrule.py`.
+6. Use \(M^2=\{7,8,9\}\,{\rm GeV}^2\), \(s_0=\{53,54,55\}\,{\rm GeV}^2\),
+   \(m_b=4.18\,{\rm GeV}\), \(m_c=1.27\,{\rm GeV}\), and
+   \(\theta=43.3^\circ\) to reproduce the current grid.
+7. Treat the \(B_c\gamma\) entries as the controlled hard-photon baseline.
+   Treat the \(B_c^\ast\gamma\) entries as diagnostic until the physical
+   tensor normalization and reduced-denominator/contact terms are finished.
 
 ## 7. Current artifacts
 
@@ -491,62 +519,52 @@ hyperfine splitting.
 
 ### Theory comparison
 
-Martín-González et al. collect representative quark-model E1 widths for
-dominant \(P\)-wave \(B_c\) states.  For the row labelled
-\(B_{c1}(1P)\), their table gives
-\[
-\Gamma[B_{c1}(1P)\to B_c\gamma]
-  =1.5\times10^{-4}~{\rm keV},
-\qquad
-\Gamma[B_{c1}(1P)\to B_c^\ast\gamma]=146~{\rm keV},
-\]
-and compares with earlier values
-\[
-\Gamma[B_{c1}(1P)\to B_c\gamma]=13,\ 18.4,\ 0.0~{\rm keV},
-\]
-\[
-\Gamma[B_{c1}(1P)\to B_c^\ast\gamma]=60,\ 78.9,\ 99.5~{\rm keV}.
-\]
-The references in that comparison are Godfrey, Ebert--Faustov--Galkin, and
-Eichten--Quigg.
+The comparison should cite each paper separately, not compress different
+calculations into a single range.  The following table uses the values collected
+in Bondar--Milstein, with the original model papers shown explicitly.
 
-Our current comparison is
+| Publication | \(6743\to B_c\gamma\) | \(6743\to B_c^\ast\gamma\) | \(6750\to B_c\gamma\) | \(6750\to B_c^\ast\gamma\) |
+|---|---:|---:|---:|---:|
+| Godfrey, Phys. Rev. D 70, 054017 (2004) | 13 | 60 | 80 | 11 |
+| Ebert, Faustov, and Galkin, Phys. Rev. D 67, 014027 (2003) | 18.4 | 78.9 | 132 | 13.6 |
+| Fulcher, Phys. Rev. D 60, 074006 (1999) | 32.4 | 75.6 | 127.8 | 26.2 |
+| Gershtein, Kiselev, Likhoded, and Tkabladze, Phys. Rev. D 51, 3613 (1995) | 11.6 | 77.8 | 131.1 | 8.1 |
+| T. Y. Li et al., Phys. Rev. D 108, 034019 (2023) | 16.6 | 49 | 66.6 | 10.5 |
+| Q. Li et al., Phys. Rev. D 99, 096020 (2019) | 35 | 70 | 74 | 40 |
+| X. J. Li et al., Eur. Phys. J. C 83, 1080 (2023) | 30.1 | 47.8 | 64 | 25.6 |
+| Eichten and Quigg, Phys. Rev. D 99, 054025 (2018) | 9.9 | 62.5 | 92.3 | 7.5 |
+| Bondar and Milstein, Phys. Rev. D 111, 114019 (2025) | 22 | 75 | 47 | 2 |
+| This work, pilot | \(0.108[0.098,0.121]\) | \(46.3[41.0,53.8]\) | \(29.6[25.9,35.3]\) | \(1.67[1.43,2.04]\times10^3\) |
 
-| Channel | Other theory scale | This work | Interpretation |
-|---|---:|---:|---|
-| \(B_{c1}\to B_c\gamma\) | Martín-González et al. and refs. therein: \(0\) to \(18.4~{\rm keV}\) for one quoted \(B_{c1}(1P)\) row | \(0.108~{\rm keV}\) for \(6743\), \(29.6~{\rm keV}\) for \(6750\) | same broad scale for the larger transition, but state assignment/mixing differs |
-| \(B_{c1}\to B_c^\ast\gamma\) | Martín-González et al. and refs. therein: \(60\) to \(146~{\rm keV}\) | \(46.3~{\rm keV}\) for \(6743\), \(1.67~{\rm MeV}\) for \(6750\) | lower-state pilot is plausible; upper-state pilot is too large and flags unfinished vector normalization/double-Borel work |
-
-A paper-style LaTeX version of the comparison table is
+A paper-style LaTeX version is
 
 ```latex
 \begin{table}[t]
 \centering
 \caption{Comparison of the present \(B_{c1}\) radiative results with
 experiment and representative model predictions.  Experimental peak locations
-are from LHCb~\cite{LHCbBc1PObservation2025,LHCbBc1PStudy2025}.  The model
-ranges are collected from Ref.~\cite{MartinGonzalez2022}, which compares with
-Refs.~\cite{Godfrey2004,Ebert2003,EichtenQuigg1994}.}
-\begin{tabular}{lccc}
+are from LHCb~\cite{LHCbBc1PObservation2025,LHCbBc1PStudy2025}.  The
+comparison values are collected in Bondar--Milstein~\cite{BondarMilstein2025};
+the original model papers are cited in the first column.}
+\begin{tabular}{lcccc}
 \toprule
-Channel & Experiment & Other theory & This work\\
+Publication
+& \(6743\to B_c\gamma\)
+& \(6743\to B_c^\ast\gamma\)
+& \(6750\to B_c\gamma\)
+& \(6750\to B_c^\ast\gamma\)\\
 \midrule
-\(B_{c1}(6743)\to B_c\gamma\)
-& no partial width
-& \(0\)--\(18.4~{\rm keV}\)
-& \(0.108[0.098,0.121]~{\rm keV}\)\\
-\(B_{c1}(6750)\to B_c\gamma\)
-& no partial width
-& \(0\)--\(18.4~{\rm keV}\)
-& \(29.6[25.9,35.3]~{\rm keV}\)\\
-\(B_{c1}(6743)\to B_c^\ast\gamma\)
-& no partial width
-& \(60\)--\(146~{\rm keV}\)
-& \(46.3[41.0,53.8]~{\rm keV}\)\\
-\(B_{c1}(6750)\to B_c^\ast\gamma\)
-& no partial width
-& \(60\)--\(146~{\rm keV}\)
-& \(1.67[1.43,2.04]\times10^3~{\rm keV}\)\\
+Godfrey~\cite{Godfrey2004} & 13 & 60 & 80 & 11\\
+Ebert--Faustov--Galkin~\cite{Ebert2003} & 18.4 & 78.9 & 132 & 13.6\\
+Fulcher~\cite{Fulcher1999} & 32.4 & 75.6 & 127.8 & 26.2\\
+Gershtein et al.~\cite{Gershtein1995} & 11.6 & 77.8 & 131.1 & 8.1\\
+T. Y. Li et al.~\cite{LiTang2023} & 16.6 & 49 & 66.6 & 10.5\\
+Q. Li et al.~\cite{LiZhong2019} & 35 & 70 & 74 & 40\\
+X. J. Li et al.~\cite{LiLiu2023} & 30.1 & 47.8 & 64 & 25.6\\
+Eichten--Quigg~\cite{EichtenQuigg2018} & 9.9 & 62.5 & 92.3 & 7.5\\
+Bondar--Milstein~\cite{BondarMilstein2025} & 22 & 75 & 47 & 2\\
+This work, pilot & \(0.108[0.098,0.121]\) & \(46.3[41.0,53.8]\)
+& \(29.6[25.9,35.3]\) & \(1.67[1.43,2.04]\times10^3\)\\
 \bottomrule
 \end{tabular}
 \label{tab:bc1-radiative-comparison}
@@ -558,3 +576,24 @@ diagnostic.  The \(B_c\gamma\) baseline can be used as a first result, while
 the \(B_c^\ast\gamma\) calculation must be completed with the physical
 epsilon-tensor normalization and full double-Borel/contact terms before it can
 be compared honestly with experiment or quark models.
+
+## 11. Perturbative and condensate content
+
+The current numerical Bc table contains only the leading hard-photon
+perturbative baseline.  More explicitly:
+
+- The photon is emitted perturbatively from the \(c\) or \(\bar b\) heavy-quark
+  line.
+- The numerical pilot uses free heavy-quark propagators.
+- The retained spectral density is the perturbative triangle hard contribution
+  generated by the projected Dirac traces.
+- There is no photon DA, \(\chi\langle\bar q q\rangle\), or light-quark
+  condensate term because the \(B_c\) system has no light valence quark.
+- Heavy-heavy power corrections from background-gluon insertions in the heavy
+  propagators, such as gluon-condensate contributions, are not yet included.
+- Reduced two-denominator/contact terms from denominator cancellation still need
+  a full double-Borel audit, especially for the \(B_c^\ast\gamma\) channel.
+
+So the present result should be described as a leading perturbative hard-QCDSR
+pilot result.  A final publication-level analysis should include or bound the
+gluon-condensate and contact-term corrections.
