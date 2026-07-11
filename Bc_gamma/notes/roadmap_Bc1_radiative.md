@@ -521,27 +521,42 @@ the expected \(S\)-wave vector-current form proportional to
   \int_{(m_b+m_c)^2}^{s_{0,V}} ds\,e^{-s/M_V^2}\rho_V(s).
 \]
 Using \(M_V^2=5\)--\(8~{\rm GeV}^2\) and
-\(s_{0,V}=40\)--\(44~{\rm GeV}^2\) gives
+\(s_{0,V}=40\)--\(44~{\rm GeV}^2\), the direct spin-projector density gives
 \[
-  f_{B_c^\ast}^{\rm LO}=0.753\,[0.693,0.808]~{\rm GeV}.
+  f_{B_c^\ast}^{\rm projector}=0.753\,[0.693,0.808]~{\rm GeV}.
 \]
-This is much larger than the frequently used phenomenological scale
-\(f_{B_c^\ast}\simeq0.384~{\rm GeV}\), so the vector-channel width is
-normalization dominated.  We therefore keep both normalizations in the audit:
+This number is a useful diagnostic because it uses exactly the projector
+normalization of the \(B_c\)-mixing notes.  It is not the decay constant
+normalization to insert into
+\(\langle0|\bar c\gamma_\rho b|B_c^\ast\rangle=m_{B_c^\ast}f_{B_c^\ast}\eta_\rho\).
+For that standard vector-invariant convention one divides the density by the
+factor of three associated with the transverse spin trace.  The physical
+two-point result becomes
+\[
+  f_{B_c^\ast}^{\rm standard}=0.435\,[0.400,0.467]~{\rm GeV}.
+\]
+This is close to the frequently used phenomenological scale
+\(f_{B_c^\ast}\simeq0.384~{\rm GeV}\), and removes the apparent factor-of-two
+normalization tension.  We therefore keep the standard result as the
+self-contained QCDSR normalization and show the reference value as a
+sensitivity check:
 
 | Channel | Normalization | Coupling/projection coefficient | Width |
 |---|---|---:|---:|
-| \(B_{c1}(6743)\to B_c^\ast\gamma\) | LO vector two-point \(f_{B_c^\ast}\) | \(-0.0454\,[-0.0487,-0.0425]~{\rm GeV}^{-1}\) | \(24.8\,[21.8,28.5]~{\rm keV}\) |
-| \(B_{c1}(6750)\to B_c^\ast\gamma\) | LO vector two-point \(f_{B_c^\ast}\) | \(+0.0970\,[0.0903,0.104]~{\rm GeV}^{-1}\) | \(120\,[104,137]~{\rm keV}\) |
+| \(B_{c1}(6743)\to B_c^\ast\gamma\) | standard vector-invariant \(f_{B_c^\ast}\) | \(-0.0785\,[-0.0843,-0.0736]~{\rm GeV}^{-1}\) | \(74.3\,[65.3,85.5]~{\rm keV}\) |
+| \(B_{c1}(6750)\to B_c^\ast\gamma\) | standard vector-invariant \(f_{B_c^\ast}\) | \(+0.168\,[0.156,0.180]~{\rm GeV}^{-1}\) | \(360\,[312,412]~{\rm keV}\) |
 | \(B_{c1}(6743)\to B_c^\ast\gamma\) | reference \(f_{B_c^\ast}=0.384\pm0.038~{\rm GeV}\) | \(-0.0877\,[-0.0986,-0.0795]~{\rm GeV}^{-1}\) | \(92.6\,[76.1,117]~{\rm keV}\) |
 | \(B_{c1}(6750)\to B_c^\ast\gamma\) | reference \(f_{B_c^\ast}=0.384\pm0.038~{\rm GeV}\) | \(+0.187\,[0.169,0.210]~{\rm GeV}^{-1}\) | \(447\,[365,564]~{\rm keV}\) |
 
 These \(B_c^\ast\gamma\) entries are now computed leading hard-QCDSR vector
 baselines, not merely placeholders.  They still do not include radiative
 \(G^2\) or vector-channel contact terms.  Therefore the publication wording
-should be: "leading perturbative hard-QCDSR result; vector normalization shown
-explicitly."  We should not call them full-OPE final numbers until the
-background-field vector contact sector is reduced.
+should be: "leading perturbative hard-QCDSR result; vector normalization audit
+shown explicitly."  We should not call them full-OPE final numbers until the
+background-field vector contact sector is reduced.  The projector-diagnostic
+normalization gives \(24.8[21.8,28.5]\) and \(120[104,137]\) keV for the two
+channels, respectively, and is kept in the CSV outputs only as a convention
+cross-check.
 
 The script writes:
 

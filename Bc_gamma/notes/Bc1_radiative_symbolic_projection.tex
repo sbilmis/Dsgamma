@@ -414,13 +414,23 @@ the expected \(S\)-wave vector-current density proportional to
   =
   \int_{(m_b+m_c)^2}^{s_{0,V}}ds\,e^{-s/M_V^2}\rho_V(s).
 \]
-Using \(M_V^2=5\)--\(8~\GeV^2\) and \(s_{0,V}=40\)--\(44~\GeV^2\) gives
+Using \(M_V^2=5\)--\(8~\GeV^2\) and \(s_{0,V}=40\)--\(44~\GeV^2\), the direct
+spin-projector density gives
 \[
-  f_{\Bcst}^{\rm LO}=0.753\,[0.693,0.808]~\GeV .
+  f_{\Bcst}^{\rm projector}=0.753\,[0.693,0.808]~\GeV .
 \]
-Because this is much larger than the commonly used reference value
-\(f_{\Bcst}=0.384\pm0.038~\GeV\), the vector-channel widths are strongly
-normalization dependent.  We therefore quote both versions:
+This is a projector-convention diagnostic.  For the physical matrix element
+\(\langle0|\bar c\gamma_\rho b|\Bcst\rangle=m_{\Bcst}f_{\Bcst}\eta_\rho\), the
+standard vector-invariant convention divides the density by the transverse
+spin-trace factor of three.  The corresponding self-contained two-point result
+is
+\[
+  f_{\Bcst}^{\rm standard}=0.435\,[0.400,0.467]~\GeV .
+\]
+This is close to the commonly used reference value
+\(f_{\Bcst}=0.384\pm0.038~\GeV\).  We therefore quote the standard
+normalization as the preferred self-contained result and keep the reference
+normalization as a sensitivity check:
 
 \begin{table}[h]
 \centering
@@ -435,13 +445,13 @@ included.}
 Channel & Normalization & Coupling/projection coefficient & \(\Gamma\) (keV)\\
 \midrule
 \(\BcOne(6743)\to\Bcst\gamma\)
-& LO vector two-point \(f_{\Bcst}\)
-& \(-0.0454\,[-0.0487,-0.0425]~\GeV^{-1}\)
-& \(24.8\,[21.8,28.5]\)\\
+& standard vector-invariant \(f_{\Bcst}\)
+& \(-0.0785\,[-0.0843,-0.0736]~\GeV^{-1}\)
+& \(74.3\,[65.3,85.5]\)\\
 \(\BcOne(6750)\to\Bcst\gamma\)
-& LO vector two-point \(f_{\Bcst}\)
-& \(+0.0970\,[0.0903,0.104]~\GeV^{-1}\)
-& \(120\,[104,137]\)\\
+& standard vector-invariant \(f_{\Bcst}\)
+& \(+0.168\,[0.156,0.180]~\GeV^{-1}\)
+& \(360\,[312,412]\)\\
 \(\BcOne(6743)\to\Bcst\gamma\)
 & reference \(f_{\Bcst}=0.384\pm0.038~\GeV\)
 & \(-0.0877\,[-0.0986,-0.0795]~\GeV^{-1}\)
@@ -457,7 +467,10 @@ Channel & Normalization & Coupling/projection coefficient & \(\Gamma\) (keV)\\
 The \(\Bc\gamma\) entries are the controlled hard-photon baseline from the
 present calculation.  The vector entries are no longer just placeholders:
 they use the \(V_{\mu\nu\rho}\) projection, the physical \(f_1,f_2\) residues,
-and an explicit \(f_{\Bcst}\) normalization.  They should nevertheless be
+and an explicit \(f_{\Bcst}\) normalization.  The projector diagnostic gives
+\(24.8[21.8,28.5]\) and \(120[104,137]\) keV for the two vector channels and is
+kept only in the output CSV files as a convention check.  The table above uses
+the standard vector-current convention.  These entries should nevertheless be
 described as leading perturbative vector baselines, not full-OPE final
 predictions, until the radiative \(G^2\) and contact sectors are completed.
 

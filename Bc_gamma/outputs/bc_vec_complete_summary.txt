@@ -2,16 +2,22 @@ Leading Bc1 -> Bc* gamma summary
 =================================
 
 Vector-current two-point normalization:
-f_Bcstar_LO_GeV: median=0.7531, 16-84%=[0.6933,0.808], range=[0.6462,0.8598]
+f_Bcstar_projector_GeV: median=0.7531, 16-84%=[0.6933,0.808], range=[0.6462,0.8598]
+f_Bcstar_standard_GeV: median=0.4348, 16-84%=[0.4003,0.4665], range=[0.3731,0.4964]
+The standard_vector_invariant value is the physical f_Bcstar convention used in the hadronic matrix element.
 
 Monte Carlo leading hard-photon vector results:
-LO_vector_twopoint Bc1(6743)->Bc* gamma g1_GeV_inv: median=-0.04535, 16-84%=[-0.04865,-0.0425], range=[-0.05369,-0.03716]
-LO_vector_twopoint Bc1(6743)->Bc* gamma Gamma1_keV: median=24.76, 16-84%=[21.75,28.51], range=[16.63,34.72]
-LO_vector_twopoint Bc1(6750)->Bc* gamma g2_GeV_inv: median=0.09699, 16-84%=[0.09031,0.1038], range=[0.07974,0.1168]
-LO_vector_twopoint Bc1(6750)->Bc* gamma Gamma2_keV: median=119.9, 16-84%=[103.9,137.3], range=[81.04,173.8]
+projector_diagnostic Bc1(6743)->Bc* gamma g1_GeV_inv: median=-0.04535, 16-84%=[-0.04865,-0.0425], range=[-0.05369,-0.03716]
+projector_diagnostic Bc1(6743)->Bc* gamma Gamma1_keV: median=24.76, 16-84%=[21.75,28.51], range=[16.63,34.72]
+projector_diagnostic Bc1(6750)->Bc* gamma g2_GeV_inv: median=0.09699, 16-84%=[0.09031,0.1038], range=[0.07974,0.1168]
+projector_diagnostic Bc1(6750)->Bc* gamma Gamma2_keV: median=119.9, 16-84%=[103.9,137.3], range=[81.04,173.8]
 reference_f_Bcstar_0p384 Bc1(6743)->Bc* gamma g1_GeV_inv: median=-0.08771, 16-84%=[-0.09857,-0.07949], range=[-0.1323,-0.06459]
 reference_f_Bcstar_0p384 Bc1(6743)->Bc* gamma Gamma1_keV: median=92.64, 16-84%=[76.09,117], range=[50.23,210.6]
 reference_f_Bcstar_0p384 Bc1(6750)->Bc* gamma g2_GeV_inv: median=0.1873, 16-84%=[0.1691,0.2104], range=[0.1375,0.2823]
 reference_f_Bcstar_0p384 Bc1(6750)->Bc* gamma Gamma2_keV: median=447.1, 16-84%=[364.5,564.1], range=[241.1,1016]
+standard_vector_invariant Bc1(6743)->Bc* gamma g1_GeV_inv: median=-0.07854, 16-84%=[-0.08427,-0.07361], range=[-0.093,-0.06436]
+standard_vector_invariant Bc1(6743)->Bc* gamma Gamma1_keV: median=74.28, 16-84%=[65.25,85.52], range=[49.88,104.1]
+standard_vector_invariant Bc1(6750)->Bc* gamma g2_GeV_inv: median=0.168, 16-84%=[0.1564,0.1798], range=[0.1381,0.2023]
+standard_vector_invariant Bc1(6750)->Bc* gamma Gamma2_keV: median=359.7, 16-84%=[311.8,411.9], range=[243.1,521.4]
 
 Status: perturbative hard-photon three-point OPE only; radiative G^2/contact terms are not included.

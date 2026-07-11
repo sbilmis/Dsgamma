@@ -7,9 +7,11 @@ by fixed input constants.  This script makes the normalization transparent:
 1. f1 and f2 are recomputed from the axial-vector Bc-mixing two-point sum
    rules, exactly as in bc_ps_complete_analysis.py.
 2. f_Bc* is computed from a perturbative vector-current two-point sum rule.
-3. A reference-normalization column with f_Bc*=0.384 GeV is also kept, because
-   the LO vector two-point convention gives a much larger raw value.  This
-   makes the normalization sensitivity visible rather than hidden.
+   We keep both the direct spin-projector normalization and the standard
+   vector-invariant normalization.  The latter is the one appropriate for
+   <0|cbar gamma_mu b|Bc*>=m_Bc* f_Bc* eta_mu.
+3. A reference-normalization column with f_Bc*=0.384 GeV is also kept to show
+   the residual sensitivity to this input.
 
 The three-point OPE here is still the leading hard-photon perturbative
 contribution.  Radiative G^2/contact terms are not included in these numbers.
@@ -215,10 +217,10 @@ def rho_bcstar_vector_current(s, inp: Inputs):
     return 3.0 / (16.0 * math.pi**2) * lam / s * num
 
 
-def bcstar_decay_constant(M2v: float, s0v: float, inp: Inputs) -> float:
+def bcstar_decay_constant(M2v: float, s0v: float, inp: Inputs, convention_scale: float = 1.0) -> float:
     lower = (inp.mb + inp.mc) ** 2
     moment = gauss_legendre_integral(
-        lambda x: np.exp(-x / M2v) * rho_bcstar_vector_current(x, inp),
+        lambda x: np.exp(-x / M2v) * convention_scale * rho_bcstar_vector_current(x, inp),
         lower,
         s0v,
     )
@@ -334,16 +336,19 @@ def run_grid(inp: Inputs):
                 {
                     "M2_vector": M2v,
                     "s0_vector": s0v,
-                    "f_Bcstar_LO_GeV": bcstar_decay_constant(M2v, s0v, inp),
+                    "f_Bcstar_projector_GeV": bcstar_decay_constant(M2v, s0v, inp, 1.0),
+                    "f_Bcstar_standard_GeV": bcstar_decay_constant(M2v, s0v, inp, 1.0 / 3.0),
                 }
             )
-    fstar_central = float(np.median([r["f_Bcstar_LO_GeV"] for r in fstar_rows]))
+    fstar_projector_central = float(np.median([r["f_Bcstar_projector_GeV"] for r in fstar_rows]))
+    fstar_standard_central = float(np.median([r["f_Bcstar_standard_GeV"] for r in fstar_rows]))
 
     for M2 in [7.0, 8.0, 9.0]:
         for s0 in [53.0, 54.0, 55.0]:
             res = twopoint_residues(M2, s0, inp)
             for norm_label, fstar in [
-                ("LO_vector_twopoint", fstar_central),
+                ("projector_diagnostic", fstar_projector_central),
+                ("standard_vector_invariant", fstar_standard_central),
                 ("reference_f_Bcstar_0p384", inp.f_bcstar_ref),
             ]:
                 rad = vec_couplings(M2, s0, inp, inp.theta_deg, res["f1_GeV"], res["f2_GeV"], fstar)
@@ -376,9 +381,11 @@ def run_monte_carlo(n: int = 1000, seed: int = 20260712):
             continue
         res = twopoint_residues(M2, s0, inp)
         fstar_lo = bcstar_decay_constant(M2v, s0v, inp)
+        fstar_standard = bcstar_decay_constant(M2v, s0v, inp, 1.0 / 3.0)
         fstar_ref = max(0.1, rng.normal(inp.f_bcstar_ref, inp.f_bcstar_ref_sigma))
         for norm_label, fstar in [
-            ("LO_vector_twopoint", fstar_lo),
+            ("projector_diagnostic", fstar_lo),
+            ("standard_vector_invariant", fstar_standard),
             ("reference_f_Bcstar_0p384", fstar_ref),
         ]:
             rad = vec_couplings(M2, s0, inp, theta, res["f1_GeV"], res["f2_GeV"], fstar)
@@ -407,7 +414,16 @@ def main():
     write_csv(OUT / "bc_vec_fbcstar_twopoint_grid.csv", fstar_rows)
     write_csv(OUT / "bc_vec_complete_grid.csv", grid_rows)
 
-    fstar_summary = [{"quantity": "f_Bcstar_LO_GeV", **summary_stats([r["f_Bcstar_LO_GeV"] for r in fstar_rows])}]
+    fstar_summary = [
+        {
+            "quantity": "f_Bcstar_projector_GeV",
+            **summary_stats([r["f_Bcstar_projector_GeV"] for r in fstar_rows]),
+        },
+        {
+            "quantity": "f_Bcstar_standard_GeV",
+            **summary_stats([r["f_Bcstar_standard_GeV"] for r in fstar_rows]),
+        },
+    ]
     write_csv(OUT / "bc_vec_fbcstar_twopoint_summary.csv", fstar_summary)
 
     grid_summary = []
@@ -470,6 +486,7 @@ def main():
             "{quantity}: median={median:.4g}, 16-84%=[{q16:.4g},{q84:.4g}], "
             "range=[{min:.4g},{max:.4g}]".format(**item)
         )
+    lines.append("The standard_vector_invariant value is the physical f_Bcstar convention used in the hadronic matrix element.")
     lines.append("")
     lines.append("Monte Carlo leading hard-photon vector results:")
     for item in mc_summary:
