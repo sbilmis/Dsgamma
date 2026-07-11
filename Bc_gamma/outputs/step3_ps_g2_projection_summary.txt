@@ -1,0 +1,12 @@
+Bc1 -> Bc gamma G2 projection summary
+======================================
+
+Projection rows: 24
+Total projected term count: 385
+open_pair_GG: 164 projected terms
+single_line_G2: 221 projected terms
+
+Status:
+- Numerator projection is complete for the dimension-4 topology inventory.
+- Double-Borel reduction/integration is not yet complete.
+- The next step is reducing each row to denominator powers in (p^2, P^2).

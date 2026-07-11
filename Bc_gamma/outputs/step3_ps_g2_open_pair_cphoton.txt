@@ -1,0 +1,24 @@
+Bc1 -> Bc gamma open-gluon-pair G2 chunk: photon on c line
+==============================================================
+
+Overall prefactor: the vacuum-average/color normalization must be attached in the Borel stage.
+Each listed pair has one S_Q^(G) denominator squared on each chosen segment.
+
+current=A, pair=(c_after_photon,c_before_photon), term_count=7
+((2*I)*(-2*(mb - 3*mc)*SP[k, p]*SP[k, q] + SP[p, q]*((5*mb - 6*mc)*SP[k, k] + (4*mb - 2*mc)*SP[k, q] + 2*mc*SP[p, q])))/SP[p, q]^2
+
+current=A, pair=(c_after_photon,b_spectator), term_count=9
+((2*I)*(SP[k, p]*(-2*(mb - 3*mc)*SP[k, q] + 2*mc*SP[p, q]) + SP[p, q]*((5*mb - 6*mc)*SP[k, k] + 4*mc*SP[p, q]) - 2*SP[k, q]*(mc*SP[p, p] + (-3*mb + 2*mc)*SP[p, q])))/SP[p, q]^2
+
+current=A, pair=(c_before_photon,b_spectator), term_count=10
+((-2*I)*(2*SP[k, q]*(mc*SP[p, p] + 3*(mb - mc)*SP[p, q]) + SP[k, p]*(6*(mb - mc)*SP[k, q] - 2*mc*SP[p, q]) + 3*SP[p, q]*((mb + 2*mc)*SP[k, k] + 2*mc*(-3*mb*mc + SP[p, q]))))/SP[p, q]^2
+
+current=B, pair=(c_after_photon,c_before_photon), term_count=11
+((2*I)*(2*SP[k, p]*SP[k, q]*(SP[p, p] + 3*SP[p, q]) - 2*SP[p, q]*(-SP[k, q]^2 + mb*mc*SP[p, q] + SP[k, q]*(2*SP[p, p] + SP[p, q])) + SP[k, k]*(SP[k, q]*(SP[p, p] + 3*SP[p, q]) + SP[p, q]*(2*SP[k, p] - 5*(SP[p, p] + SP[p, q])))))/((mb + mc)*SP[p, q]^2)
+
+current=B, pair=(c_after_photon,b_spectator), term_count=18
+((2*I)*(2*SP[k, q]^2*SP[p, q] + SP[p, q]*(2*((mb - mc)*mc + SP[k, k])*SP[k, p] + 3*(mc^2 - SP[k, k])*SP[p, p] + (-2*mb*mc + 3*mc^2 - 3*SP[k, k])*SP[p, q]) + SP[k, q]*(SP[p, p]*((mb - mc)*mc + SP[k, k] - 4*SP[p, q]) + (3*mb*mc - 3*mc^2 + 3*SP[k, k] + 4*SP[k, p] - 2*SP[p, q])*SP[p, q])))/((mb + mc)*SP[p, q]^2)
+
+current=B, pair=(c_before_photon,b_spectator), term_count=19
+((2*I)*(SP[k, q]*((9*mc*(mb + mc) - 9*SP[k, k] + 8*SP[k, p])*SP[p, q] + SP[p, p]*(3*mb*mc + 3*mc^2 - 3*SP[k, k] + 4*SP[k, p] + 2*SP[p, q])) + SP[p, q]*(4*SP[k, p]^2 + (-9*mc^2 + SP[k, k])*SP[p, p] + (3*(4*mb - 3*mc)*mc - 5*SP[k, k])*SP[p, q] + SP[k, p]*(6*mc*(mb + mc) - 6*SP[k, k] + 4*SP[p, q]))))/((mb + mc)*SP[p, q]^2)
+

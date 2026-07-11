@@ -1,0 +1,11 @@
+Bc1 -> Bc gamma G2 topology inventory
+======================================
+
+Total topology rows: 12
+Single-line G2 rows: 6
+Open-gluon pair rows: 6
+
+Interpretation:
+- This is a derivation checklist, not a numerical contribution.
+- Each row must be projected onto the E1 tensor and reduced to a double-Borel form.
+- The radiative G2 correction should not be borrowed from the two-point Bc-mixing OPE.

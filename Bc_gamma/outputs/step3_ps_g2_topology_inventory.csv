@@ -1,0 +1,13 @@
+class,photon_topology,segment_a,segment_b,momentum_a,momentum_b,mass_a,mass_b,denominator_a,denominator_b,description
+single_line_G2,c_photon,c_after_photon,,k+q,,mc,,D_c1=(k+q)^2-m_c^2,,two background gluons contracted on one heavy propagator segment
+single_line_G2,c_photon,c_before_photon,,k,,mc,,D_c2=k^2-m_c^2,,two background gluons contracted on one heavy propagator segment
+single_line_G2,c_photon,b_spectator,,k-p,,mb,,D_c3=(k-p)^2-m_b^2,,two background gluons contracted on one heavy propagator segment
+same_flavor_two_segment_GG,c_photon,c_after_photon,c_before_photon,k+q,k,mc,mc,D_c1=(k+q)^2-m_c^2,D_c2=k^2-m_c^2,one open background gluon on each listed propagator segment
+cross_line_GG,c_photon,c_after_photon,b_spectator,k+q,k-p,mc,mb,D_c1=(k+q)^2-m_c^2,D_c3=(k-p)^2-m_b^2,one open background gluon on each listed propagator segment
+cross_line_GG,c_photon,c_before_photon,b_spectator,k,k-p,mc,mb,D_c2=k^2-m_c^2,D_c3=(k-p)^2-m_b^2,one open background gluon on each listed propagator segment
+single_line_G2,bbar_photon,c_spectator,,k,,mc,,D_b1=k^2-m_c^2,,two background gluons contracted on one heavy propagator segment
+single_line_G2,bbar_photon,b_before_photon,,k-p,,mb,,D_b2=(k-p)^2-m_b^2,,two background gluons contracted on one heavy propagator segment
+single_line_G2,bbar_photon,b_after_photon,,k-p+q,,mb,,D_b3=(k-p+q)^2-m_b^2,,two background gluons contracted on one heavy propagator segment
+cross_line_GG,bbar_photon,c_spectator,b_before_photon,k,k-p,mc,mb,D_b1=k^2-m_c^2,D_b2=(k-p)^2-m_b^2,one open background gluon on each listed propagator segment
+cross_line_GG,bbar_photon,c_spectator,b_after_photon,k,k-p+q,mc,mb,D_b1=k^2-m_c^2,D_b3=(k-p+q)^2-m_b^2,one open background gluon on each listed propagator segment
+same_flavor_two_segment_GG,bbar_photon,b_before_photon,b_after_photon,k-p,k-p+q,mb,mb,D_b2=(k-p)^2-m_b^2,D_b3=(k-p+q)^2-m_b^2,one open background gluon on each listed propagator segment

@@ -1,0 +1,24 @@
+Bc1 -> Bc gamma open-gluon-pair G2 chunk: photon on anti-b line
+=================================================================
+
+Overall prefactor: the vacuum-average/color normalization must be attached in the Borel stage.
+Each listed pair has one S_Q^(G) denominator squared on each chosen segment.
+
+current=A, pair=(c_spectator,b_before_photon), term_count=13
+((-2*I)*(SP[k, q]*((-4*mb + 6*mc)*SP[p, p] + 6*(mb - mc)*SP[p, q]) + 2*SP[k, p]*(3*(mb - mc)*SP[k, q] + 2*(mb + 3*mc)*SP[p, q]) + 3*SP[p, q]*(-((2*mb + mc)*SP[k, k]) + mc*(6*mb^2 - 3*SP[p, p] + 2*SP[p, q]))))/SP[p, q]^2
+
+current=A, pair=(c_spectator,b_after_photon), term_count=12
+((2*I)*(((6*mb - 5*mc)*SP[k, k] - 3*mc*(SP[p, p] - 2*SP[p, q]))*SP[p, q] + SP[k, q]*((4*mb - 2*mc)*SP[p, p] + 2*(2*mb - 3*mc)*SP[p, q]) + SP[k, p]*((-6*mb + 2*mc)*SP[k, q] - 4*(mb - 2*mc)*SP[p, q])))/SP[p, q]^2
+
+current=A, pair=(b_before_photon,b_after_photon), term_count=12
+((2*I)*(2*SP[k, q]*((3*mb - mc)*SP[p, p] + (mb - 2*mc)*SP[p, q]) + SP[p, q]*((6*mb - 5*mc)*SP[k, k] - 3*mc*SP[p, p] + 4*mc*SP[p, q]) + SP[k, p]*((-6*mb + 2*mc)*SP[k, q] + 2*(-3*mb + 4*mc)*SP[p, q])))/SP[p, q]^2
+
+current=B, pair=(c_spectator,b_before_photon), term_count=19
+((-2*I)*(SP[p, q]*(8*SP[k, p]^2 + 2*SP[k, p]*(3*mb*(mb + mc) - 3*SP[k, k] - 5*SP[p, p]) - 9*mb*mc*SP[p, p] + 8*SP[k, k]*SP[p, p] + 3*mb*mc*SP[p, q] + 2*SP[k, k]*SP[p, q]) + SP[k, q]*(SP[p, p]^2 + SP[p, p]*(-3*SP[k, k] + 2*SP[k, p] + 3*(mb^2 + mb*mc - SP[p, q])) + (9*mb*(mb + mc) - 9*SP[k, k] + 10*SP[k, p])*SP[p, q])))/((mb + mc)*SP[p, q]^2)
+
+current=B, pair=(c_spectator,b_after_photon), term_count=20
+((2*I)*(-2*SP[k, q]^2*SP[p, q] + SP[k, q]*(-SP[p, p]^2 + SP[p, p]*(mb^2 - mb*mc - SP[k, k] + 2*SP[k, p] - 3*SP[p, q]) + SP[p, q]*(3*mb^2 - 3*mb*mc - 3*SP[k, k] + 2*SP[k, p] + 2*SP[p, q])) + SP[p, q]*(4*SP[k, p]^2 + 2*SP[k, p]*(mb^2 - mb*mc - SP[k, k] - SP[p, p] + 2*SP[p, q]) + mb*mc*(3*SP[p, p] + 5*SP[p, q]))))/((mb + mc)*SP[p, q]^2)
+
+current=B, pair=(b_before_photon,b_after_photon), term_count=14
+((-2*I)*(3*SP[k, q]*SP[p, p]^2 - 4*SP[k, p]^2*SP[p, q] + 2*SP[k, q]^2*SP[p, q] + 5*SP[k, q]*SP[p, p]*SP[p, q] - 2*mb*mc*SP[p, q]^2 - 2*SP[k, q]*SP[p, q]^2 - 2*SP[k, p]*(3*SP[p, q]^2 + 2*SP[k, q]*(SP[p, p] + SP[p, q])) + SP[k, k]*(2*SP[p, q]*(SP[k, p] + SP[p, p] + SP[p, q]) + SP[k, q]*(SP[p, p] + 3*SP[p, q]))))/((mb + mc)*SP[p, q]^2)
+

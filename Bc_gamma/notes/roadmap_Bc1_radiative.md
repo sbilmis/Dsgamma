@@ -635,3 +635,62 @@ perturbative hard-QCDSR baseline.  A final publication-level analysis should
 include or bound the radiative three-point gluon-condensate correction.  The
 \(B_c^\ast\gamma\) channel additionally needs the contact-term and
 tensor-normalization audit.
+
+## 12. Dimension-4 radiative gluon-condensate workbench
+
+The heavy-heavy case has no photon DA or light-quark condensate contribution,
+but the background-gluon expansion of the heavy propagators can generate
+dimension-4 gluon-condensate terms in the radiative three-point correlator.  I
+therefore split the calculation into small reproducible Wolfram/Python chunks
+instead of asking FeynCalc to reduce the full expression at once.
+
+The topology inventory is:
+
+- photon emitted from the charm line:
+  \(S_c(k+q)\,\gamma_\mathrm{em}\,S_c(k)\,\gamma_5\,S_b(k-p)\);
+- photon emitted from the anti-bottom line:
+  \(S_c(k)\,\gamma_5\,S_b(k-p)\,\gamma_\mathrm{em}\,S_b(k-p+q)\);
+- six single-line insertions \(S_Q^{(G^2)}\), one on each heavy propagator
+  segment in the two photon-emission diagrams;
+- six open-gluon-pair insertions \(S^{(G)}S^{(G)}\), one for each pair of
+  propagator segments inside each photon-emission diagram.
+
+After projecting onto the pseudoscalar-final-state E1 tensor
+\[
+S_{\mu\nu}=p_\nu q_\mu-(p\cdot q)g_{\mu\nu},
+\qquad
+{\cal P}^{\mu\nu}={S^{\mu\nu}\over 2(p\cdot q)^2},
+\]
+the workbench gives 24 current-split projected rows: \(J_A\) and \(J_B\) for
+each of the 12 gluon-condensate topologies.  The term-count audit is:
+
+- single-line \(S_Q^{(G^2)}\): 6 topology rows, 12 current-split projections,
+  221 projected terms;
+- open-pair \(S^{(G)}S^{(G)}\): 6 topology rows, 12 current-split projections,
+  164 projected terms;
+- total: 24 projected rows and 385 projected terms.
+
+The relevant scripts are:
+
+- `Bc_gamma/scripts/step3_ps_g2_topology_inventory.py`;
+- `Bc_gamma/scripts/step3_ps_g2_single_line_cphoton.wl`;
+- `Bc_gamma/scripts/step3_ps_g2_single_line_bbarphoton.wl`;
+- `Bc_gamma/scripts/step3_ps_g2_open_pair_cphoton.wl`;
+- `Bc_gamma/scripts/step3_ps_g2_open_pair_bbarphoton.wl`;
+- `Bc_gamma/scripts/step3_ps_g2_projection_summary.py`.
+
+The corresponding raw and summary outputs are:
+
+- `Bc_gamma/outputs/step3_ps_g2_topology_inventory.{txt,csv}`;
+- `Bc_gamma/outputs/step3_ps_g2_single_line_cphoton.txt`;
+- `Bc_gamma/outputs/step3_ps_g2_single_line_bbarphoton.txt`;
+- `Bc_gamma/outputs/step3_ps_g2_open_pair_cphoton.txt`;
+- `Bc_gamma/outputs/step3_ps_g2_open_pair_bbarphoton.txt`;
+- `Bc_gamma/outputs/step3_ps_g2_projection_summary.{txt,csv}`.
+
+This completes the numerator-projection stage of the radiative
+gluon-condensate workbench.  It is not yet a numerical correction to the decay
+width.  The next required step is denominator-power bookkeeping for every row,
+followed by double-dispersion/double-Borel reduction and numerical integration
+over the same Borel and continuum-threshold windows used in the perturbative
+baseline.
