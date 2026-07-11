@@ -771,3 +771,24 @@ few-percent amplitude correction is plausible and should be either calculated
 explicitly or bounded more sharply.  Therefore the controlled numbers should
 continue to be described as leading perturbative hard-QCDSR baselines until the
 full three-point \(G^2\) reduction is completed.
+
+The channel-by-channel summary is produced by
+
+- `Bc_gamma/scripts/bc_ps_g2_corrected_summary.py`,
+
+with outputs
+
+- `Bc_gamma/outputs/bc_ps_g2_corrected_summary.csv`;
+- `Bc_gamma/outputs/bc_ps_g2_corrected_summary.txt`.
+
+For the current perturbative Monte Carlo central values, the conservative
+\(G^2\) envelope is
+
+| Channel | perturbative \(g\) \({\rm GeV}^{-1}\) | perturbative \(\Gamma\) keV | median \(G^2\) width envelope | max \(G^2\) width envelope |
+|---|---:|---:|---:|---:|
+| \(B_{c1}(6743)\to B_c\gamma\) | \(0.0316[0.0269,0.0370]\) | \(0.223[0.162,0.308]\) | \(\pm0.025\) keV | \(\pm0.060\) keV |
+| \(B_{c1}(6750)\to B_c\gamma\) | \(-0.184[-0.205,-0.167]\) | \(8.01[6.60,9.90]\) | \(\pm0.914\) keV | \(\pm2.30\) keV |
+
+This table should be read as a conservative systematic bound, not as the final
+explicit radiative \(G^2\) correction.  It is enough, however, to decide that
+we should not simply drop \(G^2\) without comment.

@@ -1,0 +1,23 @@
+Bc1 -> Bc gamma perturbative result plus conservative G2 envelope
+================================================================
+
+This is not the final explicit G2 correction.  It is the conservative
+systematic envelope inferred from the same-window heavy-heavy G2/Pert
+ratios after including the residue-normalization effect.
+
+Bc1(6743)->Bc gamma
+  g_pert = 0.03155 [0.02685, 0.03701] GeV^-1
+  Gamma_pert = 0.2233 [0.1618, 0.3075] keV
+  conservative G2 envelope: median |dg/g|=0.058, max=0.128; median |dGamma/Gamma|=0.115, max=0.257
+  Gamma G2 envelope: median +/-0.025 keV, max +/-0.0599 keV
+
+Bc1(6750)->Bc gamma
+  g_pert = -0.1843 [-0.205, -0.1673] GeV^-1
+  Gamma_pert = 8.007 [6.599, 9.902] keV
+  conservative G2 envelope: median |dg/g|=0.058, max=0.128; median |dGamma/Gamma|=0.115, max=0.257
+  Gamma G2 envelope: median +/-0.914 keV, max +/-2.3 keV
+
+Conclusion:
+- G2 is not proven negligible by this screen.
+- The quoted perturbative widths should carry this as a systematic envelope
+  until the full radiative G2 double-Borel reduction is completed.
