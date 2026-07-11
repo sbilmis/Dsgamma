@@ -1,0 +1,21 @@
+Bc1 -> Bcstar gamma J_A epsilon-structure reduction
+===================================================
+
+Tensor norm = -4*p2*pq^2
+Projector check V.P = 1
+
+J_A c-line projected numerator:
+((-4*I)*mb*mc*Pair[Momentum[p], Momentum[q]]^2)/(p2*pq^2) - ((2*I)*mc^2*(Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[p]] + 2*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[p], Momentum[q]] - 3*Pair[Momentum[p], Momentum[p]]*Pair[Momentum[p], Momentum[q]]))/(p2*pq^2) + ((2*I)*(Pair[Momentum[k], Momentum[k]]*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[p]] - 2*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[p]] + Pair[Momentum[k], Momentum[q]]^2*Pair[Momentum[p], Momentum[p]] + 2*Pair[Momentum[k], Momentum[k]]*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[p], Momentum[q]] - Pair[Momentum[k], Momentum[k]]*Pair[Momentum[p], Momentum[p]]*Pair[Momentum[p], Momentum[q]] - 2*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[p]]*Pair[Momentum[p], Momentum[q]] + Pair[Momentum[k], Momentum[k]]*Pair[Momentum[p], Momentum[q]]^2))/(p2*pq^2)
+
+J_A anti-b-line projected numerator:
+((4*I)*mb*mc*Pair[Momentum[p], Momentum[q]]^2)/(p2*pq^2) + ((2*I)*mb^2*(Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[p]] + 2*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[p], Momentum[q]]))/(p2*pq^2) - ((2*I)*(Pair[Momentum[k], Momentum[k]]*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[p]] + Pair[Momentum[k], Momentum[q]]^2*Pair[Momentum[p], Momentum[p]] - Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[p]]^2 + 2*Pair[Momentum[k], Momentum[k]]*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[p], Momentum[q]] - 4*Pair[Momentum[k], Momentum[p]]^2*Pair[Momentum[p], Momentum[q]] - 2*Pair[Momentum[k], Momentum[k]]*Pair[Momentum[p], Momentum[p]]*Pair[Momentum[p], Momentum[q]] + 4*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[p], Momentum[p]]*Pair[Momentum[p], Momentum[q]] + Pair[Momentum[k], Momentum[k]]*Pair[Momentum[p], Momentum[q]]^2 - 2*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[p], Momentum[q]]^2))/(p2*pq^2)
+
+J_A c-line triangle core:
+((-4*I)*mb*mc)/p2 + ((2*I)*mc^2)/p2 + ((4*I)*mc^2)/pq
+
+J_A anti-b-line triangle core:
+((-2*I)*mb^2)/p2 + ((4*I)*mb*mc)/p2 + ((4*I)*mb^2)/pq
+
+J_A total triangle core:
+((-2*I)*ebbar*mb^2)/p2 + ((4*I)*ebbar*mb*mc)/p2 - ((4*I)*ec*mb*mc)/p2 + ((2*I)*ec*mc^2)/p2 + ((4*I)*ebbar*mb^2)/pq + ((4*I)*ec*mc^2)/pq
+

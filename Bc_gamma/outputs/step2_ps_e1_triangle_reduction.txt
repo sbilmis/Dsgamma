@@ -1,0 +1,47 @@
+Bc1 -> Bc gamma E1 projection and triangle reduction
+====================================================
+
+Projector check S.P = 1
+
+J_A c-line projected numerator:
+((6*I)*mb*mc^2)/Pair[Momentum[p], Momentum[q]] - ((2*I)*mb*(2*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[k], Momentum[q]] + Pair[Momentum[k], Momentum[k]]*Pair[Momentum[p], Momentum[q]] + 2*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[q]]))/Pair[Momentum[p], Momentum[q]]^2 + ((4*I)*mc*(Pair[Momentum[k], Momentum[p]]*Pair[Momentum[k], Momentum[q]] - Pair[Momentum[k], Momentum[k]]*Pair[Momentum[p], Momentum[q]] + Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[q]] - Pair[Momentum[p], Momentum[q]]^2))/Pair[Momentum[p], Momentum[q]]^2
+
+J_A anti-b-line projected numerator:
+((-6*I)*mb^2*mc)/Pair[Momentum[p], Momentum[q]] - ((4*I)*mb*(Pair[Momentum[k], Momentum[p]]*Pair[Momentum[k], Momentum[q]] - Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[p]] - Pair[Momentum[k], Momentum[k]]*Pair[Momentum[p], Momentum[q]] + Pair[Momentum[k], Momentum[p]]*Pair[Momentum[p], Momentum[q]] + Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[q]]))/Pair[Momentum[p], Momentum[q]]^2 + ((2*I)*mc*(2*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[k], Momentum[q]] - 2*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[p]] + Pair[Momentum[k], Momentum[k]]*Pair[Momentum[p], Momentum[q]] - 4*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[p], Momentum[q]] + 2*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[q]] + 3*Pair[Momentum[p], Momentum[p]]*Pair[Momentum[p], Momentum[q]] - 2*Pair[Momentum[p], Momentum[q]]^2))/Pair[Momentum[p], Momentum[q]]^2
+
+J_B c-line projected numerator:
+((4*I)*mb*mc)/(mb + mc) + ((2*I)*mc^2*(Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[p]] + 2*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[p], Momentum[q]] + 3*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[q]] - 3*Pair[Momentum[p], Momentum[p]]*Pair[Momentum[p], Momentum[q]] - 3*Pair[Momentum[p], Momentum[q]]^2))/((mb + mc)*Pair[Momentum[p], Momentum[q]]^2) - ((2*I)*(Pair[Momentum[k], Momentum[k]]*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[p]] - 2*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[p]] + 2*Pair[Momentum[k], Momentum[k]]*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[p], Momentum[q]] + 3*Pair[Momentum[k], Momentum[k]]*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[q]] - 2*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[q]] - Pair[Momentum[k], Momentum[k]]*Pair[Momentum[p], Momentum[p]]*Pair[Momentum[p], Momentum[q]] - 2*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[p]]*Pair[Momentum[p], Momentum[q]] + Pair[Momentum[k], Momentum[k]]*Pair[Momentum[p], Momentum[q]]^2))/((mb + mc)*Pair[Momentum[p], Momentum[q]]^2)
+
+J_B anti-b-line projected numerator:
+((-4*I)*mb*mc)/(mb + mc) - ((2*I)*mb^2*(Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[p]] + 2*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[p], Momentum[q]] + 3*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[q]]))/((mb + mc)*Pair[Momentum[p], Momentum[q]]^2) + ((2*I)*(Pair[Momentum[k], Momentum[k]]*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[p]] - Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[p]]^2 + 2*Pair[Momentum[k], Momentum[k]]*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[p], Momentum[q]] - 4*Pair[Momentum[k], Momentum[p]]^2*Pair[Momentum[p], Momentum[q]] + 3*Pair[Momentum[k], Momentum[k]]*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[q]] - 4*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[q]] - 2*Pair[Momentum[k], Momentum[k]]*Pair[Momentum[p], Momentum[p]]*Pair[Momentum[p], Momentum[q]] + 4*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[p], Momentum[p]]*Pair[Momentum[p], Momentum[q]] + 3*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[p]]*Pair[Momentum[p], Momentum[q]] - 2*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[p], Momentum[q]]^2))/((mb + mc)*Pair[Momentum[p], Momentum[q]]^2)
+
+J_A c-line triangle core:
+(-4*I)*mc + ((4*I)*mb*mc^2)/pq - ((4*I)*mc^3)/pq
+
+J_A anti-b-line triangle core:
+(-4*I)*mb + ((4*I)*mb^3)/pq - ((4*I)*mb^2*mc)/pq
+
+J_A total triangle core:
+(-4*I)*ebbar*mb - (4*I)*ec*mc + ((4*I)*ebbar*mb^3)/pq - ((4*I)*ebbar*mb^2*mc)/pq + ((4*I)*ec*mb*mc^2)/pq - ((4*I)*ec*mc^3)/pq
+
+J_B c-line triangle core:
+((4*I)*mb*mc)/(mb + mc) - ((8*I)*mc^2)/(mb + mc) - ((4*I)*mc^2*p2)/((mb + mc)*pq)
+
+J_B anti-b-line triangle core:
+((-4*I)*mb*mc)/(mb + mc) - ((4*I)*mb^2*p2)/((mb + mc)*pq)
+
+J_B total triangle core:
+((-4*I)*ebbar*mb*mc)/(mb + mc) + ((4*I)*ec*mb*mc)/(mb + mc) - ((8*I)*ec*mc^2)/(mb + mc) - ((4*I)*ebbar*mb^2*p2)/((mb + mc)*pq) - ((4*I)*ec*mc^2*p2)/((mb + mc)*pq)
+
+J_A c-line denominator-cancellation part:
+((-I)*dC1*dC2*mb)/pq^2 + (I*dC2^2*mb)/pq^2 + (I*dC1*dC3*mb)/pq^2 - (I*dC2*dC3*mb)/pq^2 + (I*dC1*mb^3)/pq^2 - (I*dC2*mb^3)/pq^2 + (I*dC1*dC2*mc)/pq^2 - (I*dC2^2*mc)/pq^2 - (I*dC1*dC3*mc)/pq^2 + (I*dC2*dC3*mc)/pq^2 - (I*dC1*mb^2*mc)/pq^2 + (I*dC2*mb^2*mc)/pq^2 - (I*dC1*mb*mc^2)/pq^2 + (I*dC2*mb*mc^2)/pq^2 + (I*dC1*mc^3)/pq^2 - (I*dC2*mc^3)/pq^2 + (I*dC2*mb*p2)/pq^2 - (I*dC1*mb*(p2 + 2*pq))/pq^2 + (I*dC1*mc*(p2 + 2*pq))/pq^2 - (I*dC2*mc*(p2 + 6*pq))/pq^2
+
+J_A anti-b-line denominator-cancellation part:
+(I*dB1*dB2*mb)/pq^2 - (I*dB2^2*mb)/pq^2 - (I*dB1*dB3*mb)/pq^2 + (I*dB2*dB3*mb)/pq^2 - (I*dB2*mb^3)/pq^2 + (I*dB3*mb^3)/pq^2 - (I*dB1*dB2*mc)/pq^2 + (I*dB2^2*mc)/pq^2 + (I*dB1*dB3*mc)/pq^2 - (I*dB2*dB3*mc)/pq^2 + (I*dB2*mb^2*mc)/pq^2 - (I*dB3*mb^2*mc)/pq^2 + (I*dB2*mb*mc^2)/pq^2 - (I*dB3*mb*mc^2)/pq^2 - (I*dB2*mc^3)/pq^2 + (I*dB3*mc^3)/pq^2 + (I*dB2*mc*p2)/pq^2 - (I*dB2*mb*(p2 - 6*pq))/pq^2 + (I*dB3*mb*(p2 - 2*pq))/pq^2 - (I*dB3*mc*(p2 - 2*pq))/pq^2
+
+J_B c-line denominator-cancellation part:
+((-2*I)*dC1*dC2)/((mb + mc)*pq) - (I*dC1*dC3*(p2 + pq))/((mb + mc)*pq^2) - (I*dC1*mb^2*(p2 + pq))/((mb + mc)*pq^2) + (I*dC1*mc^2*(p2 + pq))/((mb + mc)*pq^2) - (I*dC2*(p2 + pq)*(p2 + 2*pq))/((mb + mc)*pq^2) + (I*dC2*dC3*(p2 + 3*pq))/((mb + mc)*pq^2) + (I*dC2*mb^2*(p2 + 3*pq))/((mb + mc)*pq^2) - (I*dC2*mc^2*(p2 + 3*pq))/((mb + mc)*pq^2) + (I*dC1*p2*(p2 + 3*pq))/((mb + mc)*pq^2)
+
+J_B anti-b-line denominator-cancellation part:
+((-I)*dB1*dB2*(p2 - pq))/((mb + mc)*pq^2) + (I*dB2*mb^2*(p2 - pq))/((mb + mc)*pq^2) - (I*dB2*mc^2*(p2 - pq))/((mb + mc)*pq^2) - (I*dB3*p2*(p2 - pq))/((mb + mc)*pq^2) - ((4*I)*dB2^2)/((mb + mc)*pq) + ((2*I)*dB2*dB3)/((mb + mc)*pq) + (I*dB1*dB3*(p2 + pq))/((mb + mc)*pq^2) - (I*dB3*mb^2*(p2 + pq))/((mb + mc)*pq^2) + (I*dB3*mc^2*(p2 + pq))/((mb + mc)*pq^2) + (I*dB2*(p2^2 - p2*pq + 6*pq^2))/((mb + mc)*pq^2)
+

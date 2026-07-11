@@ -149,3 +149,114 @@ The auxiliary file `Bc_gamma/scripts/stage0_e1_benchmark.py` produces a
 nonrelativistic E1 sanity check in `Bc_gamma/outputs/stage0_e1_benchmark.md`.
 It is useful only as a hierarchy check. It should not be quoted as the QCD
 sum-rule prediction.
+
+## 8. Stage-1 symbolic projection results
+
+### 8.1 \(B_{c1}\to B_c\gamma\)
+
+The script `Bc_gamma/scripts/step2_ps_e1_triangle_reduction.wl` projects the
+pseudoscalar final-state correlator onto
+\[
+S_{\mu\nu}=p_\nu q_\mu-(p\cdot q)g_{\mu\nu},\qquad
+P=p+q ,
+\]
+with projector \(S_{\mu\nu}/[2(p\cdot q)^2]\).  The FeynCalc check gives
+\[
+S_{\mu\nu}{\cal P}^{\mu\nu}=1.
+\]
+We denote \(p^2=p_2\) and \(p\cdot q=pq\).  The projected triangle-core
+numerators, after setting the inverse denominators to zero, are
+\[
+\begin{aligned}
+C_A^{(c)} &=
+-4i\,m_c+\frac{4i\,m_bm_c^2}{pq}-\frac{4i\,m_c^3}{pq},\\
+C_A^{(\bar b)} &=
+-4i\,m_b+\frac{4i\,m_b^3}{pq}-\frac{4i\,m_b^2m_c}{pq},
+\end{aligned}
+\]
+and therefore
+\[
+C_A=e_c C_A^{(c)}+e_{\bar b}C_A^{(\bar b)} .
+\]
+For the tensor current,
+\[
+\begin{aligned}
+C_B^{(c)} &=
+\frac{4i\,m_bm_c-8i\,m_c^2}{m_b+m_c}
+-\frac{4i\,m_c^2p_2}{(m_b+m_c)pq},\\
+C_B^{(\bar b)} &=
+-\frac{4i\,m_bm_c}{m_b+m_c}
+-\frac{4i\,m_b^2p_2}{(m_b+m_c)pq},
+\end{aligned}
+\]
+and
+\[
+C_B=e_c C_B^{(c)}+e_{\bar b}C_B^{(\bar b)} .
+\]
+The same output file also stores the denominator-cancellation terms. These
+terms should not be discarded automatically; they correspond to reduced
+two-denominator/contact contributions and must be either included in the
+dispersion analysis or shown to vanish under the chosen Borel projection.
+
+### 8.2 \(B_{c1}\to B_c^\ast\gamma\)
+
+For the vector final state the trace contains Levi-Civita structures.  The
+working gauge-invariant tensor is
+\[
+V_{\mu\nu\rho}
+=p_\nu\,\epsilon_{\mu\rho p q}
+-(p\cdot q)\,\epsilon_{\mu\nu\rho p}.
+\]
+It is transverse in the photon index for \(q^2=0\).  FeynCalc gives
+\[
+V_{\mu\nu\rho}V^{\mu\nu\rho}=-4p_2(pq)^2,\qquad
+V_{\mu\nu\rho}{\cal P}^{\mu\nu\rho}=1 .
+\]
+
+The split scripts
+`Bc_gamma/scripts/step2_vec_epsilon_A_reduction.wl` and
+`Bc_gamma/scripts/step2_vec_epsilon_B_reduction.wl` should be used instead of
+the all-in-one vector script because the tensor-current trace is much larger.
+The projected \(J_A\) triangle cores are
+\[
+\begin{aligned}
+C_{A,V}^{(c)} &=
+-\frac{4i\,m_bm_c}{p_2}
++\frac{2i\,m_c^2}{p_2}
++\frac{4i\,m_c^2}{pq},\\
+C_{A,V}^{(\bar b)} &=
+-\frac{2i\,m_b^2}{p_2}
++\frac{4i\,m_bm_c}{p_2}
++\frac{4i\,m_b^2}{pq}.
+\end{aligned}
+\]
+The tensor-current vector cores are
+\[
+\begin{aligned}
+C_{B,V}^{(c)} &=
+\frac{2i\,m_c}{m_b+m_c}
++\frac{2i\,m_b^2m_c-4i\,m_bm_c^2+2i\,m_c^3}
+       {(m_b+m_c)p_2}\\
+&\quad
+-\frac{4i\,m_bm_c^2-4i\,m_c^3}{(m_b+m_c)pq}
++\frac{2i\,m_c\,pq}{(m_b+m_c)p_2},\\
+C_{B,V}^{(\bar b)} &=
+\frac{2i\,m_b}{m_b+m_c}
++\frac{-6i\,m_b^3+4i\,m_b^2m_c+2i\,m_bm_c^2}
+       {(m_b+m_c)p_2}\\
+&\quad
+-\frac{4i\,m_b^3-4i\,m_b^2m_c}{(m_b+m_c)pq}
++\frac{2i\,m_b\,pq}{(m_b+m_c)p_2}.
+\end{aligned}
+\]
+Again \(C_{A,V}=e_c C_{A,V}^{(c)}+e_{\bar b}C_{A,V}^{(\bar b)}\) and
+\(C_{B,V}=e_c C_{B,V}^{(c)}+e_{\bar b}C_{B,V}^{(\bar b)}\).
+
+In the double-dispersion variables one should use
+\[
+P^2=p^2+2p\cdot q,\qquad pq=\frac{P^2-p^2}{2},
+\]
+before Borel transformation.  The diagonal single-variable reduction used in
+the strange-sector scripts is a useful calibration tool, but for \(B_c^\ast\)
+the additional \(1/p_2\) and \(pq/p_2\) structures mean that the double
+dispersion should be written explicitly before numerical work.
