@@ -39,6 +39,33 @@ J_{1\mu}=\sin\theta\,J_\mu^A+\cos\theta\,J_\mu^B,\qquad
 J_{2\mu}=\cos\theta\,J_\mu^A-\sin\theta\,J_\mu^B .
 \]
 
+This mixing is not optional in the physical amplitudes.  We derive the OPE for
+the basis currents \(J_A\) and \(J_B\) only because the traces are simpler and
+can be checked independently.  The physical invariant amplitudes are obtained
+afterward by the same rotation,
+\[
+\widehat\Pi_1=\sin\theta\,\widehat\Pi_A+\cos\theta\,\widehat\Pi_B,\qquad
+\widehat\Pi_2=\cos\theta\,\widehat\Pi_A-\sin\theta\,\widehat\Pi_B .
+\]
+For \(B_{c1}\to B_c\gamma\),
+\[
+g_i=
+\frac{m_b+m_c}{m_{B_c}^2 f_{B_c}\,m_i f_i}
+\exp\!\left(\frac{m_i^2}{M_1^2}+\frac{m_{B_c}^2}{M_2^2}\right)
+\widehat\Pi_i^{(P)},
+\]
+and for \(B_{c1}\to B_c^\ast\gamma\),
+\[
+g_i^\ast=
+\frac{1}{m_{B_c^\ast} f_{B_c^\ast}\,m_i f_i}
+\exp\!\left(\frac{m_i^2}{M_1^2}+\frac{m_{B_c^\ast}^2}{M_2^2}\right)
+\widehat\Pi_i^{(V)}.
+\]
+The pilot script applies this \(\sin\theta,\cos\theta\) rotation.  Its current
+simplification is not the mixing; it is the normalization, where a common
+benchmark \(f_{B_{c1}}=0.373~{\rm GeV}\) is used instead of separately
+extracted physical \(f_1\) and \(f_2\).
+
 The precise relation between these local currents and the nonrelativistic
 \({}^1P_1\)-\({}^3P_1\) basis must be checked carefully. For this reason the
 Stage-0 script below is only a quark-model sanity check, not the final sum-rule
@@ -319,7 +346,7 @@ Therefore the direct comparison is qualitative:
 
 | Quantity | Experiment | Present calculation |
 |---|---:|---:|
-| observed \(B_c(1P)^+\)-like structure | yes, \(>7\sigma\) in \(B_c^+\gamma\) | channels studied explicitly |
+| observed \(B_c(1P)^+\)-like structure | LHCb PRL 2025: yes, \(>7\sigma\) in \(B_c^+\gamma\) | channels studied explicitly |
 | lower peak location | \(6704.8\pm6.2~{\rm MeV}\) total in quadrature, plus correlations | input state \(6743~{\rm MeV}\) |
 | higher peak location | \(6752.4\pm10.0~{\rm MeV}\) total in quadrature, plus correlations | input state \(6750~{\rm MeV}\) |
 | partial widths | not measured | \(B_c\gamma\) baseline: \(0.108\) and \(29.6~{\rm keV}\) |
@@ -355,8 +382,44 @@ Our current comparison is
 
 | Channel | Other theory scale | This work | Interpretation |
 |---|---:|---:|---|
-| \(B_{c1}\to B_c\gamma\) | \(0\) to \(18.4~{\rm keV}\) for one quoted \(B_{c1}(1P)\) row | \(0.108~{\rm keV}\) for \(6743\), \(29.6~{\rm keV}\) for \(6750\) | same broad scale for the larger transition, but state assignment/mixing differs |
-| \(B_{c1}\to B_c^\ast\gamma\) | \(60\) to \(146~{\rm keV}\) | \(46.3~{\rm keV}\) for \(6743\), \(1.67~{\rm MeV}\) for \(6750\) | lower-state pilot is plausible; upper-state pilot is too large and flags unfinished vector normalization/double-Borel work |
+| \(B_{c1}\to B_c\gamma\) | Martín-González et al. and refs. therein: \(0\) to \(18.4~{\rm keV}\) for one quoted \(B_{c1}(1P)\) row | \(0.108~{\rm keV}\) for \(6743\), \(29.6~{\rm keV}\) for \(6750\) | same broad scale for the larger transition, but state assignment/mixing differs |
+| \(B_{c1}\to B_c^\ast\gamma\) | Martín-González et al. and refs. therein: \(60\) to \(146~{\rm keV}\) | \(46.3~{\rm keV}\) for \(6743\), \(1.67~{\rm MeV}\) for \(6750\) | lower-state pilot is plausible; upper-state pilot is too large and flags unfinished vector normalization/double-Borel work |
+
+A paper-style LaTeX version of the comparison table is
+
+```latex
+\begin{table}[t]
+\centering
+\caption{Comparison of the present \(B_{c1}\) radiative results with
+experiment and representative model predictions.  Experimental peak locations
+are from LHCb~\cite{LHCbBc1PObservation2025,LHCbBc1PStudy2025}.  The model
+ranges are collected from Ref.~\cite{MartinGonzalez2022}, which compares with
+Refs.~\cite{Godfrey2004,Ebert2003,EichtenQuigg1994}.}
+\begin{tabular}{lccc}
+\toprule
+Channel & Experiment & Other theory & This work\\
+\midrule
+\(B_{c1}(6743)\to B_c\gamma\)
+& no partial width
+& \(0\)--\(18.4~{\rm keV}\)
+& \(0.108[0.098,0.121]~{\rm keV}\)\\
+\(B_{c1}(6750)\to B_c\gamma\)
+& no partial width
+& \(0\)--\(18.4~{\rm keV}\)
+& \(29.6[25.9,35.3]~{\rm keV}\)\\
+\(B_{c1}(6743)\to B_c^\ast\gamma\)
+& no partial width
+& \(60\)--\(146~{\rm keV}\)
+& \(46.3[41.0,53.8]~{\rm keV}\)\\
+\(B_{c1}(6750)\to B_c^\ast\gamma\)
+& no partial width
+& \(60\)--\(146~{\rm keV}\)
+& \(1.67[1.43,2.04]\times10^3~{\rm keV}\)\\
+\bottomrule
+\end{tabular}
+\label{tab:bc1-radiative-comparison}
+\end{table}
+```
 
 The most important conclusion is not the numerical agreement yet; it is the
 diagnostic.  The \(B_c\gamma\) baseline can be used as a first result, while

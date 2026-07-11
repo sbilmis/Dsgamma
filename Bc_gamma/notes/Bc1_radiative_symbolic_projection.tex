@@ -54,6 +54,31 @@ The physical currents are
 J_{1\mu}=\sin\theta\,J_\mu^A+\cos\theta\,J_\mu^B,\qquad
 J_{2\mu}=\cos\theta\,J_\mu^A-\sin\theta\,J_\mu^B .
 \]
+This mixing is used at the invariant-amplitude level.  The OPE is first
+derived for the basis currents because the two Dirac traces are independent;
+the physical amplitudes are then
+\[
+\widehat\Pi_1=\sin\theta\,\widehat\Pi_A+\cos\theta\,\widehat\Pi_B,\qquad
+\widehat\Pi_2=\cos\theta\,\widehat\Pi_A-\sin\theta\,\widehat\Pi_B .
+\]
+For the pseudoscalar final state,
+\[
+g_i=
+\frac{m_b+m_c}{m_{\Bc}^2 f_{\Bc}\,m_i f_i}
+\exp\!\left(\frac{m_i^2}{M_1^2}+\frac{m_{\Bc}^2}{M_2^2}\right)
+\widehat\Pi_i^{(P)},
+\]
+while for the vector final state,
+\[
+g_i^\ast=
+\frac{1}{m_{\Bcst}f_{\Bcst}\,m_i f_i}
+\exp\!\left(\frac{m_i^2}{M_1^2}+\frac{m_{\Bcst}^2}{M_2^2}\right)
+\widehat\Pi_i^{(V)}.
+\]
+The pilot numerical script applies this rotation.  The temporary approximation
+is instead in the normalization: a common benchmark
+\(f_{\BcOne}=0.373~\GeV\) is used for both physical axial-vector residues,
+pending a separate \(f_1,f_2\) two-point extraction.
 
 The free heavy-quark propagator in momentum space is
 \[
@@ -264,7 +289,7 @@ analysis, including denominator-cancellation or contact terms.
 
 LHCb has observed a wide peaking structure in the \(\Bc^+\gamma\) mass
 spectrum with significance above seven standard deviations.  A minimal
-two-peak description gives
+two-peak description gives~\cite{LHCbBc1PObservation2025,LHCbBc1PStudy2025}
 \[
 M_1=6704.8\pm5.5\pm2.8\pm0.3~{\rm MeV},\qquad
 M_2=6752.4\pm9.5\pm3.1\pm0.3~{\rm MeV},
@@ -276,7 +301,8 @@ fit because they are small compared with the photon-energy resolution.
 
 \begin{table}[h]
 \centering
-\caption{Qualitative comparison with the current experimental information.}
+\caption{Qualitative comparison with the current experimental information
+from LHCb~\cite{LHCbBc1PObservation2025,LHCbBc1PStudy2025}.}
 \scriptsize
 \setlength{\tabcolsep}{4pt}
 \begin{tabular}{lll}
@@ -305,7 +331,8 @@ decays through \(\Bcst\gamma\), followed by an unreconstructed soft
 \(\Bcst\to\Bc\gamma\), can shift visible peaks by the unknown hyperfine
 splitting.
 
-For comparison with other theory, Martín-González et al. quote representative
+For comparison with other theory, Martín-González et al.~\cite{MartinGonzalez2022}
+quote representative
 quark-model E1 widths for the row labelled \(B_{c1}(1P)\):
 \[
 \Gamma[B_{c1}(1P)\to B_c\gamma]
@@ -313,7 +340,8 @@ quark-model E1 widths for the row labelled \(B_{c1}(1P)\):
 \qquad
 \Gamma[B_{c1}(1P)\to B_c^\ast\gamma]=146~{\rm keV}.
 \]
-Their table also lists earlier model values
+Their table also lists earlier model values from
+Refs.~\cite{Godfrey2004,Ebert2003,EichtenQuigg1994},
 \[
 \Gamma[B_{c1}(1P)\to B_c\gamma]=13,\ 18.4,\ 0.0~{\rm keV},
 \]
@@ -324,7 +352,9 @@ The comparison therefore reads as follows.
 
 \begin{table}[h]
 \centering
-\caption{Comparison with representative E1 model widths.}
+\caption{Comparison with representative E1 model widths.  The model range is
+collected from Ref.~\cite{MartinGonzalez2022}, which includes comparisons with
+Refs.~\cite{Godfrey2004,Ebert2003,EichtenQuigg1994}.}
 \scriptsize
 \setlength{\tabcolsep}{4pt}
 \begin{tabular}{p{0.23\textwidth}p{0.22\textwidth}p{0.25\textwidth}p{0.22\textwidth}}
@@ -393,5 +423,38 @@ Equivalently one may relabel the Feynman parameters after choosing a different
 loop momentum.  These forms make clear why the true radiative problem is a
 double-dispersion problem in \(p^2\) and \(P^2\), not simply the two-point mixing
 correlator with an extra charge factor.
+
+\begin{thebibliography}{9}
+
+\bibitem{LHCbBc1PObservation2025}
+R. Aaij et al. (LHCb Collaboration),
+``Observation of Orbitally Excited \(B_c^+\) States,''
+Phys. Rev. Lett. 135, 231902 (2025).
+
+\bibitem{LHCbBc1PStudy2025}
+R. Aaij et al. (LHCb Collaboration),
+``Study of \(B_c(1P)^+\) states in the \(B_c^+\gamma\) mass spectrum,''
+Phys. Rev. D 112, 112003 (2025).
+
+\bibitem{MartinGonzalez2022}
+B. Martín-González, P. G. Ortega, D. R. Entem,
+F. Fernández, and J. Segovia,
+``Towards the discovery of novel \(B_c\) states: radiative and hadronic
+transitions,''
+arXiv:2205.05950.
+
+\bibitem{Godfrey2004}
+S. Godfrey,
+Phys. Rev. D 70, 054017 (2004).
+
+\bibitem{Ebert2003}
+D. Ebert, R. N. Faustov, and V. O. Galkin,
+Phys. Rev. D 67, 014027 (2003).
+
+\bibitem{EichtenQuigg1994}
+E. J. Eichten and C. Quigg,
+Phys. Rev. D 49, 5845 (1994).
+
+\end{thebibliography}
 
 \end{document}
