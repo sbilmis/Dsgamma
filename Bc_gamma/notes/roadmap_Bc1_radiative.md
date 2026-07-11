@@ -792,3 +792,31 @@ For the current perturbative Monte Carlo central values, the conservative
 This table should be read as a conservative systematic bound, not as the final
 explicit radiative \(G^2\) correction.  It is enough, however, to decide that
 we should not simply drop \(G^2\) without comment.
+
+### 12.2 Denominator-reduced \(G^2\) inventory
+
+I also generated the denominator-reduced form of the complete projected
+radiative \(G^2\) numerator.  The scripts and outputs are
+
+- `Bc_gamma/scripts/step3_ps_g2_denominator_reduction.wl`;
+- `Bc_gamma/scripts/step3_ps_g2_denominator_reduction_summary.py`;
+- `Bc_gamma/outputs/step3_ps_g2_denominator_reduction.csv`;
+- `Bc_gamma/outputs/step3_ps_g2_denominator_reduction_summary.{txt,csv}`.
+
+The reduction expands each projected numerator in inverse propagator
+denominators \(d_1,d_2,d_3\), subtracting the numerator powers from the base
+propagator powers.  The audit gives
+
+- total denominator-reduced terms: \(747\);
+- terms with all effective denominator powers positive: \(375\);
+- contact/derivative-sector terms with at least one nonpositive effective
+  denominator power: \(372\).
+
+The contact/derivative sector is therefore not a small bookkeeping detail; it
+is roughly half of the complete reduced expression.  A numerical result based
+only on the all-positive sector would not be the full explicit radiative
+\(G^2\) correction.  The full calculation must apply the derivative
+double-Borel machinery to these contact terms, analogous in spirit to the
+direct-Borel treatment used in the \(B_c\)-mixing analysis for condensate
+terms.  Until that is done, the conservative \(G^2\) envelope above is the
+defensible numerical statement.
