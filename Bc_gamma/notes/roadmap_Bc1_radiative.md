@@ -558,6 +558,63 @@ normalization gives \(24.8[21.8,28.5]\) and \(120[104,137]\) keV for the two
 channels, respectively, and is kept in the CSV outputs only as a convention
 cross-check.
 
+The vector stability plots are produced by
+`Bc_gamma/scripts/bc_vec_complete_analysis.py`.  The main output figures are
+
+- `Bc_gamma/outputs/bc_vec_fbcstar_standard_M2_stability.pdf`;
+- `Bc_gamma/outputs/bc_vec_standard_g1_M2_stability.pdf`;
+- `Bc_gamma/outputs/bc_vec_standard_g2_M2_stability.pdf`;
+- `Bc_gamma/outputs/bc_vec_standard_gamma1_M2_stability.pdf`;
+- `Bc_gamma/outputs/bc_vec_standard_gamma2_M2_stability.pdf`.
+
+The standard-normalization grid is stable enough to quote as a leading
+baseline: the \(6743\) width varies from about \(66.7\) to \(80.9\) keV on the
+central \(3\times3\) grid, while the \(6750\) width varies from about \(310\)
+to \(406\) keV.  The larger \(6750\) width is therefore not a numerical
+instability of the chosen Borel window; it follows from the leading vector
+projection and mixing combination.
+
+### 9.2 Vector-channel \(G^2\)/contact screening
+
+For \(B_c^\ast\gamma\) the denominator of the sum rule contains both the
+physical axial residue \(f_i\) and the final-state vector decay constant
+\(f_{B_c^\ast}\).  Therefore the conservative condensate screen is slightly
+larger than in \(B_c\gamma\).  Using the same completed two-point
+\(G^2/{\rm pert}\) ratios from the \(B_c\)-mixing analysis, we estimate
+\[
+  \left|\frac{\delta g}{g}\right|
+  \lesssim
+  \left|\frac{\delta\Pi^{(3)}}{\Pi^{(3)}}\right|
+  +
+  \left|\frac{\delta f_i}{f_i}\right|
+  +
+  \left|\frac{\delta f_{B_c^\ast}}{f_{B_c^\ast}}\right|
+  \simeq
+  2\,\max\left|\frac{\Pi_{G^2}}{\Pi_{\rm pert}}\right|,
+\]
+and hence
+\[
+  \left|\frac{\delta\Gamma}{\Gamma}\right|
+  \lesssim
+  4\,\max\left|\frac{\Pi_{G^2}}{\Pi_{\rm pert}}\right|.
+\]
+This is only a screening envelope; it is not the explicit radiative
+\(G^2\)/contact calculation.
+
+For the preferred standard vector normalization the screen gives
+
+| Channel | perturbative width | median \(G^2\)/contact width envelope | max envelope |
+|---|---:|---:|---:|
+| \(B_{c1}(6743)\to B_c^\ast\gamma\) | \(74.3[65.3,85.5]~{\rm keV}\) | \(\pm 11.1~{\rm keV}\) | \(\pm 27.7~{\rm keV}\) |
+| \(B_{c1}(6750)\to B_c^\ast\gamma\) | \(360[312,412]~{\rm keV}\) | \(\pm 53.6~{\rm keV}\) | \(\pm 139~{\rm keV}\) |
+
+For the reference \(f_{B_c^\ast}=0.384\pm0.038~{\rm GeV}\) normalization the
+corresponding median envelopes are \(\pm14.3\) keV and \(\pm68.8\) keV.  These
+numbers are large enough that the vector channel should be described as a
+leading perturbative baseline with a condensate/contact systematic screen.
+They also explain why the \(6750\to B_c^\ast\gamma\) result should be treated
+with special caution until the explicit contact-sector reduction is completed.
+
 The script writes:
 
 - `Bc_gamma/outputs/bc1_twopoint_residue_grid.csv`

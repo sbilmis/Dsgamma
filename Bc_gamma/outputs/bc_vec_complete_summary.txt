@@ -21,3 +21,4 @@ standard_vector_invariant Bc1(6750)->Bc* gamma g2_GeV_inv: median=0.168, 16-84%=
 standard_vector_invariant Bc1(6750)->Bc* gamma Gamma2_keV: median=359.7, 16-84%=[311.8,411.9], range=[243.1,521.4]
 
 Status: perturbative hard-photon three-point OPE only; radiative G^2/contact terms are not included.
+Stability plots written for f_Bcstar, g1, g2 and the two vector widths.

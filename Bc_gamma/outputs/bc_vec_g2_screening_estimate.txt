@@ -1,0 +1,30 @@
+Bc1 -> Bc* gamma G2/contact screening estimate
+==============================================
+
+Purpose:
+- This is a conservative size screen, not the final radiative G2/contact calculation.
+- It uses the completed Bc-mixing two-point G2/Pert ratios in the same
+  M2={7,8,9} GeV^2 and s0={53,54,55} GeV^2 window.
+
+Rule used:
+- max two-point moment shift = max(|Pi_G2/Pi_pert|) over AA, AB, BB.
+- radiative shift proxy = max two-point moment shift.
+- axial residue shift proxy = 0.5 * max two-point moment shift.
+- Bc* residue shift proxy = 0.5 * max two-point moment shift.
+- conservative |delta g/g| envelope = 2 * max two-point moment shift.
+- conservative |delta Gamma/Gamma| envelope = 4 * max two-point moment shift.
+
+Normalization: reference_f_Bcstar_0p384
+- Bc1(6743)->Bc* gamma: |delta g/g| median=0.077, max=0.171; |delta Gamma/Gamma| median=0.154, max=0.343; Gamma envelope median=14.27 keV, max=35.53 keV.
+- Bc1(6750)->Bc* gamma: |delta g/g| median=0.077, max=0.171; |delta Gamma/Gamma| median=0.154, max=0.343; Gamma envelope median=68.77 keV, max=178.55 keV.
+
+Normalization: standard_vector_invariant
+- Bc1(6743)->Bc* gamma: |delta g/g| median=0.077, max=0.171; |delta Gamma/Gamma| median=0.154, max=0.343; Gamma envelope median=11.13 keV, max=27.71 keV.
+- Bc1(6750)->Bc* gamma: |delta g/g| median=0.077, max=0.171; |delta Gamma/Gamma| median=0.154, max=0.343; Gamma envelope median=53.63 keV, max=139.25 keV.
+
+Interpretation:
+- The vector channel is not protected from missing G2/contact terms.
+- The absolute envelope is especially large for Bc1(6750)->Bc* gamma because
+  the perturbative leading-vector width is already large.
+- Until the explicit vector G2/contact reduction is completed, the safest
+  wording is leading perturbative vector baseline plus this systematic screen.

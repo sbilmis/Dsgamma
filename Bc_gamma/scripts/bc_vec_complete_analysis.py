@@ -27,6 +27,8 @@ from pathlib import Path
 
 import numpy as np
 
+import matplotlib.pyplot as plt
+
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "outputs"
@@ -327,6 +329,44 @@ def summary_stats(vals):
     }
 
 
+def plot_stability(rows: list[dict], norm_label: str, key: str, ylabel: str, path: Path, title: str):
+    subset = [r for r in rows if r["normalization"] == norm_label]
+    plt.figure(figsize=(5.0, 3.6))
+    for s0 in sorted({r["s0"] for r in subset}):
+        sub = [r for r in subset if r["s0"] == s0]
+        sub.sort(key=lambda r: r["M2"])
+        plt.plot([r["M2"] for r in sub], [abs(r[key]) for r in sub], marker="o", label=fr"$s_0={s0:.0f}$")
+    plt.xlabel(r"$M^2\,[\mathrm{GeV}^2]$")
+    plt.ylabel(ylabel)
+    plt.text(0.04, 0.92, title, transform=plt.gca().transAxes)
+    plt.grid(alpha=0.25)
+    plt.legend(frameon=False, fontsize=9)
+    plt.tight_layout()
+    plt.savefig(path)
+    plt.close()
+
+
+def plot_fbcstar_stability(rows: list[dict], key: str, ylabel: str, path: Path):
+    plt.figure(figsize=(5.0, 3.6))
+    for s0v in sorted({r["s0_vector"] for r in rows}):
+        sub = [r for r in rows if r["s0_vector"] == s0v]
+        sub.sort(key=lambda r: r["M2_vector"])
+        plt.plot(
+            [r["M2_vector"] for r in sub],
+            [r[key] for r in sub],
+            marker="o",
+            label=fr"$s_{{0,V}}={s0v:.0f}$",
+        )
+    plt.xlabel(r"$M_V^2\,[\mathrm{GeV}^2]$")
+    plt.ylabel(ylabel)
+    plt.text(0.04, 0.92, r"$B_c^\ast$ two-point", transform=plt.gca().transAxes)
+    plt.grid(alpha=0.25)
+    plt.legend(frameon=False, fontsize=9)
+    plt.tight_layout()
+    plt.savefig(path)
+    plt.close()
+
+
 def run_grid(inp: Inputs):
     rows = []
     fstar_rows = []
@@ -479,6 +519,45 @@ def main():
             )
     write_csv(OUT / "bc_vec_complete_monte_carlo_summary.csv", mc_summary)
 
+    plot_fbcstar_stability(
+        fstar_rows,
+        "f_Bcstar_standard_GeV",
+        r"$f_{B_c^\ast}\,[\mathrm{GeV}]$",
+        OUT / "bc_vec_fbcstar_standard_M2_stability.pdf",
+    )
+    plot_stability(
+        grid_rows,
+        "standard_vector_invariant",
+        "g1_GeV_inv",
+        r"$|g_1|\,[\mathrm{GeV}^{-1}]$",
+        OUT / "bc_vec_standard_g1_M2_stability.pdf",
+        r"$B_{c1}(6743)\to B_c^\ast\gamma$",
+    )
+    plot_stability(
+        grid_rows,
+        "standard_vector_invariant",
+        "g2_GeV_inv",
+        r"$|g_2|\,[\mathrm{GeV}^{-1}]$",
+        OUT / "bc_vec_standard_g2_M2_stability.pdf",
+        r"$B_{c1}(6750)\to B_c^\ast\gamma$",
+    )
+    plot_stability(
+        grid_rows,
+        "standard_vector_invariant",
+        "Gamma1_keV",
+        r"$\Gamma\,[\mathrm{keV}]$",
+        OUT / "bc_vec_standard_gamma1_M2_stability.pdf",
+        r"$B_{c1}(6743)\to B_c^\ast\gamma$",
+    )
+    plot_stability(
+        grid_rows,
+        "standard_vector_invariant",
+        "Gamma2_keV",
+        r"$\Gamma\,[\mathrm{keV}]$",
+        OUT / "bc_vec_standard_gamma2_M2_stability.pdf",
+        r"$B_{c1}(6750)\to B_c^\ast\gamma$",
+    )
+
     lines = ["Leading Bc1 -> Bc* gamma summary", "=================================", ""]
     lines.append("Vector-current two-point normalization:")
     for item in fstar_summary:
@@ -496,6 +575,7 @@ def main():
         )
     lines.append("")
     lines.append("Status: perturbative hard-photon three-point OPE only; radiative G^2/contact terms are not included.")
+    lines.append("Stability plots written for f_Bcstar, g1, g2 and the two vector widths.")
     (OUT / "bc_vec_complete_summary.txt").write_text("\n".join(lines) + "\n")
     print("\n".join(lines))
 
