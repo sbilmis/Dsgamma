@@ -35,6 +35,7 @@ ROWS = [
         "This_work_lattice_theta_fixed": r"$23.0\,[16.5,35.1]$",
         "This_work_lattice_theta_scan": r"$22.3\,[10.6,41.8]$",
         "This_work_legacy_theta_fixed": r"$9.74\,[5.78,16.5]$",
+        "Experimental_status": r"no direct radiative measurement; $\Gamma_{\rm tot}(D_{s1}(2536))=0.92\pm0.05$ MeV",
     },
     {
         "sector": "Ds",
@@ -53,6 +54,7 @@ ROWS = [
         "This_work_lattice_theta_fixed": r"$92.3\,[59.7,138.7]$",
         "This_work_lattice_theta_scan": r"$93.1\,[57.1,145.1]$",
         "This_work_legacy_theta_fixed": r"$24.2\,[8.63,53.7]$",
+        "Experimental_status": r"no direct $D_s^\ast\gamma$ width; BaBar measured $D_s\gamma$ and $D_s^\ast\pi^0$ modes",
     },
     {
         "sector": "Bs",
@@ -71,6 +73,7 @@ ROWS = [
         "This_work_lattice_theta_fixed": r"$10.2\,[6.63,16.24]$",
         "This_work_lattice_theta_scan": r"$11.5\,[6.62,17.79]$",
         "This_work_legacy_theta_fixed": r"$1.89\,[0.471,5.11]$",
+        "Experimental_status": r"no established lower $B_{s1}$ state or radiative measurement",
     },
     {
         "sector": "Bs",
@@ -89,6 +92,7 @@ ROWS = [
         "This_work_lattice_theta_fixed": r"$7.46\,[3.30,24.0]$",
         "This_work_lattice_theta_scan": r"$2.55\,[0.805,9.75]$",
         "This_work_legacy_theta_fixed": r"$4.33\,[2.05,12.05]$",
+        "Experimental_status": r"no direct radiative measurement; observed in $B^{(*)}K$ spectroscopy",
     },
 ]
 
@@ -111,8 +115,8 @@ def make_latex():
         r"\caption{Representative comparison for vector-final-state radiative widths. Widths are in keV. The last column gives the present calibrated LCSR result with the preferred lattice photon normalization and fixed $\theta=35.3^\circ$; percentile intervals are shown in square brackets.}",
         r"\label{tab:vector-final-literature}",
         r"\begin{ruledtabular}",
-        r"\begin{tabular}{lccccccccc}",
-        r"Channel & \cite{Godfrey:2005ww} & \cite{Goity:2000dk} & \cite{Green:2016occ} & \cite{Radford:2009bs} & \cite{Chen:2020ejk} & \cite{Korner:1992pz} & \cite{Li:2021qgz,Godfrey:2016nwn,Lu:2016bbk} & \cite{Bondar:2025smw} & This work\\",
+        r"\begin{tabular}{lcccccccccp{0.25\textwidth}}",
+        r"Channel & \cite{Godfrey:2005ww} & \cite{Goity:2000dk} & \cite{Green:2016occ} & \cite{Radford:2009bs} & \cite{Chen:2020ejk} & \cite{Korner:1992pz} & \cite{Li:2021qgz,Godfrey:2016nwn,Lu:2016bbk} & \cite{Bondar:2025smw} & This work & Experiment\\",
         r"\hline",
     ]
     for r in ROWS:
@@ -130,6 +134,7 @@ def make_latex():
             bottom_group,
             r["BondarMilstein2025"],
             r["This_work_lattice_theta_fixed"],
+            r["Experimental_status"],
         ]
         lines.append(" & ".join(values) + r"\\")
     lines.extend(
@@ -155,8 +160,8 @@ def make_markdown_note():
         "",
         "Widths are in keV. `This work` uses the preferred lattice photon normalization.",
         "",
-        "| Channel | Literature pattern | Bondar-Milstein | This work |",
-        "|---|---:|---:|---:|",
+        "| Channel | Literature pattern | Bondar-Milstein | This work | Experimental status |",
+        "|---|---:|---:|---:|---|",
     ]
     for r in ROWS:
         if r["sector"] == "Ds":
@@ -180,7 +185,7 @@ def make_markdown_note():
             )
         lines.append(
             f"| {r['channel_plain']} | {lit} | {r['BondarMilstein2025']} | "
-            f"{r['This_work_lattice_theta_fixed']} |"
+            f"{r['This_work_lattice_theta_fixed']} | {r['Experimental_status']} |"
         )
     lines.extend(
         [
