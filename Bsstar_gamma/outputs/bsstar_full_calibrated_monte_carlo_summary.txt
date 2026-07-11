@@ -1,0 +1,81 @@
+Full calibrated Bs1 -> Bs* gamma Monte Carlo
+============================================
+N target=500 per state/scenario/ensemble; accepted=2904, rejected=1096.
+Uses f_Bs*=0.2615+-0.0336 GeV from the two-point vector-current baseline.
+
+B_{s1}(5750)
+  legacy_chi_condensate, theta_fixed, n=398
+    g_quoted: median -0.614 [-0.9771,-0.3016], mean -0.6458, std 0.371
+    Gamma_quoted_keV: median 1.894 [0.4712,5.106], mean 2.945, std 3.213
+    gB_soft: median -1.268 [-1.69,-0.912], mean -1.302, std 0.4
+    gB_hard: median 0.4974 [0.4157,0.6055], mean 0.5077, std 0.0986
+    gB_total: median -0.7575 [-1.149,-0.4562], mean -0.7942, std 0.3538
+    fV_Bsstar_GeV: median 0.2545 [0.2205,0.2927], mean 0.2559, std 0.03473
+    f1_GeV: median 0.4367 [0.3705,0.4875], mean 0.4288, std 0.05832
+    f2_GeV: median 0.2201 [0.1458,0.2891], mean 0.2173, std 0.07325
+  legacy_chi_condensate, theta_scan_25_45, n=342
+    g_quoted: median -0.6446 [-1.055,-0.3909], mean -0.7023, std 0.358
+    Gamma_quoted_keV: median 2.259 [0.8149,6.288], mean 3.359, std 3.486
+    gB_soft: median -1.258 [-1.679,-0.9618], mean -1.307, std 0.3747
+    gB_hard: median 0.4846 [0.3982,0.5895], mean 0.4953, std 0.0956
+    gB_total: median -0.7615 [-1.168,-0.5086], mean -0.8116, std 0.3357
+    fV_Bsstar_GeV: median 0.262 [0.2292,0.2969], mean 0.2614, std 0.03471
+    f1_GeV: median 0.4179 [0.3615,0.4696], mean 0.4142, std 0.05571
+    f2_GeV: median 0.2558 [0.1712,0.3131], mean 0.2432, std 0.07423
+  lattice_fperp_s, theta_fixed, n=402
+    g_quoted: median -1.383 [-1.727,-1.138], mean -1.45, std 0.3805
+    Gamma_quoted_keV: median 10.24 [6.631,16.24], mean 12.23, std 10.46
+    gB_soft: median -1.996 [-2.395,-1.712], mean -2.056, std 0.3703
+    gB_hard: median 0.4794 [0.4004,0.5743], mean 0.4888, std 0.0897
+    gB_total: median -1.529 [-1.845,-1.293], mean -1.568, std 0.2985
+    fV_Bsstar_GeV: median 0.2662 [0.2331,0.2939], mean 0.2645, std 0.03159
+    f1_GeV: median 0.4284 [0.3672,0.4773], mean 0.422, std 0.05738
+    f2_GeV: median 0.2287 [0.1418,0.2949], mean 0.2232, std 0.07645
+  lattice_fperp_s, theta_scan_25_45, n=327
+    g_quoted: median -1.449 [-1.791,-1.138], mean -1.495, std 0.4073
+    Gamma_quoted_keV: median 11.5 [6.617,17.79], mean 13.18, std 10.37
+    gB_soft: median -2.034 [-2.431,-1.66], mean -2.071, std 0.3894
+    gB_hard: median 0.488 [0.4082,0.5822], mean 0.4993, std 0.09246
+    gB_total: median -1.546 [-1.848,-1.26], mean -1.571, std 0.3145
+    fV_Bsstar_GeV: median 0.261 [0.2263,0.2966], mean 0.2621, std 0.03497
+    f1_GeV: median 0.417 [0.3555,0.4679], mean 0.4139, std 0.05772
+    f2_GeV: median 0.2467 [0.1672,0.3101], mean 0.241, std 0.07173
+
+B_{s1}(5830)
+  legacy_chi_condensate, theta_fixed, n=406
+    g_quoted: median 0.6661 [0.4588,1.11], mean 0.8224, std 0.5713
+    Gamma_quoted_keV: median 4.327 [2.049,12.05], mean 9.822, std 21.61
+    gB_soft: median -1.313 [-1.766,-0.9552], mean -1.353, std 0.3904
+    gB_hard: median 0.5088 [0.4229,0.5972], mean 0.5127, std 0.0912
+    gB_total: median -0.8049 [-1.2,-0.4987], mean -0.8401, std 0.3467
+    fV_Bsstar_GeV: median 0.2591 [0.226,0.2947], mean 0.2598, std 0.03285
+    f1_GeV: median 0.4429 [0.3846,0.4922], mean 0.4384, std 0.05573
+    f2_GeV: median 0.2116 [0.1296,0.2786], mean 0.2081, std 0.0749
+  legacy_chi_condensate, theta_scan_25_45, n=311
+    g_quoted: median 0.486 [0.3242,0.7996], mean 0.6188, std 0.6394
+    Gamma_quoted_keV: median 2.29 [1.033,6.197], mean 7.765, std 48.04
+    gB_soft: median -1.352 [-1.74,-0.9753], mean -1.366, std 0.3892
+    gB_hard: median 0.5079 [0.4338,0.6177], mean 0.5229, std 0.09619
+    gB_total: median -0.8211 [-1.189,-0.5006], mean -0.8427, std 0.3408
+    fV_Bsstar_GeV: median 0.263 [0.2327,0.298], mean 0.2629, std 0.03388
+    f1_GeV: median 0.4197 [0.3621,0.4685], mean 0.4141, std 0.05992
+    f2_GeV: median 0.2482 [0.1776,0.3101], mean 0.2432, std 0.07161
+  lattice_fperp_s, theta_fixed, n=387
+    g_quoted: median 0.8723 [0.5828,1.561], mean 1.12, std 0.9841
+    Gamma_quoted_keV: median 7.46 [3.304,24], mean 21.84, std 92.71
+    gB_soft: median -2.135 [-2.546,-1.818], mean -2.179, std 0.3899
+    gB_hard: median 0.5054 [0.4278,0.5926], mean 0.5141, std 0.09096
+    gB_total: median -1.626 [-1.965,-1.372], mean -1.665, std 0.3155
+    fV_Bsstar_GeV: median 0.2618 [0.2302,0.2939], mean 0.2625, std 0.03307
+    f1_GeV: median 0.4391 [0.3805,0.4887], mean 0.4346, std 0.05542
+    f2_GeV: median 0.2064 [0.1195,0.286], mean 0.2045, std 0.08021
+  lattice_fperp_s, theta_scan_25_45, n=331
+    g_quoted: median 0.5095 [0.2891,0.9999], mean 0.8051, std 1.424
+    Gamma_quoted_keV: median 2.549 [0.8048,9.748], mean 26.23, std 198
+    gB_soft: median -2.144 [-2.578,-1.774], mean -2.179, std 0.3986
+    gB_hard: median 0.5023 [0.421,0.6143], mean 0.5165, std 0.09836
+    gB_total: median -1.63 [-1.974,-1.366], mean -1.662, std 0.3135
+    fV_Bsstar_GeV: median 0.2635 [0.226,0.2991], mean 0.2625, std 0.03514
+    f1_GeV: median 0.4236 [0.3622,0.4749], mean 0.4191, std 0.06205
+    f2_GeV: median 0.2513 [0.1656,0.3099], mean 0.2412, std 0.07598
+
