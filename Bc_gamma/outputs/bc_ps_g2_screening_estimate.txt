@@ -1,0 +1,28 @@
+Bc1 -> Bc gamma G2 screening estimate
+======================================
+
+Purpose:
+- This is a conservative size screen, not the final radiative G2 calculation.
+- It uses the completed Bc-mixing two-point G2/Pert ratios in the same
+  M2={7,8,9} GeV^2 and s0={53,54,55} GeV^2 window.
+
+Rule used:
+- max two-point moment shift = max(|Pi_G2/Pi_pert|) over AA, AB, BB.
+- residue shift estimate = 0.5 * max two-point moment shift.
+- conservative |delta g/g| envelope = radiative shift + residue shift,
+  with the radiative shift provisionally taken as the same max two-point
+  ratio.
+- conservative |delta Gamma/Gamma| envelope = 2 |delta g/g|.
+
+Median conservative |delta g/g| envelope: 0.058
+Maximum conservative |delta g/g| envelope: 0.128
+Median conservative |delta Gamma/Gamma| envelope: 0.115
+Maximum conservative |delta Gamma/Gamma| envelope: 0.257
+
+Interpretation:
+- The screen is not small enough to justify silently dropping radiative G2
+  at publication level.
+- If the full three-point G2 reduction gives much smaller numbers, we can
+  then quote it as a checked negligible correction.
+- Until that explicit reduction is done, the safer statement is that the
+  present widths are leading-perturbative hard-QCDSR baselines.

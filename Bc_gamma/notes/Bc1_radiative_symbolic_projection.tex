@@ -627,6 +627,52 @@ next step is to perform the double-dispersion/double-Borel reduction and
 integrate the result over the same Borel and continuum-threshold windows used
 for the perturbative baseline.
 
+\subsection*{Conservative \(G^2\) Size Screen}
+
+Before completing the full derivative-delta reduction, we performed a
+conservative size screen using the completed \(B_c\)-mixing OPE convergence
+table in the same numerical window,
+\[
+M^2=\{7,8,9\}\,\GeV^2,\qquad
+s_0=\{53,54,55\}\,\GeV^2 .
+\]
+The script is \path{bc_ps_g2_screening_estimate.py}.  The corresponding CSV
+and text outputs are stored in the \path{Bc_gamma/outputs} directory.
+
+The screen defines
+\[
+\Delta_{\rm 2pt}^{G^2}=
+\max\left(
+\left|\frac{\Pi_{AA}^{G^2}}{\Pi_{AA}^{\rm pert}}\right|,
+\left|\frac{\Pi_{AB}^{G^2}}{\Pi_{AB}^{\rm pert}}\right|,
+\left|\frac{\Pi_{BB}^{G^2}}{\Pi_{BB}^{\rm pert}}\right|
+\right)
+\]
+from the \(B_c\)-mixing calculation.  Since \(f\sim\sqrt{\Pi}\), the
+normalization shift is estimated as
+\(\Delta_f\simeq \Delta_{\rm 2pt}^{G^2}/2\).  Taking the unknown radiative
+three-point \(G^2\) shift to be of the same size gives the conservative
+envelope
+\[
+\left|\frac{\delta g}{g}\right|_{\rm env}
+=\Delta_{\rm 2pt}^{G^2}+\frac{1}{2}\Delta_{\rm 2pt}^{G^2},
+\qquad
+\left|\frac{\delta\Gamma}{\Gamma}\right|_{\rm env}
+\simeq 2\left|\frac{\delta g}{g}\right|_{\rm env}.
+\]
+Numerically this gives a median conservative envelope
+\(|\delta g/g|_{\rm env}=0.058\) and
+\(|\delta\Gamma/\Gamma|_{\rm env}=0.115\), with maxima \(0.128\) and \(0.257\),
+respectively, over the grid.
+
+Therefore the screen is not small enough to justify silently dropping
+\(G^2\) at publication level.  It does not prove that the radiative
+three-point \(G^2\) correction is as large as the envelope; it shows that a
+few-percent amplitude effect is plausible in the same heavy-heavy OPE window.
+The safe statement is that the present widths are leading perturbative
+hard-QCDSR baselines until the explicit radiative \(G^2\) reduction is
+completed or bounded more sharply.
+
 \section{Reproduction Checklist for the Present Pilot}
 
 The current numbers can be reproduced in the following order.

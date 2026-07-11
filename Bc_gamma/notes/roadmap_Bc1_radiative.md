@@ -718,3 +718,56 @@ It is not yet a numerical correction to the decay width.  The next required
 step is double-dispersion/double-Borel reduction and numerical integration over
 the same Borel and continuum-threshold windows used in the perturbative
 baseline.
+
+### 12.1 Conservative \(G^2\) size screen
+
+Before doing the full derivative-delta reduction, I made a conservative size
+screen using the already completed \(B_c\)-mixing OPE convergence table in the
+same numerical window,
+\[
+M^2=\{7,8,9\}\ {\rm GeV}^2,\qquad s_0=\{53,54,55\}\ {\rm GeV}^2.
+\]
+The script is
+
+- `Bc_gamma/scripts/bc_ps_g2_screening_estimate.py`,
+
+and the outputs are
+
+- `Bc_gamma/outputs/bc_ps_g2_screening_estimate.csv`;
+- `Bc_gamma/outputs/bc_ps_g2_screening_estimate.txt`.
+
+The screen uses
+\[
+\Delta_{\rm 2pt}^{G^2}=
+\max\left(
+\left|{\Pi_{AA}^{G^2}\over\Pi_{AA}^{\rm pert}}\right|,
+\left|{\Pi_{AB}^{G^2}\over\Pi_{AB}^{\rm pert}}\right|,
+\left|{\Pi_{BB}^{G^2}\over\Pi_{BB}^{\rm pert}}\right|
+\right)
+\]
+from the \(B_c\)-mixing calculation.  Since the residue scales as
+\(f\sim \sqrt{\Pi}\), the residue-normalization shift is estimated as
+\(\Delta_f\simeq \Delta_{\rm 2pt}^{G^2}/2\).  The deliberately conservative
+coupling envelope is then
+\[
+\left|{\delta g\over g}\right|_{\rm env}
+=\Delta_{\rm 2pt}^{G^2}+{1\over2}\Delta_{\rm 2pt}^{G^2},
+\qquad
+\left|{\delta\Gamma\over\Gamma}\right|_{\rm env}
+\simeq 2\left|{\delta g\over g}\right|_{\rm env}.
+\]
+
+The result is:
+
+- median conservative \(|\delta g/g|\) envelope: \(0.058\);
+- maximum conservative \(|\delta g/g|\) envelope: \(0.128\);
+- median conservative \(|\delta\Gamma/\Gamma|\) envelope: \(0.115\);
+- maximum conservative \(|\delta\Gamma/\Gamma|\) envelope: \(0.257\).
+
+This is not small enough to justify silently dropping \(G^2\) at publication
+level.  It does not prove that the radiative \(G^2\) correction is this large;
+it says that, based on the same heavy-heavy OPE in the same Borel window, a
+few-percent amplitude correction is plausible and should be either calculated
+explicitly or bounded more sharply.  Therefore the controlled numbers should
+continue to be described as leading perturbative hard-QCDSR baselines until the
+full three-point \(G^2\) reduction is completed.
