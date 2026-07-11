@@ -937,6 +937,86 @@ direct-Borel treatment used in the \(B_c\)-mixing analysis for condensate
 terms.  Until that is done, the conservative \(G^2\) envelope above is the
 defensible numerical statement.
 
+### 12.3 Vector \(B_c^\ast\gamma\) denominator-reduced \(G^2\) inventory
+
+For the vector final state I repeated the same background-field numerator
+reduction with the gauge-invariant structure
+\[
+  V_{\mu\nu\rho}
+  =
+  p_\nu\,\epsilon_{\mu\rho pq}
+  -
+  (p\cdot q)\,\epsilon_{\mu\nu\rho p},
+  \qquad
+  V_{\mu\nu\rho}V^{\mu\nu\rho}=-4p^2(p\cdot q)^2 .
+\]
+The working projector is \(V_{\mu\nu\rho}/[V_{\alpha\beta\sigma}
+V^{\alpha\beta\sigma}]\).  This is the same tensor normalization used in the
+leading vector hard-photon calculation.
+
+The reproducible scripts are
+
+- `Bc_gamma/scripts/step3_vec_g2_denominator_reduction.wl`;
+- `Bc_gamma/scripts/step3_vec_g2_denominator_reduction_summary.py`.
+
+The generated outputs are
+
+- `Bc_gamma/outputs/step3_vec_g2_denominator_reduction.csv`;
+- `Bc_gamma/outputs/step3_vec_g2_denominator_reduction_summary.csv`;
+- `Bc_gamma/outputs/step3_vec_g2_denominator_reduction_summary.txt`.
+
+The vector reduction gives
+
+| Sector | Terms |
+|---|---:|
+| total reduced terms | \(1095\) |
+| all-positive effective denominator powers | \(538\) |
+| contact/derivative terms | \(557\) |
+
+Broken down by current:
+
+| Current | all-positive | contact/derivative |
+|---|---:|---:|
+| \(J^A_\mu\) | \(200\) | \(148\) |
+| \(J^B_\mu\) | \(338\) | \(409\) |
+
+Broken down by background-field class:
+
+| Class | all-positive | contact/derivative |
+|---|---:|---:|
+| single-line \(G^2\) | \(209\) | \(368\) |
+| open-pair \(GG\) | \(329\) | \(189\) |
+
+This is an important qualitative result.  In the vector channel the contact
+sector is not a correction to a correction; it is slightly larger than the
+ordinary all-positive sector.  The tensor current \(J^B_\mu\) is especially
+sensitive, with \(409\) contact/derivative rows.  Therefore the large
+\(B_{c1}(6750)\to B_c^\ast\gamma\) baseline must be presented with the
+screening envelope unless and until the derivative double-Borel maps are
+implemented term by term.
+
+For a student redoing this part, the checklist is:
+
+1. Reproduce the perturbative vector projector check
+   \(V_{\mu\nu\rho}V^{\mu\nu\rho}=-4p^2(p\cdot q)^2\).
+2. Replace one or two propagator numerators by the background-field pieces
+   \(S_Q^{(G^2)}\) and \(S_Q^{(G)}S_{Q'}^{(G)}\), keeping the two photon
+   topologies separate.
+3. Project onto \(V_{\mu\nu\rho}\).
+4. Rewrite scalar products using the denominator rules for the charm-photon
+   topology,
+   \[
+   k^2=d_2+m_c^2,\quad
+   k\cdot q={d_1-d_2\over2},\quad
+   k\cdot p={d_2+m_c^2+p^2-m_b^2-d_3\over2},
+   \]
+   and the corresponding anti-bottom-photon rules.
+5. For each term, subtract numerator powers of \(d_1,d_2,d_3\) from the base
+   propagator powers.  Positive effective powers are ordinary Schwinger terms;
+   nonpositive powers are contact/derivative terms.
+6. Do not discard the contact rows.  They are required for the full explicit
+   \(G^2\) correction.
+
 ## 13. Final comparison table artifact
 
 The current final comparison table is stored as
@@ -954,5 +1034,6 @@ It contains:
    Gershtein et al., T. Y. Li et al., Q. Li et al., X. J. Li et al.,
    Eichten--Quigg, and Bondar--Milstein;
 4. a separate status table for \(B_{c1}\to B_c^\ast\gamma\), where our QCDSR
-   calculation is intentionally marked as not finalized until the physical
-   tensor normalization and contact-term double-Borel analysis are completed.
+   calculation is presented as a leading perturbative vector baseline with the
+   \(f_{B_c^\ast}\) normalization audit and the conservative \(G^2\)/contact
+   screening envelope.

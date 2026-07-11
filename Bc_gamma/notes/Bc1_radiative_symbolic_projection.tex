@@ -833,6 +833,73 @@ the absence of that final derivative-contact reduction, the conservative
 envelope in Table~\ref{tab:bc-g2-envelope} is the defensible numerical
 statement.
 
+\subsection*{\texorpdfstring{\(\Bcst\gamma\)}{Bcstar gamma}
+Denominator-Reduced \(G^2\) Inventory}
+
+The same denominator-reduction audit was carried out for the vector final
+state.  The projected structure is
+\[
+  V_{\mu\nu\rho}
+  =
+  p_\nu\epsilon_{\mu\rho pq}
+  -
+  (p\cdot q)\epsilon_{\mu\nu\rho p},
+  \qquad
+  V_{\mu\nu\rho}V^{\mu\nu\rho}=-4p^2(p\cdot q)^2 .
+\]
+The script \path{step3_vec_g2_denominator_reduction.wl} replaces the
+appropriate propagator numerators by \(S_Q^{(G^2)}\) or by open one-gluon
+pieces \(S_Q^{(G)}S_{Q'}^{(G)}\), projects onto \(V_{\mu\nu\rho}\), and rewrites
+the result in powers of \(d_1,d_2,d_3\).  The summary script is
+\path{step3_vec_g2_denominator_reduction_summary.py}.
+
+The complete vector reduction contains 1095 terms:
+\[
+\begin{array}{c|c}
+\text{sector} & \text{number of terms}\\
+\hline
+\text{all-positive denominator powers} & 538\\
+\text{contact/derivative sector} & 557
+\end{array}
+\]
+By current, the split is
+\[
+\begin{array}{c|cc}
+\text{current} & \text{all-positive} & \text{contact/derivative}\\
+\hline
+J^A_\mu & 200 & 148\\
+J^B_\mu & 338 & 409
+\end{array}
+\]
+and by background-field class it is
+\[
+\begin{array}{c|cc}
+\text{class} & \text{all-positive} & \text{contact/derivative}\\
+\hline
+\text{single-line }G^2 & 209 & 368\\
+\text{open-pair }GG & 329 & 189
+\end{array}.
+\]
+Thus the contact/derivative sector is slightly larger than the ordinary
+positive-denominator sector in the vector channel.  This is why the
+\(\Bcst\gamma\) result should be quoted as a leading perturbative vector
+baseline with a \(G^2\)/contact systematic screen, rather than as a completed
+full-OPE prediction.
+
+For a student checking this calculation, the most useful debugging sequence is:
+\begin{enumerate}
+  \item verify the projector normalization
+  \(V_{\mu\nu\rho}V^{\mu\nu\rho}=-4p^2(p\cdot q)^2\);
+  \item reproduce one \(J^A_\mu\) single-line insertion before running all
+  topologies;
+  \item check the denominator substitutions separately for charm-photon and
+  anti-bottom-photon emission;
+  \item classify terms with effective powers \(n_i>0\) as ordinary Schwinger
+  terms and terms with at least one \(n_i\le0\) as contact/derivative terms;
+  \item do not remove the contact rows, since they are numerically numerous
+  and especially important in the tensor-current \(J^B_\mu\) part.
+\end{enumerate}
+
 \section{Reproduction Checklist for the Present Pilot}
 
 The current numbers can be reproduced in the following order.
@@ -867,10 +934,10 @@ The current numbers can be reproduced in the following order.
   \]
 \end{enumerate}
 At this stage the \(B_c\gamma\) entries are the controlled hard-photon
-baseline.  The \(B_c^\ast\gamma\) entries are useful diagnostics, but they
-should not be treated as final publication numbers until the physical
-\(1^+\to1^-\gamma\) tensor basis, the full double-Borel treatment, and the
-reduced-denominator/contact terms have been completed.
+baseline with a conservative \(G^2\) screen.  The \(B_c^\ast\gamma\) entries
+are leading perturbative vector baselines with a completed denominator-level
+\(G^2\)/contact inventory.  A full explicit vector \(G^2\) correction still
+requires the derivative double-Borel evaluation of the contact rows.
 
 \section{Next Step}
 

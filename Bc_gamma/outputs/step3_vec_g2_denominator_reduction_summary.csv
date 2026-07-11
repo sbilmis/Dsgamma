@@ -1,0 +1,17 @@
+topology,class,current,sector,count
+bbar_photon,open_pair_GG,A,all_positive,67
+bbar_photon,open_pair_GG,A,contact_or_derivative,29
+bbar_photon,open_pair_GG,B,all_positive,98
+bbar_photon,open_pair_GG,B,contact_or_derivative,67
+bbar_photon,single_line_G2,A,all_positive,33
+bbar_photon,single_line_G2,A,contact_or_derivative,45
+bbar_photon,single_line_G2,B,all_positive,73
+bbar_photon,single_line_G2,B,contact_or_derivative,140
+c_photon,open_pair_GG,A,all_positive,67
+c_photon,open_pair_GG,A,contact_or_derivative,29
+c_photon,open_pair_GG,B,all_positive,97
+c_photon,open_pair_GG,B,contact_or_derivative,64
+c_photon,single_line_G2,A,all_positive,33
+c_photon,single_line_G2,A,contact_or_derivative,45
+c_photon,single_line_G2,B,all_positive,70
+c_photon,single_line_G2,B,contact_or_derivative,138

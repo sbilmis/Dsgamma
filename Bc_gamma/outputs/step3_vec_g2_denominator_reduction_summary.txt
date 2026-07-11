@@ -1,0 +1,45 @@
+Bc1 -> Bc* gamma denominator-reduced G2 inventory
+=================================================
+
+Total reduced terms: 1095
+All-positive effective denominator powers: 538
+Contact/derivative sector terms: 557
+
+By current:
+- current A, all_positive: 200
+- current A, contact_or_derivative: 148
+- current B, all_positive: 338
+- current B, contact_or_derivative: 409
+
+By field-insertion class:
+- open_pair_GG, all_positive: 329
+- open_pair_GG, contact_or_derivative: 189
+- single_line_G2, all_positive: 209
+- single_line_G2, contact_or_derivative: 368
+
+Most common effective denominator powers:
+- (1, 2, 1): 78
+- (1, 1, 2): 68
+- (2, 1, 1): 67
+- (1, 3, 1): 55
+- (4, 0, 1): 42
+- (1, 0, 4): 42
+- (2, 0, 2): 42
+- (2, 1, 2): 40
+- (1, 1, 1): 38
+- (2, 2, 1): 37
+- (1, 2, 2): 36
+- (1, 1, 3): 30
+- (3, 1, 1): 29
+- (2, 0, 1): 24
+- (1, 0, 3): 22
+
+Interpretation:
+- The all-positive sector can be represented by ordinary Schwinger
+  parameters with positive powers.
+- The contact/derivative sector is sizeable and must be treated with
+  derivative double-Borel terms before one can quote a full explicit
+  vector radiative G2 correction.
+- This inventory is the completed algebraic reduction of the vector
+  G2 numerator; the remaining step is analytic/numeric evaluation of
+  the contact-sector Borel maps.
