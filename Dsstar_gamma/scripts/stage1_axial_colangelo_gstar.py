@@ -301,7 +301,8 @@ def central_inputs():
         "mA2": 2.53511,
         "mV": 2.1122,
         "fA": 0.225,
-        "fV": 0.272,
+        # Calculated in Dsstar_gamma/scripts/twopoint_vector_decay_constant.py.
+        "fV": 0.227,
         "f1": 0.345,
         "f2": 0.379,
         "ss": 0.8 * qq,

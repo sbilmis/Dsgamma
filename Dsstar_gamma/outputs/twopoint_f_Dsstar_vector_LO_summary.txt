@@ -1,0 +1,9 @@
+Two-point vector-current f_Ds* baseline
+=======================================
+LO transverse vector-current sum rule with rho_T(s)=s(1-z)^2(2+z)/(8 pi^2).
+This is a normalization baseline; NNLO/radiative corrections are not included.
+Window scanned: M^2=2.5...4.0 GeV^2, s0=6.5,7.0,7.5 GeV^2.
+Window envelope: f_Ds*=0.2119...0.2447 GeV.
+Central point M^2=3.25 GeV^2, s0=7.0 GeV^2: f_Ds*=0.2270 GeV.
+Assigned normalization input: f_Ds*=0.2270 +- 0.0280 GeV.
+Wrote grid to /Users/sbilmis/Dsgamma/Dsstar_gamma/outputs/twopoint_f_Dsstar_vector_LO.csv

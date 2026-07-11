@@ -4,14 +4,14 @@ The physical rows are axial-only: tensor-current J_B is not included yet.
 Windows used here: M^2 = 3.0...6.0 GeV^2, s0 = 7.5, 8.0, 8.5 GeV^2.
 
 project_inputs_positive_chi:
-  g_A* range -0.2082 to -0.1076
-  axial-only g_1*(2460) range -0.0785 to -0.0405; Gamma 0.052 to 0.196 keV
-  axial-only g_2*(2536) range -0.1009 to -0.0521; Gamma 0.146 to 0.548 keV
+  g_A* range -0.2495 to -0.1289
+  axial-only g_1*(2460) range -0.0940 to -0.0486; Gamma 0.075 to 0.282 keV
+  axial-only g_2*(2536) range -0.1209 to -0.0625; Gamma 0.210 to 0.786 keV
 
 project_inputs_printed_chi_sign_diagnostic:
-  g_A* range +0.8502 to +1.0560
-  axial-only g_1*(2460) range +0.3204 to +0.3980; Gamma 3.271 to 5.045 keV
-  axial-only g_2*(2536) range +0.4119 to +0.5116; Gamma 9.130 to 14.084 keV
+  g_A* range +1.0187 to +1.2653
+  axial-only g_1*(2460) range +0.3839 to +0.4768; Gamma 4.696 to 7.244 keV
+  axial-only g_2*(2536) range +0.4936 to +0.6131; Gamma 13.108 to 20.221 keV
 
 colangelo_like_positive_chi:
   g_A* range -0.2648 to -0.1451

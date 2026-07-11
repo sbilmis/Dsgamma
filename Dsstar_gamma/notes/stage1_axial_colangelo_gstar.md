@@ -127,10 +127,16 @@ For the project inputs and the rounded exploratory window
 s_0=7.5,8.0,8.5~{\rm GeV}^2,
 \]
 
+with the calculated two-point input
+
+\[
+f_{D_s^\ast}=0.227\pm0.028~{\rm GeV},
+\]
+
 the basis-current result is
 
 \[
-g_A^\ast=-0.208\ldots -0.108 .
+g_A^\ast=-0.250\ldots -0.129 .
 \]
 
 At the central point
@@ -139,7 +145,9 @@ At the central point
 M^2=4.5~{\rm GeV}^2,\qquad s_0=8.0~{\rm GeV}^2,
 \]
 
-the contribution breakdown is
+the contribution breakdown is unchanged on the QCD side, while the extracted
+coupling changes through the hadronic normalization.  The QCD-side contribution
+breakdown is
 
 \[
 \begin{array}{c|r}
@@ -174,33 +182,34 @@ Using
 
 \[
 \theta=35.3^\circ,\qquad f_A=0.225~{\rm GeV},\qquad
-f_1=0.345~{\rm GeV},\qquad f_2=0.379~{\rm GeV},
+f_{D_s^\ast}=0.227~{\rm GeV},\qquad f_1=0.345~{\rm GeV},\qquad
+f_2=0.379~{\rm GeV},
 \]
 
 the project-window axial-only ranges are
 
 \[
-g_1^\ast(2460)=-0.0785\ldots -0.0405,
+g_1^\ast(2460)=-0.0940\ldots -0.0486,
 \qquad
-\Gamma_{2460}^{A{\rm -only}}=0.052\ldots0.196~{\rm keV},
+\Gamma_{2460}^{A{\rm -only}}=0.075\ldots0.282~{\rm keV},
 \]
 
 \[
-g_2^\ast(2536)=-0.1009\ldots -0.0521,
+g_2^\ast(2536)=-0.1209\ldots -0.0625,
 \qquad
-\Gamma_{2536}^{A{\rm -only}}=0.146\ldots0.548~{\rm keV}.
+\Gamma_{2536}^{A{\rm -only}}=0.210\ldots0.786~{\rm keV}.
 \]
 
 At \(M^2=4.5~{\rm GeV}^2,\ s_0=8.0~{\rm GeV}^2\),
 
 \[
-g_1^\ast(2460)=-0.0506,\qquad
-\Gamma_{2460}^{A{\rm -only}}=0.0816~{\rm keV},
+g_1^\ast(2460)=-0.0606,\qquad
+\Gamma_{2460}^{A{\rm -only}}=0.117~{\rm keV},
 \]
 
 \[
-g_2^\ast(2536)=-0.0651,\qquad
-\Gamma_{2536}^{A{\rm -only}}=0.228~{\rm keV}.
+g_2^\ast(2536)=-0.0780,\qquad
+\Gamma_{2536}^{A{\rm -only}}=0.327~{\rm keV}.
 \]
 
 ## Width Formula
