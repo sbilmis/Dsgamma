@@ -1,0 +1,196 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage{hyperref}
+
+\newcommand{\Bc}{B_c}
+\newcommand{\Bcst}{B_c^\ast}
+\newcommand{\BcOne}{B_{c1}}
+\newcommand{\eps}{\epsilon}
+\newcommand{\Slash}[1]{\not{#1}}
+\newcommand{\GeV}{\mathrm{GeV}}
+
+\title{Symbolic Projection Notes for \texorpdfstring{\(\BcOne\to \Bc^{(\ast)}\gamma\)}{Bc1 to Bc gamma}}
+\author{Working notes}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Scope}
+
+These notes collect the compact FeynCalc projection results for the heavy-heavy
+channels
+\[
+\BcOne(6743)\to \Bc\gamma,\qquad
+\BcOne(6743)\to \Bcst\gamma,\qquad
+\BcOne(6750)\to \Bc\gamma,\qquad
+\BcOne(6750)\to \Bcst\gamma .
+\]
+The calculation is structurally different from the \(D_s\) and \(B_s\)
+light-cone sum rules.  In the \(B_c\) system both valence constituents are
+heavy, so the leading radiative OPE is a hard-photon heavy-heavy calculation.
+There is no light spectator line to be replaced by photon distribution
+amplitudes, and no \(\chi_s\langle\bar s s\rangle\) type term.
+
+\section{Currents and Propagators}
+
+For \(B_c^+\sim c\bar b\), we use
+\[
+j_5=\bar b\,i\gamma_5 c,\qquad
+j_\rho^V=\bar b\,\gamma_\rho c ,
+\]
+and the two axial basis currents
+\[
+J_\mu^A=\bar b\,\gamma_\mu\gamma_5 c,\qquad
+J_\mu^B=\frac{i}{m_b+m_c}\,
+\bar b\,\sigma_{\mu\alpha}P^\alpha\gamma_5 c,
+\qquad P=p+q .
+\]
+The physical currents are
+\[
+J_{1\mu}=\sin\theta\,J_\mu^A+\cos\theta\,J_\mu^B,\qquad
+J_{2\mu}=\cos\theta\,J_\mu^A-\sin\theta\,J_\mu^B .
+\]
+
+The free heavy-quark propagator in momentum space is
+\[
+S_Q^{(0)}(k)=\frac{i(\Slash{k}+m_Q)}{k^2-m_Q^2+i0},
+\qquad Q=c,b .
+\]
+The hard photon is included by inserting the electromagnetic vertex on either
+heavy line:
+\[
+S_Q^{(\gamma)}(k,k+q)=
+S_Q^{(0)}(k+q)\,i e_Q\gamma_\nu\epsilon^\nu\,S_Q^{(0)}(k).
+\]
+For the \(\bar b\) line it is convenient to use the effective antiquark charge
+\(e_{\bar b}=+e/3\), while \(e_c=+2e/3\).  Equivalently, one may keep
+\(e_b=-e/3\) and track the orientation of the antiquark line.  The scripts use
+\(e_{\bar b}\) explicitly.
+
+Thus, yes: this is the same heavy-heavy propagator logic as in a \(B_c\)-mixing
+sum-rule calculation.  The important difference from the strange-sector
+radiative calculation is that we do not insert a light-quark photon DA.  If we
+later include power corrections, the natural heavy-heavy correction is the
+background-gluon expansion of the heavy propagators, e.g. gluon-condensate
+terms, not strange-quark condensate photon DAs.
+
+\section{\texorpdfstring{\(\BcOne\to\Bc\gamma\)}{Bc1 to Bc gamma}: E1 Projection}
+
+For the pseudoscalar final state we project onto
+\[
+S_{\mu\nu}=p_\nu q_\mu-(p\cdot q)g_{\mu\nu},
+\qquad
+{\cal P}_{\mu\nu}=\frac{S_{\mu\nu}}{2(p\cdot q)^2}.
+\]
+FeynCalc gives the normalization check
+\[
+S_{\mu\nu}{\cal P}^{\mu\nu}=1 .
+\]
+We denote
+\[
+p^2=p_2,\qquad p\cdot q=pq .
+\]
+After rewriting loop scalar products in terms of inverse denominators and
+setting those denominators to zero, the projected triangle-core numerators are
+\[
+\begin{aligned}
+C_A^{(c)} &=
+-4i\,m_c+\frac{4i\,m_bm_c^2}{pq}-\frac{4i\,m_c^3}{pq},\\
+C_A^{(\bar b)} &=
+-4i\,m_b+\frac{4i\,m_b^3}{pq}-\frac{4i\,m_b^2m_c}{pq},
+\end{aligned}
+\]
+so that
+\[
+C_A=e_c C_A^{(c)}+e_{\bar b}C_A^{(\bar b)} .
+\]
+For the tensor current,
+\[
+\begin{aligned}
+C_B^{(c)} &=
+\frac{4i\,m_bm_c-8i\,m_c^2}{m_b+m_c}
+-\frac{4i\,m_c^2p_2}{(m_b+m_c)pq},\\
+C_B^{(\bar b)} &=
+-\frac{4i\,m_bm_c}{m_b+m_c}
+-\frac{4i\,m_b^2p_2}{(m_b+m_c)pq},
+\end{aligned}
+\]
+and
+\[
+C_B=e_c C_B^{(c)}+e_{\bar b}C_B^{(\bar b)} .
+\]
+
+The denominator-cancellation terms are stored in the corresponding output file.
+They should
+not be discarded automatically; they correspond to reduced two-denominator or
+contact contributions and must be treated in the dispersion/Borel analysis.
+
+\section{\texorpdfstring{\(\BcOne\to\Bcst\gamma\)}{Bc1 to Bcstar gamma}: Levi-Civita Projection}
+
+For the vector final state a useful gauge-invariant structure is
+\[
+V_{\mu\nu\rho}
+=p_\nu\,\eps_{\mu\rho p q}
+-(p\cdot q)\,\eps_{\mu\nu\rho p}.
+\]
+It is transverse in the photon index for \(q^2=0\).  The FeynCalc checks are
+\[
+V_{\mu\nu\rho}V^{\mu\nu\rho}=-4p_2(pq)^2,\qquad
+V_{\mu\nu\rho}{\cal P}^{\mu\nu\rho}=1 .
+\]
+
+The projected \(J_A\) triangle cores are
+\[
+\begin{aligned}
+C_{A,V}^{(c)} &=
+-\frac{4i\,m_bm_c}{p_2}
++\frac{2i\,m_c^2}{p_2}
++\frac{4i\,m_c^2}{pq},\\
+C_{A,V}^{(\bar b)} &=
+-\frac{2i\,m_b^2}{p_2}
++\frac{4i\,m_bm_c}{p_2}
++\frac{4i\,m_b^2}{pq}.
+\end{aligned}
+\]
+The tensor-current vector cores are
+\[
+\begin{aligned}
+C_{B,V}^{(c)} &=
+\frac{2i\,m_c}{m_b+m_c}
++\frac{2i\,m_b^2m_c-4i\,m_bm_c^2+2i\,m_c^3}
+       {(m_b+m_c)p_2} \\
+&\quad
+-\frac{4i\,m_bm_c^2-4i\,m_c^3}{(m_b+m_c)pq}
++\frac{2i\,m_c\,pq}{(m_b+m_c)p_2},\\
+C_{B,V}^{(\bar b)} &=
+\frac{2i\,m_b}{m_b+m_c}
++\frac{-6i\,m_b^3+4i\,m_b^2m_c+2i\,m_bm_c^2}
+       {(m_b+m_c)p_2} \\
+&\quad
+-\frac{4i\,m_b^3-4i\,m_b^2m_c}{(m_b+m_c)pq}
++\frac{2i\,m_b\,pq}{(m_b+m_c)p_2}.
+\end{aligned}
+\]
+Again,
+\[
+C_{A,V}=e_c C_{A,V}^{(c)}+e_{\bar b}C_{A,V}^{(\bar b)},\qquad
+C_{B,V}=e_c C_{B,V}^{(c)}+e_{\bar b}C_{B,V}^{(\bar b)} .
+\]
+
+\section{Next Step}
+
+The double-dispersion variables satisfy
+\[
+P^2=p^2+2p\cdot q,\qquad pq=\frac{P^2-p^2}{2}.
+\]
+For \(\Bc\gamma\), the structure is close to the strange-sector E1 case, but
+with two heavy masses.  For \(\Bcst\gamma\), the additional \(1/p_2\) and
+\(pq/p_2\) structures mean that the double dispersion should be written
+explicitly before numerical Borel analysis.  A diagonal single-variable
+replacement can be useful as a calibration check, but it should not be the final
+derivation for the vector final state.
+
+\end{document}
