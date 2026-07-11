@@ -1,0 +1,33 @@
+Soft two-particle DA epsilon projection for Ds1 -> Ds* gamma
+============================================================
+
+Target tensor: Eps[mu,nu,beta,q]
+Target norm:
+-6*Pair[Momentum[p], Momentum[q]]
+
+Tensor DA A projection:
+-8*mQ
+
+Tensor DA B projection:
+(-6*Pair[Momentum[k], Momentum[p]])/(mQ + ms) - (2*Pair[Momentum[k], Momentum[P]])/(3*(mQ + ms)) - (14*Pair[Momentum[k], Momentum[q]])/(3*(mQ + ms)) - (4*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[P], Momentum[q]])/(3*(mQ + ms)*Pair[Momentum[p], Momentum[q]])
+
+Tensor DA B/A ratio:
+((9*Pair[Momentum[k], Momentum[p]] + Pair[Momentum[k], Momentum[P]] + 7*Pair[Momentum[k], Momentum[q]])*Pair[Momentum[p], Momentum[q]] + 2*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[P], Momentum[q]])/(12*mQ*(mQ + ms)*Pair[Momentum[p], Momentum[q]])
+
+Vector DA A projection:
+((-4*I)*Pair[Momentum[k], Momentum[p]])/Pair[Momentum[p], Momentum[q]]
+
+Vector DA B projection:
+((-4*I)*mQ*Pair[Momentum[p], Momentum[P]])/((mQ + ms)*Pair[Momentum[p], Momentum[q]])
+
+Vector DA B/A ratio:
+(mQ*Pair[Momentum[p], Momentum[P]])/((mQ + ms)*Pair[Momentum[k], Momentum[p]])
+
+Axial DA A projection:
+0
+
+Axial DA B projection:
+(-4*mQ*Pair[Momentum[k], Momentum[P]])/(3*(mQ + ms)) + (4*mQ*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[P], Momentum[q]])/(3*(mQ + ms)*Pair[Momentum[p], Momentum[q]])
+
+Axial DA B/A ratio:
+ComplexInfinity

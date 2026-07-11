@@ -1,0 +1,42 @@
+Soft tensor-current correction for Ds1 -> Ds* gamma
+===================================================
+N=500 per scenario/ensemble.
+Includes soft photon-DA tensor-current correction using FeynCalc projection ratios.
+Does not include the hard-photon tensor-current double spectral density.
+
+legacy_chi_condensate, theta_fixed, n=500
+  gB_soft: median -0.8874 [-1.207,-0.6154], mean -0.9078, std 0.307
+  ratio_tensor_da: median 3.118 [3.025,3.208], mean 3.119, std 0.09111
+  ratio_vector_da: median 1.008 [1,1.016], mean 1.008, std 0.008096
+  g1_2460_softAB: median -1.045 [-1.481,-0.6359], mean -1.06, std 0.4538
+  Gamma2460_softAB_keV: median 34.96 [13,70.2], mean 42.36, std 34.31
+  g2_2536_softAB: median 0.538 [0.4201,0.6886], mean 0.5538, std 0.1329
+  Gamma2536_softAB_keV: median 15.58 [9.477,25.49], mean 17.45, std 8.58
+
+legacy_chi_condensate, theta_scan_25_45, n=500
+  gB_soft: median -0.893 [-1.224,-0.6525], mean -0.927, std 0.2967
+  ratio_tensor_da: median 3.115 [3.024,3.209], mean 3.12, std 0.09529
+  ratio_vector_da: median 1.008 [1,1.016], mean 1.008, std 0.008406
+  g1_2460_softAB: median -1.063 [-1.517,-0.7034], mean -1.095, std 0.4398
+  Gamma2460_softAB_keV: median 35.84 [15.71,73.72], mean 44.31, std 34.52
+  g2_2536_softAB: median 0.5241 [0.3818,0.7122], mean 0.5456, std 0.1758
+  Gamma2536_softAB_keV: median 14.83 [7.824,27.24], mean 17.67, std 11.72
+
+lattice_fperp_s, theta_fixed, n=500
+  gB_soft: median -1.502 [-1.779,-1.239], mean -1.509, std 0.2865
+  ratio_tensor_da: median 3.115 [3.019,3.219], mean 3.12, std 0.09723
+  ratio_vector_da: median 1.008 [0.999,1.016], mean 1.008, std 0.008514
+  g1_2460_softAB: median -1.891 [-2.248,-1.505], mean -1.877, std 0.407
+  Gamma2460_softAB_keV: median 113.4 [71.94,161.2], mean 117.5, std 49.14
+  g2_2536_softAB: median 0.7596 [0.6377,0.9399], mean 0.7851, std 0.1541
+  Gamma2536_softAB_keV: median 31.02 [21.9,47.62], mean 34.44, std 14.09
+
+lattice_fperp_s, theta_scan_25_45, n=500
+  gB_soft: median -1.49 [-1.812,-1.247], mean -1.523, std 0.2974
+  ratio_tensor_da: median 3.114 [3.007,3.219], mean 3.115, std 0.1042
+  ratio_vector_da: median 1.009 [0.9999,1.017], mean 1.008, std 0.008318
+  g1_2460_softAB: median -1.872 [-2.302,-1.494], mean -1.889, std 0.4364
+  Gamma2460_softAB_keV: median 111.6 [71.16,169.3], mean 119.7, std 55.36
+  g2_2536_softAB: median 0.7242 [0.5408,0.9802], mean 0.7593, std 0.2359
+  Gamma2536_softAB_keV: median 28.23 [15.7,51.57], mean 34.01, std 21.64
+
