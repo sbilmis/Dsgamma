@@ -820,3 +820,23 @@ double-Borel machinery to these contact terms, analogous in spirit to the
 direct-Borel treatment used in the \(B_c\)-mixing analysis for condensate
 terms.  Until that is done, the conservative \(G^2\) envelope above is the
 defensible numerical statement.
+
+## 13. Final comparison table artifact
+
+The current final comparison table is stored as
+
+- `Bc_gamma/notes/Bc1_final_comparison_table.tex`;
+- `Bc_gamma/notes/Bc1_final_comparison_table.pdf`.
+
+It contains:
+
+1. the controlled \(B_{c1}\to B_c\gamma\) predictions with the conservative
+   \(G^2\) systematic envelope;
+2. the LHCb experimental status, emphasizing that the \(B_c^+\gamma\) structure
+   is observed but the individual radiative partial widths are not measured;
+3. separate theoretical values from Godfrey, Ebert--Faustov--Galkin, Fulcher,
+   Gershtein et al., T. Y. Li et al., Q. Li et al., X. J. Li et al.,
+   Eichten--Quigg, and Bondar--Milstein;
+4. a separate status table for \(B_{c1}\to B_c^\ast\gamma\), where our QCDSR
+   calculation is intentionally marked as not finalized until the physical
+   tensor normalization and contact-term double-Borel analysis are completed.
