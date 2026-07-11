@@ -158,3 +158,18 @@ LCSR setup used here:
 The most conservative wording in a paper is to call this a **calibrated
 hard-density implementation** and to explain that the axial channel is used as
 the normalization check for the hard triangle reduction.
+
+## Literature Table
+
+A publication-ready comparison table for the vector-final-state channels is
+stored in
+
+```text
+outputs/vector_final_state_literature_comparison_table.tex
+outputs/vector_final_state_literature_comparison.csv
+```
+
+The table compares the present \(D_s^\ast\gamma\) results with the values
+collected by Bondar--Milstein from
+Godfrey, Goity--Roberts, Green--Repko--Radford, Radford--Repko--Saelim,
+Chen et al., and Korner--Pirjol--Schilcher.

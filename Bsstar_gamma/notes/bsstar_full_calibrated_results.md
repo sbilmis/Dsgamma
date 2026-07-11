@@ -152,3 +152,13 @@ Bsstar_gamma/outputs/bsstar_full_calibrated_monte_carlo_summary.csv
 Bsstar_gamma/outputs/bsstar_full_calibrated_monte_carlo_summary.txt
 Bsstar_gamma/outputs/bsstar_full_calibrated_histograms.pdf
 ```
+
+The publication comparison table is stored in
+
+```text
+outputs/vector_final_state_literature_comparison_table.tex
+outputs/vector_final_state_literature_comparison.csv
+```
+
+For the bottom rows the literature comparison uses Li--Ni--Zhong,
+Godfrey--Moats--Swanson, Lu--Pan--Wang--Wang--Li, and Bondar--Milstein.
