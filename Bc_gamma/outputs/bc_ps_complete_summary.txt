@@ -1,0 +1,15 @@
+Controlled Bc1 -> Bc gamma summary
+====================================
+
+Two-point residue grid (perturbative Bc-mixing moment):
+theta_deg: median=43.29, 16-84%=[43.1,43.44], range=[42.97,43.58]
+f1_GeV: median=0.2636, 16-84%=[0.2588,0.2687], range=[0.2546,0.2727]
+f2_GeV: median=0.7219, 16-84%=[0.709,0.7383], range=[0.6952,0.7499]
+
+Monte Carlo radiative results, leading perturbative three-point OPE:
+Bc1(6743)->Bc gamma g1_GeV_inv: median=0.03155, 16-84%=[0.02685,0.03701], range=[0.01956,0.05206]
+Bc1(6743)->Bc gamma Gamma1_keV: median=0.2233, 16-84%=[0.1618,0.3075], range=[0.0859,0.6081]
+Bc1(6750)->Bc gamma g2_GeV_inv: median=-0.1843, 16-84%=[-0.205,-0.1673], range=[-0.28,-0.1401]
+Bc1(6750)->Bc gamma Gamma2_keV: median=8.007, 16-84%=[6.599,9.902], range=[4.627,18.47]
+
+Radiative condensate status: not included; requires a separate three-point background-field derivation.

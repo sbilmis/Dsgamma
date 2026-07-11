@@ -16,3 +16,12 @@ for strange spectators are not present as leading nonperturbative input here.
 The notes in `notes/` track the physics decisions and the derivation. Scripts in
 `scripts/` are for reproducible numerical checks and tables.
 
+Current controlled pseudoscalar-channel driver:
+
+- `scripts/bc_ps_complete_analysis.py`
+
+This script recomputes the \(B_{c1}\to B_c\gamma\) hard-photon baseline with
+physical two-point residues \(f_1\) and \(f_2\), exports stability/Monte Carlo
+tables, and writes publication-style PDF plots into `outputs/`.  The
+\(B_c^\ast\gamma\) channel remains diagnostic until its tensor-basis and
+contact-term audit is completed.

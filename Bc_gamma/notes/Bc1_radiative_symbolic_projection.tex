@@ -75,10 +75,9 @@ g_i^\ast=
 \exp\!\left(\frac{m_i^2}{M_1^2}+\frac{m_{\Bcst}^2}{M_2^2}\right)
 \widehat\Pi_i^{(V)}.
 \]
-The pilot numerical script applies this rotation.  The temporary approximation
-is instead in the normalization: a common benchmark
-\(f_{\BcOne}=0.373~\GeV\) is used for both physical axial-vector residues,
-pending a separate \(f_1,f_2\) two-point extraction.
+The updated \(B_c\gamma\) script applies this rotation with physical
+two-point residues \(f_1\) and \(f_2\).  The vector \(B_c^\ast\gamma\) entries
+remain diagnostic until their tensor-basis normalization is audited.
 
 The free heavy-quark propagator in momentum space is
 \[
@@ -320,13 +319,14 @@ C_{A,V}=e_c C_{A,V}^{(c)}+e_{\bar b}C_{A,V}^{(\bar b)},\qquad
 C_{B,V}=e_c C_{B,V}^{(c)}+e_{\bar b}C_{B,V}^{(\bar b)} .
 \]
 
-\section{First Numerical Hard-Photon Pass}
+\section{Controlled \texorpdfstring{\(\Bc\gamma\)}{Bc gamma} Pass}
 
 The script
-\path{Bc_gamma/scripts/bc_radiative_pilot_sumrule.py}
-uses the compact triangle cores above to produce a first hard-photon numerical
-estimate.  For this pass we use the same central heavy-quark inputs and Borel
-window as the submitted \(B_c\)-mixing analysis,
+\path{Bc_gamma/scripts/bc_ps_complete_analysis.py}
+uses the compact \(B_c\gamma\) triangle cores above and replaces the earlier
+common axial-vector normalization by physical two-point residues.  We use the
+same central heavy-quark inputs and Borel window as the submitted
+\(B_c\)-mixing analysis,
 \[
 m_b=4.18~\GeV,\qquad m_c=1.27~\GeV,\qquad
 \theta=43.3^\circ,
@@ -334,27 +334,45 @@ m_b=4.18~\GeV,\qquad m_c=1.27~\GeV,\qquad
 more precisely \(\theta_{\rm mean}=43.295^\circ\) with
 \(\sigma_\theta=0.151^\circ\) and \(16\)--\(84\%\) interval
 \([43.147^\circ,43.455^\circ]\) from the \(B_c\)-mixing Monte Carlo.  The
-pilot table uses the rounded central value \(43.3^\circ\); the \(\theta\)
-uncertainty is not yet included in the quoted radiative intervals.
+updated Monte Carlo samples this \(\theta\) distribution.
 \[
 M^2=\{7,8,9\}~\GeV^2,\qquad s_0=\{53,54,55\}~\GeV^2.
 \]
-The decay-constant inputs are
+The pseudoscalar decay-constant benchmark is
 \[
-f_{\Bc}=0.371~\GeV,\qquad
-f_{\Bcst}=0.384~\GeV,\qquad
-f_{\BcOne}=0.373~\GeV .
+f_{\Bc}=0.371\pm0.037~\GeV .
 \]
-The first two are standard external benchmark inputs.  The last is a common
-axial-vector benchmark used only for this first pass; separate physical
-\(f_1\) and \(f_2\) residues have not yet been extracted from a two-point
-mixed-current \(B_c\) sum rule in this folder.
+The physical axial-vector residues are extracted from the same two-point
+\(B_c\)-mixing basis.  With \(s_\theta=\sin\theta\) and
+\(c_\theta=\cos\theta\),
+\[
+\Pi_1=s_\theta^2\Pi_{AA}+2s_\theta c_\theta\Pi_{AB}
+      +c_\theta^2\Pi_{BB},\qquad
+\Pi_2=c_\theta^2\Pi_{AA}-2s_\theta c_\theta\Pi_{AB}
+      +s_\theta^2\Pi_{BB},
+\]
+and
+\[
+f_i(M^2,s_0)=
+\left[
+\frac{e^{m_i^2/M^2}\Pi_i(M^2,s_0)}{m_i^2}
+\right]^{1/2}.
+\]
+Using the perturbative heavy-heavy two-point spectral densities over the
+window above gives
+\[
+f_1=0.264^{+0.005}_{-0.005}~\GeV,\qquad
+f_2=0.722^{+0.016}_{-0.013}~\GeV
+\]
+from the \(16\)--\(84\%\) grid interval.  This replaces the older common
+benchmark \(f_{\BcOne}=0.373~\GeV\).
 
 \begin{table}[h]
 \centering
-\caption{Pilot hard-photon results in the \(B_c\) sector.  The intervals show
-the envelope over \(M^2=\{7,8,9\}~\GeV^2\) and
-\(s_0=\{53,54,55\}~\GeV^2\).}
+\caption{Updated \(B_c\gamma\) results with physical two-point residues.  The
+quoted intervals are the Monte Carlo \(16\)--\(84\%\) ranges over
+\(m_b,m_c,M^2,s_0,\theta,f_{B_c}\), with \(f_1,f_2\) recomputed from the
+two-point perturbative moments.}
 \scriptsize
 \setlength{\tabcolsep}{3pt}
 \begin{tabular}{p{0.24\textwidth}p{0.18\textwidth}p{0.29\textwidth}p{0.15\textwidth}}
@@ -362,13 +380,13 @@ the envelope over \(M^2=\{7,8,9\}~\GeV^2\) and
 Channel & Status & Coupling/projection coefficient & \(\Gamma\) (keV)\\
 \midrule
 \(\BcOne(6743)\to\Bc\gamma\)
-& hard-QCDSR baseline
-& \(+0.0219\,[0.0209,0.0232]~\GeV^{-1}\)
-& \(0.108\,[0.098,0.121]\)\\
+& controlled \(B_c\gamma\)
+& \(+0.0315\,[0.0269,0.0370]~\GeV^{-1}\)
+& \(0.223\,[0.162,0.307]\)\\
 \(\BcOne(6750)\to\Bc\gamma\)
-& hard-QCDSR baseline
-& \(-0.354\,[-0.387,-0.331]~\GeV^{-1}\)
-& \(29.6\,[25.9,35.3]\)\\
+& controlled \(B_c\gamma\)
+& \(-0.184\,[-0.205,-0.167]~\GeV^{-1}\)
+& \(8.01\,[6.60,9.90]\)\\
 \(\BcOne(6743)\to\Bcst\gamma\)
 & diagonal vector pilot
 & \(-0.0620\,[-0.0669,-0.0583]\)
@@ -382,7 +400,9 @@ Channel & Status & Coupling/projection coefficient & \(\Gamma\) (keV)\\
 \end{table}
 
 The \(\Bc\gamma\) entries are the controlled hard-photon baseline from the
-present calculation.  The \(\Bcst\gamma\) entries should be read as diagnostic
+present calculation.  The shift relative to the first pilot is almost entirely
+normalization driven: \(f_1\) is smaller than \(0.373~\GeV\), while \(f_2\) is
+larger.  The \(\Bcst\gamma\) entries should still be read as diagnostic
 numbers only.  They are obtained from the gauge-invariant
 \(V_{\mu\nu\rho}\) projection and a diagonal single-variable reduction.  Before
 using them as final paper results one must match this coefficient to the
@@ -424,7 +444,7 @@ Higher visible peak
 & input state \(6750~{\rm MeV}\)\\
 Partial widths
 & not measured
-& \(\Bc\gamma\): \(0.108\), \(29.6~{\rm keV}\)\\
+& \(\Bc\gamma\): \(0.223\), \(8.01~{\rm keV}\)\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -464,8 +484,8 @@ Q. Li et al.~\cite{LiZhong2019} & 35 & 70 & 74 & 40\\
 X. J. Li et al.~\cite{LiLiu2023} & 30.1 & 47.8 & 64 & 25.6\\
 Eichten--Quigg~\cite{EichtenQuigg2018} & 9.9 & 62.5 & 92.3 & 7.5\\
 Bondar--Milstein~\cite{BondarMilstein2025} & 22 & 75 & 47 & 2\\
-This work, pilot & \(0.108[0.098,0.121]\) & \(46.3[41.0,53.8]\)
-& \(29.6[25.9,35.3]\) & \(1.67[1.43,2.04]\times10^3\)\\
+This work & \(0.223[0.162,0.307]\) & \(46.3[41.0,53.8]\)
+& \(8.01[6.60,9.90]\) & \(1.67[1.43,2.04]\times10^3\)\\
 \bottomrule
 \end{tabular}
 \label{tab:bc1-radiative-comparison}
@@ -477,25 +497,29 @@ normalization and the full double-Borel/contact-term treatment.
 
 \section{Perturbative and Condensate Content}
 
-The numerical table above contains only the leading hard-photon perturbative
-baseline.  In practical terms this means:
+The \(B_c\gamma\) numerical table above contains the leading hard-photon
+perturbative three-point baseline, normalized with perturbative two-point
+physical residues.  In practical terms this means:
 \begin{itemize}
   \item the photon is emitted from the charm or anti-bottom heavy-quark line;
-  \item both heavy propagators are free propagators in the numerical pilot;
+  \item both heavy propagators are free propagators in the radiative
+  three-point OPE;
   \item the retained spectral density is the perturbative triangle hard
   contribution generated by the projected Dirac traces;
   \item no photon DA, \(\chi\langle\bar q q\rangle\), or light-quark condensate
   contribution appears, because there is no light valence quark in \(B_c\);
   \item gluon-condensate corrections from the background-gluon expansion of the
-  heavy propagators are not yet included;
+  heavy propagators are not yet included in the radiative three-point
+  correlator;
   \item reduced two-denominator/contact terms from denominator cancellation
   still require a full double-Borel audit, especially in the vector
   \(B_c^\ast\gamma\) channel.
 \end{itemize}
-Thus the present result is best described as a leading perturbative hard-QCDSR
-pilot result.  A final publication-level \(B_c\) analysis should add, or
-explicitly bound, the heavy-heavy gluon-condensate corrections and the contact
-terms.
+Thus the present \(B_c\gamma\) result is best described as a controlled
+leading perturbative hard-QCDSR baseline.  A final publication-level \(B_c\)
+analysis should add, or explicitly bound, the heavy-heavy gluon-condensate
+corrections to the three-point function.  The \(B_c^\ast\gamma\) channel also
+requires the contact-term and tensor-normalization audit discussed above.
 
 \section{Reproduction Checklist for the Present Pilot}
 
@@ -513,13 +537,12 @@ The current numbers can be reproduced in the following order.
   diagnostic \(B_c^\ast\gamma\) cores and check the normalization of
   \(V_{\mu\nu\rho}\).
   \item Insert the compact projected cores into
-  \path{Bc_gamma/scripts/bc_radiative_pilot_sumrule.py}.  The script uses the
+  \path{Bc_gamma/scripts/bc_ps_complete_analysis.py}.  The script uses the
   diagonal calibration \(M_1^2=M_2^2=2M^2\), with
   \(M^2=\{7,8,9\}\,\GeV^2\) and \(s_0=\{53,54,55\}\,\GeV^2\).
-  \item Use \(m_b=4.18\,\GeV\), \(m_c=1.27\,\GeV\), and the central mixing
-  angle \(\theta=43.3^\circ\).  The current pilot uses
-  \(f_{\Bc}=0.371\,\GeV\), \(f_{\Bcst}=0.384\,\GeV\), and a common axial-vector
-  benchmark \(f_{\BcOne}=0.373\,\GeV\).
+  \item Extract \(f_1\) and \(f_2\) from the diagonalized two-point
+  perturbative moments and then sample \(m_b,m_c,M^2,s_0,\theta\), and
+  \(f_{B_c}\) in the Monte Carlo.
   \item Rotate the basis amplitudes with
   \(\widehat\Pi_{6743}=\sin\theta\,\widehat\Pi_A+\cos\theta\,\widehat\Pi_B\)
   and
