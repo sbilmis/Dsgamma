@@ -387,27 +387,79 @@ Channel & Status & Coupling/projection coefficient & \(\Gamma\) (keV)\\
 & controlled \(B_c\gamma\)
 & \(-0.184\,[-0.205,-0.167]~\GeV^{-1}\)
 & \(8.01\,[6.60,9.90]\)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For the vector final state we also remove the fixed-normalization assumption.
+The final-state vector decay constant is defined by
+\[
+  \langle0|\bar c\gamma_\rho b|\Bcst(p,\eta)\rangle
+  =m_{\Bcst}f_{\Bcst}\eta_\rho .
+\]
+Projecting the two-point vector-current correlator onto the spin--1 invariant
+gives the perturbative density
+\[
+  \rho_V(s)=
+  \frac{3}{16\pi^2}\frac{\sqrt{\lambda(s,m_b^2,m_c^2)}}{s}
+  \left[
+    -\frac{8(k\cdot p)^2}{s}-4m_c^2+12(k\cdot p)+12m_bm_c
+  \right],
+\]
+where \(k\cdot p=(s+m_c^2-m_b^2)/2\).  In the equal-mass limit this reduces to
+the expected \(S\)-wave vector-current density proportional to
+\((s+2m_Q^2)\sqrt{1-4m_Q^2/s}\).  The corresponding two-point sum rule is
+\[
+  f_{\Bcst}^2m_{\Bcst}^2e^{-m_{\Bcst}^2/M_V^2}
+  =
+  \int_{(m_b+m_c)^2}^{s_{0,V}}ds\,e^{-s/M_V^2}\rho_V(s).
+\]
+Using \(M_V^2=5\)--\(8~\GeV^2\) and \(s_{0,V}=40\)--\(44~\GeV^2\) gives
+\[
+  f_{\Bcst}^{\rm LO}=0.753\,[0.693,0.808]~\GeV .
+\]
+Because this is much larger than the commonly used reference value
+\(f_{\Bcst}=0.384\pm0.038~\GeV\), the vector-channel widths are strongly
+normalization dependent.  We therefore quote both versions:
+
+\begin{table}[h]
+\centering
+\caption{Leading hard-QCDSR \(B_c^\ast\gamma\) vector baselines.  These
+entries include the perturbative hard-photon three-point term and the physical
+\(f_1,f_2\) residues.  Radiative \(G^2\) and vector contact terms are not
+included.}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{p{0.24\textwidth}p{0.24\textwidth}p{0.27\textwidth}p{0.15\textwidth}}
+\toprule
+Channel & Normalization & Coupling/projection coefficient & \(\Gamma\) (keV)\\
+\midrule
 \(\BcOne(6743)\to\Bcst\gamma\)
-& diagonal vector pilot
-& \(-0.0620\,[-0.0669,-0.0583]\)
-& \(46.3\,[41.0,53.8]\)\\
+& LO vector two-point \(f_{\Bcst}\)
+& \(-0.0454\,[-0.0487,-0.0425]~\GeV^{-1}\)
+& \(24.8\,[21.8,28.5]\)\\
 \(\BcOne(6750)\to\Bcst\gamma\)
-& diagonal vector pilot
-& \(+0.362\,[0.335,0.401]\)
-& \(1.67\,[1.43,2.04]\times10^3\)\\
+& LO vector two-point \(f_{\Bcst}\)
+& \(+0.0970\,[0.0903,0.104]~\GeV^{-1}\)
+& \(120\,[104,137]\)\\
+\(\BcOne(6743)\to\Bcst\gamma\)
+& reference \(f_{\Bcst}=0.384\pm0.038~\GeV\)
+& \(-0.0877\,[-0.0986,-0.0795]~\GeV^{-1}\)
+& \(92.6\,[76.1,117]\)\\
+\(\BcOne(6750)\to\Bcst\gamma\)
+& reference \(f_{\Bcst}=0.384\pm0.038~\GeV\)
+& \(+0.187\,[0.169,0.210]~\GeV^{-1}\)
+& \(447\,[365,564]\)\\
 \bottomrule
 \end{tabular}
 \end{table}
 
 The \(\Bc\gamma\) entries are the controlled hard-photon baseline from the
-present calculation.  The shift relative to the first pilot is almost entirely
-normalization driven: \(f_1\) is smaller than \(0.373~\GeV\), while \(f_2\) is
-larger.  The \(\Bcst\gamma\) entries should still be read as diagnostic
-numbers only.  They are obtained from the gauge-invariant
-\(V_{\mu\nu\rho}\) projection and a diagonal single-variable reduction.  Before
-using them as final paper results one must match this coefficient to the
-physical \(1^+\to1^-\gamma\) tensor basis and carry out the full double-Borel
-analysis, including denominator-cancellation or contact terms.
+present calculation.  The vector entries are no longer just placeholders:
+they use the \(V_{\mu\nu\rho}\) projection, the physical \(f_1,f_2\) residues,
+and an explicit \(f_{\Bcst}\) normalization.  They should nevertheless be
+described as leading perturbative vector baselines, not full-OPE final
+predictions, until the radiative \(G^2\) and contact sectors are completed.
 
 \section{Comparison with Experiment and Other Theory}
 

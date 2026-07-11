@@ -1,0 +1,17 @@
+Leading Bc1 -> Bc* gamma summary
+=================================
+
+Vector-current two-point normalization:
+f_Bcstar_LO_GeV: median=0.7531, 16-84%=[0.6933,0.808], range=[0.6462,0.8598]
+
+Monte Carlo leading hard-photon vector results:
+LO_vector_twopoint Bc1(6743)->Bc* gamma g1_GeV_inv: median=-0.04535, 16-84%=[-0.04865,-0.0425], range=[-0.05369,-0.03716]
+LO_vector_twopoint Bc1(6743)->Bc* gamma Gamma1_keV: median=24.76, 16-84%=[21.75,28.51], range=[16.63,34.72]
+LO_vector_twopoint Bc1(6750)->Bc* gamma g2_GeV_inv: median=0.09699, 16-84%=[0.09031,0.1038], range=[0.07974,0.1168]
+LO_vector_twopoint Bc1(6750)->Bc* gamma Gamma2_keV: median=119.9, 16-84%=[103.9,137.3], range=[81.04,173.8]
+reference_f_Bcstar_0p384 Bc1(6743)->Bc* gamma g1_GeV_inv: median=-0.08771, 16-84%=[-0.09857,-0.07949], range=[-0.1323,-0.06459]
+reference_f_Bcstar_0p384 Bc1(6743)->Bc* gamma Gamma1_keV: median=92.64, 16-84%=[76.09,117], range=[50.23,210.6]
+reference_f_Bcstar_0p384 Bc1(6750)->Bc* gamma g2_GeV_inv: median=0.1873, 16-84%=[0.1691,0.2104], range=[0.1375,0.2823]
+reference_f_Bcstar_0p384 Bc1(6750)->Bc* gamma Gamma2_keV: median=447.1, 16-84%=[364.5,564.1], range=[241.1,1016]
+
+Status: perturbative hard-photon three-point OPE only; radiative G^2/contact terms are not included.

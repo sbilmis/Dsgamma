@@ -495,16 +495,53 @@ The resulting Monte Carlo summary for the controlled \(B_c\gamma\) channel is
 |---|---|---:|---:|
 | \(B_{c1}(6743)\to B_c\gamma\) | controlled perturbative baseline | \(+0.0315\,[0.0269,0.0370]~{\rm GeV}^{-1}\) | \(0.223\,[0.162,0.307]~{\rm keV}\) |
 | \(B_{c1}(6750)\to B_c\gamma\) | controlled perturbative baseline | \(-0.184\,[-0.205,-0.167]~{\rm GeV}^{-1}\) | \(8.01\,[6.60,9.90]~{\rm keV}\) |
-| \(B_{c1}(6743)\to B_c^\ast\gamma\) | diagonal vector-pilot | \(-0.0620\,[-0.0669,-0.0583]\) | \(46.3\,[41.0,53.8]~{\rm keV}\) |
-| \(B_{c1}(6750)\to B_c^\ast\gamma\) | diagonal vector-pilot | \(+0.362\,[0.335,0.401]\) | \(1.67\,[1.43,2.04]\times10^3~{\rm keV}\) |
 
-The \(B_c\gamma\) entries should be regarded as the controlled hard-photon
-baseline at this stage.  The \(B_c^\ast\gamma\) entries are diagnostic because
-they use the \(V_{\mu\nu\rho}\) gauge-invariant projection and a diagonal
-single-variable reduction.  Before they are promoted to paper results we must
-match the \(V_{\mu\nu\rho}\) coefficient to the physical \(1^+\to1^-\gamma\)
-tensor basis and perform the full double-Borel audit, including the
-denominator-cancellation/contact terms.
+For the vector final state we then recomputed the normalization instead of
+using a fixed \(f_{B_c^\ast}\).  The vector two-point current is
+\[
+  j_\rho^V=\bar c\gamma_\rho b,\qquad
+  \langle0|j_\rho^V|B_c^\ast(p,\eta)\rangle
+  =m_{B_c^\ast}f_{B_c^\ast}\eta_\rho .
+\]
+With the same spin--1 invariant convention used in the mixing calculation,
+the leading perturbative vector spectral density can be written as
+\[
+  \rho_V(s)=
+  \frac{3}{16\pi^2}\frac{\sqrt{\lambda(s,m_b^2,m_c^2)}}{s}
+  \left[
+    -\frac{8(k\cdot p)^2}{s}-4m_c^2+12(k\cdot p)+12m_bm_c
+  \right],
+\]
+where \(k\cdot p=(s+m_c^2-m_b^2)/2\).  In the equal-mass limit this reduces to
+the expected \(S\)-wave vector-current form proportional to
+\((s+2m_Q^2)\sqrt{1-4m_Q^2/s}\).  The sum rule is
+\[
+  f_{B_c^\ast}^2m_{B_c^\ast}^2e^{-m_{B_c^\ast}^2/M_V^2}
+  =
+  \int_{(m_b+m_c)^2}^{s_{0,V}} ds\,e^{-s/M_V^2}\rho_V(s).
+\]
+Using \(M_V^2=5\)--\(8~{\rm GeV}^2\) and
+\(s_{0,V}=40\)--\(44~{\rm GeV}^2\) gives
+\[
+  f_{B_c^\ast}^{\rm LO}=0.753\,[0.693,0.808]~{\rm GeV}.
+\]
+This is much larger than the frequently used phenomenological scale
+\(f_{B_c^\ast}\simeq0.384~{\rm GeV}\), so the vector-channel width is
+normalization dominated.  We therefore keep both normalizations in the audit:
+
+| Channel | Normalization | Coupling/projection coefficient | Width |
+|---|---|---:|---:|
+| \(B_{c1}(6743)\to B_c^\ast\gamma\) | LO vector two-point \(f_{B_c^\ast}\) | \(-0.0454\,[-0.0487,-0.0425]~{\rm GeV}^{-1}\) | \(24.8\,[21.8,28.5]~{\rm keV}\) |
+| \(B_{c1}(6750)\to B_c^\ast\gamma\) | LO vector two-point \(f_{B_c^\ast}\) | \(+0.0970\,[0.0903,0.104]~{\rm GeV}^{-1}\) | \(120\,[104,137]~{\rm keV}\) |
+| \(B_{c1}(6743)\to B_c^\ast\gamma\) | reference \(f_{B_c^\ast}=0.384\pm0.038~{\rm GeV}\) | \(-0.0877\,[-0.0986,-0.0795]~{\rm GeV}^{-1}\) | \(92.6\,[76.1,117]~{\rm keV}\) |
+| \(B_{c1}(6750)\to B_c^\ast\gamma\) | reference \(f_{B_c^\ast}=0.384\pm0.038~{\rm GeV}\) | \(+0.187\,[0.169,0.210]~{\rm GeV}^{-1}\) | \(447\,[365,564]~{\rm keV}\) |
+
+These \(B_c^\ast\gamma\) entries are now computed leading hard-QCDSR vector
+baselines, not merely placeholders.  They still do not include radiative
+\(G^2\) or vector-channel contact terms.  Therefore the publication wording
+should be: "leading perturbative hard-QCDSR result; vector normalization shown
+explicitly."  We should not call them full-OPE final numbers until the
+background-field vector contact sector is reduced.
 
 The script writes:
 
@@ -518,6 +555,13 @@ The script writes:
 - `Bc_gamma/outputs/bc_ps_g2_M2_stability.pdf`
 - `Bc_gamma/outputs/bc_ps_gamma1_mc_hist.pdf`
 - `Bc_gamma/outputs/bc_ps_gamma2_mc_hist.pdf`
+- `Bc_gamma/outputs/bc_vec_fbcstar_twopoint_grid.csv`
+- `Bc_gamma/outputs/bc_vec_fbcstar_twopoint_summary.csv`
+- `Bc_gamma/outputs/bc_vec_complete_grid.csv`
+- `Bc_gamma/outputs/bc_vec_complete_grid_summary.csv`
+- `Bc_gamma/outputs/bc_vec_complete_monte_carlo.csv`
+- `Bc_gamma/outputs/bc_vec_complete_monte_carlo_summary.csv`
+- `Bc_gamma/outputs/bc_vec_complete_summary.txt`
 
 ## 10. Comparison with experiment and other theory
 
