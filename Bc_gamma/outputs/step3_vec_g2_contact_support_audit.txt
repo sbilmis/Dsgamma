@@ -1,0 +1,27 @@
+Bc1 -> Bc* gamma contact-support audit
+======================================
+
+Contact/derivative rows: 557
+Double-Borel-active contact rows: 131
+Single-virtuality contact rows: 309
+No-external-virtuality contact rows: 117
+
+Contact rows by remaining denominator support:
+- support (1, 3), double_borel_active: 131
+- support (1,), no_external_virtuality: 14
+- support (1, 2), no_external_virtuality: 36
+- support (2,), no_external_virtuality: 14
+- support (2, 3), no_external_virtuality: 39
+- support (3,), no_external_virtuality: 14
+- support (1, 2), single_virtuality: 90
+- support (1, 3), single_virtuality: 128
+- support (2, 3), single_virtuality: 91
+
+Interpretation:
+- Rows with no_external_virtuality vanish under the double Borel transform.
+- Rows with single_virtuality are subtraction/contact terms for one channel
+  and vanish under a double Borel transform in both virtualities.
+- Rows marked double_borel_active remain candidates for derivative-contact
+  Borel maps and must be treated explicitly.
+- The active candidate rows are written separately to
+  step3_vec_g2_contact_active_candidates.csv.

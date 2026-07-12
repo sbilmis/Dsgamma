@@ -886,6 +886,26 @@ positive-denominator sector in the vector channel.  This is why the
 baseline with a \(G^2\)/contact systematic screen, rather than as a completed
 full-OPE prediction.
 
+The support-level double-Borel audit is performed by
+\path{step3_vec_g2_contact_support_audit.py}.  It separates contact rows that
+can still carry simultaneous dependence on both hadronic virtualities from
+rows that are single-virtuality or no-external-virtuality subtraction terms.
+The result is
+\[
+\begin{array}{c|c}
+\text{contact support class} & \text{number of rows}\\
+\hline
+\text{double-Borel-active candidates} & 131\\
+\text{single-virtuality rows} & 309\\
+\text{no-external-virtuality rows} & 117
+\end{array}
+\]
+All 131 active candidates come from the anti-bottom photon topology with
+remaining denominator support \(\{d_1,d_3\}\).  The other 426 contact rows
+vanish under the double Borel transform in the two hadronic virtualities.  The
+active rows are stored in
+\path{step3_vec_g2_contact_active_candidates.csv}.
+
 For a student checking this calculation, the most useful debugging sequence is:
 \begin{enumerate}
   \item verify the projector normalization
@@ -896,8 +916,10 @@ For a student checking this calculation, the most useful debugging sequence is:
   anti-bottom-photon emission;
   \item classify terms with effective powers \(n_i>0\) as ordinary Schwinger
   terms and terms with at least one \(n_i\le0\) as contact/derivative terms;
-  \item do not remove the contact rows, since they are numerically numerous
-  and especially important in the tensor-current \(J^B_\mu\) part.
+  \item run the support audit and keep the 131 active rows from
+  \path{step3_vec_g2_contact_active_candidates.csv};
+  \item do not remove the active contact rows, since they are required for the
+  full explicit vector \(G^2\) correction.
 \end{enumerate}
 
 \section{Reproduction Checklist for the Present Pilot}

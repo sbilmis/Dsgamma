@@ -995,6 +995,33 @@ sensitive, with \(409\) contact/derivative rows.  Therefore the large
 screening envelope unless and until the derivative double-Borel maps are
 implemented term by term.
 
+I then applied a support-level double-Borel audit using
+
+- `Bc_gamma/scripts/step3_vec_g2_contact_support_audit.py`.
+
+The outputs are
+
+- `Bc_gamma/outputs/step3_vec_g2_contact_support_audit.csv`;
+- `Bc_gamma/outputs/step3_vec_g2_contact_support_summary.csv`;
+- `Bc_gamma/outputs/step3_vec_g2_contact_support_audit.txt`;
+- `Bc_gamma/outputs/step3_vec_g2_contact_active_candidates.csv`.
+
+This audit asks which contact rows still have denominator support in both
+external virtualities after denominator cancellation.  The result is
+
+| Contact support class | Rows |
+|---|---:|
+| double-Borel-active candidates | \(131\) |
+| single-virtuality subtraction/contact rows | \(309\) |
+| no-external-virtuality rows | \(117\) |
+
+All \(131\) double-Borel-active candidates come from the anti-bottom photon
+topology with remaining denominator support \(\{d_1,d_3\}\).  The other
+\(426\) contact rows do not produce a simultaneous double-pole structure in
+the two hadronic variables and vanish under the double Borel transform.  Thus
+the remaining explicit contact-map problem is much smaller than the raw
+\(557\)-row count, but it is not zero.
+
 For a student redoing this part, the checklist is:
 
 1. Reproduce the perturbative vector projector check
@@ -1014,8 +1041,12 @@ For a student redoing this part, the checklist is:
 5. For each term, subtract numerator powers of \(d_1,d_2,d_3\) from the base
    propagator powers.  Positive effective powers are ordinary Schwinger terms;
    nonpositive powers are contact/derivative terms.
-6. Do not discard the contact rows.  They are required for the full explicit
-   \(G^2\) correction.
+6. Run the support audit.  Rows with no external virtuality or only one
+   virtuality vanish under the double Borel transform.  Keep the
+   \(131\) active-candidate rows in
+   `step3_vec_g2_contact_active_candidates.csv`.
+7. Do not discard the active contact rows.  They are required for the full
+   explicit \(G^2\) correction.
 
 ## 13. Final comparison table artifact
 
