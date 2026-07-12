@@ -1,0 +1,23 @@
+Bc1 -> Bc* gamma refined contact Borel-admissibility audit
+==========================================================
+
+This is a refinement of step3_vec_g2_contact_support_audit.py.
+The first audit counted rows as active if the reduced denominator
+contained both p^2 and P^2.  Here we additionally require ordinary
+two-channel support, not only a crossed single combination.
+
+Contact/derivative rows by refined support:
+- crossed_single_combination: 131
+- no_external_virtuality: 117
+- single_physical_virtuality: 309
+
+Interpretation:
+- 131 rows depend on the crossed virtuality (p-q)^2 = 2 p^2 - P^2.
+  They are not ordinary simultaneous initial/final hadron poles.
+- 0 contact rows have ordinary two-channel support at this
+  denominator-support level.
+- Therefore the previously isolated 131 first-pass active candidates
+  are crossed-contact candidates rather than direct physical double-pole
+  terms.  They should be kept in the audit trail, but they are not added
+  to the physical double-Borel numerical sum unless a separate crossed
+  contact prescription is introduced.

@@ -613,7 +613,8 @@ corresponding median envelopes are \(\pm14.3\) keV and \(\pm68.8\) keV.  These
 numbers are large enough that the vector channel should be described as a
 leading perturbative baseline with a condensate/contact systematic screen.
 They also explain why the \(6750\to B_c^\ast\gamma\) result should be treated
-with special caution until the explicit contact-sector reduction is completed.
+with special caution until the explicit all-positive radiative \(G^2\)
+integration is completed and the crossed-contact audit is quoted clearly.
 
 The script writes:
 
@@ -931,10 +932,10 @@ propagator powers.  The audit gives
 The contact/derivative sector is therefore not a small bookkeeping detail; it
 is roughly half of the complete reduced expression.  A numerical result based
 only on the all-positive sector would not be the full explicit radiative
-\(G^2\) correction.  The full calculation must apply the derivative
-double-Borel machinery to these contact terms, analogous in spirit to the
-direct-Borel treatment used in the \(B_c\)-mixing analysis for condensate
-terms.  Until that is done, the conservative \(G^2\) envelope above is the
+\(G^2\) correction until the contact support is audited.  The refined audit in
+Sec. 12.3 shows that these contact rows do not have ordinary physical
+two-channel support; nevertheless, until the all-positive \(G^2\) terms are
+integrated explicitly, the conservative \(G^2\) envelope above remains the
 defensible numerical statement.
 
 ### 12.3 Vector \(B_c^\ast\gamma\) denominator-reduced \(G^2\) inventory
@@ -998,6 +999,7 @@ implemented term by term.
 I then applied a support-level double-Borel audit using
 
 - `Bc_gamma/scripts/step3_vec_g2_contact_support_audit.py`.
+- `Bc_gamma/scripts/step3_vec_g2_contact_borel_admissibility.py`.
 
 The outputs are
 
@@ -1005,6 +1007,9 @@ The outputs are
 - `Bc_gamma/outputs/step3_vec_g2_contact_support_summary.csv`;
 - `Bc_gamma/outputs/step3_vec_g2_contact_support_audit.txt`;
 - `Bc_gamma/outputs/step3_vec_g2_contact_active_candidates.csv`.
+- `Bc_gamma/outputs/step3_vec_g2_contact_borel_admissibility.csv`;
+- `Bc_gamma/outputs/step3_vec_g2_contact_borel_admissibility_summary.csv`;
+- `Bc_gamma/outputs/step3_vec_g2_contact_borel_admissibility.txt`.
 
 This audit asks which contact rows still have denominator support in both
 external virtualities after denominator cancellation.  The result is
@@ -1015,12 +1020,28 @@ external virtualities after denominator cancellation.  The result is
 | single-virtuality subtraction/contact rows | \(309\) |
 | no-external-virtuality rows | \(117\) |
 
-All \(131\) double-Borel-active candidates come from the anti-bottom photon
-topology with remaining denominator support \(\{d_1,d_3\}\).  The other
-\(426\) contact rows do not produce a simultaneous double-pole structure in
-the two hadronic variables and vanish under the double Borel transform.  Thus
-the remaining explicit contact-map problem is much smaller than the raw
-\(557\)-row count, but it is not zero.
+All \(131\) first-pass double-Borel-active candidates come from the
+anti-bottom photon topology with remaining denominator support \(\{d_1,d_3\}\).
+For this support the combined denominator depends on
+\[
+  (p-q)^2=2p^2-P^2,
+\]
+not on independent initial- and final-channel pole variables.  Therefore these
+rows are crossed-contact candidates, not ordinary physical double-pole
+contributions.  The refined Borel-admissibility audit gives
+
+| Refined contact support class | Rows |
+|---|---:|
+| crossed single-combination \((p-q)^2\) rows | \(131\) |
+| single-virtuality subtraction/contact rows | \(309\) |
+| no-external-virtuality rows | \(117\) |
+| ordinary two-channel contact rows | \(0\) |
+
+Thus none of the \(557\) contact/derivative rows is added directly to the
+physical double-Borel numerical sum.  The \(131\) crossed rows are kept in the
+audit trail because they would require a separate crossed-contact prescription
+if one wanted to study them beyond the standard two-channel sum-rule
+projection.
 
 For a student redoing this part, the checklist is:
 
@@ -1042,11 +1063,12 @@ For a student redoing this part, the checklist is:
    propagator powers.  Positive effective powers are ordinary Schwinger terms;
    nonpositive powers are contact/derivative terms.
 6. Run the support audit.  Rows with no external virtuality or only one
-   virtuality vanish under the double Borel transform.  Keep the
-   \(131\) active-candidate rows in
-   `step3_vec_g2_contact_active_candidates.csv`.
-7. Do not discard the active contact rows.  They are required for the full
-   explicit \(G^2\) correction.
+   virtuality vanish under the double Borel transform.
+7. Run the refined Borel-admissibility audit.  The apparent \(131\) active
+   rows reduce to crossed \((p-q)^2\) support and are stored in
+   `step3_vec_g2_contact_active_candidates.csv` only as audit candidates.
+8. Do not add those \(131\) crossed rows to the physical double-pole sum unless
+   a separate crossed-contact prescription is introduced and justified.
 
 ## 13. Final comparison table artifact
 

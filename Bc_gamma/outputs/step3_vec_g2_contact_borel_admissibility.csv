@@ -1,0 +1,558 @@
+topology,class,current,object,eff,support,sector,borel_activity,delta_external,refined_borel_support
+c_photon,single_line_G2,A,c_after_photon,"(4, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,c_after_photon,"(3, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,c_after_photon,"(4, -1, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,c_after_photon,"(3, 1, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,A,c_after_photon,"(4, 0, 0)",{1},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,A,c_after_photon,"(4, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,c_after_photon,"(4, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,c_after_photon,"(4, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,c_after_photon,"(4, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,c_after_photon,"(3, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,c_after_photon,"(3, 1, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,A,c_after_photon,"(3, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,c_after_photon,"(4, -1, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,c_after_photon,"(3, 1, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,A,c_after_photon,"(4, 0, 0)",{1},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,A,c_after_photon,"(4, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,c_after_photon,"(4, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,c_before_photon,"(0, 3, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,c_before_photon,"(-1, 4, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,c_before_photon,"(0, 3, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,c_before_photon,"(0, 4, 0)",{2},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,A,c_before_photon,"(1, 3, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,A,c_before_photon,"(0, 4, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,c_before_photon,"(0, 4, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,c_before_photon,"(0, 4, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,c_before_photon,"(0, 4, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,c_before_photon,"(1, 3, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,A,b_spectator,"(1, 0, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,b_spectator,"(-1, 1, 4)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,b_spectator,"(0, 0, 4)",{3},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,A,b_spectator,"(1, -1, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,b_spectator,"(0, 1, 3)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,b_spectator,"(1, 0, 3)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,b_spectator,"(0, 1, 4)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,b_spectator,"(1, 0, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,b_spectator,"(0, 1, 4)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,b_spectator,"(1, 0, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,b_spectator,"(0, 1, 4)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,b_spectator,"(1, 0, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,b_spectator,"(0, 1, 4)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,b_spectator,"(1, 0, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,b_spectator,"(1, -1, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,b_spectator,"(1, 0, 3)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,b_spectator,"(1, 0, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,A,b_spectator,"(1, 0, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(3, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(3, 1, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(4, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(4, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(4, 1, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(2, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(3, -1, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(3, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(4, -1, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(3, 1, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(4, 0, 0)",{1},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(4, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(3, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(4, -1, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(3, 1, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(4, 0, 0)",{1},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(4, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(4, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(4, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(3, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(4, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(4, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(3, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(4, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(4, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(3, -1, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(3, 0, 0)",{1},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(3, 1, -1)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(3, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(3, 1, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(3, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(4, -1, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(3, 1, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(4, 0, 0)",{1},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(4, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(4, -1, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(4, 0, 0)",{1},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(4, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(4, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_after_photon,"(4, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 3, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(1, 3, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 4, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 4, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(1, 4, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(-1, 3, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 3, 0)",{2},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(1, 2, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 3, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 3, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 4, 0)",{2},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(1, 3, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 4, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 3, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 4, 0)",{2},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(1, 3, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 4, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 4, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 4, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 4, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 4, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 3, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 4, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 2, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 3, 0)",{2},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(1, 3, -1)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 3, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(1, 3, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 3, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 4, 0)",{2},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(1, 3, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 4, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 3, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 4, 0)",{2},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 4, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 4, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,c_before_photon,"(0, 4, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 1, 3)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, 0, 3)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 1, 4)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, 0, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 1, 4)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, 0, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 0, 3)",{3},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, -1, 3)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 1, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 0, 4)",{3},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, -1, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 1, 3)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, 0, 3)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 1, 4)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, 0, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 0, 4)",{3},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, -1, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 1, 3)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, 0, 3)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 1, 4)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, 0, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 1, 3)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, 0, 3)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 1, 4)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, 0, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 1, 4)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, 0, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 1, 3)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, 0, 3)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 1, 4)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, 0, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 1, 4)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, 0, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 1, 3)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, 0, 3)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 1, 4)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, 0, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, 0, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 0, 3)",{3},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, -1, 3)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 1, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 0, 4)",{3},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, -1, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 1, 3)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, 0, 3)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 1, 4)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, 0, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 0, 4)",{3},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, -1, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 1, 3)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, 0, 3)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 1, 4)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, 0, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 1, 3)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, 0, 3)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 1, 4)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, 0, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(0, 1, 4)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,single_line_G2,B,b_spectator,"(1, 0, 4)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+bbar_photon,single_line_G2,A,c_spectator,"(4, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,A,c_spectator,"(3, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,A,c_spectator,"(4, -1, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,A,c_spectator,"(3, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,A,c_spectator,"(4, 0, 0)",{1},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,A,c_spectator,"(4, 1, -1)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,A,c_spectator,"(4, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,A,c_spectator,"(4, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,A,c_spectator,"(4, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,A,c_spectator,"(4, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,A,c_spectator,"(4, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,A,c_spectator,"(4, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,A,c_spectator,"(4, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,A,c_spectator,"(4, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,A,c_spectator,"(3, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,A,c_spectator,"(4, -1, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,A,c_spectator,"(4, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,A,c_spectator,"(4, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,A,b_before_photon,"(0, 3, 1)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,A,b_before_photon,"(0, 4, 0)",{2},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,A,b_before_photon,"(1, 3, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,A,b_before_photon,"(1, 4, -1)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,A,b_before_photon,"(1, 4, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,A,b_before_photon,"(1, 3, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,A,b_before_photon,"(1, 4, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,A,b_before_photon,"(1, 4, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,A,b_before_photon,"(1, 4, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,A,b_before_photon,"(0, 3, 1)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,A,b_after_photon,"(1, 0, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,A,b_after_photon,"(0, 0, 4)",{3},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,A,b_after_photon,"(1, -1, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,A,b_after_photon,"(0, 1, 3)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,A,b_after_photon,"(1, 0, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,A,b_after_photon,"(1, 0, 3)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,A,b_after_photon,"(1, 0, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,A,b_after_photon,"(1, 0, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,A,b_after_photon,"(1, 0, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,A,b_after_photon,"(0, 0, 4)",{3},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,A,b_after_photon,"(1, -1, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,A,b_after_photon,"(0, 1, 3)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,A,b_after_photon,"(1, 0, 3)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,A,b_after_photon,"(1, 0, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,A,b_after_photon,"(0, 1, 3)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,A,b_after_photon,"(1, 0, 3)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,A,b_after_photon,"(1, 0, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(3, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(3, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(4, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(4, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(4, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(4, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(2, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(3, -1, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(2, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(3, 0, 0)",{1},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(3, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(3, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(3, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(4, -1, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(3, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(4, 0, 0)",{1},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(4, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(4, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(3, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(4, -1, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(3, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(4, 0, 0)",{1},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(4, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(4, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(4, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(4, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(4, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(4, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(3, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(3, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(4, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(4, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(4, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(4, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(3, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(4, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(4, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(2, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(3, -1, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(2, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(3, 0, 0)",{1},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(3, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(3, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(3, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(4, -1, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(3, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(4, 0, 0)",{1},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(4, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(4, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(3, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(4, -1, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(3, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(4, 0, 0)",{1},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(4, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(4, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(4, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(4, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,c_spectator,"(4, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,c_spectator,"(4, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(0, 3, 1)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(1, 3, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(0, 4, 1)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(1, 4, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(1, 4, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(0, 2, 1)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(0, 3, 0)",{2},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(1, 2, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(1, 3, -1)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(0, 3, 1)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(0, 4, 0)",{2},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(1, 3, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(1, 4, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(0, 3, 1)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(0, 4, 0)",{2},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(1, 3, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(1, 4, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(1, 3, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(1, 4, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(1, 4, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(1, 4, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(1, 4, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(1, 3, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(-1, 3, 1)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(0, 2, 1)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(0, 3, 0)",{2},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(1, 2, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(0, 3, 1)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(0, 4, 0)",{2},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(1, 3, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(1, 4, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(0, 3, 1)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(0, 4, 0)",{2},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(1, 3, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(1, 4, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(0, 3, 1)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(1, 3, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(1, 4, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,b_before_photon,"(1, 4, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,single_line_G2,B,b_after_photon,"(0, 1, 3)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_after_photon,"(1, 0, 3)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(0, 1, 4)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_after_photon,"(1, 0, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(1, 0, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(1, -1, 3)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(1, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(0, 0, 4)",{3},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_after_photon,"(1, -1, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(0, 1, 3)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_after_photon,"(1, 0, 3)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(1, 0, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(0, 0, 4)",{3},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_after_photon,"(1, -1, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(0, 1, 3)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_after_photon,"(1, 0, 3)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(1, 0, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(1, 0, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(1, 0, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(1, 0, 3)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(1, 0, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(1, 0, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(1, 0, 3)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(1, 0, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(1, 0, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(-1, 1, 3)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_after_photon,"(0, 0, 3)",{3},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_after_photon,"(1, -1, 3)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(0, 0, 4)",{3},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_after_photon,"(1, -1, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(0, 1, 3)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_after_photon,"(1, 0, 3)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(1, 0, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(0, 0, 4)",{3},contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_after_photon,"(1, -1, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(0, 1, 3)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_after_photon,"(1, 0, 3)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(1, 0, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(0, 1, 3)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,single_line_G2,B,b_after_photon,"(1, 0, 3)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(1, 0, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,single_line_G2,B,b_after_photon,"(1, 0, 4)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+c_photon,open_pair_GG,A,"c_after_photon,c_before_photon","(0, 2, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,A,"c_after_photon,c_before_photon","(2, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,A,"c_after_photon,c_before_photon","(1, 2, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,open_pair_GG,A,"c_after_photon,c_before_photon","(2, 1, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,open_pair_GG,A,"c_after_photon,c_before_photon","(1, 2, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,open_pair_GG,A,"c_after_photon,c_before_photon","(2, 2, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,open_pair_GG,A,"c_after_photon,b_spectator","(2, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,A,"c_after_photon,b_spectator","(0, 1, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,A,"c_after_photon,b_spectator","(1, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,A,"c_after_photon,b_spectator","(2, -1, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,A,"c_after_photon,b_spectator","(2, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,A,"c_after_photon,b_spectator","(2, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,A,"c_after_photon,b_spectator","(2, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,A,"c_after_photon,b_spectator","(2, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,A,"c_after_photon,b_spectator","(2, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,A,"c_after_photon,b_spectator","(2, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,A,"c_after_photon,b_spectator","(2, -1, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,A,"c_after_photon,b_spectator","(2, 1, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,open_pair_GG,A,"c_after_photon,b_spectator","(2, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,A,"c_before_photon,b_spectator","(-1, 2, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,A,"c_before_photon,b_spectator","(0, 1, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,A,"c_before_photon,b_spectator","(1, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,A,"c_before_photon,b_spectator","(0, 2, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,A,"c_before_photon,b_spectator","(0, 2, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,A,"c_before_photon,b_spectator","(0, 2, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,A,"c_before_photon,b_spectator","(0, 2, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,A,"c_before_photon,b_spectator","(0, 2, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,A,"c_before_photon,b_spectator","(1, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,A,"c_before_photon,b_spectator","(1, 2, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,c_before_photon","(2, 2, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,c_before_photon","(2, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,c_before_photon","(1, 2, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,c_before_photon","(2, 1, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,c_before_photon","(2, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,c_before_photon","(1, 2, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,c_before_photon","(2, 1, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,c_before_photon","(2, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,c_before_photon","(1, 2, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,c_before_photon","(2, 1, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,c_before_photon","(2, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,c_before_photon","(1, 2, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,c_before_photon","(2, 1, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,b_spectator","(2, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,b_spectator","(2, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,b_spectator","(1, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,b_spectator","(2, -1, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,b_spectator","(2, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,b_spectator","(2, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,b_spectator","(1, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,b_spectator","(2, -1, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,b_spectator","(2, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,b_spectator","(2, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,b_spectator","(2, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,b_spectator","(2, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,b_spectator","(2, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,b_spectator","(2, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,b_spectator","(2, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,b_spectator","(2, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,b_spectator","(1, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,b_spectator","(2, -1, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,b_spectator","(2, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,b_spectator","(2, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,b_spectator","(1, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,b_spectator","(2, -1, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,b_spectator","(2, 0, 1)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,b_spectator","(2, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,b_spectator","(2, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_after_photon,b_spectator","(2, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_before_photon,b_spectator","(0, 2, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_before_photon,b_spectator","(0, 2, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_before_photon,b_spectator","(-1, 2, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_before_photon,b_spectator","(0, 1, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_before_photon,b_spectator","(0, 2, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_before_photon,b_spectator","(0, 2, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_before_photon,b_spectator","(0, 1, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_before_photon,b_spectator","(1, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_before_photon,b_spectator","(0, 2, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_before_photon,b_spectator","(0, 2, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_before_photon,b_spectator","(0, 2, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_before_photon,b_spectator","(0, 2, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_before_photon,b_spectator","(0, 2, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_before_photon,b_spectator","(0, 2, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_before_photon,b_spectator","(0, 2, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_before_photon,b_spectator","(0, 1, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_before_photon,b_spectator","(0, 2, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_before_photon,b_spectator","(1, 2, 0)","{1,2}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+c_photon,open_pair_GG,B,"c_before_photon,b_spectator","(0, 2, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_before_photon,b_spectator","(0, 1, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_before_photon,b_spectator","(1, 0, 2)","{1,3}",contact_or_derivative,single_virtuality,P2*t1*t3/(t1 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_before_photon,b_spectator","(0, 2, 1)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_before_photon,b_spectator","(0, 2, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_before_photon,b_spectator","(0, 2, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+c_photon,open_pair_GG,B,"c_before_photon,b_spectator","(0, 2, 2)","{2,3}",contact_or_derivative,single_virtuality,p2*t2*t3/(t2 + t3),single_physical_virtuality
+bbar_photon,open_pair_GG,A,"c_spectator,b_before_photon","(2, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,A,"c_spectator,b_before_photon","(1, 2, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,A,"c_spectator,b_before_photon","(2, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,A,"c_spectator,b_before_photon","(2, 2, -1)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,A,"c_spectator,b_before_photon","(2, 2, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,A,"c_spectator,b_before_photon","(2, 2, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,A,"c_spectator,b_before_photon","(2, 2, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,A,"c_spectator,b_before_photon","(2, 2, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,A,"c_spectator,b_before_photon","(0, 2, 1)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,open_pair_GG,A,"c_spectator,b_before_photon","(2, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,A,"c_spectator,b_after_photon","(2, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,A,"c_spectator,b_after_photon","(1, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,A,"c_spectator,b_after_photon","(2, -1, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,A,"c_spectator,b_after_photon","(2, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,A,"c_spectator,b_after_photon","(2, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,A,"c_spectator,b_after_photon","(2, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,A,"c_spectator,b_after_photon","(2, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,A,"c_spectator,b_after_photon","(2, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,A,"c_spectator,b_after_photon","(2, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,A,"c_spectator,b_after_photon","(2, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,A,"c_spectator,b_after_photon","(0, 1, 2)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,open_pair_GG,A,"c_spectator,b_after_photon","(2, -1, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,A,"c_spectator,b_after_photon","(2, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,A,"b_before_photon,b_after_photon","(0, 1, 2)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,open_pair_GG,A,"b_before_photon,b_after_photon","(1, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,A,"b_before_photon,b_after_photon","(0, 2, 1)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,open_pair_GG,A,"b_before_photon,b_after_photon","(1, 2, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,A,"b_before_photon,b_after_photon","(0, 2, 1)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,open_pair_GG,A,"b_before_photon,b_after_photon","(0, 2, 2)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(2, 2, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(2, 2, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(2, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(1, 2, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(2, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(2, 2, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(2, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(1, 2, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(2, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(2, 2, -1)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(2, 2, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(2, 2, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(2, 2, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(2, 2, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(2, 2, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(2, 2, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(2, 2, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(2, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(1, 2, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(2, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(2, 2, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(0, 2, 1)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(2, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(1, 2, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(2, 1, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(2, 2, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(2, 2, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,B,"c_spectator,b_before_photon","(2, 2, 0)","{1,2}",contact_or_derivative,single_virtuality,p2*t1*t2/(t1 + t2),single_physical_virtuality
+bbar_photon,open_pair_GG,B,"c_spectator,b_after_photon","(2, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_after_photon","(2, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_after_photon","(1, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_after_photon","(2, -1, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_after_photon","(2, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_after_photon","(2, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_after_photon","(1, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_after_photon","(2, -1, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_after_photon","(2, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_after_photon","(2, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_after_photon","(2, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_after_photon","(2, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_after_photon","(2, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_after_photon","(2, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_after_photon","(2, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_after_photon","(2, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_after_photon","(1, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_after_photon","(2, -1, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_after_photon","(2, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_after_photon","(2, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_after_photon","(1, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_after_photon","(2, -1, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_after_photon","(2, 0, 1)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_after_photon","(2, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_after_photon","(2, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"c_spectator,b_after_photon","(2, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"b_before_photon,b_after_photon","(0, 2, 2)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,open_pair_GG,B,"b_before_photon,b_after_photon","(0, 1, 2)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,open_pair_GG,B,"b_before_photon,b_after_photon","(1, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"b_before_photon,b_after_photon","(0, 2, 1)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,open_pair_GG,B,"b_before_photon,b_after_photon","(0, 1, 2)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,open_pair_GG,B,"b_before_photon,b_after_photon","(1, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"b_before_photon,b_after_photon","(0, 2, 1)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,open_pair_GG,B,"b_before_photon,b_after_photon","(0, 1, 2)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,open_pair_GG,B,"b_before_photon,b_after_photon","(1, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"b_before_photon,b_after_photon","(0, 2, 1)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,open_pair_GG,B,"b_before_photon,b_after_photon","(0, 1, 2)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality
+bbar_photon,open_pair_GG,B,"b_before_photon,b_after_photon","(1, 0, 2)","{1,3}",contact_or_derivative,double_borel_active,t1*t3*(-P2 + 2*p2)/(t1 + t3),crossed_single_combination
+bbar_photon,open_pair_GG,B,"b_before_photon,b_after_photon","(0, 2, 1)","{2,3}",contact_or_derivative,no_external_virtuality,0,no_external_virtuality

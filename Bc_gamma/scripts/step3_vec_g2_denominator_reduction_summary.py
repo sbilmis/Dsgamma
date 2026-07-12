@@ -76,12 +76,14 @@ def main() -> None:
             "Interpretation:",
             "- The all-positive sector can be represented by ordinary Schwinger",
             "  parameters with positive powers.",
-            "- The contact/derivative sector is sizeable and must be treated with",
-            "  derivative double-Borel terms before one can quote a full explicit",
-            "  vector radiative G2 correction.",
+            "- The contact/derivative sector is sizeable, so it must be audited",
+            "  before one quotes a full explicit vector radiative G2 correction.",
+            "- The refined contact audit is performed separately by",
+            "  step3_vec_g2_contact_borel_admissibility.py; in the current",
+            "  reduction it finds no ordinary two-channel contact contribution.",
             "- This inventory is the completed algebraic reduction of the vector",
             "  G2 numerator; the remaining step is analytic/numeric evaluation of",
-            "  the contact-sector Borel maps.",
+            "  the all-positive radiative G2 sector.",
         ]
     )
     (OUT / "step3_vec_g2_denominator_reduction_summary.txt").write_text("\n".join(lines) + "\n")
