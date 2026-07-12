@@ -1,0 +1,10 @@
+Bc1 -> Bc* gamma MC updated with explicit all-positive G2
+==========================================================
+
+The nine-point direct-Borel all-positive G2 delta g/g values are sampled
+uniformly and folded into the existing standard-vector MC samples.
+
+Bc1(6743)->Bc* gamma: delta g/g = -0.02454 [-0.03283, -0.01903]
+Bc1(6743)->Bc* gamma: Gamma(pert + G2_ap) = 70.33 [61.95, 81.2] keV
+Bc1(6750)->Bc* gamma: delta g/g = 0.02983 [0.02638, 0.03468]
+Bc1(6750)->Bc* gamma: Gamma(pert + G2_ap) = 381.8 [331.4, 436.9] keV

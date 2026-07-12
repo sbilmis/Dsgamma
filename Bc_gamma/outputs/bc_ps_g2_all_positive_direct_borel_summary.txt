@@ -1,0 +1,7 @@
+Bc1 -> Bc gamma all-positive radiative G2 direct-Borel result
+==============================================================
+
+Bc1(6743)->Bc gamma: Gamma(pert + all-positive G2) = 0.5172 [0.4943, 0.5444] keV
+Bc1(6743)->Bc gamma: delta g/g = 0.5428 [0.5381, 0.5459]
+Bc1(6750)->Bc gamma: Gamma(pert + all-positive G2) = 9.942 [9.101, 11.26] keV
+Bc1(6750)->Bc gamma: delta g/g = 0.1201 [0.1121, 0.13]

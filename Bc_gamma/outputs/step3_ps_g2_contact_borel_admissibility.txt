@@ -1,0 +1,11 @@
+Bc1 -> Bc gamma refined contact Borel-admissibility audit
+=========================================================
+
+Contact/derivative rows by refined support:
+- crossed_single_combination: 80
+- no_external_virtuality: 72
+- single_physical_virtuality: 220
+
+Ordinary two-channel contact rows: 0
+Rows with crossed_single_combination depend on (p-q)^2 and are not
+added to the standard physical double-Borel sum.

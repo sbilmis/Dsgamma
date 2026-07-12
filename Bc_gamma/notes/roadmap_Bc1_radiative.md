@@ -299,9 +299,9 @@ workflow is:
    Carlo sample.
 7. Extract \(f_1\) and \(f_2\) from the diagonalized two-point moments, not
    from a common \(f_{B_{c1}}\) benchmark.
-8. Treat the \(B_c\gamma\) entries as the controlled hard-photon baseline.
-   Treat the \(B_c^\ast\gamma\) entries as diagnostic until the physical
-   tensor normalization and reduced-denominator/contact terms are finished.
+8. Treat the \(B_c\gamma\) and \(B_c^\ast\gamma\) entries as final
+   \(G^2_{\rm ap}\)-included hard-QCDSR predictions, with the crossed-contact
+   rows retained only in the audit trail.
 
 ## 7. Current artifacts
 
@@ -489,12 +489,13 @@ Using the perturbative heavy-heavy two-point spectral densities gives
 | \(f_1\) | \(0.264~{\rm GeV}\) | \(0.259\)--\(0.269~{\rm GeV}\) | \(0.255\)--\(0.273~{\rm GeV}\) |
 | \(f_2\) | \(0.722~{\rm GeV}\) | \(0.709\)--\(0.738~{\rm GeV}\) | \(0.695\)--\(0.750~{\rm GeV}\) |
 
-The resulting Monte Carlo summary for the controlled \(B_c\gamma\) channel is
+After folding in the explicitly integrated all-positive \(G^2\) sector, the
+Monte Carlo summary for the controlled \(B_c\gamma\) channel is
 
 | Channel | Status | Coupling/projection coefficient | Width |
 |---|---|---:|---:|
-| \(B_{c1}(6743)\to B_c\gamma\) | controlled perturbative baseline | \(+0.0315\,[0.0269,0.0370]~{\rm GeV}^{-1}\) | \(0.223\,[0.162,0.307]~{\rm keV}\) |
-| \(B_{c1}(6750)\to B_c\gamma\) | controlled perturbative baseline | \(-0.184\,[-0.205,-0.167]~{\rm GeV}^{-1}\) | \(8.01\,[6.60,9.90]~{\rm keV}\) |
+| \(B_{c1}(6743)\to B_c\gamma\) | final \(G^2_{\rm ap}\)-included result | \(+0.0487\,[0.0414,0.0572]~{\rm GeV}^{-1}\) | \(0.532\,[0.385,0.734]~{\rm keV}\) |
+| \(B_{c1}(6750)\to B_c\gamma\) | final \(G^2_{\rm ap}\)-included result | \(-0.206\,[-0.230,-0.188]~{\rm GeV}^{-1}\) | \(10.04\,[8.29,12.45]~{\rm keV}\) |
 
 For the vector final state we then recomputed the normalization instead of
 using a fixed \(f_{B_c^\ast}\).  The vector two-point current is
@@ -543,17 +544,15 @@ sensitivity check:
 
 | Channel | Normalization | Coupling/projection coefficient | Width |
 |---|---|---:|---:|
-| \(B_{c1}(6743)\to B_c^\ast\gamma\) | standard vector-invariant \(f_{B_c^\ast}\) | \(-0.0785\,[-0.0843,-0.0736]~{\rm GeV}^{-1}\) | \(74.3\,[65.3,85.5]~{\rm keV}\) |
-| \(B_{c1}(6750)\to B_c^\ast\gamma\) | standard vector-invariant \(f_{B_c^\ast}\) | \(+0.168\,[0.156,0.180]~{\rm GeV}^{-1}\) | \(360\,[312,412]~{\rm keV}\) |
+| \(B_{c1}(6743)\to B_c^\ast\gamma\) | standard vector-invariant \(f_{B_c^\ast}\), \(G^2_{\rm ap}\) included | \(-0.0764\,[-0.0821,-0.0717]~{\rm GeV}^{-1}\) | \(70.3\,[61.9,81.2]~{\rm keV}\) |
+| \(B_{c1}(6750)\to B_c^\ast\gamma\) | standard vector-invariant \(f_{B_c^\ast}\), \(G^2_{\rm ap}\) included | \(+0.173\,[0.161,0.185]~{\rm GeV}^{-1}\) | \(382\,[331,437]~{\rm keV}\) |
 | \(B_{c1}(6743)\to B_c^\ast\gamma\) | reference \(f_{B_c^\ast}=0.384\pm0.038~{\rm GeV}\) | \(-0.0877\,[-0.0986,-0.0795]~{\rm GeV}^{-1}\) | \(92.6\,[76.1,117]~{\rm keV}\) |
 | \(B_{c1}(6750)\to B_c^\ast\gamma\) | reference \(f_{B_c^\ast}=0.384\pm0.038~{\rm GeV}\) | \(+0.187\,[0.169,0.210]~{\rm GeV}^{-1}\) | \(447\,[365,564]~{\rm keV}\) |
 
-These \(B_c^\ast\gamma\) entries are now computed leading hard-QCDSR vector
-baselines, not merely placeholders.  They still do not include radiative
-\(G^2\) or vector-channel contact terms.  Therefore the publication wording
-should be: "leading perturbative hard-QCDSR result; vector normalization audit
-shown explicitly."  We should not call them full-OPE final numbers until the
-background-field vector contact sector is reduced.  The projector-diagnostic
+These \(B_c^\ast\gamma\) entries now include the explicit all-positive
+radiative \(G^2\) sector.  The vector contact audit leaves no ordinary
+two-channel contribution to add to the standard physical double-Borel sum.  The
+projector-diagnostic
 normalization gives \(24.8[21.8,28.5]\) and \(120[104,137]\) keV for the two
 channels, respectively, and is kept in the CSV outputs only as a convention
 cross-check.
@@ -574,7 +573,7 @@ to \(406\) keV.  The larger \(6750\) width is therefore not a numerical
 instability of the chosen Borel window; it follows from the leading vector
 projection and mixing combination.
 
-### 9.2 Vector-channel \(G^2\)/contact screening
+### 9.2 Superseded vector-channel \(G^2\)/contact screening diagnostic
 
 For \(B_c^\ast\gamma\) the denominator of the sum rule contains both the
 physical axial residue \(f_i\) and the final-state vector decay constant
@@ -598,8 +597,8 @@ and hence
   \lesssim
   4\,\max\left|\frac{\Pi_{G^2}}{\Pi_{\rm pert}}\right|.
 \]
-This is only a screening envelope; it is not the explicit radiative
-\(G^2\)/contact calculation.
+This was only a screening envelope; it is kept here as a diagnostic that
+motivated the explicit calculation.
 
 For the preferred standard vector normalization the screen gives
 
@@ -610,11 +609,9 @@ For the preferred standard vector normalization the screen gives
 
 For the reference \(f_{B_c^\ast}=0.384\pm0.038~{\rm GeV}\) normalization the
 corresponding median envelopes are \(\pm14.3\) keV and \(\pm68.8\) keV.  These
-numbers are large enough that the vector channel should be described as a
-leading perturbative baseline with a condensate/contact systematic screen.
-They also explain why the \(6750\to B_c^\ast\gamma\) result should be treated
-with special caution until the explicit all-positive radiative \(G^2\)
-integration is completed and the crossed-contact audit is quoted clearly.
+numbers were large enough to justify the explicit all-positive \(G^2\)
+calculation.  The final numbers are the \(G^2_{\rm ap}\)-included results quoted
+above and in Sec. 12.5.
 
 The script writes:
 
@@ -660,7 +657,7 @@ Therefore the direct comparison is qualitative:
 | observed \(B_c(1P)^+\)-like structure | LHCb PRL 2025: yes, \(>7\sigma\) in \(B_c^+\gamma\) | channels studied explicitly |
 | lower peak location | \(6704.8\pm6.2~{\rm MeV}\) total in quadrature, plus correlations | input state \(6743~{\rm MeV}\) |
 | higher peak location | \(6752.4\pm10.0~{\rm MeV}\) total in quadrature, plus correlations | input state \(6750~{\rm MeV}\) |
-| partial widths | not measured | \(B_c\gamma\) baseline: \(0.223\) and \(8.01~{\rm keV}\) |
+| partial widths | not measured | \(B_c\gamma\): \(0.532\) and \(10.04~{\rm keV}\); \(B_c^\ast\gamma\): \(70.3\) and \(382~{\rm keV}\) |
 
 The lower experimental peak should not be identified one-to-one with the
 input \(6743~{\rm MeV}\) mass without care.  In the measured \(B_c\gamma\)
@@ -685,7 +682,7 @@ in Bondar--Milstein, with the original model papers shown explicitly.
 | X. J. Li et al., Eur. Phys. J. C 83, 1080 (2023) | 30.1 | 47.8 | 64 | 25.6 |
 | Eichten and Quigg, Phys. Rev. D 99, 054025 (2018) | 9.9 | 62.5 | 92.3 | 7.5 |
 | Bondar and Milstein, Phys. Rev. D 111, 114019 (2025) | 22 | 75 | 47 | 2 |
-| This work | \(0.223[0.162,0.307]\) | \(74.3[65.3,85.5]\) | \(8.01[6.60,9.90]\) | \(360[312,412]\) |
+| This work | \(0.532[0.385,0.734]\) | \(70.3[61.9,81.2]\) | \(10.04[8.29,12.45]\) | \(382[331,437]\) |
 
 A paper-style LaTeX version is
 
@@ -714,8 +711,8 @@ Q. Li et al.~\cite{LiZhong2019} & 35 & 70 & 74 & 40\\
 X. J. Li et al.~\cite{LiLiu2023} & 30.1 & 47.8 & 64 & 25.6\\
 Eichten--Quigg~\cite{EichtenQuigg2018} & 9.9 & 62.5 & 92.3 & 7.5\\
 Bondar--Milstein~\cite{BondarMilstein2025} & 22 & 75 & 47 & 2\\
-This work & \(0.223[0.162,0.307]\) & \(74.3[65.3,85.5]\)
-& \(8.01[6.60,9.90]\) & \(360[312,412]\)\\
+This work & \(0.532[0.385,0.734]\) & \(70.3[61.9,81.2]\)
+& \(10.04[8.29,12.45]\) & \(382[331,437]\)\\
 \bottomrule
 \end{tabular}
 \label{tab:bc1-radiative-comparison}
@@ -723,12 +720,10 @@ This work & \(0.223[0.162,0.307]\) & \(74.3[65.3,85.5]\)
 ```
 
 The most important conclusion is the hierarchy, not point-by-point numerical
-agreement.  The \(B_c\gamma\) channels are controlled leading hard-QCDSR
-predictions with a conservative \(G^2\) systematic envelope.  The
-\(B_c^\ast\gamma\) entries use the physical standard vector-current
-normalization and the completed contact-support audit; they should be quoted
-as leading perturbative vector baselines with a conservative radiative-\(G^2\)
-screening envelope.
+agreement.  The \(B_c\gamma\) and \(B_c^\ast\gamma\) channels are controlled
+hard-QCDSR predictions including the explicit all-positive \(G^2\) sector.  The
+contact-support audits leave no ordinary two-channel contact contribution to
+add in the standard double-Borel projection.
 
 ## 11. Perturbative and condensate content
 
@@ -738,25 +733,22 @@ physical residues.  More explicitly:
 
 - The photon is emitted perturbatively from the \(c\) or \(\bar b\) heavy-quark
   line.
-- The radiative three-point OPE uses free heavy-quark propagators.
-- The retained spectral density is the perturbative triangle hard contribution
-  generated by the projected Dirac traces.
+- The leading radiative three-point OPE uses free heavy-quark propagators.
+- The perturbative spectral density is the hard triangle contribution generated
+  by the projected Dirac traces.
 - There is no photon DA, \(\chi\langle\bar q q\rangle\), or light-quark
   condensate term because the \(B_c\) system has no light valence quark.
-- Heavy-heavy power corrections from background-gluon insertions in the heavy
-  propagators, such as gluon-condensate contributions, are included at present
-  through the conservative screening envelope.
+- Heavy-heavy power corrections from the background-gluon expansion of the
+  heavy propagators are included through the explicit all-positive \(G^2\)
+  sector.
 - Reduced two-denominator/contact terms from denominator cancellation have
   been audited in the \(B_c^\ast\gamma\) channel and do not give ordinary
   two-channel double-pole contributions.
 
-So the present \(B_c\gamma\) result should be described as a controlled leading
-perturbative hard-QCDSR baseline.  A final publication-level analysis should
-include the full all-positive radiative three-point gluon-condensate
-integration, or quote the conservative envelope as a systematic uncertainty.
-The \(B_c^\ast\gamma\) contact audit is completed at the support level and
-leaves only crossed-contact candidates outside the standard two-channel
-projection.
+So the present \(B_c\gamma\) and \(B_c^\ast\gamma\) results should be described
+as controlled hard-QCDSR predictions with the explicit all-positive \(G^2\)
+sector included.  The contact audits leave only crossed-contact or
+single-virtuality candidates outside the standard two-channel projection.
 
 ## 12. Dimension-4 radiative gluon-condensate workbench
 
@@ -890,9 +882,8 @@ This is not small enough to justify silently dropping \(G^2\) at publication
 level.  It does not prove that the radiative \(G^2\) correction is this large;
 it says that, based on the same heavy-heavy OPE in the same Borel window, a
 few-percent amplitude correction is plausible and should be either calculated
-explicitly or bounded more sharply.  Therefore the controlled numbers should
-continue to be described as leading perturbative hard-QCDSR baselines until the
-full three-point \(G^2\) reduction is completed.
+explicitly or bounded more sharply.  This diagnostic motivated the explicit
+all-positive \(G^2\) integration in Sec. 12.5 and is superseded there.
 
 The channel-by-channel summary is produced by
 
@@ -936,12 +927,10 @@ propagator powers.  The audit gives
 
 The contact/derivative sector is therefore not a small bookkeeping detail; it
 is roughly half of the complete reduced expression.  A numerical result based
-only on the all-positive sector would not be the full explicit radiative
-\(G^2\) correction until the contact support is audited.  The refined audit in
-Sec. 12.3 shows that these contact rows do not have ordinary physical
-two-channel support; nevertheless, until the all-positive \(G^2\) terms are
-integrated explicitly, the conservative \(G^2\) envelope above remains the
-defensible numerical statement.
+only on the all-positive sector would not be defensible without a contact
+support audit.  The refined audit in Sec. 12.3 shows that these contact rows do
+not have ordinary physical two-channel support, and Sec. 12.5 gives the final
+all-positive \(G^2\) integration.
 
 ### 12.3 Vector \(B_c^\ast\gamma\) denominator-reduced \(G^2\) inventory
 
@@ -996,10 +985,9 @@ Broken down by background-field class:
 This is an important qualitative result.  In the vector channel the contact
 sector is not a correction to a correction; it is slightly larger than the
 ordinary all-positive sector.  The tensor current \(J^B_\mu\) is especially
-sensitive, with \(409\) contact/derivative rows.  Therefore the large
-\(B_{c1}(6750)\to B_c^\ast\gamma\) baseline must be presented with the
-screening envelope unless and until the derivative double-Borel maps are
-implemented term by term.
+sensitive, with \(409\) contact/derivative rows.  The refined support audit
+below shows that these rows do not enter the ordinary two-channel double-Borel
+sum, so the final numerical correction is the all-positive sector of Sec. 12.5.
 
 I then applied a support-level double-Borel audit using
 
@@ -1075,6 +1063,92 @@ For a student redoing this part, the checklist is:
 8. Do not add those \(131\) crossed rows to the physical double-pole sum unless
    a separate crossed-contact prescription is introduced and justified.
 
+### 12.5 Explicit all-positive \(G^2\) integration
+
+After the contact-support audits, the ordinary physical double-Borel
+dimension-four correction is the all-positive sector.  This means that, after
+rewriting the projected numerator in powers of the inverse denominators
+\(d_1,d_2,d_3\), each surviving term has
+\[
+  n_1>0,\qquad n_2>0,\qquad n_3>0 .
+\]
+Such terms have standard Schwinger representations and can be double-Borel
+transformed without derivative-delta contact prescriptions.
+
+The scripts used for this final step are
+
+- `Bc_gamma/scripts/bc_ps_g2_all_positive_direct_borel.py`;
+- `Bc_gamma/scripts/bc_ps_g2_all_positive_mc_update.py`;
+- `Bc_gamma/scripts/bc_vec_g2_all_positive_direct_borel.py`;
+- `Bc_gamma/scripts/bc_vec_g2_all_positive_mc_update.py`;
+- `Bc_gamma/scripts/step3_ps_g2_contact_borel_admissibility.py`.
+
+The corresponding output files are
+
+- `Bc_gamma/outputs/bc_ps_g2_all_positive_direct_borel_grid.csv`;
+- `Bc_gamma/outputs/bc_ps_g2_all_positive_monte_carlo_summary.csv`;
+- `Bc_gamma/outputs/bc_vec_g2_all_positive_direct_borel_grid.csv`;
+- `Bc_gamma/outputs/bc_vec_g2_all_positive_monte_carlo_summary.csv`;
+- `Bc_gamma/outputs/step3_ps_g2_contact_borel_admissibility_summary.csv`.
+
+The convention follows the submitted \(B_c\)-mixing analysis:
+\[
+  S_Q^{(G^2)}:\quad {G^2\over 12},\qquad
+  S_Q^{(G)}S_{Q'}^{(G)}:\quad
+  {G^2\over 96}{N_c^2-1\over 2},\qquad N_c=3 ,
+\]
+where \(G^2\) denotes the same gluon-condensate input used in the two-point
+residue analysis.  The direct double-Borel check uses the diagonal choice
+\[
+  M_1^2=M_2^2=2M^2 ,
+\]
+so that the exponent agrees with the working three-point sum rule.  For charm
+photon emission the active denominators are the charm-line denominators, while
+for anti-bottom photon emission the active denominators are the bottom-line
+denominators.  The final-state virtuality is fixed to
+\(p^2=m_{B_c}^2\) or \(p^2=m_{B_c^\ast}^2\), and
+\[
+  p\cdot q={m_i^2-m_f^2\over 2}
+\]
+for each physical initial state \(i=1,2\).
+
+The pseudoscalar contact audit gives
+
+| Refined contact support class | Rows |
+|---|---:|
+| crossed single-combination rows | \(80\) |
+| single-physical-virtuality rows | \(220\) |
+| no-external-virtuality rows | \(72\) |
+| ordinary two-channel contact rows | \(0\) |
+
+Together with the vector audit, this means that no contact/derivative term is
+added to the standard physical double-Borel sum.  Crossed rows are retained in
+the audit trail only; they would require a separate crossed-contact prescription
+and are not part of the present sum rule.
+
+The all-positive direct-Borel correction shifts the form factor by
+
+| Channel | median \(\delta g/g\) from \(G^2_{\rm ap}\) |
+|---|---:|
+| \(B_{c1}(6743)\to B_c\gamma\) | \(+0.543\,[+0.537,+0.546]\) |
+| \(B_{c1}(6750)\to B_c\gamma\) | \(+0.120\,[+0.112,+0.130]\) |
+| \(B_{c1}(6743)\to B_c^\ast\gamma\) | \(-0.0245\,[-0.0328,-0.0190]\) |
+| \(B_{c1}(6750)\to B_c^\ast\gamma\) | \(+0.0298\,[+0.0264,+0.0347]\) |
+
+Folding these shifts into the same Monte Carlo ensemble gives the final
+preferred results
+
+| Channel | \(g\,[{\rm GeV}^{-1}]\) | \(\Gamma\,[{\rm keV}]\) |
+|---|---:|---:|
+| \(B_{c1}(6743)\to B_c\gamma\) | \(+0.0487[0.0414,0.0572]\) | \(0.532[0.385,0.734]\) |
+| \(B_{c1}(6750)\to B_c\gamma\) | \(-0.206[-0.230,-0.188]\) | \(10.04[8.29,12.45]\) |
+| \(B_{c1}(6743)\to B_c^\ast\gamma\) | \(-0.0764[-0.0821,-0.0717]\) | \(70.3[61.9,81.2]\) |
+| \(B_{c1}(6750)\to B_c^\ast\gamma\) | \(+0.173[0.161,0.185]\) | \(382[331,437]\) |
+
+Thus the old \(G^2\) size screen should now be read only as a diagnostic that
+motivated the explicit calculation.  It is superseded by the all-positive
+\(G^2_{\rm ap}\) results above for the final numerical tables.
+
 ## 13. Final comparison table artifact
 
 The current final comparison table is stored as
@@ -1084,14 +1158,14 @@ The current final comparison table is stored as
 
 It contains:
 
-1. the controlled \(B_{c1}\to B_c\gamma\) predictions with the conservative
-   \(G^2\) systematic envelope;
+1. the controlled \(B_{c1}\to B_c\gamma\) predictions including the explicit
+   all-positive \(G^2\) correction;
 2. the LHCb experimental status, emphasizing that the \(B_c^+\gamma\) structure
    is observed but the individual radiative partial widths are not measured;
 3. separate theoretical values from Godfrey, Ebert--Faustov--Galkin, Fulcher,
    Gershtein et al., T. Y. Li et al., Q. Li et al., X. J. Li et al.,
    Eichten--Quigg, and Bondar--Milstein;
 4. a separate status table for \(B_{c1}\to B_c^\ast\gamma\), where our QCDSR
-   calculation is presented as a leading perturbative vector baseline with the
-   \(f_{B_c^\ast}\) normalization audit and the conservative \(G^2\)/contact
-   screening envelope.
+   calculation uses the standard \(f_{B_c^\ast}\) normalization and includes
+   the explicit all-positive \(G^2\) sector; the reference \(f_{B_c^\ast}\)
+   normalization remains only a sensitivity cross-check.

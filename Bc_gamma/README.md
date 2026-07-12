@@ -25,6 +25,7 @@ physical two-point residues \(f_1\) and \(f_2\), exports stability/Monte Carlo
 tables, and writes publication-style PDF plots into `outputs/`.  The
 \(B_c^\ast\gamma\) channel now uses the standard vector-current normalization;
 its contact-support audit finds no ordinary two-channel contact contribution.
-Both vector widths should still be quoted as leading perturbative baselines
-with the conservative radiative-\(G^2\) screening envelope until the
-all-positive \(G^2\) sector is integrated explicitly.
+The \(B_c\gamma\) and \(B_c^\ast\gamma\) widths now include the explicitly
+integrated all-positive dimension-four \(G^2\) sector.  Contact/derivative rows
+are retained in the audit trail but are not added to the standard physical
+double-Borel sum because they have no ordinary two-channel support.

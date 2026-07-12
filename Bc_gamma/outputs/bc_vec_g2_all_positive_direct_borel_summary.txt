@@ -1,0 +1,14 @@
+Bc1 -> Bc* gamma all-positive radiative G2 direct-Borel result
+================================================================
+
+Convention:
+- diagonal double Borel M1^2=M2^2=2 M^2;
+- physical p^2=m_Bc*^2 and p.q=(m_i^2-m_Bc*^2)/2 in projector prefactors;
+- single-line prefactor Nc G2/12;
+- open-pair prefactor G2*((Nc^2-1)/2)/96;
+- contact/crossed rows are not included.
+
+Bc1(6743)->Bc* gamma: Gamma(pert + all-positive G2) = 66.5 [63.16, 71.8] keV
+Bc1(6743)->Bc* gamma: delta g/g from all-positive G2 = -0.02454 [-0.03281, -0.01905]
+Bc1(6750)->Bc* gamma: Gamma(pert + all-positive G2) = 357.3 [322.7, 412.3] keV
+Bc1(6750)->Bc* gamma: delta g/g from all-positive G2 = 0.02983 [0.02639, 0.03468]

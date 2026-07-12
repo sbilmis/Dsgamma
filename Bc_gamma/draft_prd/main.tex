@@ -40,19 +40,18 @@ from the charm and anti-bottom lines rather than a photon-distribution-amplitude
 term.  Using physical-current residues from the two-point \(B_c\)-mixing sum
 rules, we find
 \[
-\Gamma[\Bcone(6743)\to \Bc\gamma]=0.223^{+0.084}_{-0.061}~\keV,\qquad
-\Gamma[\Bcone(6750)\to \Bc\gamma]=8.01^{+1.89}_{-1.41}~\keV .
+\Gamma[\Bcone(6743)\to \Bc\gamma]=0.532^{+0.202}_{-0.146}~\keV,\qquad
+\Gamma[\Bcone(6750)\to \Bc\gamma]=10.04^{+2.41}_{-1.75}~\keV .
 \]
 For the vector final state, using the standard vector-current normalization
-\(f_{\Bcst}=0.435^{+0.032}_{-0.035}\,\GeV\), we obtain the leading
-hard-photon baselines
+\(f_{\Bcst}=0.435^{+0.032}_{-0.035}\,\GeV\), we obtain
 \[
-\Gamma[\Bcone(6743)\to \Bcst\gamma]=74.3^{+11.2}_{-9.0}~\keV,\qquad
-\Gamma[\Bcone(6750)\to \Bcst\gamma]=360^{+52}_{-48}~\keV .
+\Gamma[\Bcone(6743)\to \Bcst\gamma]=70.3^{+10.9}_{-8.4}~\keV,\qquad
+\Gamma[\Bcone(6750)\to \Bcst\gamma]=382^{+55}_{-50}~\keV .
 \]
-We also give a conservative dimension-four gluon-condensate screening
-uncertainty and show that the vector-channel contact terms have no ordinary
-two-channel double-pole support.
+These values include the explicitly integrated all-positive dimension-four
+gluon-condensate sector.  The contact/derivative rows have no ordinary
+two-channel double-pole support in the physical double-Borel projection.
 \end{abstract}
 
 \maketitle
@@ -216,13 +215,14 @@ The dimension-four gluon-condensate workbench uses the background-field heavy
 propagator expansion.  The projected \(G^2\) numerators were reduced in powers
 of \(D_1,D_2,D_3\).  For the vector channel this gives 1095 reduced terms:
 538 with all effective denominator powers positive and 557
-contact/derivative-sector terms.  A refined double-Borel support audit shows
-that the contact/derivative rows do not contain ordinary two-channel double
-poles.  The apparent 131 active rows all depend on the crossed combination
-\((p-q)^2=2p^2-P^2\), and are therefore kept as audit candidates rather than
-added to the physical double-Borel sum.  Until the all-positive \(G^2\) sector
-is integrated explicitly, we quote a conservative systematic envelope obtained
-from the same-window two-point \(G^2/{\rm pert}\) ratios.
+contact/derivative-sector terms.  For the pseudoscalar channel the
+corresponding all-positive sector contains 375 terms.  We integrate these
+all-positive terms explicitly in the diagonal double-Borel limit
+\(M_1^2=M_2^2=2M^2\).  Refined support audits show that the contact/derivative
+rows do not contain ordinary two-channel double poles.  The vector crossed rows
+depend on \((p-q)^2=2p^2-P^2\), and the pseudoscalar contact rows are either
+single-virtuality, no-virtuality, or crossed-combination terms.  They are kept
+as audit candidates rather than added to the physical double-Borel sum.
 
 \section{Numerical analysis}
 \label{sec:numerics}
@@ -252,25 +252,25 @@ in the standard vector-invariant convention.
 
 \begin{table}[t]
 \centering
-\caption{Present hard-QCDSR results.  The first uncertainty is the Monte Carlo
-input/Borel-window uncertainty.  The second uncertainty, where shown, is the
-conservative \(G^2\) screening envelope.}
+\caption{Present hard-QCDSR results.  The quoted intervals are the 16--84
+percentile Monte Carlo intervals after including the explicitly integrated
+all-positive \(G^2\) sector.}
 \begin{tabular}{lcc}
 \toprule
 Channel & \(g\,[\GeV^{-1}]\) & \(\Gamma\,[\keV]\)\\
 \midrule
 \(\Bcone(6743)\to \Bc\gamma\)
-& \(+0.0316[0.0269,0.0370]\)
-& \(0.223^{+0.084}_{-0.061}\pm0.025_{G^2}\)\\
+& \(+0.0487[0.0414,0.0572]\)
+& \(0.532^{+0.202}_{-0.146}\)\\
 \(\Bcone(6750)\to \Bc\gamma\)
-& \(-0.184[-0.205,-0.167]\)
-& \(8.01^{+1.89}_{-1.41}\pm0.91_{G^2}\)\\
+& \(-0.206[-0.230,-0.188]\)
+& \(10.04^{+2.41}_{-1.75}\)\\
 \(\Bcone(6743)\to \Bcst\gamma\)
-& \(-0.0785[-0.0843,-0.0736]\)
-& \(74.3^{+11.2}_{-9.0}\pm11.1_{G^2{\rm\,scr.}}\)\\
+& \(-0.0764[-0.0821,-0.0717]\)
+& \(70.3^{+10.9}_{-8.4}\)\\
 \(\Bcone(6750)\to \Bcst\gamma\)
-& \(+0.168[0.156,0.180]\)
-& \(360^{+52}_{-48}\pm54_{G^2{\rm\,scr.}}\)\\
+& \(+0.173[0.161,0.185]\)
+& \(382^{+55}_{-50}\)\\
 \bottomrule
 \end{tabular}
 \label{tab:present-results}
@@ -314,7 +314,7 @@ Q. Li et al.~\cite{LiZhong2019} & 35 & 70 & 74 & 40\\
 X. J. Li et al.~\cite{LiLiu2023} & 30.1 & 47.8 & 64 & 25.6\\
 Eichten--Quigg~\cite{EichtenQuigg2018} & 9.9 & 62.5 & 92.3 & 7.5\\
 Bondar--Milstein~\cite{BondarMilstein2025} & 22 & 75 & 47 & 2\\
-This work & \(0.223\) & \(74.3\) & \(8.01\) & \(360\)\\
+This work & \(0.532\) & \(70.3\) & \(10.04\) & \(382\)\\
 \bottomrule
 \end{tabular}
 \label{tab:comparison}
@@ -341,15 +341,13 @@ calculation uses physical axial-current residues from the two-point
 the few-keV level, and the vector final-state widths are much larger in the
 standard normalization.
 
-The dimension-four gluon-condensate sector has been reduced algebraically and
-audited.  In the vector channel the contact/derivative rows do not have
-ordinary two-channel double-pole support; they are crossed-contact audit
-candidates.  The numerical results are therefore quoted as leading
-perturbative hard-QCDSR predictions with a conservative \(G^2\) screening
-uncertainty.  A future refinement can integrate the all-positive radiative
-\(G^2\) terms explicitly, but the present calculation already gives a
-transparent QCDSR baseline for comparison with model predictions and future
-measurements of \(B_c(1P)\) radiative decays.
+The dimension-four gluon-condensate sector has been reduced algebraically,
+audited, and included through the all-positive denominator sector.  The
+contact/derivative rows do not have ordinary two-channel double-pole support
+in the physical double-Borel projection, so they are not added to the sum rule.
+The present calculation therefore gives a transparent QCDSR prediction for
+comparison with model calculations and future measurements of \(B_c(1P)\)
+radiative decays.
 
 \begin{thebibliography}{99}
 
