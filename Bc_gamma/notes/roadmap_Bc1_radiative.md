@@ -1149,6 +1149,57 @@ Thus the old \(G^2\) size screen should now be read only as a diagnostic that
 motivated the explicit calculation.  It is superseded by the all-positive
 \(G^2_{\rm ap}\) results above for the final numerical tables.
 
+### 12.6 Vector projector and width-normalization audit
+
+Because \(B_{c1}\to B_c^\ast\gamma\) uses the three-index tensor
+\[
+  V_{\mu\nu\rho}
+  =p_\nu\epsilon_{\mu\rho pq}
+  -(p\cdot q)\epsilon_{\mu\nu\rho p},
+\]
+the extracted coefficient is not dimensionally the same as the
+\(B_c\gamma\) E1 coupling.  The audit script is
+
+- `Bc_gamma/scripts/bc_vec_projector_width_audit.py`,
+
+with outputs
+
+- `Bc_gamma/outputs/bc_vec_projector_width_audit.csv`;
+- `Bc_gamma/outputs/bc_vec_projector_width_audit.txt`.
+
+The explicit polarization sum gives
+\[
+  {1\over3}\sum_{\rm pol}
+  |\eta_A^\mu \epsilon_\gamma^\nu \eta_V^\rho V_{\mu\nu\rho}|^2
+  =
+  {2\over3}m_i^2E_\gamma^2(2m_f^2+E_\gamma^2).
+\]
+Therefore
+\[
+  \Gamma(1^+\to1^-\gamma)
+  =
+  {\alpha_{\rm em}\over3}\,
+  g_V^2(2m_f^2+E_\gamma^2)E_\gamma^3 .
+\]
+Equivalently, one may define a one-momentum E1-normalized coupling
+\[
+  g_{E1}=\sqrt{2m_f^2+E_\gamma^2}\,g_V,
+  \qquad
+  \Gamma={\alpha_{\rm em}\over3}g_{E1}^2E_\gamma^3.
+\]
+For the two vector channels this conversion factor is \(8.969\).  Thus the
+final vector couplings may also be quoted as
+
+| Channel | \(g_V\,[{\rm GeV}^{-2}]\) | \(g_{E1}\,[{\rm GeV}^{-1}]\) |
+|---|---:|---:|
+| \(B_{c1}(6743)\to B_c^\ast\gamma\) | \(-0.0764[-0.0821,-0.0717]\) | \(-0.685[-0.736,-0.643]\) |
+| \(B_{c1}(6750)\to B_c^\ast\gamma\) | \(+0.173[0.161,0.185]\) | \(+1.55[1.45,1.66]\) |
+
+The projector normalization and width conversion are therefore internally
+consistent.  They do not explain the large \(6750/6743\) vector-width ratio;
+that ratio is driven by the mixed-current amplitude itself and must be checked
+through the mixing/sign/current-assignment audit.
+
 ## 13. Final comparison table artifact
 
 The current final comparison table is stored as
