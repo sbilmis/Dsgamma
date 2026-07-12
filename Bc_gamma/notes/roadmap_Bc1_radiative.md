@@ -1200,6 +1200,71 @@ consistent.  They do not explain the large \(6750/6743\) vector-width ratio;
 that ratio is driven by the mixed-current amplitude itself and must be checked
 through the mixing/sign/current-assignment audit.
 
+### 12.7 Vector mixing/sign and state-assignment audit
+
+The vector hierarchy is the remaining nontrivial issue.  The audit script is
+
+- `Bc_gamma/scripts/bc_vec_mixing_sign_audit.py`,
+
+with outputs
+
+- `Bc_gamma/outputs/bc_vec_mixing_sign_audit.txt`;
+- `Bc_gamma/outputs/bc_vec_mixing_sign_audit_grid.csv`;
+- `Bc_gamma/outputs/bc_vec_mixing_sign_audit_summary.csv`;
+- `Bc_gamma/outputs/bc_vec_mixing_sign_audit_central.csv`;
+- `Bc_gamma/outputs/bc_vec_mixing_sign_audit_components.csv`;
+- `Bc_gamma/outputs/bc_vec_mixing_sign_audit_literature.csv`.
+
+At the central point \(M^2=8~{\rm GeV}^2\), \(s_0=54~{\rm GeV}^2\), the vector
+basis amplitudes are
+\[
+  \widehat\Pi_A=0.00637,\qquad
+  \widehat\Pi_B\simeq -0.00848 .
+\]
+With \(\theta=43.29^\circ\), the baseline physical combinations are
+\[
+\begin{aligned}
+\widehat\Pi_{6743}^{(V)}
+&=\sin\theta\,\widehat\Pi_A+\cos\theta\,\widehat\Pi_B\\
+&=0.00437-0.00617=-0.00180,\\
+\widehat\Pi_{6750}^{(V)}
+&=\cos\theta\,\widehat\Pi_A-\sin\theta\,\widehat\Pi_B\\
+&=0.00464+0.00582=0.01046 .
+\end{aligned}
+\]
+Thus the lower vector amplitude is cancellation-dominated, while the higher
+one is constructive.  The central baseline vector widths are
+\[
+  \Gamma_{6743}^{(V)}=70.2~{\rm keV},\qquad
+  \Gamma_{6750}^{(V)}=338~{\rm keV},
+\]
+before the small all-positive \(G^2\) fold-in.
+
+The variant scan gives the following nine-point grid medians:
+
+| Convention test | \(\Gamma_{6743}\) keV | \(\Gamma_{6750}\) keV | high/low |
+|---|---:|---:|---:|
+| baseline | \(70.2\) | \(338\) | \(4.82\) |
+| radiative \(J_B\) sign flip | \(2402\) | \(4.29\) | \(0.0018\) |
+| alternate rotation \(c,s\) | \(29.8\) | \(344\) | \(11.5\) |
+| alternate rotation \(c,-s\) | \(2361\) | \(10.1\) | \(0.0043\) |
+| swap eigenstate assignment | \(316\) | \(75.3\) | \(0.239\) |
+| swap assignment and \(J_B\) flip | \(3.99\) | \(2572\) | \(645\) |
+
+Representative model calculations all have high/low \(<1\) for
+\(B_c^\ast\gamma\): Godfrey \(0.18\), Ebert--Faustov--Galkin \(0.17\), Fulcher
+\(0.35\), Gershtein et al. \(0.10\), T. Y. Li et al. \(0.21\), Q. Li et al.
+\(0.57\), X. J. Li et al. \(0.54\), Eichten--Quigg \(0.12\), and
+Bondar--Milstein \(0.027\).
+
+The only simple convention changes that restore high/low \(<1\) either make the
+lower width unrealistically large or require a relative radiative \(J_B\) sign
+flip not supported by the tensor-current convention shared with the
+two-point \(B_c\)-mixing code.  Therefore the \(B_c^\ast\gamma\) numbers should
+not yet be called final physical predictions.  The correct paper wording is:
+controlled \(B_c\gamma\) prediction, and \(B_c^\ast\gamma\) baseline under an
+independent tensor-current sign and state-assignment audit.
+
 ## 13. Final comparison table artifact
 
 The current final comparison table is stored as

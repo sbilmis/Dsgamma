@@ -1,0 +1,44 @@
+Bc1 -> Bc* gamma mixing/sign audit
+====================================
+
+Central point: M2=8 GeV^2, s0=54 GeV^2, standard f_Bc* normalization.
+theta = 43.2894 deg, f1 = 0.263615 GeV, f2 = 0.721145 GeV
+A = 0.00637274, B_low = -0.00847843, B_high = -0.0084824
+
+Baseline mixed-amplitude decomposition:
+low:  sin(theta) A = 0.00436969, cos(theta) B = -0.00617144, sum = -0.00180175
+high: cos(theta) A = 0.00463871, -sin(theta) B = 0.00581625, sum = 0.010455
+The lower-state amplitude is cancellation-dominated; the higher-state amplitude is constructive.
+
+Central variant widths:
+baseline: Gamma_low=70.17 keV, Gamma_high=337.9 keV, high/low=4.815
+radiative_JB_sign_flip: Gamma_low=2402 keV, Gamma_high=4.286 keV, high/low=0.001785
+alternate_rotation_c_s: Gamma_low=29.83 keV, Gamma_high=343.6 keV, high/low=11.52
+alternate_rotation_c_minus_s: Gamma_low=2361 keV, Gamma_high=10.07 keV, high/low=0.004263
+swap_eigenstate_assignment: Gamma_low=315.5 keV, Gamma_high=75.33 keV, high/low=0.2387
+swap_assignment_and_JB_flip: Gamma_low=3.986 keV, Gamma_high=2572 keV, high/low=645.1
+
+Nine-point grid medians:
+baseline: low=70.17 [61,83.73] keV, high=337.9 [300.6,393.1] keV, ratio=4.815
+radiative_JB_sign_flip: low=2402 [2082,2876] keV, high=4.286 [4.044,4.547] keV, ratio=0.001785
+alternate_rotation_c_s: low=29.83 [28.88,30.93] keV, high=343.6 [305,400.8] keV, ratio=11.52
+alternate_rotation_c_minus_s: low=2361 [2052,2821] keV, high=10.07 [8.96,11.7] keV, ratio=0.004263
+swap_eigenstate_assignment: low=315.5 [281.1,366.4] keV, high=75.33 [65.4,90.08] keV, ratio=0.2387
+swap_assignment_and_JB_flip: low=3.986 [3.752,4.237] keV, high=2572 [2226,3085] keV, ratio=645.1
+
+Literature high/low ratios for Bc* gamma:
+Godfrey: low=60, high=11, ratio=0.1833
+Ebert-Faustov-Galkin: low=78.9, high=13.6, ratio=0.1724
+Fulcher: low=75.6, high=26.2, ratio=0.3466
+Gershtein et al.: low=77.8, high=8.1, ratio=0.1041
+T. Y. Li et al.: low=49, high=10.5, ratio=0.2143
+Q. Li et al.: low=70, high=40, ratio=0.5714
+X. J. Li et al.: low=47.8, high=25.6, ratio=0.5356
+Eichten-Quigg: low=62.5, high=7.5, ratio=0.12
+Bondar-Milstein: low=75, high=2, ratio=0.02667
+
+Interpretation:
+- Baseline reproduces the current QCDSR result and has high/low > 1.
+- All representative model ratios are < 1.
+- A radiative J_B sign flip gives the literature-like hierarchy but is not supported by the tensor-current convention shared with the Bc-mixing code.
+- Therefore the vector result should remain flagged until the independent vector tensor-current trace/sign convention is rederived.

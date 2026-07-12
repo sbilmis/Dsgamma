@@ -1068,6 +1068,54 @@ large \(6750/6743\) vector hierarchy is not caused by a width-conversion factor;
 it comes from the mixed-current vector amplitude and should be checked through
 the separate sign, current-assignment, and no-mixing-limit audits.
 
+\section{Vector Mixing/Sign Audit}
+
+The script \path{bc_vec_mixing_sign_audit.py} tests the remaining convention
+ambiguity in the \(B_c^\ast\gamma\) channel.  At the central point
+\(M^2=8~{\rm GeV}^2\), \(s_0=54~{\rm GeV}^2\), it finds
+\[
+\widehat\Pi_A=0.00637,\qquad \widehat\Pi_B\simeq -0.00848,
+\qquad \theta=43.29^\circ .
+\]
+The baseline mixed amplitudes are therefore
+\[
+\begin{aligned}
+\widehat\Pi_{6743}^{(V)}
+&=\sin\theta\,\widehat\Pi_A+\cos\theta\,\widehat\Pi_B
+=0.00437-0.00617=-0.00180,\\
+\widehat\Pi_{6750}^{(V)}
+&=\cos\theta\,\widehat\Pi_A-\sin\theta\,\widehat\Pi_B
+=0.00464+0.00582=0.01046 .
+\end{aligned}
+\]
+The lower vector amplitude is thus cancellation-dominated, while the higher
+one is constructive.
+
+The nine-point grid medians for several convention tests are
+\[
+\begin{array}{lccc}
+\hline
+\text{test} & \Gamma_{6743}~({\rm keV}) & \Gamma_{6750}~({\rm keV})
+& \Gamma_{6750}/\Gamma_{6743}\\
+\hline
+\text{baseline} & 70.2 & 338 & 4.82\\
+\text{radiative }J_B\text{ sign flip} & 2402 & 4.29 & 0.0018\\
+\text{alternate rotation }(c,s) & 29.8 & 344 & 11.5\\
+\text{alternate rotation }(c,-s) & 2361 & 10.1 & 0.0043\\
+\text{swap eigenstate assignment} & 316 & 75.3 & 0.239\\
+\text{swap assignment and }J_B\text{ flip} & 3.99 & 2572 & 645\\
+\hline
+\end{array}
+\]
+Representative model calculations have high/low \(<1\) in the
+\(B_c^\ast\gamma\) channel.  The baseline QCDSR convention instead has
+high/low \(>1\).  A radiative \(J_B\) sign flip restores the qualitative
+hierarchy but is not supported by the tensor-current convention used in the
+two-point \(B_c\)-mixing calculation.  Therefore the vector-channel numerical
+entries should be treated as baseline convention values rather than final
+physical predictions until the tensor-current trace and physical-state
+assignment are independently rederived.
+
 \section{Reproduction Checklist for the Present Pilot}
 
 The current numbers can be reproduced in the following order.
