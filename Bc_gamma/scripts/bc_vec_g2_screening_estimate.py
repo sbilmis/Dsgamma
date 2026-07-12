@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Conservative G2/contact size screen for Bc1 -> Bc* gamma.
+"""Conservative G2 size screen for Bc1 -> Bc* gamma.
 
 This is not the explicit radiative three-point G2 calculation.  It estimates
 how large a missing power correction could be if its relative size is similar
@@ -102,13 +102,15 @@ def main() -> None:
     write_csv(OUT / "bc_vec_g2_screening_estimate.csv", rows)
 
     lines = [
-        "Bc1 -> Bc* gamma G2/contact screening estimate",
-        "==============================================",
+        "Bc1 -> Bc* gamma G2 screening estimate",
+        "======================================",
         "",
         "Purpose:",
-        "- This is a conservative size screen, not the final radiative G2/contact calculation.",
+        "- This is a conservative size screen, not the final explicit radiative G2 calculation.",
         "- It uses the completed Bc-mixing two-point G2/Pert ratios in the same",
         "  M2={7,8,9} GeV^2 and s0={53,54,55} GeV^2 window.",
+        "- The separate contact-support audit finds no ordinary two-channel",
+        "  contact term in the vector channel.",
         "",
         "Rule used:",
         "- max two-point moment shift = max(|Pi_G2/Pi_pert|) over AA, AB, BB.",
@@ -138,11 +140,12 @@ def main() -> None:
     lines.extend(
         [
             "Interpretation:",
-            "- The vector channel is not protected from missing G2/contact terms.",
+            "- The vector channel is not protected from radiative G2 effects.",
             "- The absolute envelope is especially large for Bc1(6750)->Bc* gamma because",
             "  the perturbative leading-vector width is already large.",
-            "- Until the explicit vector G2/contact reduction is completed, the safest",
-            "  wording is leading perturbative vector baseline plus this systematic screen.",
+            "- Until the explicit all-positive vector G2 integration is completed,",
+            "  the safest wording is leading perturbative vector baseline plus this",
+            "  systematic screen.",
         ]
     )
     (OUT / "bc_vec_g2_screening_estimate.txt").write_text("\n".join(lines) + "\n")

@@ -23,5 +23,8 @@ Current controlled pseudoscalar-channel driver:
 This script recomputes the \(B_{c1}\to B_c\gamma\) hard-photon baseline with
 physical two-point residues \(f_1\) and \(f_2\), exports stability/Monte Carlo
 tables, and writes publication-style PDF plots into `outputs/`.  The
-\(B_c^\ast\gamma\) channel remains diagnostic until its tensor-basis and
-contact-term audit is completed.
+\(B_c^\ast\gamma\) channel now uses the standard vector-current normalization;
+its contact-support audit finds no ordinary two-channel contact contribution.
+Both vector widths should still be quoted as leading perturbative baselines
+with the conservative radiative-\(G^2\) screening envelope until the
+all-positive \(G^2\) sector is integrated explicitly.

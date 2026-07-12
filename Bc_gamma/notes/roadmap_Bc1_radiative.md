@@ -685,7 +685,7 @@ in Bondar--Milstein, with the original model papers shown explicitly.
 | X. J. Li et al., Eur. Phys. J. C 83, 1080 (2023) | 30.1 | 47.8 | 64 | 25.6 |
 | Eichten and Quigg, Phys. Rev. D 99, 054025 (2018) | 9.9 | 62.5 | 92.3 | 7.5 |
 | Bondar and Milstein, Phys. Rev. D 111, 114019 (2025) | 22 | 75 | 47 | 2 |
-| This work | \(0.223[0.162,0.307]\) | \(46.3[41.0,53.8]\) | \(8.01[6.60,9.90]\) | \(1.67[1.43,2.04]\times10^3\) |
+| This work | \(0.223[0.162,0.307]\) | \(74.3[65.3,85.5]\) | \(8.01[6.60,9.90]\) | \(360[312,412]\) |
 
 A paper-style LaTeX version is
 
@@ -714,19 +714,21 @@ Q. Li et al.~\cite{LiZhong2019} & 35 & 70 & 74 & 40\\
 X. J. Li et al.~\cite{LiLiu2023} & 30.1 & 47.8 & 64 & 25.6\\
 Eichten--Quigg~\cite{EichtenQuigg2018} & 9.9 & 62.5 & 92.3 & 7.5\\
 Bondar--Milstein~\cite{BondarMilstein2025} & 22 & 75 & 47 & 2\\
-This work & \(0.223[0.162,0.307]\) & \(46.3[41.0,53.8]\)
-& \(8.01[6.60,9.90]\) & \(1.67[1.43,2.04]\times10^3\)\\
+This work & \(0.223[0.162,0.307]\) & \(74.3[65.3,85.5]\)
+& \(8.01[6.60,9.90]\) & \(360[312,412]\)\\
 \bottomrule
 \end{tabular}
 \label{tab:bc1-radiative-comparison}
 \end{table}
 ```
 
-The most important conclusion is not the numerical agreement yet; it is the
-diagnostic.  The \(B_c\gamma\) baseline can be used as a first result, while
-the \(B_c^\ast\gamma\) calculation must be completed with the physical
-epsilon-tensor normalization and full double-Borel/contact terms before it can
-be compared honestly with experiment or quark models.
+The most important conclusion is the hierarchy, not point-by-point numerical
+agreement.  The \(B_c\gamma\) channels are controlled leading hard-QCDSR
+predictions with a conservative \(G^2\) systematic envelope.  The
+\(B_c^\ast\gamma\) entries use the physical standard vector-current
+normalization and the completed contact-support audit; they should be quoted
+as leading perturbative vector baselines with a conservative radiative-\(G^2\)
+screening envelope.
 
 ## 11. Perturbative and condensate content
 
@@ -742,16 +744,19 @@ physical residues.  More explicitly:
 - There is no photon DA, \(\chi\langle\bar q q\rangle\), or light-quark
   condensate term because the \(B_c\) system has no light valence quark.
 - Heavy-heavy power corrections from background-gluon insertions in the heavy
-  propagators, such as gluon-condensate contributions, are not yet included in
-  the radiative three-point correlator.
-- Reduced two-denominator/contact terms from denominator cancellation still need
-  a full double-Borel audit, especially for the \(B_c^\ast\gamma\) channel.
+  propagators, such as gluon-condensate contributions, are included at present
+  through the conservative screening envelope.
+- Reduced two-denominator/contact terms from denominator cancellation have
+  been audited in the \(B_c^\ast\gamma\) channel and do not give ordinary
+  two-channel double-pole contributions.
 
 So the present \(B_c\gamma\) result should be described as a controlled leading
 perturbative hard-QCDSR baseline.  A final publication-level analysis should
-include or bound the radiative three-point gluon-condensate correction.  The
-\(B_c^\ast\gamma\) channel additionally needs the contact-term and
-tensor-normalization audit.
+include the full all-positive radiative three-point gluon-condensate
+integration, or quote the conservative envelope as a systematic uncertainty.
+The \(B_c^\ast\gamma\) contact audit is completed at the support level and
+leaves only crossed-contact candidates outside the standard two-channel
+projection.
 
 ## 12. Dimension-4 radiative gluon-condensate workbench
 

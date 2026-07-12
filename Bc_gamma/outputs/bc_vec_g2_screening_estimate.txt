@@ -1,10 +1,12 @@
-Bc1 -> Bc* gamma G2/contact screening estimate
-==============================================
+Bc1 -> Bc* gamma G2 screening estimate
+======================================
 
 Purpose:
-- This is a conservative size screen, not the final radiative G2/contact calculation.
+- This is a conservative size screen, not the final explicit radiative G2 calculation.
 - It uses the completed Bc-mixing two-point G2/Pert ratios in the same
   M2={7,8,9} GeV^2 and s0={53,54,55} GeV^2 window.
+- The separate contact-support audit finds no ordinary two-channel
+  contact term in the vector channel.
 
 Rule used:
 - max two-point moment shift = max(|Pi_G2/Pi_pert|) over AA, AB, BB.
@@ -23,8 +25,9 @@ Normalization: standard_vector_invariant
 - Bc1(6750)->Bc* gamma: |delta g/g| median=0.077, max=0.171; |delta Gamma/Gamma| median=0.154, max=0.343; Gamma envelope median=53.63 keV, max=139.25 keV.
 
 Interpretation:
-- The vector channel is not protected from missing G2/contact terms.
+- The vector channel is not protected from radiative G2 effects.
 - The absolute envelope is especially large for Bc1(6750)->Bc* gamma because
   the perturbative leading-vector width is already large.
-- Until the explicit vector G2/contact reduction is completed, the safest
-  wording is leading perturbative vector baseline plus this systematic screen.
+- Until the explicit all-positive vector G2 integration is completed,
+  the safest wording is leading perturbative vector baseline plus this
+  systematic screen.

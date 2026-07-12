@@ -574,7 +574,11 @@ def main():
             "16-84%=[{q16:.4g},{q84:.4g}], range=[{min:.4g},{max:.4g}]".format(**item)
         )
     lines.append("")
-    lines.append("Status: perturbative hard-photon three-point OPE only; radiative G^2/contact terms are not included.")
+    lines.append(
+        "Status: perturbative hard-photon three-point OPE. Radiative G^2 is "
+        "quoted through the separate conservative screening estimate; the "
+        "contact-support audit finds no ordinary two-channel contact term."
+    )
     lines.append("Stability plots written for f_Bcstar, g1, g2 and the two vector widths.")
     (OUT / "bc_vec_complete_summary.txt").write_text("\n".join(lines) + "\n")
     print("\n".join(lines))
