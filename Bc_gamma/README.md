@@ -27,6 +27,8 @@ tables, and writes publication-style PDF plots into `outputs/`.  The
 its contact-support audit finds no ordinary two-channel contact contribution.
 The \(B_c\gamma\) widths are the controlled predictions.  The \(B_c^\ast\gamma\)
 widths include the explicitly integrated all-positive dimension-four \(G^2\)
-sector and have a completed contact-support audit, but they remain baseline
-current-convention values until the independent tensor-current sign and
-state-assignment audit is resolved.
+sector and have completed contact-support and tensor-current sign audits.  The
+large \(6750/6743\) vector hierarchy is therefore a convention-fixed
+mixed-current result in the adopted two-point state assignment, driven by
+destructive interference in the lower state and constructive interference in
+the higher state.

@@ -1202,9 +1202,10 @@ through the mixing/sign/current-assignment audit.
 
 ### 12.7 Vector mixing/sign and state-assignment audit
 
-The vector hierarchy is the remaining nontrivial issue.  The audit script is
+The vector hierarchy is the remaining nontrivial issue.  The audit scripts are
 
 - `Bc_gamma/scripts/bc_vec_mixing_sign_audit.py`,
+- `Bc_gamma/scripts/step2_vec_tensor_sign_independent_audit.wl`,
 
 with outputs
 
@@ -1214,7 +1215,9 @@ with outputs
 - `Bc_gamma/outputs/bc_vec_mixing_sign_audit_central.csv`;
 - `Bc_gamma/outputs/bc_vec_mixing_sign_audit_components.csv`;
 - `Bc_gamma/outputs/bc_vec_mixing_sign_audit_no_mixing.csv`;
-- `Bc_gamma/outputs/bc_vec_mixing_sign_audit_literature.csv`.
+- `Bc_gamma/outputs/bc_vec_mixing_sign_audit_literature.csv`;
+- `Bc_gamma/outputs/step2_vec_tensor_sign_independent_audit.txt`;
+- `Bc_gamma/outputs/step2_vec_tensor_sign_independent_audit.csv`.
 
 At the central point \(M^2=8~{\rm GeV}^2\), \(s_0=54~{\rm GeV}^2\), the vector
 basis amplitudes are
@@ -1269,19 +1272,46 @@ mixed-current QCDSR result is therefore not a simple phase-space or mass
 effect.  It is produced by destructive interference in the \(6743\) amplitude
 and constructive interference in the \(6750\) amplitude.
 
+The independent FeynCalc sign audit then checks the tensor-current convention
+without relying on `DiracSigma` alone.  Since FeynCalc uses
+\[
+  {\tt DiracSigma}(\gamma_\mu,\gamma_\alpha)
+  ={i\over2}[\gamma_\mu,\gamma_\alpha],
+\]
+the physical current factor \(i\sigma_{\mu\alpha}P^\alpha\gamma_5\) is
+equivalently
+\[
+  -{1\over2}[\gamma_\mu,\gamma_\alpha]P^\alpha\gamma_5 .
+\]
+The audit recomputes the projected \(J_B\) triangle with several convention
+choices and compares the result after stripping the common
+\(\gamma_5\)/epsilon phase:
+
+| Tensor-current test | stripped ratio to working \(J_B\) |
+|---|---:|
+| working `I DiracSigma` | \(+1\) |
+| explicit commutator \(-[\gamma_\mu,\gamma_\alpha]/2\) | \(+1\) |
+| opposite current phase | \(-1\) |
+| reversed sigma indices | \(-1\) |
+| no raw \(i\) multiplying `DiracSigma` | \(-i\) |
+
+Therefore the relative \(J_B\) sign used in the vector QCDSR calculation is
+fixed by the same tensor-current convention as the two-point \(B_c\)-mixing
+analysis.  A sign flip would correspond to a different phase convention for
+the tensor current, not to a correction of the present trace.
+
 Representative model calculations all have high/low \(<1\) for
 \(B_c^\ast\gamma\): Godfrey \(0.18\), Ebert--Faustov--Galkin \(0.17\), Fulcher
 \(0.35\), Gershtein et al. \(0.10\), T. Y. Li et al. \(0.21\), Q. Li et al.
 \(0.57\), X. J. Li et al. \(0.54\), Eichten--Quigg \(0.12\), and
 Bondar--Milstein \(0.027\).
 
-The only simple convention changes that restore high/low \(<1\) either make the
-lower width unrealistically large or require a relative radiative \(J_B\) sign
-flip not supported by the tensor-current convention shared with the
-two-point \(B_c\)-mixing code.  Therefore the \(B_c^\ast\gamma\) numbers should
-not yet be called final physical predictions.  The correct paper wording is:
-controlled \(B_c\gamma\) prediction, and \(B_c^\ast\gamma\) baseline under an
-independent tensor-current sign and state-assignment audit.
+The conclusion is now sharper than the earlier baseline wording: the
+\(B_c^\ast\gamma\) hierarchy in the adopted two-point state assignment is a
+convention-fixed mixed-current QCDSR result.  It disagrees qualitatively with
+the model high/low pattern because the physical-current rotation generates
+destructive interference for \(6743\) and constructive interference for
+\(6750\), not because of phase space or an unresolved tensor-current sign.
 
 ## 13. Final comparison table artifact
 

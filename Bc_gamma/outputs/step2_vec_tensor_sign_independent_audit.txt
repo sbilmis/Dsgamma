@@ -1,0 +1,47 @@
+Bc1 -> Bcstar gamma independent J_B tensor-current sign audit
+================================================================
+
+Projector norm V.V = -4*p2*pq^2
+Convention reminder: FeynCalc DiracSigma = i/2 [gamma_mu,gamma_alpha].
+Therefore i DiracSigma equals -1/2 times the explicit commutator.
+
+Reference total triangle, working_dirac_sigma:
+((2*I)*ebbar*mb)/(mb + mc) + ((2*I)*ec*mc)/(mb + mc) - ((6*I)*ebbar*mb^3)/((mb + mc)*p2) + ((4*I)*ebbar*mb^2*mc)/((mb + mc)*p2) + ((2*I)*ec*mb^2*mc)/((mb + mc)*p2) + ((2*I)*ebbar*mb*mc^2)/((mb + mc)*p2) - ((4*I)*ec*mb*mc^2)/((mb + mc)*p2) + ((2*I)*ec*mc^3)/((mb + mc)*p2) - ((4*I)*ebbar*mb^3)/((mb + mc)*pq) + ((4*I)*ebbar*mb^2*mc)/((mb + mc)*pq) - ((4*I)*ec*mb*mc^2)/((mb + mc)*pq) + ((4*I)*ec*mc^3)/((mb + mc)*pq) + ((2*I)*ebbar*mb*pq)/((mb + mc)*p2) + ((2*I)*ec*mc*pq)/((mb + mc)*p2)
+
+Reference after stripping the common gamma5/epsilon phase I:
+(2*ebbar*mb)/(mb + mc) + (2*ec*mc)/(mb + mc) - (6*ebbar*mb^3)/((mb + mc)*p2) + (4*ebbar*mb^2*mc)/((mb + mc)*p2) + (2*ec*mb^2*mc)/((mb + mc)*p2) + (2*ebbar*mb*mc^2)/((mb + mc)*p2) - (4*ec*mb*mc^2)/((mb + mc)*p2) + (2*ec*mc^3)/((mb + mc)*p2) - (4*ebbar*mb^3)/((mb + mc)*pq) + (4*ebbar*mb^2*mc)/((mb + mc)*pq) - (4*ec*mb*mc^2)/((mb + mc)*pq) + (4*ec*mc^3)/((mb + mc)*pq) + (2*ebbar*mb*pq)/((mb + mc)*p2) + (2*ec*mc*pq)/((mb + mc)*p2)
+
+Variant: working_dirac_sigma
+  total - reference = 0
+  total + reference = ((-4*I)*(-(ec*mc*(2*mc*(-mb + mc)*p2 + ((mb - mc)^2 + p2)*pq + pq^2)) + ebbar*mb*(-2*mb*mc*(p2 + pq) - pq*(mc^2 + p2 + pq) + mb^2*(2*p2 + 3*pq))))/((mb + mc)*p2*pq)
+  stripped total/reference = 1
+  stripped total = (2*ebbar*mb)/(mb + mc) + (2*ec*mc)/(mb + mc) - (6*ebbar*mb^3)/((mb + mc)*p2) + (4*ebbar*mb^2*mc)/((mb + mc)*p2) + (2*ec*mb^2*mc)/((mb + mc)*p2) + (2*ebbar*mb*mc^2)/((mb + mc)*p2) - (4*ec*mb*mc^2)/((mb + mc)*p2) + (2*ec*mc^3)/((mb + mc)*p2) - (4*ebbar*mb^3)/((mb + mc)*pq) + (4*ebbar*mb^2*mc)/((mb + mc)*pq) - (4*ec*mb*mc^2)/((mb + mc)*pq) + (4*ec*mc^3)/((mb + mc)*pq) + (2*ebbar*mb*pq)/((mb + mc)*p2) + (2*ec*mc*pq)/((mb + mc)*p2)
+
+Variant: explicit_commutator
+  total - reference = 0
+  total + reference = ((-4*I)*(-(ec*mc*(2*mc*(-mb + mc)*p2 + ((mb - mc)^2 + p2)*pq + pq^2)) + ebbar*mb*(-2*mb*mc*(p2 + pq) - pq*(mc^2 + p2 + pq) + mb^2*(2*p2 + 3*pq))))/((mb + mc)*p2*pq)
+  stripped total/reference = 1
+  stripped total = (2*ebbar*mb)/(mb + mc) + (2*ec*mc)/(mb + mc) - (6*ebbar*mb^3)/((mb + mc)*p2) + (4*ebbar*mb^2*mc)/((mb + mc)*p2) + (2*ec*mb^2*mc)/((mb + mc)*p2) + (2*ebbar*mb*mc^2)/((mb + mc)*p2) - (4*ec*mb*mc^2)/((mb + mc)*p2) + (2*ec*mc^3)/((mb + mc)*p2) - (4*ebbar*mb^3)/((mb + mc)*pq) + (4*ebbar*mb^2*mc)/((mb + mc)*pq) - (4*ec*mb*mc^2)/((mb + mc)*pq) + (4*ec*mc^3)/((mb + mc)*pq) + (2*ebbar*mb*pq)/((mb + mc)*p2) + (2*ec*mc*pq)/((mb + mc)*p2)
+
+Variant: opposite_current_phase
+  total - reference = ((4*I)*(-(ec*mc*(2*mc*(-mb + mc)*p2 + ((mb - mc)^2 + p2)*pq + pq^2)) + ebbar*mb*(-2*mb*mc*(p2 + pq) - pq*(mc^2 + p2 + pq) + mb^2*(2*p2 + 3*pq))))/((mb + mc)*p2*pq)
+  total + reference = 0
+  stripped total/reference = -1
+  stripped total = (-2*ebbar*mb)/(mb + mc) - (2*ec*mc)/(mb + mc) + (6*ebbar*mb^3)/((mb + mc)*p2) - (4*ebbar*mb^2*mc)/((mb + mc)*p2) - (2*ec*mb^2*mc)/((mb + mc)*p2) - (2*ebbar*mb*mc^2)/((mb + mc)*p2) + (4*ec*mb*mc^2)/((mb + mc)*p2) - (2*ec*mc^3)/((mb + mc)*p2) + (4*ebbar*mb^3)/((mb + mc)*pq) - (4*ebbar*mb^2*mc)/((mb + mc)*pq) + (4*ec*mb*mc^2)/((mb + mc)*pq) - (4*ec*mc^3)/((mb + mc)*pq) - (2*ebbar*mb*pq)/((mb + mc)*p2) - (2*ec*mc*pq)/((mb + mc)*p2)
+
+Variant: reversed_sigma_indices
+  total - reference = ((4*I)*(-(ec*mc*(2*mc*(-mb + mc)*p2 + ((mb - mc)^2 + p2)*pq + pq^2)) + ebbar*mb*(-2*mb*mc*(p2 + pq) - pq*(mc^2 + p2 + pq) + mb^2*(2*p2 + 3*pq))))/((mb + mc)*p2*pq)
+  total + reference = 0
+  stripped total/reference = -1
+  stripped total = (-2*ebbar*mb)/(mb + mc) - (2*ec*mc)/(mb + mc) + (6*ebbar*mb^3)/((mb + mc)*p2) - (4*ebbar*mb^2*mc)/((mb + mc)*p2) - (2*ec*mb^2*mc)/((mb + mc)*p2) - (2*ebbar*mb*mc^2)/((mb + mc)*p2) + (4*ec*mb*mc^2)/((mb + mc)*p2) - (2*ec*mc^3)/((mb + mc)*p2) + (4*ebbar*mb^3)/((mb + mc)*pq) - (4*ebbar*mb^2*mc)/((mb + mc)*pq) + (4*ec*mb*mc^2)/((mb + mc)*pq) - (4*ec*mc^3)/((mb + mc)*pq) - (2*ebbar*mb*pq)/((mb + mc)*p2) - (2*ec*mc*pq)/((mb + mc)*p2)
+
+Variant: no_raw_i_dirac_sigma
+  total - reference = ((-2 + 2*I)*(-(ec*mc*(2*mc*(-mb + mc)*p2 + ((mb - mc)^2 + p2)*pq + pq^2)) + ebbar*mb*(-2*mb*mc*(p2 + pq) - pq*(mc^2 + p2 + pq) + mb^2*(2*p2 + 3*pq))))/((mb + mc)*p2*pq)
+  total + reference = ((-2 - 2*I)*(-(ec*mc*(2*mc*(-mb + mc)*p2 + ((mb - mc)^2 + p2)*pq + pq^2)) + ebbar*mb*(-2*mb*mc*(p2 + pq) - pq*(mc^2 + p2 + pq) + mb^2*(2*p2 + 3*pq))))/((mb + mc)*p2*pq)
+  stripped total/reference = -I
+  stripped total = ((-2*I)*ebbar*mb)/(mb + mc) - ((2*I)*ec*mc)/(mb + mc) + ((6*I)*ebbar*mb^3)/((mb + mc)*p2) - ((4*I)*ebbar*mb^2*mc)/((mb + mc)*p2) - ((2*I)*ec*mb^2*mc)/((mb + mc)*p2) - ((2*I)*ebbar*mb*mc^2)/((mb + mc)*p2) + ((4*I)*ec*mb*mc^2)/((mb + mc)*p2) - ((2*I)*ec*mc^3)/((mb + mc)*p2) + ((4*I)*ebbar*mb^3)/((mb + mc)*pq) - ((4*I)*ebbar*mb^2*mc)/((mb + mc)*pq) + ((4*I)*ec*mb*mc^2)/((mb + mc)*pq) - ((4*I)*ec*mc^3)/((mb + mc)*pq) - ((2*I)*ebbar*mb*pq)/((mb + mc)*p2) - ((2*I)*ec*mc*pq)/((mb + mc)*p2)
+
+Interpretation:
+- explicit_commutator agrees with working_dirac_sigma if the tensor current is i sigma_phys P gamma5.
+- opposite_current_phase and reversed_sigma_indices flip the J_B radiative amplitude.
+- no_raw_i_dirac_sigma leaves a different overall phase and is not compatible with the real AB/BB convention in the Bc mixing code.

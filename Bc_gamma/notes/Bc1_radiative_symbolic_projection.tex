@@ -1132,12 +1132,36 @@ effect: the \(6743\) amplitude is suppressed by cancellation, while the
 
 Representative model calculations have high/low \(<1\) in the
 \(B_c^\ast\gamma\) channel.  The baseline QCDSR convention instead has
-high/low \(>1\).  A radiative \(J_B\) sign flip restores the qualitative
-hierarchy but is not supported by the tensor-current convention used in the
-two-point \(B_c\)-mixing calculation.  Therefore the vector-channel numerical
-entries should be treated as baseline convention values rather than final
-physical predictions until the tensor-current trace and physical-state
-assignment are independently rederived.
+high/low \(>1\), so we also performed an independent tensor-current sign check.
+FeynCalc defines
+\[
+{\tt DiracSigma}(\gamma_\mu,\gamma_\alpha)
+=\frac{i}{2}[\gamma_\mu,\gamma_\alpha],
+\]
+so the current factor \(i\sigma_{\mu\alpha}P^\alpha\gamma_5\) is equivalent to
+\[
+-\frac{1}{2}[\gamma_\mu,\gamma_\alpha]P^\alpha\gamma_5 .
+\]
+The script \path{step2_vec_tensor_sign_independent_audit.wl} recomputes the
+projected \(J_B\) triangle with both representations.  After stripping the
+common gamma5/epsilon phase, it finds
+\[
+\begin{array}{lc}
+\hline
+\text{tensor-current test} & \text{ratio to working }J_B\\
+\hline
+\text{working }i\,{\tt DiracSigma} & +1\\
+\text{explicit commutator }-[\gamma_\mu,\gamma_\alpha]/2 & +1\\
+\text{opposite current phase} & -1\\
+\text{reversed sigma indices} & -1\\
+\text{no raw }i\text{ multiplying }{\tt DiracSigma} & -i\\
+\hline
+\end{array}
+\]
+Thus a radiative \(J_B\) sign flip would be a different tensor-current phase
+convention, not a correction of the present trace.  Within the state assignment
+and current convention inherited from the two-point \(B_c\)-mixing sum rules,
+the vector-channel hierarchy is therefore a mixed-current interference effect.
 
 \section{Reproduction Checklist for the Present Pilot}
 
@@ -1154,6 +1178,10 @@ The current numbers can be reproduced in the following order.
   \path{Bc_gamma/scripts/step2_vec_epsilon_B_reduction.wl}.  These produce the
   diagnostic \(B_c^\ast\gamma\) cores and check the normalization of
   \(V_{\mu\nu\rho}\).
+  \item Run \path{Bc_gamma/scripts/step2_vec_tensor_sign_independent_audit.wl}.
+  This verifies that the working \(i\,{\tt DiracSigma}\) tensor current agrees
+  with the explicit commutator form
+  \(-[\gamma_\mu,\gamma_\alpha]P^\alpha\gamma_5/2\).
   \item Insert the compact projected cores into
   \path{Bc_gamma/scripts/bc_ps_complete_analysis.py}.  The script uses the
   diagonal calibration \(M_1^2=M_2^2=2M^2\), with

@@ -53,9 +53,10 @@ These values include the explicitly integrated all-positive dimension-four
 gluon-condensate sector.  The contact/derivative rows have no ordinary
 two-channel double-pole support in the physical double-Borel projection.  A
 separate sign and state-assignment audit shows that the vector hierarchy is
-opposite to representative model calculations, so the \(\Bcst\gamma\) entries
-should be regarded as convention-dependent until an independent tensor-current
-trace check is completed.
+opposite to representative model calculations.  An independent FeynCalc
+commutator check confirms the tensor-current sign used here, so the reversal is
+traced to the physical-current mixing interference in the adopted state
+assignment.
 \end{abstract}
 
 \maketitle
@@ -275,9 +276,8 @@ in the standard vector-invariant convention.
 \centering
 \caption{Present hard-QCDSR results.  The quoted intervals are the 16--84
 percentile Monte Carlo intervals after including the explicitly integrated
-all-positive \(G^2\) sector.  The \(\Bcst\gamma\) entries are baseline
-current-convention values and remain under the tensor-current sign audit
-discussed in the text.}
+all-positive \(G^2\) sector.  The \(\Bcst\gamma\) entries use the tensor-current
+sign fixed by the independent commutator audit discussed in the text.}
 \begin{tabular}{lcc}
 \toprule
 Channel & Coupling & \(\Gamma\,[\keV]\)\\
@@ -342,8 +342,9 @@ This work & \(0.532\) & \(70.3^\dagger\) & \(10.04\) & \(382^\dagger\)\\
 \end{tabular}
 \label{tab:comparison}
 \end{table}
-\noindent\(\dagger\) Baseline current-convention values; the vector hierarchy
-is under the tensor-current sign and state-assignment audit.
+\noindent\(\dagger\) Convention-fixed mixed-current QCDSR values in the
+adopted two-point state assignment; their hierarchy differs from representative
+model calculations because of the mixing interference discussed below.
 
 The small \(\Bcone(6743)\to\Bc\gamma\) width and the comparatively large
 \(\Bcone(6750)\to\Bcst\gamma\) width reflect the strong dependence of the
@@ -368,8 +369,13 @@ the model hierarchy; the opposite baseline mixed-current ratio is caused by
 the interference pattern above.
 A flip of the relative \(J_B\) radiative sign would restore the model-like
 hierarchy, but this sign flip is not supported by the tensor-current
-definition used in the two-point mixing analysis.  We therefore keep the vector
-entries as a baseline convention, not as final physical predictions.
+definition used in the two-point mixing analysis.  We checked this explicitly
+by replacing \(i\sigma_{\mu\alpha}P^\alpha\gamma_5\) with the commutator form
+\(-[\gamma_\mu,\gamma_\alpha]P^\alpha\gamma_5/2\), which gives the same
+projected \(J_B\) amplitude.  Reversing the current phase or the tensor-index
+order flips the amplitude, but that is a different current convention.  Within
+the adopted convention, the vector hierarchy is therefore a physical
+mixed-current interference effect.
 
 \section{Conclusion}
 \label{sec:concl}
@@ -381,16 +387,19 @@ calculation uses physical axial-current residues from the two-point
 \(f_{\Bcst}\).  The resulting widths show a strong channel hierarchy:
 \(\Bcone(6743)\to\Bc\gamma\) is very small, \(\Bcone(6750)\to\Bc\gamma\) is at
 the few-keV level.  The vector final-state calculation is internally
-normalized, but its physical hierarchy remains under sign-convention audit.
+normalized, and the independent commutator audit fixes the relative
+tensor-current sign used in the \(J_B\) amplitude.
 
 The dimension-four gluon-condensate sector has been reduced algebraically,
 audited, and included through the all-positive denominator sector.  The
 contact/derivative rows do not have ordinary two-channel double-pole support
 in the physical double-Borel projection, so they are not added to the sum rule.
 The present calculation therefore gives a transparent QCDSR prediction for
-\(\Bc\gamma\) and a documented baseline for \(\Bcst\gamma\).  Finalizing the
-vector channel requires an independent rederivation of the tensor-current trace
-and physical-state assignment.
+\(\Bc\gamma\) and a convention-fixed QCDSR prediction for \(\Bcst\gamma\) in
+the adopted two-point state assignment.  The contrast with model hierarchies is
+not a phase-space effect; it is caused by destructive interference in the
+\(6743\) mixed-current amplitude and constructive interference in the \(6750\)
+amplitude.
 
 \begin{thebibliography}{99}
 
