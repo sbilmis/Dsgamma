@@ -324,8 +324,9 @@ def main():
             "Interpretation:",
             "- Baseline reproduces the current QCDSR result and has high/low > 1.",
             "- All representative model ratios are < 1.",
+            "- The no-mixing limits have high/low < 1, so the reversal is produced by the physical-current rotation.",
             "- A radiative J_B sign flip gives the literature-like hierarchy but is not supported by the tensor-current convention shared with the Bc-mixing code.",
-            "- Therefore the vector result should remain flagged until the independent vector tensor-current trace/sign convention is rederived.",
+            "- The independent commutator audit confirms the working J_B sign; the vector hierarchy is therefore a convention-fixed mixed-current interference effect.",
         ]
     )
     (OUT / "bc_vec_mixing_sign_audit.txt").write_text("\n".join(lines) + "\n")

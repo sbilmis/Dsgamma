@@ -44,7 +44,7 @@ rules, we find
 \Gamma[\Bcone(6750)\to \Bc\gamma]=10.04^{+2.41}_{-1.75}~\keV .
 \]
 For the vector final state, using the standard vector-current normalization
-\(f_{\Bcst}=0.435^{+0.032}_{-0.035}\,\GeV\), the baseline current convention gives
+\(f_{\Bcst}=0.435^{+0.032}_{-0.035}\,\GeV\), the present current convention gives
 \[
 \Gamma[\Bcone(6743)\to \Bcst\gamma]=70.3^{+10.9}_{-8.4}~\keV,\qquad
 \Gamma[\Bcone(6750)\to \Bcst\gamma]=382^{+55}_{-50}~\keV .
@@ -106,9 +106,9 @@ Sec.~\ref{sec:numerics}.  Section~\ref{sec:concl} summarizes the results.
 
 We use two independent axial-vector basis currents,
 \begin{align}
-  J^A_\mu &= \bar c \gamma_\mu\gamma_5 b,\\
+  J^A_\mu &= \bar b \gamma_\mu\gamma_5 c,\\
   J^B_\mu &= \frac{\ii}{m_b+m_c}\,
-  \bar c\sigma_{\mu\alpha}P^\alpha\gamma_5 b ,
+  \bar b\sigma_{\mu\alpha}P^\alpha\gamma_5 c ,
   \label{eq:basis-currents}
 \end{align}
 where \(P\) is the momentum of the initial axial-vector state.  The physical
@@ -125,9 +125,9 @@ below.
 
 The decay constants are defined by
 \begin{align}
-  \langle 0|\bar c\,\ii\gamma_5 b|\Bc(p)\rangle
+  \langle 0|\bar b\,\ii\gamma_5 c|\Bc(p)\rangle
   &= \frac{m_{\Bc}^2 f_{\Bc}}{m_b+m_c},\\
-  \langle 0|\bar c\gamma_\rho b|\Bcst(p,\xi)\rangle
+  \langle 0|\bar b\gamma_\rho c|\Bcst(p,\xi)\rangle
   &= m_{\Bcst}f_{\Bcst}\xi_\rho,\\
   \langle0|J_{i\mu}|\Bcone^{(i)}(P,\eta)\rangle
   &= f_i m_i \eta_\mu,\qquad i=1,2 .
@@ -176,11 +176,11 @@ For the \(\Bc\gamma\) channel the correlation function is
 \begin{equation}
   \Pi_{i\mu}(p,q)=\ii\int d^4x\,e^{\ii p\cdot x}
   \langle \gamma(q,\varepsilon)|
-  T\{J_{i\mu}(x)\,\bar b(0)\ii\gamma_5 c(0)\}|0\rangle .
+  T\{J_{i\mu}(x)\,\bar c(0)\ii\gamma_5 b(0)\}|0\rangle .
   \label{eq:ps-correlator}
 \end{equation}
 For the \(\Bcst\gamma\) channel the pseudoscalar current is replaced by
-\(\bar b\gamma_\rho c\).  Since both quarks are heavy, the leading OPE is
+\(\bar c\gamma_\rho b\).  Since both quarks are heavy, the leading OPE is
 obtained by attaching the photon perturbatively to either the charm line or
 the anti-bottom line.  In the charm-emission topology the three denominators
 are
@@ -195,9 +195,74 @@ while in the anti-bottom-emission topology they are
   D_3=(k-p+q)^2-m_b^2 .
   \label{eq:b-denominators}
 \end{equation}
-The projected perturbative traces generate invariant amplitudes
-\(\widehat\Pi_A\) and \(\widehat\Pi_B\), which are then rotated into the
-physical basis,
+The electric charges are \(e_c=2/3\) and \(e_{\bar b}=1/3\).  After the
+Dirac trace and projection, both emission topologies can be written through
+the kernel
+\begin{align}
+{\cal R}(s;m_i,m_j,a,b)
+&=-\frac{3}{8\pi^2}
+\left[
+2a\ln\frac{s-m_j^2+m_i^2-\lambda(s,m_j^2,m_i^2)}
+{s-m_j^2+m_i^2+\lambda(s,m_j^2,m_i^2)}
+\right. \nonumber\\
+&\hspace{2.0cm}\left.
+\frac{b}{m_i^2}\,
+\frac{m_j^2-m_i^2-s}{s^2}\lambda(s,m_j^2,m_i^2)
+\right],
+\label{eq:kernel}
+\end{align}
+where
+\[
+\lambda(s,m_j^2,m_i^2)=
+\sqrt{[s-(m_i+m_j)^2][s-(m_i-m_j)^2]} .
+\]
+The perturbative densities are
+\begin{equation}
+  \rho_X(s)=e_{\bar b}\,{\cal R}(s;m_b,m_c,a_{\bar b}^X,b_{\bar b}^X)
+  -e_c\,{\cal R}(s;m_c,m_b,a_c^X,b_c^X),
+  \label{eq:rho-master}
+\end{equation}
+with the coefficients shown in Table~\ref{tab:rho-coeffs}.  For the vector
+\(J_B\) density the scalar \(p\cdot q\) is evaluated at the physical value
+\((m_i^2-m_{\Bcst}^2)/2\) of the channel.
+
+\begin{table}[t]
+\centering
+\caption{Coefficients entering Eq.~\eqref{eq:rho-master}.  The labels \(P\)
+and \(V\) denote the pseudoscalar and vector final state, respectively.}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lcccc}
+\toprule
+Density & \(a_c^X\) & \(b_c^X\) & \(a_{\bar b}^X\) & \(b_{\bar b}^X\)\\
+\midrule
+\(P,A\) & \(m_c\) & \(m_c^2(m_c-m_b)\)
+& \(m_b\) & \(m_b^2(m_c-m_b)\)\\
+\(P,B\) & \((2m_c^2-m_bm_c)/(m_b+m_c)\) & \(m_c^2s/(m_b+m_c)\)
+& \(m_bm_c/(m_b+m_c)\) & \(m_b^2s/(m_b+m_c)\)\\
+\(V,A\) & \((-4m_bm_c+2m_c^2)/s\) & \(4m_c^2\)
+& \((-2m_b^2+4m_bm_c)/s\) & \(4m_b^2\)\\
+\(V,B\) &
+\(\displaystyle \frac{2m_c}{m_b+m_c}
++\frac{2m_b^2m_c-4m_bm_c^2+2m_c^3+2m_c\,p\!\cdot\!q}{(m_b+m_c)s}\)
+& \(\displaystyle\frac{-4m_bm_c^2+4m_c^3}{m_b+m_c}\)
+&
+\(\displaystyle \frac{2m_b}{m_b+m_c}
++\frac{-6m_b^3+4m_b^2m_c+2m_bm_c^2+2m_b\,p\!\cdot\!q}{(m_b+m_c)s}\)
+& \(\displaystyle\frac{-4m_b^3+4m_b^2m_c}{m_b+m_c}\)\\
+\bottomrule
+\end{tabular}
+}
+\label{tab:rho-coeffs}
+\end{table}
+
+The Borel-projected amplitudes are then
+\[
+\widehat\Pi_X(M^2,s_0)=
+\int_{(m_b+m_c)^2}^{s_0}ds\,e^{-s/M^2}\rho_X(s)+\widehat\Pi_X^{G^2}.
+\]
+The physical amplitudes are obtained by rotating the basis amplitudes,
 \begin{align}
   \widehat\Pi_1 &= \sin\theta\,\widehat\Pi_A+\cos\theta\,\widehat\Pi_B,\\
   \widehat\Pi_2 &= \cos\theta\,\widehat\Pi_A-\sin\theta\,\widehat\Pi_B .
@@ -274,6 +339,44 @@ in the standard vector-invariant convention.
 
 \begin{table}[t]
 \centering
+\caption{Numerical inputs and sum-rule windows used in the analysis.  The
+quoted residue and \(f_{\Bcst}\) intervals are the 16--84 percentile windows
+from the corresponding two-point sum-rule grids.}
+\begin{tabular}{lc}
+\toprule
+Quantity & Value or window\\
+\midrule
+\(m_b\), \(m_c\) & \(4.18~\GeV,\ 1.27~\GeV\)\\
+\(m_{\Bc}\), \(m_{\Bcst}\) & \(6.2749~\GeV,\ 6.3359~\GeV\)\\
+\(m_1\), \(m_2\) & \(6.743~\GeV,\ 6.751~\GeV\)\\
+\(f_{\Bc}\) & \(0.371\pm0.037~\GeV\)\\
+\(f_{\Bcst}\) & \(0.435[0.400,0.467]~\GeV\)\\
+\(\theta\) & \(43.29^\circ[43.10^\circ,43.44^\circ]\)\\
+\(f_1,\ f_2\) & \(0.264[0.259,0.269]~\GeV,\ 0.722[0.709,0.738]~\GeV\)\\
+Radiative \(M^2,\ s_0\) & \(7\mbox{--}9~\GeV^2,\ 53\mbox{--}55~\GeV^2\)\\
+Vector-current \(M_V^2,\ s_{0,V}\) & \(5\mbox{--}8~\GeV^2,\ 40\mbox{--}44~\GeV^2\)\\
+\bottomrule
+\end{tabular}
+\label{tab:inputs}
+\end{table}
+
+The final uncertainties are obtained by sampling \(m_b,m_c,\theta,f_{\Bc}\),
+the Borel parameter, and the continuum threshold over the stated windows, and
+then folding in the explicitly integrated all-positive \(G^2\) contribution.
+We quote the median and the 16--84 percentile interval rather than a Gaussian
+fit, since the mixed amplitudes are interference sensitive.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.48\linewidth]{../outputs/bc_ps_g1_M2_stability.pdf}
+\includegraphics[width=0.48\linewidth]{../outputs/bc_ps_g2_M2_stability.pdf}
+\caption{Representative Borel stability of the pseudoscalar final-state form
+factors.}
+\label{fig:ps-stability}
+\end{figure}
+
+\begin{table}[t]
+\centering
 \caption{Present hard-QCDSR results.  The quoted intervals are the 16--84
 percentile Monte Carlo intervals after including the explicitly integrated
 all-positive \(G^2\) sector.  The \(\Bcst\gamma\) entries use the tensor-current
@@ -346,6 +449,25 @@ This work & \(0.532\) & \(70.3^\dagger\) & \(10.04\) & \(382^\dagger\)\\
 adopted two-point state assignment; their hierarchy differs from representative
 model calculations because of the mixing interference discussed below.
 
+\begin{table}[t]
+\centering
+\caption{Central-point diagnostic for the \(B_c^\ast\gamma\) hierarchy at
+\(M^2=8~\GeV^2\), \(s_0=54~\GeV^2\).  The pure-basis rows are diagnostic
+checks only; the physical rows are obtained with the mixed currents in
+Eq.~\eqref{eq:physical-currents}.}
+\begin{tabular}{lccc}
+\toprule
+Case & \(\Gamma_{6743}\,[\keV]\) & \(\Gamma_{6750}\,[\keV]\) & high/low\\
+\midrule
+pure \(J_A\) & 878 & 126 & 0.143\\
+pure \(J_B\) & 1554 & 222 & 0.143\\
+physical mixing, perturbative & 70.2 & 338 & 4.82\\
+physical mixing, with \(G^2_{\rm ap}\) & 70.3 & 382 & 5.43\\
+\bottomrule
+\end{tabular}
+\label{tab:interference-diagnostic}
+\end{table}
+
 The small \(\Bcone(6743)\to\Bc\gamma\) width and the comparatively large
 \(\Bcone(6750)\to\Bcst\gamma\) width reflect the strong dependence of the
 radiative amplitude on the physical-current rotation and on the final-state
@@ -354,7 +476,7 @@ spin.  The vector channels are also sensitive to the normalization of
 instead of the self-contained standard sum-rule value gives
 \(\Gamma(6743\to\Bcst\gamma)=92.6[76.1,117]~\keV\) and
 \(\Gamma(6750\to\Bcst\gamma)=447[365,564]~\keV\).
-More importantly, the baseline vector ratio
+More importantly, the physical mixed-current vector ratio
 \(\Gamma(6750\to\Bcst\gamma)/\Gamma(6743\to\Bcst\gamma)>1\) is opposite to the
 representative model pattern.  At the central point the lower-state vector
 combination is cancellation-dominated,
