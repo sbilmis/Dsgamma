@@ -18,6 +18,13 @@ alternate_rotation_c_minus_s: Gamma_low=2361 keV, Gamma_high=10.07 keV, high/low
 swap_eigenstate_assignment: Gamma_low=315.5 keV, Gamma_high=75.33 keV, high/low=0.2387
 swap_assignment_and_JB_flip: Gamma_low=3.986 keV, Gamma_high=2572 keV, high/low=645.1
 
+No-mixing / pure-basis benchmark widths:
+pure J_A: low=877.8 keV, high=125.5 keV, high/low=0.143
+pure J_B: low=1554 keV, high=222.4 keV, high/low=0.1431
+theta=0 baseline assignment (low=J_B, high=J_A): low=1554 keV, high=125.5 keV, high/low=0.0808
+theta=90 deg baseline assignment (low=J_A, high=-J_B): low=877.8 keV, high=222.4 keV, high/low=0.2534
+Thus the no-mixing limits follow the literature-like lower-state-dominant pattern; the reversal appears only after the physical mixed-current interference.
+
 Nine-point grid medians:
 baseline: low=70.17 [61,83.73] keV, high=337.9 [300.6,393.1] keV, ratio=4.815
 radiative_JB_sign_flip: low=2402 [2082,2876] keV, high=4.286 [4.044,4.547] keV, ratio=0.001785

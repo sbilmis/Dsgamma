@@ -141,6 +141,33 @@ def summarize(values):
     }
 
 
+def pure_basis_rows(mod, inp, ing):
+    rows = []
+    for state, mass, pref, b_amp in [
+        ("6743", inp.m_low, ing["pref_low_f1"], ing["amp_B_low"]),
+        ("6750", inp.m_high, ing["pref_high_f2"], ing["amp_B_high"]),
+    ]:
+        g_a = pref * ing["amp_A"]
+        g_b = pref * b_amp
+        rows.extend(
+            [
+                {
+                    "state": state,
+                    "basis": "pure_JA",
+                    "g_GeV_m2": g_a,
+                    "Gamma_keV": mod.width_vec_keV(g_a, mass, inp.m_bcstar),
+                },
+                {
+                    "state": state,
+                    "basis": "pure_JB",
+                    "g_GeV_m2": g_b,
+                    "Gamma_keV": mod.width_vec_keV(g_b, mass, inp.m_bcstar),
+                },
+            ]
+        )
+    return rows
+
+
 def main():
     mod = load_vector_module()
     inp = mod.Inputs()
@@ -210,12 +237,19 @@ def main():
         {"variant": variant, **variant_widths(mod, inp, central, variant)}
         for variant in variants
     ]
+    pure_rows = pure_basis_rows(mod, inp, central)
+    pure_lookup = {(r["state"], r["basis"]): r for r in pure_rows}
+    theta0_low = pure_lookup[("6743", "pure_JB")]["Gamma_keV"]
+    theta0_high = pure_lookup[("6750", "pure_JA")]["Gamma_keV"]
+    theta90_low = pure_lookup[("6743", "pure_JA")]["Gamma_keV"]
+    theta90_high = pure_lookup[("6750", "pure_JB")]["Gamma_keV"]
 
     for path, rows in [
         (OUT / "bc_vec_mixing_sign_audit_grid.csv", detail_rows),
         (OUT / "bc_vec_mixing_sign_audit_summary.csv", summary_rows),
         (OUT / "bc_vec_mixing_sign_audit_literature.csv", lit_rows),
         (OUT / "bc_vec_mixing_sign_audit_central.csv", central_rows),
+        (OUT / "bc_vec_mixing_sign_audit_no_mixing.csv", pure_rows),
     ]:
         with path.open("w", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
@@ -250,6 +284,23 @@ def main():
             "{variant}: Gamma_low={Gamma_low_keV:.4g} keV, "
             "Gamma_high={Gamma_high_keV:.4g} keV, high/low={ratio_high_over_low:.4g}".format(**row)
         )
+    lines.extend(
+        [
+            "",
+            "No-mixing / pure-basis benchmark widths:",
+            f"pure J_A: low={pure_lookup[('6743', 'pure_JA')]['Gamma_keV']:.4g} keV, "
+            f"high={pure_lookup[('6750', 'pure_JA')]['Gamma_keV']:.4g} keV, "
+            f"high/low={pure_lookup[('6750', 'pure_JA')]['Gamma_keV'] / pure_lookup[('6743', 'pure_JA')]['Gamma_keV']:.4g}",
+            f"pure J_B: low={pure_lookup[('6743', 'pure_JB')]['Gamma_keV']:.4g} keV, "
+            f"high={pure_lookup[('6750', 'pure_JB')]['Gamma_keV']:.4g} keV, "
+            f"high/low={pure_lookup[('6750', 'pure_JB')]['Gamma_keV'] / pure_lookup[('6743', 'pure_JB')]['Gamma_keV']:.4g}",
+            f"theta=0 baseline assignment (low=J_B, high=J_A): low={theta0_low:.4g} keV, "
+            f"high={theta0_high:.4g} keV, high/low={theta0_high / theta0_low:.4g}",
+            f"theta=90 deg baseline assignment (low=J_A, high=-J_B): low={theta90_low:.4g} keV, "
+            f"high={theta90_high:.4g} keV, high/low={theta90_high / theta90_low:.4g}",
+            "Thus the no-mixing limits follow the literature-like lower-state-dominant pattern; the reversal appears only after the physical mixed-current interference.",
+        ]
+    )
     lines.extend(["", "Nine-point grid medians:"])
     for variant in variants:
         rows = [r for r in summary_rows if r["variant"] == variant]

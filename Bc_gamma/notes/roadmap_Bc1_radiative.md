@@ -1213,6 +1213,7 @@ with outputs
 - `Bc_gamma/outputs/bc_vec_mixing_sign_audit_summary.csv`;
 - `Bc_gamma/outputs/bc_vec_mixing_sign_audit_central.csv`;
 - `Bc_gamma/outputs/bc_vec_mixing_sign_audit_components.csv`;
+- `Bc_gamma/outputs/bc_vec_mixing_sign_audit_no_mixing.csv`;
 - `Bc_gamma/outputs/bc_vec_mixing_sign_audit_literature.csv`.
 
 At the central point \(M^2=8~{\rm GeV}^2\), \(s_0=54~{\rm GeV}^2\), the vector
@@ -1250,6 +1251,23 @@ The variant scan gives the following nine-point grid medians:
 | alternate rotation \(c,-s\) | \(2361\) | \(10.1\) | \(0.0043\) |
 | swap eigenstate assignment | \(316\) | \(75.3\) | \(0.239\) |
 | swap assignment and \(J_B\) flip | \(3.99\) | \(2572\) | \(645\) |
+
+The no-mixing check is especially useful.  Here the two basis currents are not
+rotated into the physical mixed states; this is only a diagnostic, not a final
+prediction.  At the same central point it gives
+
+| No-mixing diagnostic | \(\Gamma_{6743}\) keV | \(\Gamma_{6750}\) keV | high/low |
+|---|---:|---:|---:|
+| pure \(J_A\) | \(878\) | \(126\) | \(0.143\) |
+| pure \(J_B\) | \(1554\) | \(222\) | \(0.143\) |
+| \(\theta=0\) baseline assignment: low \(=J_B\), high \(=J_A\) | \(1554\) | \(126\) | \(0.0808\) |
+| \(\theta=90^\circ\) baseline assignment: low \(=J_A\), high \(=-J_B\) | \(878\) | \(222\) | \(0.253\) |
+
+Thus the no-mixing limits have the same qualitative lower-state-dominant
+pattern as the representative model literature.  The reversal in the baseline
+mixed-current QCDSR result is therefore not a simple phase-space or mass
+effect.  It is produced by destructive interference in the \(6743\) amplitude
+and constructive interference in the \(6750\) amplitude.
 
 Representative model calculations all have high/low \(<1\) for
 \(B_c^\ast\gamma\): Godfrey \(0.18\), Ebert--Faustov--Galkin \(0.17\), Fulcher
