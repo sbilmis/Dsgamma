@@ -1,0 +1,7 @@
+item,rohrwild_nonlocal,colangelo_local_benchmark,paper_choice
+transition correlator ordinary local condensate,absent,heavy-charge term retained,Rohrwild: absent
+transition correlator S_gamma and T4_gamma,included as nonlocal photon DAs,not included separately,Rohrwild: included
+"background-gluon S,S-tilde,T1...T4",included as nonlocal photon DAs,included through F1,included
+light-quark mass,retained in our extension,retained in benchmark formula,retained
+two-point decay-constant sum rules,local condensates allowed and required,local condensates allowed and required,separate two-point OPE
+local plus S_gamma/T4_gamma in one transition result,forbidden double counting,forbidden double counting,never added

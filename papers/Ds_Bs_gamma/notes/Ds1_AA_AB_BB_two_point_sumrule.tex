@@ -1,0 +1,285 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
+
+\newcommand{\GeV}{\mathrm{GeV}}
+\newcommand{\MeV}{\mathrm{MeV}}
+\newcommand{\keV}{\mathrm{keV}}
+\newcommand{\ii}{\mathrm{i}}
+
+\title{$D_{s1}$ normalized-current $AA/AB/BB$ two-point QCD sum rule}
+\author{Calculation note}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note replaces the former external-$f_1$/overlap normalization of the
+$D_{s1}(2460)$ and $D_{s1}(2536)$ currents.  One normalized-current
+$AA/AB/BB$ two-point QCD sum-rule matrix determines the mixing angle and both
+physical residues.  The calculation is implemented independently in Python
+and Mathematica.  At the stated LO+$d=3$+$d=5$ truncation the central
+Mathematica and Python results agree below $10^{-7}$.
+\end{abstract}
+
+\section{Scope and the local-condensate issue}
+
+This is an ordinary two-point SVZ sum rule.  Therefore the local vacuum
+condensates $\langle\bar ss\rangle$ and
+$\langle\bar s g_s\sigma\!\cdot\!G s\rangle$ are part of its OPE.  They are
+not inserted into the external-photon transition LCSR, which follows the
+Rohrwild organization in terms of non-local photon matrix elements and photon
+distribution amplitudes.  The two statements concern different correlators
+and are fully compatible.
+
+The present common matrix truncation contains
+\begin{itemize}
+  \item exact-$m_s$ leading-order perturbative spectral densities;
+  \item the local strange condensate through $O(m_s^2)$;
+  \item the local dimension-five mixed condensate.
+\end{itemize}
+The gluon condensate and perturbative $\alpha_s$ corrections are not included.
+Thus ``complete'' below means a complete $2\times2$ current matrix at this
+explicit common truncation, not an all-dimensional or all-orders OPE.
+
+\section{Currents, correlator, and rotation}
+
+The normalized basis currents are
+\begin{align}
+J_A^\mu&=\bar s\gamma^\mu\gamma_5c,\qquad
+J_B^\mu=\frac{\ii}{m_c+m_s}\bar s\sigma^{\mu\nu}p'_\nu\gamma_5c,
+\end{align}
+where $p'$ is the initial-state momentum.  The physical currents are
+\begin{align}
+J_1^\mu&=\sin\theta\,J_A^\mu+\cos\theta\,J_B^\mu,\\
+J_2^\mu&=\cos\theta\,J_A^\mu-\sin\theta\,J_B^\mu.
+\end{align}
+For $i,j\in\{A,B\}$,
+\begin{equation}
+\Pi_{ij}^{\mu\nu}(p')=\ii\int d^4x\,e^{\ii p'\cdot x}
+\langle0|T\{J_i^\mu(x)J_j^{\nu\dagger}(0)\}|0\rangle
+=\left(-g^{\mu\nu}+\frac{p'^\mu p'^\nu}{p'^2}\right)\Pi_{ij}(p'^2)+\cdots.
+\end{equation}
+Writing
+\begin{equation}
+R(\theta)=\begin{pmatrix}\sin\theta&\cos\theta\\
+\cos\theta&-\sin\theta\end{pmatrix},\qquad
+\Pi^{\rm phys}=R\Pi^{\rm basis}R^T,
+\end{equation}
+gives
+\begin{align}
+\Pi_{11}&=\sin^2\theta\,\Pi_{AA}+\cos^2\theta\,\Pi_{BB}
++2\sin\theta\cos\theta\,\Pi_{AB},\label{eq:pi11}\\
+\Pi_{22}&=\cos^2\theta\,\Pi_{AA}+\sin^2\theta\,\Pi_{BB}
+-2\sin\theta\cos\theta\,\Pi_{AB},\\
+\Pi_{12}&=\sin\theta\cos\theta(\Pi_{AA}-\Pi_{BB})
++(\cos^2\theta-\sin^2\theta)\Pi_{AB}.
+\end{align}
+Equation~\eqref{eq:pi11} follows directly from the stated definition of
+$J_1$.  The early draft had the $AA$ and $BB$ coefficients interchanged in
+this equation; that version is incorrect.
+
+\section{Perturbative spectral matrix}
+
+Let $d=m_c+m_s$ and
+\begin{equation}
+\lambda(s)=[s-(m_c+m_s)^2][s-(m_c-m_s)^2].
+\end{equation}
+The exact-mass LO densities are
+\begin{align}
+\rho_{AA}(s)&=\frac{\sqrt\lambda}{8\pi^2}\left[
+2-\frac{m_c^2+m_s^2+6m_cm_s}{s}
+-\frac{(m_c^2-m_s^2)^2}{s^2}\right],\\
+\rho_{AB}(s)&=\rho_{BA}(s)=\frac{\sqrt\lambda}{8\pi^2}
+\frac{3(m_s-m_c)(d^2-s)}{ds},\\
+\rho_{BB}(s)&=\frac{\sqrt\lambda}{8\pi^2}
+\frac{-(d^2-s)(2m_s^2-4m_cm_s+2m_c^2+s)}{d^2s}.
+\end{align}
+The $AA$ density is algebraically identical to the Colangelo axial-current
+two-point density.  The equality and $AB=BA$ are exact FeynCalc regression
+checks, not numerical observations.
+
+\section{Local Borel matrix}
+
+With $C_3=\langle\bar ss\rangle$ and
+$C_5=\langle\bar s g_s\sigma\!\cdot\!G s\rangle$, the continuum-subtracted
+Borel matrix is
+\begin{equation}
+\widehat\Pi(M^2,s_0)=
+\int_{d^2}^{s_0}ds\,e^{-s/M^2}\rho(s)
++e^{-m_c^2/M^2}\left[C_3(\mathcal Q_0+\mathcal Q_1+\mathcal Q_2)
++C_5\mathcal Q_5\right].
+\end{equation}
+The local matrices are
+\begin{align}
+\mathcal Q_0&=
+\begin{pmatrix}m_c&m_c^2/d\\m_c^2/d&m_c^3/d^2\end{pmatrix},\\
+\mathcal Q_1&=
+\begin{pmatrix}
+-\dfrac{m_sm_c^2}{2M^2}&
+\dfrac{m_sm_c(1-m_c^2/M^2)}{2d}\\
+\dfrac{m_sm_c(1-m_c^2/M^2)}{2d}&
+\dfrac{m_sm_c^2(1-m_c^2/(2M^2))}{d^2}
+\end{pmatrix},\\
+\mathcal Q_2&=
+\begin{pmatrix}
+\dfrac{m_s^2m_c^3}{2M^4}&
+\dfrac{m_s^2(m_c^4/M^4-m_c^2/M^2-1)}{2d}\\
+\dfrac{m_s^2(m_c^4/M^4-m_c^2/M^2-1)}{2d}&
+\dfrac{m_s^2(m_c^5/(2M^4)-m_c^3/M^2)}{d^2}
+\end{pmatrix},\\
+\mathcal Q_5&=
+\begin{pmatrix}
+-\dfrac{m_c^3}{4M^4}&
+-\dfrac{m_c^4/M^4-m_c^2/M^2-1}{4d}\\
+-\dfrac{m_c^4/M^4-m_c^2/M^2-1}{4d}&
+-\dfrac{m_c^5/(4M^4)-m_c^3/(2M^2)}{d^2}
+\end{pmatrix}.
+\end{align}
+The complete $AA$ local entry reduces exactly to
+\begin{equation}
+e^{-m_c^2/M^2}\left\{
+C_3\left[m_c-\frac{m_c^2m_s}{2M^2}
++\frac{m_c^3m_s^2}{2M^4}\right]
+-C_5\frac{m_c^3}{4M^4}\right\},
+\end{equation}
+which is the corresponding Colangelo expression.
+
+\section{Fixed angle, thresholds, and residues}
+
+The nominal angle is taken from our dedicated mixing-angle study,
+\begin{equation}
+\theta_{D_s}=26.6\pm0.6^\circ.
+\end{equation}
+The angle obtained from $\widehat\Pi_{12}=0$ in the present
+LO+$d=3$+$d=5$ matrix is retained only as a truncation diagnostic.  We fit a
+separate threshold $s_0^{(i)}$ to each measured pole and use
+\begin{align}
+m_{i,\mathrm{eff}}^2&=-\frac{d}{d(1/M^2)}
+\ln\widehat\Pi_{ii}(M^2,s_0^{(i)};\theta),\\
+f_i^2m_i^2e^{-m_i^2/M^2}
+&=\widehat\Pi_{ii}(M^2,s_0^{(i)};\theta),\qquad i=1,2.
+\end{align}
+
+In 2000 input samples, 1714 pass all diagnostics.  The result is
+\begin{align}
+\theta_{D_s}&=26.595[25.996,27.199]^\circ,\\
+\theta_{\rm matrix}&=30.632[29.942,31.286]^\circ,\\
+f_1&=0.4046[0.3799,0.4291]~\GeV,&
+f_2&=0.1677[0.1594,0.1756]~\GeV.
+\end{align}
+The normalized off-diagonal residual after projecting at the external angle is
+$0.183[0.142,0.225]$.  It is an OPE-truncation diagnostic, not an additional
+statistical angle error.  Neither residue is externally anchored.
+
+At $M^2=2.35~\GeV^2$, the fixed-angle Python regression point is
+\begin{equation}
+\theta=26.6^\circ,\quad \theta_{\rm matrix}=30.58596159^\circ,\quad
+s_0^{(1)}=7.925~\GeV^2,\quad s_0^{(2)}=9.975~\GeV^2,
+\end{equation}
+\begin{equation}
+f_1=0.4005893052~\GeV,\qquad f_2=0.1666703674~\GeV.
+\end{equation}
+The independent Mathematica regression gives
+\begin{equation}
+f_1=0.4005892785~\GeV,\qquad
+f_2=0.1666703614~\GeV .
+\end{equation}
+The differences from Python are $-2.67\times10^{-8}~\GeV$ and
+$-6.02\times10^{-9}~\GeV$, respectively; the matrix-angle and normalized
+$\Pi_{12}$ diagnostics agree to better than $10^{-7}$.
+
+\section{Propagation, interference, and final charm widths}
+
+The physical couplings are
+\begin{align}
+G_{2460}&=\frac{\sin\theta\,f_AG_A+\cos\theta\,f_BG_B}{f_1},\\
+G_{2536}&=\frac{\cos\theta\,f_AG_A-\sin\theta\,f_BG_B}{f_2}.
+\end{align}
+For the preferred lattice photon normalization, the final-window Monte Carlo
+gives
+\begin{align}
+G_{2460}&=-0.3569[-0.3929,-0.3237]~\GeV^{-1},&
+\Gamma_{2460}&=26.71[22.01,32.44]~\keV,\\
+G_{2536}&=-0.07305[-0.10434,-0.03836]~\GeV^{-1},&
+\Gamma_{2536}&=1.656[0.4567,3.378]~\keV.
+\end{align}
+The low-state pieces are constructive, whereas the high-state pieces are
+destructive throughout the physical first quadrant.  At the midpoint of the
+selected transition window the benchmark widths are
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Angle input & $\theta$ & $\Gamma_{2460}$ (keV) & $\Gamma_{2536}$ (keV)\\
+\midrule
+previous study & $26.6^\circ$ & $27.60$ & $1.623$\\
+truncated-matrix diagnostic & $30.61^\circ$ & $27.71$ & $0.043$\\
+HQET benchmark & $35.3^\circ$ & $27.64$ & $1.120$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The high-state zero is near $31.37^\circ$ at this representative point.  The
+interference mechanism does not change; the relative weights move the result
+toward or away from the cancellation.
+
+\section{Projection onto Wang's pure-AA channel}
+
+Wang's arXiv v4 result is
+$f_{D_{s1}}^{(J_A)}=0.345\pm0.017~\GeV$; the earlier
+$0.245\pm0.017~\GeV$ entry was explicitly corrected.  Reproducing this
+one-pole number is neither necessary nor sufficient to validate the mixed
+residues.  The inverse current rotation is
+\begin{equation}
+J_A=\sin\theta\,J_1+\cos\theta\,J_2,
+\end{equation}
+so our physical poles project back to
+\begin{equation}
+\widehat\Pi_{AA}^{(2\,{\rm pole})}
+=\sin^2\theta\,f_1^2M_1^2e^{-M_1^2/M^2}
++\cos^2\theta\,f_2^2M_2^2e^{-M_2^2/M^2}.
+\end{equation}
+The corresponding one-pole-equivalent diagnostic at the lower mass is
+\begin{equation}
+f_{A,\rm eq}^2(M^2)=
+\frac{e^{M_1^2/M^2}}{M_1^2}\widehat\Pi_{AA}^{(2\,{\rm pole})}
+\end{equation}
+and gives $0.2303[0.2194,0.2418]~\GeV$.  Separately, in Wang's Borel and
+threshold window our direct pure-$AA$ LO+$d=3$+$d=5$ OPE gives
+\begin{equation}
+f_A^{\rm ours}=0.2686[0.2607,0.2768]~\GeV,
+\end{equation}
+which does not reproduce Wang's absolute normalization.  These three numbers
+use different pole models and OPE truncations.  They are useful normalization
+benchmarks, not a proof or disproof of the mixed-current calculation.  Neither
+$f_1$ nor $f_2$ should be equated to Wang's number.  The individual projected
+overlaps are
+\begin{align}
+\sin\theta\,f_1&=0.1812[0.1692,0.1930]~\GeV,\\
+\cos\theta\,f_2&=0.1498[0.1424,0.1573]~\GeV,
+\end{align}
+These are projection diagnostics only.
+
+\section{Executable record}
+
+\begin{itemize}
+  \item Python matrix and Monte Carlo: \path{../scripts/twopoint_ds1_matrix_sumrule.py}.
+  \item Spectral trace audit: \path{../scripts/twopoint_dirac_spectral_audit.wl}.
+  \item Local trace audit: \path{../scripts/twopoint_local_condensate_audit.wl}.
+  \item Numerical Mathematica regression:
+    \path{../scripts/mathematica_twopoint_ds1_matrix_check.wl}.
+  \item Cell-by-cell notebook:
+    \path{../notebooks/Ds1_AA_AB_BB_two_point_sumrule.nb}.
+\end{itemize}
+
+The former $f_1=0.345~\GeV$, $f_2\simeq0.38~\GeV$ overlap model is preserved
+only as a legacy comparison and is not the current paper normalization.
+
+\end{document}

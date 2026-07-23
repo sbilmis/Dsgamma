@@ -1,0 +1,21 @@
+Ds mixing-angle and interference benchmark
+=============================================
+Transition point: M^2=3.75 GeV^2, sqrt(s0)=2.8284271247461903 GeV.
+Two-point projection point: M^2=2.3 GeV^2.
+High-state central cancellation angle: 31.371 deg.
+
+previous_study_nominal: theta=26.6000 deg
+  f1=0.400586 GeV; f2=0.167544 GeV
+  low:  A=-0.084763, B=-0.277621, G=-0.362384 GeV^-1; Gamma=27.604049 keV (constructive)
+  high: A=-0.404708, B=+0.332391, G=-0.072317 GeV^-1; Gamma=1.622866 keV (destructive)
+
+truncated_matrix_diagnostic: theta=30.6122 deg
+  f1=0.401168 GeV; f2=0.163525 GeV
+  low:  A=-0.096259, B=-0.266825, G=-0.363085 GeV^-1; Gamma=27.710920 keV (constructive)
+  high: A=-0.399110, B=+0.387311, G=-0.011800 GeV^-1; Gamma=0.043205 keV (destructive)
+
+hqet_benchmark: theta=35.3000 deg
+  f1=0.400785 GeV; f2=0.166106 GeV
+  low:  A=-0.109338, B=-0.253272, G=-0.362609 GeV^-1; Gamma=27.638411 keV (constructive)
+  high: A=-0.372595, B=+0.432683, G=+0.060088 GeV^-1; Gamma=1.120411 keV (destructive)
+

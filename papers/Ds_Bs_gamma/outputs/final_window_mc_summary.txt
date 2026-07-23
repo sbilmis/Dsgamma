@@ -1,0 +1,28 @@
+Final-window Monte Carlo uncertainty scan
+=========================================
+Seed: 20260705
+Accepted rows: 9752
+Rejected bottom-sector physical-normalization samples: 4248
+Samples per ensemble/channel/scenario/window: 500
+Ds normalization: theta_Ds=26.6+-0.6 deg external input; f1/f2 projected from the AA/AB/BB two-point sum rule.
+Bs nominal angle: theta_Bs=38.5+-0.1 deg external input.
+HQET 35.3 deg and 25--45 deg rows are benchmark/sensitivity outputs only.
+Ds window: M^2=[3.0,4.5] GeV^2, s0=[7.5,8.5] GeV^2.
+Bs central window: M^2=[10,14] GeV^2 with state-specific s0 windows.
+Bs cross-check window: M^2=[9,13] GeV^2 with the same s0 windows.
+
+Preferred lattice-photon central-window rows:
+B_{s1}(5750): g=+0.385 [+0.3335,+0.4573] GeV^-1; Gamma=18.16 [13.03,27.94] keV; n=245
+B_{s1}(5830): g=-0.08418 [-0.1587,-0.06205] GeV^-1; Gamma=1.504 [0.818,5.342] keV; n=236
+D_{s1}(2460): g=-0.3569 [-0.3929,-0.3237] GeV^-1; Gamma=26.71 [22.01,32.44] keV; n=500
+D_{s1}(2536): g=-0.07305 [-0.1043,-0.03836] GeV^-1; Gamma=1.656 [0.4567,3.378] keV; n=500
+
+Caveat: Bs rows are conditional on accepted |rho_AB|<=1 closure samples;
+the nominal lattice central-window acceptance is 245/500 (5750) and 236/500 (5830).
+A direct bottom-sector AA/AB/BB two-point matrix is still required.
+
+Outputs:
+  /Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/final_window_mc_scan.csv
+  /Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/final_window_mc_summary.csv
+  /Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/final_window_mc_width_histograms.pdf
+  /Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/final_window_bs_window_crosscheck.pdf

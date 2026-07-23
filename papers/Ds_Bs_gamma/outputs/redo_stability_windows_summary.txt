@@ -1,0 +1,46 @@
+Redo stability-window scan
+==========================
+Preferred central scenario: lattice f_gamma,s^perp normalization.
+Thresholds are written as squared s0 in GeV^2; helper functions receive sqrt(s0) internally.
+theta = 35.3 deg.
+
+Suggested plotting/selection convention:
+  Ds broad scan: M2 = 2-7 GeV^2, s0 = 8.12-9.61 GeV^2.
+  Bs broad scan: M2 = 6-18 GeV^2, s0 chosen above each pole.
+  Final uncertainty windows should be selected from the visible plateau.
+
+Ds1 scan
+--------
+grid points: 124
+M2 range: 2.00-7.00 GeV^2; s0 range: 7.50-9.00 GeV^2
+g_2460: min -0.575313; max -0.375742; relative span 0.420
+Gamma_2460_keV: min +29.6767; max +69.5734; relative span 0.804
+g_2536: min +0.00521274; max +0.0322549; relative span 1.443
+Gamma_2536_keV: min +0.00843204; max +0.322844; relative span 1.898
+GA_basis: min -0.502555; max -0.288376; relative span 0.542
+GB_basis: min -0.353151; max -0.244388; relative span 0.364
+
+B_{s1}(5750) scan
+-----------------
+grid points: 124
+M2 range: 6.00-18.00 GeV^2; s0 range: 36.50-40.50 GeV^2
+g_quoted: min +0.299076; max +0.695082; relative span 0.797
+Gamma_quoted_keV: min +11.0493; max +59.6821; relative span 1.375
+GA_basis: min +0.23005; max +0.582233; relative span 0.867
+GB_basis: min +0.299301; max +0.668817; relative span 0.763
+
+B_{s1}(5830) scan
+-----------------
+grid points: 124
+M2 range: 6.00-18.00 GeV^2; s0 range: 38.00-41.00 GeV^2
+g_quoted: min -0.0485141; max -0.0152697; relative span 1.042
+Gamma_quoted_keV: min +0.0494709; max +0.499372; relative span 1.639
+GA_basis: min +0.247261; max +0.627808; relative span 0.870
+GB_basis: min +0.313858; max +0.708286; relative span 0.772
+
+Wrote:
+  /Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/redo_ds1_stability_windows.csv
+  /Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/redo_ds1_stability_windows.pdf
+  /Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/redo_bs1_stability_windows.csv
+  /Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/redo_bs1_low_stability_windows.pdf
+  /Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/redo_bs1_5830_stability_windows.pdf

@@ -1,0 +1,14 @@
+Ds1 fixed-angle AA/AB/BB two-point Monte Carlo
+================================================
+Inputs varied: mc, ms, <qq>, <ss>/<qq>, m0^2, M^2, and s0_mix.
+theta_Ds=26.6+-0.6 deg is sampled from Aliev-Bilmis-Savci, arXiv:2408.08014v2.
+The angle from diagonalizing the truncated matrix is diagnostic only.
+The two physical thresholds are refitted to the measured masses in every sample.
+generated samples with valid fits: 2000; accepted: 1714
+theta input: 26.5952 [25.9962, 27.1988] deg
+truncated-matrix diagnostic theta: 30.6317 [29.9417, 31.2855] deg
+normalized off-diagonal residual: 0.183046 [0.142149, 0.224741]
+s01: 8 [7.625, 8.3] GeV^2
+s02: 9.975 [9.55, 10.675] GeV^2
+f1: 0.404608 [0.379863, 0.429098] GeV
+f2: 0.167731 [0.159392, 0.175632] GeV

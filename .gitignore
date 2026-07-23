@@ -19,6 +19,5 @@ __pycache__/
 # Local scratch outputs
 tmp/
 scratch/
-outputs/.matplotlib/
-Dsstar_gamma/outputs/.matplotlib/
-Bsstar_gamma/outputs/.matplotlib/
+**/outputs/.matplotlib/
+**/outputs/.mplconfig/

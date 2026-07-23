@@ -1,0 +1,47 @@
+quantity,symbol,value,unit,source,notes
+Fine structure const,alpha_em,1/137.036,-,PDG2024,q^2=0 (real photon)
+Charm quark mass (MSbar),m_c,1.27 ± 0.02,GeV,PDG2024; PullinZwicky2021 use mc(mc),running mass
+Bottom quark mass (MSbar),m_b,4.18 ± 0.03,GeV,PDG2024,for Bs sector
+Strange quark mass,m_s,0.093 ± 0.011,GeV,PDG2024 (2 GeV),KEPT in full incl. m_s^2
+Ds1(2460) mass,M_Ds1_2460,2.4595 ± 0.0006,GeV,PDG2024,initial 1+ state (J^P=1+)
+Ds1(2536) mass,M_Ds1_2536,2.53511 ± 0.00006,GeV,PDG2024,initial 1+ state
+Ds mass,m_Ds,1.96835 ± 0.00007,GeV,PDG2024,final 0- state
+Ds* mass,m_Dsstar,2.1122,GeV,PDG2024,final 1- state for Ds1 -> Ds* gamma
+Ds* vector decay constant,f_Dsstar,0.227 ± 0.028,GeV,derived in this work,LO transverse vector-current two-point SVZ baseline; window M2=2.5-4.0 GeV^2 and s0=6.5/7.0/7.5 GeV^2
+Bs mass,m_Bs,5.36692 ± 0.00010,GeV,PDG2024,final 0- (bottom sector)
+Bs* mass,m_Bsstar,5.4154,GeV,PDG2024,final 1- state for Bs1 -> Bs* gamma
+Bs* vector decay constant,f_Bsstar,0.262 ± 0.034,GeV,derived in this work,LO transverse vector-current two-point SVZ baseline; window M2=5.0-8.0 GeV^2 and s0=33-36 GeV^2
+Bs1(5830) mass,M_Bs1_5830,5.82870 ± 0.00020,GeV,PDG2024; CMS2018,observed narrow bottom-strange 1+ state; treated as high-combination state
+Bs1 lower 1+ diagnostic mass,M_Bs1_low_diag,5.750 ± 0.026,GeV,Lang2015,model/lattice diagnostic only; not experimentally established
+Ds decay constant,f_Ds,0.2499 ± 0.0005,GeV,FLAG2024; PDG2024; Colangelo2005 used 0.266±0.032,J_Ds=q̄iγ5Q
+Ds1 axial dc (J_A),f_Ds1_A,0.225 ± 0.025,GeV,Colangelo2005; PullinZwicky2021 f_D1 class,<0|J_A|Ds1>=f_A m η
+Ds*_s tensor/axial dc scale,f^T,0.256 ± 0.017,GeV,PullinZwicky2021 Table 8 (D*_s T),cross-ref for J_B normalization
+Ds1 physical-current residue output,f1_Ds1_2460,0.4045 [0.3790; 0.4310],GeV,AA/AB/BB two-point QCDSR in this work,LO+d3+d5 matrix extraction; no external residue anchor
+Ds1 pure axial benchmark,f_Ds1_A_Wang,0.245 ± 0.017,GeV,Wang2015 Table 1,pure axial-current two-point benchmark; not directly f1 or f2
+Ds1 physical-current residue output,f2_Ds1_2536,0.1635 [0.1552; 0.1717],GeV,AA/AB/BB two-point QCDSR in this work,LO+d3+d5 matrix extraction with separately mass-fitted projected threshold
+Bs decay constant,f_Bs,0.2303 ± 0.0013,GeV,FLAG2024,central input for Bs sector
+Bs1 axial dc working input,f_Bs1_A_working,0.146 ± 0.029,GeV,HQ scaling from f_Ds1_A: f sqrt(M)=const,temporary Bs1 input used in scripts; assign 20 percent uncertainty
+Bs1 tensor dc working input,f_Bs1_T_working,0.164 ± 0.033,GeV,HQ scaling from f_Ds1_T: f sqrt(M)=const,temporary Bs1 tensor-current input used in scripts; assign 20 percent uncertainty
+Bs1 axial basis-current input,f_Bs1_A_PZ,0.305 ± 0.027,GeV,PullinZwicky2021 Table 8 (B1s=0.305),Stage-3 Bs1 basis-current input
+Bs1 tensor basis-current input,f_Bs1_T_PZ,0.285 ± 0.027,GeV,PullinZwicky2021 Table 8,Stage-3 Bs1 basis-current input
+Bs1(5830) physical-current f1,f1_Bs1_5830,0.443 [0.384,0.492],GeV,derived in this work,Stage-3 mixed-current diagonalization closure; fixed theta and lattice photon row
+Bs1(5830) physical-current f2,f2_Bs1_5830,0.203 [0.121,0.291],GeV,derived in this work,Stage-3 mixed-current diagonalization closure; fixed theta and lattice photon row
+Quark condensate,<qq>,-(0.24 GeV)^3 = -0.01382,GeV^3,standard SVZ; Colangelo Appendix,up/down
+Strange condensate ratio,kappa=<ss>/<qq>,0.8 ± 0.1,-,standard,<ss>=kappa<qq>
+Mixed condensate m0^2,m0^2,0.8 ± 0.2,GeV^2,standard,<q gσG q>=m0^2<qq>
+Gluon condensate,<g^2 G^2>,0.88 ± 0.25,GeV^4,SVZ; <alpha_s/pi G^2>=0.012,(0.47±0.09)^4-ish
+Magnetic susceptibility,chi(1 GeV),+3.15 ± 0.3 (or +2.85±0.5),GeV^-2,BBK2002; Rohrwild2007,KEY photon-DA param
+Lattice photon transverse normalization,f_gamma_s^perp(1 GeV),-55.1 ± 1.9,MeV,Bacchio2024,preferred leading-twist photon-normalization scenario after running from 2 GeV
+3-particle photon coupling,f_3gamma,-0.0039 ± 0.0020,GeV^2,BBK2002; Rohrwild2007,twist-3
+twist-4 param omega^V_gamma,omega_V,3.8 ± 1.8,-,BBK2002,3-particle
+twist-4 param omega^A_gamma,omega_A,-2.1 ± 1.0,-,BBK2002,3-particle
+twist-2 asymptotic phi_gamma,phi_gamma(u),6 u (1-u),-,BBK2002 asymptotic,normalization ∫phi=1
+3P1-1P1 mixing angle,theta,SCAN; ideal 35.3°,deg,Yang 2007; HQ limit,physical states via Eq.(2)
+Ds1 Borel window,M2_Ds1,3.0 to 4.5,GeV^2,redo stability diagnostics,preferred Ds1 window after pole-proxy/OPE/stability check
+Ds1 continuum window,s0_Ds1,7.84 to 8.70,GeV^2,redo stability diagnostics,corresponds to sqrt(s0)=2.80 to 2.95 GeV
+Bs1 Borel window,M2_Bs1,10 to 14,GeV^2,redo stability diagnostics,preferred Bs1 window after stability check
+Bs1(5830) continuum window,s0_Bs1_5830,37.82 to 40.96,GeV^2,redo stability diagnostics,corresponds to sqrt(s0)=6.15 to 6.40 GeV
+Bs1 lower diagnostic continuum window,s0_Bs1_low,36.60 to 40.32,GeV^2,redo stability diagnostics,corresponds to sqrt(s0)=6.05 to 6.35 GeV
+strange quark charge,e_s,-1/3,e,QED,hard light-quark photon emission (a1)
+charm quark charge,e_c,+2/3,e,QED,hard heavy-quark photon emission (b1)
+bottom quark charge,e_b,-1/3,e,QED,Bs sector hard heavy emission

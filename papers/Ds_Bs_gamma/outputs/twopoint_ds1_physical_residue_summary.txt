@@ -1,0 +1,20 @@
+Ds1 physical-pole residue extraction from the AA/AB/BB matrix
+============================================================
+The projection angle is theta_Ds=26.6+-0.6 deg.
+Angle source: Aliev-Bilmis-Savci, arXiv:2408.08014v2.
+The angle from diagonalizing the truncated matrix is diagnostic only.
+Separate projected thresholds s01 and s02 are then fitted to the two measured masses.
+No external decay constant or overlap parameter enters.
+
+Borel points: 51; accepted by pole/OPE/mass diagnostics: 14
+theta: 26.6 [26.6, 26.6] deg
+truncated-matrix diagnostic theta: 30.5726 [30.4518, 30.6832] deg
+normalized off-diagonal residual: 0.180558 [0.176144, 0.183667]
+s01: 7.925 [7.877, 7.925] GeV^2
+s02: 9.925 [9.604, 10.463] GeV^2
+f1: 0.400561 [0.398715, 0.400586] GeV
+f2: 0.166208 [0.162953, 0.170503] GeV
+pole fraction 1: 0.580675 [0.525009, 0.636788]
+pole fraction 2: 0.693792 [0.609698, 0.789531]
+d5 fraction 1: 0.0167201 [0.0142597, 0.0202326]
+d5 fraction 2: 0.0835309 [0.0704868, 0.102084]

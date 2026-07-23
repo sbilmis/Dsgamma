@@ -1,0 +1,1397 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  citecolor=blue!55!black,
+  urlcolor=blue!60!black
+}
+
+\definecolor{codebg}{RGB}{247,248,250}
+\definecolor{codecomment}{RGB}{42,112,74}
+\definecolor{codekeyword}{RGB}{42,74,145}
+\definecolor{codestring}{RGB}{150,66,55}
+
+\lstdefinelanguage{Wolfram}{
+  morekeywords={ClearAll,Needs,DiracTrace,DiracSimplify,DiracSigma,
+    Contract,ScalarProductExpand,ExpandScalarProduct,Collect2,Simplify,
+    Together,Thread,Table,Association,AssociationThread,True,False},
+  sensitive=true,
+  morecomment=[s]{(*}{*)},
+  morestring=[b]"
+}
+
+\lstset{
+  language=Wolfram,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{codekeyword},
+  commentstyle=\color{codecomment},
+  stringstyle=\color{codestring},
+  backgroundcolor=\color{codebg},
+  frame=single,
+  rulecolor=\color{black!15},
+  breaklines=true,
+  columns=fullflexible,
+  keepspaces=true,
+  showstringspaces=false,
+  aboveskip=0.8em,
+  belowskip=0.8em
+}
+
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\ee}{\mathrm{e}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\slashedk}{\not\!k}
+\newcommand{\slashedp}{\not\!p}
+\newcommand{\slashedpp}{\not\!p^{\prime}}
+\newcommand{\slashedq}{\not\!q}
+\newcommand{\Mathematica}{\textit{Mathematica}}
+\newcommand{\FeynCalc}{\textsc{FeynCalc}}
+
+\title{Independent Mathematica Derivation for\\
+  $D_{s1}/B_{s1}\to D_s/B_s\,\gamma$}
+\author{Ds/Bs gamma project}
+\date{22 July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note is a clean, independent restart of the symbolic part of the
+$D_{s1}/B_{s1}\to D_s/B_s\gamma$ light-cone sum-rule calculation.  It records
+exactly what has been implemented and checked in \Mathematica{} and
+\FeynCalc: the currents, correlator ordering, Wick contraction, propagator
+routing, Rohrwild three-point/background-field notation, hard-emission
+traces, Ward identities, E1 projection,
+inverse-denominator reduction, Feynman parameterization, the first soft
+two-particle Fierz traces, physical-state mixing, the pure-axial Colangelo
+limit, and the decay-constant normalization.  It does not import the Python
+implementation and does not yet claim a completed perturbative spectral
+density or double-Borel sum rule for the tensor current.
+\end{abstract}
+
+\tableofcontents
+
+\section{Purpose and executable files}
+
+The interactive source of this calculation is
+\begin{center}
+  \texttt{notebooks/DsBs\_gamma\_symbolic\_derivation.nb}.
+\end{center}
+It contains 38 input cells designed to be evaluated from top to bottom or one
+at a time.  The noninteractive regression scripts are
+\begin{align*}
+  &\texttt{scripts/mathematica\_current\_wick\_trace\_audit.wl},\\
+  &\texttt{scripts/mathematica\_correlator\_routing\_audit.wl},\\
+  &\texttt{scripts/mathematica\_hard\_loop\_parameterization.wl},\\
+  &\texttt{scripts/mathematica\_state\_mixing\_projection.wl}.
+\end{align*}
+The first three batch audits write their full machine-readable expressions
+under \texttt{outputs/}; the state-mixing audit prints its exact residuals and
+interval overlaps directly.  This note presents the compact analytic content
+needed to understand and reproduce those expressions.
+
+\section{Conventions and kinematics}
+
+We use
+\begin{equation}
+  g_{\mu\nu}=\operatorname{diag}(1,-1,-1,-1),\qquad
+  \{\gamma_\mu,\gamma_\nu\}=2g_{\mu\nu},
+\end{equation}
+\begin{equation}
+  \sigma_{\mu\nu}=\frac{\ii}{2}[\gamma_\mu,\gamma_\nu],\qquad
+  \epsilon^{0123}=+1.
+\end{equation}
+The \FeynCalc{} convention is explicitly checked through
+\texttt{FeynCalc`\$LeviCivitaSign=-1}.
+
+The momentum assignment is
+\begin{equation}
+  p^{\prime}=p+q,
+\end{equation}
+where $p^{\prime}$ is the initial $1^+$ momentum, $p$ is the final $0^-$
+momentum, and
+$q$ is the photon momentum.  The photon is real,
+\begin{equation}
+  q^2=0,\qquad 2p\cdot q=p^{\prime 2}-p^2.
+\end{equation}
+The heavy flavor is denoted by $Q=c,b$ and its mass by $m_Q$; the light flavor
+is strange with mass $m_s$.
+
+\section{Currents and the Rohrwild correlator}
+
+The two basis-current vertices are
+\begin{align}
+  \Gamma^A_\mu
+  &=\gamma_\mu\gamma_5,\\
+  \Gamma^B_\mu
+  &=\frac{\ii}{m_Q+m_s}\,
+    \sigma_{\mu\alpha}p^{\prime\alpha}\gamma_5,
+\end{align}
+and the pseudoscalar vertex is
+\begin{equation}
+  \Gamma_P=\ii\gamma_5.
+\end{equation}
+The tensor vertex is independently represented as
+\begin{equation}
+  \Gamma^B_\mu
+  =-\frac{(\gamma_\mu\slashedpp-\slashedpp\gamma_\mu)\gamma_5}
+    {2(m_Q+m_s)}.
+\end{equation}
+\Mathematica{} verifies that the two definitions agree exactly.
+
+The physical-current rotations are kept outside the basis traces:
+\begin{align}
+  \Gamma^{\rm low}_\mu
+  &=\sin\theta\,\Gamma^A_\mu+\cos\theta\,\Gamma^B_\mu,\\
+  \Gamma^{\rm high}_\mu
+  &=\cos\theta\,\Gamma^A_\mu-\sin\theta\,\Gamma^B_\mu.
+\end{align}
+
+Following Rohrwild's vacuum three-point notation
+\href{https://arxiv.org/abs/0708.1405}{arXiv:0708.1405}, adapted to a
+$1^+\to0^-\gamma$ transition, the starting correlator is
+\begin{equation}
+  \Pi^X_{\mu\nu}(p,q)=\ii^2\int d^4x\,d^4y\,
+  \ee^{\ii p\cdot x+\ii q\cdot y}
+  \langle0|T\{J_P^\dagger(x)j_\nu^{\rm em}(y)J^X_\mu(0)\}|0\rangle,
+  \qquad X=A,B,
+  \label{eq:rohrwild-correlator}
+\end{equation}
+where
+\begin{equation}
+  j_\nu^{\rm em}=e_s\bar s\gamma_\nu s+e_Q\bar Q\gamma_\nu Q.
+\end{equation}
+Here $e_s,e_Q$ are charges in units of the positive elementary charge $e$.
+Introduce the plane-wave background field
+\begin{equation}
+  F_{\alpha\beta}(z)=\ii
+  (q_\alpha\varepsilon^*_\beta-q_\beta\varepsilon^*_\alpha)
+  \ee^{\ii q\cdot z}.
+\end{equation}
+The term linear in this field obeys
+\begin{equation}
+  \varepsilon^{*\nu}\Pi^X_{\mu\nu}(p,q)
+  =\ii\int d^4x\,\ee^{\ii p\cdot x}
+  \langle0|T\{J_P^\dagger(x)J^X_\mu(0)\}|0\rangle_F
+  \equiv
+  \ii\int d^4x\,\ee^{\ii p\cdot x}
+  \langle\gamma(q,\varepsilon)|T\{J_P^\dagger(x)J^X_\mu(0)\}|0\rangle,
+  \label{eq:background-external-equivalence}
+\end{equation}
+up to the explicitly stated overall QED convention.  Thus the former
+vacuum-to-photon formula was not a different calculation; it is the
+single-photon component of Eq.~\eqref{eq:rohrwild-correlator}.
+
+In explicit fields the ordered product is
+\begin{equation}
+  T\{\bar s(x)\Gamma_PQ(x)\,\bar Q(0)\Gamma^X_\mu s(0)\}.
+  \label{eq:field-order}
+\end{equation}
+Thus the vertex at $x$ carries the final channel $p$, while the current at the
+origin carries the initial channel $p^{\prime}=p+q$.
+
+The current definitions used in the notebook are:
+\begin{lstlisting}
+gammaA[index_] := GA[index] . GA[5];
+gammaB[index_] :=
+  I FV[pPrime, alpha] DiracSigma[GA[index], GA[alpha]] . GA[5]/
+    (mQ + ms);
+gammaBExpanded[index_] :=
+  -(GA[index] . GS[pPrime] - GS[pPrime] . GA[index]) . GA[5]/
+    (2 (mQ + ms));
+gammaP[] := I GA[5];
+propNumerator[momentum_, mass_] := GS[momentum] + mass;
+\end{lstlisting}
+
+\section{Wick contraction and global signs}
+
+For the complete hard contraction, Eq.~\eqref{eq:field-order} gives
+\begin{equation}
+  \langle T\{\bar s\Gamma_PQ\,\bar Q\Gamma_Xs\}\rangle
+  =-\Tr_D[\Gamma_PS_Q\Gamma_XS_s].
+\end{equation}
+The minus sign is the closed-fermion-loop sign.  Including the leading
+correlator factor $\ii$, but not yet the propagator or QED-vertex factors, the
+hard prefactor is therefore
+\begin{equation}
+  -\ii N_c.
+\end{equation}
+
+If only the heavy flavor is contracted, the strange bilocal remains open and
+there is no closed fermion loop.  The soft contraction begins with $+\ii$.
+The Fierz rearrangement
+\begin{equation}
+  \bar s_\alpha(x)s_\beta(0)
+  =-\frac14\sum_i(\Gamma_i)_{\beta\alpha}
+  \bar s(x)\Gamma_i s(0)
+\end{equation}
+then gives a soft prefactor $-\ii/4$ before the free-propagator factor.
+
+In the notebook the bookkeeping is kept visible:
+\begin{lstlisting}
+fermionLoopSign = -1;
+hardWickPrefactor = I fermionLoopSign Nc;
+softWickPrefactorBeforeFierz = I;
+softWickPrefactorAfterFierz = -I/4;
+\end{lstlisting}
+
+\section{Propagator expansion and OPE building blocks}
+
+The free momentum-space propagator is
+\begin{equation}
+  S_f^0(r)=\frac{\ii(\not\!r+m_f)}{r^2-m_f^2+\ii0}.
+  \label{eq:free-propagator}
+\end{equation}
+
+\subsection{Light-strange propagator in Rohrwild notation, including $m_s$}
+
+To make the comparison with Rohrwild direct, write $\bar u=1-u$ and keep the
+background fields at the point $ux$.  With color indices displayed, the
+light-strange propagator used as the master expansion is
+\begin{align}
+  \widehat{s^a(x)\bar s^b(0)}={}&
+  \delta^{ab}\Bigg[
+    \frac{\ii\not\!x}{2\pi^2x^4}
+    -\frac{m_s}{4\pi^2x^2}
+  \Bigg]
+  \nonumber\\
+  &-\frac{\ii g_s}{16\pi^2x^2}\int_0^1du\,
+  \left\{\bar u\not\!x\sigma_{\alpha\beta}
+  +u\sigma_{\alpha\beta}\not\!x\right\}
+  G_A^{\alpha\beta}(ux)t^A_{ab}
+  \nonumber\\
+  &-\frac{\ii e_s\delta^{ab}}{16\pi^2x^2}\int_0^1du\,
+  \left\{\bar u\not\!x\sigma_{\alpha\beta}
+  +u\sigma_{\alpha\beta}\not\!x\right\}
+  F^{\alpha\beta}(ux)
+  \nonumber\\
+  &-\frac{m_s}{32\pi^2}\int_0^1du\,
+  \left[g_sG_A^{\alpha\beta}(ux)t^A_{ab}
+       +e_s\delta^{ab}F^{\alpha\beta}(ux)\right]
+  \sigma_{\alpha\beta}L_x+\cdots ,
+  \label{eq:light-full-propagator}
+\end{align}
+where
+\begin{equation}
+  L_x=\ln\!\left(\frac{-x^2\mu^2}{4}\right)+2\gamma_E .
+\end{equation}
+The first line contains only the free propagator and its explicit $m_s$ term.
+The last line is the linear-$m_s$ Wilson coefficient in a single gluon or
+electromagnetic background field.  No local vacuum-condensate term is written
+in Eq.~\eqref{eq:light-full-propagator}.  Setting $m_s$ and the last line to
+zero gives precisely the light-propagator form displayed in Eq.~(2.12) of
+Rohrwild.  The ellipsis denotes higher-background-field and higher-order mass
+terms, not local condensate pieces used elsewhere.
+
+\paragraph{Important calculation warning.}
+Although local parts are no longer displayed as part of the propagator, the
+existing axial numerical sum-rule implementation \emph{does include} the
+term labeled \texttt{heavy\_local} in the Python audit.  After the double
+Borel transform it is
+\begin{equation}
+  \Pi^{A,\mathrm{local}}_{Q\gamma}
+  =e_Q\,\ee^{-m_Q^2/M^2}\langle\bar ss\rangle
+  \left[
+    1-\frac{m_Qm_s}{M^2}
+    +\frac{m_s^2}{2M^2}\left(1+\frac{m_Q^2}{M^2}\right)
+  \right].
+  \label{eq:heavy-local}
+\end{equation}
+It has not been removed here, because doing so would change the quoted form
+factors and widths.  The mixed condensate
+$\langle\bar s g_s\sigma\cdot Gs\rangle$ and the vacuum gluon condensate were
+not included in the radiative three-point calculation.
+
+\subsection{Heavy propagator in a background gluon field}
+
+For reference, the momentum representation through one background gluon can
+be organized as
+\begin{align}
+  S_Q^{ab}(x)
+  =\ii\int\frac{d^4k}{(2\pi)^4}\,\ee^{-\ii k\cdot x}
+  \Bigg\{&
+  \frac{\delta^{ab}(\not\!k+m_Q)}{k^2-m_Q^2}
+  -\frac{g_sG^A_{\alpha\beta}t^A_{ab}}{4}
+  \frac{
+    \sigma^{\alpha\beta}(\not\!k+m_Q)
+    +(\not\!k+m_Q)\sigma^{\alpha\beta}}
+  {(k^2-m_Q^2)^2}
+  +\cdots\Bigg\}.
+  \label{eq:heavy-full-propagator}
+\end{align}
+For the photon-DA calculation the one-gluon term is used as an operator
+insertion, rather than replaced by $\langle G^2\rangle$.  The explicit
+light-cone form used in the symbolic three-particle kernels is
+\begin{align}
+  S_Q^G(x)
+  =-\ii g_s\int\frac{d^4k}{(2\pi)^4}\,\ee^{-\ii k\cdot x}
+  \int_0^1du\Bigg[
+  &\frac{\not\!k+m_Q}{2(m_Q^2-k^2)^2}
+    G^{\alpha\beta}(ux)\sigma_{\alpha\beta}
+  \nonumber\\
+  &+\frac{ux_\alpha}{m_Q^2-k^2}
+    G^{\alpha\beta}(ux)\gamma_\beta
+  \Bigg].
+  \label{eq:gluon-background-propagator}
+\end{align}
+Both the $\sigma_{\alpha\beta}$ part and the
+$x_\alpha\gamma_\beta$ part have Mathematica trace-kernel scripts.
+
+\subsection{Electromagnetic background-field propagator}
+
+The first-order electromagnetic correction is
+\begin{align}
+  S_f^\gamma(x)
+  =-\ii e_f\int\frac{d^4k}{(2\pi)^4}\,\ee^{-\ii k\cdot x}
+  \int_0^1du\Bigg[
+  &\frac{\not\!k+m_f}{2(m_f^2-k^2)^2}
+    F^{\alpha\beta}(ux)\sigma_{\alpha\beta}
+  \nonumber\\
+  &+\frac{ux_\alpha}{m_f^2-k^2}
+    F^{\alpha\beta}(ux)\gamma_\beta
+  \Bigg].
+  \label{eq:em-background-propagator}
+\end{align}
+The overall electromagnetic coupling may either be included in $e_f$ or kept
+outside the propagator, but not both.  In the explicit-vertex trace audit,
+Eq.~\eqref{eq:em-background-propagator} is represented equivalently by
+\begin{equation}
+  S_f^0(r)(-\ii e e_f\gamma_\nu\varepsilon^\nu)S_f^0(r+q),
+\end{equation}
+with the orientation fixed separately for each diagram.  These are alternative
+representations of the same hard photon-emission term.
+
+\subsection{Photon-DA matrix elements}
+
+The condensate-dependent photon terms are vacuum-to-photon nonlocal matrix
+elements.  For example,
+\begin{align}
+  \langle\gamma(q,\varepsilon)|\bar s(x)\sigma_{\mu\nu}s(0)|0\rangle
+  ={}&-\ii e e_s\langle\bar ss\rangle
+  (\varepsilon_\mu q_\nu-\varepsilon_\nu q_\mu)
+  \int_0^1du\,\ee^{\ii\bar u q\cdot x}
+  \left[\chi\phi_\gamma(u)+\frac{x^2}{16}\mathbb A(u)\right]
+  \nonumber\\
+  &+\text{the twist-4 }h_\gamma\text{ structure},
+  \label{eq:tensor-photon-da}
+\end{align}
+and
+\begin{equation}
+  \langle\gamma(q,\varepsilon)|\bar s(x)\gamma_\mu s(0)|0\rangle
+  =e e_s f_{3\gamma}\widetilde\varepsilon_\mu
+  \int_0^1du\,\ee^{\ii\bar u q\cdot x}\psi^v(u).
+  \label{eq:vector-photon-da}
+\end{equation}
+The three-particle matrix elements
+$\langle\gamma|\bar s(x)g_sG_{\alpha\beta}(vx)\Gamma s(0)|0\rangle$
+define $\mathcal S,\widetilde{\mathcal S},\mathcal T_1,\ldots,\mathcal T_4$.
+Their axial combination used in the sum rule is
+\begin{equation}
+  \mathcal F_1=
+  \mathcal S+\widetilde{\mathcal S}-\mathcal T_1-\mathcal T_2
+  +\mathcal T_3+\mathcal T_4
+  +2v(-\mathcal S-\mathcal T_3+\mathcal T_2).
+  \label{eq:F1-combination}
+\end{equation}
+
+\section{Momentum routing}
+
+\subsection{Heavy-line emission}
+
+The three fermion momenta are $k$, $k+q$, and $k-p$.  The denominators are
+\begin{align}
+  d_{H1}&=(k+q)^2-m_Q^2,\\
+  d_{H2}&=k^2-m_Q^2,\\
+  d_{H3}&=(k-p)^2-m_s^2.
+\end{align}
+The current momenta are
+\begin{equation}
+  k-(k-p)=p,\qquad (k+q)-(k-p)=p+q.
+\end{equation}
+
+\subsection{Strange-line emission}
+
+The three momenta are $k$, $k-p$, and $k-p-q$.  The denominators are
+\begin{align}
+  d_{S1}&=k^2-m_Q^2,\\
+  d_{S2}&=(k-p)^2-m_s^2,\\
+  d_{S3}&=(k-p-q)^2-m_s^2.
+\end{align}
+The corresponding current momenta are
+\begin{equation}
+  k-(k-p)=p,\qquad k-(k-p-q)=p+q.
+\end{equation}
+
+This vertex check is important.  The old trial route $k-p+q$ gives
+$k-(k-p+q)=p-q$ at the initial vertex and is therefore not the routing of
+Eq.~\eqref{eq:rohrwild-correlator}.  It is kept only in the dedicated routing
+audit as a diagnostic comparison.
+
+\section{Hard-emission Dirac traces}
+
+Charges, color, denominators, the QED vertex, propagator factors, and the
+global Wick sign are deliberately kept outside the numerator traces.  For a
+generic basis vertex $\Gamma^X_\mu$, the heavy-emission numerator is
+\begin{equation}
+  N^X_{H,\mu\nu}=\Tr_D\!\left[
+  \ii\gamma_5(\slashedk+m_Q)\gamma_\nu
+  (\slashedk+\slashedq+m_Q)\Gamma^X_\mu
+  (\slashedk-\slashedp+m_s)\right].
+  \label{eq:heavy-trace}
+\end{equation}
+The strange-emission numerator is
+\begin{equation}
+  N^X_{s,\mu\nu}=\Tr_D\!\left[
+  \ii\gamma_5(\slashedk+m_Q)\Gamma^X_\mu
+  (\slashedk-\slashedp-\slashedq+m_s)\gamma_\nu
+  (\slashedk-\slashedp+m_s)\right].
+  \label{eq:strange-trace}
+\end{equation}
+
+The implementation is short enough to display in full:
+\begin{lstlisting}
+traceReduce[expression_] :=
+  Collect2[
+    DiracSimplify[expression, DiracSubstitute67 -> True],
+    {mQ, ms}
+  ];
+
+heavyTrace[current_] := traceReduce[DiracTrace[
+  gammaP[] . propNumerator[k, mQ] . GA[nu] .
+  propNumerator[k + q, mQ] . current[mu] .
+  propNumerator[k - p, ms]
+]];
+
+strangeTrace[current_] := traceReduce[DiracTrace[
+  gammaP[] . propNumerator[k, mQ] . current[mu] .
+  propNumerator[k - p - q, ms] . GA[nu] .
+  propNumerator[k - p, ms]
+]];
+
+nAHeavy   = heavyTrace[gammaA];
+nAStrange = strangeTrace[gammaA];
+nBHeavy   = heavyTrace[gammaB];
+nBStrange = strangeTrace[gammaB];
+\end{lstlisting}
+Each of the four traces is recomputed after a cyclic rotation of the matrix
+chain.  All four cyclic differences vanish exactly.
+
+\section{Fermion-line Ward identities}
+
+For equal masses on the photon-emitting segment and $B=A+q$,
+\begin{equation}
+  (\not\!A+m)\not\!q(\not\!B+m)
+  =D_B(\not\!A+m)-D_A(\not\!B+m),
+  \label{eq:ward-line}
+\end{equation}
+where $D_A=A^2-m^2$ and $D_B=B^2-m^2$.  Equation~\eqref{eq:ward-line}
+shows explicitly that replacing the photon vertex by $q_\nu$ collapses one of
+the adjacent propagators, as required by the Ward--Takahashi identity.
+
+The notebook checks Eq.~\eqref{eq:ward-line} independently for the heavy line,
+with $A=k$ and $B=k+q$, and the strange line, with $A=l-q$ and $B=l$:
+\begin{lstlisting}
+wardHeavyResidual = FCE[DiracSimplify[
+  DiracGammaExpand[
+    propNumerator[k, mQ] . GS[q] . propNumerator[k + q, mQ]
+    - (SP[k + q, k + q] - mQ^2) propNumerator[k, mQ]
+    + (SP[k, k] - mQ^2) propNumerator[k + q, mQ]
+  ],
+  DiracSubstitute67 -> True, DiracOrder -> True
+]] // ScalarProductExpand // Simplify;
+\end{lstlisting}
+Both the heavy and strange residuals are zero.
+
+\section{E1 projection}
+
+The transverse E1 tensor is chosen as
+\begin{equation}
+  S_{\mu\nu}=p_\nu q_\mu-(p\cdot q)g_{\mu\nu}.
+\end{equation}
+For $q^2=0$,
+\begin{equation}
+  q^\nu S_{\mu\nu}=0.
+\end{equation}
+The normalized projector is
+\begin{equation}
+  \mathcal P_{E1}^{\mu\nu}
+  =\frac{p^\nu q^\mu-(p\cdot q)g^{\mu\nu}}
+  {2(p\cdot q)^2},
+\end{equation}
+and satisfies
+\begin{equation}
+  \mathcal P_{E1}^{\mu\nu}S_{\mu\nu}=1.
+\end{equation}
+The code is
+\begin{lstlisting}
+e1Tensor = FV[p, nu] FV[q, mu] - SP[p, q] MT[mu, nu];
+e1Projector = e1Tensor/(2 SP[p, q]^2);
+
+e1Project[expression_] := Collect2[
+  ScalarProductExpand[
+    Contract[expression e1Projector] /. kinematicRules
+  ],
+  {mQ, ms}
+];
+
+projAHeavy   = e1Project[nAHeavy];
+projAStrange = e1Project[nAStrange];
+projBHeavy   = e1Project[nBHeavy];
+projBStrange = e1Project[nBStrange];
+\end{lstlisting}
+The projector normalization, photon Ward contraction, and contraction with a
+physical initial-state polarization are all checked symbolically.
+
+\section{Physical-state projection and the Colangelo limit}
+
+\subsection{Rotation of the projected invariant amplitudes}
+
+Let $\widehat T_A$ and $\widehat T_B$ denote the continuum-subtracted,
+double-Borel E1 invariant amplitudes obtained from the two basis currents.
+Because the correlator is linear in the current at the initial-state vertex,
+the physical projections are
+\begin{equation}
+  \begin{pmatrix}\widehat T_1\\[2pt]\widehat T_2\end{pmatrix}
+  =R(\theta)
+  \begin{pmatrix}\widehat T_A\\[2pt]\widehat T_B\end{pmatrix},
+  \qquad
+  R(\theta)=
+  \begin{pmatrix}
+    \sin\theta&\cos\theta\\
+    \cos\theta&-\sin\theta
+  \end{pmatrix},
+  \qquad R^TR=\mathbf 1.
+  \label{eq:state-rotation}
+\end{equation}
+The same rotation therefore applies after the E1 projection, after the OPE,
+and after the Borel transformation; these linear operations commute.
+
+Define the pseudoscalar and physical axial-state residues by
+\begin{align}
+  \langle0|J_P|P(p)\rangle
+  &=\frac{f_Pm_P^2}{m_Q+m_s},
+  \label{eq:pseudoscalar-residue}\\
+  \langle0|J_i^\mu|H_i(p^{\prime},\eta)\rangle
+  &=f_iM_i\eta^\mu,
+  \qquad i=1,2,
+  \label{eq:physical-decay-constant-definition}
+\end{align}
+and use
+\begin{equation}
+  \langle\gamma(q,\varepsilon)P(p)|H_i(p^{\prime},\eta)\rangle
+  =eG_i\big[(\varepsilon^*\!\cdot\eta)(p\cdot q)
+  -(\varepsilon^*\!\cdot p)(\eta\cdot q)\big].
+  \label{eq:mixed-transition-amplitude}
+\end{equation}
+The pole term in the projected, double-Borel invariant is then
+\begin{equation}
+  \widehat T_i^{\rm pole}
+  =\frac{f_Pm_P^2}{m_Q+m_s}\,f_iM_iG_i
+  \exp\!\left(-\frac{M_i^2}{\mathcal M_1^2}
+               -\frac{m_P^2}{\mathcal M_2^2}\right).
+  \label{eq:mixed-hadronic-pole}
+\end{equation}
+Consequently the correctly normalized physical coupling is
+\begin{equation}
+  G_i=
+  \frac{m_Q+m_s}{f_Pm_P^2f_iM_i}
+  \exp\!\left(\frac{M_i^2}{\mathcal M_1^2}
+              +\frac{m_P^2}{\mathcal M_2^2}\right)
+  \widehat T_i^{\rm OPE}.
+  \label{eq:mixed-coupling-from-ope}
+\end{equation}
+If the basis residues for a given pole are defined with the same mass
+normalization, Eq.~\eqref{eq:mixed-coupling-from-ope} becomes
+\begin{align}
+  G_1
+  &=\frac{\sin\theta\,f_A^{(1)}G_A^{(1)}
+          +\cos\theta\,f_B^{(1)}G_B^{(1)}}{f_1},
+  \label{eq:residue-weighted-low}\\
+  G_2
+  &=\frac{\cos\theta\,f_A^{(2)}G_A^{(2)}
+          -\sin\theta\,f_B^{(2)}G_B^{(2)}}{f_2}.
+  \label{eq:residue-weighted-high}
+\end{align}
+Thus a bare sine--cosine rotation of already normalized couplings is valid
+only when the corresponding residues cancel.
+
+\subsection{Colangelo-style final sum-rule assembly}
+
+For the paper we organize the answer at the level of the projected Borel
+invariants, rather than displaying the unprojected correlation function.  In
+the equal-Borel convention
+$\mathcal M_1^2=\mathcal M_2^2=2M^2$, define
+\begin{equation}
+  \mathcal N_i(M^2)=
+  \frac{\exp[(M_i^2+m_P^2)/(2M^2)](m_Q+m_s)}
+  {M_if_i\,m_P^2f_P},
+  \qquad i=1,2.
+  \label{eq:physical-normalization-factor}
+\end{equation}
+The two physical couplings are then presented directly as
+\begin{align}
+  G_1
+  &=\mathcal N_1
+    \left(\sin\theta\,\widehat T_A
+          +\cos\theta\,\widehat T_B\right),
+  \label{eq:paper-final-g1}\\
+  G_2
+  &=\mathcal N_2
+    \left(\cos\theta\,\widehat T_A
+          -\sin\theta\,\widehat T_B\right).
+  \label{eq:paper-final-g2}
+\end{align}
+Each basis invariant is decomposed into the same OPE classes,
+\begin{equation}
+  \widehat T_X=
+  \widehat T_X^{\rm pert}
+  +\widehat T_X^{\langle\bar ss\rangle}
+  +\widehat T_X^{\rm tw2}
+  +\widehat T_X^{\rm tw3}
+  +\widehat T_X^{\rm tw4}
+  +\widehat T_X^{\rm 3p},
+  \qquad X=A,B.
+  \label{eq:basis-ope-decomposition}
+\end{equation}
+
+For the axial current, the Colangelo-style comparison invariant within the
+adopted truncation is
+\begin{align}
+  \widehat T_A={}&
+  \int_{(m_Q+m_s)^2}^{s_0}ds\,
+  \ee^{-s/M^2}\rho_A^P(s)
+  \nonumber\\
+  &+e_QE_Q\langle\bar ss\rangle
+  \left[
+    1-\frac{m_Qm_s}{M^2}
+    +\frac{m_s^2}{2M^2}
+     \left(1+\frac{m_Q^2}{M^2}\right)
+  \right]
+  \nonumber\\
+  &-e_s\langle\bar ss\rangle(E_Q-E_0)M^2
+    \chi_{\rm C}\phi_\gamma(u_0)
+  \nonumber\\
+  &-e_s\langle\bar ss\rangle E_Q
+  \left[
+    -\frac14\bigl(\mathbb A(u_0)-8\bar H_\gamma(u_0)\bigr)
+      \left(1+\frac{m_Q^2}{M^2}\right)
+    -\mathcal I_{\mathcal F_1}(u_0)
+  \right]
+  \nonumber\\
+  &+2e_sf_{3\gamma}m_QE_Q\Psi^v(u_0),
+  \label{eq:full-axial-borel-invariant}
+\end{align}
+where
+\begin{equation}
+  E_Q=\ee^{-m_Q^2/M^2},
+  \qquad E_0=\ee^{-s_0/M^2},
+  \label{eq:borel-exponent-shorthand}
+\end{equation}
+\begin{align}
+  \bar H_\gamma(u_0)
+  &=\int_0^{u_0}du\int_0^u dv\,h_\gamma(v),\\
+  \Psi^v(u_0)
+  &=\int_0^{u_0}du\,\psi^v(u),
+\end{align}
+and the three-particle contribution is
+\begin{align}
+  \mathcal I_{\mathcal F_1}(u_0)={}&
+  \int_0^{1-u_0}dv
+  \int_0^{u_0/(1-v)}d\alpha_g\,
+  \mathcal F_1\bigl(u_0-(1-v)\alpha_g,
+                    1-u_0-v\alpha_g,\alpha_g\bigr)
+  \nonumber\\
+  &+\int_{1-u_0}^{1}dv
+  \int_0^{(1-u_0)/v}d\alpha_g\,
+  \mathcal F_1\bigl(u_0-(1-v)\alpha_g,
+                    1-u_0-v\alpha_g,\alpha_g\bigr).
+  \label{eq:F1-integral-compact}
+\end{align}
+Here $\chi_{\rm C}$ is the signed susceptibility convention printed by
+Colangelo et al.  The project stores the positive magnitude
+$\chi_\gamma=|\chi_{\rm C}|$, so the twist-2 term is implemented with the
+equivalent replacement
+\begin{equation}
+  -e_s\langle\bar ss\rangle\chi_{\rm C}
+  \longrightarrow
+  +e_s\langle\bar ss\rangle\chi_\gamma.
+  \label{eq:chi-convention-conversion}
+\end{equation}
+
+\subsection{Paper default: Rohrwild nonlocal transition OPE}
+
+The standalone local term in Eq.~\eqref{eq:full-axial-borel-invariant} is
+\emph{not} part of the paper-default transition sum rule.  Denote by
+$\widehat T_A^{\rm base}$ the right-hand side of that equation with the
+$e_Q\langle\bar ss\rangle$ local term removed.  The two schemes used in the
+numerical comparison are
+\begin{align}
+  \widehat T_A^{\rm Col}
+  &=\widehat T_A^{\rm base}
+    +e_QE_Q\langle\bar ss\rangle
+      \left[1-\frac{m_Qm_s}{M^2}
+      +\frac{m_s^2}{2M^2}\left(1+\frac{m_Q^2}{M^2}\right)\right],
+  \label{eq:colangelo-local-alternative}\\
+  \widehat T_A^{\rm RW}
+  &=\widehat T_A^{\rm base}+\mathcal I_A^{\rm em},
+  \label{eq:rohrwild-nonlocal-default}
+\end{align}
+and they are alternatives: the two last terms must never be added.
+
+At the symmetric double-Borel point $u_0=1/2$, the current-specific axial
+trace gives $(1-2u)\mathcal S_\gamma-\mathcal T_4^\gamma$ for the direct
+part.  Both direct integrals vanish by antisymmetry, leaving
+\begin{equation}
+  \mathcal I_A^{\rm em}
+  =e_Q\langle\bar ss\rangle(E_Q-E_0)
+   \frac{2(m_P^2-m_A^2)}{M^2}\,P_\gamma,
+  \qquad
+  P_\gamma=\ln 8-\frac{1181}{320}=-1.611183458320\ldots .
+  \label{eq:axial-rohrwild-em-final}
+\end{equation}
+The source convention used here is
+\begin{align}
+ \mathcal S_\gamma
+ &=60\alpha_g^2(\alpha_q+\alpha_{\bar q})
+     [4-7(\alpha_q+\alpha_{\bar q})],\\
+ \mathcal T_4^\gamma
+ &=60\alpha_g^2(\alpha_{\bar q}-\alpha_q)
+     [4-7(\alpha_q+\alpha_{\bar q})].
+\end{align}
+The third integral in the printed appendix representation of
+$\mathcal P[\mathcal T_4^\gamma]$ has lower limit zero and is logarithmically
+divergent if read literally.  Enforcing the double-Borel support
+$\alpha_{\bar q}\geq1/2$ gives the finite constant $P_\gamma$ above.  This
+support qualification is retained explicitly in the Python output rather
+than silently absorbed into a numerical coefficient.
+
+For the tensor basis current, with the stated physical-residue numerator
+prescription
+\begin{equation}
+ p^2=m_P^2,\qquad p\cdot q=\frac{m_A^2-m_P^2}{2},\qquad u_0=\frac12,
+\end{equation}
+the corresponding nonlocal electromagnetic term is
+\begin{align}
+ \mathcal I_B^{\rm em}
+ ={}&e_Q\langle\bar ss\rangle(E_Q-E_0)
+ \left[(r_0-r_S)\frac{25}{16}-r_T\frac{5}{16}
+ +2r_0\frac{m_P^2-m_A^2}{M^2}P_\gamma\right],
+ \label{eq:tensor-rohrwild-em-final}\\
+ r_0={}&\frac{m_Q}{m_Q+m_s},\qquad
+ r_S=\frac{m_Q^2+\tfrac12 p\cdot q}{m_Q(m_Q+m_s)},\qquad
+ r_T=\frac{-m_Q^2+m_P^2+\tfrac32 p\cdot q}{m_Q(m_Q+m_s)}.
+\end{align}
+Equations~\eqref{eq:axial-rohrwild-em-final} and
+\eqref{eq:tensor-rohrwild-em-final} are implemented in
+\texttt{scripts/rohrwild\_em\_da.py}.
+
+\begin{table}[H]
+ \centering
+ \small
+ \begin{tabular}{p{0.34\textwidth}p{0.25\textwidth}p{0.25\textwidth}}
+  \toprule
+  Contribution & Rohrwild paper default & Colangelo comparison\\
+  \midrule
+  Ordinary local condensate in transition LCSR & absent & retained for $J_A$\\
+  $\mathcal S_\gamma,\mathcal T_4^\gamma$ & included nonlocally & not added separately\\
+  Gluonic photon DAs & included & included through $\mathcal F_1$\\
+  Local condensates in two-point $f_i$ sum rules & required & required\\
+  Local plus electromagnetic three-particle term & forbidden double counting & forbidden double counting\\
+  \bottomrule
+ \end{tabular}
+ \caption{Separation of the local-condensate prescriptions.}
+ \label{tab:local-scheme-comparison}
+\end{table}
+
+For clarity, the perturbative density is written without the ambiguous
+``$s\leftrightarrow Q$'' shorthand.  Define
+\begin{align}
+  \rho_i(s;m_i,m_j,e_i)={}&
+  -\frac{3e_i}{8\pi^2}
+  \Bigg\{
+  2m_i\ln\!\frac{
+    s-m_j^2+m_i^2-\lambda^{1/2}(s,m_j^2,m_i^2)}{
+    s-m_j^2+m_i^2+\lambda^{1/2}(s,m_j^2,m_i^2)}
+  \nonumber\\
+  &\hspace{4.5em}
+  +(m_j-m_i)\frac{m_j^2-m_i^2-s}{s^2}
+  \lambda^{1/2}(s,m_j^2,m_i^2)
+  \Bigg\},
+\end{align}
+so that
+\begin{equation}
+  \rho_A^P(s)=
+  \rho_s(s;m_s,m_Q,e_s)-\rho_Q(s;m_Q,m_s,e_Q).
+  \label{eq:axial-perturbative-density}
+\end{equation}
+
+The tensor-current invariant is kept in the identical paper-ready
+decomposition
+\begin{equation}
+  \widehat T_B=
+  \widehat T_B^{\rm pert}
+  +\widehat T_B^{\langle\bar ss\rangle}
+  +\widehat T_B^{\rm tw2}
+  +\widehat T_B^{\rm tw3}
+  +\widehat T_B^{\rm tw4}
+  +\widehat T_B^{\rm 3p}.
+  \label{eq:tensor-ope-decomposition}
+\end{equation}
+The Python result now fills these slots using the diagonal double-dispersion
+mapping for the perturbative term and the documented physical-residue
+prescription for the tensor numerators.  The ordinary local-condensate slot is
+zero by the Rohrwild scheme, while Eq.~\eqref{eq:tensor-rohrwild-em-final}
+supplies the nonlocal electromagnetic contribution.  The next Mathematica
+stage is an independent cell-by-cell duplication of these already fixed
+Python prescriptions; it does not change Eqs.~\eqref{eq:paper-final-g1} and
+\eqref{eq:paper-final-g2}.
+
+\subsection{Exact pure-axial reduction to Colangelo et al.}
+
+Colangelo, De Fazio, and Ozpineci use the single axial current
+$J^A_\mu=\bar Q\gamma_\mu\gamma_5s$ in their correlator.  This is the
+Hermitian-conjugate orientation of our $A$ current and has the same invariant
+amplitude.  In the convention of Eq.~\eqref{eq:state-rotation}, their
+$D_{s1}(2460)$ calculation is obtained from the low channel by choosing
+\begin{equation}
+  \boxed{\theta=\frac{\pi}{2}=90^\circ},
+  \qquad J_1=J_A,\qquad J_2=-J_B.
+  \label{eq:colangelo-angle}
+\end{equation}
+At this point
+\begin{equation}
+  \widehat T_1=\widehat T_A,\qquad f_1=f_A,\qquad G_1=G_A.
+  \label{eq:pure-axial-identities}
+\end{equation}
+For the equal-Borel convention
+$\mathcal M_1^2=\mathcal M_2^2=2M^2$,
+Eq.~\eqref{eq:mixed-coupling-from-ope} reduces to
+\begin{equation}
+  \left.G_1\right|_{\theta=\pi/2}
+  =\frac{\exp[(M_1^2+m_P^2)/(2M^2)](m_Q+m_s)}
+  {M_1f_A\,m_P^2f_P}\,\widehat T_A^{\rm OPE}.
+  \label{eq:colangelo-formula-limit}
+\end{equation}
+For $Q=c$, $P=D_s$, and $M_1=m_{D_{s1}}$, the right-hand side is exactly the
+prefactor and axial OPE appearing in Eq.~(4.4) of
+\href{https://arxiv.org/abs/hep-ph/0505195}{Colangelo, De Fazio, and
+Ozpineci}.  Therefore the relation is analytic, not merely a numerical
+similarity.  Choosing $\theta=0$ instead places the pure axial current in the
+second row of Eq.~\eqref{eq:state-rotation}; it swaps the low/high labels and
+is not our $D_{s1}(2460)$ convention.
+
+The numerical pure-$A$ comparison is shown in
+Table~\ref{tab:colangelo-projection-comparison}.
+\begin{table}[H]
+  \centering
+  \small
+  \begin{tabular}{lll}
+    \toprule
+    Calculation & $G\,[\mathrm{GeV}^{-1}]$ & $\Gamma\,[\mathrm{keV}]$\\
+    \midrule
+    Colangelo et al., single $J_A$
+      & $-0.37$ to $-0.29$ & $19$ to $29$\\
+    This project, Stage 2 at $\theta=90^\circ$
+      & $-0.3978$ to $-0.3124$ & $20.51$ to $33.26$\\
+    Interval overlap
+      & $-0.3700$ to $-0.3124$ & $20.51$ to $29.00$\\
+    \bottomrule
+  \end{tabular}
+  \caption{Pure-axial benchmark.  The remaining displacement is caused by the
+  input set and convention choices, not by the state projector.}
+  \label{tab:colangelo-projection-comparison}
+\end{table}
+No intermediate angle is fitted here.  Formally, at fixed residues,
+$G_1(\theta)=a\sin\theta+b\cos\theta$ with
+$a=f_A^{(1)}G_A^{(1)}/f_1$ and
+$b=f_B^{(1)}G_B^{(1)}/f_1$.  A physical angle extraction requires the
+complete tensor-current amplitude and the angle-dependent physical residue
+$f_1(\theta)$; both are still incomplete.
+
+\subsection{Decay constants from the rotated two-point correlator}
+
+Introduce the transverse two-point matrix
+\begin{equation}
+  \Pi^{\rm basis}=
+  \begin{pmatrix}\Pi_{AA}&\Pi_{AB}\\\Pi_{AB}&\Pi_{BB}\end{pmatrix}.
+\end{equation}
+The physical matrix is
+$\Pi^{\rm phys}=R\Pi^{\rm basis}R^T$, so that
+\begin{align}
+  \Pi_{11}
+  &=\sin^2\theta\,\Pi_{AA}+\cos^2\theta\,\Pi_{BB}
+    +2\sin\theta\cos\theta\,\Pi_{AB},
+  \label{eq:pi11-mixed}\\
+  \Pi_{22}
+  &=\cos^2\theta\,\Pi_{AA}+\sin^2\theta\,\Pi_{BB}
+    -2\sin\theta\cos\theta\,\Pi_{AB},
+  \label{eq:pi22-mixed}\\
+  \Pi_{12}
+  &=\sin\theta\cos\theta(\Pi_{AA}-\Pi_{BB})
+    +(\cos^2\theta-\sin^2\theta)\Pi_{AB}.
+  \label{eq:pi12-mixed}
+\end{align}
+This is already the useful paper-level explicit form.  If each basis
+correlator is decomposed as
+\begin{equation}
+  \widehat\Pi_{XY}=
+  \int_{s_{\rm th}}^{s_0}ds\,\ee^{-s/\mathcal M^2}
+  \rho_{XY}^{\rm pert}(s)
+  +\sum_d\widehat\Pi_{XY}^{(d)},
+  \qquad XY=AA,BB,AB,
+  \label{eq:twopoint-basis-ope}
+\end{equation}
+then substitution gives, without an unreadably long expansion,
+\begin{align}
+  \widehat\Pi_{11}={}&
+  \int_{s_{\rm th}}^{s_0}ds\,\ee^{-s/\mathcal M^2}
+  \left[
+    \sin^2\theta\,\rho_{AA}^{\rm pert}
+    +\cos^2\theta\,\rho_{BB}^{\rm pert}
+    +2\sin\theta\cos\theta\,\rho_{AB}^{\rm pert}
+  \right]
+  \nonumber\\
+  &+\sum_d\left[
+    \sin^2\theta\,\widehat\Pi_{AA}^{(d)}
+    +\cos^2\theta\,\widehat\Pi_{BB}^{(d)}
+    +2\sin\theta\cos\theta\,\widehat\Pi_{AB}^{(d)}
+  \right],
+  \label{eq:pi11-explicit-ope}\\
+  \widehat\Pi_{22}={}&
+  \int_{s_{\rm th}}^{s_0}ds\,\ee^{-s/\mathcal M^2}
+  \left[
+    \cos^2\theta\,\rho_{AA}^{\rm pert}
+    +\sin^2\theta\,\rho_{BB}^{\rm pert}
+    -2\sin\theta\cos\theta\,\rho_{AB}^{\rm pert}
+  \right]
+  \nonumber\\
+  &+\sum_d\left[
+    \cos^2\theta\,\widehat\Pi_{AA}^{(d)}
+    +\sin^2\theta\,\widehat\Pi_{BB}^{(d)}
+    -2\sin\theta\cos\theta\,\widehat\Pi_{AB}^{(d)}
+  \right].
+  \label{eq:pi22-explicit-ope}
+\end{align}
+Writing $\widehat\Pi_{ij}$ for the continuum-subtracted Borel invariants, the
+direct decay-constant sum rules would be
+\begin{align}
+  f_1^2(\theta)
+  &=\frac{\ee^{M_1^2/\mathcal M^2}}{M_1^2}
+  \left[
+    \sin^2\theta\,\widehat\Pi_{AA}
+    +\cos^2\theta\,\widehat\Pi_{BB}
+    +2\sin\theta\cos\theta\,\widehat\Pi_{AB}
+  \right],
+  \label{eq:f1-mixed-sumrule}\\
+  f_2^2(\theta)
+  &=\frac{\ee^{M_2^2/\mathcal M^2}}{M_2^2}
+  \left[
+    \cos^2\theta\,\widehat\Pi_{AA}
+    +\sin^2\theta\,\widehat\Pi_{BB}
+    -2\sin\theta\cos\theta\,\widehat\Pi_{AB}
+  \right].
+  \label{eq:f2-mixed-sumrule}
+\end{align}
+The condition $\widehat\Pi_{12}\simeq0$ can be used to diagnose or determine
+the preferred mixing angle.  At $\theta=\pi/2$,
+Eq.~\eqref{eq:f1-mixed-sumrule} becomes the pure axial-current result
+\begin{equation}
+  f_1^2=\frac{\ee^{M_1^2/\mathcal M^2}}{M_1^2}
+  \widehat\Pi_{AA},
+\end{equation}
+which is the decay-constant normalization used by Colangelo et al.
+
+The qualification ``would be'' is important: in this project only the
+$AA$ OPE below is explicit.  A dedicated local calculation of
+$\rho_{BB}$, $\rho_{AB}$ and their condensate terms has not yet been
+completed.  Consequently Eqs.~\eqref{eq:pi11-explicit-ope} and
+\eqref{eq:pi22-explicit-ope} are exact rotation formulae, but they are not yet
+three fully evaluated two-point OPEs.
+
+For completeness, their explicit axial two-point sum rule, generalized by
+$m_c\to m_Q$, is
+\begin{align}
+  f_A^2={}&\frac{\ee^{M_A^2/\mathcal M^2}}{M_A^2}
+  \Bigg\{
+  \frac{1}{8\pi^2}
+  \int_{(m_Q+m_s)^2}^{s_0}ds\,
+  \lambda^{1/2}(s,m_Q^2,m_s^2)
+  \nonumber\\
+  &\quad\times
+  \left[
+    2-\frac{m_Q^2+m_s^2+6m_Qm_s}{s}
+    -\frac{(m_Q^2-m_s^2)^2}{s^2}
+  \right]\ee^{-s/\mathcal M^2}
+  \nonumber\\
+  &\quad+
+  \ee^{-m_Q^2/\mathcal M^2}
+  \left[
+    \langle\bar ss\rangle
+    \left(m_Q-\frac{m_Q^2m_s}{2\mathcal M^2}
+    +\frac{m_Q^3m_s^2}{2\mathcal M^4}\right)
+    -\frac{\langle\bar s\sigma_{\mu\nu}g_sG^{\mu\nu}s\rangle}{4}
+    \frac{m_Q^3}{\mathcal M^4}
+  \right]
+  \Bigg\},
+  \label{eq:colangelo-decay-constant-sumrule}
+\end{align}
+where
+$\lambda(a,b,c)=a^2+b^2+c^2-2ab-2ac-2bc$.
+Notice that the mixed condensate occurs here in the two-point decay-constant
+sum rule even though it has not been included in our radiative three-point
+sum rule.  For the charm channel the benchmark value is
+$f_A\simeq0.225\,\mathrm{GeV}$.
+
+\subsection{What was actually obtained for $f_1$ and $f_2$}
+
+The numerical scripts used the reduced overlap model obtained after stripping
+the common pole and Borel factors,
+\begin{align}
+  f_1^2&=\sin^2\theta f_A^2+\cos^2\theta f_B^2
+  +2\sin\theta\cos\theta\,\rho_{AB}f_Af_B,
+  \label{eq:f1-overlap-model}\\
+  f_2^2&=\cos^2\theta f_A^2+\sin^2\theta f_B^2
+  -2\sin\theta\cos\theta\,\rho_{AB}f_Af_B.
+  \label{eq:f2-overlap-model}
+\end{align}
+For the $D_s$ sector the value $f_1=0.345(17)\,\mathrm{GeV}$ was used as a
+working anchor, so that
+\begin{equation}
+  \rho_{AB}=
+  \frac{f_1^2-\sin^2\theta f_A^2-\cos^2\theta f_B^2}
+       {2\sin\theta\cos\theta f_Af_B},
+  \label{eq:rho-from-f1-anchor}
+\end{equation}
+and Eq.~\eqref{eq:f2-overlap-model} then predicted $f_2$.  For the $B_s$
+sector no $f_1$ anchor was available; instead the model imposed
+$\Pi_{12}=0$, which gives
+\begin{equation}
+  \rho_{AB}^{\rm diag}=
+  -\frac{\sin\theta\cos\theta(f_A^2-f_B^2)}
+  {(\cos^2\theta-\sin^2\theta)f_Af_B}.
+  \label{eq:rho-diagonal-closure}
+\end{equation}
+The saved central-angle scan summaries are
+\begin{table}[H]
+  \centering
+  \small
+  \begin{tabular}{llll}
+    \toprule
+    Sector and input & $f_1\,[\mathrm{GeV}]$ & $f_2\,[\mathrm{GeV}]$ & Status\\
+    \midrule
+    $D_s$, legacy $\chi_s$
+      & $0.344\,[0.329,0.363]$ & $0.380\,[0.339,0.423]$
+      & $f_1$ anchor; $f_2$ inferred\\
+    $D_s$, lattice $f_{\gamma,s}^{\perp}$
+      & $0.345\,[0.330,0.364]$ & $0.379\,[0.338,0.423]$
+      & $f_1$ anchor; $f_2$ inferred\\
+    $B_s(5830)$ closure, legacy $\chi_s$
+      & $0.436\,[0.380,0.486]$ & $0.218\,[0.138,0.292]$
+      & $\Pi_{12}=0$ model\\
+    $B_s(5830)$ closure, lattice $f_{\gamma,s}^{\perp}$
+      & $0.443\,[0.384,0.492]$ & $0.203\,[0.121,0.291]$
+      & $\Pi_{12}=0$ model\\
+    \bottomrule
+  \end{tabular}
+  \caption{Median and 16--84 percentile intervals at
+  $\theta=35.3^\circ$.  These are the values found in the existing scans, but
+  they are not independent predictions of a completed $AA/BB/AB$ two-point
+  OPE calculation.}
+  \label{tab:found-f1-f2}
+\end{table}
+For the paper, the safe presentation is therefore to show
+Eqs.~\eqref{eq:pi11-mixed}--\eqref{eq:pi12-mixed}, quote the overlap-model
+values with this qualification, and reserve the phrase ``QCD sum-rule
+prediction of $f_1,f_2$'' for the future explicit $BB$ and $AB$ calculation.
+
+Finally, once $G_i$ is normalized with the corresponding $f_i$, the decay
+width is
+\begin{equation}
+  \Gamma(H_i\to P\gamma)
+  =\frac{\alpha_{\rm em}}{3}|G_i|^2k_{\gamma,i}^3,
+  \qquad
+  k_{\gamma,i}=\frac{M_i^2-m_P^2}{2M_i}.
+  \label{eq:mixed-radiative-width}
+\end{equation}
+
+\section{Inverse-denominator reduction}
+
+The projected expressions contain $k^2$, $k\cdot p$, and $k\cdot q$.  For the
+heavy-emission topology these are replaced by
+\begin{align}
+  k^2&=d_{H2}+m_Q^2,\\
+  k\cdot q&=\frac{d_{H1}-d_{H2}}{2},\\
+  k\cdot p&=\frac{d_{H2}+m_Q^2+p^2-m_s^2-d_{H3}}{2}.
+\end{align}
+For strange emission,
+\begin{align}
+  k^2&=d_{S1}+m_Q^2,\\
+  k\cdot p&=\frac{d_{S1}+m_Q^2+p^2-m_s^2-d_{S2}}{2},\\
+  k\cdot q&=p\cdot q+\frac{d_{S2}-d_{S3}}{2}.
+\end{align}
+
+Setting all three inverse denominators of a topology to zero extracts the
+coefficient of the genuine three-denominator triangle.  Terms containing one
+or more $d_i$ cancel propagators and are retained separately in the full
+machine output.
+
+The axial triangle cores are
+\begin{align}
+  N^{A,\mathrm{core}}_H
+  &=4\ii m_Q+
+    \frac{4\ii m_Q^3-4\ii m_Q^2m_s}{p\cdot q},\\
+  N^{A,\mathrm{core}}_s
+  &=-4\ii m_s+
+    \frac{4\ii m_Qm_s^2-4\ii m_s^3}{p\cdot q}.
+\end{align}
+The tensor-current cores are
+\begin{align}
+  N^{B,\mathrm{core}}_H
+  &=\frac{8\ii m_Q^2-4\ii m_Qm_s}{m_Q+m_s}
+    +\frac{4\ii m_Q^2p^2}{(m_Q+m_s)(p\cdot q)},\\
+  N^{B,\mathrm{core}}_s
+  &=\frac{-4\ii m_Qm_s+8\ii m_s^2}{m_Q+m_s}
+    +\frac{4\ii m_s^2p^2}{(m_Q+m_s)(p\cdot q)}.
+\end{align}
+These expressions refer only to the numerator traces of
+Eqs.~\eqref{eq:heavy-trace}--\eqref{eq:strange-trace}; the charge, color,
+propagator, QED-vertex, and global Wick factors must still be attached.
+
+\section{Feynman parameterization of the hard triangles}
+
+For three denominators,
+\begin{equation}
+  \frac{1}{D_1D_2D_3}
+  =2\int_0^1dx\int_0^{1-x}dy\,
+  \frac{1}{[xD_1+yD_2+(1-x-y)D_3]^3}.
+  \label{eq:feynman-identity}
+\end{equation}
+Equivalently one may use $x+y+z=1$.
+
+\subsection{Heavy emission}
+
+Assign $x,y,z$ to $d_{H1},d_{H2},d_{H3}$.  Direct completion of the square
+gives
+\begin{equation}
+  xd_{H1}+yd_{H2}+zd_{H3}
+  =(k+xq-zp)^2-\Delta_H,
+\end{equation}
+where
+\begin{equation}
+  \boxed{\Delta_H=(x+y)m_Q^2+zm_s^2-xz p^{\prime2}-yzp^2.}
+  \label{eq:deltaH}
+\end{equation}
+
+\subsection{Strange emission}
+
+Assign $x,y,z$ to $d_{S1},d_{S2},d_{S3}$.  Then
+\begin{equation}
+  xd_{S1}+yd_{S2}+zd_{S3}
+  =[k-yp-z(p+q)]^2-\Delta_s,
+\end{equation}
+with
+\begin{equation}
+  \boxed{\Delta_s=xm_Q^2+(y+z)m_s^2-xyp^2-xz p^{\prime2}.}
+  \label{eq:deltaS}
+\end{equation}
+
+The independent pairwise-invariant formula
+\begin{equation}
+  \Delta=\sum_i x_i m_i^2
+  -\sum_{i<j}x_ix_j(r_i-r_j)^2
+\end{equation}
+reproduces Eqs.~\eqref{eq:deltaH} and \eqref{eq:deltaS}.  The notebook checks
+both the completed-square and pairwise forms:
+\begin{lstlisting}
+deltaH = (x + y) mQ^2 + z ms^2 - x z pPrime2 - y z p2;
+shiftH = x q - z p;
+heavyResidual = simplexReduce[
+  x dH1 + y dH2 + z dH3
+  - (SP[k + shiftH, k + shiftH] - deltaH)
+];
+
+deltaS = x mQ^2 + (y + z) ms^2 - x y p2 - x z pPrime2;
+shiftS = -y p - z (p + q);
+strangeResidual = simplexReduce[
+  x dS1 + y dS2 + z dS3
+  - (SP[k + shiftS, k + shiftS] - deltaS)
+];
+\end{lstlisting}
+Both residuals vanish exactly.
+
+\section{Soft two-particle Fierz traces}
+
+After contracting the heavy quark and Fierz rearranging the strange bilocal,
+the Dirac factor is
+\begin{equation}
+  T_i^X=\Tr_D[\Gamma_P(\slashedk+m_Q)\Gamma^X_\mu\Gamma_i].
+\end{equation}
+The notebook evaluates the standard scalar, pseudoscalar, vector, axial, and
+tensor basis.  The nonzero results for the axial current are
+\begin{align}
+  T^A_{1}&=4\ii k_\mu,\\
+  T^A_{\gamma_\rho}&=-4\ii m_Q g_{\mu\rho},\\
+  T^A_{\sigma_{\rho\lambda}}
+  &=4g_{\lambda\mu}k_\rho-4g_{\mu\rho}k_\lambda.
+\end{align}
+For the tensor current,
+\begin{align}
+  T^B_{\gamma_\rho}
+  &=\frac{4\ii}{m_Q+m_s}
+    [k_\mu p^{\prime}_\rho-g_{\mu\rho}(k\cdot p^{\prime})],\\
+  T^B_{\gamma_\rho\gamma_5}
+  &=-\frac{4}{m_Q+m_s}\epsilon_{\mu\rho k p^{\prime}},\\
+  T^B_{\sigma_{\rho\lambda}}
+  &=\frac{4m_Q}{m_Q+m_s}
+    [g_{\lambda\mu}p^{\prime}_\rho-g_{\mu\rho}p^{\prime}_\lambda].
+\end{align}
+All omitted entries vanish.  Cyclically rotating the matrix chain gives the
+same tensor- and vector-basis traces for both currents.
+
+\clearpage
+\section{Implemented OPE terms: exact status}
+
+It is not correct to describe every term below as independently completed in
+the new Mathematica restart.  The existing project contains a mixture of
+published axial-benchmark terms, new exact symbolic traces, and tensor-current
+estimates.  The present status is:
+
+\begin{table}[H]
+  \centering
+  \small
+  \begin{tabular}{p{0.27\textwidth}p{0.27\textwidth}p{0.32\textwidth}}
+    \toprule
+    OPE contribution & Axial current $A$ & Tensor current $B$\\
+    \midrule
+    Perturbative photon from $Q$ and $s$
+      & Published spectral density implemented numerically; corrected traces
+        independently reproduced
+      & Corrected traces and triangle cores derived; diagonal
+        double-dispersion spectral mapping implemented in Python\\
+    Local $e_Q\langle\bar ss\rangle$ term
+      & Excluded in the Rohrwild result; retained only in the Colangelo
+        comparison with $m_s,m_s^2$ corrections
+      & Excluded in the Rohrwild result; no Colangelo $J_B$ term invented\\
+    Electromagnetic three-particle DAs,
+      $\mathcal S_\gamma,\mathcal T_4^\gamma$
+      & Included through Eq.~\eqref{eq:axial-rohrwild-em-final}
+      & Included through Eq.~\eqref{eq:tensor-rohrwild-em-final} with the
+        stated physical-residue numerator prescription\\
+    Twist-2 two-particle DA,
+      $\chi\langle\bar ss\rangle\phi_\gamma$
+      & Included in the numerical axial benchmark
+      & Tensor trace and numerical trace-ratio contribution included\\
+    Twist-4 two-particle DAs,
+      $\mathbb A$ and $h_\gamma$
+      & Included in the axial benchmark
+      & Included with the tensor trace ratio at the Borel saddle\\
+    Twist-3 two-particle DA,
+      $f_{3\gamma}\psi^v$
+      & Included in the axial benchmark
+      & Included with the physical-residue trace ratio (it vanishes at the
+        symmetric point for the default antisymmetric $\psi^v$ integral)\\
+    Three-particle photon DAs,
+      $\mathcal S,\widetilde{\mathcal S},\mathcal T_{1\ldots4}$
+      & Full published $\mathcal F_1$ integral implemented numerically
+      & Local-$\sigma$ and $x_\alpha\gamma_\beta$ kernels included with the
+        documented double-pole residue-matching prescription\\
+    Mixed condensate
+      $\langle\bar s g_s\sigma\cdot Gs\rangle$
+      & Not included in the radiative three-point sum rule
+      & Not included\\
+    Vacuum gluon condensate $\langle G^2\rangle$
+      & Not included in the radiative three-point sum rule
+      & Not included\\
+    \bottomrule
+  \end{tabular}
+  \caption{Term-by-term distinction between implemented results and incomplete
+  parts of the independent derivation.}
+  \label{tab:ope-status}
+\end{table}
+
+\section{Verification summary and present boundary}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{p{0.57\textwidth}cc}
+    \toprule
+    Check & Result & Exact tests\\
+    \midrule
+    Currents, Wick signs, traces, E1 cores, soft trace cyclicity
+      & PASS & 19/19\\
+    Standard vertex routing
+      & PASS & 4/4 momenta\\
+    Heavy- and strange-line Ward identities
+      & PASS & 2/2\\
+    Shifted and pairwise Feynman denominators
+      & PASS & 4/4\\
+    State rotation, OPE assembly, Colangelo limit, decay constant, and width
+      & PASS & 14/14\\
+    Sequential evaluation of the interactive notebook
+      & PASS & 38/38 cells\\
+    \bottomrule
+  \end{tabular}
+  \caption{Status of the independent Mathematica/FeynCalc restart.}
+\end{table}
+
+The $B_s$ channel uses the same symbolic expressions with $m_Q\to m_b$ and
+the appropriate heavy-quark charge.  No second Dirac-trace derivation is
+needed.
+
+The calculation deliberately stops here.  The next independent tasks are:
+\begin{enumerate}
+  \item independently audit the separately implemented
+    $e_Q\langle\bar ss\rangle$ contribution and decide whether it is retained
+    in the final numerical convention;
+  \item reproduce the axial two- and three-particle photon-DA terms from the
+    explicit matrix elements rather than importing the final published sum
+    rule;
+  \item perform the shifted loop integrals based on
+    Eqs.~\eqref{eq:deltaH}--\eqref{eq:deltaS};
+  \item derive the double discontinuity or an equivalent double-dispersion
+    representation;
+  \item apply continuum subtraction and the double Borel transform;
+  \item reproduce the published axial-current spectral density as a
+    normalization and sign benchmark;
+  \item only then derive and numerically implement the tensor-current hard
+    spectral density.
+\end{enumerate}
+The earlier Python spectral-density candidate is not used as an input to this
+restart and is not changed by the work documented here.
+
+\appendix
+\section{Reproduction commands}
+
+From \texttt{papers/Ds\_Bs\_gamma/}, run
+\begin{lstlisting}[language={},basicstyle=\ttfamily\scriptsize]
+/Applications/Wolfram.app/Contents/MacOS/WolframKernel -noprompt \
+  -script scripts/mathematica_current_wick_trace_audit.wl
+
+/Applications/Wolfram.app/Contents/MacOS/WolframKernel -noprompt \
+  -script scripts/mathematica_correlator_routing_audit.wl
+
+/Applications/Wolfram.app/Contents/MacOS/WolframKernel -noprompt \
+  -script scripts/mathematica_hard_loop_parameterization.wl
+
+/Applications/Wolfram.app/Contents/MacOS/WolframKernel -noprompt \
+  -script scripts/mathematica_state_mixing_projection.wl
+\end{lstlisting}
+To regenerate the notebook from its source cells, run
+\begin{lstlisting}[language={},basicstyle=\ttfamily\scriptsize]
+/Applications/Wolfram.app/Contents/MacOS/WolframKernel -noprompt \
+  -script scripts/build_dsbs_symbolic_notebook.wl
+\end{lstlisting}
+
+\end{document}

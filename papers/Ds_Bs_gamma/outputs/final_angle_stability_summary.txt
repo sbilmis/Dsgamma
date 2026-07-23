@@ -1,0 +1,13 @@
+Final-angle transition-LCSR stability
+=====================================
+Angle source: Aliev-Bilmis-Savci, arXiv:2408.08014v2
+theta_Ds = 26.6 +/- 0.6 deg
+theta_Bs = 38.5 +/- 0.1 deg
+The angles are external inputs and are not refitted here.
+Fixed physical residues: f1_Ds=0.404911 GeV, f2_Ds=0.168276 GeV, f2_Bs5830=0.214526 GeV.
+The shaded bands show only the quoted angle uncertainty.
+Ordinary local condensates are excluded from the transition LCSR.
+
+Ds1_2460: central-angle Borel/threshold envelope 21.6611--34.3802 keV
+Ds1_2536: central-angle Borel/threshold envelope 0.611071--3.50539 keV
+Bs1_5830: central-angle Borel/threshold envelope 1.40444--1.70438 keV

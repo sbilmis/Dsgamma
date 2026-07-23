@@ -1,0 +1,15 @@
+Mathematica Ds1 AA/AB/BB two-point cross-check
+================================================
+OPE: exact-mass LO perturbative + local d=3 through ms^2 + local d=5.
+theta_Ds=26.6 deg is external; no external f1, f2, fA, fB, or overlap parameter is used.
+The matrix-diagonalization angle and Pi12 residual are diagnostics.
+
+Analytic checks:
+<|"rhoAA divided by Colangelo" -> 1, "rhoAB symmetry" -> 0., "AA local minus Colangelo" -> 0|>
+
+Central point M2=2.35 GeV^2:
+<|"M2_GeV2" -> 2.35, "theta_deg" -> 26.6, "theta_matrix_diagnostic_deg" -> 30.58596150218797, "Pi12_normalized" -> 0.18100723871017727, "s01_GeV2" -> 7.925, "s02_GeV2" -> 9.975, "mEff1_GeV" -> 2.4595998348825505, "mEff2_GeV" -> 2.534734568569281, "f1_GeV" -> 0.4005892785077036, "f2_GeV" -> 0.16667036139602667|>
+
+Mathematica minus Python:
+<|"theta_deg_difference_Mathematica_minus_Python" -> 0., "theta_matrix_diagnostic_difference" -> -8.377953975013952*^-8, "Pi12_normalized_difference" -> -4.794884850278791*^-9, "s01_difference_GeV2" -> 0., "s02_difference_GeV2" -> 0., "f1_difference_GeV" -> -2.6724018442614295*^-8, "f2_difference_GeV" -> -6.01511673803401*^-9|>
+

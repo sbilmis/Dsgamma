@@ -1,0 +1,19 @@
+Bs1 -> Bs gamma Rohrwild-nonlocal Stage-2 baseline
+===================================================
+Ordinary transition local condensate: excluded.
+S_gamma/T4^gamma electromagnetic sector: included.
+Internal key mc is used as m_b in this script.
+Hard photon and complete two-/three-particle terms are included within
+the stated tensor physical-residue prescription.
+Borel window: M^2 in [8,14] GeV^2.
+The Bs1 decay constants are working HQ-scaled estimates, not final inputs.
+
+State target: Bs1_5830_observed_high_combo (observed narrow B_s1(5830))
+  legacy_chi_condensate: G_quoted 0.0349 GeV^-1 [0.01959, 0.0725]; Gamma 0.2584 keV [0.08145, 1.115]; GA 0.3957 GeV^-1 [0.3271, 0.5456]; GB 0.4986 GeV^-1 [0.4281, 0.6452]; chi_eff 3.15 GeV^-2 [3.15, 3.15]
+  lattice_fperp_s: G_quoted 0.1489 GeV^-1 [0.1171, 0.2195]; Gamma 4.706 keV [2.908, 10.22]; GA 0.6479 GeV^-1 [0.5428, 0.8708]; GB 0.6569 GeV^-1 [0.5641, 0.8501]; chi_eff 4.98 GeV^-2 [4.98, 4.98]
+
+State target: Bs1_lower_model_5720_low_combo (model lower 1+ partner diagnostic)
+  legacy_chi_condensate: G_quoted 0.5917 GeV^-1 [0.5024, 0.7743]; Gamma 34.12 keV [24.6, 58.43]; GA 0.3608 GeV^-1 [0.2988, 0.492]; GB 0.4695 GeV^-1 [0.404, 0.6004]; chi_eff 3.15 GeV^-2 [3.15, 3.15]
+  lattice_fperp_s: G_quoted 0.8501 GeV^-1 [0.7248, 1.105]; Gamma 70.42 keV [51.2, 118.9]; GA 0.5953 GeV^-1 [0.5006, 0.7919]; GB 0.6201 GeV^-1 [0.5336, 0.793]; chi_eff 4.98 GeV^-2 [4.98, 4.98]
+
+Wrote grid to /Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/bs1_stage2_baseline.csv

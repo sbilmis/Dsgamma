@@ -1,0 +1,33 @@
+Provisional Rohrwild local-free recalculation
+==============================================
+
+What has been propagated
+  - the standalone Colangelo heavy-charge local condensate is zero in
+    every default transition call;
+  - hard, two-particle, and background-gluon three-particle terms were
+    regenerated through the Ds and Bs mixed-current scans;
+  - the legacy local term remains available only as a benchmark switch.
+
+What is not complete
+  - current-specific S_gamma and T4^gamma electromagnetic DA kernels;
+  - exact tensor-current double-Borel reduction (the existing GB sector
+    remains residue-matched and is therefore an estimate).
+
+Axial-current central checkpoint (M2=4.5 GeV^2, sqrt(s0)=2.55 GeV)
+  Colangelo-local benchmark g_A = -0.356893 GeV^-1
+  Colangelo-local benchmark width = 26.773849 keV
+  local-free provisional g_A = -0.318402 GeV^-1
+  local-free provisional width = 21.310155 keV
+  removed local OPE term = -5.023454e-03 GeV^3
+
+Mixed-current provisional outputs (lattice normalization, fixed angle)
+  Ds1(2460): Gamma = 14.481124787567023 [10.900297293288672, 18.53342278145929] keV
+  Bs1(5830): Gamma = 0.459044294538436 [0.2095515695914798, 1.3949261383734928] keV
+
+Decay-constant status
+  Ds f1 is an external anchor and f2 is overlap-derived.
+  Bs f1 and f2 are diagonal-closure-derived from basis inputs.
+  Neither pair is an independent complete two-point-QCDSR prediction.
+
+Do not use this report as the final paper table until the two missing
+transition-kernel items above have been completed and re-propagated.

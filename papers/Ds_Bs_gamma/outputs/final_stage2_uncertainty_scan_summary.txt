@@ -1,0 +1,26 @@
+Rohrwild-nonlocal matched Stage-2 uncertainty scan
+==================================================
+Ordinary transition local condensate: excluded.
+S_gamma/T4^gamma electromagnetic sector: included.
+500 random points per ensemble.
+Borel window: M^2 in [3,6] GeV^2.
+Continuum window: sqrt(s0) in [2.50,2.60] GeV.
+Input errors sampled independently from inputs_table.csv.
+
+Ensemble: theta_fixed
+  G2460: median -0.4335; 68% [-0.4974, -0.3678]; min/max [-0.6389, -0.1888]
+  G2536: median -0.1424; 68% [-0.1928, -0.09733]; min/max [-0.3574, -0.007405]
+  Gamma2460_keV: median +39.41; 68% [+28.39, +51.99]; min/max [+7.478, +85.93]
+  Gamma2536_keV: median +6.293; 68% [+2.939, +11.53]; min/max [+0.01702, +39.63]
+  GA: median -0.3669; 68% [-0.4428, -0.2963]; min/max [-0.6458, -0.1151]
+  GB: median -0.2685; 68% [-0.303, -0.2345]; min/max [-0.3933, -0.1498]
+
+Ensemble: theta_scan_25_45
+  G2460: median -0.4298; 68% [-0.4983, -0.3606]; min/max [-0.7124, -0.2465]
+  G2536: median -0.1411; 68% [-0.2109, -0.08012]; min/max [-0.3673, +0.002041]
+  Gamma2460_keV: median +38.85; 68% [+27.38, +52.26]; min/max [+12.83, +106.4]
+  Gamma2536_keV: median +6.177; 68% [+1.992, +13.8]; min/max [+0.001294, +41.86]
+  GA: median -0.363; 68% [-0.4413, -0.2943]; min/max [-0.6938, -0.1648]
+  GB: median -0.2705; 68% [-0.3039, -0.2358]; min/max [-0.3829, -0.1732]
+
+Wrote scan grid to /Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/final_stage2_uncertainty_scan.csv

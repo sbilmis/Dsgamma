@@ -1,0 +1,10 @@
+Stage-1 axial-current g1 baseline
+=================================
+Three-particle DA F1 term is omitted here by construction.
+Paper default: Rohrwild local-free transition OPE.
+The S_gamma/T4^gamma electromagnetic three-particle sector is pending
+its current-specific double-Borel reduction and is not included here.
+Project inputs, chi=+3.15, local-free: g1 range -0.3668 to -0.2592 GeV^-1; width range 14.13 to 28.28 keV
+Colangelo-like inputs, chi=+3.15, local benchmark: g1 range -0.3443 to -0.2449 GeV^-1; width range 12.60 to 24.92 keV
+Diagnostic: positive chi inserted in printed negative-chi formula: g1 range -0.9567 to -0.7848 GeV^-1; width range 129.47 to 192.40 keV
+Wrote grid to /Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage1_axial_g1_baseline.csv

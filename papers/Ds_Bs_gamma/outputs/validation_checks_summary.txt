@@ -1,0 +1,31 @@
+Validation checks
+=================
+Colangelo axial benchmark with paper-like inputs and BBK kappa=0.2:
+  g1 range = -0.3403 to -0.2370 GeV^-1
+  width range = 11.81 to 24.34 keV
+  target from hep-ph/0505195: g1 = -0.37 to -0.29 GeV^-1, width = 19 to 29 keV
+
+Photon DA checks:
+  int phi_gamma du = 1.0000000000
+  max psi_a symmetry residual = 4.441e-15
+  max psi_v antisymmetry residual = 1.776e-15
+  F1 total = +7.0329850016e-02
+  F1 closure residual = +0.000e+00
+
+Mutually exclusive transition-scheme check at the central point:
+  Colangelo local QCD term = -5.023454e-03 GeV^3
+  Rohrwild nonlocal EM term = -5.316342e-03 GeV^3
+  nonlocal/local ratio = +1.058304
+  gA(RW)-gA(local) = -2.244173e-03 GeV^-1
+  P[T4gamma] finite brace = -1.611183458320
+
+Hard charge decomposition at M2=4.5 GeV^2, sqrt(s0)=2.55 GeV:
+  GB_hard_full = -4.092483e-01
+  GB_hard_no_heavy_charge = -1.593764e-01
+  GB_hard_no_strange_charge = -2.498719e-01
+  GB_hard_heavy_line_estimate = -2.498719e-01
+  GB_hard_strange_line_estimate = -1.593764e-01
+
+Limiting-case diagnostics at M2=4.5 GeV^2, sqrt(s0)=2.55 GeV are in:
+  /Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/validation_limiting_cases.csv
+Light-u/light-d rows are OPE diagnostics only, not physical D1 predictions.

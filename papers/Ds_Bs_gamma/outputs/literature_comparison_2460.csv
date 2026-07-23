@@ -1,0 +1,7 @@
+method,low,central,high,kind
+This work (lattice photon input),13.41,16.95,21.5,band
+This work (legacy chi),28.48,38.94,51.07,band
+Colangelo LCSR,19.0,24.0,29.0,band
+VMD,3.3,3.3,3.3,point
+QM [15],6.2,6.2,6.2,point
+QM [11],5.08,5.08,5.08,point

@@ -1,0 +1,533 @@
+Notebook[{Cell["Ds1 AA/AB/BB two-point QCD sum rule", "Title"], 
+  Cell[
+   "Fixed-angle projection and decay constants without an external f1 anchor"\
+, "Subtitle"], Cell["This notebook replaces the former normalization shortcut \
+by a single 2 x 2 two-point QCD sum-rule calculation. Evaluate the input \
+cells in order. The OPE truncation is exact-mass leading-order perturbation \
+theory + local dimension-3 strange condensate through O(ms^2) + local \
+dimension-5 mixed condensate. Gluon-condensate and alpha_s corrections are \
+not included and are not hidden in fitted constants.", "Text"], 
+  Cell["Scope warning: local condensates are necessary here because this is \
+an ordinary two-point SVZ sum rule. They are not inserted into the \
+external-photon Rohrwild transition LCSR, where photon matrix elements are \
+organized through non-local distribution amplitudes.", "Text"], 
+  Cell["1. Basis currents and physical-state rotation", "Section"], 
+  Cell["The normalized basis is J_A^mu = sbar gamma^mu gamma_5 c and J_B^mu = \
+i sbar sigma^(mu nu) p'_nu gamma_5 c/(mc+ms). The physical currents are J_1 = \
+sin(theta) J_A + cos(theta) J_B and J_2 = cos(theta) J_A - sin(theta) J_B.", 
+   "Text"], 
+  Cell[BoxData[RowBox[{RowBox[{"ClearAll", "[", 
+        RowBox[{"theta", ",", "piAA", ",", "piAB", ",", "piBB"}], "]"}], ";", 
+      RowBox[{"piBasis", "=", RowBox[{"{", RowBox[
+           {RowBox[{"{", RowBox[{"piAA", ",", "piAB"}], "}"}], ",", 
+            RowBox[{"{", RowBox[{"piAB", ",", "piBB"}], "}"}]}], "}"}]}], 
+      ";", RowBox[{RowBox[{"rotation", "[", "theta_", "]"}], ":=", 
+        RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{RowBox[{"Sin", "[", 
+                  "theta", "]"}], ",", RowBox[{"Cos", "[", "theta", "]"}]}], 
+              "}"}], ",", RowBox[{"{", RowBox[{RowBox[{"Cos", "[", "theta", 
+                  "]"}], ",", RowBox[{"-", RowBox[{"Sin", "[", "theta", 
+                    "]"}]}]}], "}"}]}], "}"}]}], ";", 
+      RowBox[{"piPhysical", "=", RowBox[{"FullSimplify", "[", 
+          RowBox[{RowBox[{"rotation", "[", "theta", "]"}], ".", "piBasis", 
+            ".", TemplateBox[{RowBox[{"rotation", "[", "theta", "]"}]}, 
+             "Transpose", SyntaxForm -> SuperscriptBox]}], "]"}]}], ";", 
+      TagBox["piPhysical", Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]}]], 
+   "Input"], Cell[BoxData[RowBox[{"Association", "[", 
+      RowBox[{RowBox[{"\"Pi11\"", "\[Rule]", RowBox[{"Expand", "[", 
+            RowBox[{"piPhysical", "\[LeftDoubleBracket]", RowBox[{"1", ",", 
+                "1"}], "\[RightDoubleBracket]"}], "]"}]}], ",", 
+        RowBox[{"\"Pi22\"", "\[Rule]", RowBox[{"Expand", "[", 
+            RowBox[{"piPhysical", "\[LeftDoubleBracket]", RowBox[{"2", ",", 
+                "2"}], "\[RightDoubleBracket]"}], "]"}]}], ",", 
+        RowBox[{"\"Pi12\"", "\[Rule]", RowBox[{"TrigReduce", "[", 
+            RowBox[{"Expand", "[", RowBox[{"piPhysical", 
+                "\[LeftDoubleBracket]", RowBox[{"1", ",", "2"}], 
+                "\[RightDoubleBracket]"}], "]"}], "]"}]}]}], "]"}]], 
+   "Input"], Cell["With the currents above, Pi11 = sin^2(theta) PiAA + \
+cos^2(theta) PiBB + 2 sin(theta) cos(theta) PiAB. Any formula that \
+interchanges the AA and BB coefficients for state 1 is inconsistent with the \
+stated current definition.", "Text"], 
+  Cell["2. Exact-mass LO perturbative spectral matrix", "Section"], 
+  Cell[BoxData[RowBox[{RowBox[{"ClearAll", "[", 
+        RowBox[{"s", ",", "mc", ",", "ms", ",", "kallen", ",", "rhoAA", ",", 
+          "rhoAB", ",", "rhoBB", ",", "rhoMatrix"}], "]"}], ";", 
+      RowBox[{RowBox[{"kallen", "[", "s_", "]"}], ":=", 
+        RowBox[{RowBox[{"(", RowBox[{"s", "-", SuperscriptBox[RowBox[
+                {"(", RowBox[{"mc", "+", "ms"}], ")"}], "2"]}], ")"}], " ", 
+          RowBox[{"(", RowBox[{"s", "-", SuperscriptBox[RowBox[
+                {"(", RowBox[{"mc", "-", "ms"}], ")"}], "2"]}], ")"}]}]}], 
+      ";", RowBox[{RowBox[{"rhoAA", "[", "s_", "]"}], ":=", 
+        FractionBox[RowBox[{SqrtBox[RowBox[{"kallen", "[", "s", "]"}]], " ", 
+           RowBox[{"(", RowBox[{"2", "-", FractionBox[RowBox[
+                 {SuperscriptBox["mc", "2"], "+", SuperscriptBox["ms", "2"], 
+                  "+", RowBox[{"6", " ", "mc", " ", "ms"}]}], "s"], "-", 
+               FractionBox[SuperscriptBox[RowBox[{"(", RowBox[{SuperscriptBox[
+                      "mc", "2"], "-", SuperscriptBox["ms", "2"]}], ")"}], 
+                 "2"], SuperscriptBox["s", "2"]]}], ")"}]}], 
+         RowBox[{"8", " ", SuperscriptBox["\[Pi]", "2"]}]]}], ";", 
+      RowBox[{RowBox[{"rhoAB", "[", "s_", "]"}], ":=", 
+        FractionBox[RowBox[{SqrtBox[RowBox[{"kallen", "[", "s", "]"}]], " ", 
+           RowBox[{"(", RowBox[{"3", " ", RowBox[{"(", RowBox[{"ms", "-", 
+                   "mc"}], ")"}], " ", RowBox[{"(", RowBox[{SuperscriptBox[
+                    RowBox[{"(", RowBox[{"mc", "+", "ms"}], ")"}], "2"], "-", 
+                   "s"}], ")"}]}], ")"}]}], 
+         RowBox[{RowBox[{"(", RowBox[{"8", " ", SuperscriptBox["\[Pi]", 
+                "2"]}], ")"}], " ", RowBox[{"(", RowBox[{RowBox[
+                {"(", RowBox[{"mc", "+", "ms"}], ")"}], " ", "s"}], 
+             ")"}]}]]}], ";", RowBox[{RowBox[{"rhoBB", "[", "s_", "]"}], 
+        ":=", FractionBox[RowBox[{SqrtBox[RowBox[{"kallen", "[", "s", "]"}]], 
+           " ", RowBox[{"(", RowBox[{RowBox[{"-", RowBox[{"(", RowBox[
+                    {SuperscriptBox[RowBox[{"(", RowBox[{"mc", "+", "ms"}], 
+                        ")"}], "2"], "-", "s"}], ")"}]}], " ", RowBox[
+                {"(", RowBox[{RowBox[{"2", " ", SuperscriptBox["ms", "2"]}], 
+                   "-", RowBox[{"4", " ", "mc", " ", "ms"}], "+", 
+                   RowBox[{"2", " ", SuperscriptBox["mc", "2"]}], "+", "s"}], 
+                 ")"}]}], ")"}]}], RowBox[
+          {RowBox[{"(", RowBox[{"8", " ", SuperscriptBox["\[Pi]", "2"]}], 
+             ")"}], " ", RowBox[{"(", RowBox[{SuperscriptBox[RowBox[
+                 {"(", RowBox[{"mc", "+", "ms"}], ")"}], "2"], " ", "s"}], 
+             ")"}]}]]}], ";", RowBox[{RowBox[{"rhoMatrix", "[", "s_", "]"}], 
+        ":=", RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{RowBox[{"rhoAA", "[", 
+                  "s", "]"}], ",", RowBox[{"rhoAB", "[", "s", "]"}]}], "}"}], 
+            ",", RowBox[{"{", RowBox[{RowBox[{"rhoAB", "[", "s", "]"}], ",", 
+                RowBox[{"rhoBB", "[", "s", "]"}]}], "}"}]}], "}"}]}], ";", 
+      TagBox[RowBox[{"rhoMatrix", "[", "s", "]"}], Function[BoxForm`e$, 
+        MatrixForm[BoxForm`e$]]]}]], "Input"], Cell["All three entries follow \
+from the same cut one-loop correlator and the same normalized tensor current. \
+The off-diagonal entry is symmetric.", "Text"], 
+  Cell["2.1 Analytic checks", "Subsection"], 
+  Cell[BoxData[RowBox[{RowBox[{"ClearAll", "[", 
+        RowBox[{"z", ",", "mh", ",", "ml", ",", "rhoAASymbolic", ",", 
+          "rhoAAColangeloSymbolic"}], "]"}], ";", 
+      RowBox[{RowBox[{"rhoAASymbolic", "[", RowBox[{"z_", ",", "mh_", ",", 
+            "ml_"}], "]"}], ":=", FractionBox[
+         RowBox[{SqrtBox[RowBox[{RowBox[{"(", RowBox[{"z", "-", 
+                  SuperscriptBox[RowBox[{"(", RowBox[{"mh", "+", "ml"}], 
+                     ")"}], "2"]}], ")"}], " ", RowBox[{"(", RowBox[
+                 {"z", "-", SuperscriptBox[RowBox[{"(", RowBox[{"mh", "-", 
+                       "ml"}], ")"}], "2"]}], ")"}]}]], " ", 
+           RowBox[{"(", RowBox[{"2", "-", FractionBox[RowBox[
+                 {SuperscriptBox["mh", "2"], "+", SuperscriptBox["ml", "2"], 
+                  "+", RowBox[{"6", " ", "mh", " ", "ml"}]}], "z"], "-", 
+               FractionBox[SuperscriptBox[RowBox[{"(", RowBox[{SuperscriptBox[
+                      "mh", "2"], "-", SuperscriptBox["ml", "2"]}], ")"}], 
+                 "2"], SuperscriptBox["z", "2"]]}], ")"}]}], 
+         RowBox[{"8", " ", SuperscriptBox["\[Pi]", "2"]}]]}], ";", 
+      RowBox[{RowBox[{"rhoAAColangeloSymbolic", "[", 
+          RowBox[{"z_", ",", "mh_", ",", "ml_"}], "]"}], ":=", 
+        FractionBox[RowBox[{SqrtBox[RowBox[{"1", "-", FractionBox[RowBox[
+                {"2", " ", RowBox[{"(", RowBox[{SuperscriptBox["mh", "2"], 
+                     "+", SuperscriptBox["ml", "2"]}], ")"}]}], "z"], "+", 
+              FractionBox[SuperscriptBox[RowBox[{"(", RowBox[{SuperscriptBox[
+                     "mh", "2"], "-", SuperscriptBox["ml", "2"]}], ")"}], 
+                "2"], SuperscriptBox["z", "2"]]}]], " ", 
+           RowBox[{"(", RowBox[{RowBox[{"2", " ", "z"}], "-", SuperscriptBox[
+                "mh", "2"], "-", SuperscriptBox["ml", "2"], "-", RowBox[
+                {"6", " ", "mh", " ", "ml"}], "-", FractionBox[SuperscriptBox[
+                 RowBox[{"(", RowBox[{SuperscriptBox["mh", "2"], "-", 
+                     SuperscriptBox["ml", "2"]}], ")"}], "2"], "z"]}], 
+             ")"}]}], RowBox[{"8", " ", SuperscriptBox["\[Pi]", "2"]}]]}], 
+      ";", RowBox[{"FullSimplify", "[", 
+        RowBox[{FractionBox[RowBox[{"rhoAASymbolic", "[", 
+             RowBox[{"z", ",", "mh", ",", "ml"}], "]"}], 
+           RowBox[{"rhoAAColangeloSymbolic", "[", RowBox[{"z", ",", "mh", 
+               ",", "ml"}], "]"}]], ",", RowBox[{"Assumptions", "\[Rule]", 
+            RowBox[{RowBox[{"z", ">", SuperscriptBox[RowBox[{"(", 
+                   RowBox[{"mh", "+", "ml"}], ")"}], "2"]}], "&&", 
+              RowBox[{"mh", ">", "ml", ">", "0"}]}]}]}], "]"}]}]], "Input"], 
+  Cell[BoxData[RowBox[{"FullSimplify", "[", 
+      RowBox[{RowBox[{RowBox[{"rhoMatrix", "[", "s", "]"}], 
+          "\[LeftDoubleBracket]", RowBox[{"1", ",", "2"}], 
+          "\[RightDoubleBracket]"}], "-", 
+        RowBox[{RowBox[{"rhoMatrix", "[", "s", "]"}], "\[LeftDoubleBracket]", 
+          RowBox[{"2", ",", "1"}], "\[RightDoubleBracket]"}]}], "]"}]], 
+   "Input"], Cell["The first cell must return 1: the AA spectral density is \
+algebraically identical to the Colangelo axial-current expression. The second \
+must return 0.", "Text"], Cell["3. Local two-point OPE matrix", "Section"], 
+  Cell["The coordinate-space local light-quark terms used to generate this \
+matrix are -<sbar s>/12 [1 - i ms xslash/4 - ms^2 x^2/8] - x^2 <sbar g \
+sigma.G s>/192. They are displayed here through their Borel-transformed \
+matrix contributions, which are what enter the sum rule.", "Text"], 
+  Cell[BoxData[RowBox[{RowBox[{"ClearAll", "[", 
+        RowBox[{"M2", ",", "ss", ",", "mixedSS", ",", "localPieces", ",", 
+          "localMatrix"}], "]"}], ";", 
+      RowBox[{RowBox[{"localPieces", "[", "M2_", "]"}], ":=", 
+        RowBox[{"Module", "[", RowBox[
+           {RowBox[{"{", RowBox[{RowBox[{"den", "=", RowBox[{"mc", "+", 
+                    "ms"}]}], ",", "e", ",", "q0", ",", "q1", ",", "q2", ",", 
+                "d5"}], "}"}], ",", RowBox[{RowBox[{"e", "=", RowBox[
+                 {"Exp", "[", RowBox[{"-", FractionBox[SuperscriptBox["mc", 
+                      "2"], "M2"]}], "]"}]}], ";", RowBox[{"q0", "=", 
+                RowBox[{"ss", " ", RowBox[{"{", RowBox[{RowBox[{"{", 
+                        RowBox[{"mc", ",", FractionBox[SuperscriptBox["mc", 
+                          "2"], "den"]}], "}"}], ",", RowBox[{"{", RowBox[
+                         {FractionBox[SuperscriptBox["mc", "2"], "den"], ",", 
+                          FractionBox[SuperscriptBox["mc", "3"], 
+                          SuperscriptBox["den", "2"]]}], "}"}]}], "}"}]}]}], 
+              ";", RowBox[{"q1", "=", RowBox[{"ss", " ", RowBox[{"{", 
+                    RowBox[{RowBox[{"{", RowBox[{RowBox[{"-", FractionBox[
+                          RowBox[{"ms", " ", SuperscriptBox["mc", "2"]}], 
+                          RowBox[{"2", " ", "M2"}]]}], ",", FractionBox[
+                          RowBox[{"ms", " ", "mc", " ", RowBox[{"(", RowBox[
+                          {"1", "-", FractionBox[SuperscriptBox["mc", "2"], 
+                          "M2"]}], ")"}]}], RowBox[{"2", " ", "den"}]]}], 
+                        "}"}], ",", RowBox[{"{", RowBox[{FractionBox[RowBox[
+                          {"ms", " ", "mc", " ", RowBox[{"(", RowBox[{"1", 
+                          "-", FractionBox[SuperscriptBox["mc", "2"], 
+                          "M2"]}], ")"}]}], RowBox[{"2", " ", "den"}]], ",", 
+                          FractionBox[RowBox[{"ms", " ", SuperscriptBox["mc", 
+                          "2"], " ", RowBox[{"(", RowBox[{"1", "-", 
+                          FractionBox[SuperscriptBox["mc", "2"], RowBox[
+                          {"2", " ", "M2"}]]}], ")"}]}], SuperscriptBox[
+                          "den", "2"]]}], "}"}]}], "}"}]}]}], ";", 
+              RowBox[{"q2", "=", RowBox[{"ss", " ", RowBox[{"{", RowBox[
+                     {RowBox[{"{", RowBox[{FractionBox[RowBox[{SuperscriptBox[
+                          "ms", "2"], " ", SuperscriptBox["mc", "3"]}], 
+                          RowBox[{"2", " ", SuperscriptBox["M2", "2"]}]], 
+                          ",", FractionBox[RowBox[{SuperscriptBox["ms", "2"], 
+                          " ", RowBox[{"(", RowBox[{FractionBox[
+                          SuperscriptBox["mc", "4"], SuperscriptBox["M2", 
+                          "2"]], "-", FractionBox[SuperscriptBox["mc", "2"], 
+                          "M2"], "-", "1"}], ")"}]}], RowBox[{"2", " ", 
+                          "den"}]]}], "}"}], ",", RowBox[{"{", RowBox[
+                         {FractionBox[RowBox[{SuperscriptBox["ms", "2"], " ", 
+                          RowBox[{"(", RowBox[{FractionBox[SuperscriptBox[
+                          "mc", "4"], SuperscriptBox["M2", "2"]], "-", 
+                          FractionBox[SuperscriptBox["mc", "2"], "M2"], "-", 
+                          "1"}], ")"}]}], RowBox[{"2", " ", "den"}]], ",", 
+                          FractionBox[RowBox[{SuperscriptBox["ms", "2"], " ", 
+                          RowBox[{"(", RowBox[{FractionBox[SuperscriptBox[
+                          "mc", "5"], RowBox[{"2", " ", SuperscriptBox["M2", 
+                          "2"]}]], "-", FractionBox[SuperscriptBox["mc", 
+                          "3"], "M2"]}], ")"}]}], SuperscriptBox["den", 
+                          "2"]]}], "}"}]}], "}"}]}]}], ";", RowBox[{"d5", 
+                "=", RowBox[{"mixedSS", " ", RowBox[{"{", RowBox[
+                     {RowBox[{"{", RowBox[{RowBox[{"-", FractionBox[
+                          SuperscriptBox["mc", "3"], RowBox[{"4", " ", 
+                          SuperscriptBox["M2", "2"]}]]}], ",", RowBox[
+                          {"-", FractionBox[RowBox[{FractionBox[
+                          SuperscriptBox["mc", "4"], SuperscriptBox["M2", 
+                          "2"]], "-", FractionBox[SuperscriptBox["mc", "2"], 
+                          "M2"], "-", "1"}], RowBox[{"4", " ", "den"}]]}]}], 
+                        "}"}], ",", RowBox[{"{", RowBox[{RowBox[{"-", 
+                          FractionBox[RowBox[{FractionBox[SuperscriptBox[
+                          "mc", "4"], SuperscriptBox["M2", "2"]], "-", 
+                          FractionBox[SuperscriptBox["mc", "2"], "M2"], "-", 
+                          "1"}], RowBox[{"4", " ", "den"}]]}], ",", RowBox[
+                          {"-", FractionBox[RowBox[{FractionBox[
+                          SuperscriptBox["mc", "5"], RowBox[{"4", " ", 
+                          SuperscriptBox["M2", "2"]}]], "-", FractionBox[
+                          SuperscriptBox["mc", "3"], RowBox[{"2", " ", 
+                          "M2"}]]}], SuperscriptBox["den", "2"]]}]}], 
+                        "}"}]}], "}"}]}]}], ";", RowBox[{"Association", "[", 
+                RowBox[{RowBox[{"\"d3_ms0\"", "\[Rule]", RowBox[{"e", " ", 
+                      "q0"}]}], ",", RowBox[{"\"d3_ms1\"", "\[Rule]", 
+                    RowBox[{"e", " ", "q1"}]}], ",", RowBox[{"\"d3_ms2\"", 
+                    "\[Rule]", RowBox[{"e", " ", "q2"}]}], ",", RowBox[
+                   {"\"d5_mixed\"", "\[Rule]", RowBox[{"e", " ", "d5"}]}]}], 
+                "]"}]}]}], "]"}]}], ";", 
+      RowBox[{RowBox[{"localMatrix", "[", "M2_", "]"}], ":=", 
+        RowBox[{"Total", "[", RowBox[{"Values", "[", 
+            RowBox[{"localPieces", "[", "M2", "]"}], "]"}], "]"}]}], ";", 
+      RowBox[{RowBox[{"Map", "[", "MatrixForm", "]"}], "[", 
+        RowBox[{"localPieces", "[", "M2", "]"}], "]"}]}]], "Input"], 
+  Cell["3.1 AA local-term check against Colangelo", "Subsection"], 
+  Cell[BoxData[RowBox[{RowBox[{RowBox[{"aaLocalColangelo", "[", "M2_", "]"}], 
+        ":=", RowBox[{RowBox[{"Exp", "[", RowBox[{"-", FractionBox[
+               SuperscriptBox["mc", "2"], "M2"]}], "]"}], " ", 
+          RowBox[{"(", RowBox[{RowBox[{"ss", " ", RowBox[{"(", RowBox[
+                   {"mc", "-", FractionBox[RowBox[{SuperscriptBox["mc", "2"], 
+                       " ", "ms"}], RowBox[{"2", " ", "M2"}]], "+", 
+                    FractionBox[RowBox[{SuperscriptBox["mc", "3"], " ", 
+                       SuperscriptBox["ms", "2"]}], RowBox[{"2", " ", 
+                       SuperscriptBox["M2", "2"]}]]}], ")"}]}], "-", 
+              FractionBox[RowBox[{"mixedSS", " ", SuperscriptBox["mc", 
+                  "3"]}], RowBox[{"4", " ", SuperscriptBox["M2", "2"]}]]}], 
+            ")"}]}]}], ";", RowBox[{"FullSimplify", "[", 
+        RowBox[{RowBox[{RowBox[{"localMatrix", "[", "M2", "]"}], 
+            "\[LeftDoubleBracket]", RowBox[{"1", ",", "1"}], 
+            "\[RightDoubleBracket]"}], "-", RowBox[{"aaLocalColangelo", "[", 
+            "M2", "]"}]}], "]"}]}]], "Input"], 
+  Cell["This cell must return 0 before numerical inputs are assigned.", 
+   "Text"], Cell["4. Numerical inputs", "Section"], 
+  Cell[BoxData[RowBox[{RowBox[{"mc", "=", "1.27`"}], ";", 
+      RowBox[{"ms", "=", "0.093`"}], ";", 
+      RowBox[{"qq", "=", RowBox[{"-", SuperscriptBox["0.24`", "3"]}]}], ";", 
+      RowBox[{"kappaS", "=", "0.8`"}], ";", 
+      RowBox[{"ss", "=", RowBox[{"kappaS", " ", "qq"}]}], ";", 
+      RowBox[{"m0sq", "=", "0.8`"}], ";", 
+      RowBox[{"mixedSS", "=", RowBox[{"m0sq", " ", "ss"}]}], ";", 
+      RowBox[{"m1", "=", "2.4595`"}], ";", RowBox[{"m2", "=", "2.53511`"}], 
+      ";", RowBox[{"sThreshold", "=", SuperscriptBox[
+         RowBox[{"(", RowBox[{"mc", "+", "ms"}], ")"}], "2"]}], ";", 
+      RowBox[{"Association", "[", RowBox[{RowBox[{"\"mc_GeV\"", "\[Rule]", 
+            "mc"}], ",", RowBox[{"\"ms_GeV\"", "\[Rule]", "ms"}], ",", 
+          RowBox[{"\"ss_GeV3\"", "\[Rule]", "ss"}], ",", 
+          RowBox[{"\"mixedSS_GeV5\"", "\[Rule]", "mixedSS"}], ",", 
+          RowBox[{"\"m1_GeV\"", "\[Rule]", "m1"}], ",", 
+          RowBox[{"\"m2_GeV\"", "\[Rule]", "m2"}]}], "]"}]}]], "Input"], 
+  Cell["5. Borel matrix and continuum subtraction", "Section"], 
+  Cell["The interpolated cumulative trapezoid is a fast numerical realization \
+of Integrate[rho_ij(s) Exp[-s/M2], {s, threshold, s0}]. Clear the memoized \
+interpolations after changing a numerical input.", "Text"], 
+  Cell[BoxData[RowBox[{RowBox[{"ClearAll", "[", 
+        RowBox[{"buildPerturbativeInterpolations", ",", 
+          "perturbativeInterpolations", ",", "perturbativeMatrix", ",", 
+          "opeMatrix"}], "]"}], ";", 
+      RowBox[{RowBox[{"buildPerturbativeInterpolations", "[", 
+          RowBox[{"M2_", "?", "NumericQ"}], "]"}], ":=", 
+        RowBox[{"Module", "[", RowBox[{RowBox[{"{", RowBox[{"sGrid", ",", 
+                "integrand", ",", "increments", ",", "cumulative"}], "}"}], 
+            ",", RowBox[{RowBox[{"sGrid", "=", RowBox[{"N", "[", 
+                  RowBox[{"Subdivide", "[", RowBox[{"sThreshold", ",", 
+                      "11.`", ",", "2000"}], "]"}], "]"}]}], ";", 
+              RowBox[{"integrand", "=", RowBox[{RowBox[{"(", RowBox[
+                     {RowBox[{RowBox[{"rhoMatrix", "[", "#1", "]"}], " ", 
+                        RowBox[{"Exp", "[", RowBox[{"-", FractionBox["#1", 
+                          "M2"]}], "]"}]}], "&"}], ")"}], "/@", "sGrid"}]}], 
+              ";", RowBox[{"increments", "=", RowBox[{"MapThread", "[", 
+                  RowBox[{RowBox[{RowBox[{"0.5`", " ", RowBox[{"(", RowBox[
+                          {"#1", "+", "#2"}], ")"}], " ", "#3"}], "&"}], ",", 
+                    RowBox[{"{", RowBox[{RowBox[{"Most", "[", "integrand", 
+                          "]"}], ",", RowBox[{"Rest", "[", "integrand", 
+                          "]"}], ",", RowBox[{"Differences", "[", "sGrid", 
+                          "]"}]}], "}"}]}], "]"}]}], ";", 
+              RowBox[{"cumulative", "=", RowBox[{"Prepend", "[", 
+                  RowBox[{RowBox[{"Accumulate", "[", "increments", "]"}], 
+                    ",", RowBox[{"ConstantArray", "[", RowBox[{"0.`", ",", 
+                        RowBox[{"{", RowBox[{"2", ",", "2"}], "}"}]}], 
+                      "]"}]}], "]"}]}], ";", RowBox[{"Table", "[", 
+                RowBox[{RowBox[{"Interpolation", "[", RowBox[{TemplateBox[
+                       {RowBox[{"{", RowBox[{"sGrid", ",", RowBox[
+                          {"cumulative", "\[LeftDoubleBracket]", RowBox[
+                          {"All", ",", "i", ",", "j"}], 
+                          "\[RightDoubleBracket]"}]}], "}"}]}, "Transpose", 
+                       SyntaxForm -> SuperscriptBox], ",", RowBox[
+                       {"InterpolationOrder", "\[Rule]", "1"}]}], "]"}], ",", 
+                  RowBox[{"{", RowBox[{"i", ",", "1", ",", "2"}], "}"}], ",", 
+                  RowBox[{"{", RowBox[{"j", ",", "1", ",", "2"}], "}"}]}], 
+                "]"}]}]}], "]"}]}], ";", 
+      RowBox[{RowBox[{"perturbativeInterpolations", "[", 
+          RowBox[{"M2_", "?", "NumericQ"}], "]"}], ":=", 
+        RowBox[{RowBox[{"perturbativeInterpolations", "[", "M2", "]"}], "=", 
+          RowBox[{"buildPerturbativeInterpolations", "[", "M2", "]"}]}]}], 
+      ";", RowBox[{RowBox[{"perturbativeMatrix", "[", 
+          RowBox[{RowBox[{"M2_", "?", "NumericQ"}], ",", 
+            RowBox[{"s0_", "?", "NumericQ"}]}], "]"}], ":=", 
+        RowBox[{"Map", "[", RowBox[{RowBox[{RowBox[{"#1", "[", "s0", "]"}], 
+              "&"}], ",", RowBox[{"perturbativeInterpolations", "[", "M2", 
+              "]"}], ",", RowBox[{"{", "2", "}"}]}], "]"}]}], ";", 
+      RowBox[{RowBox[{"opeMatrix", "[", RowBox[
+           {RowBox[{"M2_", "?", "NumericQ"}], ",", RowBox[{"s0_", "?", 
+              "NumericQ"}]}], "]"}], ":=", 
+        RowBox[{RowBox[{"perturbativeMatrix", "[", RowBox[{"M2", ",", "s0"}], 
+            "]"}], "+", RowBox[{"localMatrix", "[", "M2", "]"}]}]}], ";", 
+      TagBox[RowBox[{"opeMatrix", "[", RowBox[{"2.35`", ",", "10.`"}], "]"}], 
+       Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]}]], "Input"], 
+  Cell["6. External mixing angle, mass matching, and residues", "Section"], 
+  Cell["The nominal projection uses theta_Ds = 26.6 +/- 0.6 degrees from the \
+dedicated previous QCD-sum-rule study (arXiv:2408.08014v2). The angle \
+obtained by diagonalizing the present LO+d3+d5 matrix is retained as a \
+truncation diagnostic; it is not used as the nominal input.", "Text"], 
+  Cell[BoxData[RowBox[{RowBox[{"ClearAll", "[", 
+        RowBox[{"mixingAngle", ",", "projectedValue", ",", "projectedOPE", 
+          ",", "projectedEffectiveMass", ",", "fittedThreshold", ",", 
+          "physicalPoint"}], "]"}], ";", 
+      RowBox[{RowBox[{"mixingAngle", "[", RowBox[{"matrix_", "?", 
+            "MatrixQ"}], "]"}], ":=", RowBox[{"Module", "[", 
+          RowBox[{RowBox[{"{", RowBox[{"aa", ",", "ab", ",", "bb", ",", 
+                "angle"}], "}"}], ",", RowBox[{RowBox[{RowBox[{"{", 
+                  RowBox[{"aa", ",", "ab", ",", "bb"}], "}"}], "=", 
+                RowBox[{"{", RowBox[{RowBox[{"matrix", 
+                      "\[LeftDoubleBracket]", RowBox[{"1", ",", "1"}], 
+                      "\[RightDoubleBracket]"}], ",", RowBox[{"matrix", 
+                      "\[LeftDoubleBracket]", RowBox[{"1", ",", "2"}], 
+                      "\[RightDoubleBracket]"}], ",", RowBox[{"matrix", 
+                      "\[LeftDoubleBracket]", RowBox[{"2", ",", "2"}], 
+                      "\[RightDoubleBracket]"}]}], "}"}]}], ";", 
+              RowBox[{"angle", "=", RowBox[{FractionBox["1", "2"], " ", 
+                  RowBox[{"ArcTan", "[", RowBox[{RowBox[{"aa", "-", "bb"}], 
+                      ",", RowBox[{RowBox[{"-", "2"}], " ", "ab"}]}], 
+                    "]"}]}]}], ";", RowBox[{"Mod", "[", RowBox[{"angle", ",", 
+                  FractionBox["\[Pi]", "2"]}], "]"}]}]}], "]"}]}], ";", 
+      RowBox[{RowBox[{"projectedValue", "[", 
+          RowBox[{RowBox[{"matrix_", "?", "MatrixQ"}], ",", 
+            RowBox[{"angle_", "?", "NumericQ"}], ",", "channel_Integer"}], 
+          "]"}], ":=", RowBox[{"Module", "[", 
+          RowBox[{RowBox[{"{", RowBox[{"v", "=", RowBox[{RowBox[{"rotation", 
+                    "[", "angle", "]"}], "\[LeftDoubleBracket]", "channel", 
+                  "\[RightDoubleBracket]"}]}], "}"}], ",", 
+            RowBox[{"v", ".", "matrix", ".", "v"}]}], "]"}]}], ";", 
+      RowBox[{RowBox[{"projectedOPE", "[", RowBox[
+           {RowBox[{"M2_", "?", "NumericQ"}], ",", RowBox[{"s0_", "?", 
+              "NumericQ"}], ",", RowBox[{"angle_", "?", "NumericQ"}], ",", 
+            "channel_Integer"}], "]"}], ":=", RowBox[{"projectedValue", "[", 
+          RowBox[{RowBox[{"opeMatrix", "[", RowBox[{"M2", ",", "s0"}], "]"}], 
+            ",", "angle", ",", "channel"}], "]"}]}], ";", 
+      RowBox[{RowBox[{"projectedEffectiveMass", "[", 
+          RowBox[{RowBox[{"M2_", "?", "NumericQ"}], ",", 
+            RowBox[{"s0_", "?", "NumericQ"}], ",", RowBox[{"angle_", "?", 
+              "NumericQ"}], ",", "channel_Integer", ",", 
+            RowBox[{"deltaTau_", ":", "0.0002`"}]}], "]"}], ":=", 
+        RowBox[{"Module", "[", RowBox[
+           {RowBox[{"{", RowBox[{RowBox[{"tau", "=", FractionBox["1", 
+                   "M2"]}], ",", "plus", ",", "minus", ",", "massSq"}], 
+              "}"}], ",", RowBox[{RowBox[{"plus", "=", RowBox[
+                 {"projectedOPE", "[", RowBox[{FractionBox["1", RowBox[
+                      {"tau", "+", "deltaTau"}]], ",", "s0", ",", "angle", 
+                    ",", "channel"}], "]"}]}], ";", RowBox[{"minus", "=", 
+                RowBox[{"projectedOPE", "[", RowBox[{FractionBox["1", 
+                     RowBox[{"tau", "-", "deltaTau"}]], ",", "s0", ",", 
+                    "angle", ",", "channel"}], "]"}]}], ";", RowBox[{"If", 
+                "[", RowBox[{RowBox[{RowBox[{"plus", "\[LessEqual]", "0"}], 
+                    "||", RowBox[{"minus", "\[LessEqual]", "0"}]}], ",", 
+                  RowBox[{"Return", "[", "Indeterminate", "]"}]}], "]"}], 
+              ";", RowBox[{"massSq", "=", RowBox[{"-", FractionBox[
+                   RowBox[{RowBox[{"Log", "[", "plus", "]"}], "-", RowBox[
+                      {"Log", "[", "minus", "]"}]}], RowBox[{"2", " ", 
+                     "deltaTau"}]]}]}], ";", RowBox[{"If", "[", 
+                RowBox[{RowBox[{"massSq", ">", "0"}], ",", SqrtBox["massSq"], 
+                  ",", "Indeterminate"}], "]"}]}]}], "]"}]}], ";", 
+      RowBox[{RowBox[{"fittedThreshold", "[", 
+          RowBox[{RowBox[{"M2_", "?", "NumericQ"}], ",", 
+            RowBox[{"angle_", "?", "NumericQ"}], ",", "channel_Integer", ",", 
+            RowBox[{"targetMass_", "?", "NumericQ"}]}], "]"}], ":=", 
+        RowBox[{"Module", "[", RowBox[{RowBox[{"{", RowBox[{"candidates", 
+                ",", "pairs"}], "}"}], ",", RowBox[{RowBox[{"candidates", 
+                "=", RowBox[{"N", "[", RowBox[{"Range", "[", RowBox[
+                     {"6.55`", ",", "10.5`", ",", "0.025`"}], "]"}], "]"}]}], 
+              ";", RowBox[{"pairs", "=", RowBox[{"Select", "[", RowBox[
+                   {RowBox[{RowBox[{"(", RowBox[{RowBox[{"{", RowBox[{"#1", 
+                          ",", RowBox[{"projectedEffectiveMass", "[", RowBox[
+                          {"M2", ",", "#1", ",", "angle", ",", "channel"}], 
+                          "]"}]}], "}"}], "&"}], ")"}], "/@", "candidates"}], 
+                    ",", RowBox[{RowBox[{"NumericQ", "[", RowBox[{"#1", 
+                          "\[LeftDoubleBracket]", "2", 
+                          "\[RightDoubleBracket]"}], "]"}], "&"}]}], "]"}]}], 
+              ";", RowBox[{"First", "[", RowBox[{"MinimalBy", "[", 
+                  RowBox[{"pairs", ",", RowBox[{RowBox[{"Abs", "[", RowBox[
+                         {RowBox[{"#1", "\[LeftDoubleBracket]", "2", 
+                          "\[RightDoubleBracket]"}], "-", "targetMass"}], 
+                        "]"}], "&"}]}], "]"}], "]"}]}]}], "]"}]}], ";"}]], 
+   "Input"], 
+  Cell[BoxData[RowBox[{RowBox[{"thetaDsInput", "=", 
+        RowBox[{"26.6`", " ", "\[Degree]"}]}], ";", 
+      RowBox[{"thetaDsSigma", "=", RowBox[{"0.6`", " ", "\[Degree]"}]}], ";", 
+      RowBox[{RowBox[{"physicalPoint", "[", RowBox[{"M2_", "?", "NumericQ"}], 
+          "]"}], ":=", RowBox[{"Module", "[", 
+          RowBox[{RowBox[{"{", RowBox[{"angleSamples", ",", 
+                "angleDiagnostic", ",", "angle", ",", "fit1", ",", "fit2", 
+                ",", "pi1", ",", "pi2", ",", "rotatedCommon", ",", 
+                "offdiagNorm"}], "}"}], ",", RowBox[{RowBox[{"angleSamples", 
+                "=", RowBox[{RowBox[{"(", RowBox[{RowBox[{"mixingAngle", "[", 
+                        RowBox[{"opeMatrix", "[", RowBox[{"M2", ",", "#1"}], 
+                          "]"}], "]"}], "&"}], ")"}], "/@", RowBox[
+                   {"N", "[", RowBox[{"Range", "[", RowBox[{"9.`", ",", 
+                        "11.`", ",", "0.1`"}], "]"}], "]"}]}]}], ";", 
+              RowBox[{"angleDiagnostic", "=", RowBox[{"Median", "[", 
+                  "angleSamples", "]"}]}], ";", RowBox[{"angle", "=", 
+                "thetaDsInput"}], ";", RowBox[{"fit1", "=", RowBox[
+                 {"fittedThreshold", "[", RowBox[{"M2", ",", "angle", ",", 
+                    "1", ",", "m1"}], "]"}]}], ";", RowBox[{"fit2", "=", 
+                RowBox[{"fittedThreshold", "[", RowBox[{"M2", ",", "angle", 
+                    ",", "2", ",", "m2"}], "]"}]}], ";", RowBox[{"pi1", "=", 
+                RowBox[{"projectedOPE", "[", RowBox[{"M2", ",", RowBox[
+                     {"fit1", "\[LeftDoubleBracket]", "1", 
+                      "\[RightDoubleBracket]"}], ",", "angle", ",", "1"}], 
+                  "]"}]}], ";", RowBox[{"pi2", "=", RowBox[{"projectedOPE", 
+                  "[", RowBox[{"M2", ",", RowBox[{"fit2", 
+                      "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+                    ",", "angle", ",", "2"}], "]"}]}], ";", 
+              RowBox[{"rotatedCommon", "=", RowBox[{RowBox[{"rotation", "[", 
+                    "angle", "]"}], ".", RowBox[{"opeMatrix", "[", 
+                    RowBox[{"M2", ",", "10.`"}], "]"}], ".", TemplateBox[
+                   {RowBox[{"rotation", "[", "angle", "]"}]}, "Transpose", 
+                   SyntaxForm -> SuperscriptBox]}]}], ";", 
+              RowBox[{"offdiagNorm", "=", FractionBox[RowBox[{"Abs", "[", 
+                   RowBox[{"rotatedCommon", "\[LeftDoubleBracket]", 
+                     RowBox[{"1", ",", "2"}], "\[RightDoubleBracket]"}], 
+                   "]"}], SqrtBox[RowBox[{"Abs", "[", RowBox[{RowBox[
+                       {"rotatedCommon", "\[LeftDoubleBracket]", RowBox[
+                         {"1", ",", "1"}], "\[RightDoubleBracket]"}], " ", 
+                      RowBox[{"rotatedCommon", "\[LeftDoubleBracket]", 
+                        RowBox[{"2", ",", "2"}], "\[RightDoubleBracket]"}]}], 
+                    "]"}]]]}], ";", RowBox[{"Association", "[", 
+                RowBox[{RowBox[{"\"M2_GeV2\"", "\[Rule]", "M2"}], ",", 
+                  RowBox[{"\"theta_deg\"", "\[Rule]", FractionBox[RowBox[
+                      {"angle", " ", "180"}], "\[Pi]"]}], ",", RowBox[
+                   {"\"theta_matrix_diagnostic_deg\"", "\[Rule]", FractionBox[
+                     RowBox[{"angleDiagnostic", " ", "180"}], "\[Pi]"]}], 
+                  ",", RowBox[{"\"Pi12_normalized\"", "\[Rule]", 
+                    "offdiagNorm"}], ",", RowBox[{"\"s01_GeV2\"", "\[Rule]", 
+                    RowBox[{"fit1", "\[LeftDoubleBracket]", "1", 
+                      "\[RightDoubleBracket]"}]}], ",", RowBox[
+                   {"\"s02_GeV2\"", "\[Rule]", RowBox[{"fit2", 
+                      "\[LeftDoubleBracket]", "1", 
+                      "\[RightDoubleBracket]"}]}], ",", RowBox[
+                   {"\"mEff1_GeV\"", "\[Rule]", RowBox[{"fit1", 
+                      "\[LeftDoubleBracket]", "2", 
+                      "\[RightDoubleBracket]"}]}], ",", RowBox[
+                   {"\"mEff2_GeV\"", "\[Rule]", RowBox[{"fit2", 
+                      "\[LeftDoubleBracket]", "2", 
+                      "\[RightDoubleBracket]"}]}], ",", RowBox[{"\"f1_GeV\"", 
+                    "\[Rule]", SqrtBox[FractionBox[RowBox[{"pi1", " ", 
+                        RowBox[{"Exp", "[", FractionBox[SuperscriptBox["m1", 
+                          "2"], "M2"], "]"}]}], SuperscriptBox["m1", 
+                       "2"]]]}], ",", RowBox[{"\"f2_GeV\"", "\[Rule]", 
+                    SqrtBox[FractionBox[RowBox[{"pi2", " ", RowBox[{"Exp", 
+                          "[", FractionBox[SuperscriptBox["m2", "2"], "M2"], 
+                          "]"}]}], SuperscriptBox["m2", "2"]]]}]}], 
+                "]"}]}]}], "]"}]}], ";", RowBox[{"centralPoint", "=", 
+        RowBox[{"physicalPoint", "[", "2.35`", "]"}]}]}]], "Input"], 
+  Cell["Expected central output: theta input = 26.6 degrees, matrix \
+diagnostic theta = 30.58596 degrees, s01 = 7.925 GeV^2, s02 = 9.975 GeV^2, f1 \
+= 0.4005893 GeV, and f2 = 0.1666704 GeV. Neither residue is externally \
+anchored.", "Text"], Cell["7. Python/Mathematica central-point regression", 
+   "Section"], 
+  Cell[BoxData[RowBox[{RowBox[{"pythonReference", "=", 
+        RowBox[{"Association", "[", RowBox[{RowBox[{"\"theta_deg\"", 
+              "\[Rule]", "26.6`"}], ",", RowBox[
+             {"\"theta_matrix_diagnostic_deg\"", "\[Rule]", 
+              "30.58596158596751`"}], ",", RowBox[{"\"Pi12_normalized\"", 
+              "\[Rule]", "0.18100724350506212`"}], ",", 
+            RowBox[{"\"s01_GeV2\"", "\[Rule]", "7.925`"}], ",", 
+            RowBox[{"\"s02_GeV2\"", "\[Rule]", "9.975`"}], ",", 
+            RowBox[{"\"f1_GeV\"", "\[Rule]", "0.40058930523172204`"}], ",", 
+            RowBox[{"\"f2_GeV\"", "\[Rule]", "0.1666703674111434`"}]}], 
+          "]"}]}], ";", RowBox[{"AssociationMap", "[", 
+        RowBox[{RowBox[{RowBox[{RowBox[{"centralPoint", "[", "#1", "]"}], 
+              "-", RowBox[{"pythonReference", "[", "#1", "]"}]}], "&"}], ",", 
+          RowBox[{"Keys", "[", "pythonReference", "]"}]}], "]"}]}]], 
+   "Input"], Cell["With the default 2000-point cumulative integration grid, \
+all displayed differences are below 10^-7. Increase the grid in Section 5 for \
+an arbitrarily tighter integration comparison.", "Text"], 
+  Cell["8. Optional full deterministic Borel scan", "Section"], 
+  Cell["This cell is deliberately separate because it builds three \
+interpolation tables for every M2 value. It is the Mathematica analogue of \
+the dense Python physical-pole grid.", "Text"], 
+  Cell[BoxData[RowBox[{RowBox[{"fullScan", "=", 
+        RowBox[{"physicalPoint", "/@", RowBox[{"N", "[", 
+            RowBox[{"Range", "[", RowBox[{"2.`", ",", "2.7`", ",", "0.05`"}], 
+              "]"}], "]"}]}]}], ";", RowBox[{"Dataset", "[", "fullScan", 
+        "]"}]}]], "Input"], 
+  Cell[BoxData[RowBox[{"scanSummary", "=", RowBox[{"AssociationMap", "[", 
+        RowBox[{RowBox[{RowBox[{"Quantile", "[", RowBox[{RowBox[{"Lookup", 
+                  "[", RowBox[{"fullScan", ",", "#1"}], "]"}], ",", 
+                RowBox[{"{", RowBox[{"0.16`", ",", "0.5`", ",", "0.84`"}], 
+                  "}"}]}], "]"}], "&"}], ",", 
+          RowBox[{"{", RowBox[{"\"theta_deg\"", ",", 
+              "\"theta_matrix_diagnostic_deg\"", ",", "\"Pi12_normalized\"", 
+              ",", "\"s01_GeV2\"", ",", "\"s02_GeV2\"", ",", "\"f1_GeV\"", 
+              ",", "\"f2_GeV\""}], "}"}]}], "]"}]}]], "Input"], 
+  Cell["9. Interpretation", "Section"], Cell["The Python Monte Carlo samples \
+theta_Ds = 26.6 +/- 0.6 degrees as an external input and gives f1 = 0.4046 \
+[0.3799, 0.4291] GeV and f2 = 0.1677 [0.1594, 0.1756] GeV. Diagonalizing the \
+same truncated matrix gives the diagnostic theta = 30.63 [29.94, 31.29] \
+degrees. The normalized off-diagonal residual after projection at the \
+external angle is about 0.18, and is retained as an OPE-truncation \
+diagnostic.", "Text"], Cell["For the derivation-level Dirac checks, run \
+scripts/twopoint_dirac_spectral_audit.wl and \
+scripts/twopoint_local_condensate_audit.wl. For the independent numerical \
+regression, run scripts/mathematica_twopoint_ds1_matrix_check.wl.", "Text"]}, 
+ WindowTitle -> "Ds1 AA/AB/BB two-point sum rule", Saveable -> True, 
+ StyleDefinitions -> "Default.nb"]

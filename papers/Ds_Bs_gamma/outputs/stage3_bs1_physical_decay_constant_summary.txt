@@ -1,0 +1,37 @@
+Stage-3 Bs1 physical-current decay constants
+============================================
+Transition amplitudes use the completed Rohrwild-nonlocal Stage-2 scan;
+ordinary local condensates are excluded and S_gamma/T4^gamma is included.
+Closure: diagonalize the mixed-current two-point matrix, Pi12=0.
+Basis-current input distributions are the same bottom-sector hadronic inputs
+used in the previous PZ scenario: fA=0.305+-0.027 GeV, fT=0.285+-0.027 GeV.
+Rejected samples with |rho_AB|>1 or negative f_i^2: 1084.
+
+State: Bs1_5830_observed_high_combo
+  legacy_chi_condensate, theta_fixed, n=391: f1=0.436 [0.380,0.486] GeV; f2=0.218 [0.138,0.292] GeV; rho=+0.587 [+0.242,+0.835]
+    physical: G=-0.08124 [-0.1333,-0.05539] GeV^-1; Gamma=1.398 [0.6514,3.769] keV
+    basis/PZ comparison: G=-0.01864 [-0.04186,+0.003493] GeV^-1; Gamma=0.08947 [0.009612,0.4048] keV
+  legacy_chi_condensate, theta_scan_25_45, n=334: f1=0.426 [0.368,0.469] GeV; f2=0.246 [0.174,0.312] GeV; rho=+0.449 [+0.174,+0.718]
+    physical: G=-0.03817 [-0.1043,+0.008903] GeV^-1; Gamma=0.3671 [0.02742,2.312] keV
+    basis/PZ comparison: G=+0.007708 [-0.03788,+0.04771] GeV^-1; Gamma=0.1927 [0.01722,0.8312] keV
+  lattice_fperp_s, theta_fixed, n=408: f1=0.443 [0.384,0.492] GeV; f2=0.203 [0.121,0.291] GeV; rho=+0.631 [+0.276,+0.866]
+    physical: G=-0.04205 [-0.07264,-0.02851] GeV^-1; Gamma=0.3752 [0.1725,1.119] keV
+    basis/PZ comparison: G=+0.02633 [-0.001982,+0.04972] GeV^-1; Gamma=0.1714 [0.01096,0.5391] keV
+  lattice_fperp_s, theta_scan_25_45, n=329: f1=0.421 [0.371,0.486] GeV; f2=0.249 [0.170,0.307] GeV; rho=+0.441 [+0.191,+0.730]
+    physical: G=+0.01263 [-0.06269,+0.06512] GeV^-1; Gamma=0.4845 [0.04939,1.778] keV
+    basis/PZ comparison: G=+0.05998 [-0.007402,+0.1117] GeV^-1; Gamma=0.9 [0.1432,2.661] keV
+
+State: Bs1_lower_model_5750_low_combo
+  legacy_chi_condensate, theta_fixed, n=410: f1=0.428 [0.367,0.479] GeV; f2=0.226 [0.126,0.303] GeV; rho=+0.529 [+0.215,+0.854]
+    physical: G=+0.2853 [+0.2278,+0.3641] GeV^-1; Gamma=9.606 [6.03,17.2] keV
+    basis/PZ comparison: G=+0.3466 [+0.2773,+0.4204] GeV^-1; Gamma=14.33 [9.037,22.55] keV
+  legacy_chi_condensate, theta_scan_25_45, n=323: f1=0.418 [0.355,0.475] GeV; f2=0.251 [0.161,0.313] GeV; rho=+0.408 [+0.152,+0.745]
+    physical: G=+0.2965 [+0.231,+0.3892] GeV^-1; Gamma=10.75 [6.29,18.8] keV
+    basis/PZ comparison: G=+0.3468 [+0.2832,+0.4265] GeV^-1; Gamma=14.64 [9.177,24.06] keV
+  lattice_fperp_s, theta_fixed, n=407: f1=0.440 [0.381,0.490] GeV; f2=0.216 [0.132,0.285] GeV; rho=+0.584 [+0.286,+0.849]
+    physical: G=+0.3938 [+0.3326,+0.4607] GeV^-1; Gamma=18.6 [12.52,28.51] keV
+    basis/PZ comparison: G=+0.4794 [+0.4205,+0.5482] GeV^-1; Gamma=27.79 [19.65,40.59] keV
+  lattice_fperp_s, theta_scan_25_45, n=314: f1=0.416 [0.358,0.474] GeV; f2=0.247 [0.160,0.312] GeV; rho=+0.446 [+0.121,+0.764]
+    physical: G=+0.4048 [+0.3398,+0.497] GeV^-1; Gamma=19.82 [13.3,32.87] keV
+    basis/PZ comparison: G=+0.4707 [+0.4194,+0.5552] GeV^-1; Gamma=27.46 [19.69,41.03] keV
+

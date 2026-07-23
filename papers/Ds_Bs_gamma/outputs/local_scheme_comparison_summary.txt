@@ -1,0 +1,17 @@
+Local contribution comparison: Rohrwild vs Colangelo
+=====================================================
+The two transition prescriptions are alternatives; they are never added.
+P[T4gamma] brace = -1.611183458320
+Support qualification: P[T4gamma] uses the double-Borel support alpha_qbar>=1/2 in the third appendix integral; the printed zero lower limit diverges
+
+Ds (reference_point): local=-5.023454e-03, nonlocal EM=-5.316342e-03 GeV^3, ratio=+1.0583; gA -0.35689 -> -0.35914 GeV^-1
+Ds (selected_window_midpoint): local=-4.652430e-03, nonlocal EM=-7.329817e-03 GeV^3, ratio=+1.5755; gA -0.50436 -> -0.52993 GeV^-1
+Bs (legacy_chi_selected_midpoint): local=+8.324351e-04, nonlocal EM=+1.002914e-03 GeV^3, ratio=+1.2048; gA +0.39109 -> +0.39286 GeV^-1
+Bs (lattice_fperp_selected_midpoint): local=+8.324351e-04, nonlocal EM=+1.002914e-03 GeV^3, ratio=+1.2048; gA +0.63725 -> +0.63902 GeV^-1
+
+No J_B Colangelo-local value is quoted: that tensor-current local OPE was not
+given in the reference and is not needed in the paper's Rohrwild scheme.
+Wrote /Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/local_scheme_conceptual_comparison.csv
+Wrote /Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/local_scheme_numerical_comparison.csv
+Wrote /Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/local_scheme_scan_summary.csv
+Wrote /Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/local_scheme_comparison_table.tex

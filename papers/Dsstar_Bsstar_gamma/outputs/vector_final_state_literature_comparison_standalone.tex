@@ -1,0 +1,36 @@
+\documentclass[10pt]{article}
+\usepackage[landscape,margin=0.55in]{geometry}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+
+\begin{document}
+
+\begin{table}[t]
+\centering
+\caption{Representative comparison for vector-final-state radiative widths. Widths are in keV. The present calibrated LCSR result uses the preferred lattice photon normalization and fixed $\theta=35.3^\circ$; percentile intervals are shown in square brackets.}
+\label{tab:vector-final-literature}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccccccp{0.25\textwidth}}
+\toprule
+Channel & \cite{Godfrey:2005ww} & \cite{Goity:2000dk} & \cite{Green:2016occ} & \cite{Radford:2009bs} & \cite{Chen:2020ejk} & \cite{Korner:1992pz} & \cite{Li:2021qgz,Godfrey:2016nwn,Lu:2016bbk} & \cite{Bondar:2025smw} & This work & Experiment\\
+\midrule
+$D_{s1}(2536)\to D_s^\ast\gamma$ & $5.6$ & $14.6$--$22.8$ & $9.21$ & $8.9$ & $2.96$--$3.02$ & $10.4\pm1.0$ & $\cdots$ & $29$ & $23.0\,[16.5,35.1]$ & no direct radiative measurement; $\Gamma_{\rm tot}=0.92\pm0.05$ MeV \cite{BaBar:2011zpy}\\
+$D_{s1}(2460)\to D_s^\ast\gamma$ & $5.5$ & $14.0$--$25.1$ & $17.4$ & $15.5$ & $4.74$--$4.79$ & $\cdots$ & $\cdots$ & $104$ & $92.3\,[59.7,138.7]$ & no direct $D_s^\ast\gamma$ width; BaBar measured $D_s\gamma$ and $D_s^\ast\pi^0$ modes \cite{BaBar:2006eep}\\
+$B_{s1}(5750)\to B_s^\ast\gamma$ & $\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ & $56$, $36.9$, $39.5$ & $20$ & $10.2\,[6.63,16.24]$ & no established lower $B_{s1}$ state or radiative measurement\\
+$B_{s1}(5830)\to B_s^\ast\gamma$ & $\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ & $53$, $57.3$, $98.8$ & $41$ & $7.46\,[3.30,24.0]$ & no direct radiative measurement; observed in $B^{(*)}K$ spectroscopy \cite{CMS:2018qdl}\\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\noindent\footnotesize For the bottom rows, the combined literature column lists, in order,
+\cite{Li:2021qgz}, \cite{Godfrey:2016nwn}, and \cite{Lu:2016bbk}.
+The machine-readable CSV stores the $\theta$-scan and legacy-photon alternatives.
+
+\bibliographystyle{unsrt}
+\bibliography{../../../shared/bibliography/all}
+
+\end{document}

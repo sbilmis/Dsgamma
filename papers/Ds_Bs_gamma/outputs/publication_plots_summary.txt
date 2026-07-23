@@ -1,0 +1,22 @@
+Publication figures
+===================
+Generated threshold, mixing-angle, contribution-breakdown, and literature-comparison figures.
+Gamma2460_keV: 31.07 to 46.39
+Gamma2536_keV: 4.537 to 8.073
+Gamma2460_keV: 29.2 to 41.82
+Gamma2536_keV: 0.2286 to 18.86
+Contribution breakdown at M2=4.5 GeV^2, sqrt(s0)=2.55 GeV:
+  A Stage 1: G2460 -0.18479, G2536 -0.26099
+  A 3p: G2460 +0.00080, G2536 +0.00113
+  A EM 3p: G2460 -0.02354, G2536 -0.03325
+  B hard: G2460 -0.33400, G2536 +0.23649
+  B 2p DA: G2460 +0.11922, G2536 -0.08441
+  B 3p DA: G2460 +0.00044, G2536 -0.00031
+  B EM 3p: G2460 -0.00268, G2536 +0.00190
+Literature comparison entries:
+  This work (lattice photon input): 13.41 to 21.5 keV
+  This work (legacy chi): 28.48 to 51.07 keV
+  Colangelo LCSR: 19.0 to 29.0 keV
+  VMD: 3.3 to 3.3 keV
+  QM [15]: 6.2 to 6.2 keV
+  QM [11]: 5.08 to 5.08 keV

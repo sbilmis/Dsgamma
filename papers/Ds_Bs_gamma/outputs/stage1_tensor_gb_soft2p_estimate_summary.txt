@@ -1,0 +1,10 @@
+Stage-1 tensor-current soft two-particle estimate
+=================================================
+Complete result includes tensor-DA family and vector f3gamma psi^v DA.
+Vector DA uses the stated physical-residue p^2/(p.q) prescription.
+Hard tensor-current contribution is not included.
+fB_equal_fT, tensor DA only: GB +0.2326 to +0.3315; Gamma2460(partial) 0.00 to 2.62 keV
+fB_equal_fT, with vector diagnostic: GB +0.2326 to +0.3315; Gamma2460(partial) 0.00 to 2.62 keV
+fB_converted_fT_M_over_msum, tensor DA only: GB +0.1289 to +0.1837; Gamma2460(partial) 0.01 to 2.11 keV
+fB_converted_fT_M_over_msum, with vector diagnostic: GB +0.1289 to +0.1837; Gamma2460(partial) 0.01 to 2.11 keV
+Wrote grid to /Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage1_tensor_gb_soft2p_estimate.csv

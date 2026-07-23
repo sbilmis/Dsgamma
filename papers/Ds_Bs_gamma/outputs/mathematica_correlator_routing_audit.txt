@@ -1,0 +1,80 @@
+Correlator and momentum-routing audit
+=====================================
+
+Reference ordering: Rohrwild three-point/background-field form with pPrime=p+q.
+This is the ordering of hep-ph/0505195, Eq. (4.2).
+
+STANDARD VERTEX MOMENTA
+heavy final vertex momentum:
+p
+
+heavy initial vertex momentum:
+p + q
+
+strange final vertex momentum:
+p
+
+strange initial vertex momentum:
+p + q
+
+Standard routing status: PASS
+
+LEGACY VERTEX MOMENTA
+legacy heavy final/initial: actual then required
+{{p, p + q}, {p, p + q}}
+
+legacy strange final/initial: actual then required
+{{p, p - q}, {p, p + q}}
+
+
+Heavy-line Ward residual:
+0
+
+Strange-line Ward residual:
+0
+
+Fermion-line Ward status: PASS
+
+STANDARD E1 TRIANGLE CORES
+A heavy:
+(4*I)*mQ + ((4*I)*mQ^3)/pq - ((4*I)*mQ^2*ms)/pq
+
+A strange:
+(-4*I)*ms + ((4*I)*mQ*ms^2)/pq - ((4*I)*ms^3)/pq
+
+B heavy:
+((8*I)*mQ^2)/(mQ + ms) - ((4*I)*mQ*ms)/(mQ + ms) + ((4*I)*mQ^2*p2)/((mQ + ms)*pq)
+
+B strange:
+((-4*I)*mQ*ms)/(mQ + ms) + ((8*I)*ms^2)/(mQ + ms) + ((4*I)*ms^2*p2)/((mQ + ms)*pq)
+
+LEGACY E1 TRIANGLE CORES
+A heavy:
+(-4*I)*mQ - ((4*I)*mQ^3)/pq + ((4*I)*mQ^2*ms)/pq
+
+A strange:
+(-4*I)*ms - ((4*I)*mQ*ms^2)/pq + ((4*I)*ms^3)/pq
+
+B heavy:
+((-8*I)*mQ^2)/(mQ + ms) + ((4*I)*mQ*ms)/(mQ + ms) - ((4*I)*mQ^2*p2)/((mQ + ms)*pq)
+
+B strange:
+((-4*I)*mQ*ms)/(mQ + ms) - ((4*I)*ms^2*p2)/((mQ + ms)*pq)
+
+STANDARD MINUS LEGACY
+A heavy:
+((8*I)*mQ*(mQ^2 - mQ*ms + pq))/pq
+
+A strange:
+((8*I)*(mQ - ms)*ms^2)/pq
+
+B heavy:
+((8*I)*mQ*(-(ms*pq) + mQ*(p2 + 2*pq)))/((mQ + ms)*pq)
+
+B strange:
+((8*I)*ms^2*(p2 + pq))/((mQ + ms)*pq)
+
+CONCLUSION
+The standard correlator routing is momentum-consistent at both vertices.
+The legacy strange-line routing k-p+q carries p-q, not p+q, at the axial vertex.
+Therefore its strange-line triangle core must not be used as an independent validation of the standard correlator.

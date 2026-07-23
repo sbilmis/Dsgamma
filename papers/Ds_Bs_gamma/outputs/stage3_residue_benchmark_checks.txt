@@ -1,0 +1,31 @@
+This legacy overlap-fit benchmark has been superseded.
+
+Wang pure-axial decay-constant projection benchmark
+====================================================
+Wang arXiv:1506.01993v4 uses J_A=Qbar gamma_mu gamma5 q and
+defines <0|J_A|A>=f_A m_A epsilon_mu.
+The corrected Table-1 result is f_Ds1=0.345+-0.017 GeV;
+0.245+-0.017 GeV is the explicitly corrected obsolete value.
+
+Direct truncated-AA OPE comparison
+  our AA result in Wang's M^2=[2.7,3.3] GeV^2 and
+  s0=[8.8,9.8] GeV^2 window:
+  f_A=0.268614 [0.260658,0.276802] GeV
+  difference using sample std and Wang error: -4.04 sigma
+  conclusion: the present LO+d3+d5 AA truncation does not reproduce
+  Wang's absolute normalization within the quoted uncertainties;
+  this does not validate or invalidate the mixed two-pole residues.
+
+Mixed-current projection at theta_Ds=26.6+-0.6 deg
+  f1=0.404608 [0.379863,0.429098] GeV
+  f2=0.167731 [0.159392,0.175632] GeV
+  sin(theta) f1=0.181245 [0.169165,0.192960] GeV
+  cos(theta) f2=0.149815 [0.142446,0.157274] GeV
+  two-pole one-pole-equivalent f_A=0.230259 [0.219392,0.241812] GeV
+  normalized Pi12 residual=0.1830 [0.1421,0.2247]
+
+Interpretation
+  Wang benchmarks only the pure-J_A correlator scale.  Neither f1 nor
+  f2 should be set equal to Wang's result at the physical angle.
+  The direct-AA and projected two-pole quantities use different pole
+  models and must not be advertised as an exact reproduction test.

@@ -1,0 +1,46 @@
+Hard-triangle Feynman-parameter audit
+========================================
+
+Kinematics: q^2=0, p^2=p2, (p+q)^2=pPrime2, x+y+z=1.
+
+HEAVY-LINE EMISSION
+x multiplies dH1=(k+q)^2-mQ^2;
+y multiplies dH2=k^2-mQ^2;
+z multiplies dH3=(k-p)^2-ms^2.
+Loop shift R_H in ell=k+R_H:
+q*x - p*z
+
+Delta_H:
+mQ^2*(x + y) + ms^2*z - pPrime2*x*z - p2*y*z
+
+x dH1+y dH2+z dH3 = ell^2-Delta_H.
+Identity residual:
+0
+
+STRANGE-LINE EMISSION
+x multiplies dS1=k^2-mQ^2;
+y multiplies dS2=(k-p)^2-ms^2;
+z multiplies dS3=(k-p-q)^2-ms^2.
+Loop shift R_S in ell=k+R_S:
+-(p*y) - (p + q)*z
+
+Delta_S:
+mQ^2*x - p2*x*y - pPrime2*x*z + ms^2*(y + z)
+
+x dS1+y dS2+z dS3 = ell^2-Delta_S.
+Identity residual:
+0
+
+FEYNMAN-PARAMETER MEASURE
+1/(D1 D2 D3) = 2 Integral_0^1 dx Integral_0^(1-x) dy
+                  1/[x D1+y D2+(1-x-y)D3]^3.
+
+These Delta polynomials are the starting point for the loop integral,
+double discontinuity, continuum subtraction, and double Borel transform.
+
+PASS  heavy shifted-denominator identity
+PASS  strange shifted-denominator identity
+PASS  heavy pairwise-invariant reconstruction
+PASS  strange pairwise-invariant reconstruction
+
+OVERALL STATUS: PASS

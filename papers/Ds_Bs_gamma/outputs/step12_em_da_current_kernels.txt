@@ -1,0 +1,41 @@
+Electromagnetic S_gamma and T4^gamma current kernels
+===================================================
+
+V is Rohrwild's D* reference current; A and B are the present E1 basis currents.
+
+V_Sg_sigma:
+((-8*I)*Pair[Momentum[k], Momentum[q]])/Pair[Momentum[p], Momentum[q]]
+
+V_T4g_sigma:
+(-16*Pair[Momentum[k], Momentum[q]])/Pair[Momentum[p], Momentum[q]]
+
+V_Sg_xgamma:
+0
+
+V_T4g_xgamma:
+((8*I)*mQ*Pair[Momentum[q], Momentum[x]])/Pair[Momentum[p], Momentum[q]]
+
+A_Sg_sigma:
+(8*Pair[Momentum[k], Momentum[q]])/Pair[Momentum[p], Momentum[q]]
+
+A_T4g_sigma:
+((-16*I)*Pair[Momentum[k], Momentum[q]])/Pair[Momentum[p], Momentum[q]]
+
+A_Sg_xgamma:
+((-4*I)*mQ*Pair[Momentum[q], Momentum[x]])/Pair[Momentum[p], Momentum[q]]
+
+A_T4g_xgamma:
+0
+
+B_Sg_sigma:
+(8*mQ)/(mQ + ms)
+
+B_T4g_sigma:
+((-16*I)*mQ)/(mQ + ms)
+
+B_Sg_xgamma:
+((-2*I)*(Pair[Momentum[k], Momentum[x]]*Pair[Momentum[p], Momentum[q]]^2 - Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[q]]*Pair[Momentum[p], Momentum[x]] + Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[p]]*Pair[Momentum[q], Momentum[x]] + Pair[Momentum[k], Momentum[p]]*Pair[Momentum[p], Momentum[q]]*Pair[Momentum[q], Momentum[x]] + 2*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[q]]*Pair[Momentum[q], Momentum[x]]))/((mQ + ms)*Pair[Momentum[p], Momentum[q]]^2)
+
+B_T4g_xgamma:
+(-4*(Pair[Momentum[k], Momentum[x]]*Pair[Momentum[p], Momentum[q]]^2 - Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[q]]*Pair[Momentum[p], Momentum[x]] - Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[p]]*Pair[Momentum[q], Momentum[x]] + Pair[Momentum[k], Momentum[p]]*Pair[Momentum[p], Momentum[q]]*Pair[Momentum[q], Momentum[x]] - 2*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[q]]*Pair[Momentum[q], Momentum[x]]))/((mQ + ms)*Pair[Momentum[p], Momentum[q]]^2)
+

@@ -1,0 +1,3344 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!60!black,
+  citecolor=blue!60!black,
+  urlcolor=blue!60!black
+}
+
+\newcommand{\Ds}{D_s}
+\newcommand{\Dsone}{D_{s1}}
+\newcommand{\Bs}{B_s}
+\newcommand{\Bsone}{B_{s1}}
+\newcommand{\GeV}{\mathrm{GeV}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\ee}{\mathrm{e}}
+\newcommand{\Tr}{\mathrm{Tr}}
+\newcommand{\slashp}[1]{#1\!\!\!/}
+\newcommand{\qbar}{\bar q}
+\newcommand{\sbar}{\bar s}
+\newcommand{\vev}[1]{\left\langle #1 \right\rangle}
+
+\title{Working Notes for $\Dsone \to \Ds \gamma$ in Light-Cone QCD Sum Rules}
+\author{Ds gamma project}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+These notes are a living derivation for the light-cone QCD sum-rule
+calculation of $\Dsone(2460)\to\Ds\gamma$ and
+$\Dsone(2536)\to\Ds\gamma$.  The purpose is pedagogical as well as practical:
+each step is written so that a master's student can follow the choices,
+conventions, and algebra before the final paper-level formulas are assembled.
+\end{abstract}
+
+\section{Conventions}
+
+We use the mostly-minus metric
+\begin{equation}
+  g_{\mu\nu}=\mathrm{diag}(+1,-1,-1,-1),
+\end{equation}
+and
+\begin{equation}
+  \{\gamma_\mu,\gamma_\nu\}=2g_{\mu\nu},\qquad
+  \sigma_{\mu\nu}=\frac{\ii}{2}[\gamma_\mu,\gamma_\nu],
+  \qquad
+  \gamma_5=\ii\gamma^0\gamma^1\gamma^2\gamma^3 .
+\end{equation}
+The Levi-Civita convention is
+\begin{equation}
+  \epsilon^{0123}=+1,\qquad \epsilon_{0123}=-1,
+\end{equation}
+so that
+\begin{equation}
+  \Tr[\gamma_5\gamma_\mu\gamma_\nu\gamma_\alpha\gamma_\beta]
+  =-4\ii\,\epsilon_{\mu\nu\alpha\beta}.
+\end{equation}
+Our Fourier convention for a propagator is
+\begin{equation}
+  S(x)=\int\frac{d^4 k}{(2\pi)^4}\,\ee^{-\ii k\cdot x}\,\widetilde S(k).
+\end{equation}
+
+\section{Currents and Momentum Assignment}
+
+The external momenta are
+\begin{equation}
+  P=p+q,
+\end{equation}
+where $P$ is the initial axial-meson momentum, $p$ is the final pseudoscalar
+$\Ds$ momentum, and $q$ is the real-photon momentum.
+
+The pseudoscalar interpolating current is
+\begin{equation}
+  J_{\Ds}(x)=\sbar(x)\,\ii\gamma_5\,Q(x).
+\end{equation}
+For the axial channel we use two independent currents,
+\begin{align}
+  J^{(0)}_{A\mu}(x)
+  &= \sbar(x)\gamma_\mu\gamma_5 Q(x),\\
+  J^{(0)}_{B\mu}(x)
+  &= \frac{\ii}{m_Q+m_s}\,
+     \sbar(x)\sigma_{\mu\alpha}P^\alpha\gamma_5 Q(x).
+\end{align}
+The tensor current contracts with $P^\alpha$, not $p^\alpha$, because it
+interpolates the initial axial state.  The factor $1/(m_Q+m_s)$ restores the
+same mass dimension as the axial-vector current.
+
+\section{Correlation Function}
+
+For a generic axial current $\Gamma_\mu\in\{\gamma_\mu\gamma_5,\,
+\ii\sigma_{\mu\alpha}P^\alpha\gamma_5/(m_Q+m_s)\}$ we study
+\begin{equation}
+  \Pi_\mu(p,q)
+  =
+  \ii\int d^4x\,\ee^{\ii p\cdot x}
+  \langle \gamma(q,\varepsilon)|
+  T\{ \sbar(x)\Gamma_\mu Q(x)\,
+       \bar Q(0)\ii\gamma_5 s(0)\}
+  |0\rangle .
+  \label{eq:correlator}
+\end{equation}
+The target Lorentz structure for the $1^+\to0^-\gamma$ transition is
+\begin{equation}
+  (\eta\cdot\varepsilon^*)(p\cdot q)
+  -(\eta\cdot q)(p\cdot\varepsilon^*).
+\end{equation}
+On the correlator side we therefore project onto an equivalent transverse
+structure built from the open axial index and the photon polarization.
+With open indices this structure is represented by
+\begin{equation}
+  T_{\mu\nu}=(p\cdot q)g_{\mu\nu}-q_\mu p_\nu,
+  \qquad
+  S_{\mu\nu}\equiv -T_{\mu\nu}=p_\nu q_\mu-(p\cdot q)g_{\mu\nu}.
+\end{equation}
+For a real photon, $q^2=0$, it obeys
+\begin{equation}
+  q^\nu S_{\mu\nu}=0,
+\end{equation}
+so the projected invariant amplitude is gauge invariant under
+$\varepsilon_\nu\to\varepsilon_\nu+\lambda q_\nu$.  In scalar form the same
+statement is
+\begin{equation}
+  (\eta\cdot q)(p\cdot q)-(\eta\cdot q)(p\cdot q)=0
+\end{equation}
+after replacing $\varepsilon\to q$.
+
+\section{Wick Contraction and OPE Bookkeeping}
+
+The OPE is separated into a hard-photon sector and a soft-photon sector:
+\begin{equation}
+  \Pi_\mu^{\mathrm{OPE}}
+  =
+  \Pi_\mu^{\mathrm{hard}}
+  +
+  \Pi_\mu^{\mathrm{soft}}.
+\end{equation}
+This split is important because the two terms describe different physics and
+must not be double counted.
+
+\subsection{Hard photon emission}
+
+In the hard sector the photon is emitted perturbatively from either the heavy
+quark or the strange quark.  After Wick contraction one obtains
+\begin{equation}
+  \Pi_\mu^{\mathrm{hard}}
+  =
+  -\ii N_c\int d^4x\,\ee^{\ii p\cdot x}
+  \Tr_D\!\left[
+    \Gamma_\mu S_Q^\gamma(x)\,\ii\gamma_5\,S_s^0(-x)
+    +
+    \Gamma_\mu S_Q^0(x)\,\ii\gamma_5\,S_s^\gamma(-x)
+  \right],
+  \label{eq:hard-wick}
+\end{equation}
+where $N_c=3$ and $\Tr_D$ denotes the Dirac trace.  The free massive propagator is
+\begin{equation}
+  S_q^0(x)
+  =
+  \int\frac{d^4k}{(2\pi)^4}\,\ee^{-\ii k\cdot x}
+  \frac{\ii(\slashp{k}+m_q)}{k^2-m_q^2}.
+\end{equation}
+The minus sign in Eq.~\eqref{eq:hard-wick} is the closed-fermion-loop sign:
+$\langle T\{\bar s\Gamma Q\,\bar Q\Gamma_Ps\}\rangle
+=-\Tr_D[\Gamma S_Q\Gamma_P S_s]$.  Propagator factors and the electromagnetic
+vertex supply their own factors of $\ii$ and are kept separate from this Wick
+sign.  The numerator-only FeynCalc files omit all of these overall factors by
+construction.
+We keep explicit powers of $m_s$, including possible $m_s^2$ terms.
+
+The first-order electromagnetic background-field correction for a generic quark
+flavor $q$ is
+\begin{align}
+  S_q^\gamma(x)
+  &=
+  -\ii e_q
+  \int\frac{d^4k}{(2\pi)^4}\,\ee^{-\ii k\cdot x}
+  \int_0^1du
+  \Bigg[
+    \frac{\slashp{k}+m_q}{2(m_q^2-k^2)^2}
+    F^{\alpha\beta}(ux)\sigma_{\alpha\beta}
+    +
+    \frac{u x_\alpha}{m_q^2-k^2}
+    F^{\alpha\beta}(ux)\gamma_\beta
+  \Bigg].
+  \label{eq:em-propagator}
+\end{align}
+In Eq.~\eqref{eq:hard-wick} this generic formula is used twice:
+\begin{align}
+  S_Q^\gamma(x)
+  &= S_q^\gamma(x)\big|_{q\to Q,\;m_q\to m_Q,\;e_q\to e_Q},\\
+  S_s^\gamma(x)
+  &= S_q^\gamma(x)\big|_{q\to s,\;m_q\to m_s,\;e_q\to e_s}.
+\end{align}
+Thus the hard sector contains both heavy-line and strange-line electromagnetic
+background-field insertions.
+For a real photon we write
+\begin{equation}
+  F^{\alpha\beta}(ux)
+  =
+  \ii(\varepsilon^\alpha q^\beta-\varepsilon^\beta q^\alpha)
+  \ee^{\ii u q\cdot x},
+\end{equation}
+with the overall phase kept consistent with the Fourier convention.
+
+Equation~\eqref{eq:em-propagator} is not a vacuum-condensate correction.  It is
+the quark propagator in an external electromagnetic field and is included in
+the base analysis.  What we do not include in the base hard sector are the
+ordinary SVZ-style condensate-expanded propagator terms such as
+$\langle\bar s s\rangle$, $\langle\bar s g_s\sigma Gs\rangle$, or
+$\langle G^2\rangle$ propagator corrections.
+
+\subsection{Equivalent momentum-space vertex form}
+
+For FeynCalc trace checks it is often simpler to use the equivalent explicit
+photon-vertex representation.  With photon index $\nu$,
+\begin{align}
+  N_{Q,\mu\nu}
+  &=
+  \Tr_D\!\left[
+    \Gamma_\mu
+    (\slashp{k}+\slashp{q}+m_Q)
+    \gamma_\nu
+    (\slashp{k}+m_Q)
+    \ii\gamma_5
+    (\slashp{k}-\slashp{p}+m_s)
+  \right],
+  \\
+  N_{s,\mu\nu}
+  &=
+  \Tr_D\!\left[
+    \Gamma_\mu
+    (\slashp{k}+m_Q)
+    \ii\gamma_5
+    (\slashp{k}-\slashp{p}+m_s)
+    \gamma_\nu
+    (\slashp{k}-\slashp{p}+\slashp{q}+m_s)
+  \right].
+\end{align}
+These numerators are accompanied by the denominators
+\begin{align}
+  D_Q &=
+  [(k+q)^2-m_Q^2][k^2-m_Q^2][(k-p)^2-m_s^2],\\
+  D_s &=
+  [k^2-m_Q^2][(k-p)^2-m_s^2][(k-p+q)^2-m_s^2].
+\end{align}
+The explicit-vertex form and the background-field form represent the same hard
+emission physics.  We must not add both as independent contributions.
+
+\subsection{Soft photon emission: two-particle photon DAs}
+
+In the soft sector the photon is represented by its light-cone distribution
+amplitudes.  Contracting only the heavy quark gives
+\begin{equation}
+  \Pi_\mu^{\mathrm{soft},2p}
+  =
+  \ii\int d^4x\,\ee^{\ii p\cdot x}
+  [\Gamma_\mu S_Q^0(x)\ii\gamma_5]_{\alpha\beta}
+  \langle\gamma(q,\varepsilon)|
+  \sbar_\alpha(x)s_\beta(0)
+  |0\rangle .
+\end{equation}
+Fierz rearrangement converts the open spinor indices to a basis of Dirac
+bilinears,
+\begin{equation}
+  \sbar_\alpha(x)s_\beta(0)
+  =
+  -\frac14\sum_i(\Gamma_i)_{\beta\alpha}
+  \sbar(x)\Gamma_i s(0),
+\end{equation}
+so that
+\begin{equation}
+  \Pi_\mu^{\mathrm{soft},2p}
+  =
+  -\frac{\ii}{4}
+  \int d^4x\,\ee^{\ii p\cdot x}
+  \sum_i
+  \Tr_D[\Gamma_\mu S_Q^0(x)\ii\gamma_5\Gamma_i]\,
+  \langle\gamma(q,\varepsilon)|
+  \sbar(x)\Gamma_i s(0)
+  |0\rangle .
+\end{equation}
+The photon matrix elements are then expressed in terms of two-particle photon
+DAs.  Parameters such as $\chi\langle\bar s s\rangle$ enter here as part of the
+photon wavefunction normalization; they are not condensate corrections to the
+hard propagator.
+
+\subsection{Soft photon emission: three-particle photon DAs}
+
+To include three-particle photon DAs we must also allow one background gluon to
+come from the heavy-quark propagator,
+\begin{align}
+  S_Q^G(x)
+  &=
+  -\ii g_s
+  \int\frac{d^4k}{(2\pi)^4}\,\ee^{-\ii k\cdot x}
+  \int_0^1du
+  \Bigg[
+    \frac{\slashp{k}+m_Q}{2(m_Q^2-k^2)^2}
+    G^{\alpha\beta}(ux)\sigma_{\alpha\beta}
+    +
+    \frac{u x_\alpha}{m_Q^2-k^2}
+    G^{\alpha\beta}(ux)\gamma_\beta
+  \Bigg].
+  \label{eq:gluon-propagator}
+\end{align}
+This term is not a gluon-condensate correction.  It is an operator insertion
+that combines with photon matrix elements of the form
+\begin{equation}
+  \langle\gamma(q,\varepsilon)|
+  \sbar(x)\Gamma_i g_sG_{\alpha\beta}(ux)s(0)
+  |0\rangle ,
+\end{equation}
+which define the three-particle photon DAs.
+
+\section{Staged Calculation Plan}
+
+We proceed in two stages.
+
+\paragraph{Stage 1.}
+Include the hard photon emission terms and the two-particle photon DAs:
+\begin{equation}
+  \Pi_\mu^{\mathrm{Stage\ 1}}
+  =
+  \Pi_\mu^{\mathrm{hard}}
+  +
+  \Pi_\mu^{\mathrm{soft},2p}.
+\end{equation}
+This stage keeps all explicit $m_s$ terms and omits ordinary
+condensate-expanded propagators.
+
+\paragraph{Stage 2.}
+Add the three-particle photon DA contributions generated by
+$S_Q^G$ and the corresponding light-cone matrix elements:
+\begin{equation}
+  \Pi_\mu^{\mathrm{Stage\ 2}}
+  =
+  \Pi_\mu^{\mathrm{Stage\ 1}}
+  +
+  \Pi_\mu^{\mathrm{soft},3p}.
+\end{equation}
+This staging keeps the derivation auditable: first we verify the core hard and
+two-particle DA structures, then we add the more involved background-gluon
+terms.
+
+\section{Current FeynCalc Artifacts}
+
+The script \texttt{scripts/step2\_current\_building\_blocks.wl} checks the
+basic Dirac conventions and defines the current vertices.  The script
+\texttt{scripts/step2\_hard\_photon\_numerators.wl} computes numerator-level
+hard-photon traces in the explicit photon-vertex representation.  These traces
+are stored in \texttt{outputs/step2\_hard\_photon\_numerators.txt}.
+
+The script \texttt{scripts/step2\_e1\_project\_hard\_numerators.wl} applies the
+E1 projector
+\begin{equation}
+  {\cal P}^{\mu\nu}_{E1}
+  =
+  \frac{p^\nu q^\mu-(p\cdot q)g^{\mu\nu}}{2(p\cdot q)^2},
+\end{equation}
+which satisfies ${\cal P}_{E1}^{\mu\nu}
+[p_\nu q_\mu-(p\cdot q)g_{\mu\nu}]=1$ for $q^2=0$.  The projected hard
+numerators are stored in
+\texttt{outputs/step2\_e1\_projected\_hard\_numerators.txt}.
+
+The companion script \texttt{scripts/ward\_transversality\_check.wl} verifies
+the Ward/transversality properties of the same E1 tensor with FeynCalc.  Its
+output is stored in
+\texttt{outputs/ward\_transversality\_check.txt}.
+
+The script \texttt{scripts/step2\_soft\_2p\_fierz\_traces.wl} computes the
+trace factors multiplying the two-particle photon DA matrix elements after the
+Fierz rearrangement.  The output
+\texttt{outputs/step2\_soft\_2p\_fierz\_traces.txt} shows which bilinears feed
+the axial current and which feed the tensor current.
+
+\section{Stage 1 Axial-Current Numerical Baseline}
+
+Before deriving the tensor-current sum rule, we implemented the known
+single-axial-current result for
+$D_{s1}(2460)\to D_s\gamma$ as a benchmark.  This is the coupling called
+$g_1$ by Colangelo, De Fazio, and Ozpineci.  In our notation this is the
+axial-current form factor $G_A$.
+
+The Stage 1 version contains
+\begin{equation}
+  G_A^{\mathrm{Stage\ 1}}
+  =
+  G_A^{\mathrm{pert}}
+  +
+  G_A^{\chi\phi_\gamma}
+  +
+  G_A^{\mathbb A,\bar H_\gamma}
+  +
+  G_A^{f_{3\gamma}\Psi^v},
+\end{equation}
+where the three-particle DA integral usually denoted by ${\cal F}_1$ is omitted
+until Stage 2.
+
+The numerical script is
+\begin{center}
+  \texttt{scripts/stage1\_axial\_g1\_baseline.py}.
+\end{center}
+It writes the full Borel/threshold grid to
+\begin{center}
+  \texttt{outputs/stage1\_axial\_g1\_baseline.csv}.
+\end{center}
+
+\subsection{Magnetic-susceptibility sign convention}
+
+The Colangelo paper prints $\chi=-(3.15\pm0.30)\,\mathrm{GeV}^{-2}$ in its
+matrix-element convention.  In this project we store the BBK magnitude as
+\begin{equation}
+  \chi(1\,\mathrm{GeV})=+3.15\pm0.30\,\mathrm{GeV}^{-2}.
+\end{equation}
+Therefore the sign of the $\chi\phi_\gamma$ term in the implemented sum rule is
+flipped relative to the literal printed formula.  This is a convention
+translation, not a physical change.  A diagnostic run that inserts positive
+$\chi$ into the printed negative-$\chi$ formula gives a much larger width and is
+kept only as a warning check.
+
+\subsection{Preliminary Stage 1 result}
+
+Using the project inputs, $u_0=1/2$, $3\le M^2\le6\,\mathrm{GeV}^2$, and
+$s_0=(2.50,2.55,2.60)^2\,\mathrm{GeV}^2$, the axial-current Stage 1 grid gives
+\begin{equation}
+  -0.399 \le G_A^{\mathrm{Stage\ 1}} \le -0.314\quad \mathrm{GeV}^{-1}.
+\end{equation}
+With
+\begin{equation}
+  \Gamma=\frac{\alpha_{\rm em}}{3}G^2|\vec q_\gamma|^3,
+  \label{eq:width}
+\end{equation}
+this corresponds to
+\begin{equation}
+  20.8\,\mathrm{keV}
+  \le
+  \Gamma_A^{\mathrm{Stage\ 1}}[D_{s1}(2460)\to D_s\gamma]
+  \le
+  33.5\,\mathrm{keV}.
+\end{equation}
+This is not yet the physical mixed-state result.  It is the axial-current
+baseline that will be combined with the tensor-current form factor after the
+$J_B$ sum rule is derived.
+
+\section{First Tensor-Current Step: Leading-Twist Soft Contribution}
+
+The tensor-current calculation starts from the trace-level identity produced by
+\texttt{scripts/step3\_soft\_2p\_e1\_projection.wl}.  For the two-particle
+tensor photon DA matrix element, the E1 projections are
+\begin{align}
+  {\cal P}_{E1}\!\left[
+    \Tr(J_A\,S_Q\,i\gamma_5\,\sigma_{\rho\lambda})
+    (\varepsilon^\rho q^\lambda-\varepsilon^\lambda q^\rho)
+  \right]
+  &=
+  8\,\frac{k\cdot q}{p\cdot q},\\
+  {\cal P}_{E1}\!\left[
+    \Tr(J_B\,S_Q\,i\gamma_5\,\sigma_{\rho\lambda})
+    (\varepsilon^\rho q^\lambda-\varepsilon^\lambda q^\rho)
+  \right]
+  &=
+  8\,\frac{m_Q}{m_Q+m_s}.
+\end{align}
+After the two-particle DA Fourier integral and double Borel transform,
+$k=p+\bar u q$, hence $k\cdot q=p\cdot q$ for $q^2=0$.  Therefore, before the
+hadronic decay-constant normalization, the leading-twist tensor-current OPE
+piece is
+\begin{equation}
+  \Pi_{B}^{\chi\phi_\gamma}
+  =
+  \frac{m_Q}{m_Q+m_s}\,
+  \Pi_{A}^{\chi\phi_\gamma}.
+\end{equation}
+
+The exploratory script
+\texttt{scripts/stage1\_tensor\_gb\_leading\_twist.py} uses this relation to
+estimate only the $\chi\phi_\gamma$ part of $G_B$.  This is not the final
+tensor-current sum rule.  It omits the tensor-current hard contribution, the
+vector DA contribution, and the Stage 2 three-particle DA terms.
+
+Using the project inputs, the partial leading-twist estimate gives
+\begin{align}
+  G_B^{\chi\phi_\gamma}
+  &\simeq +0.205\text{ to }+0.273\ \mathrm{GeV}^{-1},
+  &&\text{if } f_B=f_T,\\
+  G_B^{\chi\phi_\gamma}
+  &\simeq +0.114\text{ to }+0.151\ \mathrm{GeV}^{-1},
+  &&\text{if } f_B=f_T\,\frac{m_{D_{s1}}}{m_c+m_s}.
+\end{align}
+The sizeable sign difference relative to $G_A$ means that the physical mixed
+amplitudes can be sensitive to the tensor-current normalization.  This is why
+the next step is to finish the full $G_B$ sum rule before quoting final mixed
+widths.
+
+\section{Decay-Constant Normalization Before Mixing}
+
+The labels $f_A$, $f_B$, and $f_T$ must not be mixed casually.  The axial
+current couples to the axial basis state through
+\begin{equation}
+  \langle 0|J_A^\mu|D_{s1}^{A}(P,\eta)\rangle
+  =
+  f_A m_A \eta^\mu ,
+\end{equation}
+whereas our tensor-derived current is
+\begin{equation}
+  J_B^\mu
+  =
+  \frac{\ii}{m_c+m_s}\,
+  \bar s\sigma^{\mu\alpha}P_\alpha\gamma_5 c .
+\end{equation}
+The corresponding decay constant is defined by
+\begin{equation}
+  \langle 0|J_B^\mu|D_{s1}^{B}(P,\eta)\rangle
+  =
+  f_B m_B \eta^\mu .
+\end{equation}
+Therefore $f_B=f_T$ is not a physical statement by itself.  It is only true if
+the tabulated $f_T$ is already defined for the same current $J_B^\mu$ and with
+the same mass normalization.  If instead the input table gives the more common
+tensor-current matrix element
+\begin{equation}
+  \langle 0|\bar s\sigma_{\mu\nu}\gamma_5 c|D_{s1}^{B}(P,\eta)\rangle
+  =
+  f_T(\eta_\mu P_\nu-\eta_\nu P_\mu),
+\end{equation}
+then contraction with $P^\nu/(m_c+m_s)$ gives the effective normalization
+\begin{equation}
+  f_B^{\rm eff}
+  \simeq
+  f_T\,\frac{m_{D_{s1}}}{m_c+m_s},
+\end{equation}
+up to the sign fixed by the precise convention for
+$\sigma_{\mu\nu}\gamma_5$ and by the transverse condition $\eta\cdot P=0$.
+
+Only after $G_A$ and $G_B$ have been computed with their own basis-current
+decay constants do we form the physical amplitudes:
+\begin{align}
+  G_{2460}
+  &=
+  \sin\theta\,G_A+\cos\theta\,G_B,\\
+  G_{2536}
+  &=
+  \cos\theta\,G_A-\sin\theta\,G_B.
+\end{align}
+Thus the sine--cosine factors belong to the physical-state mixing of amplitudes,
+not to an arbitrary identification $f_B=f_T$.  In the numerical scripts,
+$f_B=f_T$ is kept only as a diagnostic.  The converted
+$f_B=f_T m_{D_{s1}}/(m_c+m_s)$ option is the safer central normalization unless
+the input-table definition of $f_T$ is changed.
+
+\subsection{Physical-current two-point normalization check}
+
+There is one further normalization issue that should be separated from the
+three-point OPE calculation.  The two basis currents $J_A^\mu$ and $J_B^\mu$
+are not necessarily the same as the physical currents that interpolate only
+$\Dsone(2460)$ or only $\Dsone(2536)$.  If we define
+\begin{align}
+  J_1^\mu &= \sin\theta\,J_A^\mu+\cos\theta\,J_B^\mu,\\
+  J_2^\mu &= \cos\theta\,J_A^\mu-\sin\theta\,J_B^\mu,
+\end{align}
+then the physical decay constants should be defined by
+\begin{align}
+  \langle0|J_1^\mu|\Dsone(2460)(P,\eta)\rangle
+  &= f_1 M_{2460}\eta^\mu,\\
+  \langle0|J_2^\mu|\Dsone(2536)(P,\eta)\rangle
+  &= f_2 M_{2536}\eta^\mu .
+\end{align}
+These constants are, in principle, obtained from two-point sum rules, not by
+identifying them directly with $f_A$ and $f_B$.  For the transverse invariant
+amplitudes of the two-point functions one has schematically
+\begin{align}
+  \Pi_{11}
+  &= \sin^2\theta\,\Pi_{AA}
+     +\cos^2\theta\,\Pi_{BB}
+     +2\sin\theta\cos\theta\,\Pi_{AB},\\
+  \Pi_{22}
+  &= \cos^2\theta\,\Pi_{AA}
+     +\sin^2\theta\,\Pi_{BB}
+     -2\sin\theta\cos\theta\,\Pi_{AB},
+\end{align}
+and after Borel transformation and continuum subtraction,
+\begin{align}
+  f_1^2 M_{2460}^2\,\exp(-M_{2460}^2/M^2)
+  &=
+  \widehat{\mathcal B}\,\Pi_{11}^{\rm OPE},\\
+  f_2^2 M_{2536}^2\,\exp(-M_{2536}^2/M^2)
+  &=
+  \widehat{\mathcal B}\,\Pi_{22}^{\rm OPE}.
+\end{align}
+The mixed off-diagonal invariant
+\begin{equation}
+  \Pi_{12}
+  =\sin\theta\cos\theta\,(\Pi_{AA}-\Pi_{BB})
+   +(\cos^2\theta-\sin^2\theta)\Pi_{AB}
+\end{equation}
+is a useful diagnostic: for an exactly diagonal physical-current basis it
+should be small in the chosen Borel window, or it can be used to determine the
+preferred mixing angle.
+
+This affects only the final hadronic normalization, not the hard-photon or
+photon-DA OPE kernels already derived in the three-point calculation.  If the
+three-point invariant amplitudes for the basis currents are written as
+\begin{align}
+  \Pi_A^{(3pt)} &\propto f_A\,G_A,\\
+  \Pi_B^{(3pt)} &\propto f_B\,G_B,
+\end{align}
+then the physical-current normalized couplings are
+\begin{align}
+  G_{2460}^{\rm phys}
+  &=
+  \frac{\sin\theta\,f_A\,G_A+\cos\theta\,f_B\,G_B}{f_1},
+  \label{eq:physical-current-g1}\\
+  G_{2536}^{\rm phys}
+  &=
+  \frac{\cos\theta\,f_A\,G_A-\sin\theta\,f_B\,G_B}{f_2},
+  \label{eq:physical-current-g2}
+\end{align}
+up to the obvious mass factors if the two basis-current residues are defined
+with different hadron-mass normalizations.  The numerical tables above instead
+use the basis-current-normalized combination
+\begin{align}
+  G_{2460}^{\rm basis}
+  &= \sin\theta\,G_A+\cos\theta\,G_B,\\
+  G_{2536}^{\rm basis}
+  &= \cos\theta\,G_A-\sin\theta\,G_B.
+\end{align}
+Therefore the existing results should be kept, but labeled as the
+``basis-current normalization baseline''.  They are not invalid: they contain
+the completed Stage-1 and Stage-2 OPE calculation, and they are the correct
+starting point for phenomenology.  A final physical-current normalization
+update requires evaluating the two-point sum rules for $f_1$ and $f_2$ using
+$\Pi_{AA}$, $\Pi_{BB}$ and $\Pi_{AB}$.  If $f_1$ and $f_2$ are close to the
+effective residues assumed in the basis normalization, the present tables will
+change only mildly; if not, the couplings in
+Eqs.~\eqref{eq:physical-current-g1}--\eqref{eq:physical-current-g2} should
+replace the basis-current values in the final paper tables.
+
+\section{Tensor-Current Hard Term: Triangle Reduction}
+
+The hard tensor-current numerator is more complicated than the axial one because
+the $J_B$ current introduces an extra factor of $P^\alpha$ and therefore higher
+powers of the loop momentum after E1 projection.  The script
+\texttt{scripts/step3\_tensor\_hard\_triangle\_reduction.wl} rewrites scalar
+products such as $k^2$, $k\cdot p$, and $k\cdot q$ in terms of inverse
+propagator denominators.  For the heavy-line photon emission we define
+\begin{align}
+  d_{H1}&=(k+q)^2-m_Q^2,\\
+  d_{H2}&=k^2-m_Q^2,\\
+  d_{H3}&=(k-p)^2-m_s^2,
+\end{align}
+and similarly for the strange-line photon emission.  Setting
+$d_{Hi}=0$ isolates the genuine three-denominator triangle core.  For the
+tensor current this gives
+\begin{align}
+  N_{B,H}^{\rm core}
+  &=
+  \frac{-8\ii m_Q^2+4\ii m_Qm_s}{m_Q+m_s}
+  -
+  \frac{4\ii m_Q^2 p^2}{(m_Q+m_s)(p\cdot q)},\\
+  N_{B,s}^{\rm core}
+  &=
+  \frac{-4\ii m_Qm_s}{m_Q+m_s}
+  -
+  \frac{4\ii m_s^2 p^2}{(m_Q+m_s)(p\cdot q)}.
+\end{align}
+
+The same reduction was also performed for the axial current in
+\texttt{scripts/step3\_axial\_hard\_triangle\_reduction.wl}.  This is a useful
+calibration because the axial hard term has a known published spectral density.
+
+\subsection{Why denominator-cancellation terms are separated}
+
+Terms proportional to one or more inverse denominators cancel one or more
+propagators.  After such a cancellation the loop integral contains at most two
+propagators.  These reduced integrals depend on at most one of the two external
+virtualities, $p^2$ or $(p+q)^2$, and therefore do not generate the double-pole
+structure selected by the double Borel transform.  They are recorded in the
+output files for auditability, but the double-pole sum rule is built from the
+three-denominator triangle core.
+
+This observation narrows the remaining hard-tensor task: derive the double
+spectral density associated with the tensor-current triangle core and match it
+to the same E1 invariant amplitude used for the axial-current benchmark.
+
+\section{First Hard-Tensor Spectral Density Candidate}
+
+The next step is to translate the triangle core into a perturbative spectral
+density.  We do this by calibrating against the known axial-current result.
+For one photon-emitting line, let $m_i$ be the emitting-quark mass and $m_j$ the
+spectator mass.  The axial triangle core has the schematic form
+\begin{equation}
+  N_i^{A,\rm core}
+  =
+  -4\ii
+  \left[
+    a_i+\frac{b_i}{p\cdot q}
+  \right].
+\end{equation}
+Comparing with the published axial spectral density fixes the replacement
+\begin{align}
+  -4\ii\,a_i
+  &\longrightarrow
+  2a_i
+  \log\frac{s-m_j^2+m_i^2-\lambda^{1/2}(s,m_j^2,m_i^2)}
+           {s-m_j^2+m_i^2+\lambda^{1/2}(s,m_j^2,m_i^2)},\\
+  -4\ii\,\frac{b_i}{p\cdot q}
+  &\longrightarrow
+  \frac{b_i}{m_i^2}\,
+  \frac{m_j^2-m_i^2-s}{s^2}\,
+  \lambda^{1/2}(s,m_j^2,m_i^2).
+\end{align}
+The overall factor is $-3/(8\pi^2)$, and the total axial density is assembled
+as the strange-emission contribution minus the heavy-emission contribution,
+with the corresponding charges.  The script
+\begin{center}
+  \texttt{scripts/stage1\_tensor\_gb\_hard\_candidate.py}
+\end{center}
+first applies these rules back to the axial current and reproduces
+Colangelo's $\rho^P(s)$ with a maximum numerical difference
+$1.4\times10^{-17}$ on the test grid.
+
+For the tensor current the core contains $p^2/(p\cdot q)$:
+\begin{align}
+  N_{B,H}^{\rm core}
+  &=
+  -4\ii
+  \left[
+    \frac{2m_Q^2-m_Qm_s}{m_Q+m_s}
+    +
+    \frac{m_Q^2p^2}{(m_Q+m_s)(p\cdot q)}
+  \right],\\
+  N_{B,s}^{\rm core}
+  &=
+  -4\ii
+  \left[
+    \frac{m_Qm_s}{m_Q+m_s}
+    +
+    \frac{m_s^2p^2}{(m_Q+m_s)(p\cdot q)}
+  \right].
+\end{align}
+The diagonal double-dispersion representation explains how the $p^2$ numerator
+is treated.  For the double-pole part one has
+\begin{equation}
+  \frac{p^2}{(s-p^2)(s-P^2)}
+  =
+  \frac{s}{(s-p^2)(s-P^2)}
+  -
+  \frac{1}{s-P^2},
+  \qquad P=p+q .
+\end{equation}
+The second term has only a single pole and is removed by the double Borel
+projection in $p^2$ and $P^2$.  Therefore, inside the double-pole sum rule,
+$p^2$ in the hard numerator can be replaced by the spectral variable $s$.  The
+same argument gives $P^2\to s$ for any numerator factor of $P^2$.  The script
+\begin{center}
+  \texttt{scripts/step4\_double\_pole\_p2\_reduction.py}
+\end{center}
+records this identity as a short audit check.
+
+Combining this hard candidate with the tensor-DA two-particle soft contribution
+gives, over the same $M^2$ and $s_0$ windows,
+\begin{align}
+  G_B^{\rm hard}
+  &\simeq -0.831\text{ to }-0.673\ \mathrm{GeV}^{-1},
+  &
+  G_B^{\rm Stage\ 1}
+  &\simeq -0.510\text{ to }-0.440\ \mathrm{GeV}^{-1},
+  &&(f_B=f_T),\\
+  G_B^{\rm hard}
+  &\simeq -0.460\text{ to }-0.373\ \mathrm{GeV}^{-1},
+  &
+  G_B^{\rm Stage\ 1}
+  &\simeq -0.283\text{ to }-0.244\ \mathrm{GeV}^{-1},
+  &&\left(f_B=f_T\frac{m_{D_{s1}}}{m_c+m_s}\right).
+\end{align}
+At $\theta=35.3^\circ$, the corresponding candidate mixed widths are
+\begin{align}
+  \Gamma[D_{s1}(2460)\to D_s\gamma]
+  &\simeq 62.5\text{ to }87.9\ \mathrm{keV},
+  &
+  \Gamma[D_{s1}(2536)\to D_s\gamma]
+  &\simeq 0.00\text{ to }0.30\ \mathrm{keV},
+  &&(f_B=f_T),\\
+  \Gamma[D_{s1}(2460)\to D_s\gamma]
+  &\simeq 30.9\text{ to }44.7\ \mathrm{keV},
+  &
+  \Gamma[D_{s1}(2536)\to D_s\gamma]
+  &\simeq 4.0\text{ to }8.2\ \mathrm{keV},
+  &&\left(f_B=f_T\frac{m_{D_{s1}}}{m_c+m_s}\right).
+\end{align}
+These numbers should be read as a controlled Stage 1 candidate, not yet as the
+final result, because Stage 2 three-particle photon DAs remain.  The
+$p^2\to s$ step is justified for the double-pole part; any single-pole remnants
+belong outside the double-Borel sum rule.
+
+\section{Stage 2 Axial Three-Particle DA Check}
+
+Before deriving the tensor-current three-particle terms, we implemented the
+known axial-current correction as a Stage 2 calibration.  The published axial
+sum rule contains the combination
+\begin{equation}
+  {\cal F}_1
+  =
+  {\cal S}+\tilde{\cal S}-{\cal T}_1-{\cal T}_2
+  +{\cal T}_3+{\cal T}_4
+  +2v(-{\cal S}-{\cal T}_3+{\cal T}_2),
+\end{equation}
+integrated over the two standard regions
+\begin{align}
+  0\le v\le 1-u_0,
+  \qquad
+  0\le \alpha_g\le \frac{u_0}{1-v},\\
+  1-u_0\le v\le 1,
+  \qquad
+  0\le \alpha_g\le \frac{1-u_0}{v},
+\end{align}
+with
+\begin{equation}
+  \alpha_q=u_0-(1-v)\alpha_g,
+  \qquad
+  \alpha_{\bar q}=1-u_0-v\alpha_g .
+\end{equation}
+The script
+\begin{center}
+  \texttt{scripts/stage2\_axial\_g1\_three\_particle.py}
+\end{center}
+evaluates this integral using the three-particle photon DAs in
+\texttt{photon\_da.py}.  For $u_0=1/2$ it finds
+\begin{align}
+  \int{\cal F}_1
+  &=
+  +7.033\times10^{-2},\\
+  \Delta G_A^{{\cal F}_1}
+  &\simeq
+  +0.0012\text{ to }+0.0020\ \mathrm{GeV}^{-1}.
+\end{align}
+Thus the axial Stage 2 result over the same Borel and threshold window is
+\begin{equation}
+  -0.398
+  \le
+  G_A^{\rm Stage\ 2}
+  \le
+  -0.312
+  \qquad \mathrm{GeV}^{-1},
+\end{equation}
+corresponding to
+\begin{equation}
+  20.5\,\mathrm{keV}
+  \le
+  \Gamma_A^{\rm Stage\ 2}[D_{s1}(2460)\to D_s\gamma]
+  \le
+  33.3\,\mathrm{keV}.
+\end{equation}
+This small correction is a useful calibration, but it does not yet complete
+Stage 2 for the mixed physical amplitudes.  The remaining Stage 2 task is to
+derive the tensor-current analog of the three-particle photon DA contribution
+from the background-gluon insertion and project it onto the same E1 invariant.
+
+\section{First Tensor-Current Stage 2 Trace Pass}
+
+For the tensor-current three-particle term we first separated the local
+$\sigma_{\alpha\beta}$ part of the heavy-quark background-gluon propagator from
+the explicitly $x_\alpha\gamma_\beta$ part.  The script
+\begin{center}
+  \texttt{scripts/step5\_soft\_3p\_trace\_kernels.wl}
+\end{center}
+computes the E1-projected traces for the local piece against the
+${\cal S}$, $\tilde{\cal S}$, ${\cal T}_1$, and ${\cal T}_2$ Lorentz
+structures.  The nonzero local kernels are
+\begin{align}
+  K_A[{\cal S}]&=8\,\frac{k\cdot q}{p\cdot q},
+  &
+  K_B[{\cal S}]&=8\,\frac{m_Q}{m_Q+m_s},\\
+  K_A[{\cal T}_1]&=-32\ii\,\frac{k\cdot q}{p\cdot q},
+  &
+  K_B[{\cal T}_1]&=-32\ii\,\frac{m_Q}{m_Q+m_s},\\
+  K_A[{\cal T}_2]&=+32\ii\,\frac{k\cdot q}{p\cdot q},
+  &
+  K_B[{\cal T}_2]&=+32\ii\,\frac{m_Q}{m_Q+m_s}.
+\end{align}
+The $\tilde{\cal S}$ kernel vanishes for this local part.  After the
+three-particle light-cone Fourier integral and double Borel projection,
+$k\cdot q=p\cdot q$, so the local trace ratio is again
+\begin{equation}
+  \frac{K_B}{K_A}
+  =
+  \frac{m_Q}{m_Q+m_s}.
+\end{equation}
+This is the same ratio encountered in the two-particle tensor-DA family.
+
+At this point it is useful to separate the published axial combination into the
+piece generated by the $\sigma_{\alpha\beta}$ part of the background-field
+propagator and the piece generated by the
+$x_\alpha G^{\alpha\beta}\gamma_\beta$ part:
+\begin{align}
+  {\cal F}_1^{\sigma}
+  &=
+  {\cal S}+\tilde{\cal S}-{\cal T}_1-{\cal T}_2+{\cal T}_3+{\cal T}_4,\\
+  {\cal F}_1^{x\gamma}
+  &=
+  2v\left(-{\cal S}-{\cal T}_3+{\cal T}_2\right),
+  &
+  {\cal F}_1&={\cal F}_1^{\sigma}+{\cal F}_1^{x\gamma}.
+\end{align}
+The numerical split, evaluated in
+\begin{center}
+  \texttt{scripts/step10\_stage2\_f1\_split.py},
+\end{center}
+is
+\begin{align}
+  \int{\cal F}_1^{\sigma}
+  &=
+  -1.5625\times 10^{-1},\\
+  \int{\cal F}_1^{x\gamma}
+  &=
+  +2.2658\times 10^{-1},\\
+  \int{\cal F}_1
+  &=
+  +7.0330\times 10^{-2}.
+\end{align}
+Thus the small published axial Stage 2 correction is partly the result of a
+cancellation between two larger pieces.  The simple trace ratio
+$m_Q/(m_Q+m_s)$ is established for the $\sigma_{\alpha\beta}$ part, so the
+controlled sigma-matched tensor-current correction is
+\begin{align}
+  \Delta G_B^{3p}
+  &\simeq -0.00366\text{ to }-0.00210\ \mathrm{GeV}^{-1},
+  &&(f_B=f_T\ \text{diagnostic}),\\
+  \Delta G_B^{3p}
+  &\simeq -0.00203\text{ to }-0.00116\ \mathrm{GeV}^{-1},
+  &&\left(f_B=f_T\frac{m_{D_{s1}}}{m_c+m_s}\ \text{central}\right).
+\end{align}
+The corresponding sigma-matched Stage 2 mixed-width estimate at
+$\theta=35.3^\circ$ is
+\begin{align}
+  \Gamma[D_{s1}(2460)\to D_s\gamma]
+  &\simeq 62.9\text{ to }88.2\ \mathrm{keV},
+  &
+  \Gamma[D_{s1}(2536)\to D_s\gamma]
+  &\simeq 0.00\text{ to }0.26\ \mathrm{keV},
+  &&(f_B=f_T\ \text{diagnostic}),\\
+  \Gamma[D_{s1}(2460)\to D_s\gamma]
+  &\simeq 30.9\text{ to }44.8\ \mathrm{keV},
+  &
+  \Gamma[D_{s1}(2536)\to D_s\gamma]
+  &\simeq 3.8\text{ to }8.0\ \mathrm{keV},
+  &&\left(f_B=f_T\frac{m_{D_{s1}}}{m_c+m_s}\ \text{central}\right).
+\end{align}
+If, instead, one multiplies the full axial ${\cal F}_1$ integral by the same
+trace ratio, one obtains only a diagnostic estimate:
+\begin{align}
+  \Delta G_B^{3p}
+  &\simeq +0.00094\text{ to }+0.00165\ \mathrm{GeV}^{-1},
+  &&(f_B=f_T\ \text{diagnostic}),\\
+  \Delta G_B^{3p}
+  &\simeq +0.00052\text{ to }+0.00091\ \mathrm{GeV}^{-1},
+  &&\left(f_B=f_T\frac{m_{D_{s1}}}{m_c+m_s}\ \text{central}\right),
+\end{align}
+with central-normalization widths
+\begin{align}
+  \Gamma[D_{s1}(2460)\to D_s\gamma]
+  &\simeq 30.5\text{ to }44.5\ \mathrm{keV},\\
+  \Gamma[D_{s1}(2536)\to D_s\gamma]
+  &\simeq 4.0\text{ to }8.1\ \mathrm{keV}.
+\end{align}
+The difference between the sigma-matched and full-ratio diagnostic numbers is
+small at the current precision, but conceptually important: the
+$x_\alpha\gamma_\beta$ part must be matched separately before the tensor
+Stage 2 correction is final.
+
+\section{Stage 2 Tensor: Explicit \(x\)-Dependent Kernels}
+
+The next audit step keeps the coordinate vector $x$ explicit.  For the
+$\sigma_{\alpha\beta}$ part of $S_Q^G$, the raw E1 projections of the
+${\cal T}_3$ and ${\cal T}_4$ structures are
+\begin{align}
+  K_A[{\cal T}_3]&=+16\ii\,\frac{k\cdot q}{p\cdot q},
+  &
+  K_B[{\cal T}_3]&=+16\ii\,\frac{m_Q}{m_Q+m_s},\\
+  K_A[{\cal T}_4]&=-16\ii\,\frac{k\cdot q}{p\cdot q},
+  &
+  K_B[{\cal T}_4]&=-16\ii\,\frac{m_Q}{m_Q+m_s}.
+\end{align}
+Thus these two structures also obey the same ratio
+$K_B/K_A=m_Q/(m_Q+m_s)$ after $k\cdot q=p\cdot q$.  This check is recorded in
+\begin{center}
+  \texttt{scripts/step6\_soft\_3p\_x\_dependent\_kernels.wl}.
+\end{center}
+
+The genuinely new complication comes from the second term in the background
+propagator,
+\begin{equation}
+  \frac{u\,x_\alpha}{m_Q^2-k^2}G^{\alpha\beta}(ux)\gamma_\beta .
+\end{equation}
+The script
+\begin{center}
+  \texttt{scripts/step7\_soft\_3p\_xgamma\_kernels.wl}
+\end{center}
+computes the raw kernels with $x$ kept explicit.  Unlike the previous kernels,
+the tensor-to-axial ratio is not a constant at this stage.  For example the
+${\cal S}$ ratio after only $k\cdot q\to p\cdot q$ contains
+\begin{equation}
+  \frac{
+    (p\cdot q)\,(k\cdot x-p\cdot x)
+    +(k\cdot p+p^2+2p\cdot q)(q\cdot x)
+  }{
+    2m_Q^2(q\cdot x)
+  },
+\end{equation}
+and analogous expressions occur for ${\cal T}_1$, ${\cal T}_2$, and
+${\cal T}_3$.  Therefore the tensor Stage 2 three-particle result cannot yet
+be promoted from an estimate to a final term.  The remaining calculation is to
+perform the Fourier/Borel replacement of the explicit $x_\alpha/(q\cdot x)$
+factors, including the derivative action on the heavy-quark denominator, and
+then recombine the result with the photon DA structures.
+
+As a diagnostic, we can impose only the light-cone momentum routing
+\begin{equation}
+  k=p+a q,\qquad a=\alpha_{\bar q}+v\alpha_g,\qquad q^2=0,
+\end{equation}
+without yet applying the derivative replacement.  The script
+\begin{center}
+  \texttt{scripts/step8\_xgamma\_saddle\_reduction.py}
+\end{center}
+reduces the raw ratios $K_B/[(m_Q/(m_Q+m_s))K_A]$ to
+\begin{align}
+  R_{\cal S}
+  &=
+  \frac{p^2+(a+1)p\cdot q}{m_Q^2},\\
+  R_{{\cal T}_1}
+  &=
+  \frac{p^2+(3a+2)p\cdot q}{3m_Q^2},\\
+  R_{{\cal T}_2}
+  &=
+  \frac{p^2+(2-a)p\cdot q}{m_Q^2},\\
+  R_{{\cal T}_3}
+  &=
+  \frac{p^2+2a\,p\cdot q}{m_Q^2}.
+\end{align}
+If one additionally uses the heavy-line on-shell relation
+$m_Q^2=k^2=p^2+2a\,p\cdot q$, only $R_{{\cal T}_3}$ becomes exactly one.
+The other ratios remain nontrivial.  This confirms that the
+$x_\alpha\gamma_\beta$ term must be treated with the full Fourier/Borel
+derivative machinery.  It is not controlled by the simple trace-ratio argument
+used for the $\sigma_{\alpha\beta}$ part.
+
+\section{Stage 2 Tensor: Derivative Reduction of \(x_\alpha\gamma_\beta\)}
+
+The next step applies the Fourier derivative rules to the raw
+$x_\alpha\gamma_\beta$ kernels.  With phase
+\begin{equation}
+  \exp[\ii(p+a q-k)\cdot x],
+\end{equation}
+integration over $x$ gives, up to a common phase convention,
+\begin{align}
+  p\cdot x &\to -\ii\,p\cdot\partial_k,\\
+  q\cdot x &\to -\ii\,q\cdot\partial_k,\\
+  k\cdot x\,F(k)
+  &\to
+  -\ii\,\partial_{k_\mu}\!\left[k_\mu F(k)\right]
+  =
+  -\ii\left[4F(k)+k\cdot\partial_k F(k)\right].
+\end{align}
+The script
+\begin{center}
+  \texttt{scripts/step9\_xgamma\_derivative\_reduction.wl}
+\end{center}
+applies these rules to the scalar kernels multiplying
+$1/(m_Q^2-k^2)$.  After the light-cone routing $k=p+a q$, the reduced axial
+kernels are proportional to
+\begin{align}
+  A_{\cal S}^{x\gamma}
+  &=
+  \frac{-8m_Q}{[-m_Q^2+p^2+2a\,p\cdot q]^2},\\
+  A_{{\cal T}_1}^{x\gamma}
+  &=
+  \frac{48\ii m_Q}{[-m_Q^2+p^2+2a\,p\cdot q]^2},\\
+  A_{{\cal T}_2}^{x\gamma}
+  &=
+  \frac{16\ii m_Q}{[-m_Q^2+p^2+2a\,p\cdot q]^2},\\
+  A_{{\cal T}_3}^{x\gamma}
+  &=
+  \frac{-16\ii m_Q}{[-m_Q^2+p^2+2a\,p\cdot q]^2}.
+\end{align}
+The corresponding tensor-current kernels are not obtained by a universal
+$m_Q/(m_Q+m_s)$ multiplication.  The ratios after derivative reduction are
+\begin{align}
+  R_{\cal S}^{\partial}
+  &=
+  1+\frac{(1-a)p\cdot q}{m_Q^2},\\
+  R_{{\cal T}_1}^{\partial}
+  &=
+  \frac{2m_Q^2+p^2+(2-a)p\cdot q}{3m_Q^2},\\
+  R_{{\cal T}_2}^{\partial}
+  &=
+  -2+\frac{3p^2+(2+3a)p\cdot q}{m_Q^2},\\
+  R_{{\cal T}_3}^{\partial}
+  &=
+  \frac{2m_Q^2-p^2-2a\,p\cdot q}{m_Q^2}.
+\end{align}
+All these reduced kernels carry the squared heavy-quark denominator.  For the
+double-pole residue we drop numerator terms proportional to
+$D=-m_Q^2+p^2+2a\,p\cdot q$, equivalently using
+$m_Q^2=p^2+2a\,p\cdot q$ in the residue.  In the three-particle integration
+domains,
+\begin{equation}
+  a=\alpha_{\bar q}+v\alpha_g=1-u_0,
+\end{equation}
+so for the symmetric Borel point $u_0=1/2$ this residue is evaluated at
+$a=1/2$.
+
+The script
+\begin{center}
+  \texttt{scripts/step11\_tensor\_xgamma\_ratio\_integral.py}
+\end{center}
+uses these residue ratios to match the ${\cal S}$, ${\cal T}_2$, and
+${\cal T}_3$ pieces of the tensor-current $x_\alpha\gamma_\beta$ contribution
+to the known axial normalization
+\begin{equation}
+  {\cal F}_1^{x\gamma}=2v(-{\cal S}-{\cal T}_3+{\cal T}_2).
+\end{equation}
+With the heavy-line residue condition and physical $p\cdot q$ in the E1
+invariant, the matched ${\cal S},{\cal T}_2,{\cal T}_3$ integral is
+\begin{equation}
+  \int{\cal F}_{1,B}^{x\gamma}[{\cal S},{\cal T}_2,{\cal T}_3]
+  =
+  +2.5818\times 10^{-1}.
+\end{equation}
+The tensor-current derivative reduction also produces a ${\cal T}_4$ residue
+even though the axial E1 kernel has $A_{{\cal T}_4}^{x\gamma}=0$.  This is not
+an obstacle: its normalization can be fixed directly relative to the axial
+${\cal T}_2$ unit.  On the double-pole residue,
+\begin{equation}
+  \frac{
+    B_{{\cal T}_4}^{x\gamma}
+  }{
+    [m_Q/(m_Q+m_s)]\,A_{{\cal T}_2}^{x\gamma}
+  }
+  =
+  -\frac{(1-a)p\cdot q}{m_Q^2}.
+\end{equation}
+This gives the tensor-only contribution
+\begin{equation}
+  \int{\cal F}_{1,B}^{x\gamma}[{\cal T}_4]
+  =
+  -4.2136\times 10^{-2},
+\end{equation}
+and therefore
+\begin{equation}
+  \int{\cal F}_{1,B}^{x\gamma}
+  =
+  +2.1605\times 10^{-1}.
+\end{equation}
+Together with the sigma-like part this gives the full matched tensor
+three-particle integral
+\begin{equation}
+  \int\left(
+    {\cal F}_{1,B}^{\sigma}
+    +
+    {\cal F}_{1,B}^{x\gamma}
+  \right)
+  =
+  +5.9796\times 10^{-2}.
+\end{equation}
+For comparison, the axial total is
+$\int{\cal F}_1=+7.0330\times 10^{-2}$.  A diagnostic calculation that instead
+inserts the physical hadron value $p^2=m_{D_s}^2$ directly into the OPE
+residue ratios gives a much larger integral, $+1.5072$, so we do not use it as
+the working tensor estimate.
+
+Numerically, for the central decay-constant normalization
+$f_B=f_Tm_{D_{s1}}/(m_c+m_s)$, the full matched Stage 2 tensor-current result
+gives
+\begin{align}
+  \Delta G_B^{3p}
+  &=
+  +0.00044\text{ to }+0.00078\ \mathrm{GeV}^{-1},\\
+  G_B^{\rm Stage\ 2}
+  &=
+  -0.2821\text{ to }-0.2436\ \mathrm{GeV}^{-1}.
+\end{align}
+At $\theta=35.3^\circ$ this corresponds to
+\begin{align}
+  \Gamma[D_{s1}(2460)\to D_s\gamma]
+  &=
+  30.6\text{ to }44.5\ \mathrm{keV},\\
+  \Gamma[D_{s1}(2536)\to D_s\gamma]
+  &=
+  4.0\text{ to }8.1\ \mathrm{keV}.
+\end{align}
+The final matched result is close to the older full-ratio diagnostic, but the
+derivation is now explicit about which pieces come from the
+$\sigma_{\alpha\beta}$ part, which come from
+$x_\alpha G^{\alpha\beta}\gamma_\beta$, and how the tensor-only
+${\cal T}_4$ term is normalized.
+
+\section{Final Stage 2 Uncertainty Scan}
+
+The script
+\begin{center}
+  \texttt{scripts/final\_stage2\_uncertainty\_scan.py}
+\end{center}
+performs a first independent-input uncertainty scan around the completed
+matched Stage 2 baseline.  Each random point samples the Borel parameter
+$M^2\in[3,6]~\mathrm{GeV}^2$, the continuum threshold
+$\sqrt{s_0}\in[2.50,2.60]~\mathrm{GeV}$, and the numerical inputs listed in
+\texttt{inputs\_table.csv}.  The tensor-current decay constant is converted as
+\begin{equation}
+  f_B=f_T\frac{m_{D_{s1}}}{m_c+m_s}.
+\end{equation}
+The scan is not yet a correlated global error analysis; it is a transparent
+Monte Carlo error budget for the present sum rule.  It is the preferred band to
+quote because it allows all inputs, $M^2$, and $s_0$ to fluctuate together.
+
+For fixed $\theta=35.3^\circ$, using 500 random points, the scan gives
+\begin{align}
+  G[D_{s1}(2460)\to D_s\gamma]
+  &=
+  -0.424^{+0.065}_{-0.067}\ \mathrm{GeV}^{-1},\\
+  G[D_{s1}(2536)\to D_s\gamma]
+  &=
+  -0.140^{+0.047}_{-0.051}\ \mathrm{GeV}^{-1},
+\end{align}
+where the uncertainty indicates the 16--84 percentile interval.  The
+corresponding width estimates are
+\begin{align}
+  \Gamma[D_{s1}(2460)\to D_s\gamma]
+  &=
+  37.9^{+12.9}_{-10.7}\ \mathrm{keV},\\
+  \Gamma[D_{s1}(2536)\to D_s\gamma]
+  &=
+  6.1^{+5.2}_{-3.4}\ \mathrm{keV}.
+\end{align}
+If instead the mixing angle is sampled uniformly over
+$25^\circ\le\theta\le45^\circ$, the same scan gives
+\begin{align}
+  \Gamma[D_{s1}(2460)\to D_s\gamma]
+  &=
+  36.9^{+12.6}_{-10.8}\ \mathrm{keV},\\
+  \Gamma[D_{s1}(2536)\to D_s\gamma]
+  &=
+  6.0^{+7.6}_{-4.1}\ \mathrm{keV}.
+\end{align}
+The full scan table is written to
+\begin{center}
+  \texttt{outputs/final\_stage2\_uncertainty\_scan.csv}.
+\end{center}
+For visualization the script
+\begin{center}
+  \texttt{scripts/uncertainty\_publication\_plots.py}
+\end{center}
+also fits Gaussian curves to the Monte Carlo width histograms using the sample
+mean and sample standard deviation.  These fits are descriptive rather than
+the primary quoted uncertainties, because the width distribution is mildly
+right-tailed, especially for $D_{s1}(2536)$.  For the fixed-angle ensemble the
+Gaussian summaries are
+\begin{align}
+  \Gamma_{2460}&=38.99\pm12.76~\mathrm{keV},\\
+  \Gamma_{2536}&=7.39\pm5.67~\mathrm{keV},
+\end{align}
+while for $25^\circ\le\theta\le45^\circ$ they are
+\begin{align}
+  \Gamma_{2460}&=38.47\pm12.78~\mathrm{keV},\\
+  \Gamma_{2536}&=7.79\pm6.76~\mathrm{keV}.
+\end{align}
+The corresponding publication histograms are shown in
+Figs.~\ref{fig:mc-hist-fixed} and~\ref{fig:mc-hist-scan}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/mc_width_histograms_theta_fixed.pdf}
+  \caption{Monte Carlo width distributions for fixed
+  $\theta=35.3^\circ$.  The black curves are Gaussian overlays using the
+  sample mean and standard deviation; the dashed vertical lines mark the
+  16--84 percentile interval.}
+  \label{fig:mc-hist-fixed}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/mc_width_histograms_theta_scan.pdf}
+  \caption{Monte Carlo width distributions when the mixing angle is sampled
+  uniformly over $25^\circ\le\theta\le45^\circ$.  The black curves are
+  Gaussian overlays using the sample mean and standard deviation; the dashed
+  vertical lines mark the 16--84 percentile interval.}
+  \label{fig:mc-hist-scan}
+\end{figure}
+
+The diagnostic script
+\begin{center}
+  \texttt{scripts/uncertainty\_budget\_one\_at\_time.py}
+\end{center}
+then varies one input group at a time around the central point.  This is not
+the band to quote as the final uncertainty; it explains which input groups
+drive the Monte Carlo spread.
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{lcc}
+    \toprule
+    Varied group & $\Gamma_{2460}$ (keV) & $\Gamma_{2536}$ (keV)\\
+    \midrule
+    $M^2,\sqrt{s_0}$ & $37.4\,[33.0,41.1]$ & $5.95\,[5.05,7.00]$\\
+    $\theta$ & $37.3\,[33.7,39.6]$ & $5.83\,[2.40,11.2]$\\
+    quark and hadron masses & $37.1\,[35.1,39.1]$ & $6.01\,[4.92,7.27]$\\
+    decay constants & $37.7\,[32.9,42.4]$ & $5.91\,[3.48,9.42]$\\
+    condensates and $\chi$ & $38.7\,[29.2,48.6]$ & $6.40\,[4.00,9.11]$\\
+    photon DA shape & $37.2\,[37.2,37.2]$ & $6.04\,[6.04,6.04]$\\
+    all inputs, fixed $\theta$ & $37.4\,[26.8,50.2]$ & $5.50\,[2.73,11.2]$\\
+    all inputs and $\theta$ & $36.1\,[25.7,48.3]$ & $6.28\,[1.78,14.9]$\\
+    \bottomrule
+  \end{tabular}
+  \caption{One-at-a-time 16--84 percentile uncertainty budget with 500 random
+  points per group.  The photon-shape row is flat in the present matched
+  reduction; it should be read as negligible sensitivity in this implementation,
+  not as a general statement about photon DAs.}
+  \label{tab:one-at-a-time-budget}
+\end{table}
+
+The main lesson from Table~\ref{tab:one-at-a-time-budget} is that the
+$D_{s1}(2460)$ width is most sensitive to condensate/$\chi$ inputs and decay
+constants, while the $D_{s1}(2536)$ width is particularly sensitive to the
+mixing angle because the physical amplitude contains a cancellation between
+the axial and tensor-current components.
+The same ranking is visualized in Fig.~\ref{fig:uncertainty-budget-ranked}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/uncertainty_budget_ranked.pdf}
+  \caption{Ranked one-at-a-time uncertainty sources.  The plotted quantity is
+  half of the 16--84 percentile width for each group.}
+  \label{fig:uncertainty-budget-ranked}
+\end{figure}
+
+\subsection{Alternative lattice normalization of the leading-twist photon DA}
+
+The dominant uncertainty in the legacy scan is the combination
+$\chi\langle\bar s s\rangle$ entering the leading-twist photon DA.  The
+Rohrwild/BBK-style baseline treats $\chi$ and $\langle\bar s s\rangle$ as
+separate inputs.  A recent lattice calculation by Bacchio, Becirevic,
+Gagliardi, and Sanfilippo gives the strange-quark normalization directly,
+\begin{equation}
+  f_{\gamma,s}^{\perp}(2~\GeV)=-51.0(1.8)~\mathrm{MeV},
+\end{equation}
+where
+\begin{equation}
+  f_{\gamma,s}^{\perp}(\mu)=
+  \chi_s(\mu)\langle\bar s s\rangle(\mu).
+\end{equation}
+To compare with the working $\mu=1~\GeV$ setup, the script
+\begin{center}
+  \texttt{scripts/lattice\_photon\_normalization\_comparison.py}
+\end{center}
+uses a leading-order tensor-current running factor
+$f_{\gamma,s}^{\perp}(1~\GeV)/f_{\gamma,s}^{\perp}(2~\GeV)=1.08$, giving
+\begin{equation}
+  f_{\gamma,s}^{\perp}(1~\GeV)=-55.1(1.9)~\mathrm{MeV}.
+\end{equation}
+Only the leading-twist normalization is replaced in this comparison; the
+higher-twist and three-particle terms that contain $\langle\bar s s\rangle$
+remain explicit.  This makes the comparison conservative and easy to audit.
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{lcc}
+    \toprule
+    Input scenario & $\Gamma_{2460}$ (keV) & $\Gamma_{2536}$ (keV)\\
+    \midrule
+    Legacy $\chi\langle\bar s s\rangle$, fixed $\theta$
+      & $36.7\,[26.8,50.2]$ & $5.60\,[2.56,11.0]$\\
+    Lattice $f_{\gamma,s}^{\perp}$, fixed $\theta$
+      & $14.4\,[11.4,18.8]$ & $0.68\,[0.12,1.88]$\\
+    Legacy $\chi\langle\bar s s\rangle$, $\theta$ scan
+      & $36.3\,[24.8,50.2]$ & $5.74\,[1.86,12.9]$\\
+    Lattice $f_{\gamma,s}^{\perp}$, $\theta$ scan
+      & $14.6\,[11.3,18.6]$ & $0.64\,[0.06,2.50]$\\
+    \bottomrule
+  \end{tabular}
+  \caption{Comparison of the legacy photon-DA normalization with the
+  lattice-normalized leading-twist photon DA.  The intervals are 16--84
+  percentiles from 500 random points per ensemble.}
+  \label{tab:lattice-fperp-comparison}
+\end{table}
+
+The lattice-normalized scenario substantially reduces the uncertainty and also
+shifts the central widths downward.  This should be presented as an important
+alternative input scenario rather than folded silently into the legacy result,
+because it changes the central leading-twist normalization.  The corresponding
+histograms are shown in Fig.~\ref{fig:lattice-fperp-comparison}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/lattice_fperp_comparison_histograms.pdf}
+  \caption{Fixed-angle Monte Carlo comparison between the legacy
+  $\chi\langle\bar s s\rangle$ treatment and the lattice-normalized
+  $f_{\gamma,s}^{\perp}$ treatment.}
+  \label{fig:lattice-fperp-comparison}
+\end{figure}
+
+For direct comparison with the legacy Monte Carlo histograms in
+Figs.~\ref{fig:mc-hist-fixed} and~\ref{fig:mc-hist-scan}, the same script also
+produces Gaussian-overlay plots for the lattice-normalized scenario.  For fixed
+$\theta=35.3^\circ$, the descriptive Gaussian summaries are
+\begin{align}
+  \Gamma_{2460}^{\mathrm{lat.\ }f_\gamma^\perp}
+  &=14.91\pm3.69~\mathrm{keV},\\
+  \Gamma_{2536}^{\mathrm{lat.\ }f_\gamma^\perp}
+  &=0.97\pm0.97~\mathrm{keV}.
+\end{align}
+For the mixing-angle scan they are
+\begin{align}
+  \Gamma_{2460}^{\mathrm{lat.\ }f_\gamma^\perp}
+  &=14.94\pm3.77~\mathrm{keV},\\
+  \Gamma_{2536}^{\mathrm{lat.\ }f_\gamma^\perp}
+  &=1.21\pm1.45~\mathrm{keV}.
+\end{align}
+The $D_{s1}(2536)$ distribution is visibly non-Gaussian near zero because the
+amplitude is cancellation-driven, so the percentile intervals in
+Table~\ref{tab:lattice-fperp-comparison} remain the safer quoted uncertainties.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/lattice_fperp_mc_width_histograms_theta_fixed.pdf}
+  \caption{Lattice-normalized Monte Carlo width distributions for fixed
+  $\theta=35.3^\circ$.  The black curves are Gaussian overlays using the sample
+  mean and standard deviation; dashed vertical lines mark the 16--84 percentile
+  interval.}
+  \label{fig:lattice-mc-hist-fixed}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/lattice_fperp_mc_width_histograms_theta_scan.pdf}
+  \caption{Lattice-normalized Monte Carlo width distributions when the mixing
+  angle is sampled over $25^\circ\le\theta\le45^\circ$.}
+  \label{fig:lattice-mc-hist-scan}
+\end{figure}
+
+\subsection{Recommended \(D_{s1}\) results table}
+
+For the manuscript, the safest way to report the width predictions is not a
+Gaussian mean and standard deviation, but the median with asymmetric
+16--84 percentile intervals.  This is especially important for
+$D_{s1}(2536)$, where the width is positive definite and the amplitude can pass
+close to zero because of the axial--tensor cancellation.
+Table~\ref{tab:recommended-ds1-results} now uses the Stage-3
+physical-current residue normalization.  In this first implementation the
+off-diagonal two-point overlap is calibrated from the working Stage-3 anchor
+$f_1=0.345\pm0.017~\GeV$, and the same overlap then predicts $f_2$.
+Numerically this gives
+$f_2\simeq0.38~\GeV$ and a negative overlap
+$\rho_{AB}\simeq-0.4$.  The previous basis-current table remains useful as a
+pre-residue diagnostic, but it should no longer be used as the headline
+$D_{s1}$ result.
+
+As a separate verification check, we compared the mixed-current residue model
+with the pure axial-current local-QCDSR benchmark in Wang's Table~1,
+$f_A(D_{s1})=0.245\pm0.017~\GeV$.  This benchmark is not treated as an
+authority for the physical mixed residues $f_1$ and $f_2$, because it uses the
+pure current $\bar Q\gamma_\mu\gamma_5 q$.  Therefore the comparison must be
+made only in a limiting-current configuration where one of our physical
+currents becomes $J_A$.  The model gives $f_1=f_A$ at $\theta=90^\circ$, where
+$J_1=J_A$, and $f_2=f_A$ at $\theta=0^\circ$, where $J_2=J_A$.  Our working
+pure-axial input, $f_A=0.225\pm0.025~\GeV$, is close to Wang's
+$0.245\pm0.017~\GeV$ and agrees within the combined uncertainty; the small
+central-value difference is naturally attributable to different quark masses,
+condensates, continuum thresholds, Borel windows, OPE truncations, and
+normalization conventions.  At the physical angle $\theta=35.3^\circ$, the
+Wang-like pure-axial target lies near the lower edge of the mixed-current
+residue range and requires a strongly negative overlap,
+$\rho_{AB}\simeq-1$ with our working $f_A=0.225~\GeV$, or
+$\rho_{AB}\simeq-0.96$ if the Wang value is also used as the basis $f_A$.  By
+contrast, the headline Stage-3 anchor $f_1=0.345~\GeV$ corresponds to
+$\rho_{AB}\simeq-0.41$ and $f_2\simeq0.381~\GeV$.  The check is stored in
+\texttt{outputs/stage3\_residue\_benchmark\_checks.csv}.
+
+\begin{table}[htbp]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{lllllll}
+    \toprule
+    Case & Current/target & $\theta$ & $\rho_{AB}$ & $f_A$ & $f_1$ & $f_2$\\
+    \midrule
+    Wang benchmark
+      & pure $J_A$ two-point current
+      & -- & -- & $0.245\pm0.017$ & -- & --\\
+    our pure-$J_1$ axial limit
+      & $J_1=J_A$
+      & $90^\circ$ & $0$ & $0.225$ & $0.225$ & $0.462$\\
+    our pure-$J_2$ axial limit
+      & $J_2=J_A$
+      & $0^\circ$ & $0$ & $0.225$ & $0.462$ & $0.225$\\
+    physical angle, Wang-like target
+      & target $f_1=0.245$
+      & $35.3^\circ$ & $-1.00$ & $0.225$ & $0.247$ & $0.451$\\
+    physical angle, Wang $f_A$
+      & target $f_1=f_A=0.245$
+      & $35.3^\circ$ & $-0.957$ & $0.245$ & $0.245$ & $0.462$\\
+    current Stage-3 anchor
+      & target $f_1=0.345$
+      & $35.3^\circ$ & $-0.408$ & $0.225$ & $0.345$ & $0.381$\\
+    \bottomrule
+  \end{tabular}%
+  }
+  \caption{Comparison of Wang's pure axial-current benchmark with limiting
+  cases of the present mixed-current residue model.  Wang's number checks the
+  pure $J_A$ scale, so the appropriate comparison is the pure-$J_1$ axial
+  limit at $\theta=90^\circ$ or the pure-$J_2$ axial limit at
+  $\theta=0^\circ$.  The physical mixed-current residues require assumptions
+  about the $AA/BB$ overlap and are therefore not directly determined by
+  Wang's pure axial-current benchmark.  All decay constants are in GeV.  A
+  machine-readable version is
+  \texttt{outputs/wang\_pure\_axial\_residue\_comparison\_table.csv}.}
+  \label{tab:wang-residue-comparison}
+\end{table}
+
+There is also a scale-convention issue that should be stated explicitly.  The
+photon-DA normalizations in the table are quoted at $\mu=1~\GeV$, whereas the
+quark masses used in the hard amplitudes are the usual $\overline{\mathrm{MS}}$
+inputs, e.g. $m_s(2~\GeV)$ and $m_c(m_c)$.  This is a standard phenomenological
+input convention, but it is not a fully matched single-scale setup.  A strict
+scale-consistent variant would evolve $m_s$, $\langle\bar s s\rangle$, and
+either $\chi_s$ or $f_{\gamma,s}^{\perp}$ to a common factorization scale
+before rerunning the sum rule.  We therefore flag the present rows as
+mixed-scale inputs rather than interpreting them as a separate scale-consistent
+prediction.
+
+\begin{table}[htbp]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{lllllcc}
+    \toprule
+    Scenario & Photon input & implied $\chi_s$ & Mixing input
+    & Scale check
+    & $\Gamma_{2460}$ (keV) & $\Gamma_{2536}$ (keV)\\
+    \midrule
+    Legacy
+      & $\chi_s(1~\GeV)=3.15\pm0.30$ (Rohrwild/BBK)
+      & $3.15\,[2.89,3.47]$
+      & $\theta=35.3^\circ$
+      & mixed-scale input
+      & $37.7^{+11.5}_{-10.5}$
+      & $0.045^{+0.124}_{-0.040}$\\
+    Legacy
+      & $\chi_s(1~\GeV)=3.15\pm0.30$ (Rohrwild/BBK)
+      & $3.16\,[2.86,3.42]$
+      & $25^\circ\le\theta\le45^\circ$
+      & mixed-scale input
+      & $37.8^{+10.3}_{-11.5}$
+      & $0.350^{+0.752}_{-0.312}$\\
+    Lattice
+      & $f_{\gamma,s}^{\perp}(1~\GeV)=-55.1\pm1.9~\mathrm{MeV}$ (Bacchio et al.)
+      & $4.99\,[4.24,6.05]$
+      & $\theta=35.3^\circ$
+      & mixed-scale input
+      & $16.1^{+4.4}_{-3.7}$
+      & $0.504^{+0.600}_{-0.377}$\\
+    Lattice
+      & $f_{\gamma,s}^{\perp}(1~\GeV)=-55.1\pm1.9~\mathrm{MeV}$ (Bacchio et al.)
+      & $5.02\,[4.25,6.09]$
+      & $25^\circ\le\theta\le45^\circ$
+      & mixed-scale input
+      & $15.8^{+5.0}_{-3.7}$
+      & $0.498^{+1.087}_{-0.457}$\\
+    \bottomrule
+  \end{tabular}%
+  }
+  \caption{Recommended reporting table for the $D_{s1}\to D_s\gamma$ widths.
+  Entries are medians with 16--84 percentile intervals.  The lattice scenario
+  replaces only the leading-twist normalization
+  $\chi_s\langle\bar s s\rangle$ by $f_{\gamma,s}^{\perp}$; higher-twist
+  condensate terms are left explicit.  The implied $\chi_s$ column is derived
+  from $f_{\gamma,s}^{\perp}/\langle\bar s s\rangle$ in the lattice rows, so it
+  inherits the strange-condensate spread.  The scale-check column records that
+  the present numerical rows use conventional mixed-scale phenomenological
+  inputs.  The widths include the Stage-3 physical-current residue correction
+  calibrated with the working Stage-3 anchor $f_1=0.345\pm0.017~\GeV$; a fully matched-scale
+  prediction should be generated as a separate rerun.}
+  \label{tab:recommended-ds1-results}
+\end{table}
+
+The legacy rows should be retained for comparison with the older photon-DA
+literature.  The lattice-normalized rows are the more modern input scenario and
+give a much tighter prediction for $D_{s1}(2460)$, while
+$D_{s1}(2536)$ remains best described by an asymmetric interval because the
+central amplitude is cancellation-suppressed.  The machine-readable version of
+Table~\ref{tab:recommended-ds1-results} is
+\texttt{outputs/ds1\_recommended\_results\_table.csv}.
+The full Stage-3 residue-normalization scan is stored in
+\texttt{outputs/stage3\_ds1\_physical\_residue\_scan.csv}, with the compact
+summary in
+\texttt{outputs/stage3\_ds1\_physical\_residue\_summary.csv}.
+
+\section{Central Borel Stability}
+
+For the central input set and $\theta=35.3^\circ$, the script
+\begin{center}
+  \texttt{scripts/stage2\_stability\_plots.py}
+\end{center}
+produces the Borel-stability curves shown in Fig.~\ref{fig:stage2-stability}.
+The curves are smooth over $3\le M^2\le6~\mathrm{GeV}^2$.  At fixed
+$\sqrt{s_0}$, the dependence on $M^2$ is mild; changing $\sqrt{s_0}$ from
+$2.50$ to $2.60~\mathrm{GeV}$ shifts the normalization more visibly and should
+therefore remain part of the quoted systematic uncertainty.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/stage2_stability_central.pdf}
+  \caption{Central matched Stage 2 stability for
+  $\Dsone(2460)\to\Ds\gamma$ and $\Dsone(2536)\to\Ds\gamma$ at
+  $\theta=35.3^\circ$.  The three curves correspond to
+  $\sqrt{s_0}=2.50,2.55,2.60~\mathrm{GeV}$.}
+  \label{fig:stage2-stability}
+\end{figure}
+
+Across the full displayed window the central ranges are
+\begin{align}
+  \Gamma[D_{s1}(2460)\to D_s\gamma]
+  &=
+  30.6\text{ to }44.5~\mathrm{keV},\\
+  \Gamma[D_{s1}(2536)\to D_s\gamma]
+  &=
+  3.95\text{ to }8.10~\mathrm{keV}.
+\end{align}
+The corresponding amplitude spans are smaller:
+\begin{align}
+  G_{2460}
+  &=
+  -0.460\text{ to }-0.381~\mathrm{GeV}^{-1},\\
+  G_{2536}
+  &=
+  -0.162\text{ to }-0.113~\mathrm{GeV}^{-1}.
+\end{align}
+This is the expected pattern: the widths amplify the residual sum-rule
+variation because $\Gamma\propto G^2|\vec q|^3$.
+
+\section{Publication Figures and Phenomenology}
+
+The remaining publication-oriented figures are generated by
+\begin{center}
+  \texttt{scripts/publication\_plots.py}.
+\end{center}
+Figure~\ref{fig:threshold-dependence} shows the continuum-threshold
+dependence at fixed representative values of $M^2$.  It complements
+Fig.~\ref{fig:stage2-stability}: the curves are monotonic in $\sqrt{s_0}$, so
+the continuum threshold should be quoted as an important systematic.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/stage2_threshold_dependence.pdf}
+  \caption{Continuum-threshold dependence of the matched Stage 2 widths for
+  $\theta=35.3^\circ$ at three representative Borel points.}
+  \label{fig:threshold-dependence}
+\end{figure}
+
+Figure~\ref{fig:mixing-dependence} shows the mixing-angle dependence.  The
+$D_{s1}(2460)$ width remains at the tens-of-keV level over a broad range of
+$\theta$, while the $D_{s1}(2536)$ width is strongly suppressed near the
+large-angle region because its amplitude involves a cancellation between the
+axial and tensor-current components.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/stage2_mixing_angle_dependence.pdf}
+  \caption{Mixing-angle dependence at $M^2=4.5~\mathrm{GeV}^2$ and
+  $\sqrt{s_0}=2.55~\mathrm{GeV}$.  The dashed line marks
+  $\theta=35.3^\circ$.}
+  \label{fig:mixing-dependence}
+\end{figure}
+
+The cancellation pattern is displayed more explicitly in
+Fig.~\ref{fig:contribution-breakdown}.  At the central point
+$M^2=4.5~\mathrm{GeV}^2$, $\sqrt{s_0}=2.55~\mathrm{GeV}$, the
+$D_{s1}(2536)$ amplitude receives opposite-sign contributions from the axial
+Stage 1 term and the hard tensor-current term.  The three-particle DA
+corrections are numerically small in the final physical amplitudes, but they
+are included in the quoted Stage 2 result.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/stage2_contribution_breakdown.pdf}
+  \caption{Contribution breakdown for the physical couplings at the central
+  Borel and threshold point.  The labels ``A'' and ``B'' refer to the
+  axial-current and tensor-current components before physical mixing.}
+  \label{fig:contribution-breakdown}
+\end{figure}
+
+Finally, Fig.~\ref{fig:literature-comparison} compares the present result for
+$D_{s1}(2460)\to D_s\gamma$ with representative estimates collected by
+Colangelo, De Fazio and Ozpineci.  The present result is higher than the
+original axial-current LCSR interval, but it remains the same order of
+magnitude.  It should not be advertised as explaining a non-observation by
+making the $D_{s1}(2460)\to D_s\gamma$ width tiny.  Instead, the robust
+phenomenological statement from this calculation is that the
+$D_{s1}(2536)\to D_s\gamma$ channel is much more cancellation-sensitive and can
+be substantially smaller.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.82\textwidth]{../outputs/literature_comparison_2460.pdf}
+  \caption{Comparison of the present $D_{s1}(2460)\to D_s\gamma$ width with
+  representative literature estimates.  The Colangelo LCSR, VMD and quark-model
+  values are from the comparison table in Colangelo, De Fazio and Ozpineci
+  (hep-ph/0505195).}
+  \label{fig:literature-comparison}
+\end{figure}
+
+\section{Validation Checks Before the \(B_{s1}\) Extension}
+
+The script
+\begin{center}
+  \texttt{scripts/validation\_checks.py}
+\end{center}
+collects several checks that should be repeated whenever the numerical
+implementation is modified.  The first check is an axial-current benchmark
+against Colangelo, De Fazio and Ozpineci, using paper-like input choices and
+the BBK value $\kappa=0.2$ for the relevant photon DA parameter.  Over
+$3\leq M^2\leq 6~\GeV^2$ and
+$2.50\leq \sqrt{s_0}\leq2.60~\GeV$, the present controlled benchmark gives
+\begin{equation}
+  g_1=-0.340\text{ to }-0.237~\GeV^{-1},\qquad
+  \Gamma=11.8\text{ to }24.3~\mathrm{keV}.
+\end{equation}
+The published comparison band is
+$g_1=-0.37\text{ to }-0.29~\GeV^{-1}$ and
+$\Gamma=19\text{ to }29~\mathrm{keV}$.  This is close enough in sign and
+scale to validate the implementation, but it also shows that an exact
+literature reproduction requires matching every convention and input choice.
+We should present this as a benchmark check, not as an independent final
+phenomenological result.
+
+The same validation script checks the photon DA normalization and the
+three-particle integration closure:
+\begin{align}
+  \int_0^1 du\,\varphi_\gamma(u)&=1.0000000000,\\
+  \max_u|\psi^a(u)-\psi^a(1-u)|&=4.44\times 10^{-15},\\
+  \max_u|\psi^v(u)+\psi^v(1-u)|&=1.78\times 10^{-15},\\
+  F_1-F_1^{(1)}-F_1^{(2)}&=0.
+\end{align}
+These are numerical quadrature checks of the DA implementation and the split
+integration domains.
+
+The independent FeynCalc script
+\texttt{scripts/ward\_transversality\_check.wl} checks the selected E1 tensor
+$S_{\mu\nu}=p_\nu q_\mu-(p\cdot q)g_{\mu\nu}$.  With
+$q^2=0$, $\varepsilon\cdot q=0$, $P=p+q$, and $\eta\cdot P=0$, it gives
+\begin{align}
+  S_{\mu\nu}q^\nu &=0,\\
+  \left[(\eta\cdot\varepsilon)(p\cdot q)
+    -(\eta\cdot q)(p\cdot\varepsilon)\right]_{\varepsilon\to q}
+  &=0,\\
+  P^\mu S_{\mu\nu}\varepsilon^\nu&=0,\\
+  \frac{S_{\mu\nu}S^{\mu\nu}}{2(p\cdot q)^2}&=1.
+\end{align}
+The first two equations are the photon Ward check, the third confirms
+compatibility with the physical initial axial-meson polarization, and the last
+line is the projector normalization.
+
+At the central point $M^2=4.5~\GeV^2$ and
+$\sqrt{s_0}=2.55~\GeV$, the hard tensor-current charge decomposition is
+\begin{align}
+  G_B^{\mathrm{hard}}&=-4.092\times10^{-1}~\GeV^{-1},\\
+  G_B^{\mathrm{hard}}(e_c\text{ line})&=-2.499\times10^{-1}~\GeV^{-1},\\
+  G_B^{\mathrm{hard}}(e_s\text{ line})&=-1.594\times10^{-1}~\GeV^{-1}.
+\end{align}
+This confirms that hard photon emission from both quark lines is numerically
+important and must remain in the baseline.
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{lrrrr}
+    \toprule
+    Diagnostic case & $G_A$ & $G_B$ & $\Gamma_{2460}$ & $\Gamma_{2536}$\\
+    & \multicolumn{2}{c}{($\GeV^{-1}$)} & \multicolumn{2}{c}{(keV)}\\
+    \midrule
+    central & $-0.357$ & $-0.263$ & $37.18$ & $6.04$\\
+    $m_s\to0$ numerical proxy & $-0.175$ & $-0.210$ & $15.59$ & $0.15$\\
+    $m_s=m_c$ toy & $+0.535$ & $+0.273$ & $59.46$ & $24.22$\\
+    $e_c=0$ toy & $+0.102$ & $-0.013$ & $0.50$ & $2.57$\\
+    $e_s=0$ toy & $-0.459$ & $-0.250$ & $46.30$ & $16.48$\\
+    light-$u$ OPE toy & $-1.040$ & $-0.438$ & $192.96$ & $110.02$\\
+    light-$d$ OPE toy & $-0.109$ & $-0.176$ & $8.94$ & $0.05$\\
+    \bottomrule
+  \end{tabular}
+  \caption{Limiting-case diagnostics from
+  \texttt{outputs/validation\_limiting\_cases.csv}.  The $m_s\to0$ and
+  light-quark rows use $m_q=10^{-4}~\GeV$ as a numerical regulator of the
+  present hard-line spectral-density representation.  The light-$u$ and
+  light-$d$ rows are OPE-level charge and condensate substitutions only, not
+  physical nonstrange $D_1\to D\gamma$ predictions.}
+  \label{tab:validation-limits}
+\end{table}
+
+\section{First \(B_{s1}\to B_s\gamma\) Extension}
+
+The same matched Stage-2 machinery can be reused for the bottom-strange system
+after the replacement $m_c\to m_b$ and $e_c\to e_b=-1/3$.  The script
+\begin{center}
+  \texttt{scripts/bs1\_stage2\_baseline.py}
+\end{center}
+performs this first pass.  Internally the reusable functions still use the key
+\texttt{mc}; in this section it should be read as $m_b$.
+
+The first-pass numerical inputs are deliberately conservative working inputs:
+$m_b(m_b)=4.18~\GeV$, $m_s(2~\GeV)=0.093~\GeV$,
+$m_{B_s}=5.36692~\GeV$, and $f_{B_s}=0.2303~\GeV$
+(FLAG Review 2024).  For the axial and tensor
+$B_{s1}$ decay constants we use the temporary heavy-quark scaling estimate
+$f_H\sqrt{m_H}=\mathrm{const.}$ from the $D_{s1}$ central values.  Thus these
+rows are not yet final paper predictions; they are a controlled baseline for
+the bottom-sector calculation.
+
+Two mass targets are shown.  The observed narrow state is treated as the
+high-combination state,
+\begin{equation}
+  G_{\mathrm{high}}=\cos\theta\,G_A-\sin\theta\,G_B,
+  \qquad m_{\Bsone}=5.82870~\GeV.
+\end{equation}
+Because the lower $1^+$ bottom-strange partner is not firmly established, the
+second row uses $m_{\Bsone}=5.720~\GeV$ only as a lower-partner diagnostic, with
+\begin{equation}
+  G_{\mathrm{low}}=\sin\theta\,G_A+\cos\theta\,G_B.
+\end{equation}
+The scan uses $8\le M^2\le14~\GeV^2$, $\theta=35.3^\circ$, and
+$\sqrt{s_0}=6.05,6.15,6.25~\GeV$ for the observed state
+($5.95,6.05,6.15~\GeV$ for the lower diagnostic state).
+
+\begin{table}[htbp]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{llcc}
+    \toprule
+    Target & Photon input & $G$ ($\GeV^{-1}$) & $\Gamma$ (keV)\\
+    \midrule
+    $\Bsone(5830)$ high combo
+      & legacy $\chi_s$ (Rohrwild/BBK)
+      & $0.0358\,[0.0218,0.0688]$
+      & $0.27\,[0.10,1.01]$\\
+    $\Bsone(5830)$ high combo
+      & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
+      & $0.1496\,[0.119,0.216]$
+      & $4.75\,[3.02,9.88]$\\
+    lower $1^+$ diagnostic
+      & legacy $\chi_s$ (Rohrwild/BBK)
+      & $0.589\,[0.502,0.761]$
+      & $33.8\,[24.6,56.5]$\\
+    lower $1^+$ diagnostic
+      & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
+      & $0.847\,[0.725,1.09]$
+      & $69.9\,[51.2,116]$\\
+    \bottomrule
+  \end{tabular}%
+  }
+  \caption{First matched Stage-2 $B_{s1}\to B_s\gamma$ baseline.  Brackets show
+  the range over the Borel and continuum-threshold grid, not a full uncertainty
+  interval.  The $B_{s1}$ decay constants are working heavy-quark-scaled inputs,
+  so these values should be refined after dedicated $B_{s1}$ hadronic inputs are
+  fixed.}
+  \label{tab:bs1-first-baseline}
+\end{table}
+
+The qualitative behavior mirrors the $D_{s1}$ calculation: the observed
+high-combination state is cancellation-sensitive, while the lower-combination
+diagnostic is much larger.  The difference between the legacy and lattice
+photon-normalization rows is again substantial, so the bottom-sector analysis
+should keep both scenarios until the input convention is finalized.  The
+machine-readable grid is
+\texttt{outputs/bs1\_stage2\_baseline.csv}.
+
+The companion script
+\begin{center}
+  \texttt{scripts/bs1\_uncertainty\_and\_plots.py}
+\end{center}
+performs a 500-point Monte Carlo scan for each state, photon-input scenario,
+and mixing-angle treatment.  The observed $\Bsone(5830)$ row samples
+$8\le M^2\le14~\GeV^2$,
+$6.05\le\sqrt{s_0}\le6.25~\GeV$, the same quark and photon-DA inputs used in
+the $D_{s1}$ scan, and assigns a conservative $20\%$ width to the temporary
+heavy-quark-scaled $B_{s1}$ axial and tensor decay constants.  The lower-state
+diagnostic uses the lattice-inspired model mass
+$m_{\Bsone}=5.750\pm0.026~\GeV$ from Lang, Mohler, Prelovsek and Woloshyn.
+
+After the physical-current normalization discussion above, the temporary
+HQ-scaled $B_{s1}$ constants are not the preferred bottom-sector input.  The
+first bottom-sector update used the script
+\begin{center}
+  \texttt{scripts/stage3\_bs1\_pz\_decay\_constants.py}
+\end{center}
+to rerun the same $B_{s1}$ Monte Carlo scan with the Pullin--Zwicky
+heavy-light sum-rule inputs
+$f_{B_{s1}}=0.305\pm0.027~\GeV$ and
+$f^T_{B_{s1}}=0.285\pm0.027~\GeV$.  These numbers should be interpreted as
+basis-current inputs, not directly as the final physical-current decay
+constants.  The follow-up script
+\begin{center}
+  \texttt{scripts/stage3\_bs1\_physical\_decay\_constants.py}
+\end{center}
+uses the same basis-current inputs and closes the two-point matrix by requiring
+the physical currents to be diagonal, $\Pi_{12}=0$.  In this closure model
+\[
+  f_1^2=s_\theta^2 f_A^2+c_\theta^2 f_B^2
+       +2s_\theta c_\theta\,\rho_{AB} f_A f_B,\qquad
+  f_2^2=c_\theta^2 f_A^2+s_\theta^2 f_B^2
+       -2s_\theta c_\theta\,\rho_{AB} f_A f_B,
+\]
+where
+\[
+  \rho_{AB}=
+  -\,\frac{s_\theta c_\theta\,(f_A^2-f_B^2)}
+  {(c_\theta^2-s_\theta^2)f_Af_B}.
+\]
+Here $f_A=f_{B_{s1},A}^{\rm PZ}$ and
+$f_B=f^T_{B_{s1}}m_{B_{s1}}/(m_b+m_s)$ is the effective tensor-current
+normalization in the same dimension as $f_A$.  Samples with $|\rho_{AB}|>1$ or
+negative $f_i^2$ are rejected.  This is still a model closure rather than an
+independent local OPE derivation of $\Pi_{AA}$, $\Pi_{BB}$ and $\Pi_{AB}$, but it
+does calculate the bottom physical-current $f_1$ and $f_2$ from the same
+mixed-current logic used for the charm normalization.  The older PZ-only rows
+are retained as a basis-normalization comparison.
+
+The current bottom-sector physical-current results are:
+
+\begin{table}[htbp]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{llllccc}
+    \toprule
+    Target & Photon input & Mixing input & Physical constants
+    & $\rho_{AB}$ & $g$ ($\GeV^{-1}$) & $\Gamma$ (keV)\\
+    \midrule
+    $\Bsone(5830)$ high combo
+      & legacy $\chi_s$ (Rohrwild/BBK)
+      & $\theta=35.3^\circ$
+      & $f_1=0.436[0.380,0.486]$, $f_2=0.218[0.138,0.292]$
+      & $+0.587[+0.242,+0.835]$
+      & $-0.0793[-0.130,-0.0537]$
+      & $1.33[0.612,3.60]$\\
+    $\Bsone(5830)$ high combo
+      & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
+      & $\theta=35.3^\circ$
+      & $f_1=0.443[0.384,0.492]$, $f_2=0.203[0.121,0.291]$
+      & $+0.631[+0.276,+0.866]$
+      & $-0.0401[-0.0695,-0.0274]$
+      & $0.342[0.160,1.026]$\\
+    lower $1^+$ diagnostic
+      & legacy $\chi_s$ (Rohrwild/BBK)
+      & $\theta=35.3^\circ$
+      & $f_1=0.428[0.367,0.479]$, $f_2=0.226[0.126,0.303]$
+      & $+0.529[+0.215,+0.854]$
+      & $+0.284[+0.227,+0.360]$
+      & $9.50[5.97,17.0]$\\
+    lower $1^+$ diagnostic
+      & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
+      & $\theta=35.3^\circ$
+      & $f_1=0.440[0.381,0.490]$, $f_2=0.216[0.132,0.285]$
+      & $+0.584[+0.286,+0.849]$
+      & $+0.391[+0.331,+0.457]$
+      & $18.4[12.5,28.1]$\\
+    \bottomrule
+  \end{tabular}%
+  }
+  \caption{Bottom-strange physical-current normalization from the
+  mixed-current diagonalization closure.  Entries are medians with 16--84
+  percentile intervals.  The Pullin--Zwicky quantities are used as the basis
+  inputs $f_A$ and $f_T$, while the table reports the derived physical-current
+  $f_1$ and $f_2$.}
+  \label{tab:bs1-physical-normalization}
+\end{table}
+
+For reference, the basis/PZ comparison before the physical-current
+diagonalization was:
+
+\begin{table}[htbp]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{llllcc}
+    \toprule
+    Target & Photon input & Mixing input & Decay constants
+    & $G$ ($\GeV^{-1}$) & $\Gamma$ (keV)\\
+    \midrule
+    $\Bsone(5830)$ high combo
+      & legacy $\chi_s$ (Rohrwild/BBK)
+      & $\theta=35.3^\circ$
+      & PZ
+      & $-0.0140\,[-0.0387,+0.0155]$
+      & $0.109\,[0.008,0.413]$\\
+    $\Bsone(5830)$ high combo
+      & legacy $\chi_s$ (Rohrwild/BBK)
+      & $25^\circ\le\theta\le45^\circ$
+      & PZ
+      & $-0.0126\,[-0.0527,+0.0364]$
+      & $0.249\,[0.023,0.819]$\\
+    $\Bsone(5830)$ high combo
+      & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
+      & $\theta=35.3^\circ$
+      & PZ
+      & $+0.0356\,[+0.0029,+0.0694]$
+      & $0.272\,[0.028,1.024]$\\
+    $\Bsone(5830)$ high combo
+      & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
+      & $25^\circ\le\theta\le45^\circ$
+      & PZ
+      & $+0.0330\,[-0.0228,+0.0974]$
+      & $0.429\,[0.028,2.094]$\\
+    lower $1^+$ diagnostic
+      & legacy $\chi_s$ (Rohrwild/BBK)
+      & $\theta=35.3^\circ$
+      & PZ
+      & $+0.337\,[+0.279,+0.411]$
+      & $14.2\,[8.93,21.2]$\\
+    lower $1^+$ diagnostic
+      & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
+      & $\theta=35.3^\circ$
+      & PZ
+      & $+0.474\,[+0.420,+0.546]$
+      & $27.8\,[20.1,39.4]$\\
+    \bottomrule
+  \end{tabular}%
+  }
+  \caption{Basis/PZ comparison scan for $B_{s1}\to B_s\gamma$ before the
+  physical-current diagonalization.  Entries are medians with 16--84 percentile
+  intervals.  These rows are retained as a normalization diagnostic rather than
+  the final physical-current result.}
+  \label{tab:bs1-mc-baseline}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/stage3_bs1_physical_width_histograms.pdf}
+  \caption{Monte Carlo width distributions for the observed
+  $\Bsone(5830)\to\Bs\gamma$ high-combination state after the physical-current
+  diagonalization.  The legacy and lattice-normalized photon inputs are shown
+  separately for fixed $\theta=35.3^\circ$ and for the mixing-angle scan.}
+  \label{fig:bs1-mc-hist}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/bs1_5830_stability.pdf}
+  \caption{Central $B_{s1}(5830)\to B_s\gamma$ stability curves for the
+  high-combination amplitude, width, and unmixed $G_A,G_B$ components.}
+  \label{fig:bs1-stability}
+\end{figure}
+
+The most important lesson from Table~\ref{tab:bs1-physical-normalization} is
+that the observed $\Bsone(5830)$ amplitude remains cancellation-sensitive after
+the physical-current normalization is included.  The preferred
+lattice-normalized row gives a sub-keV median width, while the lower-partner
+diagnostic remains at the tens-of-keV level.  The machine-readable Stage-3
+bottom outputs are
+\texttt{outputs/stage3\_bs1\_physical\_decay\_constant\_scan.csv} and
+\texttt{outputs/stage3\_bs1\_physical\_decay\_constant\_summary.csv}; the
+earlier \texttt{outputs/stage3\_bs1\_pz\_decay\_constant\_summary.csv} file is
+retained as the basis/PZ diagnostic.
+
+\section{Combined \(D_{s1}\) and \(B_{s1}\) Summary}
+
+Table~\ref{tab:combined-ds-bs-summary} collects the current width predictions
+in one place.  The $D_{s1}$ rows include the Stage-3 physical-current residue
+normalization described above.  The $B_{s1}$ rows use Pullin--Zwicky
+basis-current inputs followed by the mixed-current diagonalization closure
+summarized in Table~\ref{tab:bs1-physical-normalization}.  In addition to the observed
+$\Bsone(5830)$ high-combination state, the table now includes the lower
+$1^+$ bottom-strange diagnostic state used for comparison with the
+$\Bsone(5748)$ channel in Bondar--Milstein's phenomenology.  This lower row is
+not an experimentally established resonance.  All entries are medians with
+16--84 percentile intervals.  The table is intentionally explicit about the
+photon input, mixing input, normalization status, normalization constants, form
+factor $G$, and width $\Gamma$, so that no reader has to infer which scenario
+is being quoted.
+
+\begin{table}[htbp]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{llllllcc}
+    \toprule
+    Sector & Decay & Photon input & Mixing input
+    & Normalization status
+    & Normalization input
+    & $G$ ($\GeV^{-1}$) & $\Gamma$ (keV)\\
+    \midrule
+    $D_s$ final
+      & $\Dsone(2460)\to\Ds\gamma$
+      & legacy $\chi_s$ (Rohrwild/BBK)
+      & $\theta=35.3^\circ$
+      & Stage-3 residue calibrated
+      & $f_1=0.344[0.329,0.363]$, $f_2=0.380[0.339,0.423]$
+      & $-0.424\,[-0.484,-0.360]$
+      & $37.7^{+11.5}_{-10.5}$\\
+    $D_s$ final
+      & $\Dsone(2536)\to\Ds\gamma$
+      & legacy $\chi_s$ (Rohrwild/BBK)
+      & $\theta=35.3^\circ$
+      & Stage-3 residue calibrated
+      & $f_1=0.344[0.329,0.363]$, $f_2=0.380[0.339,0.423]$
+      & $+0.0118\,[+0.00143,+0.0233]$
+      & $0.045^{+0.124}_{-0.040}$\\
+    $D_s$ final
+      & $\Dsone(2460)\to\Ds\gamma$
+      & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
+      & $\theta=35.3^\circ$
+      & Stage-3 residue calibrated
+      & $f_1=0.345[0.330,0.364]$, $f_2=0.379[0.338,0.423]$
+      & $-0.277\,[-0.312,-0.243]$
+      & $16.1^{+4.4}_{-3.7}$\\
+    $D_s$ final
+      & $\Dsone(2536)\to\Ds\gamma$
+      & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
+      & $\theta=35.3^\circ$
+      & Stage-3 residue calibrated
+      & $f_1=0.345[0.330,0.364]$, $f_2=0.379[0.338,0.423]$
+      & $+0.0403\,[+0.0194,+0.0596]$
+      & $0.504^{+0.600}_{-0.377}$\\
+    $B_s$ final
+      & $\Bsone(5830)\to\Bs\gamma$
+      & legacy $\chi_s$ (Rohrwild/BBK)
+      & $\theta=35.3^\circ$
+      & physical-current diagonalized
+      & $f_1=0.436[0.380,0.486]$, $f_2=0.218[0.138,0.292]$
+      & $-0.0793\,[-0.130,-0.0537]$
+      & $1.33^{+2.27}_{-0.72}$\\
+    $B_s$ final
+      & $\Bsone(5830)\to\Bs\gamma$
+      & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
+      & $\theta=35.3^\circ$
+      & physical-current diagonalized
+      & $f_1=0.443[0.384,0.492]$, $f_2=0.203[0.121,0.291]$
+      & $-0.0401\,[-0.0695,-0.0274]$
+      & $0.342^{+0.684}_{-0.182}$\\
+    $B_s$ final
+      & $\Bsone(5830)\to\Bs\gamma$
+      & legacy $\chi_s$ (Rohrwild/BBK)
+      & $25^\circ\le\theta\le45^\circ$
+      & physical-current diagonalized
+      & $f_1=0.426[0.368,0.469]$, $f_2=0.246[0.174,0.312]$
+      & $-0.0380\,[-0.103,+0.0101]$
+      & $0.349^{+1.908}_{-0.323}$\\
+    $B_s$ final
+      & $\Bsone(5830)\to\Bs\gamma$
+      & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
+      & $25^\circ\le\theta\le45^\circ$
+      & physical-current diagonalized
+      & $f_1=0.421[0.371,0.486]$, $f_2=0.249[0.170,0.307]$
+      & $+0.0137\,[-0.0612,+0.0657]$
+      & $0.493^{+1.239}_{-0.441}$\\
+    $B_s$ final
+      & $\Bsone(5750)\to\Bs\gamma$
+      & legacy $\chi_s$ (Rohrwild/BBK)
+      & $\theta=35.3^\circ$
+      & physical-current diagonalized
+      & $f_1=0.428[0.367,0.479]$, $f_2=0.226[0.126,0.303]$
+      & $+0.284\,[+0.227,+0.360]$
+      & $9.50^{+7.45}_{-3.53}$\\
+    $B_s$ final
+      & $\Bsone(5750)\to\Bs\gamma$
+      & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
+      & $\theta=35.3^\circ$
+      & physical-current diagonalized
+      & $f_1=0.440[0.381,0.490]$, $f_2=0.216[0.132,0.285]$
+      & $+0.391\,[+0.331,+0.457]$
+      & $18.4^{+9.7}_{-5.9}$\\
+    $B_s$ final
+      & $\Bsone(5750)\to\Bs\gamma$
+      & legacy $\chi_s$ (Rohrwild/BBK)
+      & $25^\circ\le\theta\le45^\circ$
+      & physical-current diagonalized
+      & $f_1=0.418[0.355,0.475]$, $f_2=0.251[0.161,0.313]$
+      & $+0.295\,[+0.230,+0.384]$
+      & $10.6^{+7.8}_{-4.3}$\\
+    $B_s$ final
+      & $\Bsone(5750)\to\Bs\gamma$
+      & lattice $f_{\gamma,s}^{\perp}$ (Bacchio et al.)
+      & $25^\circ\le\theta\le45^\circ$
+      & physical-current diagonalized
+      & $f_1=0.416[0.358,0.474]$, $f_2=0.247[0.160,0.312]$
+      & $+0.402\,[+0.339,+0.493]$
+      & $19.6^{+12.6}_{-6.4}$\\
+    \bottomrule
+  \end{tabular}%
+  }
+  \caption{Current combined summary of $D_{s1}$ and $B_{s1}$ radiative form
+  factors and widths.  The $G$ column is the E1 coupling in the convention of
+  Eq.~\eqref{eq:width}.  The $D_s$ rows include the Stage-3 physical-current
+  residue correction.  The $B_s$ rows use Pullin--Zwicky basis-current inputs
+  and the mixed-current diagonalization closure to obtain the physical-current
+  constants $f_1$ and $f_2$.  The $\Bsone(5750)$ rows are
+  lower-partner diagnostics, not observed-state measurements.  The older
+  HQ-scaled bottom rows are retained only as diagnostics.}
+  \label{tab:combined-ds-bs-summary}
+\end{table}
+
+The machine-readable version of Table~\ref{tab:combined-ds-bs-summary} is
+\texttt{outputs/combined\_recommended\_results\_table.csv}.
+
+\subsection{Comparison With Bondar--Milstein Literature Tables}
+
+Bondar and Milstein collect several quark-model predictions for the
+$D_{s1}$ and $B_{s1}$ radiative widths.  Their charm table uses Godfrey,
+Goity--Roberts, Green--Repko--Radford, Radford--Repko--Saelim,
+Chen--Liu--Zhou--Chen, and Korner--Pirjol--Schilcher for the comparison
+columns.  Their bottom table uses Li--Ni--Zhong, Godfrey--Moats--Swanson, and
+Lu--Pan--Wang--Wang--Li.  We cite these papers explicitly in the manuscript,
+because otherwise the comparison would look like a citation only to
+Bondar--Milstein's summary table.
+
+Table~\ref{tab:bondar-literature-comparison} gives a compact version restricted
+to channels computed in the present LCSR analysis.  The comparison set spans
+early quark-model estimates, relativistic quark-model calculations, more recent
+potential-model/electric-transition analyses, and the Bondar--Milstein
+phenomenological extraction.  The full machine-readable table also stores the
+$D_s^*\gamma$ and $B_s^*\gamma$ rows from the literature; our entry is marked
+as not computed for those channels because they require separate
+vector-final-state correlators.  This scope statement should be kept in the
+paper so that the comparison table is not read as a claim about uncalculated
+vector-final-state transitions.
+
+\begin{table}[htbp]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{llllll}
+    \toprule
+    Channel & Early QM & Rel. QM & Recent QM & Bondar--Milstein & This work\\
+    \midrule
+    $\Dsone(2536)\to\Ds\gamma$
+      & $15$ (Godfrey2005)
+      & $25.2$--$31.1$ (Goity--Roberts2001)
+      & $18.18$--$18.85$ (Chen2020)
+      & $12$ (Bondar--Milstein2025)
+      & $0.504[0.127,1.104]$\\
+    $\Dsone(2460)\to\Ds\gamma$
+      & $6.2$ (Godfrey2005)
+      & $10.3$--$17.2$ (Goity--Roberts2001)
+      & $3.53$--$3.61$ (Chen2020)
+      & $297$ (Bondar--Milstein2025)
+      & $16.1[12.4,20.5]$\\
+    $\Bsone(5750)\to\Bs\gamma$
+      & $37$ (Li--Ni--Zhong2021)
+      & $70.6$ (Godfrey--Moats--Swanson2016)
+      & $97.7$ (Lu--Pan--Wang2016)
+      & $47$ (Bondar--Milstein2025)
+      & $18.4[12.5,28.1]$\\
+    $\Bsone(5830)\to\Bs\gamma$
+      & $27$ (Li--Ni--Zhong2021)
+      & $47.8$ (Godfrey--Moats--Swanson2016)
+      & $56.6$ (Lu--Pan--Wang2016)
+      & $28$ (Bondar--Milstein2025)
+      & $0.342[0.160,1.026]$\\
+    \bottomrule
+  \end{tabular}%
+  }
+  \caption{Representative comparison with the radiative-width literature
+  summarized by Bondar--Milstein.  Widths are in keV.  The entries in the last
+  column use our preferred lattice photon normalization.  The complete
+  bookkeeping table is
+  \texttt{outputs/bondar\_literature\_comparison\_table.csv}.}
+  \label{tab:bondar-literature-comparison}
+\end{table}
+
+\section{Comparison With Experimental Information}
+
+The sum rule predicts a partial radiative width,
+$\Gamma_\gamma\equiv\Gamma(H_1\to H\gamma)$, while experiments often quote
+branching fractions, total widths, or spectroscopy measurements in other decay
+channels.  Therefore the comparison is not always one-to-one.  In
+Table~\ref{tab:experimental-comparison}, the ``interpretation'' column has the
+following meaning:
+\begin{itemize}
+  \item for $\Dsone(2460)$, the measured branching fraction is used to infer the
+  total-width scale that would be implied by our partial radiative width;
+  \item for $\Dsone(2536)$, the measured total width is used to infer the
+  radiative branching fraction implied by our partial width;
+  \item for $\Bsone(5830)$, no direct radiative measurement is available, so the
+  row is a prediction for future experimental searches rather than a numerical
+  comparison.
+\end{itemize}
+
+\begin{table}[htbp]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{llll}
+    \toprule
+    Decay & Theory input & Experimental information & Interpretation\\
+    \midrule
+    $\Dsone(2460)\to\Ds\gamma$
+      & legacy $\chi_s$: $37.7\,[27.2,49.2]~\mathrm{keV}$
+      & $\mathcal B(\Dsone(2460)\to\Ds\gamma)=(16\pm4\pm3)\%$ (BaBar)
+      & implies $\Gamma_{\rm tot}\sim0.24~\mathrm{MeV}$; compatible with a very narrow state\\
+    $\Dsone(2460)\to\Ds\gamma$
+      & lattice $f_{\gamma,s}^{\perp}$: $16.1\,[12.4,20.5]~\mathrm{keV}$
+      & $\mathcal B(\Dsone(2460)\to\Ds\gamma)=(16\pm4\pm3)\%$ (BaBar)
+      & implies $\Gamma_{\rm tot}\sim0.10~\mathrm{MeV}$; also compatible with a very narrow state\\
+    $\Dsone(2536)\to\Ds\gamma$
+      & legacy $\chi_s$: $0.045\,[0.0046,0.169]~\mathrm{keV}$
+      & $\Gamma_{\rm tot}(\Dsone(2536))=0.92\pm0.05~\mathrm{MeV}$ (BaBar)
+      & implies $\mathcal B_\gamma\sim0.005\%$; extremely cancellation suppressed\\
+    $\Dsone(2536)\to\Ds\gamma$
+      & lattice $f_{\gamma,s}^{\perp}$: $0.504\,[0.127,1.104]~\mathrm{keV}$
+      & $\Gamma_{\rm tot}(\Dsone(2536))=0.92\pm0.05~\mathrm{MeV}$ (BaBar)
+      & implies $\mathcal B_\gamma\sim0.05\%$; strongly cancellation suppressed\\
+    $\Bsone(5830)\to\Bs\gamma$
+      & legacy $\chi_s$: $1.33\,[0.612,3.60]~\mathrm{keV}$
+      & no direct radiative measurement; observed mainly in $B^{(*)}K$ spectroscopy
+      & prediction for future searches; cancellation-sensitive physical-current amplitude\\
+    $\Bsone(5830)\to\Bs\gamma$
+      & lattice $f_{\gamma,s}^{\perp}$: $0.342\,[0.160,1.026]~\mathrm{keV}$
+      & no direct radiative measurement; observed mainly in $B^{(*)}K$ spectroscopy
+      & prediction for future searches; high-combination amplitude remains cancellation sensitive\\
+    \bottomrule
+  \end{tabular}%
+  }
+  \caption{Comparison of the present radiative-width predictions with available
+  experimental information.  The BaBar $\Dsone(2460)$ branching fraction is from
+  the $B\to D^{(*)}D_{sJ}^{(*)}$ analysis.  The $\Dsone(2536)$ total width is
+  the BaBar width measurement.  The $\Bsone(5830)$ has no direct radiative
+  branching-fraction measurement at present; CMS and LHCb measurements are
+  spectroscopy measurements in hadronic channels.}
+  \label{tab:experimental-comparison}
+\end{table}
+
+Numerically, the $\Dsone(2460)$ rows say that the present partial-width
+prediction is consistent with a total width well below the MeV scale if the
+measured radiative branching fraction is used.  The $\Dsone(2536)$ rows say
+something sharper: with the measured total width near $0.92~\mathrm{MeV}$, the
+radiative branching fraction is expected to be far below the percent level.  For
+$\Bsone(5830)$ the table should be read as a target for future experimental
+searches, not as a test against an existing radiative measurement.
+
+The machine-readable version of Table~\ref{tab:experimental-comparison} is
+\texttt{outputs/experimental\_comparison\_table.csv}.
+
+\section{Paper-Ready Ingredients Before Writing}
+
+This section collects the compact version of the calculation choices that
+should be carried into the manuscript.  It is deliberately shorter than the
+derivation above: the purpose is to state what a reader must know before
+looking at the final numerical tables.
+
+\subsection{Compact Input Table}
+
+\begin{table}[htbp]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{llll}
+    \toprule
+    Quantity & Symbol & Value & Comment\\
+    \midrule
+    charm mass & $m_c$ & $1.27\pm0.02~\GeV$ & $\overline{\mathrm{MS}}$ input for $D_s$ sector; PDG2024\\
+    bottom mass & $m_b$ & $4.18\pm0.03~\GeV$ & $\overline{\mathrm{MS}}$ input for $B_s$ sector; PDG2024\\
+    strange mass & $m_s$ & $0.093\pm0.011~\GeV$ & retained explicitly, including $m_s^2$ terms; PDG2024\\
+    $\Dsone(2460),\Dsone(2536),\Ds$ masses
+      & $M_{2460},M_{2536},m_{\Ds}$
+      & $2.4595,\;2.53511,\;1.96835~\GeV$
+      & physical charm-strange masses; PDG2024\\
+    $\Bsone(5830),\Bs$ masses
+      & $M_{5830},m_{\Bs}$
+      & $5.82870,\;5.36692~\GeV$
+      & observed bottom-strange channel; PDG2024/CMS2018\\
+    lower $\Bsone$ diagnostic mass
+      & $M_{\Bsone}^{\rm low}$
+      & $5.750\pm0.026~\GeV$
+      & expected, not-yet-established lower $1^+$ partner; Lang2015\\
+    $\Ds$ and $\Dsone$ decay constants
+      & $f_{\Ds},f_{\Dsone,A},f^T_{\Dsone}$
+      & $0.2499,\;0.225,\;0.256~\GeV$
+      & hadronic-side inputs; FLAG2024/Colangelo2005/PullinZwicky2021\\
+    $\Dsone$ physical-current residues
+      & $f_1,\;f_2$
+      & $0.345\pm0.017,\;\simeq0.38~\GeV$
+      & working Stage-3 anchor; $f_2$ from overlap calibration; checked against Wang2015 pure axial benchmark\\
+    $\Bs$ and working $\Bsone$ decay constants
+      & $f_{\Bs},f_{\Bsone,A},f^T_{\Bsone}$
+      & $0.2303,\;0.146,\;0.164~\GeV$
+      & diagnostic HQ-scaled inputs, retained only as a cross-check\\
+    PZ $\Bsone$ basis-current inputs
+      & $f_{\Bsone,A}^{\rm PZ},f_{\Bsone,T}^{\rm PZ}$
+      & $0.305\pm0.027,\;0.285\pm0.027~\GeV$
+      & dedicated bottom-sector basis inputs; PullinZwicky2021\\
+    $\Bsone$ physical-current constants
+      & $f_1^{(B_s)},f_2^{(B_s)}$
+      & $0.443[0.384,0.492],\;0.203[0.121,0.291]~\GeV$
+      & fixed-angle lattice scenario from mixed-current diagonalization closure\\
+    condensates
+      & $\langle\bar q q\rangle,\kappa$
+      & $-(0.240~\GeV)^3,\;0.8\pm0.1$
+      & $\langle\bar s s\rangle=\kappa\langle\bar q q\rangle$; FLAG2024/standard SVZ input\\
+    legacy photon input
+      & $\chi_s(1~\GeV)$
+      & $+3.15\pm0.30~\GeV^{-2}$
+      & Rohrwild/BBK-style comparison scenario; BBK2002/Rohrwild2007\\
+    lattice photon input
+      & $f_{\gamma,s}^{\perp}(1~\GeV)$
+      & $-55.1\pm1.9~\mathrm{MeV}$
+      & preferred leading-twist normalization scenario; Bacchio2024\\
+    mixing angle
+      & $\theta$
+      & $35.3^\circ$ central, $25^\circ$--$45^\circ$ scan
+      & ${}^3P_1$--${}^1P_1$ physical-state mixing; Colangelo2005 convention\\
+    $D_s$ sum-rule window
+      & $M^2,\sqrt{s_0}$
+      & $3$--$6~\GeV^2,\;2.50$--$2.60~\GeV$
+      & charm-sector stability/uncertainty scan\\
+    $B_s$ sum-rule window
+      & $M^2,\sqrt{s_0}$
+      & $8$--$14~\GeV^2,\;6.05$--$6.25~\GeV$
+      & observed $\Bsone(5830)$ scan\\
+    \bottomrule
+  \end{tabular}%
+  }
+  \caption{Compact input table for the manuscript.  The complete
+  machine-readable version is \texttt{outputs/paper\_input\_summary\_table.csv};
+  the longer bookkeeping table is \texttt{inputs\_table.csv}.}
+  \label{tab:paper-input-summary}
+\end{table}
+
+\subsection{Convention Checklist For The Paper}
+
+\begin{itemize}
+  \item We use the mostly-minus metric and $\epsilon^{0123}=+1$.
+  \item The initial axial-meson momentum is $P=p+q$; $p$ is the outgoing
+  pseudoscalar momentum and $q$ is the photon momentum.
+  \item The tensor current is
+  $\ii\,\bar s\sigma_{\mu\alpha}P^\alpha\gamma_5 Q/(m_Q+m_s)$, so the
+  momentum entering the tensor current is the initial-state momentum $P$.
+  \item The physical amplitudes are
+  $G_{\rm low}=\sin\theta\,G_A+\cos\theta\,G_B$ and
+  $G_{\rm high}=\cos\theta\,G_A-\sin\theta\,G_B$ in the basis-current
+  normalization convention.
+  \item For the physical currents $J_1$ and $J_2$, the final couplings should
+  be divided by the corresponding two-point residues $f_1$ and $f_2$ as in
+  Eqs.~\eqref{eq:physical-current-g1}--\eqref{eq:physical-current-g2}.
+  \item The width is computed from
+  $\Gamma=\alpha_{\rm em}G^2|\vec q_\gamma|^3/3$.
+  \item We store $\chi_s(1~\GeV)$ as a positive Rohrwild/BBK magnitude,
+  $\chi_s=+3.15~\GeV^{-2}$; this must not be mixed with papers that print the
+  opposite sign convention.
+\end{itemize}
+
+\subsection{Propagator And Condensate Statement}
+
+The base propagators in the hard calculation are not expanded in ordinary
+vacuum condensates.  Instead, we use the quark propagators in an external
+electromagnetic field for hard photon emission and the background-gluon
+propagator term for the three-particle photon DAs.  The condensates that appear
+in the final formulas are therefore part of the photon matrix elements and
+photon DA normalizations, such as
+$\chi_s\langle\bar s s\rangle$, not separate SVZ condensate corrections to the
+free propagator.  This distinction should be stated clearly in the paper
+because it is one of the main convention choices of the calculation.
+
+\subsection{Quoting Strategy}
+
+For the final paper tables, the lattice-normalized
+$f_{\gamma,s}^{\perp}$ scenario should be presented as the preferred modern
+input choice, while the legacy $\chi_s\langle\bar s s\rangle$ scenario should
+be kept for comparison with the older photon-DA literature.  Uncertainties
+should be quoted as medians with 16--84 percentile intervals.  This is
+essential for $\Dsone(2536)$ and $\Bsone(5830)$ because their amplitudes can
+pass close to zero, making Gaussian errors misleading.
+
+For the bottom-strange sector, the observed $\Bsone(5830)$ prediction is a
+future-search target.  The lower $\Bsone$ row is a prediction for an expected
+but not yet experimentally established $1^+$ state; it should not be described
+as an observed resonance.  Its role in the manuscript is to show that the lower
+combination is constructive and can have a much larger radiative width than the
+observed high-combination state.
+
+\subsection{Reference Map}
+
+The manuscript reference list should connect each input family to its source:
+PDG for masses and quark charges, FLAG Review 2024 for $f_{\Bs}$ and related
+lattice decay-constant context, Rohrwild/BBK for the legacy photon DAs,
+Bacchio et al. for the lattice $f_{\gamma,s}^{\perp}$ normalization, Colangelo,
+De Fazio and Ozpineci for the original charm-strange LCSR benchmark, Pullin and
+Zwicky for heavy-light decay-constant cross-checks, Lang--Mohler--Prelovsek--
+Woloshyn for the lower $\Bsone$ diagnostic mass, BaBar for the
+$\Dsone(2460)$ branching fraction and $\Dsone(2536)$ total width, and CMS/LHCb
+for the observed $\Bsone(5830)$ spectroscopy.  The Bondar and Bondar--Milstein
+papers should be cited in the discussion of the $\Dsone(2536)$ nonobservation,
+the constructive/destructive E1-amplitude mechanism, and the comparison with
+the lower and higher $B_{s1}$ radiative channels.
+
+\begin{table}[htbp]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{lll}
+    \toprule
+    Citation key & Input family & Used for\\
+    \midrule
+    PDG2024 & masses, quark masses, charges, $\alpha_{\rm em}$
+      & kinematics, quark-mass inputs, width normalization\\
+    FLAG2024 & lattice decay constants and condensate context
+      & $f_{\Ds}$, $f_{\Bs}$, and modern lattice normalization context\\
+    Colangelo2005 & charm-strange radiative LCSR benchmark
+      & comparison calculation and charm axial-current normalization\\
+    BBK2002 & photon distribution amplitudes
+      & twist-2, twist-3, and twist-4 photon DA shapes\\
+    Rohrwild2007 & magnetic susceptibility update
+      & legacy $\chi_s$ comparison scenario\\
+    Bacchio2024 & lattice photon-DA normalization
+      & preferred $f_{\gamma,s}^{\perp}(1~\GeV)$ scenario\\
+    PullinZwicky2021 & heavy-light vector/tensor decay constants
+      & $D_s$ tensor scale cross-check and preferred $\Bsone$ PZ scenario\\
+    Wang2015 & heavy-light decay constants from QCDSR
+      & pure axial-current $f_A(D_{s1})$ benchmark for the Stage-3 residue check\\
+    Lang2015 & positive-parity $B_s$ spectroscopy
+      & lower $\Bsone$ diagnostic mass\\
+    BaBar2006 & $\Dsone(2460)$ branching data
+      & experimental interpretation of $\Gamma(\Dsone(2460)\to\Ds\gamma)$\\
+    BaBar2011 & $\Dsone(2536)$ total width
+      & branching-fraction estimate for the high charm-strange state\\
+    CMS2018 & $\Bsone(5830)$ spectroscopy
+      & observed bottom-strange mass and phenomenological comparison\\
+    Bondar2025Why & $\Dsone(2536)$ radiative nonobservation
+      & experimental upper-limit motivation for the suppressed high-state mode\\
+    BondarMilstein2025 & $D_{s1}$ and $B_{s1}$ radiative phenomenology
+      & constructive/destructive E1-amplitude mechanism and comparison tables\\
+    Godfrey2005, GoityRoberts2001, Chen2020
+      & $D_{s1}$ radiative-width literature
+      & comparison columns for $\Dsone\to\Ds^{(*)}\gamma$\\
+    LiNiZhong2021, GodfreyMoatsSwanson2016, LuPanWang2016
+      & $B_{s1}$ radiative-width literature
+      & comparison columns for $\Bsone\to\Bs^{(*)}\gamma$\\
+    \bottomrule
+  \end{tabular}%
+  }
+  \caption{Citation map for the numerical inputs and comparison data.  The
+  machine-readable version is \texttt{outputs/input\_citation\_map.csv}.}
+  \label{tab:input-citation-map}
+\end{table}
+
+\section{Pre-Paper Calculation Closure Checklist}
+
+The core $D_{s1}$ and $B_{s1}$ calculation set is complete at the precision
+level used in these working notes.  The completed items are:
+\begin{itemize}
+  \item Stage~1 hard-photon and two-particle photon-DA terms, with both heavy-
+  and strange-line hard emission included;
+  \item Stage~2 three-particle photon-DA corrections from the background-gluon
+  insertion in the quark propagator;
+  \item explicit retention of the $m_s$ and $m_s^2$ terms used by the present
+  Mathematica/Python kernels;
+  \item $D_{s1}$ Stage~3 physical-current normalization using the calibrated
+  residues $f_1\simeq0.345~\GeV$ and $f_2\simeq0.38~\GeV$, while using
+  Wang2015 only as a pure-axial benchmark rather than as a direct authority for
+  the mixed residues;
+  \item $B_{s1}$ Stage~3 normalization with Pullin--Zwicky basis-current inputs
+  and the mixed-current diagonalization closure, plus the lower-state diagnostic
+  channel;
+  \item one-at-a-time uncertainty diagnostics, Monte Carlo uncertainty scans,
+  percentile intervals, stability plots in $(M^2,s_0)$, and comparison tables;
+  \item experimental interpretation tables for the available $D_{s1}$ and
+  $B_{s1}$ information;
+  \item citation-tagged input tables in \texttt{inputs\_table.csv},
+  \texttt{outputs/paper\_input\_summary\_table.csv}, and
+  \texttt{outputs/input\_citation\_map.csv}.
+\end{itemize}
+
+The only non-blocking physics refinement left before submission is an
+independent local two-point validation of the complete current matrix:
+\begin{itemize}
+  \item derive the local two-point OPE for $\Pi_{AA}$, $\Pi_{BB}$ and
+  $\Pi_{AB}$, including the ordinary SVZ condensates appropriate to a
+  two-point decay-constant sum rule;
+  \item compare the extracted $f_1$ and $f_2$ with the Stage-3 calibrated
+  values, $f_1\simeq0.345~\GeV$ and $f_2\simeq0.38~\GeV$;
+  \item rerun the $D_{s1}$ headline table only if the independent two-point
+  residues differ appreciably from the calibrated values;
+  \item optionally repeat the same fully mixed two-point check in the
+  bottom-strange sector once a dedicated local-QCDSR normalization is desired.
+\end{itemize}
+
+\paragraph{Private future-work note.}
+The $B_{c1}$ radiative system should not be included in the present paper.
+It is a heavy-heavy problem rather than a heavy-light strange-meson problem, so
+the present photon-DA LCSR machinery does not carry over without a new
+formalism.  We keep this only as an internal next-study idea in
+\texttt{notes/internal\_future\_work.md}.
+
+\section{Redo Analysis and Publication-Quality Plots}
+\label{sec:redo-analysis-publication-plots}
+
+From this point onward these notes are the active calculation document.  The
+folder \texttt{draft\_prd/} is kept only as a reference copy of the fuller
+PRD-style derivation, and the folder \texttt{manuscript/} is no longer the
+editing target for the paper.  The paper text will be edited elsewhere; here we
+will keep the reproducible analysis, numerical checks, and plot-generation
+record.
+
+The next analysis pass should be done conservatively.  Existing output files are
+not deleted; revised scans should be written with clear names so that old and
+new results can be compared.  The main goals are:
+\begin{itemize}
+  \item recheck the final $D_{s1}$ and $B_{s1}$ numerical inputs, especially
+  the photon normalization, physical-current decay constants, Borel windows,
+  continuum thresholds, and mixing-angle treatment;
+  \item rerun the preferred Monte Carlo scans with an explicit random seed and
+  store the seed, accepted sample count, rejected sample count, and percentile
+  definitions in the output summary;
+  \item separate the fixed-angle $\theta=35.3^\circ$ results from the
+  $25^\circ\leq\theta\leq45^\circ$ scan in both tables and plots;
+  \item keep the legacy Rohrwild/BBK susceptibility rows as comparison rows, but
+  make the lattice photon-normalized rows the headline results;
+  \item verify the stability windows by producing publication-quality
+  $(M^2,s_0)$ stability plots for the final quoted channels;
+  \item produce compact uncertainty-budget plots showing the dominant input
+  sources, with the photon normalization, condensate combination, Borel window,
+  continuum threshold, and mixing angle varied in a transparent way;
+  \item produce final comparison tables and figures against the representative
+  $D_{s1}$ and $B_{s1}$ literature values, while clearly marking channels not
+  computed in this LCSR setup;
+  \item record every script command used to regenerate the headline figures and
+  tables, so that the paper plots can be reproduced without relying on memory.
+\end{itemize}
+
+Publication figures should be generated as both PDF and PNG.  The PDF is used
+for the paper, while the PNG is useful for quick inspection.  The preferred plot
+style should be consistent across all figures: readable axis labels, explicit
+units, no crowded legends, and enough whitespace for journal-column scaling.
+The working output directory remains \texttt{outputs/}; if a figure becomes a
+final paper figure, its source script and source data should be listed in
+\texttt{outputs/manuscript\_reproducibility\_map.csv}.
+
+Before any revised result replaces a number in the paper, the following checks
+should be recorded in this section or in a linked table:
+\begin{itemize}
+  \item central-value reproduction from the script output;
+  \item percentile interval definition;
+  \item comparison with the previous stored result;
+  \item stability under the chosen Borel and threshold ranges;
+  \item sign convention and current-normalization convention used for the
+  quoted form factor.
+\end{itemize}
+
+\subsection{Redo Borel and Continuum Windows}
+
+In this redo pass we use the notation \(s_0\) for the squared continuum
+threshold, in \(\GeV^2\).  When it is helpful to compare with the older project
+scripts, we also give the corresponding value of \(\sqrt{s_0}\) in prose, but
+the tables and new plots use \(s_0\).  This avoids the dimensional ambiguity
+that would arise from writing, for example, \(s_0=2.85~\GeV\).
+
+The first broad stability scan is generated by
+\begin{verbatim}
+python3 scripts/redo_stability_windows.py
+\end{verbatim}
+and the output files are
+\begin{itemize}
+  \item \texttt{outputs/redo\_ds1\_stability\_windows.csv},
+  \texttt{outputs/redo\_ds1\_stability\_windows.pdf};
+  \item \texttt{outputs/redo\_bs1\_stability\_windows.csv},
+  \texttt{outputs/redo\_bs1\_low\_stability\_windows.pdf};
+  \item \texttt{outputs/redo\_bs1\_5830\_stability\_windows.pdf}.
+\end{itemize}
+The central photon input in this diagnostic is the lattice
+\(f_{\gamma,s}^{\perp}\) normalization.  The legacy Rohrwild/BBK
+susceptibility normalization should be kept as a comparison scenario, but it is
+not used for choosing the preferred central stability plots.
+
+\begin{table}[h]
+\centering
+\caption{Broad Borel and continuum windows used in the redo stability scan.
+The \(s_0\) entries are squared thresholds.  The \(\sqrt{s_0}\) column is only
+shown to make the connection with the older scripts transparent.}
+\label{tab:redo-stability-windows}
+\begin{tabular}{lccc}
+\hline
+Channel & \(M^2\) broad scan \((\GeV^2)\)
+& \(s_0\) broad scan \((\GeV^2)\)
+& corresponding \(\sqrt{s_0}\) \((\GeV)\)\\
+\hline
+\(D_{s1}(2460),D_{s1}(2536)\) & \(2.0-7.0\)
+& \(8.12-9.61\) & \(2.85-3.10\)\\
+\(B_{s1}(5750)\) & \(6.0-18.0\)
+& \(36.60-40.32\) & \(6.05-6.35\)\\
+\(B_{s1}(5830)\) & \(6.0-18.0\)
+& \(37.82-40.96\) & \(6.15-6.40\)\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/redo_ds1_stability_windows.pdf}
+  \caption{Redo \(D_{s1}\to D_s\gamma\) Borel stability curves using \(s_0\)
+  as the squared threshold.  The broad \(s_0=8.12-9.61~\GeV^2\) scan is useful
+  diagnostically, but the \(D_{s1}\) curves are not flat over the full range.
+  This means the final charm-sector window should be fixed only after applying
+  the pole-dominance and OPE-convergence checks, not simply by taking the whole
+  broad scan as the uncertainty range.}
+  \label{fig:redo-ds1-stability}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/redo_bs1_5830_stability_windows.pdf}
+  \caption{Redo \(B_{s1}(5830)\to B_s\gamma\) stability curves.  The broad
+  scan shows a noticeably flatter region for the quoted high-combination
+  amplitude around \(M^2\simeq 10-16~\GeV^2\), with a moderate residual
+  threshold dependence.}
+  \label{fig:redo-bs1-5830-stability}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/redo_bs1_low_stability_windows.pdf}
+  \caption{Redo \(B_{s1}(5750)\to B_s\gamma\) diagnostic
+  stability curves.  The lower-state prediction has a stronger monotonic
+  \(M^2\) dependence than the observed \(B_{s1}(5830)\), so its quoted range
+  should remain a model diagnostic until the corresponding state assignment and
+  continuum window are better fixed.}
+  \label{fig:redo-bs1-low-stability}
+\end{figure}
+
+The first conclusion from these plots is methodological rather than numerical.
+For the bottom-strange observed channel, the old working interval
+\(8\le M^2\le14~\GeV^2\) is reasonable as a conservative window, and the
+slightly shifted interval \(10\le M^2\le16~\GeV^2\) is also defensible from the
+shape of Fig.~\ref{fig:redo-bs1-5830-stability}.  For the charm-strange
+channel, however, the larger above-pole threshold range
+\(s_0=8.12-9.61~\GeV^2\) produces a sizeable drift in both \(M^2\) and \(s_0\).
+Therefore the final \(D_{s1}\) uncertainty scan should not yet be rerun with
+this full broad threshold interval.  The next check should quantify pole
+dominance and OPE convergence for the old near-threshold window and the new
+above-pole window side by side, then choose the quoted charm-sector window from
+the overlap of those criteria.
+
+\subsection{Pole Proxy, OPE Hierarchy, and Final Window Choice}
+
+The follow-up diagnostic is generated by
+\begin{verbatim}
+python3 scripts/window_diagnostics.py
+\end{verbatim}
+with outputs
+\texttt{outputs/window\_diagnostics\_grid.csv},
+\texttt{outputs/window\_diagnostics\_summary.csv},
+\texttt{outputs/window\_diagnostics\_summary.txt}, and
+\texttt{outputs/window\_diagnostics\_summary.pdf}.  The pole-dominance entry in
+this table is an absolute perturbative spectral-weight proxy.  This wording is
+important: the hard spectral terms have explicit dispersion integrals, while
+the photon-DA contact terms do not all have the same continuum representation.
+The proxy is therefore used to compare windows, not as an independent physical
+observable.
+
+\begin{table}[h]
+\centering
+\caption{Window diagnostics for the final redo choice.  The pole entries are
+minimum absolute perturbative spectral-weight fractions over the window.  The
+stability spans are relative spans over the scan grid.}
+\label{tab:window-diagnostics-final}
+\begin{tabular}{lcccccc}
+\hline
+Window & \(M^2\) & \(s_0\) & pole \(A\) & pole \(B\)
+& main span & max 3p\\
+ & \((\GeV^2)\) & \((\GeV^2)\) & min & min &  &  \\
+\hline
+\(D_{s1}\) old near-threshold
+& \(3.0-6.0\) & \(6.25-6.76\) & \(0.280\) & \(0.378\)
+& \(0.694\) & \(0.016\)\\
+\(D_{s1}\) broad above-pole
+& \(2.0-7.0\) & \(8.12-9.61\) & \(0.364\) & \(0.490\)
+& \(1.485\) & \(0.029\)\\
+\(D_{s1}\) preferred
+& \(3.0-4.5\) & \(7.84-8.70\) & \(0.523\) & \(0.620\)
+& \(0.628\) & \(0.008\)\\
+\(B_{s1}(5750)\) old diagnostic
+& \(8.0-14.0\) & \(36.60-40.32\) & \(0.360\) & \(0.618\)
+& \(0.765\) & \(0.001\)\\
+\(B_{s1}(5750)\) preferred diagnostic
+& \(10.0-14.0\) & \(36.60-40.32\) & \(0.360\) & \(0.618\)
+& \(0.478\) & \(0.001\)\\
+\(B_{s1}(5830)\) old diagnostic
+& \(8.0-14.0\) & \(37.82-40.96\) & \(0.378\) & \(0.648\)
+& \(0.423\) & \(0.001\)\\
+\(B_{s1}(5830)\) preferred
+& \(10.0-14.0\) & \(37.82-40.96\) & \(0.378\) & \(0.648\)
+& \(0.238\) & \(0.001\)\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/window_diagnostics_summary.pdf}
+  \caption{Compact comparison of candidate windows.  The dashed line in the
+  upper panel marks a pole-fraction proxy of \(0.5\); values below this level
+  are treated as warnings rather than hard exclusions because only the
+  perturbative spectral part is used in this proxy.}
+  \label{fig:window-diagnostics-summary}
+\end{figure}
+
+The preferred working windows for the final Monte Carlo pass are therefore
+\[
+  D_{s1}:\qquad 3.0\le M^2\le 4.5~\GeV^2,\qquad
+  7.84\le s_0\le 8.70~\GeV^2 ,
+\]
+\[
+  B_{s1}(5750):\qquad
+  10\le M^2\le 14~\GeV^2,\qquad
+  36.60\le s_0\le 40.32~\GeV^2 ,
+\]
+and
+\[
+  B_{s1}(5830):\qquad
+  10\le M^2\le 14~\GeV^2,\qquad
+  37.82\le s_0\le 40.96~\GeV^2 .
+\]
+For \(D_{s1}\), the old near-threshold window had acceptable apparent
+stability but a poor pole proxy.  The broad above-pole window improved the
+threshold placement but was too unstable.  The preferred window is the
+compromise: it keeps the axial and tensor spectral proxies around or above
+\(0.5\), keeps the three-particle terms small, and does not inflate the
+\(D_{s1}(2460)\) stability span relative to the old window.  The
+\(D_{s1}(2536)\) span remains large because this channel is controlled by a
+near cancellation in the physical amplitude; this is a physical sensitivity,
+not by itself a failure of the Borel window.
+
+For \(B_{s1}\), the narrowed interval \(10\le M^2\le14~\GeV^2\) is preferred
+over \(8\le M^2\le14~\GeV^2\) if the main criterion is the stability of the
+quoted width.  However, lowering the Borel interval improves the pole proxy, so
+we performed a focused bottom-sector scan with fixed continuum thresholds and
+candidate Borel windows.  The script
+\begin{verbatim}
+python3 scripts/bs1_window_candidate_scan.py
+\end{verbatim}
+writes
+\texttt{outputs/bs1\_borel\_window\_candidate\_summary.csv} and
+\texttt{outputs/bs1\_borel\_window\_candidate\_scan.pdf}.  The compact result is
+\begin{center}
+\begin{tabular}{llcccc}
+\toprule
+State & \(M^2~(\GeV^2)\) & pole \(A\) & pole \(B\) & width span & max 3p\\
+\midrule
+\(B_{s1}(5750)\) & \(8-12\) & 0.456 & 0.705 & 0.641 & 0.0010\\
+\(B_{s1}(5750)\) & \(9-13\) & 0.405 & 0.662 & 0.544 & 0.0010\\
+\(B_{s1}(5750)\) & \(10-14\) & 0.360 & 0.618 & 0.478 & 0.0009\\
+\(B_{s1}(5830)\) & \(8-12\) & 0.475 & 0.736 & 0.415 & 0.0010\\
+\(B_{s1}(5830)\) & \(9-13\) & 0.423 & 0.693 & 0.292 & 0.0009\\
+\(B_{s1}(5830)\) & \(10-14\) & 0.378 & 0.648 & 0.238 & 0.0009\\
+\bottomrule
+\end{tabular}
+\end{center}
+Thus lowering \(M^2\) does move the axial pole proxy closer to the usual
+\(0.5\) guideline, especially for \(8\le M^2\le12~\GeV^2\), but the price is a
+larger width span.  The three-particle fractions remain negligible in all these
+bottom-sector windows.  Therefore the choice is a controlled tradeoff: \(10-14\)
+is the most stable window, while \(9-13\) can be used as a reasonable systematic
+cross-check because it improves the pole proxy without the full instability of
+\(8-12\).
+
+\subsection{Publication Stability Figures}
+
+For the manuscript, the cleanest stability demonstration is not a side-by-side
+plot.  We therefore generate the two standard checks as separate figures:
+one figure varies \(M^2\) at selected fixed \(s_0\), and a second figure varies
+\(s_0\) at selected fixed \(M^2\).  This gives more control over the vertical
+scale and makes the stability of each physical channel easier to judge.  The
+script
+\begin{verbatim}
+python3 scripts/publication_stability_selected_windows.py
+\end{verbatim}
+also writes combined diagnostic plots and the numerical grid:
+\begin{itemize}
+  \item \texttt{outputs/publication\_selected\_window\_stability.pdf};
+  \item \texttt{outputs/publication\_selected\_window\_stability\_normalized.pdf};
+  \item \texttt{outputs/publication\_selected\_window\_stability.csv}.
+\end{itemize}
+The combined normalized version is useful diagnostically, but it is not the
+cleanest publication figure because solid/dashed curve conventions and multiple
+channels must be decoded simultaneously.  For the paper draft, use the
+channel-separated single-panel figures instead:
+\begin{itemize}
+  \item \texttt{outputs/publication\_stability\_ds1\_2460\_M2.pdf},
+  \texttt{outputs/publication\_stability\_ds1\_2460\_s0.pdf};
+  \item \texttt{outputs/publication\_stability\_ds1\_2536\_M2.pdf},
+  \texttt{outputs/publication\_stability\_ds1\_2536\_s0.pdf};
+  \item \texttt{outputs/publication\_stability\_bs1\_low\_5750\_M2.pdf},
+  \texttt{outputs/publication\_stability\_bs1\_low\_5750\_s0.pdf};
+  \item \texttt{outputs/publication\_stability\_bs1\_5830\_M2.pdf},
+  \texttt{outputs/publication\_stability\_bs1\_5830\_s0.pdf}.
+\end{itemize}
+For the manuscript, one representative pair is likely enough in the main
+numerical section.  The \(D_{s1}(2460)\to D_s\gamma\) pair is a good default
+because it is the least cancellation-dominated charm-strange channel.  The
+remaining channel-separated figures should be kept in the project files and can
+be mentioned as reproducibility checks or moved to supplemental material if the
+journal format allows it.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.72\textwidth]{../outputs/publication_stability_ds1_2460_M2.pdf}
+  \caption{\(M^2\)-dependence of the physical form factor for
+  \(D_{s1}(2460)\to D_s\gamma\), shown at selected fixed \(s_0\) values.  The
+  vertical range is deliberately kept wider than the curve spread so that the
+  visual impression reflects the actual stability of the chosen window.}
+  \label{fig:publication-stability-ds1-2460-M2}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.72\textwidth]{../outputs/publication_stability_ds1_2460_s0.pdf}
+  \caption{\(s_0\)-dependence of the physical form factor for
+  \(D_{s1}(2460)\to D_s\gamma\), shown at selected fixed \(M^2\) values.  This
+  is the complementary threshold-stability check for the same selected window.}
+  \label{fig:publication-stability-ds1-2460-s0}
+\end{figure}
+
+\subsection{Final-Window Monte Carlo Uncertainty}
+
+After fixing the working windows, the final uncertainty should be assigned
+from a Monte Carlo scan rather than from the visual spread of the stability
+curves.  The stability curves justify the admissible \(M^2\) and \(s_0\)
+domain; the Monte Carlo scan then propagates the input parameters and the
+residual window dependence inside that domain.  The dedicated final pass is
+generated by
+\begin{verbatim}
+python3 scripts/final_window_monte_carlo.py
+\end{verbatim}
+with fixed random seed \(20260705\) and \(500\) attempted samples per
+state/scenario/angle ensemble/window.  The script writes
+\texttt{outputs/final\_window\_mc\_scan.csv},
+\texttt{outputs/final\_window\_mc\_summary.csv},
+\texttt{outputs/final\_window\_mc\_summary.txt},
+\texttt{outputs/final\_window\_mc\_width\_histograms.pdf}, and
+\texttt{outputs/final\_window\_bs\_window\_crosscheck.pdf}.
+
+The preferred photon input remains the lattice
+\(f_{\gamma,s}^{\perp}\) normalization.  The recommended presentation is the
+median with the \(16\)--\(84\) percentile interval, especially for
+\(D_{s1}(2536)\) and \(B_{s1}(5830)\), where cancellations make the width
+distribution non-Gaussian near zero.  For the angle-scan ensemble and the
+central windows, the preferred rows are
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+Channel & \(g\;(\GeV^{-1})\) & \(\Gamma\;(\mathrm{keV})\)\\
+\midrule
+\(\Dsone(2460)\to\Ds\gamma\)
+& \(-0.414[-0.453,-0.376]\)
+& \(36.1[29.7,43.1]\)\\
+\(\Dsone(2536)\to\Ds\gamma\)
+& \(+0.030[-0.014,+0.075]\)
+& \(0.422[0.026,1.760]\)\\
+\(\Bsone(5750)\to\Bs\gamma\)
+& \(+0.394[+0.350,+0.462]\)
+& \(19.3[14.2,27.2]\)\\
+\(\Bsone(5830)\to\Bs\gamma\)
+& \(+0.010[-0.079,+0.060]\)
+& \(0.498[0.056,1.680]\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+These values supersede the earlier uncertainty tables if the final windows in
+Table~\ref{tab:window-diagnostics-final} are adopted.  In particular, the
+above-pole \(D_{s1}\) threshold window increases the preferred
+\(\Dsone(2460)\) width relative to the older near-threshold Monte Carlo pass.
+This shift is a useful warning: the continuum-window choice is a real
+systematic effect and should be discussed transparently in the manuscript.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../outputs/final_window_mc_width_histograms.pdf}
+  \caption{Final-window Monte Carlo width distributions for the preferred
+  lattice photon input and \(25^\circ\le\theta\le45^\circ\).  Solid vertical
+  lines mark the median and dashed lines mark the \(16\)--\(84\) percentile
+  interval.  For readability, each histogram axis is cropped at the
+  \(97.5\) percentile of the plotted sample; the quoted percentiles are
+  computed from the full Monte Carlo sample.}
+  \label{fig:final-window-mc-widths}
+\end{figure}
+
+For the bottom sector, the final scan also compares the central
+\(10\le M^2\le14~\GeV^2\) interval with the \(9\le M^2\le13~\GeV^2\)
+cross-check window, while keeping the same \(s_0\) intervals.  The
+\(B_{s1}(5750)\) median changes from \(19.3\) to \(21.1~\mathrm{keV}\), and
+the \(B_{s1}(5830)\) median changes from \(0.498\) to
+\(0.524~\mathrm{keV}\) in the lattice angle-scan ensemble.  This is small
+compared with the quoted percentile widths, so the central bottom-sector
+window is stable against this reasonable Borel-window variation.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.82\textwidth]{../outputs/final_window_bs_window_crosscheck.pdf}
+  \caption{Bottom-sector final-window Monte Carlo cross-check.  The
+  \(9\le M^2\le13~\GeV^2\) interval improves the pole proxy but gives results
+  compatible with the central \(10\le M^2\le14~\GeV^2\) interval within the
+  final percentile uncertainty.}
+  \label{fig:final-window-bs-crosscheck}
+\end{figure}
+
+\subsection{Rounded \(s_0\) Windows Used In The Publication Pass}
+
+After preparing the first draft we decided to express the continuum-threshold
+scan directly in \(s_0\), not in \(\sqrt{s_0}\).  Therefore the final
+publication pass uses ordered half-step \(s_0\) intervals rather than endpoint
+values obtained by squaring a \(\sqrt{s_0}\) interval.  The adopted windows are
+\[
+  D_{s1}(2460),D_{s1}(2536):\quad
+  3.0\le M^2\le4.5~\GeV^2,\qquad
+  7.5\le s_0\le8.5~\GeV^2 ,
+\]
+\[
+  B_{s1}(5750):\quad
+  10.0\le M^2\le14.0~\GeV^2,\qquad
+  36.5\le s_0\le40.5~\GeV^2 ,
+\]
+\[
+  B_{s1}(5830):\quad
+  10.0\le M^2\le14.0~\GeV^2,\qquad
+  38.0\le s_0\le41.0~\GeV^2 .
+\]
+The diagnostic rerun gives the following minimum pole-fraction proxies in the
+preferred windows:
+\[
+\begin{array}{c|ccc}
+\text{channel} & \text{axial spectral proxy} & \text{tensor spectral proxy}
+& \text{twist-2 retention}\\
+\hline
+D_{s1}\to D_s\gamma & 0.494 & 0.592 & 0.730\\
+B_{s1}(5750)\to B_s\gamma & 0.359 & 0.616 & 0.743\\
+B_{s1}(5830)\to B_s\gamma & 0.381 & 0.652 & 0.769
+\end{array}
+\]
+The final preferred lattice-photon, angle-scan Monte Carlo results with these
+rounded windows are
+\[
+\begin{array}{c|cc}
+\text{channel} & g~(\GeV^{-1}) & \Gamma~(\mathrm{keV})\\
+\hline
+D_{s1}(2460)\to D_s\gamma
+& -0.394[-0.433,-0.356] & 32.7[26.5,39.4]\\
+D_{s1}(2536)\to D_s\gamma
+& +0.0329[-0.0103,+0.0755] & 0.425[0.0355,1.78]\\
+B_{s1}(5750)\to B_s\gamma
+& +0.395[+0.351,+0.462] & 19.3[14.1,27.3]\\
+B_{s1}(5830)\to B_s\gamma
+& +0.0105[-0.0792,+0.0604] & 0.504[0.0567,1.68]
+\end{array}
+\]
+The main numerical change relative to the previous square-root-derived window
+is in \(D_{s1}(2460)\to D_s\gamma\), whose preferred median decreases from
+about \(36.1~\mathrm{keV}\) to \(32.7~\mathrm{keV}\).  The bottom-sector medians are essentially
+unchanged within the quoted percentile intervals.  The files regenerated in
+this pass are \texttt{outputs/window\_diagnostics\_summary.*},
+\texttt{outputs/publication\_stability\_*}, and
+\texttt{outputs/final\_window\_mc\_*}.
+
+\section{Final Python update: Rohrwild nonlocal electromagnetic sector}
+\label{sec:rohrwild-nonlocal-final-update}
+
+This section supersedes the transition-OPE numbers immediately above.  The
+earlier pass removed the ordinary local condensate but had not yet inserted
+the nonlocal electromagnetic three-particle photon DAs.  The completed Python
+calculation uses
+\begin{equation}
+ \widehat T_A^{\rm RW}=\widehat T_A^{\rm base}
+ +e_Q\langle\bar ss\rangle(E_Q-E_0)
+ \frac{2(m_P^2-m_A^2)}{M^2}
+ \left(\ln8-\frac{1181}{320}\right),
+ \label{eq:working-note-rohrwild-em}
+\end{equation}
+where $\widehat T_A^{\rm base}$ contains no standalone local condensate.  The
+Colangelo comparison instead uses
+\begin{equation}
+ \widehat T_A^{\rm Col}=\widehat T_A^{\rm base}
+ +e_QE_Q\langle\bar ss\rangle
+ \left[1-\frac{m_Qm_s}{M^2}
+ +\frac{m_s^2}{2M^2}\left(1+\frac{m_Q^2}{M^2}\right)\right].
+\end{equation}
+These last terms are alternatives and are never added.  The tensor-current
+$\mathcal S_\gamma,\mathcal T_4^\gamma$ expression and its physical-residue
+numerator prescription are written explicitly in the standalone derivation
+note \texttt{DsBs\_gamma\_Mathematica\_derivation.tex}.
+
+At $M^2=4.5~\GeV^2$ and $\sqrt{s_0}=2.55~\GeV$, the central comparison is
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+prescription & added OPE term $[\GeV^3]$ & $g_A[\GeV^{-1}]$\\
+\midrule
+Colangelo local & $-5.02345\times10^{-3}$ & $-0.356893$\\
+Rohrwild nonlocal & $-5.31634\times10^{-3}$ & $-0.359137$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Thus the central OPE terms differ by only $5.8\%$, which is a useful check,
+but they are not algebraically identical.  Across the broad charm scan the
+ratio of nonlocal to local terms ranges from $0.64$ to $1.99$ because their
+Borel dependence differs; in the selected $D_s$ window it ranges from $1.17$
+to $2.18$.  Consequently the central near-threshold agreement is a validation
+checkpoint, not a scheme-conversion identity.
+
+The printed Rohrwild appendix gives a zero lower limit in the third
+$\mathcal P[\mathcal T_4^\gamma]$ integral, which is logarithmically divergent
+if read literally.  The implemented result enforces the double-Borel support
+$\alpha_{\bar q}\geq1/2$, producing the finite constant
+$\ln8-1181/320=-1.611183458320\ldots$.  This qualification must remain in the
+paper.
+
+\clearpage
+\section{Replacement of the old Stage-3 charm normalization}
+
+The former charm prescription, in which $f_1$ was externally anchored and
+$f_2$ was inferred from a dimensionless overlap parameter, is now superseded.
+The charm normalization is calculated from one normalized-current
+$AA/AB/BB$ two-point QCD sum-rule matrix.  The basis currents and physical
+rotation are
+\begin{align}
+J_A^\mu&=\bar s\gamma^\mu\gamma_5c,
+&J_B^\mu&=\frac{i}{m_c+m_s}\bar s\sigma^{\mu\nu}p'_\nu\gamma_5c,\\
+J_1^\mu&=s_\theta J_A^\mu+c_\theta J_B^\mu,
+&J_2^\mu&=c_\theta J_A^\mu-s_\theta J_B^\mu,
+\end{align}
+where $p'$ is the initial-state momentum.  With
+\begin{equation}
+\Pi_{ij}^{\mu\nu}(p')=i\int d^4x\,e^{ip'\cdot x}
+\langle0|T\{J_i^\mu(x)J_j^{\nu\dagger}(0)\}|0\rangle
+=\left(-g^{\mu\nu}+\frac{p'^\mu p'^\nu}{p'^2}\right)\Pi_{ij}(p'^2)+\cdots,
+\end{equation}
+the correctly rotated invariants are
+\begin{align}
+\Pi_{11}&=s_\theta^2\Pi_{AA}+c_\theta^2\Pi_{BB}
+ +2s_\theta c_\theta\Pi_{AB},\\
+\Pi_{22}&=c_\theta^2\Pi_{AA}+s_\theta^2\Pi_{BB}
+ -2s_\theta c_\theta\Pi_{AB},\\
+\Pi_{12}&=s_\theta c_\theta(\Pi_{AA}-\Pi_{BB})
+ +(c_\theta^2-s_\theta^2)\Pi_{AB}.
+\end{align}
+This corrects the swapped $AA/BB$ coefficients that appeared in the early
+draft version of the state-1 equation.
+
+At the common truncation used in both implementations,
+\begin{equation}
+\widehat\Pi(M^2,s_0)=
+\int_{(m_c+m_s)^2}^{s_0}ds\,e^{-s/M^2}\rho(s)
++e^{-m_c^2/M^2}\left[C_3(\mathcal Q_0+\mathcal Q_1+\mathcal Q_2)
++C_5\mathcal Q_5\right],
+\label{eq:twopoint-matrix-final}
+\end{equation}
+where $C_3=\langle\bar ss\rangle$, $C_5=\langle\bar s g_s
+\sigma\!\cdot\!G s\rangle$, $d=m_c+m_s$, and
+\begin{align}
+\rho_{AA}(s)&=\frac{\sqrt\lambda}{8\pi^2}\left[
+2-\frac{m_c^2+m_s^2+6m_cm_s}{s}
+-\frac{(m_c^2-m_s^2)^2}{s^2}\right],\\
+\rho_{AB}(s)&=\frac{\sqrt\lambda}{8\pi^2}
+\frac{3(m_s-m_c)(d^2-s)}{ds},\\
+\rho_{BB}(s)&=\frac{\sqrt\lambda}{8\pi^2}
+\frac{-(d^2-s)(2m_s^2-4m_cm_s+2m_c^2+s)}{d^2s},\\
+\lambda&=[s-(m_c+m_s)^2][s-(m_c-m_s)^2].
+\end{align}
+The four local matrices are
+\begin{align}
+\mathcal Q_0&=
+\begin{pmatrix}m_c&m_c^2/d\\m_c^2/d&m_c^3/d^2\end{pmatrix},\\
+\mathcal Q_1&=
+\begin{pmatrix}
+-\dfrac{m_sm_c^2}{2M^2}&
+\dfrac{m_sm_c(1-m_c^2/M^2)}{2d}\\
+\dfrac{m_sm_c(1-m_c^2/M^2)}{2d}&
+\dfrac{m_sm_c^2(1-m_c^2/(2M^2))}{d^2}
+\end{pmatrix},\\
+\mathcal Q_2&=
+\begin{pmatrix}
+\dfrac{m_s^2m_c^3}{2M^4}&
+\dfrac{m_s^2(m_c^4/M^4-m_c^2/M^2-1)}{2d}\\
+\dfrac{m_s^2(m_c^4/M^4-m_c^2/M^2-1)}{2d}&
+\dfrac{m_s^2(m_c^5/(2M^4)-m_c^3/M^2)}{d^2}
+\end{pmatrix},\\
+\mathcal Q_5&=
+\begin{pmatrix}
+-\dfrac{m_c^3}{4M^4}&
+-\dfrac{m_c^4/M^4-m_c^2/M^2-1}{4d}\\
+-\dfrac{m_c^4/M^4-m_c^2/M^2-1}{4d}&
+-\dfrac{m_c^5/(4M^4)-m_c^3/(2M^2)}{d^2}
+\end{pmatrix}.
+\end{align}
+The $AA$ perturbative density and the complete displayed $AA$ local term
+reduce algebraically to the corresponding Colangelo two-point expression.
+The $AB$ symmetry is also exact.  These statements are regression-tested in
+both Mathematica and Python.
+
+The mixing angle is obtained from $\widehat\Pi_{12}=0$ using a common
+angle-determination threshold, while separate projected thresholds are fitted
+to the measured $2460$ and $2536$ masses.  The pole residues follow from
+\begin{equation}
+f_i^2m_i^2e^{-m_i^2/M^2}
+=\widehat\Pi_{ii}(M^2,s_0^{(i)};\theta),\qquad i=1,2.
+\end{equation}
+The deterministic accepted-window result is
+\begin{align}
+\theta&=30.586[30.456,30.701]^\circ,&
+f_1&=0.40210[0.39855,0.40215]~\GeV,&
+f_2&=0.16254[0.15856,0.16770]~\GeV,
+\end{align}
+and the input Monte Carlo gives
+\begin{align}
+\theta&=30.60[29.93,31.26]^\circ,&
+f_1&=0.4045[0.3790,0.4310]~\GeV,&
+f_2&=0.1635[0.1552,0.1717]~\GeV.
+\end{align}
+No external $f_1$, basis decay constant, or phenomenological $AB$ overlap is
+used in this extraction.  The present truncation is explicitly
+LO+$d=3$+$d=5$; a gluon-condensate term and perturbative $\alpha_s$
+corrections have not yet been added.
+
+Ordinary local condensates are included in Eq.~\eqref{eq:twopoint-matrix-final}
+because it is a two-point SVZ sum rule.  They remain excluded as separate
+terms from the Rohrwild external-photon transition LCSR.  Thus there is no
+contradiction between the two calculations.
+
+The final-window transition Monte Carlo now pairs every $D_s$ transition-OPE
+sample with one accepted, internally correlated $(\theta,f_1,f_2)$ sample
+from the matrix sum rule.  The shared quark/condensate inputs are not yet
+correlated between the two independently generated ensembles; this is a
+small remaining refinement, not an external normalization.  The updated
+charm results are
+\begin{equation}
+\begin{array}{c|c|cc}
+\text{photon input}&\text{channel}&G~(\GeV^{-1})&\Gamma~(\mathrm{keV})\\
+\hline
+\text{legacy }\chi_s&D_{s1}(2460)\to D_s\gamma
+&-0.4959[-0.5674,-0.4378]&51.58[40.27,67.83]\\
+\text{legacy }\chi_s&D_{s1}(2536)\to D_s\gamma
+&-0.1149[-0.1560,-0.0710]&4.094[1.563,7.548]\\
+f_{\gamma,s}^{\perp}&D_{s1}(2460)\to D_s\gamma
+&-0.3572[-0.3949,-0.3239]&26.79[22.11,32.75]\\
+f_{\gamma,s}^{\perp}&D_{s1}(2536)\to D_s\gamma
+&-0.01124[-0.04401,+0.01693]&0.1664[0.01165,0.7145]
+\end{array}
+\end{equation}
+All older charm tables using $f_1\simeq0.345~\GeV$ and
+$f_2\simeq0.38~\GeV$ are retained only as legacy diagnostics and are not the
+current paper normalization.
+
+The executable sources are
+\begin{itemize}
+  \item \path{scripts/twopoint_ds1_matrix_sumrule.py},
+  \item \path{scripts/mathematica_twopoint_ds1_matrix_check.wl},
+  \item \path{notebooks/Ds1_AA_AB_BB_two_point_sumrule.nb}.
+\end{itemize}
+
+\section{Authoritative fixed-angle update and Wang correction}
+
+This section supersedes all earlier numerical passages in these working notes
+that use a common $35.3^\circ$ central angle, a uniform $25^\circ$--$45^\circ$
+interval as a statistical error, or the obsolete Wang value
+$0.245\pm0.017~\GeV$.
+
+The paper now uses the sector-specific angles from our dedicated QCD-sum-rule
+study,
+\begin{equation}
+\theta_{D_s}=26.6\pm0.6^\circ,\qquad
+\theta_{B_s}=38.5\pm0.1^\circ.
+\end{equation}
+The $35.3^\circ$ HQET value and the $25^\circ$--$45^\circ$ interval are kept
+only as a benchmark and a stress test, respectively.  They are not combined
+with the quoted angle errors as if they were statistical measurements.
+
+For $D_s$, the external angle is projected through the normalized-current
+$AA/AB/BB$ two-point matrix.  The resulting Monte Carlo residues are
+\begin{equation}
+f_1=0.4046[0.3799,0.4291]~\GeV,\qquad
+f_2=0.1677[0.1594,0.1756]~\GeV.
+\end{equation}
+Diagonalizing the same LO+$d=3$+$d=5$ matrix gives
+$30.63[29.94,31.29]^\circ$ only as a truncation diagnostic.  The normalized
+off-diagonal residual after projection at the external angle is
+$0.183[0.142,0.225]$; this is retained as a method/OPE warning.
+
+For amplitudes define $A=f_AG_A$ and $B=f_BG_B$.  Then
+\begin{equation}
+N_1=\sin\theta A+\cos\theta B,\qquad
+N_2=\cos\theta A-\sin\theta B.
+\end{equation}
+In the present calculation $A$ and $B$ have the same sign.  Hence the low-state
+combination is constructive and the high-state combination is destructive
+throughout the physical first quadrant.  The angle changes the proximity to
+the zero; it does not change the interference type.  At the midpoint of the
+selected charm window the high-state cancellation occurs near
+$\theta=31.37^\circ$.  The central benchmark table is stored in
+\path{outputs/ds_mixing_angle_benchmark_table.csv}.
+
+The preferred lattice-photon final-window results at the previous-study angle
+are
+\begin{align}
+\Gamma[D_{s1}(2460)\to D_s\gamma]
+ &=26.71[22.01,32.44]~\mathrm{keV},\\
+\Gamma[D_{s1}(2536)\to D_s\gamma]
+ &=1.656[0.4567,3.378]~\mathrm{keV},\\
+\Gamma[B_{s1}(5750)\to B_s\gamma]
+ &=18.16[13.03,27.94]~\mathrm{keV},\\
+\Gamma[B_{s1}(5830)\to B_s\gamma]
+ &=1.504[0.818,5.342]~\mathrm{keV}.
+\end{align}
+The lower $B_{s1}(5750)$ state remains a diagnostic prediction.
+
+The bottom-strange normalization is less complete than the charm one.  It is
+obtained from Pullin--Zwicky basis-current inputs through the diagonal-closure
+model, rather than from a directly calculated $AA/AB/BB$ matrix.  In the
+nominal lattice-photon central-window ensemble only $245/500$ lower-state and
+$236/500$ higher-state trials pass the physical covariance condition
+$|\rho_{AB}|\leq1$.  Consequently the quoted $B_s$ intervals are conditional
+on this closure and should not yet be advertised with the same normalization
+status as the $D_s$ predictions.  A complete bottom-sector two-point matrix is
+the required follow-up check.
+
+The corrected Wang comparison is essential.  arXiv:1506.01993v4 explicitly
+replaces the old $245\pm17~\mathrm{MeV}$ entry by
+\begin{equation}
+f_{D_{s1}}^{(J_A)}=345\pm17~\mathrm{MeV}.
+\end{equation}
+Wang uses the pure local axial current, so neither mixed residue $f_1$ nor
+$f_2$ can be compared to this number directly.  The strict check is our pure
+$AA$ correlator evaluated in Wang's window; it gives
+\begin{equation}
+f_A^{\rm ours}=0.2686[0.2607,0.2768]~\GeV,
+\end{equation}
+approximately $4.0\sigma$ below Wang under the quoted uncertainties.  The
+projection diagnostics are
+\begin{equation}
+\sin\theta f_1=0.1812[0.1692,0.1930]~\GeV,\qquad
+\cos\theta f_2=0.1498[0.1424,0.1573]~\GeV,
+\end{equation}
+and the Borel-weighted two-pole one-pole-equivalent value is
+$0.2303[0.2194,0.2418]~\GeV$.  This failure of the absolute-normalization check
+must be quoted honestly: it signals missing higher-order/higher-dimensional
+terms and a one-pole-versus-two-pole modelling systematic.  The executable
+record is \path{scripts/wang_pure_axial_validation.py} and the numerical report
+is \path{outputs/wang_pure_axial_validation.txt}.
+
+\end{document}

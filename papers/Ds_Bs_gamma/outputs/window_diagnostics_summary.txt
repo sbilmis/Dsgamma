@@ -1,0 +1,42 @@
+Window diagnostics
+==================
+Scenario: central lattice f_gamma,s^perp normalization, theta=35.3 deg.
+Pole dominance is reported as an absolute perturbative spectral-weight proxy.
+The two-particle photon DA continuum entry is a retention proxy.
+
+Ds_old_near_threshold: M2=3.00-6.00, s0=6.25-6.76 GeV^2, sqrt(s0)=2.50-2.60; pole_axial_min=0.280, pole_tensor_min=0.378, twist2_retention_min=0.538
+  spans: Gamma2460=0.414, Gamma2536=0.381, max GA_3p=0.011, max GB_3p=0.004
+
+Ds_above_pole_broad: M2=2.00-7.00, s0=8.12-9.61 GeV^2, sqrt(s0)=2.85-3.10; pole_axial_min=0.364, pole_tensor_min=0.490, twist2_retention_min=0.605
+  spans: Gamma2460=0.795, Gamma2536=1.998, max GA_3p=0.010, max GB_3p=0.005
+
+Ds_preferred_candidate: M2=3.00-4.50, s0=7.50-8.50 GeV^2, sqrt(s0)=2.74-2.92; pole_axial_min=0.494, pole_tensor_min=0.592, twist2_retention_min=0.730
+  spans: Gamma2460=0.469, Gamma2536=1.000, max GA_3p=0.007, max GB_3p=0.003
+
+Ds_above_pole_upper_candidate: M2=3.50-5.50, s0=8.12-9.00 GeV^2, sqrt(s0)=2.85-3.00; pole_axial_min=0.459, pole_tensor_min=0.570, twist2_retention_min=0.694
+  spans: Gamma2460=0.478, Gamma2536=1.546, max GA_3p=0.005, max GB_3p=0.002
+
+Bs_low_old_diagnostic: M2=8.00-14.00, s0=36.60-40.32 GeV^2, sqrt(s0)=6.05-6.35; pole_axial_min=0.360, pole_tensor_min=0.618, twist2_retention_min=0.745
+  spans: Gamma_quoted=0.786, max GA_3p=0.001, max GB_3p=0.001
+
+Bs_low_candidate: M2=10.00-14.00, s0=36.50-40.50 GeV^2, sqrt(s0)=6.04-6.36; pole_axial_min=0.359, pole_tensor_min=0.616, twist2_retention_min=0.743
+  spans: Gamma_quoted=0.500, max GA_3p=0.001, max GB_3p=0.001
+
+Bs5830_old_diagnostic: M2=8.00-14.00, s0=37.82-40.96 GeV^2, sqrt(s0)=6.15-6.40; pole_axial_min=0.378, pole_tensor_min=0.648, twist2_retention_min=0.766
+  spans: Gamma_quoted=0.470, max GA_3p=0.001, max GB_3p=0.001
+
+Bs5830_candidate: M2=10.00-14.00, s0=38.00-41.00 GeV^2, sqrt(s0)=6.16-6.40; pole_axial_min=0.381, pole_tensor_min=0.652, twist2_retention_min=0.769
+  spans: Gamma_quoted=0.245, max GA_3p=0.001, max GB_3p=0.001
+
+Interpretation:
+- A larger pole-fraction proxy is better; values below about 0.5 are a warning.
+- Smaller stability spans are better, but near-zero cancellation channels can have large relative spans.
+- Large three-particle fractions indicate that the chosen M2 range is pushing OPE hierarchy.
+- Preferred redo windows from this pass:
+  Ds1: M2 = 3.0-4.5 GeV^2, s0 = 7.5-8.5 GeV^2.
+  Bs1 lower diagnostic: M2 = 10-14 GeV^2, s0 = 36.5-40.5 GeV^2.
+  Bs1(5830): M2 = 10-14 GeV^2, s0 = 38.0-41.0 GeV^2.
+
+Wrote /Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/window_diagnostics_grid.csv
+Wrote /Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/window_diagnostics_summary.csv
+Wrote /Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/window_diagnostics_summary.pdf

@@ -1,7 +1,0 @@
-case,current_or_target,theta_deg,rho_AB,fA_input_GeV,fB_input_GeV,f1_GeV,f2_GeV,interpretation
-Wang pure axial benchmark,J_A local two-point current,not applicable,not applicable,0.245+-0.017,not applicable,not applicable,not applicable,External pure axial-current scale only; not a mixed-current f1 or f2
-Our pure J1 axial limit,J1=J_A,90,0,0.225,0.462,0.225,0.462,Model reproduces f1=fA by construction
-Our pure J2 axial limit,J2=J_A,0,0,0.225,0.462,0.462,0.225,Model reproduces f2=fA by construction
-Physical angle fit to Wang-like target,J1 target f1=0.245 at physical theta,35.3,-1,0.225,0.462,0.247,0.451,Requires nearly maximal negative AA/BB overlap with working fA
-Physical angle fit to Wang-like target using Wang fA,J1 target f1=0.245 and fA=0.245,35.3,-0.957,0.245,0.462,0.245,0.462,Still requires strongly negative overlap; diagnostic only
-Current Stage-3 anchor,J1 target f1=0.345 at physical theta,35.3,-0.408,0.225,0.462,0.345,0.381,Headline mixed-current normalization scenario

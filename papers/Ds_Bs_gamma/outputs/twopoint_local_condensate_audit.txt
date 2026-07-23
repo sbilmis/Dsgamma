@@ -1,0 +1,22 @@
+Local-condensate derivative audit in an explicit 4D representation
+==================================================================
+gamma5^2 = MatrixForm[{{1, 0, 0, 0}, {0, 1, 0, 0}, {0, 0, 1, 0}, {0, 0, 0, 1}}]
+
+AA:
+  F0 = (4*mQ)/((mQ - p0)*(mQ + p0))
+  FslashPlus = (8*mQ^2)/((mQ - p0)^2*(mQ + p0)^2)
+  FslashMinus = (8*p0^2)/((-mQ + p0)^2*(mQ + p0)^2)
+  Flaplacian = (32*mQ^3)/((mQ - p0)^3*(mQ + p0)^3)
+
+AB:
+  F0 = (4*p0^2)/((mq + mQ)*(mQ - p0)*(mQ + p0))
+  FslashPlus = (8*mQ*p0^2)/((mq + mQ)*(mQ - p0)^2*(mQ + p0)^2)
+  FslashMinus = (8*mQ*p0^2)/((mq + mQ)*(mQ - p0)^2*(mQ + p0)^2)
+  Flaplacian = (16*p0^2*(3*mQ^2 - p0^2))/((mq + mQ)*(mQ - p0)^3*(mQ + p0)^3)
+
+BB:
+  F0 = (4*mQ*p0^2)/((mq + mQ)^2*(mQ - p0)*(mQ + p0))
+  FslashPlus = (8*p0^4)/((mq + mQ)^2*(mQ - p0)^2*(mQ + p0)^2)
+  FslashMinus = (8*mQ^2*p0^2)/((mq + mQ)^2*(mQ - p0)^2*(mQ + p0)^2)
+  Flaplacian = (32*mQ^3*p0^2)/((mq + mQ)^2*(mQ - p0)^3*(mQ + p0)^3)
+

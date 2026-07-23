@@ -1,0 +1,15 @@
+Complete Stage-2 axial-current photon LCSR
+============================================
+Transition scheme: Rohrwild nonlocal background-field OPE.
+Standalone local condensate: excluded.
+Electromagnetic S_gamma/T4^gamma sector: included.
+P-functional support: P[T4gamma] uses the double-Borel support alpha_qbar>=1/2 in the third appendix integral; the printed zero lower limit diverges
+F1 integral total = +7.032985e-02
+  domain 1 = -1.273351e-01
+  domain 2 = +1.976649e-01
+Stage-1 g1 range = -0.3668 to -0.2592 GeV^-1
+F1 delta g1 range = +0.0012 to +0.0020 GeV^-1
+EM delta g1 range = -0.1097 to -0.0206 GeV^-1
+Stage-2 axial g1 range = -0.4188 to -0.3192 GeV^-1
+Stage-2 axial width range = 21.41 to 36.87 keV
+Wrote grid to /Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage2_axial_g1_three_particle.csv

@@ -1,0 +1,15 @@
+Ds1 normalized-current AA/AB/BB two-point sum rule
+==================================================
+OPE: exact-mass LO perturbative + local d=3 through ms^2 + local d=5 mixed condensate.
+Ordinary local condensates are included because this is a two-point SVZ sum rule.
+No external f1, f2, fA, or fT input is used.
+
+central inputs: mc=1.2700 GeV, ms=0.0930 GeV, <ss>=-0.0110592 GeV^3, m0^2=0.800 GeV^2
+scanned points: 1023; accepted by stated diagnostics: 99
+theta: 30.0073 [29.5762, 30.6396] deg
+f1: 0.49328 [0.467724, 0.509585] GeV
+f2: 0.168859 [0.158858, 0.175393] GeV
+m_eff1: 2.65366 [2.59654, 2.69335] GeV
+m_eff2: 2.65425 [2.58061, 2.70074] GeV
+pole fraction: 0.556217 [0.517203, 0.613524]
+d5 fraction: 0.00857422 [0.00730438, 0.00988069]

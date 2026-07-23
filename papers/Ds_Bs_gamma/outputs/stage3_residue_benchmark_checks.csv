@@ -1,0 +1,8 @@
+quantity,current,median_GeV,p16_GeV,p84_GeV,comparison_scope
+Wang_v4_pure_JA,J_A,0.345,0.32799999999999996,0.362,external pure-current benchmark
+our_direct_AA_Wang_window,J_A,0.26861422847313926,0.2606577559270237,0.2768024840230486,direct truncated-AA OPE benchmark
+f1,J_1,0.4046082076517489,0.3798629243117991,0.429097869843282,physical mixed-current residue; not directly Wang-comparable
+f2,J_2,0.16773135211037848,0.1593922813145566,0.17563206040796672,physical mixed-current residue; not directly Wang-comparable
+fA_low_pole,J_A -> Ds1(2460),0.18124504000297081,0.1691646702341667,0.19296022738270982,mixed-basis projection diagnostic
+fA_high_pole,J_A -> Ds1(2536),0.14981495174214207,0.1424462340712816,0.15727437847334236,mixed-basis projection diagnostic
+fA_two_pole_effective,"J_A, two poles",0.23025878302311198,0.21939208179120037,0.24181226314309248,one-pole-equivalent diagnostic

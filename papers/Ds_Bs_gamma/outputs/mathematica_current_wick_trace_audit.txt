@@ -1,0 +1,138 @@
+Mathematica/FeynCalc current, Wick-contraction, and trace audit
+================================================================
+
+Scope: currents -> Wick contraction -> propagators -> traces -> E1 projection.
+Loop integration, spectral densities, and Borel transforms are not performed here.
+
+1. CURRENT DEFINITIONS
+J_A,mu = sbar gamma_mu gamma5 Q
+J_B,mu = i sbar sigma_(mu alpha) pPrime^alpha gamma5 Q/(mQ+ms)
+Correlator: T{J_P^dagger(x) J_X,mu(0)} with J_P^dagger=sbar i gamma5 Q.
+pPrime = p+q; q^2=0 is imposed only in the E1 projection.
+Physical-current rotations are linear combinations of J_A and J_B.
+
+2. WICK CONTRACTION AND GLOBAL SIGN
+Hard double contraction:
+  <T{sbar GammaP Q Qbar Gamma_X s}> = -Tr[GammaP S_Q Gamma_X S_s].
+Hard correlator prefactor before propagator/vertex factors (-i Nc):
+(-I)*Nc
+
+Soft correlator prefactor before Fierz (+i):
+I
+
+Soft correlator prefactor after the -1/4 Fierz factor:
+-1/4*I
+
+The old numerator files intentionally omitted these overall factors.
+
+3. PROPAGATOR ROUTING
+Free propagator: S_f^0(r)=i (slash(r)+m_f)/(r^2-m_f^2+i0).
+One-photon insertion is oriented separately on each fermion line; see the routing list below.
+dH1 = (k+q)^2 - mQ^2
+dH2 = k^2 - mQ^2
+dH3 = (k-p)^2 - ms^2
+dS1 = k^2 - mQ^2
+dS2 = (k-p)^2 - ms^2
+dS3 = (k-p-q)^2 - ms^2
+
+4. HARD NUMERATOR TRACES
+N_A,heavy(mu,nu) =
+(4*I)*mQ^2*ms*Pair[LorentzIndex[mu], LorentzIndex[nu]] + (4*I)*ms*(2*Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[k]] + Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[k]] + Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[q]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[k]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[q]]) - (4*I)*mQ*(2*Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[k]] - 2*Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[k]] + Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[k]] - Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[p]] + Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[q]] - Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[q]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[q]] + Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[p], Momentum[q]])
+
+N_A,strange(mu,nu) =
+(-4*I)*mQ*ms^2*Pair[LorentzIndex[mu], LorentzIndex[nu]] + (4*I)*ms*(2*Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[k]] - Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[k]] - 2*Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[p]] - Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[q]] + Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[q]]) - (4*I)*mQ*(2*Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[k]] - 2*Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[k]] - Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[k]] - 2*Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[p]] + 2*Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[p]] + Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[p]] - Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[q]] + Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[q]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[k]] + 2*Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[p]] + Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[q]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[p], Momentum[p]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[p], Momentum[q]])
+
+eQ N_A,heavy + eS N_A,strange =
+(4*I)*eQ*mQ^2*ms*Pair[LorentzIndex[mu], LorentzIndex[nu]] - (4*I)*eS*mQ*ms^2*Pair[LorentzIndex[mu], LorentzIndex[nu]] + (4*I)*eQ*ms*(2*Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[k]] + Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[k]] + Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[q]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[k]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[q]]) + (4*I)*eS*ms*(2*Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[k]] - Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[k]] - 2*Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[p]] - Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[q]] + Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[q]]) - (4*I)*eS*mQ*(2*Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[k]] - 2*Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[k]] - Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[k]] - 2*Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[p]] + 2*Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[p]] + Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[p]] - Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[q]] + Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[q]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[k]] + 2*Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[p]] + Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[q]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[p], Momentum[p]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[p], Momentum[q]]) - (4*I)*eQ*mQ*(2*Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[k]] - 2*Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[k]] + Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[k]] - Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[p]] + Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[q]] - Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[q]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[q]] + Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[p], Momentum[q]])
+
+N_B,heavy(mu,nu) =
+((-4*I)*mQ^2*(Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[pPrime]] - Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[pPrime]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[pPrime]] + Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[p], Momentum[pPrime]]))/(mQ + ms) - ((4*I)*mQ*ms*(Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[pPrime]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[pPrime], Momentum[q]]))/(mQ + ms) + ((4*I)*(Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[pPrime]]*Pair[Momentum[k], Momentum[k]] - Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[pPrime]]*Pair[Momentum[k], Momentum[k]] + Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[pPrime]]*Pair[Momentum[k], Momentum[k]] - Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[pPrime]]*Pair[Momentum[k], Momentum[p]] + 2*Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[k]]*Pair[Momentum[k], Momentum[pPrime]] + Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[p]]*Pair[Momentum[k], Momentum[pPrime]] + Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[q]]*Pair[Momentum[k], Momentum[pPrime]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[k]]*Pair[Momentum[k], Momentum[pPrime]] - Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[pPrime]]*Pair[Momentum[k], Momentum[q]] - 2*Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[k]]*Pair[Momentum[p], Momentum[pPrime]] - Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[k]]*Pair[Momentum[p], Momentum[pPrime]] - Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[q]]*Pair[Momentum[p], Momentum[pPrime]] + Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[k]]*Pair[Momentum[p], Momentum[pPrime]] + Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[pPrime]] + Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[pPrime]]*Pair[Momentum[p], Momentum[q]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[pPrime]]*Pair[Momentum[p], Momentum[q]] + Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[k]]*Pair[Momentum[pPrime], Momentum[q]] - Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[p]]*Pair[Momentum[pPrime], Momentum[q]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[k]]*Pair[Momentum[pPrime], Momentum[q]] + Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[pPrime], Momentum[q]]))/(mQ + ms)
+
+N_B,strange(mu,nu) =
+((4*I)*ms^2*(Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[pPrime]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[pPrime]]))/(mQ + ms) - ((4*I)*mQ*ms*(Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[pPrime]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[pPrime], Momentum[q]]))/(mQ + ms) - ((4*I)*(Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[pPrime]]*Pair[Momentum[k], Momentum[k]] - Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[pPrime]]*Pair[Momentum[k], Momentum[k]] - 2*Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[pPrime]]*Pair[Momentum[k], Momentum[p]] + Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[pPrime]]*Pair[Momentum[k], Momentum[p]] - 2*Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[k]]*Pair[Momentum[k], Momentum[pPrime]] + 2*Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[p]]*Pair[Momentum[k], Momentum[pPrime]] + Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[p]]*Pair[Momentum[k], Momentum[pPrime]] + Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[q]]*Pair[Momentum[k], Momentum[pPrime]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[k]]*Pair[Momentum[k], Momentum[pPrime]] + 2*Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[k], Momentum[pPrime]] - Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[pPrime]]*Pair[Momentum[k], Momentum[q]] + Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[pPrime]]*Pair[Momentum[p], Momentum[p]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[pPrime]]*Pair[Momentum[p], Momentum[p]] + 2*Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[k]]*Pair[Momentum[p], Momentum[pPrime]] - Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[k]]*Pair[Momentum[p], Momentum[pPrime]] - 2*Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[p]]*Pair[Momentum[p], Momentum[pPrime]] - Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[q]]*Pair[Momentum[p], Momentum[pPrime]] + Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[pPrime]] + Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[pPrime]]*Pair[Momentum[p], Momentum[q]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[pPrime]]*Pair[Momentum[p], Momentum[q]] + Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[k]]*Pair[Momentum[pPrime], Momentum[q]] - Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[p]]*Pair[Momentum[pPrime], Momentum[q]] + Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[k]]*Pair[Momentum[pPrime], Momentum[q]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[pPrime], Momentum[q]]))/(mQ + ms)
+
+eQ N_B,heavy + eS N_B,strange =
+((4*I)*eS*ms^2*(Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[pPrime]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[pPrime]]))/(mQ + ms) - ((4*I)*eQ*mQ^2*(Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[pPrime]] - Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[pPrime]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[pPrime]] + Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[p], Momentum[pPrime]]))/(mQ + ms) - ((4*I)*eQ*mQ*ms*(Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[pPrime]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[pPrime], Momentum[q]]))/(mQ + ms) - ((4*I)*eS*mQ*ms*(Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[pPrime]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[pPrime], Momentum[q]]))/(mQ + ms) - ((4*I)*eS*(Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[pPrime]]*Pair[Momentum[k], Momentum[k]] - Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[pPrime]]*Pair[Momentum[k], Momentum[k]] - 2*Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[pPrime]]*Pair[Momentum[k], Momentum[p]] + Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[pPrime]]*Pair[Momentum[k], Momentum[p]] - 2*Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[k]]*Pair[Momentum[k], Momentum[pPrime]] + 2*Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[p]]*Pair[Momentum[k], Momentum[pPrime]] + Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[p]]*Pair[Momentum[k], Momentum[pPrime]] + Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[q]]*Pair[Momentum[k], Momentum[pPrime]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[k]]*Pair[Momentum[k], Momentum[pPrime]] + 2*Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[k], Momentum[pPrime]] - Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[pPrime]]*Pair[Momentum[k], Momentum[q]] + Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[pPrime]]*Pair[Momentum[p], Momentum[p]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[pPrime]]*Pair[Momentum[p], Momentum[p]] + 2*Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[k]]*Pair[Momentum[p], Momentum[pPrime]] - Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[k]]*Pair[Momentum[p], Momentum[pPrime]] - 2*Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[p]]*Pair[Momentum[p], Momentum[pPrime]] - Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[q]]*Pair[Momentum[p], Momentum[pPrime]] + Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[pPrime]] + Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[pPrime]]*Pair[Momentum[p], Momentum[q]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[pPrime]]*Pair[Momentum[p], Momentum[q]] + Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[k]]*Pair[Momentum[pPrime], Momentum[q]] - Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[p]]*Pair[Momentum[pPrime], Momentum[q]] + Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[k]]*Pair[Momentum[pPrime], Momentum[q]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[pPrime], Momentum[q]]))/(mQ + ms) + ((4*I)*eQ*(Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[pPrime]]*Pair[Momentum[k], Momentum[k]] - Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[pPrime]]*Pair[Momentum[k], Momentum[k]] + Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[pPrime]]*Pair[Momentum[k], Momentum[k]] - Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[pPrime]]*Pair[Momentum[k], Momentum[p]] + 2*Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[k]]*Pair[Momentum[k], Momentum[pPrime]] + Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[p]]*Pair[Momentum[k], Momentum[pPrime]] + Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[q]]*Pair[Momentum[k], Momentum[pPrime]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[k]]*Pair[Momentum[k], Momentum[pPrime]] - Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[pPrime]]*Pair[Momentum[k], Momentum[q]] - 2*Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[k]]*Pair[Momentum[p], Momentum[pPrime]] - Pair[LorentzIndex[mu], Momentum[q]]*Pair[LorentzIndex[nu], Momentum[k]]*Pair[Momentum[p], Momentum[pPrime]] - Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[q]]*Pair[Momentum[p], Momentum[pPrime]] + Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[k]]*Pair[Momentum[p], Momentum[pPrime]] + Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[pPrime]] + Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[pPrime]]*Pair[Momentum[p], Momentum[q]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[pPrime]]*Pair[Momentum[p], Momentum[q]] + Pair[LorentzIndex[mu], Momentum[p]]*Pair[LorentzIndex[nu], Momentum[k]]*Pair[Momentum[pPrime], Momentum[q]] - Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[nu], Momentum[p]]*Pair[Momentum[pPrime], Momentum[q]] - Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[k]]*Pair[Momentum[pPrime], Momentum[q]] + Pair[LorentzIndex[mu], LorentzIndex[nu]]*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[pPrime], Momentum[q]]))/(mQ + ms)
+
+5. E1-PROJECTED TRIANGLE CORES
+Projector normalization =
+1
+
+Axial heavy core =
+(4*I)*mQ + ((4*I)*mQ^3)/pq - ((4*I)*mQ^2*ms)/pq
+
+Axial strange core =
+(-4*I)*ms + ((4*I)*mQ*ms^2)/pq - ((4*I)*ms^3)/pq
+
+Tensor heavy core =
+((8*I)*mQ^2)/(mQ + ms) - ((4*I)*mQ*ms)/(mQ + ms) + ((4*I)*mQ^2*p2)/((mQ + ms)*pq)
+
+Tensor strange core =
+((-4*I)*mQ*ms)/(mQ + ms) + ((8*I)*ms^2)/(mQ + ms) + ((4*I)*ms^2*p2)/((mQ + ms)*pq)
+
+6. SOFT TWO-PARTICLE FIERZ TRACES
+A current, scalar 1:
+(4*I)*Pair[LorentzIndex[mu], Momentum[k]]
+
+A current, pseudoscalar i gamma5:
+0
+
+A current, vector gamma_rho:
+(-4*I)*mQ*Pair[LorentzIndex[mu], LorentzIndex[rho]]
+
+A current, axial gamma_rho gamma5:
+0
+
+A current, tensor sigma_rho_lambda:
+-4*Pair[LorentzIndex[lambda], Momentum[k]]*Pair[LorentzIndex[mu], LorentzIndex[rho]] + 4*Pair[LorentzIndex[lambda], LorentzIndex[mu]]*Pair[LorentzIndex[rho], Momentum[k]]
+
+B current, scalar 1:
+0
+
+B current, pseudoscalar i gamma5:
+0
+
+B current, vector gamma_rho:
+((4*I)*Pair[LorentzIndex[mu], Momentum[k]]*Pair[LorentzIndex[rho], Momentum[pPrime]])/(mQ + ms) - ((4*I)*Pair[LorentzIndex[mu], LorentzIndex[rho]]*(Pair[Momentum[k], Momentum[p]] + Pair[Momentum[k], Momentum[q]]))/(mQ + ms)
+
+B current, axial gamma_rho gamma5:
+(-4*Eps[LorentzIndex[mu], LorentzIndex[rho], Momentum[k], Momentum[pPrime]])/(mQ + ms)
+
+B current, tensor sigma_rho_lambda:
+(-4*mQ*Pair[LorentzIndex[lambda], Momentum[pPrime]]*Pair[LorentzIndex[mu], LorentzIndex[rho]])/(mQ + ms) + (4*mQ*Pair[LorentzIndex[lambda], LorentzIndex[mu]]*Pair[LorentzIndex[rho], Momentum[pPrime]])/(mQ + ms)
+
+A current, tensor photon-DA E1 coefficient =
+(8*Pair[Momentum[k], Momentum[q]])/Pair[Momentum[p], Momentum[q]]
+
+B current, tensor photon-DA E1 coefficient =
+(8*mQ)/(mQ + ms)
+
+A current, vector photon-DA E1 coefficient =
+((6*I)*mQ)/Pair[Momentum[p], Momentum[q]]
+
+B current, vector photon-DA E1 coefficient =
+((2*I)*(Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[p]] + 2*Pair[Momentum[k], Momentum[p]]*Pair[Momentum[p], Momentum[q]] + 3*Pair[Momentum[k], Momentum[q]]*Pair[Momentum[p], Momentum[q]]))/((mQ + ms)*Pair[Momentum[p], Momentum[q]]^2)
+
+7. ASSERTIONS
+PASS  FeynCalc Levi-Civita convention
+PASS  tensor vertex equals expanded commutator
+PASS  axial heavy trace is cyclic
+PASS  axial strange trace is cyclic
+PASS  tensor heavy trace is cyclic
+PASS  tensor strange trace is cyclic
+PASS  photon Ward contraction vanishes
+PASS  initial physical-polarization contraction vanishes
+PASS  E1 projector normalization
+PASS  axial heavy triangle core matches routing audit
+PASS  axial strange triangle core matches routing audit
+PASS  tensor heavy triangle core matches routing audit
+PASS  tensor strange triangle core matches routing audit
+PASS  axial tensor-DA soft trace is cyclic
+PASS  tensor tensor-DA soft trace is cyclic
+PASS  axial vector-DA soft trace is cyclic
+PASS  tensor vector-DA soft trace is cyclic
+PASS  low-current heavy trace is the stated mixing rotation
+PASS  high-current strange trace is the stated mixing rotation
+
+OVERALL STATUS: PASS
+The Bs result uses the same symbolic traces with mQ->mb and eQ->-1/3.

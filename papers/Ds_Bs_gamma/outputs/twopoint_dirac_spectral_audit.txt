@@ -1,0 +1,22 @@
+Normalized-current perturbative two-point Dirac audit
+======================================================
+
+nAA = (2*(-mq^2 - 2*mq*mQ - mQ^2 + s)*(mq^2 - 2*mq*mQ + mQ^2 + 2*s))/(3*s)
+nAB = (2*(mq - mQ)*(mq^2 + 2*mq*mQ + mQ^2 - s))/(mq + mQ)
+nBA = (2*(mq - mQ)*(mq^2 + 2*mq*mQ + mQ^2 - s))/(mq + mQ)
+nBB = (-2*(mq^2 + 2*mq*mQ + mQ^2 - s)*(2*mq^2 - 4*mq*mQ + 2*mQ^2 + s))/(3*(mq + mQ)^2)
+
+AB symmetry check nAB-nBA = 0
+
+candidate rhoAA = ((-mq^2 - 2*mq*mQ - mQ^2 + s)*Sqrt[(-(-mq + mQ)^2 + s)*(-(mq + mQ)^2 + s)]*(mq^2 - 2*mq*mQ + mQ^2 + 2*s))/(8*Pi^2*s^2)
+Colangelo rhoAA = ((2 - (-mq^2 + mQ^2)^2/s^2 - (mq^2 + 6*mq*mQ + mQ^2)/s)*Sqrt[(-(-mq + mQ)^2 + s)*(-(mq + mQ)^2 + s)])/(8*Pi^2)
+candidate/Colangelo = 1
+
+candidate rhoAB = (3*(mq - mQ)*(mq^2 + 2*mq*mQ + mQ^2 - s)*Sqrt[(-(-mq + mQ)^2 + s)*(-(mq + mQ)^2 + s)])/(8*(mq + mQ)*Pi^2*s)
+candidate rhoBB = -1/8*((mq^2 + 2*mq*mQ + mQ^2 - s)*(2*mq^2 - 4*mq*mQ + 2*mQ^2 + s)*Sqrt[(-(-mq + mQ)^2 + s)*(-(mq + mQ)^2 + s)])/((mq + mQ)^2*Pi^2*s)
+
+local heavy-pole transverse traces
+qAA = -4*mQ
+qAB = (-4*s)/(mq + mQ)
+qBA = (-4*s)/(mq + mQ)
+qBB = (-4*mQ*s)/(mq + mQ)^2

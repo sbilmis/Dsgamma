@@ -1,0 +1,9 @@
+Stage-1 tensor-current hard contribution
+==========================================
+Axial spectral-density reconstruction max error: 1.388e-17
+Uses p^2 -> s in the tensor p^2/(p.q) hard-core numerator.
+Includes the hard term and complete tensor-current two-particle DAs.
+Does not include the Stage-2 three-particle DAs.
+fB_equal_fT: GB_hard -0.8306 to -0.6730; GB_total -0.5099 to -0.4404; Gamma2460 55.38 to 82.92 keV; Gamma2536 0.00 to 0.65 keV
+fB_converted_fT_M_over_msum: GB_hard -0.4603 to -0.3729; GB_total -0.2826 to -0.2440; Gamma2460 25.93 to 41.17 keV; Gamma2536 1.48 to 5.74 keV
+Wrote grid to /Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage1_tensor_gb_hard_candidate.csv

@@ -1,0 +1,37 @@
+Decay-constant provenance audit
+================================
+
+Ds1 sector
+  preferred method: normalized-current AA/AB/BB two-point QCDSR
+  OPE: exact-mass LO perturbative + local d=3 through ms^2 + local d=5
+  complete matrix at the stated truncation used: yes
+  external f1/f2 or overlap input used: no
+  external theta input = 26.595188 [25.996216,27.198802] deg
+  truncated-matrix diagnostic theta = 30.631725 [29.941740,31.285484] deg
+  normalized Pi12 residual = 0.183046 [0.142149,0.224741]
+  f1 = 0.404608 [0.379863,0.429098] GeV
+  f2 = 0.167731 [0.159392,0.175632] GeV
+
+Ds1 legacy comparison only
+  method: external f1 anchor + two-point overlap algebra
+  theta = 35.3 deg; fA = 0.225000 GeV; fB = 0.461946 GeV
+  input f1 = 0.345000 GeV
+  derived rho_AB = -0.408186
+  derived f2 = 0.380781 GeV
+  anchor clipping used: False
+
+Bs1 sector
+  method: basis-constant inputs + Pi12=0 diagonal closure
+  complete local two-point AA/BB/AB OPE used: no
+  theta = 38.5 deg; fA = 0.305000 GeV; fB = 0.388762 GeV
+  the central basis inputs alone do not always admit |rho_AB|<=1 at this angle
+  invalid closure samples are rejected in the Monte Carlo
+  accepted closure f1 = 0.43046319365590924 [0.36923136455878747,0.47908647513300867] GeV
+  accepted closure f2 = 0.2145258419571259 [0.11688724878819055,0.29207439265462465] GeV
+
+Conclusion
+  Ds uses external theta=26.6 deg and independent matrix-QCDSR f1/f2 projections
+  at LO+d3+d5.  The matrix angle is a diagnostic, not the nominal input.
+  The Bs normalization remains a basis-input closure at the external angle.
+  Local condensates are included only in the ordinary two-point OPE;
+  this is independent of their exclusion from the photon transition LCSR.
