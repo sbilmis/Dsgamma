@@ -1,0 +1,16 @@
+Corrected transition Python--Mathematica comparison
+===================================================
+STATUS=PASS
+Compared keys: 145
+Only in Python: []
+Only in Mathematica: []
+Absolute tolerance: 1.0e-08
+Relative tolerance: 1.0e-08
+Largest absolute difference: Bs_high.Gamma_1_keV = 6.272612e-08
+Largest relative difference: Bs_low.Gamma_1_keV = 5.260236e-09
+Failed keys: []
+
+The small remaining numerical differences are expected from the
+NumPy Gauss--Legendre and Mathematica adaptive integration methods;
+every entry passes the stated absolute-or-relative tolerance.
+Wrote /Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/corrected_transition_python_mathematica_comparison.csv

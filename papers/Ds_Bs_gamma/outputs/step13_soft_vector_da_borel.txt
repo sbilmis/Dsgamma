@@ -1,0 +1,23 @@
+Two-particle vector photon-DA Fourier reduction
+================================================
+
+Raw A E1 x-kernel:
+((-4*I)*mQ*qx)/pq
+
+Raw B E1 x-kernel:
+((-2*I)*kx)/(mQ + ms) + ((2*I)*kq*px)/((mQ + ms)*pq) - ((2*I)*kq*p2*qx)/((mQ + ms)*pq^2) - ((2*I)*kp*qx)/((mQ + ms)*pq) - ((4*I)*kq*qx)/((mQ + ms)*pq)
+
+Reduced A before k=p+a q:
+(-8*kq*mQ)/((k2 - mQ^2)^2*pq)
+
+Reduced B before k=p+a q:
+(4*(k2 - 2*mQ^2)*pq^2 - 4*kq^2*(p2 + 2*pq))/((k2 - mQ^2)^2*(mQ + ms)*pq^2)
+
+Reduced A after k=p+a q:
+(-8*mQ)/(-mQ^2 + p2 + 2*a*pq)^2
+
+Reduced B after k=p+a q:
+(-8*(mQ^2 + pq - a*pq))/((mQ + ms)*(-mQ^2 + p2 + 2*a*pq)^2)
+
+B/A ratio after k=p+a q:
+(mQ^2 + pq - a*pq)/(mQ^2 + mQ*ms)

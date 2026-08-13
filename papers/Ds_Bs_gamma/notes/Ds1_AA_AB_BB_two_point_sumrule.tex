@@ -199,18 +199,28 @@ $\Pi_{12}$ diagnostics agree to better than $10^{-7}$.
 
 \section{Propagation, interference, and final charm widths}
 
-The physical couplings are
+The two transition invariants give the physical couplings.  Their
+continuum factors are term-specific: twist~2 uses
+$\Delta E_Q=e^{-m_Q^2/M^2}-e^{-s_0/M^2}$; twist~3, twist~4, and the
+gluonic three-particle term use $E_Q=e^{-m_Q^2/M^2}$; and the separate
+gauge-completion electromagnetic term uses $\Delta E_Q$:
 \begin{align}
-G_{2460}&=\frac{\sin\theta\,f_AG_A+\cos\theta\,f_BG_B}{f_1},\\
-G_{2536}&=\frac{\cos\theta\,f_AG_A-\sin\theta\,f_BG_B}{f_2}.
+G_{2460}&=
+\frac{e^{(m_{2460}^2+m_{D_s}^2)/(2M^2)}(m_c+m_s)}
+{m_{2460}f_1m_{D_s}^2f_{D_s}}
+\left(\sin\theta\,\widehat T_A+\cos\theta\,\widehat T_B\right),\\
+G_{2536}&=
+\frac{e^{(m_{2536}^2+m_{D_s}^2)/(2M^2)}(m_c+m_s)}
+{m_{2536}f_2m_{D_s}^2f_{D_s}}
+\left(\cos\theta\,\widehat T_A-\sin\theta\,\widehat T_B\right).
 \end{align}
 For the preferred lattice photon normalization, the final-window Monte Carlo
 gives
 \begin{align}
-G_{2460}&=-0.3569[-0.3929,-0.3237]~\GeV^{-1},&
-\Gamma_{2460}&=26.71[22.01,32.44]~\keV,\\
-G_{2536}&=-0.07305[-0.10434,-0.03836]~\GeV^{-1},&
-\Gamma_{2536}&=1.656[0.4567,3.378]~\keV.
+G_{2460}&=-0.4082[-0.4551,-0.3654]~\GeV^{-1},&
+\Gamma_{2460}&=34.96[28.06,43.53]~\keV,\\
+G_{2536}&=+0.05184[+0.00244,+0.1067]~\GeV^{-1},&
+\Gamma_{2536}&=0.988[0.092,3.555]~\keV.
 \end{align}
 The low-state pieces are constructive, whereas the high-state pieces are
 destructive throughout the physical first quadrant.  At the midpoint of the
@@ -220,13 +230,13 @@ selected transition window the benchmark widths are
 \toprule
 Angle input & $\theta$ & $\Gamma_{2460}$ (keV) & $\Gamma_{2536}$ (keV)\\
 \midrule
-previous study & $26.6^\circ$ & $27.60$ & $1.623$\\
-truncated-matrix diagnostic & $30.61^\circ$ & $27.71$ & $0.043$\\
-HQET benchmark & $35.3^\circ$ & $27.64$ & $1.120$\\
+previous study & $26.6^\circ$ & $35.57$ & $0.664$\\
+truncated-matrix diagnostic & $30.61^\circ$ & $35.06$ & $4.410$\\
+HQET benchmark & $35.3^\circ$ & $34.23$ & $12.32$\\
 \bottomrule
 \end{tabular}
 \end{center}
-The high-state zero is near $31.37^\circ$ at this representative point.  The
+The high-state zero is near $23.96^\circ$ at this representative point.  The
 interference mechanism does not change; the relative weights move the result
 toward or away from the cancellation.
 
@@ -267,17 +277,59 @@ overlaps are
 \end{align}
 These are projection diagnostics only.
 
+\section{Direct bottom-strange continuation}
+
+The same spectral and local matrices apply after $m_c\to m_b$.  Projecting at
+the external $\theta_{B_s}=38.5\pm0.1^\circ$ angle and fitting separate
+thresholds to the model lower pole and the observed high pole gives, at
+$M^2=7.00~\GeV^2$,
+\begin{equation}
+s_0^{(1)}=44.35~\GeV^2,\qquad
+s_0^{(2)}=43.025~\GeV^2,
+\end{equation}
+and
+\begin{equation}
+f_1^{(B_s)}=0.5381107~\GeV,\qquad
+f_2^{(B_s)}=0.0888787~\GeV .
+\end{equation}
+The pole fractions are $0.805$ and $0.556$ and the dimension-five fractions
+are $0.0029$ and $0.0348$.  The matrix-diagonalization diagnostic is
+$39.50^\circ$ and the normalized off-diagonal residual at the external angle
+is $0.104$.
+
+Scanning $M^2=6.50$--$7.30~\GeV^2$ and varying the OPE inputs gives
+\begin{equation}
+f_1^{(B_s)}=0.5358[0.5096,0.5586]~\GeV,\qquad
+f_2^{(B_s)}=0.08896[0.08496,0.09278]~\GeV .
+\end{equation}
+The preferred radiative widths after propagating these direct residues are
+\begin{align}
+\Gamma[B_{s1}(5750)\to B_s\gamma]
+ &=11.34[9.144,14.06]~\keV,\\
+\Gamma[B_{s1}(5830)\to B_s\gamma]
+ &=8.702[6.474,11.23]~\keV.
+\end{align}
+The lower pole is still a model-state diagnostic, but no external
+Pullin--Zwicky decay constant or overlap closure is used.
+
 \section{Executable record}
 
+\begingroup
+\footnotesize
 \begin{itemize}
   \item Python matrix and Monte Carlo: \path{../scripts/twopoint_ds1_matrix_sumrule.py}.
   \item Spectral trace audit: \path{../scripts/twopoint_dirac_spectral_audit.wl}.
   \item Local trace audit: \path{../scripts/twopoint_local_condensate_audit.wl}.
   \item Numerical Mathematica regression:
     \path{../scripts/mathematica_twopoint_ds1_matrix_check.wl}.
+  \item Direct bottom Python matrix and Monte Carlo:
+    \path{../scripts/twopoint_bs1_matrix_sumrule.py}.
+  \item Direct bottom Mathematica regression:
+    \path{../scripts/mathematica_twopoint_bs1_matrix_check.wl}.
   \item Cell-by-cell notebook:
     \path{../notebooks/Ds1_AA_AB_BB_two_point_sumrule.nb}.
 \end{itemize}
+\endgroup
 
 The former $f_1=0.345~\GeV$, $f_2\simeq0.38~\GeV$ overlap model is preserved
 only as a legacy comparison and is not the current paper normalization.

@@ -52,22 +52,23 @@ def main() -> None:
         weight = position - lo
         return values[lo] * (1.0 - weight) + values[hi] * weight
 
-    # Bs: the two basis constants are inputs; f1/f2 follow from Pi12=0.
+    # Former Bs closure inputs, retained only for the historical comparison.
     f_a_bs = 0.305
     f_t_bs = 0.285
     f_b_bs = f_t_bs * 5.82870 / (4.18 + 0.093)
-    with (OUT / "final_window_mc_summary.csv").open() as f:
-        bs_rows = [
-            row for row in csv.DictReader(f)
-            if row["sector"] == "Bs"
-            and row["state"] == "B_{s1}(5830)"
-            and row["scenario"] == "lattice_fperp_s"
-            and row["ensemble"] == "theta_prior_gaussian"
-            and row["window_id"] == "central_10_14"
+    with (OUT / "twopoint_bs1_matrix_mc.csv").open() as f:
+        bs_matrix_rows = [
+            row for row in csv.DictReader(f) if int(row["accepted"]) == 1
         ]
-    if len(bs_rows) != 1:
-        raise RuntimeError("preferred Bs summary row not found")
-    bs_row = bs_rows[0]
+    theta_bs = sorted(float(row["theta_deg"]) for row in bs_matrix_rows)
+    theta_bs_diagnostic = sorted(
+        float(row["theta_matrix_deg"]) for row in bs_matrix_rows
+    )
+    pi12_bs = sorted(
+        float(row["Pi12_normalized"]) for row in bs_matrix_rows
+    )
+    f1_bs = sorted(float(row["f1_GeV"]) for row in bs_matrix_rows)
+    f2_bs = sorted(float(row["f2_GeV"]) for row in bs_matrix_rows)
 
     lines = [
         "Decay-constant provenance audit",
@@ -103,20 +104,35 @@ def main() -> None:
         f"  anchor clipping used: {clipped}",
         "",
         "Bs1 sector",
-        "  method: basis-constant inputs + Pi12=0 diagonal closure",
-        "  complete local two-point AA/BB/AB OPE used: no",
+        "  preferred method: direct normalized-current AA/AB/BB two-point QCDSR",
+        "  OPE: exact-mass LO perturbative + local d=3 through ms^2 + local d=5",
+        "  external f1/f2, fA/fT, or overlap input used: no",
+        "  external theta input = {:.6f} [{:.6f},{:.6f}] deg".format(
+            percentile(theta_bs, 0.50), percentile(theta_bs, 0.16),
+            percentile(theta_bs, 0.84)),
+        "  truncated-matrix diagnostic theta = {:.6f} [{:.6f},{:.6f}] deg".format(
+            percentile(theta_bs_diagnostic, 0.50),
+            percentile(theta_bs_diagnostic, 0.16),
+            percentile(theta_bs_diagnostic, 0.84)),
+        "  normalized Pi12 residual = {:.6f} [{:.6f},{:.6f}]".format(
+            percentile(pi12_bs, 0.50), percentile(pi12_bs, 0.16),
+            percentile(pi12_bs, 0.84)),
+        "  f1 = {:.6f} [{:.6f},{:.6f}] GeV".format(
+            percentile(f1_bs, 0.50), percentile(f1_bs, 0.16),
+            percentile(f1_bs, 0.84)),
+        "  f2 = {:.6f} [{:.6f},{:.6f}] GeV".format(
+            percentile(f2_bs, 0.50), percentile(f2_bs, 0.16),
+            percentile(f2_bs, 0.84)),
+        "",
+        "Bs1 legacy comparison only",
+        "  method: Pullin-Zwicky basis constants + Pi12=0 overlap closure",
         f"  theta = {THETA_BS_DEG:.1f} deg; fA = {f_a_bs:.6f} GeV; fB = {f_b_bs:.6f} GeV",
-        "  the central basis inputs alone do not always admit |rho_AB|<=1 at this angle",
-        "  invalid closure samples are rejected in the Monte Carlo",
-        "  accepted closure f1 = {} [{},{}] GeV".format(
-            bs_row["f1_median_GeV"], bs_row["f1_p16_GeV"], bs_row["f1_p84_GeV"]),
-        "  accepted closure f2 = {} [{},{}] GeV".format(
-            bs_row["f2_median_GeV"], bs_row["f2_p16_GeV"], bs_row["f2_p84_GeV"]),
+        "  not used in the final transition normalization",
         "",
         "Conclusion",
         f"  Ds uses external theta={THETA_DS_DEG:.1f} deg and independent matrix-QCDSR f1/f2 projections",
         "  at LO+d3+d5.  The matrix angle is a diagnostic, not the nominal input.",
-        "  The Bs normalization remains a basis-input closure at the external angle.",
+        "  Bs likewise uses the external angle and independent matrix-QCDSR f1/f2 projections.",
         "  Local condensates are included only in the ordinary two-point OPE;",
         "  this is independent of their exclusion from the photon transition LCSR.",
     ]

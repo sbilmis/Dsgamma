@@ -1,0 +1,17 @@
+Direct Bs1 AA/AB/BB two-point Monte Carlo
+==========================================
+Seed: 20260726; generated valid fits: 2000; accepted: 1757.
+Inputs varied: mb, ms, condensates, both pole masses, M^2, and theta_Bs.
+Acceptance: pole fractions >=0.50, d5 fractions <=0.15, mass fits within 30 MeV,
+and continuum gaps 0.45--1.05 GeV.
+
+theta input: 38.4953 [38.3974, 38.5938] deg
+matrix-angle diagnostic: 39.5176 [39.309, 39.7307] deg
+normalized off-diagonal residual: 0.107037 [0.0816243, 0.134011]
+M^2: 6.92513 [6.6603, 7.17019] GeV^2
+s01: 44.3 [42.9, 45.625] GeV^2
+s02: 43.1 [42.6, 43.675] GeV^2
+f1: 0.535826 [0.509574, 0.558564] GeV
+f2: 0.0889641 [0.0849622, 0.0927831] GeV
+pole fraction 1: 0.80863 [0.77232, 0.841226]
+pole fraction 2: 0.564887 [0.529472, 0.608309]

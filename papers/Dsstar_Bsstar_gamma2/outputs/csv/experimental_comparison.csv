@@ -1,0 +1,5 @@
+state,status,observable,value,source,comment
+Ds1_2460,upper limit,branching_fraction_Dsstar_gamma,<0.08 (90% CL),PDG2026,total width <3.5 MeV
+Ds1_2536,possibly seen,Dsstar gamma,no branching fraction or partial width,PDG2026,total width 0.92+/-0.05 MeV
+Bs1_lower,unobserved state,radiative decay,no measurement or limit,PDG2026,predicted lower state
+Bs1_5830,unobserved mode,Bsstar gamma,no measurement or limit,PDG2026,parent state established

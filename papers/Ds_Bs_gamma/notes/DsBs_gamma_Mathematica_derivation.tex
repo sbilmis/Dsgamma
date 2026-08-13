@@ -58,11 +58,13 @@
 \newcommand{\slashedq}{\not\!q}
 \newcommand{\Mathematica}{\textit{Mathematica}}
 \newcommand{\FeynCalc}{\textsc{FeynCalc}}
+\newcommand{\GeV}{\mathrm{GeV}}
+\newcommand{\keV}{\mathrm{keV}}
 
 \title{Independent Mathematica Derivation for\\
   $D_{s1}/B_{s1}\to D_s/B_s\,\gamma$}
 \author{Ds/Bs gamma project}
-\date{22 July 2026}
+\date{24 July 2026}
 
 \begin{document}
 \maketitle
@@ -76,9 +78,13 @@ routing, Rohrwild three-point/background-field notation, hard-emission
 traces, Ward identities, E1 projection,
 inverse-denominator reduction, Feynman parameterization, the first soft
 two-particle Fierz traces, physical-state mixing, the pure-axial Colangelo
-limit, and the decay-constant normalization.  It does not import the Python
-implementation and does not yet claim a completed perturbative spectral
-density or double-Borel sum rule for the tensor current.
+limit, the decay-constant normalization, the complete axial and tensor
+post-double-Borel invariants, and the numerical couplings and widths.  The
+Mathematica numerical implementation is independent of the Python
+implementation; their output tables are compared only after both
+calculations have finished.  The 24--26 July revision separates off-shell
+QCD kinematics from on-shell pole kinematics and withdraws the earlier
+physical-mass substitution in the theoretical tensor numerator.
 \end{abstract}
 
 \tableofcontents
@@ -89,13 +95,15 @@ The interactive source of this calculation is
 \begin{center}
   \texttt{notebooks/DsBs\_gamma\_symbolic\_derivation.nb}.
 \end{center}
-It contains 38 input cells designed to be evaluated from top to bottom or one
+It contains 53 input cells designed to be evaluated from top to bottom or one
 at a time.  The noninteractive regression scripts are
 \begin{align*}
   &\texttt{scripts/mathematica\_current\_wick\_trace\_audit.wl},\\
   &\texttt{scripts/mathematica\_correlator\_routing\_audit.wl},\\
   &\texttt{scripts/mathematica\_hard\_loop\_parameterization.wl},\\
-  &\texttt{scripts/mathematica\_state\_mixing\_projection.wl}.
+  &\texttt{scripts/mathematica\_state\_mixing\_projection.wl},\\
+  &\texttt{scripts/step14\_explicit\_double\_borel\_forms.wl},\\
+  &\texttt{scripts/step15\_complete\_three\_particle\_borel.wl}.
 \end{align*}
 The first three batch audits write their full machine-readable expressions
 under \texttt{outputs/}; the state-mixing audit prints its exact residuals and
@@ -376,26 +384,50 @@ representations of the same hard photon-emission term.
 \subsection{Photon-DA matrix elements}
 
 The condensate-dependent photon terms are vacuum-to-photon nonlocal matrix
-elements.  For example,
+elements.  We use Rohrwild's background-field notation directly:
 \begin{align}
-  \langle\gamma(q,\varepsilon)|\bar s(x)\sigma_{\mu\nu}s(0)|0\rangle
-  ={}&-\ii e e_s\langle\bar ss\rangle
-  (\varepsilon_\mu q_\nu-\varepsilon_\nu q_\mu)
-  \int_0^1du\,\ee^{\ii\bar u q\cdot x}
-  \left[\chi\phi_\gamma(u)+\frac{x^2}{16}\mathbb A(u)\right]
+  \langle0|\bar s(0)[0,x]\sigma_{\mu\nu}s(x)|0\rangle_F
+  ={}&e e_s\langle\bar ss\rangle\int_0^1du\,
+  \Bigg\{
+  \left[\chi_\gamma\phi_\gamma(u)
+        +\frac{x^2}{16}\mathcal A(u)\right]F_{\mu\nu}(ux)
   \nonumber\\
-  &+\text{the twist-4 }h_\gamma\text{ structure},
+  &\hspace{0.2cm}
+  +\frac{\mathcal B(u)}{8}x^\rho
+  \left[x_\nu F_{\mu\rho}(ux)-x_\mu F_{\nu\rho}(ux)\right]
+  \Bigg\},
   \label{eq:tensor-photon-da}
 \end{align}
 and
 \begin{equation}
-  \langle\gamma(q,\varepsilon)|\bar s(x)\gamma_\mu s(0)|0\rangle
-  =e e_s f_{3\gamma}\widetilde\varepsilon_\mu
-  \int_0^1du\,\ee^{\ii\bar u q\cdot x}\psi^v(u).
+  \langle0|\bar s(0)[0,x]\gamma_\mu s(x)|0\rangle_F
+  =-\frac{e e_s}{2}f_{3\gamma}
+  \int_0^1du\,\overline\psi^{(V)}(u)x^\rho F_{\rho\mu}(ux).
   \label{eq:vector-photon-da}
 \end{equation}
-The three-particle matrix elements
-$\langle\gamma|\bar s(x)g_sG_{\alpha\beta}(vx)\Gamma s(0)|0\rangle$
+Thus no $H_\gamma$ or $\bar H_\gamma$ is introduced in the Rohrwild
+formulae.  The exact notation dictionary to the alternative $h_\gamma$
+representation is
+\begin{equation}
+ \boxed{\mathcal B(u)
+ =-4\int_0^u d\alpha\,(u-\alpha)h_\gamma(\alpha)},\qquad
+ \mathbb A(u)-8\bar H_\gamma(u)
+ =\mathcal A(u)+2\mathcal B(u).
+ \label{eq:rohrwild-B-dictionary}
+\end{equation}
+The factor two in the second equality is essential.  It follows from the
+operator identity in the Ball--Braun--Kivel convention; replacing the
+Colangelo combination by $\mathcal A+\mathcal B$ would be incorrect.
+Similarly,
+\begin{equation}
+ \overline\psi^{(V)}(u)=2\int_0^u dv\,\psi^v(v)
+ =2\Psi^v(u)
+ \label{eq:rohrwild-vector-dictionary}
+\end{equation}
+for the conformal models used here.  The three-particle matrix elements
+\[
+ \langle\gamma|\bar s(x)g_sG_{\alpha\beta}(vx)\Gamma s(0)|0\rangle
+\]
 define $\mathcal S,\widetilde{\mathcal S},\mathcal T_1,\ldots,\mathcal T_4$.
 Their axial combination used in the sum rule is
 \begin{equation}
@@ -627,175 +659,543 @@ normalization, Eq.~\eqref{eq:mixed-coupling-from-ope} becomes
 Thus a bare sine--cosine rotation of already normalized couplings is valid
 only when the corresponding residues cancel.
 
-\subsection{Colangelo-style final sum-rule assembly}
+\subsection{Pole-side versus QCD-side kinematics}
 
-For the paper we organize the answer at the level of the projected Borel
-invariants, rather than displaying the unprojected correlation function.  In
-the equal-Borel convention
-$\mathcal M_1^2=\mathcal M_2^2=2M^2$, define
+The distinction between the two sides of the sum rule is essential.  Before
+the Borel transformation the QCD correlator depends on two independent
+virtualities:
 \begin{equation}
-  \mathcal N_i(M^2)=
-  \frac{\exp[(M_i^2+m_P^2)/(2M^2)](m_Q+m_s)}
-  {M_if_i\,m_P^2f_P},
-  \qquad i=1,2.
-  \label{eq:physical-normalization-factor}
+ q^2=0,\qquad p^{\prime}=p+q,\qquad
+ 2p\cdot q=p^{\prime2}-p^2,\qquad
+ p^2\ \hbox{and}\ p^{\prime2}\ \hbox{independent}.
+ \label{eq:qcd-offshell-kinematics}
 \end{equation}
-The two physical couplings are then presented directly as
+One must \emph{not} replace these variables by hadron masses inside the
+theoretical numerator.  The mass substitutions occur only in the residue of
+an isolated hadronic pole,
+\begin{equation}
+ \left.p^2\right|_{\rm pole}=m_P^2,\qquad
+ \left.p^{\prime2}\right|_{\rm pole}=M_i^2,\qquad
+ \left.p\cdot q\right|_{\rm pole}=\frac{M_i^2-m_P^2}{2}.
+ \label{eq:hadronic-pole-kinematics}
+\end{equation}
+Likewise, $u_0$ is not a pre-Borel kinematic replacement.  It is generated by
+the double Borel transform and becomes $1/2$ only after the equal-Borel choice.
+This corrects the former ``physical-residue numerator prescription'' used in
+the provisional Python tensor estimate.
+
+\subsection{Rohrwild decomposition before the Borel transformation}
+
+In the Rohrwild organization the two basis invariants have parallel
+decompositions,
 \begin{align}
-  G_1
-  &=\mathcal N_1
-    \left(\sin\theta\,\widehat T_A
-          +\cos\theta\,\widehat T_B\right),
-  \label{eq:paper-final-g1}\\
-  G_2
-  &=\mathcal N_2
-    \left(\cos\theta\,\widehat T_A
-          -\sin\theta\,\widehat T_B\right).
-  \label{eq:paper-final-g2}
+ T_A^{\rm RW}(p^{\prime2},p^2)
+ &=
+ T_A^{\rm pert}+T_A^{\rm tw2}+T_A^{\rm tw3}+T_A^{\rm tw4}
+ +T_A^{\rm 3p,g}+T_A^{\rm 3p,\gamma},
+ \label{eq:TA-preborel-decomposition}\\
+ T_B^{\rm RW}(p^{\prime2},p^2)
+ &=
+ T_B^{\rm pert}+T_B^{\rm tw2}+T_B^{\rm tw3}+T_B^{\rm tw4}
+ +T_B^{\rm 3p,g}+T_B^{\rm 3p,\gamma}.
+ \label{eq:TB-preborel-decomposition}
 \end{align}
-Each basis invariant is decomposed into the same OPE classes,
+There is no separate ordinary local-condensate term in either equation.
+Factors of $\langle\bar ss\rangle$ still occur in the normalization of
+\emph{nonlocal} photon matrix elements such as
+$\chi_\gamma\langle\bar ss\rangle\phi_\gamma$; those factors must not be
+confused with insertion of the local propagator term
+$-\langle\bar ss\rangle/12$.
+
+The perturbative contribution has the off-shell double-dispersion form
 \begin{equation}
-  \widehat T_X=
-  \widehat T_X^{\rm pert}
-  +\widehat T_X^{\langle\bar ss\rangle}
-  +\widehat T_X^{\rm tw2}
-  +\widehat T_X^{\rm tw3}
-  +\widehat T_X^{\rm tw4}
-  +\widehat T_X^{\rm 3p},
-  \qquad X=A,B.
-  \label{eq:basis-ope-decomposition}
+ T_X^{\rm pert}(p^{\prime2},p^2)
+ =\int ds_1\,ds_2\,
+ \frac{\rho_X^{\rm pert}(s_1,s_2)}
+ {(s_1-p^{\prime2})(s_2-p^2)},\qquad X=A,B.
+ \label{eq:preborel-double-dispersion}
+\end{equation}
+For a two-particle photon DA define
+\begin{equation}
+ D(u)=m_Q^2-\bar u\,p^{\prime2}-u\,p^2
+     =m_Q^2-(p+\bar u q)^2,\qquad \bar u=1-u.
+ \label{eq:two-particle-denominator}
+\end{equation}
+Then every two-particle term can be kept explicitly off shell as
+\begin{equation}
+ T_X^{\rm 2p}
+ =\sum_{\Phi,n}\int_0^1du\,
+ \frac{C_{X,\Phi}^{(n)}(u,p^2,p\cdot q)\,\Phi(u)}
+ {[D(u)]^n},
+ \quad
+ \Phi\in\{\phi_\gamma,\overline\psi^{(V)},\mathcal A,\mathcal B\}.
+ \label{eq:preborel-two-particle-master}
+\end{equation}
+For a three-particle DA the analogous denominator is
+$D(\xi)=m_Q^2-\xi p^{\prime2}-(1-\xi)p^2$, where $\xi$ is the photon momentum
+fraction fixed by $(\alpha_i,v)$, and
+\begin{equation}
+ T_X^{\rm 3p}
+ =\sum_{\mathcal F,n}\int\mathcal D\alpha_i\int_0^1dv\,
+ \frac{C_{X,\mathcal F}^{(n)}
+ (\alpha_i,v,p^2,p\cdot q)\,\mathcal F(\alpha_i)}
+ {[D(\xi)]^n}.
+ \label{eq:preborel-three-particle-master}
 \end{equation}
 
-For the axial current, the Colangelo-style comparison invariant within the
-adopted truncation is
+The current-dependent E1 trace kernels already obtained independently in
+\Mathematica{} are listed below.  Common charges, Wilson denominators, and DA
+normalizations are not included in the table.  For the soft two-particle
+line, $k=p+\bar u q$ has been used, but no hadronic mass substitution has
+been made.
+\begin{table}[H]
+ \centering
+ \small
+ \begin{tabular}{p{0.25\textwidth}p{0.30\textwidth}p{0.34\textwidth}}
+  \toprule
+  DA structure & $A$-current kernel & $B$-current kernel\\
+  \midrule
+  two-particle tensor
+   & $8$
+   & $\displaystyle\frac{8m_Q}{m_Q+m_s}$\\[4pt]
+  two-particle vector
+   & $\displaystyle-\frac{6\ii m_Q}{p\cdot q}$
+   & $\displaystyle-\frac{2\ii}{m_Q+m_s}
+      \frac{3p^2+(2\bar u+3)p\cdot q}{p\cdot q}$\\[7pt]
+  $\mathcal S_\gamma$, $\sigma_{\alpha\beta}$ part
+   & $8$
+   & $\displaystyle\frac{8m_Q}{m_Q+m_s}$\\[4pt]
+  $\mathcal T_4^\gamma$, $\sigma_{\alpha\beta}$ part
+   & $-16\ii$
+   & $\displaystyle-\frac{16\ii m_Q}{m_Q+m_s}$\\[4pt]
+  $\mathcal S_\gamma$, $x_\alpha\gamma_\beta$ part
+   & $\displaystyle-\frac{4\ii\,q\cdot x}{p\cdot q}$
+   & $0$\\[7pt]
+  $\mathcal T_4^\gamma$, $x_\alpha\gamma_\beta$ part
+   & $0$
+   & $0$\\
+  \bottomrule
+ \end{tabular}
+ \caption{Explicit pre-Borel E1 kernels.  These are QCD-side expressions and
+ contain the independent invariants $p^2$ and $p\cdot q$ rather than hadron
+ masses.  The zeroes in the last column follow only after using the
+ numerator-free $x_\alpha\mathcal F^{\alpha\beta}\gamma_\beta$ propagator
+ term.}
+ \label{tab:explicit-preborel-kernels}
+\end{table}
+
+\subsection{Exact double-Borel identities}
+
+Define
+\begin{equation}
+ \frac{1}{M^2}=\frac{1}{\mathcal M_1^2}
+                +\frac{1}{\mathcal M_2^2},\qquad
+ u_0=\frac{\mathcal M_1^2}{\mathcal M_1^2+\mathcal M_2^2},
+ \qquad
+ A_n=\frac{(M^2)^{2-n}}{\Gamma(n)}
+     \exp\!\left(-\frac{m_Q^2}{M^2}\right).
+ \label{eq:double-borel-definitions}
+\end{equation}
+For
+$I_n[F]=\int_0^1du\,F(u)/[D(u)]^n$, the double Borel transform is
+\begin{equation}
+ \mathcal B_{\mathcal M_1^2}^{p^{\prime2}}
+ \mathcal B_{\mathcal M_2^2}^{p^2} I_n[F]
+ =A_nF(u_0).
+ \label{eq:basic-double-borel}
+\end{equation}
+For $n>1$ and vanishing endpoint terms, numerator virtualities give
 \begin{align}
-  \widehat T_A={}&
-  \int_{(m_Q+m_s)^2}^{s_0}ds\,
-  \ee^{-s/M^2}\rho_A^P(s)
-  \nonumber\\
-  &+e_QE_Q\langle\bar ss\rangle
-  \left[
-    1-\frac{m_Qm_s}{M^2}
-    +\frac{m_s^2}{2M^2}
-     \left(1+\frac{m_Q^2}{M^2}\right)
-  \right]
-  \nonumber\\
-  &-e_s\langle\bar ss\rangle(E_Q-E_0)M^2
-    \chi_{\rm C}\phi_\gamma(u_0)
-  \nonumber\\
-  &-e_s\langle\bar ss\rangle E_Q
-  \left[
-    -\frac14\bigl(\mathbb A(u_0)-8\bar H_\gamma(u_0)\bigr)
-      \left(1+\frac{m_Q^2}{M^2}\right)
-    -\mathcal I_{\mathcal F_1}(u_0)
-  \right]
-  \nonumber\\
-  &+2e_sf_{3\gamma}m_QE_Q\Psi^v(u_0),
-  \label{eq:full-axial-borel-invariant}
+ \mathcal B_{12}\!\int_0^1du\,
+ \frac{(p\cdot q)F(u)}{D(u)^n}
+ &=\frac{A_{n-1}}{2(n-1)}F'(u_0),
+ \label{eq:borel-pq}\\
+ \mathcal B_{12}\!\int_0^1du\,
+ \frac{p^{\prime2}F(u)}{D(u)^n}
+ &=m_Q^2A_nF(u_0)-A_{n-1}F(u_0)
+   +\frac{A_{n-1}}{n-1}[uF(u)]'_{u=u_0},
+ \label{eq:borel-pprime2}\\
+ \mathcal B_{12}\!\int_0^1du\,
+ \frac{p^2F(u)}{D(u)^n}
+ &=m_Q^2A_nF(u_0)-A_{n-1}F(u_0)
+   -\frac{A_{n-1}}{n-1}[\bar uF(u)]'_{u=u_0}.
+ \label{eq:borel-p2}
+\end{align}
+Here $\mathcal B_{12}$ abbreviates the two Borel operators in
+Eq.~\eqref{eq:basic-double-borel}.  If an endpoint does not vanish, its contact
+term must be retained.  Equations~\eqref{eq:borel-pq}--\eqref{eq:borel-p2}
+show explicitly why replacing $p^2$ and $p\cdot q$ by pole masses on the QCD
+side is not valid: the correct Borel images contain DA derivatives and
+possible endpoint terms.
+
+The perturbative term transforms instead according to
+\begin{equation}
+ \widehat T_X^{\rm pert}
+ =\int_{\Omega(s_0)}ds_1\,ds_2\,
+ \rho_X^{\rm pert}(s_1,s_2)
+ \exp\!\left(-\frac{s_1}{\mathcal M_1^2}
+             -\frac{s_2}{\mathcal M_2^2}\right).
+ \label{eq:borel-double-dispersion}
+\end{equation}
+Thus a numerator $p^{\prime2}$, $p^2$, or $p\cdot q$ in a genuine double
+dispersion density maps to $s_1$, $s_2$, or $(s_1-s_2)/2$, respectively,
+up to single-pole contact terms annihilated by the second Borel transform.
+
+\subsection{Explicit invariants after the Borel transformation}
+
+For the equal-Borel choice
+$\mathcal M_1^2=\mathcal M_2^2=2M^2$, one has $u_0=1/2$.  In the
+Rohrwild momentum routing used below it is convenient to write
+\begin{equation}
+ a_0=1-u_0=\frac{\mathcal M_2^2}
+ {\mathcal M_1^2+\mathcal M_2^2},\qquad a_0=\frac12
+ \quad\hbox{for equal Borel masses}.
+ \label{eq:a0-definition}
+\end{equation}
+The physical normalization factor and couplings are
+\begin{align}
+ \mathcal N_i(M^2)
+ &=\frac{\exp[(M_i^2+m_P^2)/(2M^2)](m_Q+m_s)}
+ {M_if_i\,m_P^2f_P},\qquad i=1,2,
+ \label{eq:physical-normalization-factor}\\
+ G_1&=\mathcal N_1
+   \left(\sin\theta\,\widehat T_A^{\rm RW}
+        +\cos\theta\,\widehat T_B^{\rm RW}\right),
+ \label{eq:paper-final-g1}\\
+ G_2&=\mathcal N_2
+   \left(\cos\theta\,\widehat T_A^{\rm RW}
+        -\sin\theta\,\widehat T_B^{\rm RW}\right).
+ \label{eq:paper-final-g2}
+\end{align}
+The pole masses in $\mathcal N_i$ come from the phenomenological side and do
+not constitute a QCD-side substitution.
+
+In Rohrwild notation the Borel invariants are
+\begin{align}
+ \widehat T_A^{\rm RW}
+ &=\widehat T_A^{\rm pert}+\widehat T_A^{\rm tw2}
+  +\widehat T_A^{\rm tw3}+\widehat T_A^{\rm tw4}
+  +\widehat T_A^{\rm 3p,g}+\widehat T_A^{\rm 3p,\gamma},
+ \label{eq:basis-ope-decomposition}\\
+ \widehat T_B^{\rm RW}
+ &=\widehat T_B^{\rm pert}+\widehat T_B^{\rm tw2}
+  +\widehat T_B^{\rm tw3}+\widehat T_B^{\rm tw4}
+  +\widehat T_B^{\rm 3p,g}+\widehat T_B^{\rm 3p,\gamma}.
+ \label{eq:tensor-ope-decomposition}
+\end{align}
+There is no $\widehat T_X^{\langle\bar ss\rangle}$ slot.
+
+The completed axial pieces not affected by the disputed on-shell shortcut are
+\begin{align}
+ \widehat T_A^{\rm pert}
+ &=\int_{(m_Q+m_s)^2}^{s_0}ds\,
+   \ee^{-s/M^2}\rho_A^P(s),
+ \nonumber\\
+ \widehat T_A^{\rm tw2}
+ &=e_s\langle\bar ss\rangle(E_Q-E_0)M^2
+   \chi_\gamma\phi_\gamma(a_0),
+ \nonumber\\
+ \widehat T_A^{\rm tw3}
+ &=e_sf_{3\gamma}m_QE_Q\overline\psi^{(V)}(a_0),
+ \nonumber\\
+ \widehat T_A^{\rm tw4}
+ &=\frac{e_s\langle\bar ss\rangle E_Q}{4}
+   [\mathcal A(a_0)+2\mathcal B(a_0)]
+   \left(1+\frac{m_Q^2}{M^2}\right),
+ \nonumber\\
+ \widehat T_A^{\rm 3p,g}
+ &=e_s\langle\bar ss\rangle E_Q\,
+   \mathcal I_{\mathcal F_1}(u_0),
+ \label{eq:full-axial-borel-invariant}
 \end{align}
 where
 \begin{equation}
-  E_Q=\ee^{-m_Q^2/M^2},
-  \qquad E_0=\ee^{-s_0/M^2},
-  \label{eq:borel-exponent-shorthand}
+ E_Q=\ee^{-m_Q^2/M^2},\qquad E_0=\ee^{-s_0/M^2},
+ \label{eq:borel-exponent-shorthand}
 \end{equation}
+The continuum prescription is term-specific.  The leading twist-2 term
+carries $\Delta E_Q=E_Q-E_0$; twist-3, twist-4, and the gluonic
+three-particle contribution retain $E_Q$, as in the channel-specific
+$D_{s1}\to D_s\gamma$ sum rule.  The separate gauge-completion
+electromagnetic three-particle term below follows Rohrwild's $I_F$-type
+$\Delta E_Q$ subtraction.  The three-particle convolution is
 \begin{align}
-  \bar H_\gamma(u_0)
-  &=\int_0^{u_0}du\int_0^u dv\,h_\gamma(v),\\
-  \Psi^v(u_0)
-  &=\int_0^{u_0}du\,\psi^v(u),
+ \mathcal I_{\mathcal F_1}(u_0)={}&
+ \int_0^{1-u_0}dv
+ \int_0^{u_0/(1-v)}d\alpha_g\,
+ \mathcal F_1(u_0-(1-v)\alpha_g,
+              1-u_0-v\alpha_g,\alpha_g)
+ \nonumber\\
+ &+\int_{1-u_0}^{1}dv
+ \int_0^{(1-u_0)/v}d\alpha_g\,
+ \mathcal F_1(u_0-(1-v)\alpha_g,
+              1-u_0-v\alpha_g,\alpha_g).
+ \label{eq:F1-integral-compact}
 \end{align}
-and the three-particle contribution is
+The condensate factors in these equations belong to nonlocal photon DAs.
+
+The fully assembled gluonic and electromagnetic three-particle terms are
+given below in Eqs.~\eqref{eq:complete-gluonic-three-particle} and
+\eqref{eq:complete-em-three-particle}.  In particular, no unevaluated
+$\mathcal B_{12}[\,\cdots\,]$ remains in the final expressions.  The
+previously printed terms proportional to $m_P^2-M_i^2$ applied
+Eq.~\eqref{eq:hadronic-pole-kinematics} inside a QCD numerator and are
+withdrawn.
+
+For the tensor current, the perturbative density used in the diagonal
+double-dispersion test is
 \begin{align}
-  \mathcal I_{\mathcal F_1}(u_0)={}&
-  \int_0^{1-u_0}dv
-  \int_0^{u_0/(1-v)}d\alpha_g\,
-  \mathcal F_1\bigl(u_0-(1-v)\alpha_g,
-                    1-u_0-v\alpha_g,\alpha_g\bigr)
-  \nonumber\\
-  &+\int_{1-u_0}^{1}dv
-  \int_0^{(1-u_0)/v}d\alpha_g\,
-  \mathcal F_1\bigl(u_0-(1-v)\alpha_g,
-                    1-u_0-v\alpha_g,\alpha_g\bigr).
-  \label{eq:F1-integral-compact}
+ \rho_B^P(s)&=e_s\mathcal L(s;m_s,m_Q;a_s,b_s)
+              -e_Q\mathcal L(s;m_Q,m_s;a_Q,b_Q),\nonumber\\
+ \mathcal L(s;m_i,m_j;a,b)&=-\frac{3}{8\pi^2}\left[
+ 2a\ln\frac{s-m_j^2+m_i^2-\sqrt{\lambda}}
+ {s-m_j^2+m_i^2+\sqrt{\lambda}}
+ +\frac{b}{m_i^2}\frac{m_j^2-m_i^2-s}{s^2}\sqrt{\lambda}\right],
+ \label{eq:tensor-perturbative-density}
 \end{align}
-Here $\chi_{\rm C}$ is the signed susceptibility convention printed by
-Colangelo et al.  The project stores the positive magnitude
-$\chi_\gamma=|\chi_{\rm C}|$, so the twist-2 term is implemented with the
-equivalent replacement
+\begin{align}
+ d&=m_Q+m_s,\qquad
+ a_s=\frac{m_Qm_s}{d},\qquad
+ b_s=\frac{m_s^2s}{d},\nonumber\\
+ a_Q&=\frac{2m_Q^2-m_Qm_s}{d},\qquad
+ b_Q=-\frac{m_Q^2s}{d}.
+\end{align}
+The tensor-DA traces imply the exact, kinematics-independent relations
 \begin{equation}
-  -e_s\langle\bar ss\rangle\chi_{\rm C}
-  \longrightarrow
-  +e_s\langle\bar ss\rangle\chi_\gamma.
-  \label{eq:chi-convention-conversion}
+ \widehat T_B^{\rm tw2}=\frac{m_Q}{d}\widehat T_A^{\rm tw2},
+ \qquad
+ \widehat T_B^{\rm tw4}=\frac{m_Q}{d}\widehat T_A^{\rm tw4}.
+ \label{eq:tensor-safe-two-particle-ratios}
 \end{equation}
-
-\subsection{Paper default: Rohrwild nonlocal transition OPE}
-
-The standalone local term in Eq.~\eqref{eq:full-axial-borel-invariant} is
-\emph{not} part of the paper-default transition sum rule.  Denote by
-$\widehat T_A^{\rm base}$ the right-hand side of that equation with the
-$e_Q\langle\bar ss\rangle$ local term removed.  The two schemes used in the
-numerical comparison are
-\begin{align}
-  \widehat T_A^{\rm Col}
-  &=\widehat T_A^{\rm base}
-    +e_QE_Q\langle\bar ss\rangle
-      \left[1-\frac{m_Qm_s}{M^2}
-      +\frac{m_s^2}{2M^2}\left(1+\frac{m_Q^2}{M^2}\right)\right],
-  \label{eq:colangelo-local-alternative}\\
-  \widehat T_A^{\rm RW}
-  &=\widehat T_A^{\rm base}+\mathcal I_A^{\rm em},
-  \label{eq:rohrwild-nonlocal-default}
-\end{align}
-and they are alternatives: the two last terms must never be added.
-
-At the symmetric double-Borel point $u_0=1/2$, the current-specific axial
-trace gives $(1-2u)\mathcal S_\gamma-\mathcal T_4^\gamma$ for the direct
-part.  Both direct integrals vanish by antisymmetry, leaving
+The vector DA contains $p^2$ and $p\cdot q$ before the transform.  With
 \begin{equation}
-  \mathcal I_A^{\rm em}
-  =e_Q\langle\bar ss\rangle(E_Q-E_0)
-   \frac{2(m_P^2-m_A^2)}{M^2}\,P_\gamma,
-  \qquad
-  P_\gamma=\ln 8-\frac{1181}{320}=-1.611183458320\ldots .
-  \label{eq:axial-rohrwild-em-final}
+ D_a=m_Q^2-a p^{\prime2}-(1-a)p^2,
+ \label{eq:Da-definition}
 \end{equation}
-The source convention used here is
+its independently reduced off-shell kernels are
 \begin{align}
- \mathcal S_\gamma
- &=60\alpha_g^2(\alpha_q+\alpha_{\bar q})
-     [4-7(\alpha_q+\alpha_{\bar q})],\\
- \mathcal T_4^\gamma
- &=60\alpha_g^2(\alpha_{\bar q}-\alpha_q)
-     [4-7(\alpha_q+\alpha_{\bar q})].
+ K_A^{(V)}(a)&=-\frac{8m_Q}{D_a^2},&
+ K_B^{(V)}(a)&=-\frac{8[m_Q^2+(1-a)p\cdot q]}{dD_a^2}.
+ \label{eq:vector-preborel-reduced-kernels}
 \end{align}
-The third integral in the printed appendix representation of
-$\mathcal P[\mathcal T_4^\gamma]$ has lower limit zero and is logarithmically
-divergent if read literally.  Enforcing the double-Borel support
-$\alpha_{\bar q}\geq1/2$ gives the finite constant $P_\gamma$ above.  This
-support qualification is retained explicitly in the Python output rather
-than silently absorbed into a numerical coefficient.
-
-For the tensor basis current, with the stated physical-residue numerator
-prescription
+The exact $n=2$ double-Borel maps in this variable are
+\begin{align}
+ \mathcal B_{12}\int_0^1da\,\frac{F(a)}{D_a^2}
+ &=E_QF(a_0),\nonumber\\
+ \mathcal B_{12}\int_0^1da\,\frac{(p\cdot q)F(a)}{D_a^2}
+ &=-\frac{M^2E_Q}{2}F'(a_0),\nonumber\\
+ \mathcal B_{12}\int_0^1da\,\frac{p^2F(a)}{D_a^2}
+ &=E_Q\left[m_Q^2F(a_0)+M^2a_0F'(a_0)\right].
+ \label{eq:explicit-n2-borel-maps-a}
+\end{align}
+Consequently the requested explicit twist-3 tensor result is
 \begin{equation}
- p^2=m_P^2,\qquad p\cdot q=\frac{m_A^2-m_P^2}{2},\qquad u_0=\frac12,
+ \boxed{
+ \widehat T_B^{\rm tw3}
+ =\frac{e_sf_{3\gamma}E_Q}{d}
+ \left[
+ m_Q^2\overline\psi^{(V)}(a_0)
+ -\frac{M^2}{2}
+ \left.\frac{d}{da}
+ \{(1-a)\overline\psi^{(V)}(a)\}\right|_{a=a_0}
+ \right].}
+ \label{eq:tensor-vector-explicit-borel}
 \end{equation}
-the corresponding nonlocal electromagnetic term is
+For the symmetric choice, $\overline\psi^{(V)}(1/2)=0$, and hence
+\begin{equation}
+ \widehat T_A^{\rm tw3}=0,\qquad
+ \widehat T_B^{\rm tw3}
+ =-\frac{e_sf_{3\gamma}M^2E_Q}{4d}
+ \overline\psi^{(V)\prime}\!\left(\frac12\right).
+ \label{eq:symmetric-vector-borel}
+\end{equation}
+Thus the vanishing of the axial vector-DA term at $a_0=1/2$ must not be
+copied to the tensor current.
+
+\paragraph{Corrected post-Borel
+$x_\alpha\mathcal F^{\alpha\beta}\gamma_\beta$ kernels.}
+For a two- or three-particle DA projected onto the heavy-line momentum
+fraction $a$, define its effective line density
+\begin{equation}
+ F_{\rm eff}(a)=
+ \int\mathcal D\alpha_i\int_0^1dv\,
+ w_F(\alpha_i,v)\mathcal F(\alpha_i)
+ \delta[a-a(\alpha_i,v)].
+ \label{eq:effective-line-density}
+\end{equation}
+The weight $w_F$ contains the explicit $v$ factor and the Lorentz weight of
+the DA.  This propagator term has no $(\slashedk+m_Q)$ numerator.
+Writing $F_0=F_{\rm eff}(a_0)$ and
+$F_1=F_{\rm eff}'(a_0)$, the complete scalar Borel images of the
+Mathematica $x_\alpha\gamma_\beta$ E1 kernels are
 \begin{align}
- \mathcal I_B^{\rm em}
- ={}&e_Q\langle\bar ss\rangle(E_Q-E_0)
- \left[(r_0-r_S)\frac{25}{16}-r_T\frac{5}{16}
- +2r_0\frac{m_P^2-m_A^2}{M^2}P_\gamma\right],
- \label{eq:tensor-rohrwild-em-final}\\
- r_0={}&\frac{m_Q}{m_Q+m_s},\qquad
- r_S=\frac{m_Q^2+\tfrac12 p\cdot q}{m_Q(m_Q+m_s)},\qquad
- r_T=\frac{-m_Q^2+m_P^2+\tfrac32 p\cdot q}{m_Q(m_Q+m_s)}.
+ \mathfrak X_{A,S}[F]&=-8E_QF_0,\qquad
+ \mathfrak X_{A,T_1}[F]=48\ii E_QF_0,\nonumber\\
+ \mathfrak X_{A,T_2}[F]&=16\ii E_QF_0,\qquad
+ \mathfrak X_{A,T_3}[F]=-16\ii E_QF_0,\nonumber\\
+ \mathfrak X_{A,T_4}[F]&=0,
+ \label{eq:axial-xgamma-postborel}\\
+ \mathfrak X_{B,S}[F]&=\mathfrak X_{B,T_1}[F]
+ =\mathfrak X_{B,T_2}[F]=\mathfrak X_{B,T_3}[F]
+ =\mathfrak X_{B,T_4}[F]=0 .
+ \label{eq:tensor-xgamma-postborel}
 \end{align}
-Equations~\eqref{eq:axial-rohrwild-em-final} and
-\eqref{eq:tensor-rohrwild-em-final} are implemented in
-\texttt{scripts/rohrwild\_em\_da.py}.
+The formerly quoted nonzero $B$ kernels resulted from multiplying this
+second propagator term by a free numerator that belongs only to the
+$\sigma_{\alpha\beta}$ term.  The corresponding
+$\sigma_{\alpha\beta}$ pieces contain no numerator virtuality and are simply
+$E_QF_{\rm eff}(a_0)$ times the trace coefficients
+\begin{equation}
+ \begin{array}{c|cc}
+  &A&B\\ \hline
+  \mathcal S\ {\rm or}\ \mathcal S_\gamma
+    &8&8m_Q/d\\
+  \mathcal T_4\ {\rm or}\ \mathcal T_4^\gamma
+    &-16\ii&-16\ii m_Q/d
+ \end{array}.
+ \label{eq:sigma-postborel-coefficients}
+\end{equation}
+The following operator-level assembly supplies every Fierz, charge, DA and
+support weight rather than leaving them implicit.
+
+\paragraph{Explicit operator line projections.}
+For an operator-weighted DA $\mathcal F(\alpha_i,v)$, the fraction entering
+the heavy denominator is
+\begin{equation}
+ a(\alpha_i,v)=\alpha_{\bar q}+v\alpha_g .
+\end{equation}
+Define
+\begin{align}
+ \mathcal J_z[\mathcal F]={}&
+ \int_0^z dv\int_0^{(1-z)/(1-v)}d\alpha_g\,
+ \mathcal F(1-z-(1-v)\alpha_g,z-v\alpha_g,\alpha_g,v)
+ \nonumber\\
+ &+\int_z^1dv\int_0^{z/v}d\alpha_g\,
+ \mathcal F(1-z-(1-v)\alpha_g,z-v\alpha_g,\alpha_g,v).
+ \label{eq:operator-line-projection}
+\end{align}
+This is the explicit result of the
+$\delta[z-\alpha_{\bar q}-v\alpha_g]$ integration.
+
+The $1/(q\cdot x)$ terms require one further support density.  Performing
+Rohrwild's auxiliary-$u$ delta integration before the Borel transformation
+gives
+\begin{align}
+ \mathcal L_z[X]={}&
+ \int_0^{1-z}d\alpha_q\int_0^{\alpha_q}d\alpha_q'
+ \int_0^z d\alpha_{\bar q}\,
+ \frac{z-\alpha_{\bar q}}{(1-\alpha_q-\alpha_{\bar q})^2}
+ X(\alpha_q,\alpha_{\bar q},1-\alpha_q-\alpha_{\bar q})
+ \nonumber\\
+ &-\int_0^{1-z}d\alpha_q\int_z^{1-\alpha_q}d\beta\,
+ \frac{z}{\beta^2}\int_0^\beta d\alpha_{\bar q}'\,
+ X(\alpha_q,\alpha_{\bar q}',1-\alpha_q-\alpha_{\bar q}')
+ \nonumber\\
+ &+\int_0^{1-z}d\alpha_q\,\frac{z}{(1-\alpha_q)^2}
+ \int_0^{\alpha_q}d\alpha_q'\int_0^{1-\alpha_q'}d\alpha_{\bar q}\,
+ X(\alpha_q',\alpha_{\bar q},1-\alpha_q'-\alpha_{\bar q}).
+ \label{eq:explicit-P-line-density}
+\end{align}
+The lower limit $\beta=z$ in the second line is fixed by double-Borel
+support.  Extending it to zero, as in the printed symmetric appendix, creates
+a spurious logarithmic divergence.
+
+\paragraph{Complete gluonic contribution.}
+All DAs in the following operator weights have arguments
+$(\alpha_q,\alpha_{\bar q},\alpha_g)$:
+\begin{align}
+ \mathcal F^g_{A,\sigma}
+ &=\mathcal S+\widetilde{\mathcal S}
+   -\mathcal T_1-\mathcal T_2+\mathcal T_3+\mathcal T_4,\nonumber\\
+ \mathcal F^g_{A,x\gamma}
+ &=2v(-\mathcal S-\mathcal T_3+\mathcal T_2),\nonumber\\
+ \mathcal F_A^g&=\mathcal F^g_{A,\sigma}
+                 +\mathcal F^g_{A,x\gamma},&
+ \mathcal F_B^g&=\frac{m_Q}{d}\mathcal F^g_{A,\sigma}.
+ \label{eq:operator-weights-gluonic}
+\end{align}
+Thus
+\begin{equation}
+ \boxed{\widehat T_A^{\rm 3p,g}
+ =e_s\langle\bar ss\rangle E_Q
+ \mathcal J_{a_0}[\mathcal F_A^g],
+ \qquad
+ \widehat T_B^{\rm 3p,g}
+ =e_s\langle\bar ss\rangle E_Q
+ \mathcal J_{a_0}[\mathcal F_B^g].}
+ \label{eq:complete-gluonic-three-particle}
+\end{equation}
+In particular,
+$\mathcal J_{a_0}[\mathcal F_A^g]=\mathcal I_{\mathcal F_1}(u_0)$
+for $a_0=1-u_0$.
+
+\paragraph{Complete electromagnetic contribution.}
+The direct weights are
+\begin{equation}
+ \mathcal F_A^\gamma=(1-2v)\mathcal S_\gamma-\mathcal T_4^\gamma,
+ \qquad
+ \mathcal F_B^\gamma=\frac{m_Q}{d}
+ (\mathcal S_\gamma-\mathcal T_4^\gamma).
+ \label{eq:operator-weights-em}
+\end{equation}
+The exact Borel treatment of the $\mathbb P$ numerator replaces the legacy
+pole-mass expression according to
+\begin{equation}
+ \frac{2(m_P^2-M_i^2)}{M^2}\,
+ \mathcal L_{a_0}[\mathcal T_4^\gamma]
+ \quad\longrightarrow\quad
+ 2\left.\frac{d}{dz}\mathcal L_z[\mathcal T_4^\gamma]\right|_{z=a_0}.
+ \label{eq:P-functional-borel-replacement}
+\end{equation}
+Writing $\Delta E_Q=E_Q-E_0$, the post-Borel invariants are
+\begin{align}
+ \boxed{\widehat T_A^{\rm 3p,\gamma}}
+ &=e_Q\langle\bar ss\rangle\Delta E_Q
+ \left\{\mathcal J_{a_0}[\mathcal F_A^\gamma]
+ +2\left.\frac{d}{dz}\mathcal L_z[\mathcal T_4^\gamma]
+ \right|_{z=a_0}\right\},
+ \nonumber\\
+ \boxed{\widehat T_B^{\rm 3p,\gamma}}
+ &=e_Q\langle\bar ss\rangle\Delta E_Q\frac{m_Q}{d}
+ \left\{\mathcal J_{a_0}[
+ \mathcal S_\gamma-\mathcal T_4^\gamma]
+ +2\left.\frac{d}{dz}\mathcal L_z[\mathcal T_4^\gamma]
+ \right|_{z=a_0}\right\}.
+ \label{eq:complete-em-three-particle}
+\end{align}
+Equations~\eqref{eq:operator-line-projection},
+\eqref{eq:explicit-P-line-density}, and
+\eqref{eq:complete-em-three-particle} display every integration limit,
+operator weight and Borel derivative.  No physical mass and no ordinary local
+condensate enters a QCD-side numerator.
+
+For completeness, the axial perturbative density is
+\begin{align}
+ \rho_i(s;m_i,m_j,e_i)={}&-\frac{3e_i}{8\pi^2}
+ \Bigg[
+ 2m_i\ln\frac{s-m_j^2+m_i^2-\lambda^{1/2}(s,m_j^2,m_i^2)}
+ {s-m_j^2+m_i^2+\lambda^{1/2}(s,m_j^2,m_i^2)}
+ \nonumber\\
+ &+(m_j-m_i)\frac{m_j^2-m_i^2-s}{s^2}
+ \lambda^{1/2}(s,m_j^2,m_i^2)\Bigg],\nonumber\\
+ \rho_A^P(s)={}&
+ \rho_s(s;m_s,m_Q,e_s)-\rho_Q(s;m_Q,m_s,e_Q).
+ \label{eq:axial-perturbative-density}
+\end{align}
+
+\subsection{Local-scheme separation}
+
+The alternative Colangelo axial comparison adds the ordinary local term
+\begin{equation}
+ \widehat T_A^{\rm Col,local}
+ =e_QE_Q\langle\bar ss\rangle
+ \left[1-\frac{m_Qm_s}{M^2}
+ +\frac{m_s^2}{2M^2}\left(1+\frac{m_Q^2}{M^2}\right)\right].
+ \label{eq:colangelo-local-alternative}
+\end{equation}
+This term is absent from $\widehat T_A^{\rm RW}$ and
+$\widehat T_B^{\rm RW}$.  It must never be added to the electromagnetic
+three-particle terms in Eq.~\eqref{eq:complete-em-three-particle}.
 
 \begin{table}[H]
  \centering
@@ -805,8 +1205,8 @@ Equations~\eqref{eq:axial-rohrwild-em-final} and
   Contribution & Rohrwild paper default & Colangelo comparison\\
   \midrule
   Ordinary local condensate in transition LCSR & absent & retained for $J_A$\\
-  $\mathcal S_\gamma,\mathcal T_4^\gamma$ & included nonlocally & not added separately\\
-  Gluonic photon DAs & included & included through $\mathcal F_1$\\
+  $\mathcal S_\gamma,\mathcal T_4^\gamma$ & nonlocal; explicit post-Borel kernels & not added separately\\
+  Gluonic photon DAs & nonlocal & included through $\mathcal F_1$\\
   Local condensates in two-point $f_i$ sum rules & required & required\\
   Local plus electromagnetic three-particle term & forbidden double counting & forbidden double counting\\
   \bottomrule
@@ -814,49 +1214,6 @@ Equations~\eqref{eq:axial-rohrwild-em-final} and
  \caption{Separation of the local-condensate prescriptions.}
  \label{tab:local-scheme-comparison}
 \end{table}
-
-For clarity, the perturbative density is written without the ambiguous
-``$s\leftrightarrow Q$'' shorthand.  Define
-\begin{align}
-  \rho_i(s;m_i,m_j,e_i)={}&
-  -\frac{3e_i}{8\pi^2}
-  \Bigg\{
-  2m_i\ln\!\frac{
-    s-m_j^2+m_i^2-\lambda^{1/2}(s,m_j^2,m_i^2)}{
-    s-m_j^2+m_i^2+\lambda^{1/2}(s,m_j^2,m_i^2)}
-  \nonumber\\
-  &\hspace{4.5em}
-  +(m_j-m_i)\frac{m_j^2-m_i^2-s}{s^2}
-  \lambda^{1/2}(s,m_j^2,m_i^2)
-  \Bigg\},
-\end{align}
-so that
-\begin{equation}
-  \rho_A^P(s)=
-  \rho_s(s;m_s,m_Q,e_s)-\rho_Q(s;m_Q,m_s,e_Q).
-  \label{eq:axial-perturbative-density}
-\end{equation}
-
-The tensor-current invariant is kept in the identical paper-ready
-decomposition
-\begin{equation}
-  \widehat T_B=
-  \widehat T_B^{\rm pert}
-  +\widehat T_B^{\langle\bar ss\rangle}
-  +\widehat T_B^{\rm tw2}
-  +\widehat T_B^{\rm tw3}
-  +\widehat T_B^{\rm tw4}
-  +\widehat T_B^{\rm 3p}.
-  \label{eq:tensor-ope-decomposition}
-\end{equation}
-The Python result now fills these slots using the diagonal double-dispersion
-mapping for the perturbative term and the documented physical-residue
-prescription for the tensor numerators.  The ordinary local-condensate slot is
-zero by the Rohrwild scheme, while Eq.~\eqref{eq:tensor-rohrwild-em-final}
-supplies the nonlocal electromagnetic contribution.  The next Mathematica
-stage is an independent cell-by-cell duplication of these already fixed
-Python prescriptions; it does not change Eqs.~\eqref{eq:paper-final-g1} and
-\eqref{eq:paper-final-g2}.
 
 \subsection{Exact pure-axial reduction to Colangelo et al.}
 
@@ -917,8 +1274,9 @@ No intermediate angle is fitted here.  Formally, at fixed residues,
 $G_1(\theta)=a\sin\theta+b\cos\theta$ with
 $a=f_A^{(1)}G_A^{(1)}/f_1$ and
 $b=f_B^{(1)}G_B^{(1)}/f_1$.  A physical angle extraction requires the
-complete tensor-current amplitude and the angle-dependent physical residue
-$f_1(\theta)$; both are still incomplete.
+complete tensor-current transition amplitude.  The angle-dependent physical
+residue $f_1(\theta)$ is now supplied independently by the explicit
+$AA/AB/BB$ two-point matrix below.
 
 \subsection{Decay constants from the rotated two-point correlator}
 
@@ -953,168 +1311,186 @@ correlator is decomposed as
   \qquad XY=AA,BB,AB,
   \label{eq:twopoint-basis-ope}
 \end{equation}
-then substitution gives, without an unreadably long expansion,
+All three perturbative densities are explicit.  With
+\begin{equation}
+ d=m_Q+m_s,\qquad
+ \lambda_2(s)=[s-(m_Q+m_s)^2][s-(m_Q-m_s)^2],
+\end{equation}
+they are
+\begin{align}
+ \boxed{\rho_{AA}(s)}
+ &=\frac{\sqrt{\lambda_2(s)}}{8\pi^2}
+ \left[
+ 2-\frac{m_Q^2+m_s^2+6m_Qm_s}{s}
+ -\frac{(m_Q^2-m_s^2)^2}{s^2}
+ \right],
+ \label{eq:rho-AA-explicit}\\
+ \boxed{\rho_{AB}(s)=\rho_{BA}(s)}
+ &=\frac{\sqrt{\lambda_2(s)}}{8\pi^2}
+ \frac{3(m_s-m_Q)(d^2-s)}{ds},
+ \label{eq:rho-AB-explicit}\\
+ \boxed{\rho_{BB}(s)}
+ &=\frac{\sqrt{\lambda_2(s)}}{8\pi^2}
+ \frac{-(d^2-s)
+ (2m_s^2-4m_Qm_s+2m_Q^2+s)}
+ {d^2s}.
+ \label{eq:rho-BB-explicit}
+\end{align}
+The $AA$ expression is algebraically identical to the Colangelo
+axial-current density, and $\rho_{AB}=\rho_{BA}$ is an exact trace check.
+
+At the common LO+$d=3$+$d=5$ truncation, the remaining Borel matrix is also
+explicit:
+\begin{equation}
+ \widehat\Pi(\mathcal M^2,s_0)=
+ \int_{d^2}^{s_0}ds\,e^{-s/\mathcal M^2}
+ \begin{pmatrix}\rho_{AA}&\rho_{AB}\\
+                 \rho_{AB}&\rho_{BB}\end{pmatrix}
+ +e^{-m_Q^2/\mathcal M^2}
+ \left[C_3(\mathcal Q_0+\mathcal Q_1+\mathcal Q_2)
+       +C_5\mathcal Q_5\right],
+ \label{eq:complete-twopoint-matrix}
+\end{equation}
+where $C_3=\langle\bar ss\rangle$,
+$C_5=\langle\bar s g_s\sigma\!\cdot\!G s\rangle$, and
+\begin{align}
+ \mathcal Q_0&=
+ \begin{pmatrix}
+ m_Q&m_Q^2/d\\m_Q^2/d&m_Q^3/d^2
+ \end{pmatrix},
+ \nonumber\\
+ \mathcal Q_1&=
+ \begin{pmatrix}
+ -\dfrac{m_sm_Q^2}{2\mathcal M^2}&
+ \dfrac{m_sm_Q(1-m_Q^2/\mathcal M^2)}{2d}\\
+ \dfrac{m_sm_Q(1-m_Q^2/\mathcal M^2)}{2d}&
+ \dfrac{m_sm_Q^2(1-m_Q^2/(2\mathcal M^2))}{d^2}
+ \end{pmatrix},
+ \nonumber\\
+ \mathcal Q_2&=
+ \begin{pmatrix}
+ \dfrac{m_s^2m_Q^3}{2\mathcal M^4}&
+ \dfrac{m_s^2(m_Q^4/\mathcal M^4-m_Q^2/\mathcal M^2-1)}{2d}\\
+ \dfrac{m_s^2(m_Q^4/\mathcal M^4-m_Q^2/\mathcal M^2-1)}{2d}&
+ \dfrac{m_s^2(m_Q^5/(2\mathcal M^4)-m_Q^3/\mathcal M^2)}{d^2}
+ \end{pmatrix},
+ \nonumber\\
+ \mathcal Q_5&=
+ \begin{pmatrix}
+ -\dfrac{m_Q^3}{4\mathcal M^4}&
+ -\dfrac{m_Q^4/\mathcal M^4-m_Q^2/\mathcal M^2-1}{4d}\\
+ -\dfrac{m_Q^4/\mathcal M^4-m_Q^2/\mathcal M^2-1}{4d}&
+ -\dfrac{m_Q^5/(4\mathcal M^4)-m_Q^3/(2\mathcal M^2)}{d^2}
+ \end{pmatrix}.
+ \label{eq:twopoint-local-matrices}
+\end{align}
+For compactness write $s_\theta=\sin\theta$, $c_\theta=\cos\theta$ and define
+the scalar projections of each displayed local matrix by
+\begin{align}
+ q_1^{(n)}
+ &=s_\theta^2(\mathcal Q_n)_{AA}
+   +c_\theta^2(\mathcal Q_n)_{BB}
+   +2s_\theta c_\theta(\mathcal Q_n)_{AB},\nonumber\\
+ q_2^{(n)}
+ &=c_\theta^2(\mathcal Q_n)_{AA}
+   +s_\theta^2(\mathcal Q_n)_{BB}
+   -2s_\theta c_\theta(\mathcal Q_n)_{AB},
+ \qquad n=0,1,2,5 .
+ \label{eq:projected-local-q}
+\end{align}
+Because every entry of $\mathcal Q_n$ is given in
+Eq.~\eqref{eq:twopoint-local-matrices}, Eq.~\eqref{eq:projected-local-q} is a
+fully explicit scalar expression, not a new phenomenological input.
+
+The two poles use separate continuum thresholds
+$s_0^{(1)}$ and $s_0^{(2)}$, fitted to $M_1$ and $M_2$, respectively.  The
+continuum-subtracted quantities actually evaluated are
 \begin{align}
   \widehat\Pi_{11}={}&
-  \int_{s_{\rm th}}^{s_0}ds\,\ee^{-s/\mathcal M^2}
+  \int_{d^2}^{s_0^{(1)}}ds\,\ee^{-s/\mathcal M^2}
   \left[
-    \sin^2\theta\,\rho_{AA}^{\rm pert}
-    +\cos^2\theta\,\rho_{BB}^{\rm pert}
-    +2\sin\theta\cos\theta\,\rho_{AB}^{\rm pert}
+    s_\theta^2\rho_{AA}(s)
+    +c_\theta^2\rho_{BB}(s)
+    +2s_\theta c_\theta\rho_{AB}(s)
   \right]
   \nonumber\\
-  &+\sum_d\left[
-    \sin^2\theta\,\widehat\Pi_{AA}^{(d)}
-    +\cos^2\theta\,\widehat\Pi_{BB}^{(d)}
-    +2\sin\theta\cos\theta\,\widehat\Pi_{AB}^{(d)}
-  \right],
+  &+\ee^{-m_Q^2/\mathcal M^2}
+  \left\{C_3[q_1^{(0)}+q_1^{(1)}+q_1^{(2)}]
+  +C_5q_1^{(5)}\right\},
   \label{eq:pi11-explicit-ope}\\
   \widehat\Pi_{22}={}&
-  \int_{s_{\rm th}}^{s_0}ds\,\ee^{-s/\mathcal M^2}
+  \int_{d^2}^{s_0^{(2)}}ds\,\ee^{-s/\mathcal M^2}
   \left[
-    \cos^2\theta\,\rho_{AA}^{\rm pert}
-    +\sin^2\theta\,\rho_{BB}^{\rm pert}
-    -2\sin\theta\cos\theta\,\rho_{AB}^{\rm pert}
+    c_\theta^2\rho_{AA}(s)
+    +s_\theta^2\rho_{BB}(s)
+    -2s_\theta c_\theta\rho_{AB}(s)
   \right]
   \nonumber\\
-  &+\sum_d\left[
-    \cos^2\theta\,\widehat\Pi_{AA}^{(d)}
-    +\sin^2\theta\,\widehat\Pi_{BB}^{(d)}
-    -2\sin\theta\cos\theta\,\widehat\Pi_{AB}^{(d)}
-  \right].
+  &+\ee^{-m_Q^2/\mathcal M^2}
+  \left\{C_3[q_2^{(0)}+q_2^{(1)}+q_2^{(2)}]
+  +C_5q_2^{(5)}\right\}.
   \label{eq:pi22-explicit-ope}
 \end{align}
-Writing $\widehat\Pi_{ij}$ for the continuum-subtracted Borel invariants, the
-direct decay-constant sum rules would be
+The final square-root formulas used in the numerical code are therefore
 \begin{align}
-  f_1^2(\theta)
-  &=\frac{\ee^{M_1^2/\mathcal M^2}}{M_1^2}
-  \left[
-    \sin^2\theta\,\widehat\Pi_{AA}
-    +\cos^2\theta\,\widehat\Pi_{BB}
-    +2\sin\theta\cos\theta\,\widehat\Pi_{AB}
-  \right],
+  \boxed{f_1(\mathcal M^2,s_0^{(1)},\theta)}
+  &=\frac{\ee^{M_1^2/(2\mathcal M^2)}}{M_1}
+  \sqrt{\widehat\Pi_{11}(\mathcal M^2,s_0^{(1)},\theta)},
   \label{eq:f1-mixed-sumrule}\\
-  f_2^2(\theta)
-  &=\frac{\ee^{M_2^2/\mathcal M^2}}{M_2^2}
-  \left[
-    \cos^2\theta\,\widehat\Pi_{AA}
-    +\sin^2\theta\,\widehat\Pi_{BB}
-    -2\sin\theta\cos\theta\,\widehat\Pi_{AB}
-  \right].
+  \boxed{f_2(\mathcal M^2,s_0^{(2)},\theta)}
+  &=\frac{\ee^{M_2^2/(2\mathcal M^2)}}{M_2}
+  \sqrt{\widehat\Pi_{22}(\mathcal M^2,s_0^{(2)},\theta)}.
   \label{eq:f2-mixed-sumrule}
 \end{align}
 The condition $\widehat\Pi_{12}\simeq0$ can be used to diagnose or determine
 the preferred mixing angle.  At $\theta=\pi/2$,
 Eq.~\eqref{eq:f1-mixed-sumrule} becomes the pure axial-current result
 \begin{equation}
-  f_1^2=\frac{\ee^{M_1^2/\mathcal M^2}}{M_1^2}
-  \widehat\Pi_{AA},
+  f_1=\frac{\ee^{M_1^2/(2\mathcal M^2)}}{M_1}
+  \sqrt{\widehat\Pi_{AA}},
 \end{equation}
 which is the decay-constant normalization used by Colangelo et al.
 
-The qualification ``would be'' is important: in this project only the
-$AA$ OPE below is explicit.  A dedicated local calculation of
-$\rho_{BB}$, $\rho_{AB}$ and their condensate terms has not yet been
-completed.  Consequently Eqs.~\eqref{eq:pi11-explicit-ope} and
-\eqref{eq:pi22-explicit-ope} are exact rotation formulae, but they are not yet
-three fully evaluated two-point OPEs.
+\subsection{Current two-point result for $f_1$ and $f_2$}
 
-For completeness, their explicit axial two-point sum rule, generalized by
-$m_c\to m_Q$, is
-\begin{align}
-  f_A^2={}&\frac{\ee^{M_A^2/\mathcal M^2}}{M_A^2}
-  \Bigg\{
-  \frac{1}{8\pi^2}
-  \int_{(m_Q+m_s)^2}^{s_0}ds\,
-  \lambda^{1/2}(s,m_Q^2,m_s^2)
-  \nonumber\\
-  &\quad\times
-  \left[
-    2-\frac{m_Q^2+m_s^2+6m_Qm_s}{s}
-    -\frac{(m_Q^2-m_s^2)^2}{s^2}
-  \right]\ee^{-s/\mathcal M^2}
-  \nonumber\\
-  &\quad+
-  \ee^{-m_Q^2/\mathcal M^2}
-  \left[
-    \langle\bar ss\rangle
-    \left(m_Q-\frac{m_Q^2m_s}{2\mathcal M^2}
-    +\frac{m_Q^3m_s^2}{2\mathcal M^4}\right)
-    -\frac{\langle\bar s\sigma_{\mu\nu}g_sG^{\mu\nu}s\rangle}{4}
-    \frac{m_Q^3}{\mathcal M^4}
-  \right]
-  \Bigg\},
-  \label{eq:colangelo-decay-constant-sumrule}
-\end{align}
-where
-$\lambda(a,b,c)=a^2+b^2+c^2-2ab-2ac-2bc$.
-Notice that the mixed condensate occurs here in the two-point decay-constant
-sum rule even though it has not been included in our radiative three-point
-sum rule.  For the charm channel the benchmark value is
-$f_A\simeq0.225\,\mathrm{GeV}$.
-
-\subsection{What was actually obtained for $f_1$ and $f_2$}
-
-The numerical scripts used the reduced overlap model obtained after stripping
-the common pole and Borel factors,
-\begin{align}
-  f_1^2&=\sin^2\theta f_A^2+\cos^2\theta f_B^2
-  +2\sin\theta\cos\theta\,\rho_{AB}f_Af_B,
-  \label{eq:f1-overlap-model}\\
-  f_2^2&=\cos^2\theta f_A^2+\sin^2\theta f_B^2
-  -2\sin\theta\cos\theta\,\rho_{AB}f_Af_B.
-  \label{eq:f2-overlap-model}
-\end{align}
-For the $D_s$ sector the value $f_1=0.345(17)\,\mathrm{GeV}$ was used as a
-working anchor, so that
+Equations~\eqref{eq:rho-AA-explicit}--\eqref{eq:f2-mixed-sumrule}
+replace the former external-$f_1$/overlap normalization.  At the fixed angle
+from our previous study,
 \begin{equation}
-  \rho_{AB}=
-  \frac{f_1^2-\sin^2\theta f_A^2-\cos^2\theta f_B^2}
-       {2\sin\theta\cos\theta f_Af_B},
-  \label{eq:rho-from-f1-anchor}
+ \theta_{D_s}=26.6\pm0.6^\circ,
 \end{equation}
-and Eq.~\eqref{eq:f2-overlap-model} then predicted $f_2$.  For the $B_s$
-sector no $f_1$ anchor was available; instead the model imposed
-$\Pi_{12}=0$, which gives
+the fixed-angle, two-threshold Monte Carlo gives
+\begin{align}
+ f_1&=0.4046[0.3799,0.4291]~\mathrm{GeV},&
+ f_2&=0.1677[0.1594,0.1756]~\mathrm{GeV}.
+ \label{eq:current-f1-f2-result}
+\end{align}
+For example, the explicit central Mathematica substitution
 \begin{equation}
-  \rho_{AB}^{\rm diag}=
-  -\frac{\sin\theta\cos\theta(f_A^2-f_B^2)}
-  {(\cos^2\theta-\sin^2\theta)f_Af_B}.
-  \label{eq:rho-diagonal-closure}
+ \mathcal M^2=2.35~{\rm GeV}^2,\qquad
+ s_0^{(1)}=7.925~{\rm GeV}^2,\qquad
+ s_0^{(2)}=9.975~{\rm GeV}^2,\qquad
+ \theta=26.6^\circ
 \end{equation}
-The saved central-angle scan summaries are
-\begin{table}[H]
-  \centering
-  \small
-  \begin{tabular}{llll}
-    \toprule
-    Sector and input & $f_1\,[\mathrm{GeV}]$ & $f_2\,[\mathrm{GeV}]$ & Status\\
-    \midrule
-    $D_s$, legacy $\chi_s$
-      & $0.344\,[0.329,0.363]$ & $0.380\,[0.339,0.423]$
-      & $f_1$ anchor; $f_2$ inferred\\
-    $D_s$, lattice $f_{\gamma,s}^{\perp}$
-      & $0.345\,[0.330,0.364]$ & $0.379\,[0.338,0.423]$
-      & $f_1$ anchor; $f_2$ inferred\\
-    $B_s(5830)$ closure, legacy $\chi_s$
-      & $0.436\,[0.380,0.486]$ & $0.218\,[0.138,0.292]$
-      & $\Pi_{12}=0$ model\\
-    $B_s(5830)$ closure, lattice $f_{\gamma,s}^{\perp}$
-      & $0.443\,[0.384,0.492]$ & $0.203\,[0.121,0.291]$
-      & $\Pi_{12}=0$ model\\
-    \bottomrule
-  \end{tabular}
-  \caption{Median and 16--84 percentile intervals at
-  $\theta=35.3^\circ$.  These are the values found in the existing scans, but
-  they are not independent predictions of a completed $AA/BB/AB$ two-point
-  OPE calculation.}
-  \label{tab:found-f1-f2}
-\end{table}
-For the paper, the safe presentation is therefore to show
-Eqs.~\eqref{eq:pi11-mixed}--\eqref{eq:pi12-mixed}, quote the overlap-model
-values with this qualification, and reserve the phrase ``QCD sum-rule
-prediction of $f_1,f_2$'' for the future explicit $BB$ and $AB$ calculation.
+with $m_c=1.27~{\rm GeV}$, $m_s=0.093~{\rm GeV}$,
+$\langle\bar ss\rangle=0.8[-(0.24~{\rm GeV})^3]$ and
+$m_0^2=0.8~{\rm GeV}^2$ gives
+\begin{equation}
+ f_1=0.4005893~{\rm GeV},\qquad
+ f_2=0.1666704~{\rm GeV}.
+ \label{eq:central-f1-f2-explicit}
+\end{equation}
+The quoted values in Eq.~\eqref{eq:current-f1-f2-result} are the medians and
+16--84 percentile intervals after varying the QCD inputs, Borel parameter,
+threshold fits and the external angle.
+No decay constant is externally anchored in this result.  Diagonalizing the
+same truncated matrix gives
+$\theta_{\rm matrix}=30.63[29.94,31.29]^\circ$; this is retained as an
+OPE-truncation diagnostic rather than replacing the dedicated external angle.
+The Python and Mathematica fixed-point residues agree below
+$3\times10^{-8}\,\mathrm{GeV}$.  Local condensates are required in this
+ordinary two-point sum rule; their presence here does not reintroduce a local
+condensate into the external-photon transition LCSR.
 
 Finally, once $G_i$ is normalized with the corresponding $f_i$, the decay
 width is
@@ -1263,10 +1639,11 @@ same tensor- and vector-basis traces for both currents.
 \clearpage
 \section{Implemented OPE terms: exact status}
 
-It is not correct to describe every term below as independently completed in
-the new Mathematica restart.  The existing project contains a mixture of
-published axial-benchmark terms, new exact symbolic traces, and tensor-current
-estimates.  The present status is:
+The Mathematica restart now contains the complete analytic operator-weighted
+post-Borel assembly.  The Python and Mathematica numerical layers now use the
+same corrected off-shell expressions; the older pole-mass numerator routines
+remain only as explicitly labeled historical diagnostics.  The present status
+is:
 
 \begin{table}[H]
   \centering
@@ -1279,34 +1656,35 @@ estimates.  The present status is:
       & Published spectral density implemented numerically; corrected traces
         independently reproduced
       & Corrected traces and triangle cores derived; diagonal
-        double-dispersion spectral mapping implemented in Python\\
+        double-dispersion spectral mapping implemented independently in
+        Python and Mathematica\\
     Local $e_Q\langle\bar ss\rangle$ term
       & Excluded in the Rohrwild result; retained only in the Colangelo
         comparison with $m_s,m_s^2$ corrections
       & Excluded in the Rohrwild result; no Colangelo $J_B$ term invented\\
     Electromagnetic three-particle DAs,
       $\mathcal S_\gamma,\mathcal T_4^\gamma$
-      & Included through Eq.~\eqref{eq:axial-rohrwild-em-final}
-      & Included through Eq.~\eqref{eq:tensor-rohrwild-em-final} with the
-        stated physical-residue numerator prescription\\
+      & Complete support-corrected operator convolution is explicit
+      & Complete support-corrected operator convolution is explicit; the
+        former pole-mass numerator substitution is withdrawn\\
     Twist-2 two-particle DA,
       $\chi\langle\bar ss\rangle\phi_\gamma$
-      & Included in the numerical axial benchmark
-      & Tensor trace and numerical trace-ratio contribution included\\
+      & Included in the exact numerical invariant
+      & Exact factor $m_Q/(m_Q+m_s)$ included\\
     Twist-4 two-particle DAs,
-      $\mathbb A$ and $h_\gamma$
-      & Included in the axial benchmark
-      & Included with the tensor trace ratio at the Borel saddle\\
+      $\mathcal A$ and $\mathcal B$
+      & Explicit in the Rohrwild combination $\mathcal A+2\mathcal B$
+      & Exact factor $m_Q/(m_Q+m_s)$ relative to the axial piece\\
     Twist-3 two-particle DA,
-      $f_{3\gamma}\psi^v$
-      & Included in the axial benchmark
-      & Included with the physical-residue trace ratio (it vanishes at the
-        symmetric point for the default antisymmetric $\psi^v$ integral)\\
+      $f_{3\gamma}\overline\psi^{(V)}$
+      & Explicit; vanishes at the symmetric Borel point
+      & Exact post-Borel derivative expression in
+        Eq.~\eqref{eq:tensor-vector-explicit-borel}\\
     Three-particle photon DAs,
       $\mathcal S,\widetilde{\mathcal S},\mathcal T_{1\ldots4}$
-      & Full published $\mathcal F_1$ integral implemented numerically
-      & Local-$\sigma$ and $x_\alpha\gamma_\beta$ kernels included with the
-        documented double-pole residue-matching prescription\\
+      & Full operator-weighted $\mathcal F_1$ line projection is explicit
+      & Full operator-weighted line projection is explicit; the
+        $x_\alpha\gamma_\beta$ trace vanishes\\
     Mixed condensate
       $\langle\bar s g_s\sigma\cdot Gs\rangle$
       & Not included in the radiative three-point sum rule
@@ -1316,16 +1694,69 @@ estimates.  The present status is:
       & Not included\\
     \bottomrule
   \end{tabular}
-  \caption{Term-by-term distinction between implemented results and incomplete
-  parts of the independent derivation.}
+  \caption{Term-by-term status of the completed analytic and numerical
+  transition calculation.}
   \label{tab:ope-status}
 \end{table}
+
+\subsection{Completed numerical checkpoint}
+
+At $a_0=1/2$ the independently evaluated DA convolutions are
+\begin{align}
+\mathcal J[\mathcal F^g_{A,\sigma}]&=-0.1562500000,&
+\mathcal J[\mathcal F^g_{A,x\gamma}]&=+0.2265798500,\nonumber\\
+\mathcal J[\mathcal F^g_A]&=+0.0703298500,&
+\mathcal J[\mathcal F^\gamma_A]&=0,\nonumber\\
+\mathcal J[\mathcal S_\gamma-\mathcal T_4^\gamma]&=1.5625000000,&
+\mathcal L[\mathcal T_4^\gamma]&=0.1111834583,\nonumber\\
+\mathcal L'[\mathcal T_4^\gamma]&=0.4098669166.&&
+\end{align}
+For the charm reference point
+$M^2=3.75~\GeV^2$, $s_0=8.0~\GeV^2$ and the lattice photon
+normalization, the totals are
+\begin{equation}
+\widehat T_A=-0.0311671290~\GeV^3,\qquad
+\widehat T_B=-0.0701320395~\GeV^3.
+\end{equation}
+With $\theta=26.6^\circ$ and the central projected residues this gives
+\begin{align}
+G_1&=-0.4113423853~\GeV^{-1},&
+\Gamma_1&=35.5665446~\keV,\nonumber\\
+G_2&=+0.0464986762~\GeV^{-1},&
+\Gamma_2&=0.6709364~\keV.
+\end{align}
+These are single-point regression values rather than final-window medians.
+For the direct bottom two-point reference
+$M_{\rm 2pt}^2=7.00~\GeV^2$,
+$s_0^{(1)}=44.35~\GeV^2$, and
+$s_0^{(2)}=43.025~\GeV^2$, the independent Mathematica evaluation gives
+\begin{equation}
+ f_1^{(B_s)}=0.5381107~\GeV,\qquad
+ f_2^{(B_s)}=0.0888787~\GeV,
+\end{equation}
+in agreement with Python.  The direct $B_s$ Monte Carlo gives
+$f_1^{(B_s)}=0.5358[0.5096,0.5586]~\GeV$ and
+$f_2^{(B_s)}=0.08896[0.08496,0.09278]~\GeV$.
+The cross-code transition comparison contains 145 common numerical entries and
+passes the $10^{-8}$ absolute-or-relative tolerance.  The full fixed-seed
+uncertainty scan gives
+\begin{align}
+\Gamma[D_{s1}(2460)\to D_s\gamma]
+ &=34.96[28.06,43.53]~\keV,\nonumber\\
+\Gamma[D_{s1}(2536)\to D_s\gamma]
+ &=0.988[0.092,3.555]~\keV,\nonumber\\
+\Gamma[B_{s1}(5750)\to B_s\gamma]
+ &=11.34[9.144,14.06]~\keV,\nonumber\\
+\Gamma[B_{s1}(5830)\to B_s\gamma]
+ &=8.702[6.474,11.23]~\keV.
+\end{align}
 
 \section{Verification summary and present boundary}
 
 \begin{table}[H]
   \centering
-  \begin{tabular}{p{0.57\textwidth}cc}
+  \renewcommand{\arraystretch}{1.12}
+  \begin{tabular}{p{0.52\textwidth}p{0.09\textwidth}p{0.25\textwidth}}
     \toprule
     Check & Result & Exact tests\\
     \midrule
@@ -1338,38 +1769,40 @@ estimates.  The present status is:
     Shifted and pairwise Feynman denominators
       & PASS & 4/4\\
     State rotation, OPE assembly, Colangelo limit, decay constant, and width
-      & PASS & 14/14\\
-    Sequential evaluation of the interactive notebook
-      & PASS & 38/38 cells\\
+      & PASS & 15/15\\
+    Notebook construction and corrected numerical section
+      & PASS & 53 cells; block run\\
+    Python--Mathematica transition regression
+      & PASS & 145/145 quantities\\
+    Direct $B_s$ two-point central regression
+      & PASS & $f_1,f_2$, thresholds, pole/OPE diagnostics\\
     \bottomrule
   \end{tabular}
   \caption{Status of the independent Mathematica/FeynCalc restart.}
 \end{table}
 
 The $B_s$ channel uses the same symbolic expressions with $m_Q\to m_b$ and
-the appropriate heavy-quark charge.  No second Dirac-trace derivation is
-needed.
+the appropriate heavy-quark charge.  Its direct $AA/AB/BB$ two-point
+normalization is implemented independently in
+\path{scripts/mathematica_twopoint_bs1_matrix_check.wl}; no
+Pullin--Zwicky decay constant or overlap closure enters the final result.
 
-The calculation deliberately stops here.  The next independent tasks are:
+The completed symbolic and numerical stages now include the exact
+two-particle vector-DA Borel reduction, the corrected
+$x_\alpha\gamma_\beta$ kernels, the full operator-weighted gluonic and
+electromagnetic line projections, and the physical-state uncertainty scan.
+Useful higher-order follow-up tasks are:
 \begin{enumerate}
-  \item independently audit the separately implemented
-    $e_Q\langle\bar ss\rangle$ contribution and decide whether it is retained
-    in the final numerical convention;
-  \item reproduce the axial two- and three-particle photon-DA terms from the
-    explicit matrix elements rather than importing the final published sum
-    rule;
-  \item perform the shifted loop integrals based on
-    Eqs.~\eqref{eq:deltaH}--\eqref{eq:deltaS};
-  \item derive the double discontinuity or an equivalent double-dispersion
-    representation;
-  \item apply continuum subtraction and the double Borel transform;
-  \item reproduce the published axial-current spectral density as a
-    normalization and sign benchmark;
-  \item only then derive and numerically implement the tensor-current hard
-    spectral density.
+  \item independently rederive the shifted hard-loop double discontinuity
+    directly from Eqs.~\eqref{eq:deltaH}--\eqref{eq:deltaS}, as a check beyond
+    the present published spectral-density implementation;
+  \item add perturbative $\alpha_s$ corrections consistently to the transition
+    and two-point sectors;
+  \item extend the common OPE truncation to the omitted higher-dimensional
+    terms.
 \end{enumerate}
-The earlier Python spectral-density candidate is not used as an input to this
-restart and is not changed by the work documented here.
+Python results that use the former physical-residue numerator shortcut remain
+historical diagnostics and are not used in the quoted tables.
 
 \appendix
 \section{Reproduction commands}
@@ -1387,11 +1820,32 @@ From \texttt{papers/Ds\_Bs\_gamma/}, run
 
 /Applications/Wolfram.app/Contents/MacOS/WolframKernel -noprompt \
   -script scripts/mathematica_state_mixing_projection.wl
+
+/Applications/Wolfram.app/Contents/MacOS/WolframKernel -noprompt \
+  -script scripts/step13_soft_vector_da_borel.wl
+
+/Applications/Wolfram.app/Contents/MacOS/WolframKernel -noprompt \
+  -script scripts/step14_explicit_double_borel_forms.wl
+
+/Applications/Wolfram.app/Contents/MacOS/WolframKernel -noprompt \
+  -script scripts/step15_complete_three_particle_borel.wl
+
+python3 scripts/corrected_transition_central_python.py
+
+/Applications/Wolfram.app/Contents/MacOS/WolframKernel -noinit -noprompt \
+  -script scripts/mathematica_corrected_transition_numerics.wl
+
+python3 scripts/compare_corrected_transition_numerics.py
+
+python3 scripts/final_window_monte_carlo.py
 \end{lstlisting}
 To regenerate the notebook from its source cells, run
 \begin{lstlisting}[language={},basicstyle=\ttfamily\scriptsize]
 /Applications/Wolfram.app/Contents/MacOS/WolframKernel -noprompt \
   -script scripts/build_dsbs_symbolic_notebook.wl
+
+/Applications/Wolfram.app/Contents/MacOS/WolframKernel -noinit -noprompt \
+  -script scripts/check_dsbs_symbolic_notebook.wl
 \end{lstlisting}
 
 \end{document}

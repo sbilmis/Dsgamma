@@ -1,0 +1,33 @@
+quantity,symbol,central,uncertainty,unit,status,source,notes
+Fine structure constant,alpha_em,0.0072973525693,0,-,fixed,CODATA/PDG real-photon convention,q2=0
+Charm MSbar mass,m_c,1.27,0.02,GeV,external,PDG 2026 quark summary,LO calculation uses this fixed-scale mass
+Bottom MSbar mass,m_b,4.18,0.03,GeV,external,PDG 2026 quark summary,LO calculation uses this fixed-scale mass
+Strange MSbar mass,m_s,0.093,0.011,GeV,external,PDG 2026 quark summary,kept in perturbative thresholds and hard kernel
+Strange electric charge,Q_s,-0.333333333333,0,e,fixed,QED,charge of s quark
+Charm electric charge,Q_c,0.666666666667,0,e,fixed,QED,charge of c quark
+Bottom electric charge,Q_b,-0.333333333333,0,e,fixed,QED,charge of b quark
+Dsstar mass,m_Dsstar,2.1122,0.0004,GeV,external,PDG 2026 listing,final 1- state
+Ds1(2460) mass,m_Ds1L,2.4595,0.0006,GeV,external,PDG 2026 listing,lower physical 1+ state
+Ds1(2536) mass,m_Ds1H,2.53512,0.00006,GeV,external,PDG 2026 listing,higher physical 1+ state
+Bsstar mass,m_Bsstar,5.4154,0.0014,GeV,external,PDG 2026 listing,final 1- state
+Lower Bs1 diagnostic mass,m_Bs1L,5.75,0.03,GeV,diagnostic,heavy-flavour/lattice model range,not experimentally established
+Bs1(5830) mass,m_Bs1H,5.82873,0.00020,GeV,external,PDG 2026 listing,observed higher physical 1+ state
+Ds mixing angle,theta_D,38.4,3.0,degree,external,Wu and Zhao arXiv:1111.4002,BaBar-constrained solution with conservative model spread
+Bs mixing angle,theta_B,35.264,3.0,degree,external,heavy-quark limit,uncertainty covers leading 1/mb breaking
+Light quark condensate,qq,-0.013824,0.0013824,GeV^3,external,standard SVZ,equals -(0.24 GeV)^3
+Strange condensate ratio,kappa_s,0.8,0.1,-,external,standard SVZ,ss=kappa_s*qq
+Mixed-condensate ratio,m0sq,0.8,0.2,GeV^2,external,standard SVZ,<sgsigmaG s>=m0sq*<ss>
+Magnetic susceptibility,chi,-3.15,0.30,GeV^-2,external,Ball Braun Kivel Nucl Phys B649 (2003),one-GeV BBK sign convention
+Three-particle photon coupling,f3gamma,-0.0039,0.0020,GeV^2,external,Ball Braun Kivel Nucl Phys B649 (2003),mu=1 GeV
+Photon DA parameter,omegaV,3.8,1.8,-,external,Ball Braun Kivel Nucl Phys B649 (2003),mu=1 GeV
+Photon DA parameter,omegaA,-2.1,1.0,-,external,Ball Braun Kivel Nucl Phys B649 (2003),mu=1 GeV
+Photon DA parameter,kappa,0.2,0.1,-,external,Ball Braun Kivel Nucl Phys B649 (2003),mu=1 GeV
+Photon DA parameter,zeta1,0.4,0.2,-,external,Ball Braun Kivel Nucl Phys B649 (2003),mu=1 GeV
+Photon DA parameter,zeta2,0.3,0.1,-,external,Ball Braun Kivel Nucl Phys B649 (2003),mu=1 GeV
+Tensor transition truncation,delta_tensor_D,0.15,0.15,-,diagnostic,power-counting estimate,relative charm 1/mc uncertainty
+Tensor transition truncation,delta_tensor_B,0.05,0.05,-,diagnostic,power-counting estimate,relative bottom 1/mb uncertainty
+Ds1(2460) total width,Gamma_Ds1L,3.5,0,MeV,upper limit,PDG 2026 listing,95-percent CL upper limit
+Ds1(2460) Dsstar gamma branching,B_Ds1L_DsstarGamma,0.08,0,-,upper limit,PDG 2026 listing,90-percent CL
+Ds1(2536) total width,Gamma_Ds1H,0.92,0.05,MeV,external,PDG 2026 listing,radiative mode only possibly seen
+Bs1(5830) total width,Gamma_Bs1H,0.5,0.424,MeV,external,PDG 2026 listing,statistical and systematic errors combined
+

@@ -1,0 +1,21 @@
+Complete three-particle Borel invariants
+========================================
+
+F_A^g = S3[aq, aqb, ag] + St3[aq, aqb, ag] - T13[aq, aqb, ag] - T23[aq, aqb, ag] + 2*v*(-S3[aq, aqb, ag] + T23[aq, aqb, ag] - T33[aq, aqb, ag]) + T33[aq, aqb, ag] + T43[aq, aqb, ag]
+
+F_B^g/r_Q = S3[aq, aqb, ag] + St3[aq, aqb, ag] - T13[aq, aqb, ag] - T23[aq, aqb, ag] + T33[aq, aqb, ag] + T43[aq, aqb, ag]
+
+F_A^gamma = (1 - 2*v)*Sg3[aq, aqb, ag] - T4g3[aq, aqb, ag]
+
+F_B^gamma/r_Q = Sg3[aq, aqb, ag] - T4g3[aq, aqb, ag]
+
+T_A^(3p,g) = (eS*ssCond*(Inactive[Integrate][Inactive[Integrate][S3[1 - a0 - ag*(1 - v), a0 - ag*v, ag] + St3[1 - a0 - ag*(1 - v), a0 - ag*v, ag] - T13[1 - a0 - ag*(1 - v), a0 - ag*v, ag] - T23[1 - a0 - ag*(1 - v), a0 - ag*v, ag] + 2*v*(-S3[1 - a0 - ag*(1 - v), a0 - ag*v, ag] + T23[1 - a0 - ag*(1 - v), a0 - ag*v, ag] - T33[1 - a0 - ag*(1 - v), a0 - ag*v, ag]) + T33[1 - a0 - ag*(1 - v), a0 - ag*v, ag] + T43[1 - a0 - ag*(1 - v), a0 - ag*v, ag], {ag, 0, (1 - a0)/(1 - v)}], {v, 0, a0}] + Inactive[Integrate][Inactive[Integrate][S3[1 - a0 - ag*(1 - v), a0 - ag*v, ag] + St3[1 - a0 - ag*(1 - v), a0 - ag*v, ag] - T13[1 - a0 - ag*(1 - v), a0 - ag*v, ag] - T23[1 - a0 - ag*(1 - v), a0 - ag*v, ag] + 2*v*(-S3[1 - a0 - ag*(1 - v), a0 - ag*v, ag] + T23[1 - a0 - ag*(1 - v), a0 - ag*v, ag] - T33[1 - a0 - ag*(1 - v), a0 - ag*v, ag]) + T33[1 - a0 - ag*(1 - v), a0 - ag*v, ag] + T43[1 - a0 - ag*(1 - v), a0 - ag*v, ag], {ag, 0, a0/v}], {v, a0, 1}]))/E^(mQ^2/M2)
+
+T_B^(3p,g) = (eS*mQ*ssCond*(Inactive[Integrate][Inactive[Integrate][S3[1 - a0 - ag*(1 - v), a0 - ag*v, ag] + St3[1 - a0 - ag*(1 - v), a0 - ag*v, ag] - T13[1 - a0 - ag*(1 - v), a0 - ag*v, ag] - T23[1 - a0 - ag*(1 - v), a0 - ag*v, ag] + T33[1 - a0 - ag*(1 - v), a0 - ag*v, ag] + T43[1 - a0 - ag*(1 - v), a0 - ag*v, ag], {ag, 0, (1 - a0)/(1 - v)}], {v, 0, a0}] + Inactive[Integrate][Inactive[Integrate][S3[1 - a0 - ag*(1 - v), a0 - ag*v, ag] + St3[1 - a0 - ag*(1 - v), a0 - ag*v, ag] - T13[1 - a0 - ag*(1 - v), a0 - ag*v, ag] - T23[1 - a0 - ag*(1 - v), a0 - ag*v, ag] + T33[1 - a0 - ag*(1 - v), a0 - ag*v, ag] + T43[1 - a0 - ag*(1 - v), a0 - ag*v, ag], {ag, 0, a0/v}], {v, a0, 1}]))/(E^(mQ^2/M2)*(mQ + ms))
+
+T_A^(3p,em) = (E^(-(mQ^2/M2)) - E^(-(s0/M2)))*eQ*ssCond*(2*Inactive[D][Inactive[Integrate][Inactive[Integrate][Inactive[Integrate][((a0 - aqb)*T4g3[aq, aqb, 1 - aq - aqb])/(1 - aq - aqb)^2, {aqb, 0, a0}], {aqp, 0, aq}], {aq, 0, 1 - a0}] - Inactive[Integrate][Inactive[Integrate][(a0*Inactive[Integrate][T4g3[aq, aqbp, 1 - aq - aqbp], {aqbp, 0, beta}])/beta^2, {beta, a0, 1 - aq}], {aq, 0, 1 - a0}] + Inactive[Integrate][(a0*Inactive[Integrate][Inactive[Integrate][T4g3[aqp, aqb, 1 - aqb - aqp], {aqb, 0, 1 - aqp}], {aqp, 0, aq}])/(1 - aq)^2, {aq, 0, 1 - a0}], a0] + Inactive[Integrate][Inactive[Integrate][(1 - 2*v)*Sg3[1 - a0 - ag*(1 - v), a0 - ag*v, ag] - T4g3[1 - a0 - ag*(1 - v), a0 - ag*v, ag], {ag, 0, (1 - a0)/(1 - v)}], {v, 0, a0}] + Inactive[Integrate][Inactive[Integrate][(1 - 2*v)*Sg3[1 - a0 - ag*(1 - v), a0 - ag*v, ag] - T4g3[1 - a0 - ag*(1 - v), a0 - ag*v, ag], {ag, 0, a0/v}], {v, a0, 1}])
+
+T_B^(3p,em) = ((E^(-(mQ^2/M2)) - E^(-(s0/M2)))*eQ*mQ*ssCond*(2*Inactive[D][Inactive[Integrate][Inactive[Integrate][Inactive[Integrate][((a0 - aqb)*T4g3[aq, aqb, 1 - aq - aqb])/(1 - aq - aqb)^2, {aqb, 0, a0}], {aqp, 0, aq}], {aq, 0, 1 - a0}] - Inactive[Integrate][Inactive[Integrate][(a0*Inactive[Integrate][T4g3[aq, aqbp, 1 - aq - aqbp], {aqbp, 0, beta}])/beta^2, {beta, a0, 1 - aq}], {aq, 0, 1 - a0}] + Inactive[Integrate][(a0*Inactive[Integrate][Inactive[Integrate][T4g3[aqp, aqb, 1 - aqb - aqp], {aqb, 0, 1 - aqp}], {aqp, 0, aq}])/(1 - aq)^2, {aq, 0, 1 - a0}], a0] + Inactive[Integrate][Inactive[Integrate][Sg3[1 - a0 - ag*(1 - v), a0 - ag*v, ag] - T4g3[1 - a0 - ag*(1 - v), a0 - ag*v, ag], {ag, 0, (1 - a0)/(1 - v)}], {v, 0, a0}] + Inactive[Integrate][Inactive[Integrate][Sg3[1 - a0 - ag*(1 - v), a0 - ag*v, ag] - T4g3[1 - a0 - ag*(1 - v), a0 - ag*v, ag], {ag, 0, a0/v}], {v, a0, 1}]))/(mQ + ms)
+
+Assembly residuals (all must vanish):
+{0, 0, 0, 0}

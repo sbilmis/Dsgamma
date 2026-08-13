@@ -14,11 +14,12 @@ structures (chi phi_gamma and the A/h_gamma twist-4 family) is
 
 before hadronic decay-constant normalization.
 
-The vector DA contribution to J_B contains extra p^2/(p.q) kinematics.  With
-the explicitly adopted physical-residue numerator prescription
-``p^2=m_P^2`` and ``p.q=(m_A^2-m_P^2)/2`` its trace ratio is fixed, so it is
-included in the complete two-particle result.  The hard-photon tensor-current
-contribution is not included here.
+The vector DA contribution to J_B contains extra p^2/(p.q) kinematics.  The
+older numerical table fixed this ratio by inserting the phenomenological pole
+values ``p^2=m_P^2`` and ``p.q=(m_A^2-m_P^2)/2`` on the QCD side.  That
+shortcut is withdrawn: this module is retained only to reproduce the legacy
+diagnostic until the off-shell double-Borel reduction is complete.  The
+hard-photon tensor-current contribution is not included here.
 """
 
 from __future__ import annotations
@@ -64,12 +65,12 @@ def gb_soft_tensor_da(axial_row, inputs, fB):
 
 
 def gb_vector_da(axial_row, inputs, fB, ubar=0.5):
-    """Vector-DA B-current term from the physical-residue trace ratio.
+    """Legacy vector-DA B-current diagnostic using the withdrawn shortcut.
 
     The relation is estimated by comparing the B-current vector-DA E1 trace to
     the A-current vector-DA trace and then multiplying the known axial
-    f3gamma*Psi^v OPE term.  The B trace contains p^2/(p.q), evaluated with
-    the stated physical-residue numerator prescription.
+    f3gamma*Psi^v OPE term.  The B trace contains p^2/(p.q); its proper
+    off-shell Borel transform is not performed by this legacy function.
     """
     mc = inputs["mc"]
     ms = inputs["ms"]
@@ -141,8 +142,9 @@ def main():
     lines = [
         "Stage-1 tensor-current soft two-particle estimate",
         "=================================================",
-        "Complete result includes tensor-DA family and vector f3gamma psi^v DA.",
-        "Vector DA uses the stated physical-residue p^2/(p.q) prescription.",
+        "LEGACY DIAGNOSTIC: not a completed post-Borel tensor result.",
+        "Tensor-DA family is safe; the vector f3gamma psi^v term uses the",
+        "withdrawn physical-residue p^2/(p.q) shortcut.",
         "Hard tensor-current contribution is not included.",
     ]
     for scheme in fB_options:

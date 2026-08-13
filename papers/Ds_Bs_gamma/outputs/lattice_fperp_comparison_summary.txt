@@ -5,37 +5,37 @@ Lattice input f_gamma,s^perp(2 GeV) = -0.05100 +/- 0.00180 GeV.
 Using LO running factor 2->1 GeV = 1.080.
 Lattice scenario f_gamma,s^perp(1 GeV) = -0.05508 +/- 0.00194 GeV.
 
-legacy_chi_condensate, central: Gamma2460=37.888 keV, Gamma2536=6.034 keV, chi_eff=3.150 GeV^-2
+legacy_chi_condensate, central: Gamma2460=43.691 keV, Gamma2536=2.719 keV, chi_eff=3.150 GeV^-2
 legacy_chi_condensate, theta_fixed:
-  Gamma2460_keV: median 38.29; 68% [28.16, 52.34]; mean 39.84 +/- 12.65
-  Gamma2536_keV: median 5.887; 68% [2.815, 11.37]; mean 7.185 +/- 5.234
-  G2460: median -0.4272; 68% [-0.4986, -0.3657]; mean -0.4299 +/- 0.06867
-  G2536: median -0.1377; 68% [-0.1915, -0.09525]; mean -0.1434 +/- 0.05089
+  Gamma2460_keV: median 43.87; 68% [32.53, 58.29]; mean 45.24 +/- 14.14
+  Gamma2536_keV: median 2.6; 68% [0.5398, 6.533]; mean 3.616 +/- 3.916
+  G2460: median -0.4559; 68% [-0.5269, -0.3929]; mean -0.4584 +/- 0.07165
+  G2536: median -0.09155; 68% [-0.1451, -0.03899]; mean -0.09189 +/- 0.05671
 
 legacy_chi_condensate, theta_scan_25_45:
-  Gamma2460_keV: median 37.51; 68% [26.53, 50.84]; mean 38.94 +/- 12.63
-  Gamma2536_keV: median 6.048; 68% [2.121, 13.16]; mean 7.705 +/- 6.351
-  G2460: median -0.4221; 68% [-0.4929, -0.355]; mean -0.4248 +/- 0.06955
-  G2536: median -0.1396; 68% [-0.206, -0.08266]; mean -0.1443 +/- 0.06342
+  Gamma2460_keV: median 43.19; 68% [31.04, 57.59]; mean 44.4 +/- 14
+  Gamma2536_keV: median 2.593; 68% [0.2985, 8.545]; mean 4.296 +/- 4.939
+  G2460: median -0.4528; 68% [-0.5235, -0.3846]; mean -0.454 +/- 0.07197
+  G2536: median -0.09068; 68% [-0.1659, -0.02313]; mean -0.09349 +/- 0.07152
 
-lattice_fperp_s, central: Gamma2460=15.474 keV, Gamma2536=0.774 keV, chi_eff=4.980 GeV^-2
+lattice_fperp_s, central: Gamma2460=19.257 keV, Gamma2536=0.005 keV, chi_eff=4.980 GeV^-2
 lattice_fperp_s, theta_fixed:
-  Gamma2460_keV: median 15.36; 68% [12.56, 19.62]; mean 15.88 +/- 3.505
-  Gamma2536_keV: median 0.7319; 68% [0.1918, 1.871]; mean 1.048 +/- 0.9614
-  G2460: median -0.2699; 68% [-0.3052, -0.2444]; mean -0.2732 +/- 0.03
-  G2536: median -0.04856; 68% [-0.07765, -0.02486]; mean -0.05183 +/- 0.02628
+  Gamma2460_keV: median 18.5; 68% [14.2, 23.94]; mean 19.18 +/- 5.028
+  Gamma2536_keV: median 0.155; 68% [0.01248, 0.7953]; mean 0.3622 +/- 0.4947
+  G2460: median -0.2965; 68% [-0.3377, -0.2605]; mean -0.2996 +/- 0.03878
+  G2536: median -0.002862; 68% [-0.03545, 0.03199]; mean -0.002412 +/- 0.03411
 
 lattice_fperp_s, theta_scan_25_45:
-  Gamma2460_keV: median 15.6; 68% [12.32, 19.47]; mean 15.9 +/- 3.518
-  Gamma2536_keV: median 0.8269; 68% [0.07842, 2.676]; mean 1.296 +/- 1.495
-  G2460: median -0.2725; 68% [-0.3045, -0.2424]; mean -0.2734 +/- 0.03009
-  G2536: median -0.05163; 68% [-0.09285, -0.01222]; mean -0.05212 +/- 0.03824
+  Gamma2460_keV: median 18.77; 68% [14.6, 24.23]; mean 19.43 +/- 4.936
+  Gamma2536_keV: median 0.303; 68% [0.03498, 1.219]; mean 0.652 +/- 0.9241
+  G2460: median -0.2991; 68% [-0.3394, -0.2638]; mean -0.3016 +/- 0.03828
+  G2536: median -0.0009799; 68% [-0.0468, 0.04274]; mean -0.002103 +/- 0.04584
 
 Lattice-normalized Gaussian overlay summaries:
-  theta_fixed Gamma2460_keV: mean 15.88 keV, sigma 3.505 keV; median 15.36 keV
-  theta_fixed Gamma2536_keV: mean 1.048 keV, sigma 0.9614 keV; median 0.7319 keV
-  theta_scan_25_45 Gamma2460_keV: mean 15.9 keV, sigma 3.518 keV; median 15.6 keV
-  theta_scan_25_45 Gamma2536_keV: mean 1.296 keV, sigma 1.495 keV; median 0.8269 keV
+  theta_fixed Gamma2460_keV: mean 19.18 keV, sigma 5.028 keV; median 18.5 keV
+  theta_fixed Gamma2536_keV: mean 0.3622 keV, sigma 0.4947 keV; median 0.155 keV
+  theta_scan_25_45 Gamma2460_keV: mean 19.43 keV, sigma 4.936 keV; median 18.77 keV
+  theta_scan_25_45 Gamma2536_keV: mean 0.652 keV, sigma 0.9241 keV; median 0.303 keV
 
 Updated lattice-normalized MC figures:
   /Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/lattice_fperp_mc_width_histograms_theta_fixed.pdf

@@ -24,7 +24,7 @@ def photon_label(scenario):
 def provenance(sector):
     if sector == "Ds":
         return "prior_theta_plus_AA_AB_BB_projection_LO_d3_d5"
-    return "basis_inputs_plus_diagonal_closure"
+    return "prior_theta_plus_direct_AA_AB_BB_projection_LO_d3_d5"
 
 
 def status(row):
@@ -60,7 +60,7 @@ def main():
                 "photon_input": row["scenario"],
                 "theta_treatment": row["ensemble"],
                 "window_id": row["window_id"],
-                "transition_scheme": "rohrwild_nonlocal",
+                "transition_scheme": "rohrwild_nonlocal_exact_post_borel",
                 "decay_constant_provenance": provenance(row["sector"]),
                 "f1_median_GeV": row["f1_median_GeV"],
                 "f1_p16_GeV": row["f1_p16_GeV"],

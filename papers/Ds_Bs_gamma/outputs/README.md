@@ -12,6 +12,13 @@ avoid moving individual output files unless the TeX sources are updated too.
   and fermion-line Ward identities.
 - `mathematica_hard_loop_parameterization.txt` - shifted heavy- and
   strange-emission triangle denominators; 4 exact checks.
+- `corrected_transition_python_mathematica_comparison.txt` - term-by-term
+  comparison of all 145 corrected central transition quantities.
+- `step14_explicit_double_borel_forms.txt` - raw \(E_Q\) double-Borel
+  identities, explicitly separated from continuum subtraction.
+- `step15_complete_three_particle_borel.txt` - final three-particle
+  invariants, with \(E_Q\) for the channel-specific gluonic term and
+  \(E_Q-E_0\) for the gauge-completion electromagnetic term.
 
 ## Headline Tables
 
@@ -31,16 +38,18 @@ avoid moving individual output files unless the TeX sources are updated too.
 
 ## Headline Plots
 
-- `stage2_stability_central.pdf` - Ds1 Borel/threshold stability.
-- `bs1_5830_stability.pdf` - Bs1 Borel/threshold stability.
-- `lattice_fperp_mc_width_histograms_theta_fixed.pdf` - Ds1 preferred MC widths.
-- `stage3_bs1_physical_width_histograms.pdf` - Bs1 physical-current MC widths.
+- `final_angle_stability.pdf` - preferred-angle coupling and width stability
+  versus \(M^2\) and \(s_0\).
+- `final_window_mc_width_histograms.pdf` - final Ds1/Bs1 Monte Carlo widths.
+- `final_window_bs_window_crosscheck.pdf` - selected versus cross-check bottom
+  windows.
 
 ## Current Bs1 Normalization Outputs
 
-- `stage3_bs1_physical_decay_constant_summary.csv`
-- `stage3_bs1_physical_decay_constant_summary.txt`
-- `stage3_bs1_physical_decay_constant_scan.csv`
+- `twopoint_bs1_matrix_mc_summary.txt`
+- `twopoint_bs1_matrix_mc.csv`
+- `twopoint_bs1_physical_residue_grid.csv`
 
-The older `stage3_bs1_pz_*` files are retained as a basis-normalization
-diagnostic, not as the final physical-current result.
+The older `stage3_bs1_pz_*` and
+`stage3_bs1_physical_decay_constant_*` files are retained as
+basis-normalization diagnostics, not as the final physical-current result.

@@ -1,0 +1,19 @@
+Corrected Rohrwild central numerical reference (Python)
+=======================================================
+Transition local condensate: excluded.
+Tensor/EM numerator prescription: exact off-shell double Borel.
+Ds: g1=-0.4113423853 GeV^-1, Gamma1=35.5665445798 keV; g2=+0.0464986762 GeV^-1, Gamma2=0.6709363817 keV
+Bs_low: g_1=+0.3042242618 GeV^-1, Gamma_1_keV=11.4329978048 keV; f1=0.5381107370, f2=0.0888786545
+Bs_high: g_2=-0.1997171094 GeV^-1, Gamma_2_keV=8.4629022691 keV; f1=0.5381107370, f2=0.0888786545
+
+DA convolutions:
+  J_g_sigma = -1.562500000000e-01
+  J_g_xgamma = +2.265798500158e-01
+  J_g_axial = +7.032985001580e-02
+  J_g_closure = -2.775557561563e-17
+  J_em_axial = +0.000000000000e+00
+  J_em_tensor_base = +1.562500000000e+00
+  L_T4gamma = +1.111834583202e-01
+  Lprime_T4gamma = +4.098669166402e-01
+
+Wrote /Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/corrected_transition_central_python.csv

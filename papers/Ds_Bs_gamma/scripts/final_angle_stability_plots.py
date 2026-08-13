@@ -35,12 +35,10 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from bs1_stage2_baseline import evaluate_point as evaluate_bs_basis
-from final_stage2_uncertainty_scan import precompute_f1_basis, set_photon_shape_params
+from final_stage2_uncertainty_scan import set_photon_shape_params
 from lattice_photon_normalization_comparison import (
     FPERP_S_1GEV,
     central_inputs_for_scenario,
-    evaluate as evaluate_ds_basis,
 )
 from mixing_angle_inputs import (
     ANGLE_SOURCE,
@@ -49,14 +47,18 @@ from mixing_angle_inputs import (
     THETA_DS_DEG,
     THETA_DS_SIGMA_DEG,
 )
-from stage1_tensor_gb_soft2p_estimate import width_keV
-from stage2_axial_g1_three_particle import F1_integral
+from rohrwild_transition_exact import (
+    physical_couplings,
+    precompute_convolutions,
+    transition_invariants,
+)
 
 
 # Medians of the accepted final-window physical-current normalization samples.
 F1_DS = 0.40491088740235476
 F2_DS = 0.16827627627950853
-F2_BS_5830 = 0.21452584195712590
+F1_BS = 0.5352962317418016
+F2_BS = 0.08879764051738685
 
 DS_M2_WINDOW = (3.0, 4.5)
 DS_S0_VALUES = (7.5, 8.0, 8.5)
@@ -95,22 +97,26 @@ def ds_widths(
     M2: float,
     s0: float,
     theta_deg: float,
-    f1_axial: float,
-    f1_basis: dict[str, float],
 ) -> tuple[float, float]:
-    basis = evaluate_ds_basis(
-        vals, M2, math.sqrt(s0), theta_deg, f1_axial, f1_basis
+    invariants = transition_invariants(
+        M2,
+        s0,
+        vals,
+        convolutions=precompute_convolutions(),
     )
-    theta = math.radians(theta_deg)
-    s, c = math.sin(theta), math.cos(theta)
-    f_a = vals["f_ds1"]
-    f_b = vals["fT"] * vals["m_ds1"] / (vals["mc"] + vals["ms"])
-    g_2460 = (s * f_a * basis["GA"] + c * f_b * basis["GB"]) / F1_DS
-    g_2536 = (c * f_a * basis["GA"] - s * f_b * basis["GB"]) / F2_DS
-    return (
-        width_keV(vals["m_ds1"], vals["m_ds"], g_2460),
-        width_keV(vals["m_ds1_2536"], vals["m_ds"], g_2536),
+    physical = physical_couplings(
+        invariants,
+        theta_deg=theta_deg,
+        m_state_1=vals["m_ds1"],
+        m_state_2=vals["m_ds1_2536"],
+        f_1=F1_DS,
+        f_2=F2_DS,
+        m_p=vals["m_ds"],
+        f_p=vals["f_ds"],
+        m_q=vals["mc"],
+        m_s=vals["ms"],
     )
+    return physical["Gamma_1_keV"], physical["Gamma_2_keV"]
 
 
 def bs_width(
@@ -118,19 +124,26 @@ def bs_width(
     M2: float,
     s0: float,
     theta_deg: float,
-    f1_axial: float,
-    f1_basis: dict[str, float],
 ) -> float:
-    basis = evaluate_bs_basis(
-        vals, M2, math.sqrt(s0), theta_deg, f1_axial, f1_basis
+    invariants = transition_invariants(
+        M2,
+        s0,
+        vals,
+        convolutions=precompute_convolutions(),
     )
-    theta = math.radians(theta_deg)
-    c, s = math.cos(theta), math.sin(theta)
-    g_5830 = (
-        c * vals["f_ds1"] * basis["GA"]
-        - s * basis["fB_effective"] * basis["GB"]
-    ) / F2_BS_5830
-    return width_keV(vals["m_ds1"], vals["m_ds"], g_5830)
+    physical = physical_couplings(
+        invariants,
+        theta_deg=theta_deg,
+        m_state_1=5.750,
+        m_state_2=vals["m_ds1"],
+        f_1=F1_BS,
+        f_2=F2_BS,
+        m_p=vals["m_ds"],
+        f_p=vals["f_ds"],
+        m_q=vals["mc"],
+        m_s=vals["ms"],
+    )
+    return physical["Gamma_2_keV"]
 
 
 def angle_envelope(func, central: float, sigma: float) -> tuple[float, float]:
@@ -139,8 +152,6 @@ def angle_envelope(func, central: float, sigma: float) -> tuple[float, float]:
 
 
 def make_rows() -> list[dict[str, float | str]]:
-    f1_axial, _, _ = F1_integral(u0=0.5)
-    f1_basis = precompute_f1_basis()
     dvals = ds_inputs()
     bvals = bs_inputs()
     rows: list[dict[str, float | str]] = []
@@ -152,9 +163,7 @@ def make_rows() -> list[dict[str, float | str]]:
                 THETA_DS_DEG,
                 THETA_DS_DEG + THETA_DS_SIGMA_DEG,
             ):
-                w1, w2 = ds_widths(
-                    dvals, float(M2), s0, theta, f1_axial, f1_basis
-                )
+                w1, w2 = ds_widths(dvals, float(M2), s0, theta)
                 rows.extend(
                     [
                         {
@@ -193,9 +202,7 @@ def make_rows() -> list[dict[str, float | str]]:
                         "M2_GeV2": float(M2),
                         "s0_GeV2": s0,
                         "theta_deg": theta,
-                        "width_keV": bs_width(
-                            bvals, float(M2), s0, theta, f1_axial, f1_basis
-                        ),
+                        "width_keV": bs_width(bvals, float(M2), s0, theta),
                     }
                 )
 
@@ -206,7 +213,7 @@ def make_rows() -> list[dict[str, float | str]]:
             THETA_DS_DEG + THETA_DS_SIGMA_DEG,
         ):
             w1, w2 = ds_widths(
-                dvals, sum(DS_M2_WINDOW) / 2.0, float(s0), theta, f1_axial, f1_basis
+                dvals, sum(DS_M2_WINDOW) / 2.0, float(s0), theta
             )
             rows.extend(
                 [
@@ -250,8 +257,6 @@ def make_rows() -> list[dict[str, float | str]]:
                         sum(BS_M2_WINDOW) / 2.0,
                         float(s0),
                         theta,
-                        f1_axial,
-                        f1_basis,
                     ),
                 }
             )
@@ -386,7 +391,8 @@ def write_summary(rows: list[dict[str, float | str]]) -> None:
         f"theta_Bs = {THETA_BS_DEG:.1f} +/- {THETA_BS_SIGMA_DEG:.1f} deg",
         "The angles are external inputs and are not refitted here.",
         f"Fixed physical residues: f1_Ds={F1_DS:.6f} GeV, "
-        f"f2_Ds={F2_DS:.6f} GeV, f2_Bs5830={F2_BS_5830:.6f} GeV.",
+        f"f2_Ds={F2_DS:.6f} GeV, f1_Bs={F1_BS:.6f} GeV, "
+        f"f2_Bs={F2_BS:.6f} GeV.",
         "The shaded bands show only the quoted angle uncertainty.",
         "Ordinary local condensates are excluded from the transition LCSR.",
         "",

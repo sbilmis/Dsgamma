@@ -1,0 +1,27 @@
+state,observable,literature_value,method,reference,comment
+Ds1_2460,width_keV,0.6-1.1,pure-axial external-photon LCSR,Colangelo2005,pure-A benchmark
+Ds1_2460,width_keV,1.5,vector-meson dominance,Colangelo2005,comparison value collected in Table I
+Ds1_2460,width_keV,5.5,nonrelativistic quark model,Godfrey2003,comparison value collected in Colangelo et al.
+Ds1_2460,width_keV,4.66,chiral-doublet effective theory,Bardeen2003,comparison value collected in Colangelo et al.
+Ds1_2460,width_keV,4.74-4.79,relativistic quark model,Chen2020,three parameter modes
+Ds1_2460,width_keV,15.5,potential-model calculation,Radford2009,comparison value collected in Chen et al.
+Ds1_2460,width_keV,17.4,potential-model calculation,Green2017,comparison value collected in Chen et al.
+Ds1_2460,width_keV,5.6,relativized quark model,Godfrey2005,comparison value collected in Chen et al.
+Ds1_2460,width_keV,4.41,quark model,CloseSwanson2005,comparison value collected in Chen et al.
+Ds1_2460,width_keV,14.6-22.8,relativistic heavy-quark model,GoityRoberts2001,three model variants collected in Chen et al.
+Ds1_2460,width_keV,13+/-2,hadronic-molecule EFT,Fu2022,full result
+Ds1_2460,width_keV,104,potential model with relativistic corrections,BondarMilstein2025,authors estimate 50% model uncertainty
+Ds1_2536,width_keV,2.96-3.02,relativistic quark model,Chen2020,three parameter modes
+Ds1_2536,width_keV,8.90,potential-model calculation,Radford2009,comparison value collected in Chen et al.
+Ds1_2536,width_keV,9.21,potential-model calculation,Green2017,comparison value collected in Chen et al.
+Ds1_2536,width_keV,0.4+/-1.0,heavy-quark effective calculation,Korner1993,comparison value collected in Chen et al.
+Ds1_2536,width_keV,5.5,relativized quark model,Godfrey2005,comparison value collected in Chen et al.
+Ds1_2536,width_keV,1.59,quark model,CloseSwanson2005,comparison value collected in Chen et al.
+Ds1_2536,width_keV,14.0-25.1,relativistic heavy-quark model,GoityRoberts2001,three model variants collected in Chen et al.
+Ds1_2536,width_keV,29,potential model with relativistic corrections,BondarMilstein2025,authors estimate 50% model uncertainty
+Bs1_lower,width_keV,0.3-6.1,pure-axial external-photon LCSR,Wang2008,lower strange-bottom axial partner
+Bs1_lower,width_keV,100+/-15,hadronic-molecule EFT,Fu2022,lower strange-bottom molecular partner
+Bs1_lower,width_keV,60,nonrelativistic quark model,Li2021,conditional subthreshold missing 1P1 state
+Bs1_lower,width_keV,20,potential model with relativistic corrections,BondarMilstein2025,Bs1(5748) assignment; authors estimate 50% accuracy
+Bs1_5830,width_keV,53,nonrelativistic quark model,Li2021,observed higher state
+Bs1_5830,width_keV,41,potential model with relativistic corrections,BondarMilstein2025,Bs1(5829) assignment; authors estimate 50% accuracy

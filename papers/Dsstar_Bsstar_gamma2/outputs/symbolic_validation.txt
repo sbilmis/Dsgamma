@@ -1,0 +1,16 @@
+Wolfram Kernel version: 15.0.0 for Mac OS X ARM (64-bit) (May 19, 2026)
+rhoAB-rhoBA == 0: True
+Ward determinant == 0: True
+Cut trace AA: (-2*(mQ^2 + 2*mQ*ms + ms^2 - s)*(mQ^2 - 2*mQ*ms + ms^2 + 2*s))/(3*s)
+Cut trace AB: (2*(mQ - ms)*(-mQ - ms + Sqrt[s])*(mQ + ms + Sqrt[s])*Conjugate[Sqrt[s]])/(Sqrt[s]*Conjugate[mQ + ms])
+Cut trace BB: (2*(-mQ - ms + Sqrt[s])*(mQ + ms + Sqrt[s])*(2*mQ^2 - 4*mQ*ms + 2*ms^2 + s)*Conjugate[Sqrt[s]])/(3*Sqrt[s]*Abs[mQ + ms]^2)
+rhoAA: ((-(mQ + ms)^2 + s)*Sqrt[(-(mQ - ms)^2 + s)*(-(mQ + ms)^2 + s)]*((mQ - ms)^2 + 2*s))/(8*Pi^2*s^2)
+rhoAB: (3*(mQ - ms)*(-(mQ + ms)^2 + s)*Sqrt[(-(mQ - ms)^2 + s)*(-(mQ + ms)^2 + s)])/(8*(mQ + ms)*Pi^2*s)
+rhoBB: ((2*(mQ - ms)^2 + s)*(-(mQ + ms)^2 + s)*Sqrt[(-(mQ - ms)^2 + s)*(-(mQ + ms)^2 + s)])/(8*(mQ + ms)^2*Pi^2*s)
+det(rho): ((mQ^2 - 2*mQ*ms + ms^2 - s)^3*(mQ^2 + 2*mQ*ms + ms^2 - s)^3)/(32*(mQ + ms)^2*Pi^4*s^3)
+d3 matrix: {{(mQ*ss)/E^(mQ^2/M2), (mQ^2*ss)/(E^(mQ^2/M2)*(mQ + ms))}, {(mQ^2*ss)/(E^(mQ^2/M2)*(mQ + ms)), (mQ^3*ss)/(E^(mQ^2/M2)*(mQ + ms)^2)}}
+finite-ms d3 matrix: {{((-1/2*(mQ^2*ms)/M2 + (mQ^3*ms^2)/(2*M2^2))*ss)/E^(mQ^2/M2), (mQ*(-1/2*(mQ^2*ms)/M2 + (mQ^3*ms^2)/(2*M2^2))*ss)/(E^(mQ^2/M2)*(mQ + ms))}, {(mQ*(-1/2*(mQ^2*ms)/M2 + (mQ^3*ms^2)/(2*M2^2))*ss)/(E^(mQ^2/M2)*(mQ + ms)), (mQ^2*(-1/2*(mQ^2*ms)/M2 + (mQ^3*ms^2)/(2*M2^2))*ss)/(E^(mQ^2/M2)*(mQ + ms)^2)}}
+d5 matrix: {{-1/4*(mixedSS*mQ^3)/(E^(mQ^2/M2)*M2^2), -1/4*(mixedSS*(-1 - mQ^2/M2 + mQ^4/M2^2))/(E^(mQ^2/M2)*(mQ + ms))}, {-1/4*(mixedSS*(-1 - mQ^2/M2 + mQ^4/M2^2))/(E^(mQ^2/M2)*(mQ + ms)), (mixedSS*(mQ^3/(2*M2) - mQ^5/(4*M2^2)))/(E^(mQ^2/M2)*(mQ + ms)^2)}}
+rotated matrix: {{piBB*Cos[theta]^2 + 2*piAB*Cos[theta]*Sin[theta] + piAA*Sin[theta]^2, piAB*Cos[theta]^2 + piAA*Cos[theta]*Sin[theta] - piBB*Cos[theta]*Sin[theta] - piAB*Sin[theta]^2}, {piAB*Cos[theta]^2 + piAA*Cos[theta]*Sin[theta] - piBB*Cos[theta]*Sin[theta] - piAB*Sin[theta]^2, piAA*Cos[theta]^2 - 2*piAB*Cos[theta]*Sin[theta] + piBB*Sin[theta]^2}}
+twist-2 pre-Borel B/A ratio: k2/(mQ*(mQ + ms))
+twist-2 post-Borel B/A ratio: mQ/(mQ + ms)

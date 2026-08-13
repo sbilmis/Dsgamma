@@ -1,0 +1,11 @@
+key,value
+random_seed,20260729
+monte_carlo_samples_per_sector,1200
+two_point_pole_fraction_min,0.4
+two_point_dimension5_fraction_max,0.1
+mass_reproduction_relative_tolerance,0.05
+python_mathematica_abs_tolerance,2e-08
+python_mathematica_rel_tolerance,2e-05
+transition_OPE,LO hard + BBK twist2/3/4 2p+3p; no local condensate
+two_point_OPE,LO exact-mass perturbative + d3 + finite-ms d3 + d5
+python_runtime,/Users/sbilmis/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3

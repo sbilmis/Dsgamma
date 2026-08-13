@@ -208,8 +208,8 @@ def contribution_breakdown_plot():
 
 def literature_comparison_plot():
     rows = [
-        {"method": "This work (lattice photon input)", "low": 13.41, "central": 16.95, "high": 21.50, "kind": "band"},
-        {"method": "This work (legacy chi)", "low": 28.48, "central": 38.94, "high": 51.07, "kind": "band"},
+        {"method": "This work (lattice photon input)", "low": 28.058, "central": 34.965, "high": 43.526, "kind": "band"},
+        {"method": "This work (legacy chi)", "low": 48.370, "central": 61.657, "high": 78.455, "kind": "band"},
         {"method": "Colangelo LCSR", "low": 19.0, "central": 24.0, "high": 29.0, "kind": "band"},
         {"method": "VMD", "low": 3.3, "central": 3.3, "high": 3.3, "kind": "point"},
         {"method": "QM [15]", "low": 6.2, "central": 6.2, "high": 6.2, "kind": "point"},

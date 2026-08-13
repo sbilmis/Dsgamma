@@ -20,20 +20,41 @@ parameters are declared scalar coefficients for shifted-momentum algebra.",
           "p2", ",", "pPrime2", ",", "pq", ",", "dH1", ",", "dH2", ",", 
           "dH3", ",", "dS1", ",", "dS2", ",", "dS3", ",", "x", ",", "y", ",", 
           "z", ",", "xi", ",", "x2", ",", "mf", ",", "ef", ",", "gs", ",", 
-          "eta", ",", "M2", ",", "ssCond", ",", "Ffield", ",", "Gfield", ",", 
-          "fA", ",", "fB", ",", "f1", ",", "f2", ",", "gA", ",", "gB", ",", 
-          "g1", ",", "g2", ",", "tA", ",", "tB", ",", "piAA", ",", "piAB", 
-          ",", "piBB", ",", "m1", ",", "m2", ",", "mP", ",", "fP", ",", 
-          "borel1", ",", "borel2", ",", "borelTwoPoint", ",", "alphaEM", ",", 
-          "s", ",", "s0", ",", "u0", ",", "chiC", ",", "chiGamma", ",", 
-          "f3Gamma", ",", "rhoA", ",", "phiGamma", ",", "A4", ",", 
-          "HbarGamma", ",", "PsiV", ",", "IF1", ",", "tAHat", ",", "tBHat", 
-          ",", "tBpert", ",", "tBLocal", ",", "tBTw2", ",", "tBTw3", ",", 
-          "tBTw4", ",", "tB3p", ",", "shat", ",", "mi", ",", "mj", ",", "ei", 
-          ",", "u", ",", "w", ",", "v", ",", "alphaG", ",", "uval", ",", 
-          "kallenLambda", ",", "rhoPiece", ",", "F1DA", ",", "hGamma", ",", 
-          "psiV", ",", "uBar", ",", "muRen", ",", "gammaE", ",", "rhoAB", 
-          ",", "rhoDiag", ",", "rhoFromF1", ",", "f1ModelSquared", ",", 
+          "eta", ",", "M2", ",", "M1sq", ",", "M2sq", ",", "Meff2", ",", 
+          "u0B", ",", "ssCond", ",", "Ffield", ",", "Gfield", ",", "fA", ",", 
+          "fB", ",", "f1", ",", "f2", ",", "gA", ",", "gB", ",", "g1", ",", 
+          "g2", ",", "tA", ",", "tB", ",", "piAA", ",", "piAB", ",", "piBB", 
+          ",", "m1", ",", "m2", ",", "mP", ",", "fP", ",", "borel1", ",", 
+          "borel2", ",", "borelTwoPoint", ",", "alphaEM", ",", "s", ",", 
+          "s0", ",", "u0", ",", "chiC", ",", "chiGamma", ",", "f3Gamma", ",", 
+          "rhoA", ",", "phiGamma", ",", "A4", ",", "B4", ",", "psiVBar", ",", 
+          "IF1", ",", "tAHat", ",", "tBHat", ",", "tBpert", ",", "tBTw2", 
+          ",", "tBTw3", ",", "tBTw4", ",", "Dsoft", ",", "borelFactor", ",", 
+          "borelMaster", ",", "borelPq", ",", "borelPPrime2", ",", "borelP2", 
+          ",", "Ffun", ",", "n", ",", "a", ",", "a0B", ",", "Feff", ",", 
+          "xAS", ",", "xAT1", ",", "xAT2", ",", "xAT3", ",", "xAT4", ",", 
+          "xBS", ",", "xBT1", ",", "xBT2", ",", "xBT3", ",", "xBT4", ",", 
+          "aq", ",", "aqp", ",", "aqb", ",", "aqbp", ",", "betaP", ",", "S3", 
+          ",", "St3", ",", "T13", ",", "T23", ",", "T33", ",", "T43", ",", 
+          "Sg3", ",", "T4g3", ",", "lineProjection3", ",", "pLine3", ",", 
+          "pLinePrime3", ",", "fGSigma", ",", "fGX", ",", "fGA", ",", 
+          "fGammaSigma", ",", "fGammaA", ",", "tA3g", ",", "tB3g", ",", 
+          "tA3em", ",", "tB3em", ",", "threeParticleResiduals", ",", "expQ", 
+          ",", "exp0", ",", "deltaEQ", ",", "rhoB", ",", "rhoBLeg", ",", 
+          "lambdaB", ",", "aScoef", ",", "bScoef", ",", "aQcoef", ",", 
+          "bQcoef", ",", "shat", ",", "mi", ",", "mj", ",", "ei", ",", "u", 
+          ",", "w", ",", "v", ",", "alphaG", ",", "uval", ",", 
+          "kallenLambda", ",", "rhoPiece", ",", "F1DA", ",", "uBar", ",", 
+          "muRen", ",", "gammaE", ",", "rhoAB", ",", "rhoAA2pt", ",", 
+          "rhoAB2pt", ",", "rhoBB2pt", ",", "lambda2pt", ",", "rho2ptMatrix", 
+          ",", "dTwoPoint", ",", "mixedCond", ",", "s01", ",", "s02", ",", 
+          "q0TwoPoint", ",", "q1TwoPoint", ",", "q2TwoPoint", ",", 
+          "q5TwoPoint", ",", "localTwoPointMatrix", ",", "v1TwoPoint", ",", 
+          "v2TwoPoint", ",", "rho11TwoPoint", ",", "rho22TwoPoint", ",", 
+          "local11TwoPoint", ",", "local22TwoPoint", ",", "pi11Explicit", 
+          ",", "pi22Explicit", ",", "f1Explicit", ",", "f2Explicit", ",", 
+          "centralTwoPointRules", ",", "centralF1F2FromExplicit", ",", 
+          "rhoDiag", ",", "rhoFromF1", ",", "f1ModelSquared", ",", 
           "f2ModelSquared", ",", "f2FromF1Anchor", ",", "rhoFromF1Residual", 
           ",", "rhoDiagResidual", ",", "pi12Model", ",", "dsFoundResidues", 
           ",", "bsFoundResidues", ",", "piAAPert", ",", "piBBPert", ",", 
@@ -184,8 +205,9 @@ loop: <sbar Gamma_P Q Qbar Gamma_X s> = -Tr[Gamma_P S_Q Gamma_X S_s].",
    "Section"], Cell["Local vacuum-condensate pieces are deliberately not \
 written in the propagators. The displayed expressions contain only the free \
 massive term and the electromagnetic and one-gluon background-field kernels. \
-IMPORTANT: the existing axial numerical calculation still includes the \
-contribution named heavy_local; it has not been removed.", "Text"], 
+In the Rohrwild transition OPE there is no standalone local <sbar s> term. \
+Local condensates remain required in the separate two-point sum rules for f1 \
+and f2.", "Text"], 
   Cell[BoxData[RowBox[{RowBox[{RowBox[{"freePropagator", "[", 
           RowBox[{"momentum_", ",", "mass_"}], "]"}], ":=", 
         FractionBox[RowBox[{"\[ImaginaryI]", " ", 
@@ -278,9 +300,8 @@ contribution named heavy_local; it has not been removed.", "Text"],
             "lightStrangeFreeTerms"}], ",", RowBox[
            {"\"S_s Rohrwild G/F terms plus ms correction\"", "\[Rule]", 
             "rohrwildLightBackgroundTerms"}], ",", 
-          RowBox[{"\"WARNING\"", "\[Rule]", "\"legacy/current axial numerical \
-results include heavy_local; mixed and vacuum-G2 terms are absent\""}]}], 
-        "]"}]}]], "Input"], 
+          RowBox[{"\"WARNING\"", "\[Rule]", "\"no standalone local condensate \
+is used in the radiative transition OPE\""}]}], "]"}]}]], "Input"], 
   Cell[BoxData[RowBox[{RowBox[{"electromagneticBackgroundKernel", "=", 
         RowBox[{RowBox[{"-", "\[ImaginaryI]"}], " ", "ef", " ", 
           RowBox[{"(", RowBox[{FractionBox[RowBox[{RowBox[{"(", RowBox[
@@ -320,11 +341,11 @@ results include heavy_local; mixed and vacuum-G2 terms are absent\""}]}],
               "\"independently used in Mathematica\""}], ",", 
             RowBox[{"\"explicit strange mass\"", "\[Rule]", 
               "\"kept in free and linear background terms\""}], ",", 
-            RowBox[{"\"local <sbar s> axial term\"", "\[Rule]", 
-              "\"not displayed here; included in existing axial numerics\""}]\
-, ",", RowBox[{"\"electromagnetic background field\"", "\[Rule]", 
-              "\"hard traces derived; loop stage pending\""}], ",", 
-            RowBox[{"\"one-gluon background field\"", "\[Rule]", 
+            RowBox[{"\"local <sbar s> transition term\"", "\[Rule]", 
+              "\"absent in the Rohrwild transition OPE\""}], ",", 
+            RowBox[{"\"electromagnetic background field\"", "\[Rule]", 
+              "\"hard traces and final spectral/DA terms implemented\""}], 
+            ",", RowBox[{"\"one-gluon background field\"", "\[Rule]", 
               "\"A and B trace kernels derived\""}], ",", 
             RowBox[{"\"mixed condensate\"", "\[Rule]", 
               "\"not included in radiative three-point sum rule\""}], ",", 
@@ -839,16 +860,290 @@ limit. Residue factors are retained explicitly.", "Text"],
             "correlationRotationResidual"}], ",", 
           RowBox[{"\"pure-A f residual\"", "\[Rule]", 
             "pureAxialDecayConstantResidual"}]}], "]"}]}]], "Input"], 
+  Cell[BoxData[RowBox[{RowBox[{RowBox[{"lambda2pt", "[", "shat_", "]"}], 
+        ":=", RowBox[{RowBox[{"(", RowBox[{"shat", "-", SuperscriptBox[RowBox[
+                {"(", RowBox[{"mQ", "+", "ms"}], ")"}], "2"]}], ")"}], " ", 
+          RowBox[{"(", RowBox[{"shat", "-", SuperscriptBox[RowBox[
+                {"(", RowBox[{"mQ", "-", "ms"}], ")"}], "2"]}], ")"}]}]}], 
+      ";", RowBox[{RowBox[{"rhoAA2pt", "[", "shat_", "]"}], ":=", 
+        FractionBox[RowBox[{SqrtBox[RowBox[{"lambda2pt", "[", "shat", "]"}]], 
+           " ", RowBox[{"(", RowBox[{"2", "-", FractionBox[RowBox[
+                 {SuperscriptBox["mQ", "2"], "+", SuperscriptBox["ms", "2"], 
+                  "+", RowBox[{"6", " ", "mQ", " ", "ms"}]}], "shat"], "-", 
+               FractionBox[SuperscriptBox[RowBox[{"(", RowBox[{SuperscriptBox[
+                      "mQ", "2"], "-", SuperscriptBox["ms", "2"]}], ")"}], 
+                 "2"], SuperscriptBox["shat", "2"]]}], ")"}]}], 
+         RowBox[{"8", " ", SuperscriptBox["\[Pi]", "2"]}]]}], ";", 
+      RowBox[{RowBox[{"rhoAB2pt", "[", "shat_", "]"}], ":=", 
+        FractionBox[RowBox[{SqrtBox[RowBox[{"lambda2pt", "[", "shat", "]"}]], 
+           " ", RowBox[{"(", RowBox[{"3", " ", RowBox[{"(", RowBox[
+                  {"ms", "-", "mQ"}], ")"}], " ", RowBox[{"(", RowBox[
+                  {SuperscriptBox[RowBox[{"(", RowBox[{"mQ", "+", "ms"}], 
+                      ")"}], "2"], "-", "shat"}], ")"}]}], ")"}]}], 
+         RowBox[{RowBox[{"(", RowBox[{"8", " ", SuperscriptBox["\[Pi]", 
+                "2"]}], ")"}], " ", RowBox[{"(", RowBox[{RowBox[
+                {"(", RowBox[{"mQ", "+", "ms"}], ")"}], " ", "shat"}], 
+             ")"}]}]]}], ";", RowBox[{RowBox[{"rhoBB2pt", "[", "shat_", 
+          "]"}], ":=", FractionBox[RowBox[
+          {SqrtBox[RowBox[{"lambda2pt", "[", "shat", "]"}]], " ", 
+           RowBox[{"(", RowBox[{RowBox[{"-", RowBox[{"(", RowBox[
+                    {SuperscriptBox[RowBox[{"(", RowBox[{"mQ", "+", "ms"}], 
+                        ")"}], "2"], "-", "shat"}], ")"}]}], " ", RowBox[
+                {"(", RowBox[{RowBox[{"2", " ", SuperscriptBox["ms", "2"]}], 
+                   "-", RowBox[{"4", " ", "mQ", " ", "ms"}], "+", 
+                   RowBox[{"2", " ", SuperscriptBox["mQ", "2"]}], "+", 
+                   "shat"}], ")"}]}], ")"}]}], 
+         RowBox[{RowBox[{"(", RowBox[{"8", " ", SuperscriptBox["\[Pi]", 
+                "2"]}], ")"}], " ", RowBox[{"(", RowBox[{SuperscriptBox[
+                RowBox[{"(", RowBox[{"mQ", "+", "ms"}], ")"}], "2"], " ", 
+               "shat"}], ")"}]}]]}], ";", 
+      RowBox[{RowBox[{"rho2ptMatrix", "[", "shat_", "]"}], ":=", 
+        RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{RowBox[{"rhoAA2pt", "[", 
+                  "shat", "]"}], ",", RowBox[{"rhoAB2pt", "[", "shat", 
+                  "]"}]}], "}"}], ",", RowBox[{"{", RowBox[{RowBox[
+                 {"rhoAB2pt", "[", "shat", "]"}], ",", RowBox[{"rhoBB2pt", 
+                  "[", "shat", "]"}]}], "}"}]}], "}"}]}], ";", 
+      TagBox[RowBox[{"rho2ptMatrix", "[", "s", "]"}], 
+       Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]}]], "Input"], 
+  Cell["Explicit f1 and f2 formulas used in the calculation", "Subsection"], 
+  Cell["This is the complete normalization step. The two physical poles use \
+separate continuum thresholds s01 and s02, fitted to M1 and M2. Local \
+condensates occur here because this is an ordinary two-point SVZ sum rule; \
+they are not inserted into the radiative transition OPE.", "Text"], 
+  Cell[BoxData[RowBox[{RowBox[{"dTwoPoint", "=", RowBox[{"mQ", "+", "ms"}]}], 
+      ";", RowBox[{"q0TwoPoint", "=", 
+        RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{"mQ", ",", FractionBox[
+                 SuperscriptBox["mQ", "2"], "dTwoPoint"]}], "}"}], ",", 
+            RowBox[{"{", RowBox[{FractionBox[SuperscriptBox["mQ", "2"], 
+                 "dTwoPoint"], ",", FractionBox[SuperscriptBox["mQ", "3"], 
+                 SuperscriptBox["dTwoPoint", "2"]]}], "}"}]}], "}"}]}], ";", 
+      RowBox[{"q1TwoPoint", "=", RowBox[
+         {"{", RowBox[{RowBox[{"{", RowBox[{RowBox[{"-", FractionBox[
+                   RowBox[{"ms", " ", SuperscriptBox["mQ", "2"]}], 
+                   RowBox[{"2", " ", "borelTwoPoint"}]]}], ",", FractionBox[
+                 RowBox[{"ms", " ", "mQ", " ", RowBox[{"(", RowBox[{"1", "-", 
+                       FractionBox[SuperscriptBox["mQ", "2"], 
+                        "borelTwoPoint"]}], ")"}]}], RowBox[{"2", " ", 
+                   "dTwoPoint"}]]}], "}"}], ",", RowBox[
+             {"{", RowBox[{FractionBox[RowBox[{"ms", " ", "mQ", " ", 
+                   RowBox[{"(", RowBox[{"1", "-", FractionBox[SuperscriptBox[
+                         "mQ", "2"], "borelTwoPoint"]}], ")"}]}], 
+                 RowBox[{"2", " ", "dTwoPoint"}]], ",", FractionBox[
+                 RowBox[{"ms", " ", SuperscriptBox["mQ", "2"], " ", 
+                   RowBox[{"(", RowBox[{"1", "-", FractionBox[SuperscriptBox[
+                         "mQ", "2"], RowBox[{"2", " ", "borelTwoPoint"}]]}], 
+                     ")"}]}], SuperscriptBox["dTwoPoint", "2"]]}], "}"}]}], 
+          "}"}]}], ";", RowBox[{"q2TwoPoint", "=", 
+        RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{FractionBox[RowBox[
+                  {SuperscriptBox["ms", "2"], " ", SuperscriptBox["mQ", 
+                    "3"]}], RowBox[{"2", " ", SuperscriptBox["borelTwoPoint", 
+                    "2"]}]], ",", FractionBox[RowBox[{SuperscriptBox["ms", 
+                    "2"], " ", RowBox[{"(", RowBox[{FractionBox[
+                        SuperscriptBox["mQ", "4"], SuperscriptBox[
+                         "borelTwoPoint", "2"]], "-", FractionBox[
+                        SuperscriptBox["mQ", "2"], "borelTwoPoint"], "-", 
+                       "1"}], ")"}]}], RowBox[{"2", " ", "dTwoPoint"}]]}], 
+              "}"}], ",", RowBox[{"{", RowBox[{FractionBox[RowBox[
+                  {SuperscriptBox["ms", "2"], " ", RowBox[{"(", RowBox[
+                      {FractionBox[SuperscriptBox["mQ", "4"], SuperscriptBox[
+                         "borelTwoPoint", "2"]], "-", FractionBox[
+                        SuperscriptBox["mQ", "2"], "borelTwoPoint"], "-", 
+                       "1"}], ")"}]}], RowBox[{"2", " ", "dTwoPoint"}]], ",", 
+                FractionBox[RowBox[{SuperscriptBox["ms", "2"], " ", 
+                   RowBox[{"(", RowBox[{FractionBox[SuperscriptBox["mQ", 
+                         "5"], RowBox[{"2", " ", SuperscriptBox[
+                          "borelTwoPoint", "2"]}]], "-", FractionBox[
+                        SuperscriptBox["mQ", "3"], "borelTwoPoint"]}], 
+                     ")"}]}], SuperscriptBox["dTwoPoint", "2"]]}], "}"}]}], 
+          "}"}]}], ";", RowBox[{"q5TwoPoint", "=", 
+        RowBox[{"{", RowBox[{RowBox[{"{", RowBox[{RowBox[{"-", FractionBox[
+                   SuperscriptBox["mQ", "3"], RowBox[{"4", " ", 
+                     SuperscriptBox["borelTwoPoint", "2"]}]]}], ",", 
+                RowBox[{"-", FractionBox[RowBox[{FractionBox[SuperscriptBox[
+                       "mQ", "4"], SuperscriptBox["borelTwoPoint", "2"]], 
+                     "-", FractionBox[SuperscriptBox["mQ", "2"], 
+                      "borelTwoPoint"], "-", "1"}], RowBox[{"4", " ", 
+                     "dTwoPoint"}]]}]}], "}"}], ",", 
+            RowBox[{"{", RowBox[{RowBox[{"-", FractionBox[RowBox[
+                    {FractionBox[SuperscriptBox["mQ", "4"], SuperscriptBox[
+                       "borelTwoPoint", "2"]], "-", FractionBox[
+                      SuperscriptBox["mQ", "2"], "borelTwoPoint"], "-", 
+                     "1"}], RowBox[{"4", " ", "dTwoPoint"}]]}], ",", 
+                RowBox[{"-", FractionBox[RowBox[{FractionBox[SuperscriptBox[
+                       "mQ", "5"], RowBox[{"4", " ", SuperscriptBox[
+                         "borelTwoPoint", "2"]}]], "-", FractionBox[
+                      SuperscriptBox["mQ", "3"], RowBox[{"2", " ", 
+                        "borelTwoPoint"}]]}], SuperscriptBox["dTwoPoint", 
+                    "2"]]}]}], "}"}]}], "}"}]}], ";", 
+      RowBox[{"localTwoPointMatrix", "=", 
+        RowBox[{RowBox[{"Exp", "[", RowBox[{"-", FractionBox[SuperscriptBox[
+                "mQ", "2"], "borelTwoPoint"]}], "]"}], " ", 
+          RowBox[{"(", RowBox[{RowBox[{"ssCond", " ", RowBox[{"(", 
+                  RowBox[{"q0TwoPoint", "+", "q1TwoPoint", "+", 
+                    "q2TwoPoint"}], ")"}]}], "+", RowBox[{"mixedCond", " ", 
+                "q5TwoPoint"}]}], ")"}]}]}], ";", 
+      RowBox[{"Association", "[", RowBox[{RowBox[{"\"Q0\"", "\[Rule]", 
+            TagBox["q0TwoPoint", Function[BoxForm`e$, MatrixForm[
+               BoxForm`e$]]]}], ",", RowBox[{"\"Q1\"", "\[Rule]", 
+            TagBox["q1TwoPoint", Function[BoxForm`e$, MatrixForm[
+               BoxForm`e$]]]}], ",", RowBox[{"\"Q2\"", "\[Rule]", 
+            TagBox["q2TwoPoint", Function[BoxForm`e$, MatrixForm[
+               BoxForm`e$]]]}], ",", RowBox[{"\"Q5\"", "\[Rule]", 
+            TagBox["q5TwoPoint", Function[BoxForm`e$, MatrixForm[
+               BoxForm`e$]]]}], ",", RowBox[{"\"local basis matrix\"", 
+            "\[Rule]", TagBox["localTwoPointMatrix", Function[BoxForm`e$, 
+              MatrixForm[BoxForm`e$]]]}]}], "]"}]}]], "Input"], 
+  Cell[BoxData[RowBox[{RowBox[{"v1TwoPoint", "=", 
+        RowBox[{"{", RowBox[{RowBox[{"Sin", "[", "theta", "]"}], ",", 
+            RowBox[{"Cos", "[", "theta", "]"}]}], "}"}]}], ";", 
+      RowBox[{"v2TwoPoint", "=", RowBox[
+         {"{", RowBox[{RowBox[{"Cos", "[", "theta", "]"}], ",", 
+            RowBox[{"-", RowBox[{"Sin", "[", "theta", "]"}]}]}], "}"}]}], 
+      ";", RowBox[{RowBox[{"rho11TwoPoint", "[", "shat_", "]"}], ":=", 
+        RowBox[{"FullSimplify", "[", RowBox[{RowBox[{"v1TwoPoint", ".", 
+              RowBox[{"rho2ptMatrix", "[", "shat", "]"}], ".", 
+              "v1TwoPoint"}], ",", RowBox[{"Assumptions", "\[Rule]", 
+              RowBox[{"theta", "\[Element]", TemplateBox[{}, "Reals"]}]}]}], 
+          "]"}]}], ";", RowBox[{RowBox[{"rho22TwoPoint", "[", "shat_", "]"}], 
+        ":=", RowBox[{"FullSimplify", "[", RowBox[
+           {RowBox[{"v2TwoPoint", ".", RowBox[{"rho2ptMatrix", "[", "shat", 
+                "]"}], ".", "v2TwoPoint"}], ",", RowBox[{"Assumptions", 
+              "\[Rule]", RowBox[{"theta", "\[Element]", TemplateBox[{}, 
+                 "Reals"]}]}]}], "]"}]}], ";", 
+      RowBox[{"local11TwoPoint", "=", RowBox[{"FullSimplify", "[", 
+          RowBox[{RowBox[{"v1TwoPoint", ".", "localTwoPointMatrix", ".", 
+              "v1TwoPoint"}], ",", RowBox[{"Assumptions", "\[Rule]", 
+              RowBox[{"theta", "\[Element]", TemplateBox[{}, "Reals"]}]}]}], 
+          "]"}]}], ";", RowBox[{"local22TwoPoint", "=", 
+        RowBox[{"FullSimplify", "[", RowBox[{RowBox[{"v2TwoPoint", ".", 
+              "localTwoPointMatrix", ".", "v2TwoPoint"}], ",", 
+            RowBox[{"Assumptions", "\[Rule]", RowBox[{"theta", "\[Element]", 
+                TemplateBox[{}, "Reals"]}]}]}], "]"}]}], ";", 
+      RowBox[{"Association", "[", RowBox[
+         {RowBox[{"\"rho_11(s), fully substituted\"", "\[Rule]", 
+            RowBox[{"rho11TwoPoint", "[", "s", "]"}]}], ",", 
+          RowBox[{"\"rho_22(s), fully substituted\"", "\[Rule]", 
+            RowBox[{"rho22TwoPoint", "[", "s", "]"}]}], ",", 
+          RowBox[{"\"Pi_11 local, fully substituted\"", "\[Rule]", 
+            "local11TwoPoint"}], ",", RowBox[
+           {"\"Pi_22 local, fully substituted\"", "\[Rule]", 
+            "local22TwoPoint"}]}], "]"}]}]], "Input"], 
+  Cell[BoxData[RowBox[{RowBox[{"pi11Explicit", "=", 
+        RowBox[{TemplateBox[{RowBox[{RowBox[{"Exp", "[", RowBox[
+                 {"-", FractionBox["s", "borelTwoPoint"]}], "]"}], " ", 
+              RowBox[{"rho11TwoPoint", "[", "s", "]"}]}], "s", 
+            SuperscriptBox["dTwoPoint", "2"], "s01"}, "InactiveIntegrate", 
+           DisplayFunction -> (RowBox[{SubsuperscriptBox[StyleBox[
+                 "\[Integral]", "Inactive"], #3, #4], RowBox[
+                {#1, RowBox[{StyleBox["\[DifferentialD]", "Inactive"], 
+                   #2}]}]}] & ), InterpretationFunction -> 
+            (RowBox[{RowBox[{"Inactive", "[", "Integrate", "]"}], "[", RowBox[
+                {#1, ",", RowBox[{"{", RowBox[{#2, ",", #3, ",", #4}], 
+                   "}"}]}], "]"}] & )], "+", "local11TwoPoint"}]}], ";", 
+      RowBox[{"pi22Explicit", "=", RowBox[
+         {TemplateBox[{RowBox[{RowBox[{"Exp", "[", RowBox[{"-", FractionBox[
+                   "s", "borelTwoPoint"]}], "]"}], " ", RowBox[{
+                "rho22TwoPoint", "[", "s", "]"}]}], "s", SuperscriptBox[
+             "dTwoPoint", "2"], "s02"}, "InactiveIntegrate", 
+           DisplayFunction -> (RowBox[{SubsuperscriptBox[StyleBox[
+                 "\[Integral]", "Inactive"], #3, #4], RowBox[
+                {#1, RowBox[{StyleBox["\[DifferentialD]", "Inactive"], 
+                   #2}]}]}] & ), InterpretationFunction -> 
+            (RowBox[{RowBox[{"Inactive", "[", "Integrate", "]"}], "[", RowBox[
+                {#1, ",", RowBox[{"{", RowBox[{#2, ",", #3, ",", #4}], 
+                   "}"}]}], "]"}] & )], "+", "local22TwoPoint"}]}], ";", 
+      RowBox[{"f1Explicit", "=", FractionBox[
+         RowBox[{RowBox[{"Exp", "[", FractionBox[SuperscriptBox["m1", "2"], 
+              RowBox[{"2", " ", "borelTwoPoint"}]], "]"}], " ", 
+           SqrtBox["pi11Explicit"]}], "m1"]}], ";", 
+      RowBox[{"f2Explicit", "=", FractionBox[
+         RowBox[{RowBox[{"Exp", "[", FractionBox[SuperscriptBox["m2", "2"], 
+              RowBox[{"2", " ", "borelTwoPoint"}]], "]"}], " ", 
+           SqrtBox["pi22Explicit"]}], "m2"]}], ";", 
+      RowBox[{"Association", "[", RowBox[{RowBox[{"\"Pi_11(M^2,s01,theta)\"", 
+            "\[Rule]", "pi11Explicit"}], ",", 
+          RowBox[{"\"Pi_22(M^2,s02,theta)\"", "\[Rule]", "pi22Explicit"}], 
+          ",", RowBox[{"\"f1(M^2,s01,theta)\"", "\[Rule]", "f1Explicit"}], 
+          ",", RowBox[{"\"f2(M^2,s02,theta)\"", "\[Rule]", "f2Explicit"}]}], 
+        "]"}]}]], "Input"], 
+  Cell[BoxData[RowBox[{RowBox[{"centralTwoPointRules", "=", 
+        RowBox[{"{", RowBox[{RowBox[{"mQ", "\[Rule]", "1.27`"}], ",", 
+            RowBox[{"ms", "\[Rule]", "0.093`"}], ",", 
+            RowBox[{"ssCond", "\[Rule]", RowBox[{"0.8`", " ", RowBox[
+                 {"(", RowBox[{"-", SuperscriptBox["0.24`", "3"]}], 
+                  ")"}]}]}], ",", RowBox[{"mixedCond", "\[Rule]", 
+              RowBox[{"0.8`", " ", RowBox[{"(", RowBox[{"0.8`", " ", 
+                    RowBox[{"(", RowBox[{"-", SuperscriptBox["0.24`", "3"]}], 
+                      ")"}]}], ")"}]}]}], ",", RowBox[{"theta", "\[Rule]", 
+              RowBox[{"26.6`", " ", "\[Degree]"}]}], ",", 
+            RowBox[{"borelTwoPoint", "\[Rule]", "2.35`"}], ",", 
+            RowBox[{"m1", "\[Rule]", "2.4595`"}], ",", 
+            RowBox[{"m2", "\[Rule]", "2.53511`"}], ",", 
+            RowBox[{"s01", "\[Rule]", "7.925`"}], ",", 
+            RowBox[{"s02", "\[Rule]", "9.975`"}]}], "}"}]}], ";", 
+      RowBox[{"centralF1F2FromExplicit", "=", 
+        RowBox[{"N", "[", RowBox[{RowBox[{RowBox[{RowBox[{"{", RowBox[
+                   {"f1Explicit", ",", "f2Explicit"}], "}"}], "/.", 
+                "\[VeryThinSpace]", "centralTwoPointRules"}], "/.", 
+              "\[VeryThinSpace]", RowBox[{RowBox[{"Inactive", "[", 
+                  "Integrate", "]"}], "\[Rule]", "NIntegrate"}]}], ",", 
+            "10"}], "]"}]}], ";", RowBox[{"Association", "[", 
+        RowBox[{RowBox[{"\"central substitutions\"", "\[Rule]", 
+            "centralTwoPointRules"}], ",", RowBox[{"\"{f1,f2} in GeV\"", 
+            "\[Rule]", "centralF1F2FromExplicit"}], ",", 
+          RowBox[{"\"Python central reference\"", "\[Rule]", 
+            RowBox[{"{", RowBox[{"0.40058930523172204`", ",", 
+                "0.1666703674111434`"}], "}"}]}], ",", 
+          RowBox[{"\"Mathematica minus Python\"", "\[Rule]", 
+            RowBox[{"centralF1F2FromExplicit", "-", RowBox[{"{", 
+                RowBox[{"0.40058930523172204`", ",", "0.1666703674111434`"}], 
+                "}"}]}]}]}], "]"}]}]], "Input"], 
+  Cell["The same fully substituted AA/AB/BB expressions give the direct \
+bottom-strange residues after mQ->mb.  The following cell uses the central \
+bottom two-point point; no Pullin-Zwicky decay constant and no overlap \
+closure is inserted.", "Text"], 
+  Cell[BoxData[RowBox[{RowBox[{"centralBsTwoPointRules", "=", 
+        RowBox[{"{", RowBox[{RowBox[{"mQ", "\[Rule]", "4.18`"}], ",", 
+            RowBox[{"ms", "\[Rule]", "0.093`"}], ",", 
+            RowBox[{"ssCond", "\[Rule]", RowBox[{"0.8`", " ", RowBox[
+                 {"(", RowBox[{"-", SuperscriptBox["0.24`", "3"]}], 
+                  ")"}]}]}], ",", RowBox[{"mixedCond", "\[Rule]", 
+              RowBox[{"0.8`", " ", RowBox[{"(", RowBox[{"0.8`", " ", 
+                    RowBox[{"(", RowBox[{"-", SuperscriptBox["0.24`", "3"]}], 
+                      ")"}]}], ")"}]}]}], ",", RowBox[{"theta", "\[Rule]", 
+              RowBox[{"38.5`", " ", "\[Degree]"}]}], ",", 
+            RowBox[{"borelTwoPoint", "\[Rule]", "7.`"}], ",", 
+            RowBox[{"m1", "\[Rule]", "5.75`"}], ",", 
+            RowBox[{"m2", "\[Rule]", "5.8287`"}], ",", 
+            RowBox[{"s01", "\[Rule]", "44.35`"}], ",", 
+            RowBox[{"s02", "\[Rule]", "43.025`"}]}], "}"}]}], ";", 
+      RowBox[{"centralBsF1F2FromExplicit", "=", 
+        RowBox[{"N", "[", RowBox[{RowBox[{RowBox[{RowBox[{"{", RowBox[
+                   {"f1Explicit", ",", "f2Explicit"}], "}"}], "/.", 
+                "\[VeryThinSpace]", "centralBsTwoPointRules"}], "/.", 
+              "\[VeryThinSpace]", RowBox[{RowBox[{"Inactive", "[", 
+                  "Integrate", "]"}], "\[Rule]", "NIntegrate"}]}], ",", 
+            "10"}], "]"}]}], ";", RowBox[{"Association", "[", 
+        RowBox[{RowBox[{"\"central Bs substitutions\"", "\[Rule]", 
+            "centralBsTwoPointRules"}], ",", 
+          RowBox[{"\"{f1_Bs,f2_Bs} in GeV\"", "\[Rule]", 
+            "centralBsF1F2FromExplicit"}], ",", 
+          RowBox[{"\"Python central reference\"", "\[Rule]", 
+            RowBox[{"{", RowBox[{"0.538110737`", ",", "0.0888786545`"}], 
+              "}"}]}], ",", RowBox[{"\"Mathematica minus Python\"", 
+            "\[Rule]", RowBox[{"centralBsF1F2FromExplicit", "-", 
+              RowBox[{"{", RowBox[{"0.538110737`", ",", "0.0888786545`"}], 
+                "}"}]}]}]}], "]"}]}]], "Input"], 
   Cell[BoxData[RowBox[{RowBox[{"twoPointOPE11", "=", 
         RowBox[{TemplateBox[{RowBox[{RowBox[{"Exp", "[", RowBox[
                  {"-", FractionBox["s", "borelTwoPoint"]}], "]"}], " ", 
               RowBox[{"(", RowBox[{RowBox[{SuperscriptBox[RowBox[{"Sin", "[", 
-                       "theta", "]"}], "2"], " ", RowBox[{"piAAPert", "[", 
+                       "theta", "]"}], "2"], " ", RowBox[{"rhoAA2pt", "[", 
                       "s", "]"}]}], "+", RowBox[{SuperscriptBox[RowBox[
                       {"Cos", "[", "theta", "]"}], "2"], " ", RowBox[
-                     {"piBBPert", "[", "s", "]"}]}], "+", RowBox[{"2", " ", 
+                     {"rhoBB2pt", "[", "s", "]"}]}], "+", RowBox[{"2", " ", 
                     RowBox[{"Sin", "[", "theta", "]"}], " ", RowBox[
-                     {"Cos", "[", "theta", "]"}], " ", RowBox[{"piABPert", 
+                     {"Cos", "[", "theta", "]"}], " ", RowBox[{"rhoAB2pt", 
                       "[", "s", "]"}]}]}], ")"}]}], "s", "sThreshold", "s0"}, 
            "InactiveIntegrate", DisplayFunction -> 
             (RowBox[{SubsuperscriptBox[StyleBox["\[Integral]", "Inactive"], 
@@ -866,12 +1161,12 @@ limit. Residue factors are retained explicitly.", "Text"],
          {TemplateBox[{RowBox[{RowBox[{"Exp", "[", RowBox[{"-", FractionBox[
                    "s", "borelTwoPoint"]}], "]"}], " ", RowBox[{"(", 
                 RowBox[{RowBox[{SuperscriptBox[RowBox[{"Cos", "[", "theta", 
-                       "]"}], "2"], " ", RowBox[{"piAAPert", "[", "s", 
+                       "]"}], "2"], " ", RowBox[{"rhoAA2pt", "[", "s", 
                       "]"}]}], "+", RowBox[{SuperscriptBox[RowBox[{"Sin", 
-                       "[", "theta", "]"}], "2"], " ", RowBox[{"piBBPert", 
+                       "[", "theta", "]"}], "2"], " ", RowBox[{"rhoBB2pt", 
                       "[", "s", "]"}]}], "-", RowBox[{"2", " ", RowBox[
                      {"Sin", "[", "theta", "]"}], " ", RowBox[{"Cos", "[", 
-                      "theta", "]"}], " ", RowBox[{"piABPert", "[", "s", 
+                      "theta", "]"}], " ", RowBox[{"rhoAB2pt", "[", "s", 
                       "]"}]}]}], ")"}]}], "s", "sThreshold", "s0"}, 
            "InactiveIntegrate", DisplayFunction -> 
             (RowBox[{SubsuperscriptBox[StyleBox["\[Integral]", "Inactive"], 
@@ -897,9 +1192,14 @@ limit. Residue factors are retained explicitly.", "Text"],
             FractionBox[RowBox[{RowBox[{"Exp", "[", FractionBox[
                   SuperscriptBox["m2", "2"], "borelTwoPoint"], "]"}], " ", 
                "twoPointOPE22"}], SuperscriptBox["m2", "2"]]}], ",", 
-          RowBox[{"\"current status\"", "\[Rule]", 
-            "\"AA is explicit; local BB and AB OPEs are not yet complete\""}]}\
-], "]"}]}]], "Input"], 
+          RowBox[{"\"current status\"", "\[Rule]", "\"the fully substituted \
+square-root formulas and their central numerical evaluation are displayed in \
+the preceding four cells\""}]}], "]"}]}]], "Input"], 
+  Cell["The following overlap cell is retained only as a historical \
+regression of the superseded normalization shortcut. The current Ds result \
+from the complete matrix is f1=0.4046[0.3799,0.4291] GeV and \
+f2=0.1677[0.1594,0.1756] GeV at theta=26.6+/-0.6 degrees; neither is \
+anchored.", "Text"], 
   Cell[BoxData[RowBox[{RowBox[{"f1ModelSquared", "=", 
         RowBox[{RowBox[{SuperscriptBox[RowBox[{"Sin", "[", "theta", "]"}], 
              "2"], " ", SuperscriptBox["fA", "2"]}], "+", 
@@ -992,8 +1292,8 @@ limit. Residue factors are retained explicitly.", "Text"],
             "rhoDiagResidual"}], ",", RowBox[{"\"Ds values found\"", 
             "\[Rule]", "dsFoundResidues"}], ",", 
           RowBox[{"\"Bs values found\"", "\[Rule]", "bsFoundResidues"}], ",", 
-          RowBox[{"\"interpretation\"", "\[Rule]", "\"model normalizations, \
-not a completed AA/BB/AB two-point OPE prediction\""}]}], "]"}]}]], "Input"], 
+          RowBox[{"\"interpretation\"", "\[Rule]", "\"legacy regression only; \
+superseded by the complete AA/BB/AB notebook\""}]}], "]"}]}]], "Input"], 
   Cell[BoxData[RowBox[{RowBox[{RowBox[{"radiativeWidth", "[", 
           RowBox[{"g_", ",", "initialMass_", ",", "finalMass_"}], "]"}], 
         ":=", RowBox[{FractionBox["1", "3"], " ", "alphaEM", " ", 
@@ -1035,11 +1335,73 @@ not a completed AA/BB/AB two-point OPE prediction\""}]}], "]"}]}]], "Input"],
             "gIntervalIntersection"}], ",", RowBox[
            {"\"width interval overlap [keV]\"", "\[Rule]", 
             "widthIntervalIntersectionKeV"}]}], "]"}]}]], "Input"], 
-  Cell["Colangelo-style final OPE assembly", "Subsection"], 
-  Cell["The paper-ready formula is assembled from named OPE components. The \
-axial-current entries reproduce the implemented Colangelo sum rule. The \
-tensor-current component slots remain symbolic until their independent \
-spectral and condensate reductions are complete.", "Text"], 
+  Cell["Off-shell double-Borel identities and Rohrwild OPE assembly", 
+   "Subsection"], Cell["On the QCD side p2 and pPrime2 remain independent \
+until both Borel transforms have been applied. Pole-mass substitutions are \
+allowed only in the phenomenological residue. The Rohrwild transition OPE \
+contains no standalone local-condensate component; condensate factors can \
+still normalize nonlocal photon DAs.", "Text"], 
+  Cell[BoxData[RowBox[{RowBox[{RowBox[{"Dsoft", "[", "u_", "]"}], ":=", 
+        RowBox[{SuperscriptBox["mQ", "2"], "-", 
+          RowBox[{RowBox[{"(", RowBox[{"1", "-", "u"}], ")"}], " ", 
+            "pPrime2"}], "-", RowBox[{"u", " ", "p2"}]}]}], ";", 
+      RowBox[{"Meff2", "=", FractionBox[RowBox[{"M1sq", " ", "M2sq"}], 
+         RowBox[{"M1sq", "+", "M2sq"}]]}], ";", 
+      RowBox[{"u0B", "=", FractionBox["M1sq", RowBox[{"M1sq", "+", 
+           "M2sq"}]]}], ";", RowBox[{RowBox[{"borelFactor", "[", "n_", "]"}], 
+        ":=", FractionBox[RowBox[{SuperscriptBox["Meff2", 
+            RowBox[{"2", "-", "n"}]], " ", RowBox[{"Exp", "[", 
+             RowBox[{"-", FractionBox[SuperscriptBox["mQ", "2"], "Meff2"]}], 
+             "]"}]}], RowBox[{"Gamma", "[", "n", "]"}]]}], ";", 
+      RowBox[{RowBox[{"borelMaster", "[", RowBox[{"n_", ",", "Ffun_"}], 
+          "]"}], ":=", RowBox[{RowBox[{"borelFactor", "[", "n", "]"}], " ", 
+          RowBox[{"Ffun", "[", "u0B", "]"}]}]}], ";", 
+      RowBox[{RowBox[{"borelPq", "[", RowBox[{"n_", ",", "Ffun_"}], "]"}], 
+        ":=", FractionBox[RowBox[{RowBox[{"borelFactor", "[", 
+             RowBox[{"n", "-", "1"}], "]"}], " ", 
+           RowBox[{SuperscriptBox["Ffun", "\[Prime]", MultilineFunction -> 
+               None], "[", "u0B", "]"}]}], RowBox[{"2", " ", 
+           RowBox[{"(", RowBox[{"n", "-", "1"}], ")"}]}]]}], ";", 
+      RowBox[{RowBox[{"borelPPrime2", "[", RowBox[{"n_", ",", "Ffun_"}], 
+          "]"}], ":=", RowBox[{RowBox[{SuperscriptBox["mQ", "2"], " ", 
+            RowBox[{"borelFactor", "[", "n", "]"}], " ", 
+            RowBox[{"Ffun", "[", "u0B", "]"}]}], "-", 
+          RowBox[{RowBox[{"borelFactor", "[", RowBox[{"n", "-", "1"}], "]"}], 
+            " ", RowBox[{"Ffun", "[", "u0B", "]"}]}], "+", 
+          FractionBox[RowBox[{RowBox[{"borelFactor", "[", RowBox[
+                {"n", "-", "1"}], "]"}], " ", RowBox[{"(", RowBox[
+                {RowBox[{SubscriptBox["\[PartialD]", RowBox[{"u"}]], 
+                   RowBox[{"(", RowBox[{"u", " ", RowBox[{"Ffun", "[", "u", 
+                         "]"}]}], ")"}]}], "/.", "\[VeryThinSpace]", 
+                 RowBox[{"u", "\[Rule]", "u0B"}]}], ")"}]}], 
+           RowBox[{"n", "-", "1"}]]}]}], ";", 
+      RowBox[{RowBox[{"borelP2", "[", RowBox[{"n_", ",", "Ffun_"}], "]"}], 
+        ":=", RowBox[{RowBox[{SuperscriptBox["mQ", "2"], " ", 
+            RowBox[{"borelFactor", "[", "n", "]"}], " ", 
+            RowBox[{"Ffun", "[", "u0B", "]"}]}], "-", 
+          RowBox[{RowBox[{"borelFactor", "[", RowBox[{"n", "-", "1"}], "]"}], 
+            " ", RowBox[{"Ffun", "[", "u0B", "]"}]}], "-", 
+          FractionBox[RowBox[{RowBox[{"borelFactor", "[", RowBox[
+                {"n", "-", "1"}], "]"}], " ", RowBox[{"(", RowBox[
+                {RowBox[{SubscriptBox["\[PartialD]", RowBox[{"u"}]], 
+                   RowBox[{"(", RowBox[{RowBox[{"(", RowBox[{"1", "-", "u"}], 
+                         ")"}], " ", RowBox[{"Ffun", "[", "u", "]"}]}], 
+                     ")"}]}], "/.", "\[VeryThinSpace]", RowBox[{"u", 
+                   "\[Rule]", "u0B"}]}], ")"}]}], 
+           RowBox[{"n", "-", "1"}]]}]}], ";", 
+      RowBox[{"Association", "[", RowBox[{RowBox[{"\"D(u), before Borel\"", 
+            "\[Rule]", RowBox[{"Dsoft", "[", "u", "]"}]}], ",", 
+          RowBox[{"\"M_eff^2\"", "\[Rule]", "Meff2"}], ",", 
+          RowBox[{"\"u0\"", "\[Rule]", "u0B"}], ",", 
+          RowBox[{"\"B[Integral F/D^n]\"", "\[Rule]", 
+            RowBox[{"borelMaster", "[", RowBox[{"n", ",", "Ffun"}], "]"}]}], 
+          ",", RowBox[{"\"B[Integral (p.q) F/D^n]\"", "\[Rule]", 
+            RowBox[{"borelPq", "[", RowBox[{"n", ",", "Ffun"}], "]"}]}], ",", 
+          RowBox[{"\"B[Integral pPrime^2 F/D^n]\"", "\[Rule]", 
+            RowBox[{"borelPPrime2", "[", RowBox[{"n", ",", "Ffun"}], "]"}]}], 
+          ",", RowBox[{"\"B[Integral p^2 F/D^n]\"", "\[Rule]", 
+            RowBox[{"borelP2", "[", RowBox[{"n", ",", "Ffun"}], "]"}]}]}], 
+        "]"}]}]], "Input"], 
   Cell[BoxData[RowBox[
      {RowBox[{RowBox[{"kallenLambda", "[", RowBox[{"shat_", ",", 
             "mass1Squared_", ",", "mass2Squared_"}], "]"}], ":=", 
@@ -1074,25 +1436,6 @@ spectral and condensate reductions are complete.", "Text"],
               ",", "mQ", ",", "eS"}], "]"}], "-", 
           RowBox[{"rhoPiece", "[", RowBox[{"shat", ",", "mQ", ",", "ms", ",", 
               "eQ"}], "]"}]}]}], ";", 
-      RowBox[{RowBox[{"HbarGamma", "[", "uval_", "]"}], ":=", 
-        TemplateBox[{RowBox[{RowBox[{"(", RowBox[{"uval", "-", "w"}], ")"}], 
-            " ", RowBox[{"hGamma", "[", "w", "]"}]}], "w", "0", "uval"}, 
-         "InactiveIntegrate", DisplayFunction -> 
-          (RowBox[{SubsuperscriptBox[StyleBox["\[Integral]", "Inactive"], #3, 
-              #4], RowBox[{#1, RowBox[{StyleBox["\[DifferentialD]", 
-                  "Inactive"], #2}]}]}] & ), InterpretationFunction -> 
-          (RowBox[{RowBox[{"Inactive", "[", "Integrate", "]"}], "[", 
-             RowBox[{#1, ",", RowBox[{"{", RowBox[{#2, ",", #3, ",", #4}], 
-                 "}"}]}], "]"}] & )]}], ";", 
-      RowBox[{RowBox[{"PsiV", "[", "uval_", "]"}], ":=", 
-        TemplateBox[{RowBox[{"psiV", "[", "w", "]"}], "w", "0", "uval"}, 
-         "InactiveIntegrate", DisplayFunction -> 
-          (RowBox[{SubsuperscriptBox[StyleBox["\[Integral]", "Inactive"], #3, 
-              #4], RowBox[{#1, RowBox[{StyleBox["\[DifferentialD]", 
-                  "Inactive"], #2}]}]}] & ), InterpretationFunction -> 
-          (RowBox[{RowBox[{"Inactive", "[", "Integrate", "]"}], "[", 
-             RowBox[{#1, ",", RowBox[{"{", RowBox[{#2, ",", #3, ",", #4}], 
-                 "}"}]}], "]"}] & )]}], ";", 
       RowBox[{RowBox[{"IF1", "[", "uval_", "]"}], ":=", 
         RowBox[{TemplateBox[{TemplateBox[{RowBox[{"F1DA", "[", 
                 RowBox[{RowBox[{"uval", "-", RowBox[{RowBox[{"(", RowBox[
@@ -1137,22 +1480,75 @@ spectral and condensate reductions are complete.", "Text"],
                    "}"}]}], "]"}] & )]}]}], ";", 
       RowBox[{"Association", "[", RowBox[
          {RowBox[{"\"rho_A^P(s)\"", "\[Rule]", RowBox[{"rhoA", "[", "s", 
-              "]"}]}], ",", RowBox[{"\"Hbar_gamma(u0)\"", "\[Rule]", 
-            RowBox[{"HbarGamma", "[", "u0", "]"}]}], ",", 
-          RowBox[{"\"Psi^v(u0)\"", "\[Rule]", RowBox[{"PsiV", "[", "u0", 
-              "]"}]}], ",", RowBox[{"\"I_F1(u0)\"", "\[Rule]", 
-            RowBox[{"IF1", "[", "u0", "]"}]}]}], "]"}]}]], "Input"], 
+              "]"}]}], ",", RowBox[{"\"Rohrwild A(u0)\"", "\[Rule]", 
+            RowBox[{"A4", "[", "u0", "]"}]}], ",", 
+          RowBox[{"\"Rohrwild B(u0)\"", "\[Rule]", RowBox[{"B4", "[", "u0", 
+              "]"}]}], ",", RowBox[{"\"Rohrwild vector DA\"", "\[Rule]", 
+            RowBox[{"psiVBar", "[", "u0", "]"}]}], ",", 
+          RowBox[{"\"I_F1(u0)\"", "\[Rule]", RowBox[{"IF1", "[", "u0", 
+              "]"}]}]}], "]"}]}]], "Input"], Cell["Rohrwild uses A(u), B(u), \
+and overbar psi^(V)(u). The exact BBK dictionary is B(u)=-4 Integral_0^u d \
+alpha (u-alpha) h_gamma(alpha), so Colangelo's A-8 Hbar becomes A+2 B. \
+H_gamma is not introduced as an independent Rohrwild amplitude.", "Text"], 
+  Cell["Complete operator-weighted three-particle Borel terms", 
+   "Subsection"], Cell["The heavy-line fraction is a=alpha_qbar+v alpha_g.  \
+The definitions below display every integration limit.  The support-corrected \
+P-line density has betaP >= z; extending betaP to zero gives the spurious \
+logarithmic divergence in the printed symmetric appendix.", "Text"], 
   Cell[BoxData[RowBox[{RowBox[{"expQ", "=", 
         RowBox[{"Exp", "[", RowBox[{"-", FractionBox[SuperscriptBox["mQ", 
               "2"], "M2"]}], "]"}]}], ";", 
       RowBox[{"exp0", "=", RowBox[{"Exp", "[", 
           RowBox[{"-", FractionBox["s0", "M2"]}], "]"}]}], ";", 
-      RowBox[{"axialOPEComponents", "=", RowBox[{"Association", "[", 
-          RowBox[{RowBox[{"\"perturbative\"", "\[Rule]", TemplateBox[{
-                RowBox[{RowBox[{"Exp", "[", RowBox[{"-", FractionBox["s", 
-                       "M2"]}], "]"}], " ", RowBox[{"rhoA", "[", "s", 
-                    "]"}]}], "s", SuperscriptBox[RowBox[{"(", RowBox[
-                    {"mQ", "+", "ms"}], ")"}], "2"], "s0"}, 
+      RowBox[{"deltaEQ", "=", RowBox[{"expQ", "-", "exp0"}]}], ";", 
+      RowBox[{"a0B", "=", RowBox[{"1", "-", "u0"}]}], ";", 
+      RowBox[{RowBox[{"lineProjection3", "[", RowBox[{"fun_", ",", "z_"}], 
+          "]"}], ":=", RowBox[{TemplateBox[{TemplateBox[
+             {RowBox[{"fun", "[", RowBox[{RowBox[{"1", "-", "z", "-", 
+                    RowBox[{RowBox[{"(", RowBox[{"1", "-", "v"}], ")"}], " ", 
+                      "alphaG"}]}], ",", RowBox[{"z", "-", RowBox[{"v", " ", 
+                      "alphaG"}]}], ",", "alphaG", ",", "v"}], "]"}], 
+              "alphaG", "0", FractionBox[RowBox[{"1", "-", "z"}], RowBox[
+                {"1", "-", "v"}]]}, "InactiveIntegrate", DisplayFunction -> 
+              (RowBox[{SubsuperscriptBox[StyleBox["\[Integral]", "Inactive"], 
+                  #3, #4], RowBox[{#1, RowBox[{StyleBox["\[DifferentialD]", 
+                      "Inactive"], #2}]}]}] & ), InterpretationFunction -> 
+              (RowBox[{RowBox[{"Inactive", "[", "Integrate", "]"}], "[", 
+                 RowBox[{#1, ",", RowBox[{"{", RowBox[{#2, ",", #3, ",", 
+                       #4}], "}"}]}], "]"}] & )], "v", "0", "z"}, 
+           "InactiveIntegrate", DisplayFunction -> 
+            (RowBox[{SubsuperscriptBox[StyleBox["\[Integral]", "Inactive"], 
+                #3, #4], RowBox[{#1, RowBox[{StyleBox["\[DifferentialD]", 
+                    "Inactive"], #2}]}]}] & ), InterpretationFunction -> 
+            (RowBox[{RowBox[{"Inactive", "[", "Integrate", "]"}], "[", RowBox[
+                {#1, ",", RowBox[{"{", RowBox[{#2, ",", #3, ",", #4}], 
+                   "}"}]}], "]"}] & )], "+", TemplateBox[
+           {TemplateBox[{RowBox[{"fun", "[", RowBox[{RowBox[{"1", "-", "z", 
+                    "-", RowBox[{RowBox[{"(", RowBox[{"1", "-", "v"}], ")"}], 
+                      " ", "alphaG"}]}], ",", RowBox[{"z", "-", RowBox[
+                     {"v", " ", "alphaG"}]}], ",", "alphaG", ",", "v"}], 
+                "]"}], "alphaG", "0", FractionBox["z", "v"]}, 
+             "InactiveIntegrate", DisplayFunction -> (RowBox[
+                {SubsuperscriptBox[StyleBox["\[Integral]", "Inactive"], #3, 
+                  #4], RowBox[{#1, RowBox[{StyleBox["\[DifferentialD]", 
+                      "Inactive"], #2}]}]}] & ), InterpretationFunction -> 
+              (RowBox[{RowBox[{"Inactive", "[", "Integrate", "]"}], "[", 
+                 RowBox[{#1, ",", RowBox[{"{", RowBox[{#2, ",", #3, ",", 
+                       #4}], "}"}]}], "]"}] & )], "v", "z", "1"}, 
+           "InactiveIntegrate", DisplayFunction -> 
+            (RowBox[{SubsuperscriptBox[StyleBox["\[Integral]", "Inactive"], 
+                #3, #4], RowBox[{#1, RowBox[{StyleBox["\[DifferentialD]", 
+                    "Inactive"], #2}]}]}] & ), InterpretationFunction -> 
+            (RowBox[{RowBox[{"Inactive", "[", "Integrate", "]"}], "[", RowBox[
+                {#1, ",", RowBox[{"{", RowBox[{#2, ",", #3, ",", #4}], 
+                   "}"}]}], "]"}] & )]}]}], ";", 
+      RowBox[{RowBox[{"pLine3", "[", RowBox[{"fun_", ",", "z_"}], "]"}], 
+        ":=", RowBox[{TemplateBox[{TemplateBox[{TemplateBox[{FractionBox[
+                 RowBox[{RowBox[{"(", RowBox[{"z", "-", "aqb"}], ")"}], " ", 
+                   RowBox[{"fun", "[", RowBox[{"aq", ",", "aqb", ",", 
+                       RowBox[{"1", "-", "aq", "-", "aqb"}]}], "]"}]}], 
+                 SuperscriptBox[RowBox[{"(", RowBox[{"1", "-", "aq", "-", 
+                      "aqb"}], ")"}], "2"]], "aqb", "0", "z"}, 
                "InactiveIntegrate", DisplayFunction -> 
                 (RowBox[{SubsuperscriptBox[StyleBox["\[Integral]", 
                      "Inactive"], #3, #4], RowBox[{#1, RowBox[{StyleBox[
@@ -1160,29 +1556,188 @@ spectral and condensate reductions are complete.", "Text"],
                InterpretationFunction -> (RowBox[{RowBox[{"Inactive", "[", 
                      "Integrate", "]"}], "[", RowBox[{#1, ",", RowBox[
                       {"{", RowBox[{#2, ",", #3, ",", #4}], "}"}]}], 
-                   "]"}] & )]}], ",", RowBox[{"\"local quark condensate\"", 
-              "\[Rule]", RowBox[{"eQ", " ", "expQ", " ", "ssCond", " ", 
-                RowBox[{"(", RowBox[{"1", "-", FractionBox[RowBox[{"mQ", " ", 
-                       "ms"}], "M2"], "+", FractionBox[RowBox[{SuperscriptBox[
-                        "ms", "2"], " ", RowBox[{"(", RowBox[{"1", "+", 
-                          FractionBox[SuperscriptBox["mQ", "2"], "M2"]}], 
-                         ")"}]}], RowBox[{"2", " ", "M2"}]]}], ")"}]}]}], 
-            ",", RowBox[{"\"twist 2, signed Colangelo chi\"", "\[Rule]", 
-              RowBox[{RowBox[{"-", "eS"}], " ", "ssCond", " ", 
-                RowBox[{"(", RowBox[{"expQ", "-", "exp0"}], ")"}], " ", "M2", 
-                " ", "chiC", " ", RowBox[{"phiGamma", "[", "u0", "]"}]}]}], 
-            ",", RowBox[{"\"twist 3\"", "\[Rule]", RowBox[{"2", " ", "eS", 
-                " ", "f3Gamma", " ", "mQ", " ", "expQ", " ", RowBox[
-                 {"PsiV", "[", "u0", "]"}]}]}], ",", 
-            RowBox[{"\"twist 4\"", "\[Rule]", RowBox[{FractionBox["1", "4"], 
-                " ", "eS", " ", "ssCond", " ", "expQ", " ", RowBox[
-                 {"(", RowBox[{RowBox[{"A4", "[", "u0", "]"}], "-", 
-                    RowBox[{"8", " ", RowBox[{"HbarGamma", "[", "u0", 
-                        "]"}]}]}], ")"}], " ", RowBox[{"(", RowBox[
-                   {"1", "+", FractionBox[SuperscriptBox["mQ", "2"], "M2"]}], 
-                  ")"}]}]}], ",", RowBox[{"\"three particle\"", "\[Rule]", 
-              RowBox[{"eS", " ", "ssCond", " ", "expQ", " ", RowBox[
-                 {"IF1", "[", "u0", "]"}]}]}]}], "]"}]}], ";", 
+                   "]"}] & )], "aqp", "0", "aq"}, "InactiveIntegrate", 
+             DisplayFunction -> (RowBox[{SubsuperscriptBox[StyleBox[
+                   "\[Integral]", "Inactive"], #3, #4], RowBox[
+                  {#1, RowBox[{StyleBox["\[DifferentialD]", "Inactive"], 
+                     #2}]}]}] & ), InterpretationFunction -> 
+              (RowBox[{RowBox[{"Inactive", "[", "Integrate", "]"}], "[", 
+                 RowBox[{#1, ",", RowBox[{"{", RowBox[{#2, ",", #3, ",", 
+                       #4}], "}"}]}], "]"}] & )], "aq", "0", 
+            RowBox[{"1", "-", "z"}]}, "InactiveIntegrate", 
+           DisplayFunction -> (RowBox[{SubsuperscriptBox[StyleBox[
+                 "\[Integral]", "Inactive"], #3, #4], RowBox[
+                {#1, RowBox[{StyleBox["\[DifferentialD]", "Inactive"], 
+                   #2}]}]}] & ), InterpretationFunction -> 
+            (RowBox[{RowBox[{"Inactive", "[", "Integrate", "]"}], "[", RowBox[
+                {#1, ",", RowBox[{"{", RowBox[{#2, ",", #3, ",", #4}], 
+                   "}"}]}], "]"}] & )], "-", TemplateBox[
+           {TemplateBox[{FractionBox[RowBox[{"z", " ", TemplateBox[
+                  {RowBox[{"fun", "[", RowBox[{"aq", ",", "aqbp", ",", 
+                       RowBox[{"1", "-", "aq", "-", "aqbp"}]}], "]"}], 
+                   "aqbp", "0", "betaP"}, "InactiveIntegrate", 
+                  DisplayFunction -> (RowBox[{SubsuperscriptBox[StyleBox[
+                        "\[Integral]", "Inactive"], #3, #4], RowBox[
+                       {#1, RowBox[{StyleBox["\[DifferentialD]", "Inactive"], 
+                          #2}]}]}] & ), InterpretationFunction -> 
+                   (RowBox[{RowBox[{"Inactive", "[", "Integrate", "]"}], "[", 
+                      RowBox[{#1, ",", RowBox[{"{", RowBox[{#2, ",", #3, ",", 
+                          #4}], "}"}]}], "]"}] & )]}], SuperscriptBox[
+                "betaP", "2"]], "betaP", "z", RowBox[{"1", "-", "aq"}]}, 
+             "InactiveIntegrate", DisplayFunction -> (RowBox[
+                {SubsuperscriptBox[StyleBox["\[Integral]", "Inactive"], #3, 
+                  #4], RowBox[{#1, RowBox[{StyleBox["\[DifferentialD]", 
+                      "Inactive"], #2}]}]}] & ), InterpretationFunction -> 
+              (RowBox[{RowBox[{"Inactive", "[", "Integrate", "]"}], "[", 
+                 RowBox[{#1, ",", RowBox[{"{", RowBox[{#2, ",", #3, ",", 
+                       #4}], "}"}]}], "]"}] & )], "aq", "0", 
+            RowBox[{"1", "-", "z"}]}, "InactiveIntegrate", 
+           DisplayFunction -> (RowBox[{SubsuperscriptBox[StyleBox[
+                 "\[Integral]", "Inactive"], #3, #4], RowBox[
+                {#1, RowBox[{StyleBox["\[DifferentialD]", "Inactive"], 
+                   #2}]}]}] & ), InterpretationFunction -> 
+            (RowBox[{RowBox[{"Inactive", "[", "Integrate", "]"}], "[", RowBox[
+                {#1, ",", RowBox[{"{", RowBox[{#2, ",", #3, ",", #4}], 
+                   "}"}]}], "]"}] & )], "+", TemplateBox[
+           {FractionBox[RowBox[{"z", " ", TemplateBox[{TemplateBox[
+                  {RowBox[{"fun", "[", RowBox[{"aqp", ",", "aqb", ",", 
+                       RowBox[{"1", "-", "aqp", "-", "aqb"}]}], "]"}], "aqb", 
+                   "0", RowBox[{"1", "-", "aqp"}]}, "InactiveIntegrate", 
+                  DisplayFunction -> (RowBox[{SubsuperscriptBox[StyleBox[
+                        "\[Integral]", "Inactive"], #3, #4], RowBox[
+                       {#1, RowBox[{StyleBox["\[DifferentialD]", "Inactive"], 
+                          #2}]}]}] & ), InterpretationFunction -> 
+                   (RowBox[{RowBox[{"Inactive", "[", "Integrate", "]"}], "[", 
+                      RowBox[{#1, ",", RowBox[{"{", RowBox[{#2, ",", #3, ",", 
+                          #4}], "}"}]}], "]"}] & )], "aqp", "0", "aq"}, 
+                "InactiveIntegrate", DisplayFunction -> 
+                 (RowBox[{SubsuperscriptBox[StyleBox["\[Integral]", 
+                      "Inactive"], #3, #4], RowBox[{#1, RowBox[{StyleBox[
+                         "\[DifferentialD]", "Inactive"], #2}]}]}] & ), 
+                InterpretationFunction -> (RowBox[{RowBox[{"Inactive", "[", 
+                      "Integrate", "]"}], "[", RowBox[{#1, ",", RowBox[
+                       {"{", RowBox[{#2, ",", #3, ",", #4}], "}"}]}], 
+                    "]"}] & )]}], SuperscriptBox[RowBox[{"(", RowBox[
+                 {"1", "-", "aq"}], ")"}], "2"]], "aq", "0", 
+            RowBox[{"1", "-", "z"}]}, "InactiveIntegrate", 
+           DisplayFunction -> (RowBox[{SubsuperscriptBox[StyleBox[
+                 "\[Integral]", "Inactive"], #3, #4], RowBox[
+                {#1, RowBox[{StyleBox["\[DifferentialD]", "Inactive"], 
+                   #2}]}]}] & ), InterpretationFunction -> 
+            (RowBox[{RowBox[{"Inactive", "[", "Integrate", "]"}], "[", RowBox[
+                {#1, ",", RowBox[{"{", RowBox[{#2, ",", #3, ",", #4}], 
+                   "}"}]}], "]"}] & )]}]}], ";", 
+      RowBox[{RowBox[{"pLinePrime3", "[", RowBox[{"fun_", ",", "z_"}], "]"}], 
+        ":=", RowBox[{TemplateBox[{"Inactive", RowBox[{"pLine3", "[", 
+              RowBox[{"fun", ",", "a"}], "]"}], "a"}, "InactiveD"], "/.", 
+          "\[VeryThinSpace]", RowBox[{"a", "\[Rule]", "z"}]}]}], ";", 
+      RowBox[{RowBox[{"fGSigma", "[", RowBox[{"aq_", ",", "aqb_", ",", "ag_", 
+            ",", "v_"}], "]"}], ":=", 
+        RowBox[{RowBox[{"S3", "[", RowBox[{"aq", ",", "aqb", ",", "ag"}], 
+            "]"}], "+", RowBox[{"St3", "[", RowBox[{"aq", ",", "aqb", ",", 
+              "ag"}], "]"}], "-", RowBox[{"T13", "[", 
+            RowBox[{"aq", ",", "aqb", ",", "ag"}], "]"}], "-", 
+          RowBox[{"T23", "[", RowBox[{"aq", ",", "aqb", ",", "ag"}], "]"}], 
+          "+", RowBox[{"T33", "[", RowBox[{"aq", ",", "aqb", ",", "ag"}], 
+            "]"}], "+", RowBox[{"T43", "[", RowBox[{"aq", ",", "aqb", ",", 
+              "ag"}], "]"}]}]}], ";", 
+      RowBox[{RowBox[{"fGX", "[", RowBox[{"aq_", ",", "aqb_", ",", "ag_", 
+            ",", "v_"}], "]"}], ":=", RowBox[{"2", " ", "v", " ", 
+          RowBox[{"(", RowBox[{RowBox[{"-", RowBox[{"S3", "[", RowBox[
+                   {"aq", ",", "aqb", ",", "ag"}], "]"}]}], "-", 
+              RowBox[{"T33", "[", RowBox[{"aq", ",", "aqb", ",", "ag"}], 
+                "]"}], "+", RowBox[{"T23", "[", RowBox[{"aq", ",", "aqb", 
+                  ",", "ag"}], "]"}]}], ")"}]}]}], ";", 
+      RowBox[{RowBox[{"fGA", "[", RowBox[{"aq_", ",", "aqb_", ",", "ag_", 
+            ",", "v_"}], "]"}], ":=", 
+        RowBox[{RowBox[{"fGSigma", "[", RowBox[{"aq", ",", "aqb", ",", "ag", 
+              ",", "v"}], "]"}], "+", RowBox[{"fGX", "[", 
+            RowBox[{"aq", ",", "aqb", ",", "ag", ",", "v"}], "]"}]}]}], ";", 
+      RowBox[{RowBox[{"fGammaSigma", "[", RowBox[{"aq_", ",", "aqb_", ",", 
+            "ag_", ",", "v_"}], "]"}], ":=", 
+        RowBox[{RowBox[{"Sg3", "[", RowBox[{"aq", ",", "aqb", ",", "ag"}], 
+            "]"}], "-", RowBox[{"T4g3", "[", RowBox[{"aq", ",", "aqb", ",", 
+              "ag"}], "]"}]}]}], ";", 
+      RowBox[{RowBox[{"fGammaA", "[", RowBox[{"aq_", ",", "aqb_", ",", "ag_", 
+            ",", "v_"}], "]"}], ":=", 
+        RowBox[{RowBox[{RowBox[{"(", RowBox[{"1", "-", RowBox[{"2", " ", 
+                  "v"}]}], ")"}], " ", RowBox[{"Sg3", "[", RowBox[{"aq", ",", 
+                "aqb", ",", "ag"}], "]"}]}], "-", 
+          RowBox[{"T4g3", "[", RowBox[{"aq", ",", "aqb", ",", "ag"}], 
+            "]"}]}]}], ";", RowBox[{"tA3g", "=", 
+        RowBox[{"eS", " ", "ssCond", " ", "expQ", " ", 
+          RowBox[{"lineProjection3", "[", RowBox[{"fGA", ",", "a0B"}], 
+            "]"}]}]}], ";", RowBox[{"tB3g", "=", FractionBox[
+         RowBox[{"eS", " ", "ssCond", " ", "expQ", " ", "mQ", " ", 
+           RowBox[{"lineProjection3", "[", RowBox[{"fGSigma", ",", "a0B"}], 
+             "]"}]}], RowBox[{"mQ", "+", "ms"}]]}], ";", 
+      RowBox[{"tA3em", "=", RowBox[{"eQ", " ", "ssCond", " ", "deltaEQ", " ", 
+          RowBox[{"(", RowBox[{RowBox[{"lineProjection3", "[", 
+                RowBox[{"fGammaA", ",", "a0B"}], "]"}], "+", RowBox[{"2", 
+                " ", RowBox[{"pLinePrime3", "[", RowBox[{"T4g3", ",", 
+                    "a0B"}], "]"}]}]}], ")"}]}]}], ";", 
+      RowBox[{"tB3em", "=", FractionBox[RowBox[{"eQ", " ", "ssCond", " ", 
+           "deltaEQ", " ", "mQ", " ", RowBox[{"(", RowBox[
+              {RowBox[{"lineProjection3", "[", RowBox[{"fGammaSigma", ",", 
+                   "a0B"}], "]"}], "+", RowBox[{"2", " ", RowBox[
+                  {"pLinePrime3", "[", RowBox[{"T4g3", ",", "a0B"}], 
+                   "]"}]}]}], ")"}]}], RowBox[{"mQ", "+", "ms"}]]}], ";", 
+      RowBox[{"threeParticleResiduals", "=", RowBox[{"FullSimplify", "/@", 
+          RowBox[{"{", RowBox[{RowBox[{RowBox[{"fGA", "[", RowBox[{"aq", ",", 
+                    "aqb", ",", "alphaG", ",", "v"}], "]"}], "-", 
+                RowBox[{"fGSigma", "[", RowBox[{"aq", ",", "aqb", ",", 
+                    "alphaG", ",", "v"}], "]"}], "-", RowBox[{"fGX", "[", 
+                  RowBox[{"aq", ",", "aqb", ",", "alphaG", ",", "v"}], 
+                  "]"}]}], ",", RowBox[{RowBox[{"fGammaA", "[", RowBox[
+                   {"aq", ",", "aqb", ",", "alphaG", ",", "v"}], "]"}], "-", 
+                RowBox[{"fGammaSigma", "[", RowBox[{"aq", ",", "aqb", ",", 
+                    "alphaG", ",", "v"}], "]"}], "+", RowBox[{"2", " ", "v", 
+                  " ", RowBox[{"Sg3", "[", RowBox[{"aq", ",", "aqb", ",", 
+                      "alphaG"}], "]"}]}]}]}], "}"}]}]}], ";", 
+      RowBox[{"Association", "[", RowBox[
+         {RowBox[{"\"T_A three-particle gluonic\"", "\[Rule]", "tA3g"}], ",", 
+          RowBox[{"\"T_B three-particle gluonic\"", "\[Rule]", "tB3g"}], ",", 
+          RowBox[{"\"T_A three-particle electromagnetic\"", "\[Rule]", 
+            "tA3em"}], ",", RowBox[{"\"T_B three-particle electromagnetic\"", 
+            "\[Rule]", "tB3em"}], ",", RowBox[
+           {"\"operator-weight residuals\"", "\[Rule]", 
+            "threeParticleResiduals"}], ",", 
+          RowBox[{"\"full assembly audit\"", "\[Rule]", "\"step15_complete_th\
+ree_particle_borel.wl: four exact zero residuals\""}]}], "]"}]}]], "Input"], 
+  Cell["Continuum bookkeeping is channel-specific.  The leading twist-2 term \
+uses DeltaEQ=expQ-exp0.  Twist 3, twist 4, and the gluonic three-particle \
+term retain the raw expQ factor of the Ds1-to-Ds-gamma sum rule.  The \
+distinct gauge-completion electromagnetic three-particle term follows \
+Rohrwild's IF-type DeltaEQ subtraction.", "Text"], 
+  Cell[BoxData[RowBox[{RowBox[{"axialOPEComponents", "=", 
+        RowBox[{"Association", "[", RowBox[{RowBox[{"\"perturbative\"", 
+              "\[Rule]", TemplateBox[{RowBox[{RowBox[{"Exp", "[", RowBox[
+                     {"-", FractionBox["s", "M2"]}], "]"}], " ", 
+                  RowBox[{"rhoA", "[", "s", "]"}]}], "s", SuperscriptBox[
+                 RowBox[{"(", RowBox[{"mQ", "+", "ms"}], ")"}], "2"], "s0"}, 
+               "InactiveIntegrate", DisplayFunction -> 
+                (RowBox[{SubsuperscriptBox[StyleBox["\[Integral]", 
+                     "Inactive"], #3, #4], RowBox[{#1, RowBox[{StyleBox[
+                        "\[DifferentialD]", "Inactive"], #2}]}]}] & ), 
+               InterpretationFunction -> (RowBox[{RowBox[{"Inactive", "[", 
+                     "Integrate", "]"}], "[", RowBox[{#1, ",", RowBox[
+                      {"{", RowBox[{#2, ",", #3, ",", #4}], "}"}]}], 
+                   "]"}] & )]}], ",", RowBox[
+             {"\"twist 2, positive-magnitude chi\"", "\[Rule]", 
+              RowBox[{"eS", " ", "ssCond", " ", "deltaEQ", " ", "M2", " ", 
+                "chiGamma", " ", RowBox[{"phiGamma", "[", "u0", "]"}]}]}], 
+            ",", RowBox[{"\"twist 3\"", "\[Rule]", RowBox[{"eS", " ", 
+                "f3Gamma", " ", "mQ", " ", "expQ", " ", RowBox[{"psiVBar", 
+                  "[", "u0", "]"}]}]}], ",", RowBox[{"\"twist 4\"", 
+              "\[Rule]", RowBox[{FractionBox["1", "4"], " ", "eS", " ", 
+                "ssCond", " ", "expQ", " ", RowBox[{"(", RowBox[
+                   {RowBox[{"A4", "[", "u0", "]"}], "+", RowBox[{"2", " ", 
+                      RowBox[{"B4", "[", "u0", "]"}]}]}], ")"}], " ", 
+                RowBox[{"(", RowBox[{"1", "+", FractionBox[SuperscriptBox[
+                      "mQ", "2"], "M2"]}], ")"}]}]}], ",", 
+            RowBox[{"\"three particle, gluonic\"", "\[Rule]", "tA3g"}], ",", 
+            RowBox[{"\"three particle, electromagnetic\"", "\[Rule]", 
+              "tA3em"}]}], "]"}]}], ";", 
       RowBox[{"tAHat", "=", RowBox[{"Total", "[", 
           RowBox[{"Values", "[", "axialOPEComponents", "]"}], "]"}]}], ";", 
       RowBox[{"axialOPEAssemblyResidual", "=", 
@@ -1194,15 +1749,140 @@ spectral and condensate reductions are complete.", "Text"],
           RowBox[{"\"T_A\"", "\[Rule]", "tAHat"}], ",", 
           RowBox[{"\"assembly residual\"", "\[Rule]", 
             "axialOPEAssemblyResidual"}]}], "]"}]}]], "Input"], 
-  Cell[BoxData[RowBox[{RowBox[{"tensorOPEComponents", "=", 
-        RowBox[{"Association", "[", RowBox[{RowBox[{"\"perturbative\"", 
-              "\[Rule]", "tBpert"}], ",", RowBox[
-             {"\"local quark condensate\"", "\[Rule]", "tBLocal"}], ",", 
+  Cell["Explicit post-double-Borel vector and x-gamma kernels", 
+   "Subsection"], Cell["The Fourier reduction uses k=p+a q and D_a=mQ^2-a \
+pPrime^2-(1-a)p2. The double Borel transform is applied before a0=1/2 is \
+chosen. These expressions contain DA derivatives and no pole-mass \
+substitution.", "Text"], 
+  Cell[BoxData[RowBox[{RowBox[{"a0B", "=", RowBox[{"1", "-", "u0"}]}], ";", 
+      RowBox[{"tBTw2", "=", FractionBox[RowBox[{"mQ", " ", 
+           RowBox[{"axialOPEComponents", "[", 
+             "\"twist 2, positive-magnitude chi\"", "]"}]}], 
+         RowBox[{"mQ", "+", "ms"}]]}], ";", 
+      RowBox[{"tBTw3", "=", FractionBox[RowBox[{"eS", " ", "f3Gamma", " ", 
+           "expQ", " ", RowBox[{"(", RowBox[{RowBox[{SuperscriptBox["mQ", 
+                  "2"], " ", RowBox[{"psiVBar", "[", "a0B", "]"}]}], "-", 
+               RowBox[{FractionBox["1", "2"], " ", "M2", " ", RowBox[
+                  {"(", RowBox[{RowBox[{SubscriptBox["\[PartialD]", RowBox[
+                         {"a"}]], RowBox[{"(", RowBox[{RowBox[{"(", RowBox[
+                          {"1", "-", "a"}], ")"}], " ", RowBox[{"psiVBar", 
+                          "[", "a", "]"}]}], ")"}]}], "/.", 
+                     "\[VeryThinSpace]", RowBox[{"a", "\[Rule]", "a0B"}]}], 
+                   ")"}]}]}], ")"}]}], RowBox[{"mQ", "+", "ms"}]]}], ";", 
+      RowBox[{"tBTw4", "=", FractionBox[RowBox[{"mQ", " ", 
+           RowBox[{"axialOPEComponents", "[", "\"twist 4\"", "]"}]}], 
+         RowBox[{"mQ", "+", "ms"}]]}], ";", 
+      RowBox[{"symmetricTw3", "=", RowBox[
+         {RowBox[{"{", RowBox[{RowBox[{RowBox[{"axialOPEComponents", "[", 
+                  "\"twist 3\"", "]"}], "/.", "\[VeryThinSpace]", 
+                RowBox[{"u0", "\[Rule]", FractionBox["1", "2"]}]}], ",", 
+              RowBox[{"tBTw3", "/.", "\[VeryThinSpace]", RowBox[
+                 {"u0", "\[Rule]", FractionBox["1", "2"]}]}]}], "}"}], "/.", 
+          "\[VeryThinSpace]", RowBox[{RowBox[{"psiVBar", "[", 
+              FractionBox["1", "2"], "]"}], "\[Rule]", "0"}]}]}], ";", 
+      RowBox[{"Association", "[", RowBox[{RowBox[{"\"T_B twist 2\"", 
+            "\[Rule]", "tBTw2"}], ",", RowBox[{"\"T_B twist 3\"", "\[Rule]", 
+            "tBTw3"}], ",", RowBox[{"\"T_B twist 4\"", "\[Rule]", "tBTw4"}], 
+          ",", RowBox[{"\"symmetric twist-3 pair\"", "\[Rule]", 
+            "symmetricTw3"}]}], "]"}]}]], "Input"], 
+  Cell[BoxData[RowBox[{RowBox[{RowBox[{"xAS", "[", "f_", "]"}], ":=", 
+        RowBox[{RowBox[{"-", "8"}], " ", "expQ", " ", 
+          RowBox[{"f", "[", "a0B", "]"}]}]}], ";", 
+      RowBox[{RowBox[{"xAT1", "[", "f_", "]"}], ":=", 
+        RowBox[{"48", " ", "\[ImaginaryI]", " ", "expQ", " ", 
+          RowBox[{"f", "[", "a0B", "]"}]}]}], ";", 
+      RowBox[{RowBox[{"xAT2", "[", "f_", "]"}], ":=", 
+        RowBox[{"16", " ", "\[ImaginaryI]", " ", "expQ", " ", 
+          RowBox[{"f", "[", "a0B", "]"}]}]}], ";", 
+      RowBox[{RowBox[{"xAT3", "[", "f_", "]"}], ":=", 
+        RowBox[{RowBox[{"-", "16"}], " ", "\[ImaginaryI]", " ", "expQ", " ", 
+          RowBox[{"f", "[", "a0B", "]"}]}]}], ";", 
+      RowBox[{RowBox[{"xAT4", "[", "f_", "]"}], ":=", "0"}], ";", 
+      RowBox[{RowBox[{"xBS", "[", "f_", "]"}], ":=", "0"}], ";", 
+      RowBox[{RowBox[{"xBT1", "[", "f_", "]"}], ":=", "0"}], ";", 
+      RowBox[{RowBox[{"xBT2", "[", "f_", "]"}], ":=", "0"}], ";", 
+      RowBox[{RowBox[{"xBT3", "[", "f_", "]"}], ":=", "0"}], ";", 
+      RowBox[{RowBox[{"xBT4", "[", "f_", "]"}], ":=", "0"}], ";", 
+      RowBox[{"Association", "[", RowBox[{RowBox[{"\"A xgamma kernels\"", 
+            "\[Rule]", RowBox[{"{", RowBox[{RowBox[{"xAS", "[", "Feff", 
+                  "]"}], ",", RowBox[{"xAT1", "[", "Feff", "]"}], ",", 
+                RowBox[{"xAT2", "[", "Feff", "]"}], ",", RowBox[{"xAT3", "[", 
+                  "Feff", "]"}], ",", RowBox[{"xAT4", "[", "Feff", "]"}]}], 
+              "}"}]}], ",", RowBox[{"\"B xgamma kernels\"", "\[Rule]", 
+            RowBox[{"{", RowBox[{RowBox[{"xBS", "[", "Feff", "]"}], ",", 
+                RowBox[{"xBT1", "[", "Feff", "]"}], ",", RowBox[{"xBT2", "[", 
+                  "Feff", "]"}], ",", RowBox[{"xBT3", "[", "Feff", "]"}], 
+                ",", RowBox[{"xBT4", "[", "Feff", "]"}]}], "}"}]}], ",", 
+          RowBox[{"\"sigma coefficients A\"", "\[Rule]", 
+            RowBox[{"{", RowBox[{"8", ",", RowBox[{RowBox[{"-", "16"}], " ", 
+                  "\[ImaginaryI]"}]}], "}"}]}], ",", 
+          RowBox[{"\"sigma coefficients B\"", "\[Rule]", 
+            RowBox[{"{", RowBox[{FractionBox[RowBox[{"8", " ", "mQ"}], 
+                 RowBox[{"mQ", "+", "ms"}]], ",", RowBox[{"-", FractionBox[
+                   RowBox[{"16", " ", "\[ImaginaryI]", " ", "mQ"}], 
+                   RowBox[{"mQ", "+", "ms"}]]}]}], "}"}]}]}], "]"}]}]], 
+   "Input"], 
+  Cell[BoxData[RowBox[
+     {RowBox[{RowBox[{"lambdaB", "[", RowBox[{"shat_", ",", "mi_", ",", 
+            "mj_"}], "]"}], ":=", RowBox[{"kallenLambda", "[", 
+          RowBox[{"shat", ",", SuperscriptBox["mj", "2"], ",", 
+            SuperscriptBox["mi", "2"]}], "]"}]}], ";", 
+      RowBox[{RowBox[{"rhoBLeg", "[", RowBox[{"shat_", ",", "mi_", ",", 
+            "mj_", ",", "aa_", ",", "bb_"}], "]"}], ":=", 
+        RowBox[{"-", FractionBox[RowBox[{"3", " ", RowBox[{"(", RowBox[
+                {RowBox[{"2", " ", "aa", " ", RowBox[{"Log", "[", FractionBox[
+                      RowBox[{"shat", "-", SuperscriptBox["mj", "2"], "+", 
+                        SuperscriptBox["mi", "2"], "-", SqrtBox[RowBox[
+                          {"lambdaB", "[", RowBox[{"shat", ",", "mi", ",", 
+                          "mj"}], "]"}]]}], RowBox[{"shat", "-", 
+                        SuperscriptBox["mj", "2"], "+", SuperscriptBox["mi", 
+                         "2"], "+", SqrtBox[RowBox[{"lambdaB", "[", RowBox[
+                          {"shat", ",", "mi", ",", "mj"}], "]"}]]}]], 
+                     "]"}]}], "+", FractionBox[RowBox[{"bb", " ", RowBox[
+                     {"(", RowBox[{SuperscriptBox["mj", "2"], "-", 
+                        SuperscriptBox["mi", "2"], "-", "shat"}], ")"}], " ", 
+                    SqrtBox[RowBox[{"lambdaB", "[", RowBox[{"shat", ",", 
+                         "mi", ",", "mj"}], "]"}]]}], RowBox[{SuperscriptBox[
+                     "mi", "2"], " ", SuperscriptBox["shat", "2"]}]]}], 
+               ")"}]}], RowBox[{"8", " ", SuperscriptBox["\[Pi]", 
+              "2"]}]]}]}], ";", RowBox[{"aScoef", "=", 
+        FractionBox[RowBox[{"mQ", " ", "ms"}], RowBox[{"mQ", "+", "ms"}]]}], 
+      ";", RowBox[{RowBox[{"bScoef", "[", "shat_", "]"}], ":=", 
+        FractionBox[RowBox[{SuperscriptBox["ms", "2"], " ", "shat"}], 
+         RowBox[{"mQ", "+", "ms"}]]}], ";", 
+      RowBox[{"aQcoef", "=", FractionBox[
+         RowBox[{RowBox[{"2", " ", SuperscriptBox["mQ", "2"]}], "-", 
+           RowBox[{"mQ", " ", "ms"}]}], RowBox[{"mQ", "+", "ms"}]]}], ";", 
+      RowBox[{RowBox[{"bQcoef", "[", "shat_", "]"}], ":=", 
+        RowBox[{"-", FractionBox[RowBox[{SuperscriptBox["mQ", "2"], " ", 
+             "shat"}], RowBox[{"mQ", "+", "ms"}]]}]}], ";", 
+      RowBox[{RowBox[{"rhoB", "[", "shat_", "]"}], ":=", 
+        RowBox[{RowBox[{"eS", " ", RowBox[{"rhoBLeg", "[", RowBox[{"shat", 
+                ",", "ms", ",", "mQ", ",", "aScoef", ",", RowBox[{"bScoef", 
+                  "[", "shat", "]"}]}], "]"}]}], "-", 
+          RowBox[{"eQ", " ", RowBox[{"rhoBLeg", "[", RowBox[{"shat", ",", 
+                "mQ", ",", "ms", ",", "aQcoef", ",", RowBox[{"bQcoef", "[", 
+                  "shat", "]"}]}], "]"}]}]}]}], ";", 
+      RowBox[{"tBpert", "=", TemplateBox[
+         {RowBox[{RowBox[{"Exp", "[", RowBox[{"-", FractionBox["s", "M2"]}], 
+              "]"}], " ", RowBox[{"rhoB", "[", "s", "]"}]}], "s", 
+          SuperscriptBox[RowBox[{"(", RowBox[{"mQ", "+", "ms"}], ")"}], "2"], 
+          "s0"}, "InactiveIntegrate", DisplayFunction -> 
+          (RowBox[{SubsuperscriptBox[StyleBox["\[Integral]", "Inactive"], #3, 
+              #4], RowBox[{#1, RowBox[{StyleBox["\[DifferentialD]", 
+                  "Inactive"], #2}]}]}] & ), InterpretationFunction -> 
+          (RowBox[{RowBox[{"Inactive", "[", "Integrate", "]"}], "[", 
+             RowBox[{#1, ",", RowBox[{"{", RowBox[{#2, ",", #3, ",", #4}], 
+                 "}"}]}], "]"}] & )]}], ";", 
+      RowBox[{"tensorOPEComponents", "=", RowBox[{"Association", "[", 
+          RowBox[{RowBox[{"\"perturbative\"", "\[Rule]", "tBpert"}], ",", 
             RowBox[{"\"twist 2\"", "\[Rule]", "tBTw2"}], ",", 
             RowBox[{"\"twist 3\"", "\[Rule]", "tBTw3"}], ",", 
             RowBox[{"\"twist 4\"", "\[Rule]", "tBTw4"}], ",", 
-            RowBox[{"\"three particle\"", "\[Rule]", "tB3p"}]}], "]"}]}], 
-      ";", RowBox[{"tBHat", "=", RowBox[{"Total", "[", 
+            RowBox[{"\"three particle, gluonic\"", "\[Rule]", "tB3g"}], ",", 
+            RowBox[{"\"three particle, electromagnetic\"", "\[Rule]", 
+              "tB3em"}]}], "]"}]}], ";", 
+      RowBox[{"tBHat", "=", RowBox[{"Total", "[", 
           RowBox[{"Values", "[", "tensorOPEComponents", "]"}], "]"}]}], ";", 
       RowBox[{"tensorOPEAssemblyResidual", "=", 
         RowBox[{"Expand", "[", RowBox[{"tBHat", "-", 
@@ -1210,16 +1890,19 @@ spectral and condensate reductions are complete.", "Text"],
                 "tensorOPEComponents", "]"}], "]"}]}], "]"}]}], ";", 
       RowBox[{"tensorOPEStatus", "=", RowBox[{"Association", "[", 
           RowBox[{RowBox[{"\"perturbative\"", "\[Rule]", 
-              "\"projected traces complete; spectral density pending\""}], 
-            ",", RowBox[{"\"local quark condensate\"", "\[Rule]", 
-              "\"independent derivation pending\""}], ",", 
+              "\"explicit diagonal spectral density\""}], ",", 
+            RowBox[{"\"ordinary local quark condensate\"", "\[Rule]", 
+              "\"absent in Rohrwild transition OPE\""}], ",", 
             RowBox[{"\"twist 2\"", "\[Rule]", 
-              "\"trace derived; final reduction pending\""}], ",", 
-            RowBox[{"\"twist 3\"", "\[Rule]", "\"diagnostic trace only\""}], 
-            ",", RowBox[{"\"twist 4\"", "\[Rule]", 
-              "\"relevant traces exist; final reduction pending\""}], ",", 
-            RowBox[{"\"three particle\"", "\[Rule]", 
-              "\"kernel traces exist; final integral is not complete\""}]}], 
+              "\"kinematics-independent trace ratio derived\""}], ",", 
+            RowBox[{"\"twist 3\"", "\[Rule]", 
+              "\"explicit post-Borel DA-derivative form derived\""}], ",", 
+            RowBox[{"\"twist 4\"", "\[Rule]", 
+              "\"kinematics-independent trace ratio derived\""}], ",", 
+            RowBox[{"\"three particle, gluonic\"", "\[Rule]", 
+              "\"complete operator-weighted post-Borel convolution\""}], ",", 
+            RowBox[{"\"three particle, electromagnetic\"", "\[Rule]", 
+              "\"complete support-corrected post-Borel convolution\""}]}], 
           "]"}]}], ";", RowBox[{"Association", "[", 
         RowBox[{RowBox[{"\"T_B components\"", "\[Rule]", 
             "tensorOPEComponents"}], ",", RowBox[{"\"T_B\"", "\[Rule]", 
@@ -1265,23 +1948,129 @@ spectral and condensate reductions are complete.", "Text"],
                 {"(", RowBox[{"mQ", "+", "ms"}], ")"}], " ", "tAHat"}], 
              RowBox[{"m1", " ", "fA", " ", SuperscriptBox["mP", "2"], " ", 
                "fP"}]]}], "]"}]}], ";", RowBox[{"chiConventionResidual", "=", 
-        RowBox[{"Simplify", "[", RowBox[
-           {RowBox[{"(", RowBox[{RowBox[{"axialOPEComponents", "[", 
-                  "\"twist 2, signed Colangelo chi\"", "]"}], "/.", 
-                "\[VeryThinSpace]", RowBox[{"chiC", "\[Rule]", RowBox[
-                   {"-", "chiGamma"}]}]}], ")"}], "-", 
-            RowBox[{"eS", " ", "ssCond", " ", RowBox[{"(", RowBox[
-                 {"expQ", "-", "exp0"}], ")"}], " ", "M2", " ", "chiGamma", 
-              " ", RowBox[{"phiGamma", "[", "u0", "]"}]}]}], "]"}]}], ";", 
-      RowBox[{"Association", "[", RowBox[{RowBox[{"\"G_1 final\"", "\[Rule]", 
-            "paperG1"}], ",", RowBox[{"\"G_2 final\"", "\[Rule]", 
-            "paperG2"}], ",", RowBox[{"\"component assembly residual\"", 
-            "\[Rule]", "paperComponentAssemblyResidual"}], ",", 
+        RowBox[{"Simplify", "[", RowBox[{RowBox[{"axialOPEComponents", "[", 
+              "\"twist 2, positive-magnitude chi\"", "]"}], "-", 
+            RowBox[{"eS", " ", "ssCond", " ", "deltaEQ", " ", "M2", " ", 
+              "chiGamma", " ", RowBox[{"phiGamma", "[", "u0", "]"}]}]}], 
+          "]"}]}], ";", RowBox[{"Association", "[", 
+        RowBox[{RowBox[{"\"G_1 final\"", "\[Rule]", "paperG1"}], ",", 
+          RowBox[{"\"G_2 final\"", "\[Rule]", "paperG2"}], ",", 
+          RowBox[{"\"component assembly residual\"", "\[Rule]", 
+            "paperComponentAssemblyResidual"}], ",", 
           RowBox[{"\"theta=Pi/2 Colangelo residual\"", "\[Rule]", 
             "paperPureAxialResidual"}], ",", 
           RowBox[{"\"chi-convention residual\"", "\[Rule]", 
             "chiConventionResidual"}]}], "]"}]}]], "Input"], 
-  Cell["12. Exact check summary", "Section"], 
+  Cell["12. Corrected numerical transition evaluation", "Section"], 
+  Cell["This section runs the independent Mathematica numerical \
+implementation of the exact post-double-Borel Rohrwild expressions.  It \
+evaluates the operator-weighted gluonic and electromagnetic convolutions, the \
+complete T_A and T_B component sums, the physical g1 and g2 projections, and \
+the radiative widths.  The ordinary local transition condensate is fixed to \
+zero. The Python table is used only after the Mathematica calculation, as a \
+term-by-term regression comparison.", "Text"], 
+  Cell[BoxData[RowBox[{RowBox[{"notebookPaperDir", "=", 
+        RowBox[{"Quiet", "[", RowBox[{"Check", "[", 
+            RowBox[{RowBox[{"ParentDirectory", "[", RowBox[
+                 {"NotebookDirectory", "[", "]"}], "]"}], ",", 
+              RowBox[{"DirectoryName", "[", RowBox[{"DirectoryName", "[", 
+                  "$InputFileName", "]"}], "]"}]}], "]"}], "]"}]}], ";", 
+      RowBox[{"If", "[", RowBox[{RowBox[{"!", RowBox[{"DirectoryQ", "[", 
+              "notebookPaperDir", "]"}]}], ",", RowBox[{"notebookPaperDir", 
+            "=", RowBox[{"DirectoryName", "[", RowBox[{"DirectoryName", "[", 
+                "$InputFileName", "]"}], "]"}]}]}], "]"}], ";", 
+      RowBox[{"wolframKernelPath", "=", 
+        "\"/Applications/Wolfram.app/Contents/MacOS/WolframKernel\""}], ";", 
+      RowBox[{"numericalScriptPath", "=", RowBox[{"FileNameJoin", "[", 
+          RowBox[{"{", RowBox[{"notebookPaperDir", ",", "\"scripts\"", ",", 
+              "\"mathematica_corrected_transition_numerics.wl\""}], "}"}], 
+          "]"}]}], ";", RowBox[{"numericalRun", "=", 
+        RowBox[{"RunProcess", "[", RowBox[
+           {RowBox[{"{", RowBox[{"wolframKernelPath", ",", "\"-noinit\"", 
+                ",", "\"-noprompt\"", ",", "\"-script\"", ",", 
+                "numericalScriptPath"}], "}"}], ",", "All", ",", 
+            RowBox[{"ProcessDirectory", "\[Rule]", "notebookPaperDir"}]}], 
+          "]"}]}], ";", RowBox[{"Association", "[", 
+        RowBox[{RowBox[{"\"exit code\"", "\[Rule]", 
+            RowBox[{"numericalRun", "[", "\"ExitCode\"", "]"}]}], ",", 
+          RowBox[{"\"script\"", "\[Rule]", "numericalScriptPath"}], ",", 
+          RowBox[{"\"local transition condensate\"", "\[Rule]", 
+            "\"excluded\""}]}], "]"}]}]], "Input"], 
+  Cell[BoxData[RowBox[{RowBox[{RowBox[{"parseNumericText", "[", 
+          RowBox[{"value_", "?", "NumericQ"}], "]"}], ":=", 
+        RowBox[{"N", "[", RowBox[{"value", ",", "17"}], "]"}]}], ";", 
+      RowBox[{RowBox[{"parseNumericText", "[", "value_String", "]"}], ":=", 
+        RowBox[{"N", "[", RowBox[{RowBox[{"ToExpression", "[", 
+              RowBox[{"StringReplace", "[", RowBox[{"value", ",", 
+                  RowBox[{"{", RowBox[{RowBox[{"\"e+\"", "\[Rule]", 
+                        "\"*^\""}], ",", RowBox[{"\"e-\"", "\[Rule]", 
+                        "\"*^-\""}]}], "}"}]}], "]"}], "]"}], ",", "17"}], 
+          "]"}]}], ";", RowBox[{"mathematicaCentralPath", "=", 
+        RowBox[{"FileNameJoin", "[", RowBox[{"{", RowBox[{"notebookPaperDir", 
+              ",", "\"outputs\"", ",", 
+              "\"corrected_transition_central_mathematica.csv\""}], "}"}], 
+          "]"}]}], ";", RowBox[{"mathematicaCentralRows", "=", 
+        RowBox[{"Import", "[", RowBox[{"mathematicaCentralPath", ",", 
+            "\"CSV\""}], "]"}]}], ";", RowBox[{"mathematicaCentral", "=", 
+        RowBox[{"Association", "[", RowBox[
+           {RowBox[{"(", RowBox[{RowBox[{RowBox[{"#1", 
+                    "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+                  "\[Rule]", RowBox[{"parseNumericText", "[", RowBox[
+                     {"#1", "\[LeftDoubleBracket]", "2", 
+                      "\[RightDoubleBracket]"}], "]"}]}], "&"}], ")"}], "/@", 
+            RowBox[{"Rest", "[", "mathematicaCentralRows", "]"}]}], "]"}]}], 
+      ";", RowBox[{"KeyTake", "[", RowBox[{"mathematicaCentral", ",", 
+          RowBox[{"{", RowBox[{"\"convolution.J_g_sigma\"", ",", 
+              "\"convolution.J_g_xgamma\"", ",", "\"convolution.J_g_axial\"", 
+              ",", "\"convolution.J_em_axial\"", ",", 
+              "\"convolution.J_em_tensor_base\"", ",", 
+              "\"convolution.L_T4gamma\"", ",", 
+              "\"convolution.Lprime_T4gamma\""}], "}"}]}], "]"}]}]], 
+   "Input"], Cell[BoxData[RowBox[{"KeyTake", "[", 
+      RowBox[{"mathematicaCentral", ",", 
+        RowBox[{"{", RowBox[{"\"Ds.T_A_pert\"", ",", "\"Ds.T_A_tw2\"", ",", 
+            "\"Ds.T_A_tw3\"", ",", "\"Ds.T_A_tw4\"", ",", "\"Ds.T_A_3p_g\"", 
+            ",", "\"Ds.T_A_3p_gamma\"", ",", "\"Ds.T_A\"", ",", 
+            "\"Ds.T_B_pert\"", ",", "\"Ds.T_B_tw2\"", ",", "\"Ds.T_B_tw3\"", 
+            ",", "\"Ds.T_B_tw4\"", ",", "\"Ds.T_B_3p_g\"", ",", 
+            "\"Ds.T_B_3p_gamma\"", ",", "\"Ds.T_B\""}], "}"}]}], "]"}]], 
+   "Input"], Cell[BoxData[RowBox[{"KeyTake", "[", 
+      RowBox[{"mathematicaCentral", ",", 
+        RowBox[{"{", RowBox[{"\"Ds.g_1_A\"", ",", "\"Ds.g_1_B\"", ",", 
+            "\"Ds.g_1\"", ",", "\"Ds.Gamma_1_keV\"", ",", "\"Ds.g_2_A\"", 
+            ",", "\"Ds.g_2_B\"", ",", "\"Ds.g_2\"", ",", 
+            "\"Ds.Gamma_2_keV\"", ",", "\"Bs_low.f1\"", ",", "\"Bs_low.f2\"", 
+            ",", "\"Bs_low.g_1\"", ",", "\"Bs_low.Gamma_1_keV\"", ",", 
+            "\"Bs_high.f1\"", ",", "\"Bs_high.f2\"", ",", "\"Bs_high.g_2\"", 
+            ",", "\"Bs_high.Gamma_2_keV\""}], "}"}]}], "]"}]], "Input"], 
+  Cell[BoxData[RowBox[{RowBox[{"comparisonPath", "=", 
+        RowBox[{"FileNameJoin", "[", RowBox[{"{", RowBox[{"notebookPaperDir", 
+              ",", "\"outputs\"", ",", 
+              "\"corrected_transition_python_mathematica_comparison.csv\""}], 
+            "}"}], "]"}]}], ";", RowBox[{"comparisonRows", "=", 
+        RowBox[{"Import", "[", RowBox[{"comparisonPath", ",", "\"CSV\""}], 
+          "]"}]}], ";", RowBox[{"comparisonAbsoluteDifferences", "=", 
+        RowBox[{"parseNumericText", "/@", RowBox[
+           {RowBox[{"Rest", "[", "comparisonRows", "]"}], 
+            "\[LeftDoubleBracket]", RowBox[{"All", ",", "4"}], 
+            "\[RightDoubleBracket]"}]}]}], ";", 
+      RowBox[{"comparisonPassed", "=", RowBox[{"And", "@@", 
+          RowBox[{RowBox[{"(", RowBox[{RowBox[{RowBox[{"ToString", "[", "#1", 
+                    "]"}], "\[Equal]", "\"1\""}], "&"}], ")"}], "/@", 
+            RowBox[{RowBox[{"Rest", "[", "comparisonRows", "]"}], 
+              "\[LeftDoubleBracket]", RowBox[{"All", ",", "6"}], 
+              "\[RightDoubleBracket]"}]}]}]}], ";", 
+      RowBox[{"numericalComparisonStatus", "=", 
+        RowBox[{"Association", "[", RowBox[{RowBox[{"\"common quantities\"", 
+              "\[Rule]", RowBox[{"Length", "[", 
+                "comparisonAbsoluteDifferences", "]"}]}], ",", 
+            RowBox[{"\"largest absolute difference\"", "\[Rule]", 
+              RowBox[{"Max", "[", "comparisonAbsoluteDifferences", "]"}]}], 
+            ",", RowBox[
+             {"\"all rows pass 1e-8 absolute-or-relative tolerance\"", 
+              "\[Rule]", "comparisonPassed"}]}], "]"}]}], ";", 
+      "numericalComparisonStatus"}]], "Input"], 
+  Cell["13. Exact check summary", "Section"], 
   Cell[BoxData[RowBox[{RowBox[{"checkResiduals", "=", 
         RowBox[{"Association", "[", RowBox[
            {RowBox[{"\"tensor-current commutator\"", "\[Rule]", 
@@ -1308,16 +2097,19 @@ spectral and condensate reductions are complete.", "Text"],
             RowBox[{"\"pure-A decay constant\"", "\[Rule]", 
               "pureAxialDecayConstantResidual"}], ",", 
             RowBox[{"\"Ds f1-anchor closure\"", "\[Rule]", 
-              "rhoFromF1Residual"}], ",", RowBox[{"\"Bs Pi12=0 closure\"", 
-              "\[Rule]", "rhoDiagResidual"}], ",", 
-            RowBox[{"\"Colangelo formula limit\"", "\[Rule]", 
+              "rhoFromF1Residual"}], ",", RowBox[
+             {"\"legacy Bs Pi12=0 closure diagnostic\"", "\[Rule]", 
+              "rhoDiagResidual"}], ",", RowBox[
+             {"\"Colangelo formula limit\"", "\[Rule]", 
               "colangeloFormulaResidual"}], ",", RowBox[{"\"pure-A width\"", 
               "\[Rule]", "pureAxialWidthResidual"}], ",", 
             RowBox[{"\"axial OPE component assembly\"", "\[Rule]", 
               "axialOPEAssemblyResidual"}], ",", RowBox[
              {"\"tensor OPE component assembly\"", "\[Rule]", 
               "tensorOPEAssemblyResidual"}], ",", 
-            RowBox[{"\"mixed coupling component assembly\"", "\[Rule]", 
+            RowBox[{"\"three-particle operator assembly\"", "\[Rule]", 
+              "threeParticleResiduals"}], ",", RowBox[
+             {"\"mixed coupling component assembly\"", "\[Rule]", 
               "paperComponentAssemblyResidual"}], ",", 
             RowBox[{"\"full axial OPE pure-A limit\"", "\[Rule]", 
               "paperPureAxialResidual"}], ",", RowBox[

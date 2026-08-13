@@ -56,9 +56,13 @@ traceSigma[current_, basis_] :=
 
 traceXGamma[current_, basis_] :=
   (DiracSimplify[
-     DiracTrace[current[mu] . numQ[k] . GA[b] . gammaP[] . basis],
+     DiracTrace[current[mu] . GA[b] . gammaP[] . basis],
      DiracSubstitute67 -> True
    ] FV[x, a]) /. routingRules;
+
+(* The x_alpha F^{alpha beta} gamma_beta background-field term has no
+   (slash k + m_Q) numerator.  The numerator belongs only to the separate
+   sigma_{alpha beta}/(m_Q^2-k^2)^2 term. *)
 
 e1Tensor = FV[p, nu] FV[q, mu] - SP[p, q] MT[mu, nu];
 e1Projector = e1Tensor/(2 SP[p, q]^2);

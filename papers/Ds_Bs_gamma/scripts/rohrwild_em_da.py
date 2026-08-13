@@ -1,4 +1,4 @@
-"""Rohrwild electromagnetic three-particle photon-DA contribution.
+"""Rohrwild electromagnetic three-particle photon-DA diagnostic.
 
 This module contains the ``S_gamma,T4_gamma`` sector generated when the
 external photon is inserted in the heavy-quark propagator.  It is the
@@ -6,7 +6,17 @@ nonlocal background-field replacement for the standalone heavy-charge local
 condensate term used in the Colangelo benchmark.  The two prescriptions are
 alternatives and must never be summed.
 
-All formulas below use the symmetric double-Borel choice ``u0 = 1/2`` and the
+The raw current kernels are correct, but the numerical functions below still
+use the legacy replacement ``p^2=m_P^2`` and
+``p.q=(m_A^2-m_P^2)/2`` inside the theoretical numerator.  That replacement
+belongs only to the isolated phenomenological pole.  The functions are kept
+temporarily for reproducibility of earlier output tables and must not be used
+as exact post-Borel QCD expressions.  The off-shell Borel identities needed
+for the replacement calculation are documented in
+``notes/DsBs_gamma_Mathematica_derivation.tex``.
+
+All legacy diagnostics below use the symmetric double-Borel choice
+``u0 = 1/2`` and the
 Rohrwild source convention
 
     S_gamma = 60 alpha_g^2 (alpha_q + alpha_qbar)
@@ -45,6 +55,10 @@ SUPPORT_NOTE = (
     "P[T4gamma] uses the double-Borel support alpha_qbar>=1/2 in the "
     "third appendix integral; the printed zero lower limit diverges"
 )
+KINEMATIC_STATUS = (
+    "LEGACY DIAGNOSTIC: pole masses were inserted in a QCD-side numerator; "
+    "off-shell double-Borel reduction pending"
+)
 
 
 def continuum_factor(M2: float, s0: float, mQ: float) -> float:
@@ -53,11 +67,12 @@ def continuum_factor(M2: float, s0: float, mQ: float) -> float:
 
 
 def axial_em_qcd(M2: float, s0: float, inputs: dict[str, float]) -> dict[str, float | str]:
-    """Return the nonlocal electromagnetic-DA OPE term for current J_A.
+    """Return the legacy electromagnetic-DA diagnostic for current J_A.
 
     The current-specific trace gives ``(1-2u) S_gamma - T4_gamma`` for
     the direct term.  At u0=1/2 both direct integrals vanish by antisymmetry,
-    and only the derivative P-functional survives.
+    and only the derivative P-functional survives.  The coefficient multiplying
+    that functional still uses the withdrawn pole-mass shortcut.
     """
     mQ = inputs["mc"]
     mA = inputs["m_ds1"]
@@ -76,6 +91,7 @@ def axial_em_qcd(M2: float, s0: float, inputs: dict[str, float]) -> dict[str, fl
         "em_continuum_factor": delta_exp,
         "em_qcd": qcd,
         "em_support_note": SUPPORT_NOTE,
+        "em_kinematic_status": KINEMATIC_STATUS,
     }
 
 
@@ -86,9 +102,9 @@ def tensor_em_qcd(
     *,
     u0: float = U0,
 ) -> dict[str, float | str]:
-    """Return the nonlocal electromagnetic-DA OPE term for current J_B.
+    """Return the legacy electromagnetic-DA diagnostic for current J_B.
 
-    The tensor numerator is reduced with the same physical-residue
+    The tensor numerator was reduced with the former physical-residue
     prescription used for the other J_B x-dependent kernels in this project:
     p^2=m_P^2, p.q=(m_A^2-m_P^2)/2 at the u0 Borel saddle.  For u0=1/2 the
     resulting dimensionless kernel is
@@ -96,8 +112,9 @@ def tensor_em_qcd(
       (r0-rS) 25/16 - rT 5/16
       + 2 r0 (m_P^2-m_A^2)/M2 P[T4gamma].
 
-    This is a specified numerator prescription, not an independent local
-    condensate insertion.
+    It is not an independent local-condensate insertion, but it is also not a
+    valid QCD-side Borel transformation.  Keep it only to reproduce legacy
+    tables until the off-shell reduction is complete.
     """
     if not math.isclose(u0, U0, rel_tol=0.0, abs_tol=1.0e-14):
         raise NotImplementedError("tensor_em_qcd is derived only for u0=1/2")
@@ -129,7 +146,8 @@ def tensor_em_qcd(
         "em_continuum_factor": delta_exp,
         "em_qcd": qcd,
         "em_support_note": SUPPORT_NOTE,
-        "em_tensor_numerator_prescription": "p2=mP2,pq=(mA2-mP2)/2,u0=1/2",
+        "em_kinematic_status": KINEMATIC_STATUS,
+        "em_tensor_numerator_prescription": "WITHDRAWN: p2=mP2,pq=(mA2-mP2)/2,u0=1/2",
     }
 
 

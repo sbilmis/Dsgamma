@@ -33,15 +33,13 @@ import matplotlib.pyplot as plt
 
 from final_stage2_uncertainty_scan import (
     clipped_normal,
-    matched_f1_integral,
     precompute_f1_basis,
     set_photon_shape_params,
 )
 from stage1_axial_g1_baseline import central_inputs
-from stage1_tensor_gb_hard_candidate import hard_tensor_gb
-from stage1_tensor_gb_soft2p_estimate import gb_soft_two_particle, width_keV
-from stage2_axial_g1_three_particle import F1_integral, g1_stage2
-from stage2_tensor_gb_three_particle_estimate import gb_em_da, gb_three_particle_from_integral
+from stage1_tensor_gb_soft2p_estimate import width_keV
+from stage2_axial_g1_three_particle import F1_integral
+from rohrwild_transition_exact import precompute_convolutions, transition_invariants
 
 
 N_POINTS = 500
@@ -109,6 +107,14 @@ def central_inputs_for_scenario(scenario):
 
 
 def evaluate(vals, M2, s0_root, theta_deg, f1_axial_total, f1_basis):
+    """Evaluate the basis-current diagnostic with corrected invariants.
+
+    The last two arguments are retained for compatibility with the historical
+    scan API.  The exact three-particle convolutions are evaluated directly,
+    so neither legacy matched-ratio input enters the result.
+    """
+
+    del f1_axial_total, f1_basis
     set_photon_shape_params(vals["omegaA"], vals["omegaV"])
     inputs = dict(vals)
     m2536 = inputs.pop("m_ds1_2536")
@@ -119,15 +125,28 @@ def evaluate(vals, M2, s0_root, theta_deg, f1_axial_total, f1_basis):
 
     s0 = s0_root * s0_root
     theta = math.radians(theta_deg)
-    axial = g1_stage2(M2, s0, inputs, f1_axial_total)
-    GA = axial["g1_stage2_GeV_inv"]
     fB = fT * inputs["m_ds1"] / (inputs["mc"] + inputs["ms"])
-    GB_hard, _ = hard_tensor_gb(M2, s0, inputs, fB)
-    GB_soft = gb_soft_two_particle(axial, inputs, fB)
-    f1_tensor = matched_f1_integral(inputs, f1_basis)
-    GB_3p = gb_three_particle_from_integral(axial, inputs, fB, f1_tensor)
-    GB_em, _ = gb_em_da(axial, inputs, fB)
-    GB = GB_hard + GB_soft + GB_3p + GB_em
+    invariants = transition_invariants(
+        M2,
+        s0,
+        inputs,
+        convolutions=precompute_convolutions(),
+    )
+    prefactor_common = (
+        math.exp((inputs["m_ds1"] ** 2 + inputs["m_ds"] ** 2) / (2.0 * M2))
+        * (inputs["mc"] + inputs["ms"])
+        / (inputs["m_ds1"] * inputs["m_ds"] ** 2 * inputs["f_ds"])
+    )
+    GA = prefactor_common * invariants["T_A"] / inputs["f_ds1"]
+    GB = prefactor_common * invariants["T_B"] / fB
+    GB_hard = prefactor_common * invariants["T_B_pert"] / fB
+    GB_soft = (
+        prefactor_common
+        * (invariants["T_B_tw2"] + invariants["T_B_tw3"] + invariants["T_B_tw4"])
+        / fB
+    )
+    GB_3p = prefactor_common * invariants["T_B_3p_g"] / fB
+    GB_em = prefactor_common * invariants["T_B_3p_gamma"] / fB
     G2460 = math.sin(theta) * GA + math.cos(theta) * GB
     G2536 = math.cos(theta) * GA - math.sin(theta) * GB
     return {
@@ -140,6 +159,9 @@ def evaluate(vals, M2, s0_root, theta_deg, f1_axial_total, f1_basis):
         "GB_soft2p": GB_soft,
         "GB_3p": GB_3p,
         "GB_em": GB_em,
+        "T_A": invariants["T_A"],
+        "T_B": invariants["T_B"],
+        "transition_scheme": invariants["transition_scheme"],
         "G2460": G2460,
         "G2536": G2536,
         "Gamma2460_keV": width_keV(inputs["m_ds1"], inputs["m_ds"], G2460),

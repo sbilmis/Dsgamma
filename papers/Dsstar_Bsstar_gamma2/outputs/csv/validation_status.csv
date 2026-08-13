@@ -1,0 +1,16 @@
+gate,status,evidence
+rho_AB_equals_rho_BA,checked,identical function and symbolic WL equality
+spectral_matrix_positive,checked,analytic determinant is nonnegative above threshold
+mass_dimensions,checked,rho dim 2; Borel matrix and T dim 4; g dimensionless
+physical_threshold,checked,all dispersive integrals start at (mQ+ms)^2
+Ward_identity,checked,epsilon structure vanishes under epsilon_gamma -> q
+no_local_transition_condensate,checked,diagnostic term excluded from quoted_total_A/B
+two_point_local_d3_d5,checked,explicit matrices retained
+pure_A_limit,checked,theta=90 degrees for lower state
+pure_B_limit,checked,theta=0 degrees for lower state
+equal_Borel_limit,checked,M1^2=M2^2=2M^2 gives u0=1/2
+zero_ms_threshold_limit,checked,lambda and density reduce smoothly
+charge_switch,checked,hard density changes through eQ/es only
+python_mathematica_regression,checked,42/42 entries pass; max material rel=9.128e-07; max abs=2.425e-06
+subleading_tensor_kernels,truncation,not retained; 15% charm and 5% bottom correlated uncertainty assigned
+alpha_s_transition,truncation,not retained

@@ -18,7 +18,7 @@
 
 ClearAll[
   mu, nu, alpha, beta, rho, lambda, a, b, p, q, P, k, x, mQ, ms,
-  gammaA, gammaB, gammaP, numQ, traceXGammaG, e1Tensor, e1Projector,
+  gammaA, gammaB, gammaP, traceXGammaG, e1Tensor, e1Projector,
   projectE1, photonG, SStruct, StStruct, T1Struct, T2Struct, T3Struct,
   T4Struct, trAS, trASt, trAT, trBS, trBSt, trBT
 ];
@@ -27,13 +27,11 @@ gammaA[mu_] := GA[mu] . GA[5];
 gammaB[mu_] :=
   I/(mQ + ms) FV[P, alpha] DiracSigma[GA[mu], GA[alpha]] . GA[5];
 gammaP[] := I GA[5];
-numQ[mom_] := GS[mom] + mQ;
 
 traceXGammaG[current_, basis_] :=
   DiracSimplify[
     DiracTrace[
       current[mu] .
-      numQ[k] .
       GA[b] .
       gammaP[] .
       basis
@@ -49,6 +47,14 @@ traceXGammaG[current_, basis_] :=
     Pair[LorentzIndex[rho], Momentum[P]] -> Pair[LorentzIndex[rho], Momentum[p]] + Pair[LorentzIndex[rho], Momentum[q]],
     Pair[LorentzIndex[lambda], Momentum[P]] -> Pair[LorentzIndex[lambda], Momentum[p]] + Pair[LorentzIndex[lambda], Momentum[q]]
   };
+
+(* The x_alpha G^{alpha beta} gamma_beta term of the heavy propagator is
+
+     v x_alpha G^{alpha beta}(v x) gamma_beta/(m_Q^2-k^2).
+
+   Unlike the sigma_{alpha beta} term, it has no (slash k + m_Q) numerator.
+   Keeping that numerator here would double-count the free propagator and
+   produces dimensionally inconsistent post-Borel kernels. *)
 
 e1Tensor = FV[p, nu] FV[q, mu] - SP[p, q] MT[mu, nu];
 e1Projector = e1Tensor/(2 SP[p, q]^2);

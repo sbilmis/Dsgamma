@@ -50,19 +50,22 @@ reduceKernel[expr_] := Module[{ck, cp, cq, fk, fp, fq},
   ]
 ];
 
-(* Raw step7 kernels with Pair[Momentum[p],Momentum[q]] -> pq, etc. *)
-AS = (-4 I mQ qx)/pq;
-AT1 = (-24 mQ qx)/pq;
-AT2 = (-8 mQ qx)/pq;
-AT3 = (8 mQ qx)/pq;
+(* Corrected raw step7 kernels with Pair[Momentum[p],Momentum[q]] -> pq.
+   The x_alpha G^{alpha beta} gamma_beta propagator term has no
+   (slash k + m_Q) numerator.  Consequently the A kernels contain no m_Q,
+   while all B-current traces of this propagator term vanish. *)
+AS = (-4 I qx)/pq;
+AT1 = (-24 qx)/pq;
+AT2 = (-8 qx)/pq;
+AT3 = (8 qx)/pq;
 AT4 = 0;
 
-BS = (-2 I) (kx pq^2 - kq pq px + kq p2 qx + kp pq qx + 2 kq pq qx)/((mQ + ms) pq^2);
-BSt = 0; (* epsilon structure handled separately; not part of E1 scalar channel. *)
-BT1 = -4 (kx pq^2 - kq pq px + kq p2 qx + 5 kp pq qx + 4 kq pq qx)/((mQ + ms) pq^2);
-BT2 = 4 (3 kx pq^2 - 3 kq pq px - kq p2 qx - kp pq qx - 4 kq pq qx)/((mQ + ms) pq^2);
-BT3 = 8 (kx pq - kq px + kp qx)/((mQ + ms) pq);
-BT4 = -4 (kx pq^2 - kq pq px - kq p2 qx + kp pq qx - 2 kq pq qx)/((mQ + ms) pq^2);
+BS = 0;
+BSt = 0;
+BT1 = 0;
+BT2 = 0;
+BT3 = 0;
+BT4 = 0;
 
 saddleRules = {
   kq -> pq,

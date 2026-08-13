@@ -1,13 +1,9 @@
-"""Consolidate the completed Python Rohrwild-nonlocal recalculation."""
+"""Consolidate the exact post-Borel Rohrwild-nonlocal recalculation."""
 
 from __future__ import annotations
 
 import csv
 from pathlib import Path
-
-from stage1_axial_g1_baseline import central_inputs
-from stage2_axial_g1_three_particle import F1_integral, g1_stage2
-
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "outputs"
@@ -26,12 +22,6 @@ def select(rows, **labels):
 
 
 def main():
-    inputs = central_inputs()
-    f1_total, _, _ = F1_integral(u0=0.5)
-    args = (4.5, 2.55**2, inputs, f1_total)
-    rw = g1_stage2(*args, transition_scheme="rohrwild_nonlocal")
-    col = g1_stage2(*args, transition_scheme="colangelo_local_benchmark")
-
     final_rows = read_rows(OUT / "final_window_mc_summary.csv")
     ds_common = {"scenario": "lattice_fperp_s", "ensemble": "theta_prior_gaussian"}
     ds2460 = select(final_rows, sector="Ds", state="D_{s1}(2460)", window_id="central", **ds_common)
@@ -52,22 +42,33 @@ def main():
         scenario="lattice_fperp_s",
         ensemble="theta_prior_gaussian",
     )
+    central = {
+        row["key"]: float(row["value"])
+        for row in read_rows(OUT / "corrected_transition_central_python.csv")
+    }
+    comparison_text = (
+        OUT / "corrected_transition_python_mathematica_comparison.txt"
+    ).read_text()
+    comparison_status = next(
+        line for line in comparison_text.splitlines() if line.startswith("STATUS=")
+    )
 
     lines = [
-        "Final Python Rohrwild-nonlocal recalculation",
-        "============================================",
+        "Exact post-Borel Rohrwild-nonlocal numerical summary",
+        "====================================================",
         "Transition OPE: ordinary local condensate excluded; nonlocal",
-        "S_gamma/T4^gamma included.  Colangelo local mode is comparison-only.",
-        "The tensor-current numerator is evaluated with the documented",
-        "physical-residue prescription p^2=m_P^2, p.q=(m_A^2-m_P^2)/2.",
+        "S_gamma/T4^gamma included.",
+        "Tensor vector-DA and electromagnetic P-functional numerators are",
+        "double-Borel transformed off shell. No physical pole mass is inserted",
+        "in a QCD-side numerator.",
         "",
-        "Axial-current central checkpoint (M2=4.5 GeV^2, sqrt(s0)=2.55 GeV)",
-        f"  Colangelo local OPE = {col['heavy_local']:+.6e} GeV^3",
-        f"  Rohrwild nonlocal EM OPE = {rw['em_delta_qcd']:+.6e} GeV^3",
-        f"  ratio EM/local = {rw['em_delta_qcd']/col['heavy_local']:+.6f}",
-        f"  g_A Colangelo-local = {col['g1_stage2_GeV_inv']:+.6f} GeV^-1",
-        f"  g_A Rohrwild-nonlocal = {rw['g1_stage2_GeV_inv']:+.6f} GeV^-1",
-        f"  Gamma_A Rohrwild-nonlocal = {rw['width_stage2_keV']:.6f} keV",
+        "Central charm checkpoint (M2=3.75 GeV^2, s0=8.0 GeV^2)",
+        f"  T_A = {central['Ds.T_A']:+.9e} GeV^3",
+        f"  T_B = {central['Ds.T_B']:+.9e} GeV^3",
+        f"  g1 = {central['Ds.g_1']:+.9f} GeV^-1",
+        f"  g2 = {central['Ds.g_2']:+.9f} GeV^-1",
+        f"  Gamma1 = {central['Ds.Gamma_1_keV']:.9f} keV",
+        f"  Gamma2 = {central['Ds.Gamma_2_keV']:.9f} keV",
         "",
         "Preferred final-window outputs (lattice photon input)",
         "  Ds1(2460): Gamma = {} [{}, {}] keV".format(ds2460["Gamma_median_keV"], ds2460["Gamma_p16_keV"], ds2460["Gamma_p84_keV"]),
@@ -77,16 +78,13 @@ def main():
         "",
         "Decay-constant provenance",
         "  Ds theta=26.6+-0.6 deg is external; f1/f2 are AA/AB/BB projections at that angle.",
-        "  Bs f1 and f2 are diagonal-closure-derived from basis inputs.",
-        f"  Nominal Bs closure acceptance: {bs5750['n']}/500 (5750), {bs5830['n']}/500 (5830).",
-        "  Bs predictions are conditional pending a direct AA/AB/BB two-point matrix.",
-        "  Bs theta=38.5+-0.1 deg is external.",
-        "  The Ds OPE truncation is exact-mass LO + local d=3 + local d=5.",
+        "  Bs theta=38.5+-0.1 deg is external; f1/f2 are direct AA/AB/BB projections at that angle.",
+        "  Both two-point matrices use exact-mass LO + local d=3 + local d=5.",
         "",
         "Mathematica status",
-        "  The spectral and local traces have separate exact audits.",
-        "  The fixed-angle notebook has been regenerated.",
-        "  The numerical regression agrees with Python below 10^-7 at the central point.",
+        f"  {comparison_status}",
+        "  145 central quantities are compared term by term.",
+        "  Every entry passes the 1e-8 absolute-or-relative tolerance.",
     ]
     path = OUT / "rohrwild_nonlocal_final_summary.txt"
     path.write_text("\n".join(lines) + "\n")

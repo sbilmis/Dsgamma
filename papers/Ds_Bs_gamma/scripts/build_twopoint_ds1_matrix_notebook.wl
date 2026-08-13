@@ -148,7 +148,55 @@ notebook = Notebook[
     ]],
     textCell["This cell must return 0 before numerical inputs are assigned."],
 
-    sectionCell["4. Numerical inputs"],
+    sectionCell["4. Fully explicit physical-pole formulas for f1 and f2"],
+    textCell[
+      "The two states use separate thresholds s01 and s02. The following " <>
+      "expressions are the formulas actually evaluated: first rotate the full " <>
+      "spectral and local matrices, then apply the pole normalization. No f1, " <>
+      "f2, fA, fB, or overlap parameter appears on the QCD side."
+    ],
+    inputCell[HoldComplete[
+      ClearAll[
+        s01, s02, mass1, mass2, v1, v2, rho11, rho22,
+        local11, local22, pi1Formula, pi2Formula, f1Formula, f2Formula
+      ];
+      v1 = {Sin[theta], Cos[theta]};
+      v2 = {Cos[theta], -Sin[theta]};
+      rho11[s_] := FullSimplify[
+        v1 . rhoMatrix[s] . v1,
+        Assumptions -> Element[theta, Reals]
+      ];
+      rho22[s_] := FullSimplify[
+        v2 . rhoMatrix[s] . v2,
+        Assumptions -> Element[theta, Reals]
+      ];
+      local11[M2_] := FullSimplify[
+        v1 . localMatrix[M2] . v1,
+        Assumptions -> Element[theta, Reals]
+      ];
+      local22[M2_] := FullSimplify[
+        v2 . localMatrix[M2] . v2,
+        Assumptions -> Element[theta, Reals]
+      ];
+      pi1Formula =
+        Inactive[Integrate][Exp[-s/M2] rho11[s],
+          {s, (mc + ms)^2, s01}] + local11[M2];
+      pi2Formula =
+        Inactive[Integrate][Exp[-s/M2] rho22[s],
+          {s, (mc + ms)^2, s02}] + local22[M2];
+      f1Formula = Exp[mass1^2/(2 M2)]/mass1 Sqrt[pi1Formula];
+      f2Formula = Exp[mass2^2/(2 M2)]/mass2 Sqrt[pi2Formula];
+      <|
+        "rho11(s), fully substituted" -> rho11[s],
+        "rho22(s), fully substituted" -> rho22[s],
+        "Pi1(M2,s01,theta)" -> pi1Formula,
+        "Pi2(M2,s02,theta)" -> pi2Formula,
+        "f1(M2,s01,theta)" -> f1Formula,
+        "f2(M2,s02,theta)" -> f2Formula
+      |>
+    ]],
+
+    sectionCell["5. Numerical inputs"],
     inputCell[HoldComplete[
       mc = 1.27;
       ms = 0.093;
@@ -165,7 +213,7 @@ notebook = Notebook[
         "m1_GeV" -> m1, "m2_GeV" -> m2|>
     ]],
 
-    sectionCell["5. Borel matrix and continuum subtraction"],
+    sectionCell["6. Borel matrix and continuum subtraction"],
     textCell[
       "The interpolated cumulative trapezoid is a fast numerical realization " <>
       "of Integrate[rho_ij(s) Exp[-s/M2], {s, threshold, s0}]. Clear the " <>
@@ -194,7 +242,7 @@ notebook = Notebook[
       MatrixForm[opeMatrix[2.35, 10.0]]
     ]],
 
-    sectionCell["6. External mixing angle, mass matching, and residues"],
+    sectionCell["7. External mixing angle, mass matching, and residues"],
     textCell[
       "The nominal projection uses theta_Ds = 26.6 +/- 0.6 degrees from the " <>
       "dedicated previous QCD-sum-rule study (arXiv:2408.08014v2). The angle " <>
@@ -265,7 +313,7 @@ notebook = Notebook[
       "f1 = 0.4005893 GeV, and f2 = 0.1666704 GeV. Neither residue is externally anchored."
     ],
 
-    sectionCell["7. Python/Mathematica central-point regression"],
+    sectionCell["8. Python/Mathematica central-point regression"],
     inputCell[HoldComplete[
       pythonReference = <|
         "theta_deg" -> 26.6,
@@ -284,7 +332,7 @@ notebook = Notebook[
       "arbitrarily tighter integration comparison."
     ],
 
-    sectionCell["8. Optional full deterministic Borel scan"],
+    sectionCell["9. Optional full deterministic Borel scan"],
     textCell[
       "This cell is deliberately separate because it builds three interpolation " <>
       "tables for every M2 value. It is the Mathematica analogue of the dense " <>
@@ -301,7 +349,7 @@ notebook = Notebook[
          "s01_GeV2", "s02_GeV2", "f1_GeV", "f2_GeV"}]
     ]],
 
-    sectionCell["9. Interpretation"],
+    sectionCell["10. Interpretation"],
     textCell[
       "The Python Monte Carlo samples theta_Ds = 26.6 +/- 0.6 degrees as an " <>
       "external input and gives f1 = 0.4046 [0.3799, 0.4291] GeV and " <>

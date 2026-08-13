@@ -1,0 +1,31 @@
+Explicit post-double-Borel E1 kernels
+=====================================
+
+RAW BOREL MAPS: EQ appears below. Final channel-specific factors are: tw2 -> DeltaEQ=EQ-E0; tw3, tw4 and 3p,g -> EQ; gauge-completion 3p,em -> DeltaEQ.
+
+B[Integral F(a)/D_a^2] = F[a0]/E^(mQ^2/M2)
+B[Integral (p.q) F(a)/D_a^2] = -1/2*(M2*Derivative[1][F][a0])/E^(mQ^2/M2)
+B[Integral p^2 F(a)/D_a^2] = (mQ^2*F[a0] + a0*M2*Derivative[1][F][a0])/E^(mQ^2/M2)
+
+Two-particle vector A:
+(-8*mQ*F[a0])/E^(mQ^2/M2)
+
+Two-particle vector B:
+(-4*((M2 + 2*mQ^2)*F[a0] + (-1 + a0)*M2*Derivative[1][F][a0]))/(E^(mQ^2/M2)*(mQ + ms))
+
+xgamma A kernels:
+S: (-8*F[a0])/E^(mQ^2/M2)
+T1: ((48*I)*F[a0])/E^(mQ^2/M2)
+T2: ((16*I)*F[a0])/E^(mQ^2/M2)
+T3: ((-16*I)*F[a0])/E^(mQ^2/M2)
+T4: 0
+
+xgamma B kernels:
+S: 0
+T1: 0
+T2: 0
+T3: 0
+T4: 0
+
+Closed-form residuals (all must vanish):
+{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}

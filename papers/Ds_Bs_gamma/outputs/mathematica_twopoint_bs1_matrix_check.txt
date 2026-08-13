@@ -1,0 +1,13 @@
+Mathematica direct Bs1 AA/AB/BB two-point cross-check
+======================================================
+STATUS=PASS
+Absolute regression tolerance: 1e-6
+OPE: exact-mass LO perturbative + local d=3 through ms^2 + local d=5.
+theta_Bs=38.5 deg is external; no external f1, f2, fA, fB, or overlap is used.
+
+Central point M2=7.0 GeV^2:
+<|"M2_GeV2" -> 7., "theta_deg" -> 38.50000000000001, "theta_matrix_median_deg" -> 39.49662263542032, "Pi12_normalized_at_s0mix45" -> 0.10355188335249135, "s01_GeV2" -> 44.35, "s02_GeV2" -> 43.025, "mEff1_GeV" -> 5.750198129151992, "mEff2_GeV" -> 5.829108881899915, "f1_GeV" -> 0.5381107285525849, "f2_GeV" -> 0.08887865222421444, "pole_fraction1" -> 0.8047713045950582, "pole_fraction2" -> 0.5561714109879462, "d5_fraction1" -> 0.002945286279337135, "d5_fraction2" -> 0.034757254139044826|>
+
+Mathematica minus Python:
+<|"theta_deg" -> 7.105427357601002*^-15, "theta_matrix_median_deg" -> 3.5420320898538193*^-8, "Pi12_normalized_at_s0mix45" -> 2.352491354495889*^-9, "s01_GeV2" -> 0., "s02_GeV2" -> 0., "mEff1_GeV" -> -8.48007886133928*^-10, "mEff2_GeV" -> 9.189991434510603*^-8, "f1_GeV" -> -8.447415100754085*^-9, "f2_GeV" -> -2.275785560001964*^-9, "pole_fraction1" -> -2.140494181901431*^-8, "pole_fraction2" -> -2.6012053844226557*^-8, "d5_fraction1" -> 8.933713491199313*^-11, "d5_fraction2" -> 1.7390448248111312*^-9|>
+

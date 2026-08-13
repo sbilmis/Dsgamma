@@ -6,14 +6,15 @@ import csv
 import math
 from pathlib import Path
 
-from final_stage2_uncertainty_scan import precompute_f1_basis
 from lattice_photon_normalization_comparison import (
     central_inputs_for_scenario,
-    evaluate,
 )
 from mixing_angle_inputs import THETA_DS_DEG, THETA_HQET_DEG
-from stage1_tensor_gb_soft2p_estimate import width_keV
-from stage2_axial_g1_three_particle import F1_integral
+from rohrwild_transition_exact import (
+    physical_couplings,
+    precompute_convolutions,
+    transition_invariants,
+)
 from twopoint_ds1_matrix_sumrule import (
     Inputs,
     fitted_threshold,
@@ -57,28 +58,33 @@ def main() -> None:
     ]
 
     vals = central_inputs_for_scenario("lattice_fperp_s")
-    f1_axial, _, _ = F1_integral(u0=0.5)
-    f1_basis = precompute_f1_basis()
+    invariants = transition_invariants(
+        TRANSITION_M2,
+        TRANSITION_S0_ROOT**2,
+        vals,
+        convolutions=precompute_convolutions(),
+    )
     rows = []
     for label, theta_deg in angle_cases:
-        basis = evaluate(
-            vals,
-            TRANSITION_M2,
-            TRANSITION_S0_ROOT,
-            theta_deg,
-            f1_axial,
-            f1_basis,
-        )
         f1, f2, s01, s02 = projected_residues(theta_deg)
-        theta = math.radians(theta_deg)
-        f_a = vals["f_ds1"]
-        f_b = vals["fT"] * vals["m_ds1"] / (vals["mc"] + vals["ms"])
-        low_a = math.sin(theta) * f_a * basis["GA"] / f1
-        low_b = math.cos(theta) * f_b * basis["GB"] / f1
-        high_a = math.cos(theta) * f_a * basis["GA"] / f2
-        high_b = -math.sin(theta) * f_b * basis["GB"] / f2
-        g_low = low_a + low_b
-        g_high = high_a + high_b
+        physical = physical_couplings(
+            invariants,
+            theta_deg=theta_deg,
+            m_state_1=vals["m_ds1"],
+            m_state_2=vals["m_ds1_2536"],
+            f_1=f1,
+            f_2=f2,
+            m_p=vals["m_ds"],
+            f_p=vals["f_ds"],
+            m_q=vals["mc"],
+            m_s=vals["ms"],
+        )
+        low_a = physical["g_1_A"]
+        low_b = physical["g_1_B"]
+        high_a = physical["g_2_A"]
+        high_b = physical["g_2_B"]
+        g_low = physical["g_1"]
+        g_high = physical["g_2"]
         rows.append(
             {
                 "case": label,
@@ -87,23 +93,23 @@ def main() -> None:
                 "f2_GeV": f2,
                 "s01_GeV2": s01,
                 "s02_GeV2": s02,
-                "GA_GeV_inv": basis["GA"],
-                "GB_GeV_inv": basis["GB"],
+                "T_A_GeV3": invariants["T_A"],
+                "T_B_GeV3": invariants["T_B"],
                 "G_low_A_component_GeV_inv": low_a,
                 "G_low_B_component_GeV_inv": low_b,
                 "G_low_GeV_inv": g_low,
-                "Gamma_low_keV": width_keV(vals["m_ds1"], vals["m_ds"], g_low),
+                "Gamma_low_keV": physical["Gamma_1_keV"],
                 "G_high_A_component_GeV_inv": high_a,
                 "G_high_B_component_GeV_inv": high_b,
                 "G_high_GeV_inv": g_high,
-                "Gamma_high_keV": width_keV(vals["m_ds1_2536"], vals["m_ds"], g_high),
+                "Gamma_high_keV": physical["Gamma_2_keV"],
                 "low_interference": "constructive" if low_a * low_b > 0.0 else "destructive",
                 "high_interference": "constructive" if high_a * high_b > 0.0 else "destructive",
             }
         )
 
     cancellation_angle = math.degrees(
-        math.atan2(vals["f_ds1"] * rows[0]["GA_GeV_inv"], f_b * rows[0]["GB_GeV_inv"])
+        math.atan2(float(invariants["T_A"]), float(invariants["T_B"]))
     )
     if cancellation_angle < 0.0:
         cancellation_angle += 180.0

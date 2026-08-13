@@ -1,0 +1,143 @@
+(* Clean-room native Mathematica derivation and validation ledger. *)
+ClearAll["Global`*"];
+scriptDir = DirectoryName[$InputFileName];
+projectDir = DirectoryName[scriptDir];
+outputDir = FileNameJoin[{projectDir, "outputs"}];
+notebookDir = FileNameJoin[{projectDir, "notebooks"}];
+If[!DirectoryQ[outputDir], CreateDirectory[outputDir, CreateIntermediateDirectories -> True]];
+If[!DirectoryQ[notebookDir], CreateDirectory[notebookDir, CreateIntermediateDirectories -> True]];
+
+(* Mostly-minus Dirac representation. *)
+z2 = ConstantArray[0, {2, 2}];
+id2 = IdentityMatrix[2];
+g0 = DiagonalMatrix[{1, 1, -1, -1}];
+gSpatial[sig_] := ArrayFlatten[{{z2, sig}, {-sig, z2}}];
+g = {g0, gSpatial[PauliMatrix[1]], gSpatial[PauliMatrix[2]], gSpatial[PauliMatrix[3]]};
+g5 = I g[[1]].g[[2]].g[[3]].g[[4]];
+sigma[mu_, nu_] := I (g[[mu + 1]].g[[nu + 1]] - g[[nu + 1]].g[[mu + 1]])/2;
+diracBar[x_] := g0.ConjugateTranspose[x].g0;
+
+(* Two-body cut in the p' rest frame, relative momentum along z. *)
+kSlash = g[[1]] eQ - g[[4]] kabs;
+lSlash = g[[1]] es + g[[4]] kabs;
+vertexA[i_] := g[[i + 1]].g5;
+vertexB[i_] := I rootS sigma[i, 0].g5/(mQ + ms);
+cutTrace[x_, y_, i_] := Tr[(lSlash - ms IdentityMatrix[4]).x[i].
+  (kSlash + mQ IdentityMatrix[4]).diracBar[y[i]]];
+traceAAraw = FullSimplify[Sum[cutTrace[vertexA, vertexA, i], {i, 1, 3}]/3];
+traceABraw = FullSimplify[Sum[cutTrace[vertexA, vertexB, i], {i, 1, 3}]/3];
+traceBBraw = FullSimplify[Sum[cutTrace[vertexB, vertexB, i], {i, 1, 3}]/3];
+
+lambda = (s - (mQ + ms)^2) (s - (mQ - ms)^2);
+kinRules = {
+  rootS -> Sqrt[s],
+  eQ -> (s + mQ^2 - ms^2)/(2 Sqrt[s]),
+  es -> (s + ms^2 - mQ^2)/(2 Sqrt[s]),
+  kabs^2 -> lambda/(4 s)
+};
+traceAA = Factor[traceAAraw /. kinRules];
+traceAB = Factor[traceABraw /. kinRules];
+traceBB = Factor[traceBBraw /. kinRules];
+
+rhoAA = Sqrt[lambda]/(8 Pi^2) (s - (mQ + ms)^2) ((mQ - ms)^2 + 2 s)/s^2;
+rhoAB = Sqrt[lambda]/(8 Pi^2) 3 (mQ - ms) (s - (mQ + ms)^2)/((mQ + ms) s);
+rhoBA = rhoAB;
+rhoBB = Sqrt[lambda]/(8 Pi^2) (s - (mQ + ms)^2) (s + 2 (mQ - ms)^2)/((mQ + ms)^2 s);
+spectralDeterminant = Factor[rhoAA rhoBB - rhoAB^2];
+symmetryCheck = FullSimplify[rhoAB - rhoBA] === 0;
+
+(* Local terms after the Borel transform. *)
+bigS = mQ + ms;
+expQ = Exp[-mQ^2/M2];
+d3Matrix = ss expQ {{mQ, mQ^2/bigS}, {mQ^2/bigS, mQ^3/bigS^2}};
+msCorrectionAA = ss expQ (-mQ^2 ms/(2 M2) + mQ^3 ms^2/(2 M2^2));
+msVector = {1, mQ/bigS};
+d3msMatrix = msCorrectionAA Outer[Times, msVector, msVector];
+d5Matrix = expQ {
+  {-mixedSS mQ^3/(4 M2^2),
+   -mixedSS/(4 bigS) (mQ^4/M2^2 - mQ^2/M2 - 1)},
+  {-mixedSS/(4 bigS) (mQ^4/M2^2 - mQ^2/M2 - 1),
+   mixedSS/bigS^2 (-mQ^5/(4 M2^2) + mQ^3/(2 M2))}
+};
+
+rotation = {{Sin[theta], Cos[theta]}, {Cos[theta], -Sin[theta]}};
+piBasis = {{piAA, piAB}, {piAB, piBB}};
+piPhysical = Expand[rotation.piBasis.Transpose[rotation]];
+
+(* Ward identity and leading tensor-current reduction. *)
+wardDeterminant = Det[{{eta0, eta1, eta2, eta3}, {xi0, xi1, xi2, xi3},
+  {q0, q1, q2, q3}, {q0, q1, q2, q3}}];
+wardCheck = FullSimplify[wardDeterminant] === 0;
+twist2TraceA = -8 mQ;
+twist2TraceB = -8 k2/(mQ + ms);
+twist2PreBorelRatio = Factor[twist2TraceB/twist2TraceA];
+(* k2/(mQ^2-k2)=mQ^2/(mQ^2-k2)-1; the contact term has zero Borel image. *)
+twist2PostBorelRatio = mQ/(mQ + ms);
+
+formulaAssociation = <|
+  "TraceAA" -> traceAA,
+  "TraceAB" -> traceAB,
+  "TraceBB" -> traceBB,
+  "rhoAA" -> rhoAA,
+  "rhoAB" -> rhoAB,
+  "rhoBA" -> rhoBA,
+  "rhoBB" -> rhoBB,
+  "SpectralDeterminant" -> spectralDeterminant,
+  "d3Matrix" -> d3Matrix,
+  "d3msMatrix" -> d3msMatrix,
+  "d5Matrix" -> d5Matrix,
+  "PhysicalMatrix" -> piPhysical,
+  "Twist2PreBorelRatio" -> twist2PreBorelRatio,
+  "Twist2PostBorelRatio" -> twist2PostBorelRatio
+|>;
+Put[formulaAssociation, FileNameJoin[{outputDir, "analytic_formulas.wl"}]];
+
+reportLines = {
+  "Wolfram Kernel version: " <> ToString[$Version],
+  "rhoAB-rhoBA == 0: " <> ToString[symmetryCheck],
+  "Ward determinant == 0: " <> ToString[wardCheck],
+  "Cut trace AA: " <> ToString[traceAA, InputForm],
+  "Cut trace AB: " <> ToString[traceAB, InputForm],
+  "Cut trace BB: " <> ToString[traceBB, InputForm],
+  "rhoAA: " <> ToString[rhoAA, InputForm],
+  "rhoAB: " <> ToString[rhoAB, InputForm],
+  "rhoBB: " <> ToString[rhoBB, InputForm],
+  "det(rho): " <> ToString[spectralDeterminant, InputForm],
+  "d3 matrix: " <> ToString[d3Matrix, InputForm],
+  "finite-ms d3 matrix: " <> ToString[d3msMatrix, InputForm],
+  "d5 matrix: " <> ToString[d5Matrix, InputForm],
+  "rotated matrix: " <> ToString[piPhysical, InputForm],
+  "twist-2 pre-Borel B/A ratio: " <> ToString[twist2PreBorelRatio, InputForm],
+  "twist-2 post-Borel B/A ratio: " <> ToString[twist2PostBorelRatio, InputForm]
+};
+Export[FileNameJoin[{outputDir, "symbolic_validation.txt"}], StringRiffle[reportLines, "\n"], "Text"];
+
+nb = Notebook[{
+  Cell["Mixed-current Ds1/Bs1 to Ds*/Bs* gamma derivation", "Title"],
+  Cell["This notebook is generated by scripts/symbolic_derivation.wl. It contains no imported Python result.", "Text"],
+  Cell["1. Conventions and currents", "Section"],
+  Cell["Metric (+---), epsilon^0123=+1, p'=p+q, q^2=0. Basis currents: JA=bar(s) gamma_mu gamma5 Q and JB=i bar(s) sigma_mu_nu p'^nu gamma5 Q/(mQ+ms).", "Text"],
+  Cell[BoxData@ToBoxes[{g0, g5}], "Input"],
+  Cell["2. Cut Dirac traces", "Section"],
+  Cell[BoxData@ToBoxes[{traceAA, traceAB, traceBB}], "Output"],
+  Cell["3. Explicit spectral densities", "Section"],
+  Cell[BoxData@ToBoxes[{rhoAA, rhoAB, rhoBB}], "Output"],
+  Cell["The determinant is nonnegative for s >= (mQ+ms)^2.", "Text"],
+  Cell[BoxData@ToBoxes[spectralDeterminant], "Output"],
+  Cell["4. Local d=3 and d=5 Borel matrices", "Section"],
+  Cell[BoxData@ToBoxes[d3Matrix + d3msMatrix + d5Matrix], "Output"],
+  Cell["5. Physical rotation", "Section"],
+  Cell[BoxData@ToBoxes[piPhysical], "Output"],
+  Cell["6. External-photon transition", "Section"],
+  Cell["The retained invariant multiplies i e epsilon(eta,xi*,epsilon*,q). Ordinary local transition condensates are excluded. Hard emission and BBK two-/three-particle DAs through twist four are retained.", "Text"],
+  Cell["For the tensor current the explicit twist-two trace ratio is k^2/[mQ(mQ+ms)]. Rewriting k^2/(mQ^2-k^2)=mQ^2/(mQ^2-k^2)-1 and Borel-transforming removes the contact term, giving mQ/(mQ+ms). This leading-power projection is applied term by term at the declared truncation.", "Text"],
+  Cell[BoxData@ToBoxes[{twist2PreBorelRatio, twist2PostBorelRatio}], "Output"],
+  Cell["7. Ward identity", "Section"],
+  Cell[BoxData@ToBoxes[wardDeterminant], "Output"],
+  Cell["8. Numerical regression", "Section"],
+  Cell["Run scripts/mathematica_regression.wl; its CSV is compared term by term with outputs/csv/python_regression.csv.", "Text"]
+}];
+Put[nb, FileNameJoin[{notebookDir, "Dsstar_Bsstar_gamma2_derivation.nb"}]];
+
+Print[StringRiffle[reportLines, "\n"]];
+Exit[0];

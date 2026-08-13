@@ -1,4 +1,4 @@
-"""Stage-2 tensor-current three-particle DA matched-prescription result.
+"""Legacy Stage-2 tensor-current three-particle DA diagnostic.
 
 The first FeynCalc trace pass for the sigma_{ab} part of the background-gluon
 heavy-quark propagator finds the same trace ratio as the two-particle tensor
@@ -22,7 +22,11 @@ Important limitation:
   x-dependent T3/T4 structures.  The separate x_alpha G^{alpha beta} gamma_beta
   term has been derivative-reduced.  The S,T2,T3 pieces are matched to the
   axial normalization, and the T4 tensor-only residue is normalized relative to
-  the axial T2 unit using its double-pole residue.
+  the axial T2 unit using its double-pole residue.  This implementation then
+  inserts hadronic pole kinematics into QCD-side numerator factors.  That
+  shortcut is withdrawn: before the double Borel transformation p^2 and
+  p'^2 are independent variables.  The numerical output is retained only to
+  reproduce the earlier tables and is not a paper-final tensor prediction.
 """
 
 from __future__ import annotations
@@ -80,7 +84,7 @@ def gb_three_particle_from_integral(axial_stage2_row, inputs, fB, f1_integral):
 
 
 def gb_em_da(axial_stage2_row, inputs, fB):
-    """J_B electromagnetic S_gamma/T4_gamma contribution for the row scheme."""
+    """Legacy J_B electromagnetic diagnostic using the withdrawn shortcut."""
     em = tensor_em_qcd(
         axial_stage2_row["M2"], axial_stage2_row["s0"], inputs
     )

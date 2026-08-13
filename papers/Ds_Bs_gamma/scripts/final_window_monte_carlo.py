@@ -5,10 +5,15 @@ working Borel and continuum-threshold windows directly in squared-s0 notation,
 uses the preferred lattice photon normalization as the main scenario, and keeps
 the legacy chi input as a comparison scenario.
 
-The Ds physical-current normalization is supplied by accepted AA/AB/BB
-two-point QCD-sum-rule samples projected with the previous-study angle.  Thus
-the external theta input and the projected f1/f2 residues remain correlated;
-the former external-f1/overlap closure is not used.
+The Ds and Bs physical-current normalizations are supplied by accepted direct
+AA/AB/BB two-point QCD-sum-rule samples projected with the corresponding
+previous-study angles.  Thus the external theta inputs and the projected
+f1/f2 residues remain correlated; no external basis-current/overlap closure is
+used.
+
+The transition side uses the exact off-shell double-Borel Rohrwild invariants.
+Legacy routines that inserted physical pole masses in tensor or
+electromagnetic QCD-side numerators are not called by this scan.
 """
 
 from __future__ import annotations
@@ -34,25 +39,27 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from bs1_stage2_baseline import evaluate_point as evaluate_bs_basis
-from final_stage2_uncertainty_scan import clipped_normal, precompute_f1_basis, set_photon_shape_params
+from final_stage2_uncertainty_scan import clipped_normal, set_photon_shape_params
 from lattice_photon_normalization_comparison import (
     FPERP_S_1GEV,
     FPERP_S_1GEV_ERR,
-    evaluate as evaluate_ds_basis,
     sample_inputs as sample_ds_inputs,
 )
 from mixing_angle_inputs import (
-    THETA_BS_DEG,
-    THETA_BS_SIGMA_DEG,
     THETA_HQET_DEG,
     THETA_SENSITIVITY_MAX_DEG,
     THETA_SENSITIVITY_MIN_DEG,
-    sample_gaussian_angle,
 )
 from stage1_tensor_gb_soft2p_estimate import width_keV
-from stage2_axial_g1_three_particle import F1_integral
-from stage3_bs1_physical_decay_constants import physical_decay_constants
+from rohrwild_transition_exact import (
+    physical_couplings,
+    precompute_convolutions,
+    transition_invariants,
+)
+from twopoint_ds1_matrix_sumrule import (
+    Inputs as TwoPointInputs,
+    projected_ope as projected_twopoint_ope,
+)
 
 
 SEED = 20260705
@@ -169,26 +176,32 @@ def evaluate_ds_physical(
     residue_sample: dict[str, str],
     scenario: str,
     ensemble: str,
-    f1_axial: float,
-    f1_basis: dict[str, float],
+    convolutions: dict[str, float],
 ) -> list[dict[str, float | str]]:
     theta_deg = float(residue_sample["theta_deg"])
-    basis = evaluate_ds_basis(vals, M2, math.sqrt(s0), theta_deg, f1_axial, f1_basis)
-    theta = math.radians(theta_deg)
-    s = math.sin(theta)
-    c = math.cos(theta)
-    fA = vals["f_ds1"]
-    fB = vals["fT"] * vals["m_ds1"] / (vals["mc"] + vals["ms"])
+    set_photon_shape_params(vals["omegaA"], vals["omegaV"])
+    invariants = transition_invariants(
+        M2,
+        s0,
+        vals,
+        convolutions=convolutions,
+    )
     f1_phys = float(residue_sample["f1_GeV"])
     f2_phys = float(residue_sample["f2_GeV"])
     if f1_phys <= 0.0 or f2_phys <= 0.0:
         return []
-    g1 = (s * fA * basis["GA"] + c * fB * basis["GB"]) / f1_phys
-    g2 = (c * fA * basis["GA"] - s * fB * basis["GB"]) / f2_phys
-    g1_a = s * fA * basis["GA"] / f1_phys
-    g1_b = c * fB * basis["GB"] / f1_phys
-    g2_a = c * fA * basis["GA"] / f2_phys
-    g2_b = -s * fB * basis["GB"] / f2_phys
+    physical = physical_couplings(
+        invariants,
+        theta_deg=theta_deg,
+        m_state_1=vals["m_ds1"],
+        m_state_2=vals["m_ds1_2536"],
+        f_1=f1_phys,
+        f_2=f2_phys,
+        m_p=vals["m_ds"],
+        f_p=vals["f_ds"],
+        m_q=vals["mc"],
+        m_s=vals["ms"],
+    )
     common = {
         "sector": "Ds",
         "scenario": scenario,
@@ -204,31 +217,54 @@ def evaluate_ds_physical(
         "two_point_s0_mix_GeV2": float(residue_sample["s0_mix_GeV2"]),
         "two_point_s01_GeV2": float(residue_sample["s01_GeV2"]),
         "two_point_s02_GeV2": float(residue_sample["s02_GeV2"]),
-        "GA_basis": basis["GA"],
-        "GB_basis": basis["GB"],
-        "chi_effective": basis["chi_effective"],
-        "fperp_s_used_GeV": basis["fperp_s_used_GeV"],
+        "T_A": invariants["T_A"],
+        "T_B": invariants["T_B"],
+        "T_A_pert": invariants["T_A_pert"],
+        "T_A_tw2": invariants["T_A_tw2"],
+        "T_A_tw3": invariants["T_A_tw3"],
+        "T_A_tw4": invariants["T_A_tw4"],
+        "T_A_3p_g": invariants["T_A_3p_g"],
+        "T_A_3p_gamma": invariants["T_A_3p_gamma"],
+        "T_B_pert": invariants["T_B_pert"],
+        "T_B_tw2": invariants["T_B_tw2"],
+        "T_B_tw3": invariants["T_B_tw3"],
+        "T_B_tw4": invariants["T_B_tw4"],
+        "T_B_3p_g": invariants["T_B_3p_g"],
+        "T_B_3p_gamma": invariants["T_B_3p_gamma"],
+        "chi_effective": vals["chi"],
+        "fperp_s_used_GeV": vals["fperp_s_used"],
+        "transition_scheme": invariants["transition_scheme"],
     }
     return [
         {
             **common,
             "state": "D_{s1}(2460)",
             "state_key": "Ds1_2460",
-            "g_GeV_inv": g1,
-            "g_A_component_GeV_inv": g1_a,
-            "g_B_component_GeV_inv": g1_b,
-            "interference": "constructive" if g1_a * g1_b > 0.0 else "destructive",
-            "Gamma_keV": width_keV(vals["m_ds1"], vals["m_ds"], g1),
+            "g_GeV_inv": physical["g_1"],
+            "g_A_component_GeV_inv": physical["g_1_A"],
+            "g_B_component_GeV_inv": physical["g_1_B"],
+            "interference": (
+                "constructive"
+                if physical["g_1_A"] * physical["g_1_B"] > 0.0
+                else "destructive"
+            ),
+            "Gamma_keV": physical["Gamma_1_keV"],
+            "physical_normalization": physical["N_1"],
         },
         {
             **common,
             "state": "D_{s1}(2536)",
             "state_key": "Ds1_2536",
-            "g_GeV_inv": g2,
-            "g_A_component_GeV_inv": g2_a,
-            "g_B_component_GeV_inv": g2_b,
-            "interference": "constructive" if g2_a * g2_b > 0.0 else "destructive",
-            "Gamma_keV": width_keV(vals["m_ds1_2536"], vals["m_ds"], g2),
+            "g_GeV_inv": physical["g_2"],
+            "g_A_component_GeV_inv": physical["g_2_A"],
+            "g_B_component_GeV_inv": physical["g_2_B"],
+            "interference": (
+                "constructive"
+                if physical["g_2_A"] * physical["g_2_B"] > 0.0
+                else "destructive"
+            ),
+            "Gamma_keV": physical["Gamma_2_keV"],
+            "physical_normalization": physical["N_2"],
         },
     ]
 
@@ -236,31 +272,78 @@ def evaluate_ds_physical(
 def evaluate_bs_physical(
     vals: dict[str, float],
     target: dict[str, float | str],
+    residue_sample: dict[str, str],
     M2: float,
     s0: float,
     theta_deg: float,
     scenario: str,
     ensemble: str,
-    f1_axial: float,
-    f1_basis: dict[str, float],
+    convolutions: dict[str, float],
 ) -> dict[str, float | str] | None:
-    omega_a = vals.pop("omegaA")
-    omega_v = vals.pop("omegaV")
-    set_photon_shape_params(omega_a, omega_v)
-    basis = evaluate_bs_basis(vals, M2, math.sqrt(s0), theta_deg, f1_axial, f1_basis)
-    theta = math.radians(theta_deg)
-    constants = physical_decay_constants(theta, vals["f_ds1"], basis["fB_effective"])
-    if constants is None:
+    vals = dict(vals)
+    vals["mc"] = float(residue_sample["mb_GeV"])
+    vals["ms"] = float(residue_sample["ms_GeV"])
+    vals["ss"] = float(residue_sample["ss_GeV3"])
+    vals["chi"] = vals["fperp_s_used"] / vals["ss"]
+    mass_low = float(residue_sample["mass_low_GeV"])
+    mass_high = float(residue_sample["mass_high_GeV"])
+    vals["m_ds1"] = (
+        mass_low if str(target["quoted_combo"]) == "low" else mass_high
+    )
+
+    set_photon_shape_params(vals["omegaA"], vals["omegaV"])
+    invariants = transition_invariants(
+        M2,
+        s0,
+        vals,
+        convolutions=convolutions,
+    )
+    two_point_inputs = TwoPointInputs(
+        mc=float(residue_sample["mb_GeV"]),
+        ms=float(residue_sample["ms_GeV"]),
+        # Inputs.ss = kappa_s*qq.  This stores the sampled strange
+        # condensate exactly without introducing an extra nuisance parameter.
+        qq=float(residue_sample["ss_GeV3"]),
+        kappa_s=1.0,
+        m0_sq=float(residue_sample["m0_sq_GeV2"]),
+        mass_low=mass_low,
+        mass_high=mass_high,
+    )
+    two_point_m2 = float(residue_sample["M2_GeV2"])
+    two_point_s01 = float(residue_sample["s01_GeV2"])
+    two_point_s02 = float(residue_sample["s02_GeV2"])
+    pi1, _ = projected_twopoint_ope(
+        two_point_m2, two_point_s01, theta_deg, 0, two_point_inputs
+    )
+    pi2, _ = projected_twopoint_ope(
+        two_point_m2, two_point_s02, theta_deg, 1, two_point_inputs
+    )
+    if pi1 <= 0.0 or pi2 <= 0.0:
         return None
-    rho, f1_phys, f2_phys = constants
-    s = math.sin(theta)
-    c = math.cos(theta)
-    g_low = (s * vals["f_ds1"] * basis["GA"] + c * basis["fB_effective"] * basis["GB"]) / f1_phys
-    g_high = (c * vals["f_ds1"] * basis["GA"] - s * basis["fB_effective"] * basis["GB"]) / f2_phys
-    g_low_a = s * vals["f_ds1"] * basis["GA"] / f1_phys
-    g_low_b = c * basis["fB_effective"] * basis["GB"] / f1_phys
-    g_high_a = c * vals["f_ds1"] * basis["GA"] / f2_phys
-    g_high_b = -s * basis["fB_effective"] * basis["GB"] / f2_phys
+    f1_phys = math.sqrt(
+        pi1 * math.exp(mass_low**2 / two_point_m2) / mass_low**2
+    )
+    f2_phys = math.sqrt(
+        pi2 * math.exp(mass_high**2 / two_point_m2) / mass_high**2
+    )
+    physical = physical_couplings(
+        invariants,
+        theta_deg=theta_deg,
+        m_state_1=mass_low,
+        m_state_2=mass_high,
+        f_1=f1_phys,
+        f_2=f2_phys,
+        m_p=vals["m_ds"],
+        f_p=vals["f_ds"],
+        m_q=vals["mc"],
+        m_s=vals["ms"],
+    )
+    g_low = physical["g_1"]
+    g_high = physical["g_2"]
+    g_low_a = physical["g_1_A"]
+    g_low_b = physical["g_1_B"]
+    g_high_a = physical["g_2_A"]
+    g_high_b = physical["g_2_B"]
     quoted = str(target["quoted_combo"])
     g = g_low if quoted == "low" else g_high
     return {
@@ -275,9 +358,29 @@ def evaluate_bs_physical(
         "theta_deg": theta_deg,
         "f1_GeV": f1_phys,
         "f2_GeV": f2_phys,
-        "rho_AB": rho,
-        "GA_basis": basis["GA"],
-        "GB_basis": basis["GB"],
+        "normalization_scheme": "direct_AA_AB_BB_two_point_LO_d3_d5",
+        "two_point_M2_GeV2": two_point_m2,
+        "two_point_s0_mix_GeV2": float(residue_sample["s0_mix_GeV2"]),
+        "two_point_s01_GeV2": two_point_s01,
+        "two_point_s02_GeV2": two_point_s02,
+        "two_point_matrix_theta_deg": float(residue_sample["theta_matrix_deg"]),
+        "two_point_offdiag_residual": float(residue_sample["Pi12_normalized"]),
+        "mass_low_GeV": mass_low,
+        "mass_high_GeV": mass_high,
+        "T_A": invariants["T_A"],
+        "T_B": invariants["T_B"],
+        "T_A_pert": invariants["T_A_pert"],
+        "T_A_tw2": invariants["T_A_tw2"],
+        "T_A_tw3": invariants["T_A_tw3"],
+        "T_A_tw4": invariants["T_A_tw4"],
+        "T_A_3p_g": invariants["T_A_3p_g"],
+        "T_A_3p_gamma": invariants["T_A_3p_gamma"],
+        "T_B_pert": invariants["T_B_pert"],
+        "T_B_tw2": invariants["T_B_tw2"],
+        "T_B_tw3": invariants["T_B_tw3"],
+        "T_B_tw4": invariants["T_B_tw4"],
+        "T_B_3p_g": invariants["T_B_3p_g"],
+        "T_B_3p_gamma": invariants["T_B_3p_gamma"],
         "g_low_GeV_inv": g_low,
         "g_high_GeV_inv": g_high,
         "g_GeV_inv": g,
@@ -288,10 +391,13 @@ def evaluate_bs_physical(
             if (g_low_a * g_low_b if quoted == "low" else g_high_a * g_high_b) > 0.0
             else "destructive"
         ),
-        "Gamma_keV": width_keV(vals["m_ds1"], vals["m_ds"], g),
+        "Gamma_keV": (
+            physical["Gamma_1_keV"] if quoted == "low" else physical["Gamma_2_keV"]
+        ),
         "quoted_combo": quoted,
         "chi_effective": vals["chi"],
         "fperp_s_used_GeV": vals["fperp_s_used"],
+        "transition_scheme": invariants["transition_scheme"],
     }
 
 
@@ -316,6 +422,15 @@ def read_accepted_twopoint_samples() -> list[dict[str, str]]:
     return rows
 
 
+def read_accepted_bs_twopoint_samples() -> list[dict[str, str]]:
+    path = OUT / "twopoint_bs1_matrix_mc.csv"
+    with path.open() as f:
+        rows = [row for row in csv.DictReader(f) if int(row["accepted"]) == 1]
+    if not rows:
+        raise RuntimeError(f"no accepted bottom two-point samples in {path}")
+    return rows
+
+
 def bs_rng() -> np.random.Generator:
     """Use a reproducible stream independent of changes in the Ds loop."""
 
@@ -332,14 +447,15 @@ def write_summary_report(
         "=========================================",
         f"Seed: {SEED}",
         f"Accepted rows: {accepted_row_count}",
-        f"Rejected bottom-sector physical-normalization samples: {rejected_bs}",
+        f"Rejected bottom-sector direct-projection samples: {rejected_bs}",
         f"Samples per ensemble/channel/scenario/window: {N_POINTS}",
         "Ds normalization: theta_Ds=26.6+-0.6 deg external input; f1/f2 projected from the AA/AB/BB two-point sum rule.",
-        "Bs nominal angle: theta_Bs=38.5+-0.1 deg external input.",
+        "Bs normalization: theta_Bs=38.5+-0.1 deg external input; f1/f2 projected from the direct AA/AB/BB two-point sum rule.",
         "HQET 35.3 deg and 25--45 deg rows are benchmark/sensitivity outputs only.",
         "Ds window: M^2=[3.0,4.5] GeV^2, s0=[7.5,8.5] GeV^2.",
         "Bs central window: M^2=[10,14] GeV^2 with state-specific s0 windows.",
         "Bs cross-check window: M^2=[9,13] GeV^2 with the same s0 windows.",
+        "Bs two-point window: M^2=[6.50,7.30] GeV^2 with separately fitted pole thresholds.",
         "",
         "Preferred lattice-photon central-window rows:",
     ]
@@ -364,9 +480,8 @@ def write_summary_report(
     lines.extend(
         [
             "",
-            "Caveat: Bs rows are conditional on accepted |rho_AB|<=1 closure samples;",
-            "the nominal lattice central-window acceptance is 245/500 (5750) and 236/500 (5830).",
-            "A direct bottom-sector AA/AB/BB two-point matrix is still required.",
+            "Both sectors now use direct normalized-current two-point matrices.",
+            "The unobserved Bs1(5750) lower pole remains a model-state input and diagnostic.",
             "",
             "Outputs:",
             f"  {OUT / 'final_window_mc_scan.csv'}",
@@ -456,9 +571,9 @@ def make_bs_window_check(rows: list[dict[str, float | str]]) -> None:
 def main() -> None:
     rng_ds = np.random.default_rng(SEED)
     rng_bs = bs_rng()
-    f1_axial, _, _ = F1_integral(u0=0.5)
-    f1_basis = precompute_f1_basis()
+    convolutions = precompute_convolutions()
     twopoint_samples = read_accepted_twopoint_samples()
+    bs_twopoint_samples = read_accepted_bs_twopoint_samples()
     rows: list[dict[str, float | str]] = []
     rejected_bs = 0
 
@@ -477,8 +592,7 @@ def main() -> None:
                     residue_sample,
                     scenario,
                     ensemble,
-                    f1_axial,
-                    f1_basis,
+                    convolutions,
                 )
             )
 
@@ -491,10 +605,11 @@ def main() -> None:
             ):
                 for _ in range(N_POINTS):
                     vals = sample_bs_inputs(rng_bs, target, scenario)
+                    residue_sample = bs_twopoint_samples[
+                        int(rng_bs.integers(0, len(bs_twopoint_samples)))
+                    ]
                     if ensemble == "theta_prior_gaussian":
-                        theta_deg = sample_gaussian_angle(
-                            rng_bs, THETA_BS_DEG, THETA_BS_SIGMA_DEG
-                        )
+                        theta_deg = float(residue_sample["theta_deg"])
                     elif ensemble == "theta_hqet_35p3":
                         theta_deg = THETA_HQET_DEG
                     else:
@@ -507,13 +622,13 @@ def main() -> None:
                     row = evaluate_bs_physical(
                         vals,
                         target,
+                        residue_sample,
                         float(rng_bs.uniform(float(target["M2_min"]), float(target["M2_max"]))),
                         float(rng_bs.uniform(float(target["s0_min"]), float(target["s0_max"]))),
                         theta_deg,
                         scenario,
                         ensemble,
-                        f1_axial,
-                        f1_basis,
+                        convolutions,
                     )
                     if row is None:
                         rejected_bs += 1

@@ -46,6 +46,25 @@ each step is written so that a master's student can follow the choices,
 conventions, and algebra before the final paper-level formulas are assembled.
 \end{abstract}
 
+\noindent\fbox{\parbox{0.96\textwidth}{
+\textbf{Current-status guide (29 July 2026).}
+Sections written during Stages 1 and 2 are retained as a derivation history.
+Whenever an older numerical paragraph conflicts with
+Sec.~\ref{sec:authoritative-fixed-angle-update}, that final section and the
+machine-readable tables in \texttt{outputs/} are authoritative.  The current
+transition OPE is the Rohrwild nonlocal scheme, contains no standalone local
+$\langle\bar ss\rangle$ term, and uses the exact off-shell double-Borel
+numerator reduction independently implemented in Python and Mathematica.
+The continuum prescription is channel-specific: twist~2 carries
+$\Delta E_Q\equiv e^{-m_Q^2/M^2}-e^{-s_0/M^2}$; twist~3, twist~4, and the
+gluonic three-particle term carry $E_Q=e^{-m_Q^2/M^2}$; and the separate
+gauge-completion electromagnetic three-particle term uses the Rohrwild
+$I_F$-type $\Delta E_Q$ subtraction.
+Both $D_s$ and $B_s$ physical residues are now obtained from direct
+normalized-current $AA/AB/BB$ two-point matrices.  All earlier bottom
+Pullin--Zwicky/diagonal-closure tables are historical diagnostics only.
+}}
+
 \section{Conventions}
 
 We use the mostly-minus metric
@@ -77,9 +96,9 @@ Our Fourier convention for a propagator is
 
 The external momenta are
 \begin{equation}
-  P=p+q,
+  p'=p+q,
 \end{equation}
-where $P$ is the initial axial-meson momentum, $p$ is the final pseudoscalar
+where $p'$ is the initial axial-meson momentum, $p$ is the final pseudoscalar
 $\Ds$ momentum, and $q$ is the real-photon momentum.
 
 The pseudoscalar interpolating current is
@@ -92,16 +111,16 @@ For the axial channel we use two independent currents,
   &= \sbar(x)\gamma_\mu\gamma_5 Q(x),\\
   J^{(0)}_{B\mu}(x)
   &= \frac{\ii}{m_Q+m_s}\,
-     \sbar(x)\sigma_{\mu\alpha}P^\alpha\gamma_5 Q(x).
+     \sbar(x)\sigma_{\mu\alpha}p'^\alpha\gamma_5 Q(x).
 \end{align}
-The tensor current contracts with $P^\alpha$, not $p^\alpha$, because it
+The tensor current contracts with $p'^\alpha$, not $p^\alpha$, because it
 interpolates the initial axial state.  The factor $1/(m_Q+m_s)$ restores the
 same mass dimension as the axial-vector current.
 
 \section{Correlation Function}
 
 For a generic axial current $\Gamma_\mu\in\{\gamma_\mu\gamma_5,\,
-\ii\sigma_{\mu\alpha}P^\alpha\gamma_5/(m_Q+m_s)\}$ we study
+\ii\sigma_{\mu\alpha}p'^\alpha\gamma_5/(m_Q+m_s)\}$ we study
 \begin{equation}
   \Pi_\mu(p,q)
   =
@@ -402,11 +421,15 @@ The Stage 1 version contains
   +
   G_A^{\chi\phi_\gamma}
   +
-  G_A^{\mathbb A,\bar H_\gamma}
+  G_A^{\mathcal A+2\mathcal B}
   +
-  G_A^{f_{3\gamma}\Psi^v},
+  G_A^{f_{3\gamma}\overline\psi^{(V)}},
 \end{equation}
-where the three-particle DA integral usually denoted by ${\cal F}_1$ is omitted
+where the Rohrwild/BBK dictionary is
+$\mathcal B(u)=-4\int_0^u d\alpha\,(u-\alpha)h_\gamma(\alpha)$, so that the
+Colangelo combination
+$\mathbb A-8\bar H_\gamma$ is exactly $\mathcal A+2\mathcal B$.
+The three-particle DA integral usually denoted by ${\cal F}_1$ is omitted
 until Stage 2.
 
 The numerical script is
@@ -510,7 +533,7 @@ widths.
 The labels $f_A$, $f_B$, and $f_T$ must not be mixed casually.  The axial
 current couples to the axial basis state through
 \begin{equation}
-  \langle 0|J_A^\mu|D_{s1}^{A}(P,\eta)\rangle
+  \langle 0|J_A^\mu|D_{s1}^{A}(p',\eta)\rangle
   =
   f_A m_A \eta^\mu ,
 \end{equation}
@@ -519,11 +542,11 @@ whereas our tensor-derived current is
   J_B^\mu
   =
   \frac{\ii}{m_c+m_s}\,
-  \bar s\sigma^{\mu\alpha}P_\alpha\gamma_5 c .
+  \bar s\sigma^{\mu\alpha}p'_\alpha\gamma_5 c .
 \end{equation}
 The corresponding decay constant is defined by
 \begin{equation}
-  \langle 0|J_B^\mu|D_{s1}^{B}(P,\eta)\rangle
+  \langle 0|J_B^\mu|D_{s1}^{B}(p',\eta)\rangle
   =
   f_B m_B \eta^\mu .
 \end{equation}
@@ -532,18 +555,18 @@ the tabulated $f_T$ is already defined for the same current $J_B^\mu$ and with
 the same mass normalization.  If instead the input table gives the more common
 tensor-current matrix element
 \begin{equation}
-  \langle 0|\bar s\sigma_{\mu\nu}\gamma_5 c|D_{s1}^{B}(P,\eta)\rangle
+  \langle 0|\bar s\sigma_{\mu\nu}\gamma_5 c|D_{s1}^{B}(p',\eta)\rangle
   =
-  f_T(\eta_\mu P_\nu-\eta_\nu P_\mu),
+  f_T(\eta_\mu p'_\nu-\eta_\nu p'_\mu),
 \end{equation}
-then contraction with $P^\nu/(m_c+m_s)$ gives the effective normalization
+then contraction with $p'^\nu/(m_c+m_s)$ gives the effective normalization
 \begin{equation}
   f_B^{\rm eff}
   \simeq
   f_T\,\frac{m_{D_{s1}}}{m_c+m_s},
 \end{equation}
 up to the sign fixed by the precise convention for
-$\sigma_{\mu\nu}\gamma_5$ and by the transverse condition $\eta\cdot P=0$.
+$\sigma_{\mu\nu}\gamma_5$ and by the transverse condition $\eta\cdot p'=0$.
 
 Only after $G_A$ and $G_B$ have been computed with their own basis-current
 decay constants do we form the physical amplitudes:
@@ -573,9 +596,9 @@ $\Dsone(2460)$ or only $\Dsone(2536)$.  If we define
 \end{align}
 then the physical decay constants should be defined by
 \begin{align}
-  \langle0|J_1^\mu|\Dsone(2460)(P,\eta)\rangle
+  \langle0|J_1^\mu|\Dsone(2460)(p',\eta)\rangle
   &= f_1 M_{2460}\eta^\mu,\\
-  \langle0|J_2^\mu|\Dsone(2536)(P,\eta)\rangle
+  \langle0|J_2^\mu|\Dsone(2536)(p',\eta)\rangle
   &= f_2 M_{2536}\eta^\mu .
 \end{align}
 These constants are, in principle, obtained from two-point sum rules, not by
@@ -651,7 +674,7 @@ replace the basis-current values in the final paper tables.
 \section{Tensor-Current Hard Term: Triangle Reduction}
 
 The hard tensor-current numerator is more complicated than the axial one because
-the $J_B$ current introduces an extra factor of $P^\alpha$ and therefore higher
+the $J_B$ current introduces an extra factor of $p'^\alpha$ and therefore higher
 powers of the loop momentum after E1 projection.  The script
 \texttt{scripts/step3\_tensor\_hard\_triangle\_reduction.wl} rewrites scalar
 products such as $k^2$, $k\cdot p$, and $k\cdot q$ in terms of inverse
@@ -754,17 +777,17 @@ For the tensor current the core contains $p^2/(p\cdot q)$:
 The diagonal double-dispersion representation explains how the $p^2$ numerator
 is treated.  For the double-pole part one has
 \begin{equation}
-  \frac{p^2}{(s-p^2)(s-P^2)}
+  \frac{p^2}{(s-p^2)(s-p'^2)}
   =
-  \frac{s}{(s-p^2)(s-P^2)}
+  \frac{s}{(s-p^2)(s-p'^2)}
   -
-  \frac{1}{s-P^2},
-  \qquad P=p+q .
+  \frac{1}{s-p'^2},
+  \qquad p'=p+q .
 \end{equation}
 The second term has only a single pole and is removed by the double Borel
-projection in $p^2$ and $P^2$.  Therefore, inside the double-pole sum rule,
+projection in $p^2$ and $p'^2$.  Therefore, inside the double-pole sum rule,
 $p^2$ in the hard numerator can be replaced by the spectral variable $s$.  The
-same argument gives $P^2\to s$ for any numerator factor of $P^2$.  The script
+same argument gives $p'^2\to s$ for any numerator factor of $p'^2$.  The script
 \begin{center}
   \texttt{scripts/step4\_double\_pole\_p2\_reduction.py}
 \end{center}
@@ -1756,13 +1779,13 @@ integration domains.
 The independent FeynCalc script
 \texttt{scripts/ward\_transversality\_check.wl} checks the selected E1 tensor
 $S_{\mu\nu}=p_\nu q_\mu-(p\cdot q)g_{\mu\nu}$.  With
-$q^2=0$, $\varepsilon\cdot q=0$, $P=p+q$, and $\eta\cdot P=0$, it gives
+$q^2=0$, $\varepsilon\cdot q=0$, $p'=p+q$, and $\eta\cdot p'=0$, it gives
 \begin{align}
   S_{\mu\nu}q^\nu &=0,\\
   \left[(\eta\cdot\varepsilon)(p\cdot q)
     -(\eta\cdot q)(p\cdot\varepsilon)\right]_{\varepsilon\to q}
   &=0,\\
-  P^\mu S_{\mu\nu}\varepsilon^\nu&=0,\\
+  p'^\mu S_{\mu\nu}\varepsilon^\nu&=0,\\
   \frac{S_{\mu\nu}S^{\mu\nu}}{2(p\cdot q)^2}&=1.
 \end{align}
 The first two equations are the photon Ward check, the third confirms
@@ -2429,11 +2452,11 @@ looking at the final numerical tables.
 
 \begin{itemize}
   \item We use the mostly-minus metric and $\epsilon^{0123}=+1$.
-  \item The initial axial-meson momentum is $P=p+q$; $p$ is the outgoing
+  \item The initial axial-meson momentum is $p'=p+q$; $p$ is the outgoing
   pseudoscalar momentum and $q$ is the photon momentum.
   \item The tensor current is
-  $\ii\,\bar s\sigma_{\mu\alpha}P^\alpha\gamma_5 Q/(m_Q+m_s)$, so the
-  momentum entering the tensor current is the initial-state momentum $P$.
+  $\ii\,\bar s\sigma_{\mu\alpha}p'^\alpha\gamma_5 Q/(m_Q+m_s)$, so the
+  momentum entering the tensor current is the initial-state momentum $p'$.
   \item The physical amplitudes are
   $G_{\rm low}=\sin\theta\,G_A+\cos\theta\,G_B$ and
   $G_{\rm high}=\cos\theta\,G_A-\sin\theta\,G_B$ in the basis-current
@@ -3000,11 +3023,12 @@ window is stable against this reasonable Borel-window variation.
   \label{fig:final-window-bs-crosscheck}
 \end{figure}
 
-\subsection{Rounded \(s_0\) Windows Used In The Publication Pass}
+\subsection{Archived rounded-\(s_0\) publication-pass diagnostic}
 
-After preparing the first draft we decided to express the continuum-threshold
-scan directly in \(s_0\), not in \(\sqrt{s_0}\).  Therefore the final
-publication pass uses ordered half-step \(s_0\) intervals rather than endpoint
+This subsection records a pre-final publication-pass diagnostic and does not
+define the current results.  After preparing the first draft we decided to express the continuum-threshold
+scan directly in \(s_0\), not in \(\sqrt{s_0}\).  That archived pass used
+ordered half-step \(s_0\) intervals rather than endpoint
 values obtained by squaring a \(\sqrt{s_0}\) interval.  The adopted windows are
 \[
   D_{s1}(2460),D_{s1}(2536):\quad
@@ -3033,8 +3057,8 @@ B_{s1}(5750)\to B_s\gamma & 0.359 & 0.616 & 0.743\\
 B_{s1}(5830)\to B_s\gamma & 0.381 & 0.652 & 0.769
 \end{array}
 \]
-The final preferred lattice-photon, angle-scan Monte Carlo results with these
-rounded windows are
+The archived lattice-photon, angle-scan Monte Carlo results with these
+rounded windows were
 \[
 \begin{array}{c|cc}
 \text{channel} & g~(\GeV^{-1}) & \Gamma~(\mathrm{keV})\\
@@ -3049,7 +3073,9 @@ B_{s1}(5830)\to B_s\gamma
 & +0.0105[-0.0792,+0.0604] & 0.504[0.0567,1.68]
 \end{array}
 \]
-The main numerical change relative to the previous square-root-derived window
+These values predate the exact off-shell and continuum-factor audits and must
+not be quoted as the paper prediction.  The numerical change relative to the
+previous square-root-derived window
 is in \(D_{s1}(2460)\to D_s\gamma\), whose preferred median decreases from
 about \(36.1~\mathrm{keV}\) to \(32.7~\mathrm{keV}\).  The bottom-sector medians are essentially
 unchanged within the quoted percentile intervals.  The files regenerated in
@@ -3057,13 +3083,16 @@ this pass are \texttt{outputs/window\_diagnostics\_summary.*},
 \texttt{outputs/publication\_stability\_*}, and
 \texttt{outputs/final\_window\_mc\_*}.
 
-\section{Final Python update: Rohrwild nonlocal electromagnetic sector}
+\section{Legacy Python diagnostic: Rohrwild nonlocal electromagnetic sector}
 \label{sec:rohrwild-nonlocal-final-update}
 
-This section supersedes the transition-OPE numbers immediately above.  The
-earlier pass removed the ordinary local condensate but had not yet inserted
-the nonlocal electromagnetic three-particle photon DAs.  The completed Python
-calculation uses
+This section records an earlier numerical diagnostic and no longer supersedes
+the off-shell derivation.  The earlier pass correctly removed the ordinary
+local transition condensate, but it subsequently imposed the pole values
+$p^2=m_P^2$ and $2p\cdot q=m_A^2-m_P^2$ inside QCD-side numerator factors.
+Those substitutions are valid for the isolated hadronic residue, not for the
+off-shell QCD amplitude before the double Borel transformation.  Accordingly,
+the former Python expression
 \begin{equation}
  \widehat T_A^{\rm RW}=\widehat T_A^{\rm base}
  +e_Q\langle\bar ss\rangle(E_Q-E_0)
@@ -3071,18 +3100,42 @@ calculation uses
  \left(\ln8-\frac{1181}{320}\right),
  \label{eq:working-note-rohrwild-em}
 \end{equation}
-where $\widehat T_A^{\rm base}$ contains no standalone local condensate.  The
-Colangelo comparison instead uses
+is retained only to reproduce the old tables; it is not an exact post-Borel
+QCD formula.  The correct procedure is to retain independent $p'^2$ and $p^2$
+in every kernel, write
+$D(u)=m_Q^2-\bar u p'^2-up^2$, and apply the double-Borel identities given in
+\texttt{DsBs\_gamma\_Mathematica\_derivation.tex}.  Only after this transform
+may one set $u=u_0$ (and $u_0=1/2$ for equal Borel parameters).
+
+For comparison, the former Colangelo-local diagnostic used
 \begin{equation}
  \widehat T_A^{\rm Col}=\widehat T_A^{\rm base}
  +e_QE_Q\langle\bar ss\rangle
  \left[1-\frac{m_Qm_s}{M^2}
  +\frac{m_s^2}{2M^2}\left(1+\frac{m_Q^2}{M^2}\right)\right].
 \end{equation}
-These last terms are alternatives and are never added.  The tensor-current
-$\mathcal S_\gamma,\mathcal T_4^\gamma$ expression and its physical-residue
-numerator prescription are written explicitly in the standalone derivation
-note \texttt{DsBs\_gamma\_Mathematica\_derivation.tex}.
+The ordinary local term and the Rohrwild nonlocal photon-DA sector are
+alternative transition-OPE schemes and are never added.  In the Rohrwild
+scheme there is no standalone
+$\widehat T_X^{\langle\bar ss\rangle}$ contribution, although
+$\langle\bar ss\rangle$ still occurs in the normalization of nonlocal photon
+matrix elements such as
+$\chi_\gamma\langle\bar ss\rangle\phi_\gamma$.
+The continuum factors must not be imposed universally.  With
+\begin{equation}
+ E_Q=e^{-m_Q^2/M^2},\qquad
+ \Delta E_Q=E_Q-E_0
+ =e^{-m_Q^2/M^2}-e^{-s_0/M^2},
+\end{equation}
+the channel-specific prescription is
+\[
+ \text{twist 2}:\Delta E_Q,\qquad
+ \text{twist 3, twist 4, 3p,g}:E_Q,\qquad
+ \text{3p,\(\gamma\) gauge completion}:\Delta E_Q .
+\]
+This restores the higher-twist factors of the original
+$D_{s1}\to D_s\gamma$ sum rule while retaining the separate Rohrwild
+$I_F$-type subtraction for the electromagnetic gauge-completion term.
 
 At $M^2=4.5~\GeV^2$ and $\sqrt{s_0}=2.55~\GeV$, the central comparison is
 \begin{center}
@@ -3095,19 +3148,21 @@ Rohrwild nonlocal & $-5.31634\times10^{-3}$ & $-0.359137$\\
 \bottomrule
 \end{tabular}
 \end{center}
-Thus the central OPE terms differ by only $5.8\%$, which is a useful check,
-but they are not algebraically identical.  Across the broad charm scan the
+Thus the old central OPE terms differ by only $5.8\%$, but this numerical
+proximity does not validate the pole-kinematic shortcut.  Across the broad charm scan the
 ratio of nonlocal to local terms ranges from $0.64$ to $1.99$ because their
 Borel dependence differs; in the selected $D_s$ window it ranges from $1.17$
 to $2.18$.  Consequently the central near-threshold agreement is a validation
 checkpoint, not a scheme-conversion identity.
 
-The printed Rohrwild appendix gives a zero lower limit in the third
+The earlier implementation also observed that the printed Rohrwild appendix gives a zero lower limit in the third
 $\mathcal P[\mathcal T_4^\gamma]$ integral, which is logarithmically divergent
 if read literally.  The implemented result enforces the double-Borel support
 $\alpha_{\bar q}\geq1/2$, producing the finite constant
 $\ln8-1181/320=-1.611183458320\ldots$.  This qualification must remain in the
-paper.
+paper if this diagnostic is quoted.  All numerical widths downstream of
+Eq.~\eqref{eq:working-note-rohrwild-em} remain provisional until the complete
+off-shell electromagnetic and tensor-current Borel reduction is inserted.
 
 \clearpage
 \section{Replacement of the old Stage-3 charm normalization}
@@ -3232,13 +3287,13 @@ charm results are
 \text{photon input}&\text{channel}&G~(\GeV^{-1})&\Gamma~(\mathrm{keV})\\
 \hline
 \text{legacy }\chi_s&D_{s1}(2460)\to D_s\gamma
-&-0.4959[-0.5674,-0.4378]&51.58[40.27,67.83]\\
+&-0.54154[-0.61071,-0.47937]&61.657[48.370,78.455]\\
 \text{legacy }\chi_s&D_{s1}(2536)\to D_s\gamma
-&-0.1149[-0.1560,-0.0710]&4.094[1.563,7.548]\\
+&-0.07904[-0.15323,-0.00266]&2.220[0.226,7.379]\\
 f_{\gamma,s}^{\perp}&D_{s1}(2460)\to D_s\gamma
-&-0.3572[-0.3949,-0.3239]&26.79[22.11,32.75]\\
+&-0.40816[-0.45513,-0.36541]&34.965[28.058,43.526]\\
 f_{\gamma,s}^{\perp}&D_{s1}(2536)\to D_s\gamma
-&-0.01124[-0.04401,+0.01693]&0.1664[0.01165,0.7145]
+&+0.05184[+0.00244,+0.10669]&0.988[0.092,3.555]
 \end{array}
 \end{equation}
 All older charm tables using $f_1\simeq0.345~\GeV$ and
@@ -3253,6 +3308,7 @@ The executable sources are
 \end{itemize}
 
 \section{Authoritative fixed-angle update and Wang correction}
+\label{sec:authoritative-fixed-angle-update}
 
 This section supersedes all earlier numerical passages in these working notes
 that use a common $35.3^\circ$ central angle, a uniform $25^\circ$--$45^\circ$
@@ -3280,42 +3336,49 @@ $30.63[29.94,31.29]^\circ$ only as a truncation diagnostic.  The normalized
 off-diagonal residual after projection at the external angle is
 $0.183[0.142,0.225]$; this is retained as a method/OPE warning.
 
-For amplitudes define $A=f_AG_A$ and $B=f_BG_B$.  Then
+For the corrected transition invariants define the physical numerators
 \begin{equation}
-N_1=\sin\theta A+\cos\theta B,\qquad
-N_2=\cos\theta A-\sin\theta B.
+N_1=\sin\theta\,\widehat T_A+\cos\theta\,\widehat T_B,\qquad
+N_2=\cos\theta\,\widehat T_A-\sin\theta\,\widehat T_B.
 \end{equation}
-In the present calculation $A$ and $B$ have the same sign.  Hence the low-state
+In the present calculation $\widehat T_A$ and $\widehat T_B$ have the same
+sign.  Hence the low-state
 combination is constructive and the high-state combination is destructive
 throughout the physical first quadrant.  The angle changes the proximity to
 the zero; it does not change the interference type.  At the midpoint of the
 selected charm window the high-state cancellation occurs near
-$\theta=31.37^\circ$.  The central benchmark table is stored in
+$\theta=23.96^\circ$.  The central benchmark table is stored in
 \path{outputs/ds_mixing_angle_benchmark_table.csv}.
 
 The preferred lattice-photon final-window results at the previous-study angle
 are
 \begin{align}
 \Gamma[D_{s1}(2460)\to D_s\gamma]
- &=26.71[22.01,32.44]~\mathrm{keV},\\
+ &=34.965[28.058,43.526]~\mathrm{keV},\\
 \Gamma[D_{s1}(2536)\to D_s\gamma]
- &=1.656[0.4567,3.378]~\mathrm{keV},\\
+ &=0.988[0.092,3.555]~\mathrm{keV},\\
 \Gamma[B_{s1}(5750)\to B_s\gamma]
- &=18.16[13.03,27.94]~\mathrm{keV},\\
+ &=11.339[9.144,14.059]~\mathrm{keV},\\
 \Gamma[B_{s1}(5830)\to B_s\gamma]
- &=1.504[0.818,5.342]~\mathrm{keV}.
+ &=8.702[6.474,11.225]~\mathrm{keV}.
 \end{align}
 The lower $B_{s1}(5750)$ state remains a diagnostic prediction.
 
-The bottom-strange normalization is less complete than the charm one.  It is
-obtained from Pullin--Zwicky basis-current inputs through the diagonal-closure
-model, rather than from a directly calculated $AA/AB/BB$ matrix.  In the
-nominal lattice-photon central-window ensemble only $245/500$ lower-state and
-$236/500$ higher-state trials pass the physical covariance condition
-$|\rho_{AB}|\leq1$.  Consequently the quoted $B_s$ intervals are conditional
-on this closure and should not yet be advertised with the same normalization
-status as the $D_s$ predictions.  A complete bottom-sector two-point matrix is
-the required follow-up check.
+The bottom-strange normalization is now obtained directly from the same
+normalized-current $AA/AB/BB$ OPE after $m_c\to m_b$.  At
+$M_{\rm 2pt}^2=7.00~\GeV^2$,
+$s_0^{(1)}=44.35~\GeV^2$, and
+$s_0^{(2)}=43.025~\GeV^2$, one finds
+\begin{equation}
+ f_1^{(B_s)}=0.5381107~\GeV,\qquad
+ f_2^{(B_s)}=0.0888787~\GeV .
+\end{equation}
+The full direct two-point Monte Carlo gives
+$f_1^{(B_s)}=0.5358[0.5096,0.5586]~\GeV$ and
+$f_2^{(B_s)}=0.08896[0.08496,0.09278]~\GeV$; 1757 of 2000 samples pass the
+pole-fraction, OPE-convergence, mass-fit, and continuum-gap criteria.  The
+former Pullin--Zwicky diagonal-closure results remain only as historical
+diagnostics and are not used in the final widths.
 
 The corrected Wang comparison is essential.  arXiv:1506.01993v4 explicitly
 replaces the old $245\pm17~\mathrm{MeV}$ entry by

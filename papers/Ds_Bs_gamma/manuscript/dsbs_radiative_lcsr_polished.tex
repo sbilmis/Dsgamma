@@ -7,6 +7,7 @@
 \usepackage{amsmath,amssymb,mathtools}
 \usepackage{slashed}
 \usepackage{booktabs}
+\usepackage{float}
 \usepackage{array}
 \usepackage{graphicx}
 \usepackage{xcolor}
@@ -48,13 +49,16 @@ corrections induced by the background-gluon term in the quark propagator.  We
 separate the basis-current sum rules from the physical-current residue
 normalization.  For the charm-strange channel the physical residues are
 projected from an $AA/AB/BB$ two-point matrix at the previously determined
-mixing angle; for the bottom-strange channel we use Pullin--Zwicky basis-current
-inputs followed by a mixed-current diagonalization closure.  Using the modern
+mixing angle; the bottom-strange residues are obtained from the direct
+heavy-flavour continuation of the same matrix calculation.  Using the modern
 lattice normalization of the
 leading-twist photon distribution amplitude, we find
-$\Gamma[\Dsone(2460)\to\Ds\gamma]=26.71[22.01,32.44]~\keV$,
-$\Gamma[\Dsone(2536)\to\Ds\gamma]=1.656[0.457,3.378]~\keV$, and
-$\Gamma[\Bsone(5830)\to\Bs\gamma]=1.504[0.818,5.342]~\keV$.
+$\Gamma[\Dsone(2460)\to\Ds\gamma]=34.96[28.06,43.53]~\keV$,
+$\Gamma[\Dsone(2536)\to\Ds\gamma]=0.988[0.092,3.555]~\keV$, and
+$\Gamma[\Bsone(5830)\to\Bs\gamma]=8.702[6.474,11.23]~\keV$.
+The operator-weighted gluonic and electromagnetic convolutions are evaluated
+with the exact off-shell double-Borel numerator reduction and agree
+term-by-term between the Python and Mathematica implementations.
 \end{abstract}
 
 \section{Introduction}
@@ -201,26 +205,27 @@ Appendix~\ref{app:two-point}.  Both numbers are normalization diagnostics;
 neither is used as an input or presented as a reproduction of Wang's complete
 OPE.
 
-For the bottom-strange channel we use the Pullin--Zwicky basis-current inputs
-$f_{\Bsone,A}^{\rm PZ}=0.305\pm0.027~\GeV$ and
-$f_{\Bsone}^{T,\rm PZ}=0.285\pm0.027~\GeV$ \cite{PullinZwicky2021}.  These
-inputs are converted to physical-current decay constants by the mixed-current
-diagonalization closure.  For the observed high-combination state in the
-preferred lattice-photon row this gives
-$f_1^{(B_s)}=0.430[0.369,0.479]~\GeV$ and
-$f_2^{(B_s)}=0.215[0.117,0.292]~\GeV$.  This closure is numerically fragile:
-in the nominal central-window lattice ensemble only $245/500$ lower-state and
-$236/500$ higher-state trials satisfy the physical covariance condition
-$|\rho_{AB}|\leq1$.  The bottom results below are therefore conditional on the
-accepted closure samples and await a direct bottom-sector $AA/AB/BB$ two-point
-calculation.
+For the bottom-strange channel we evaluate the same normalized-current
+$AA/AB/BB$ OPE with $m_Q=m_b$ and project it at the previous-study angle
+$\theta_{B_s}=38.5\pm0.1^\circ$.  In the selected two-point window
+$M^2=6.50$--$7.30~\GeV^2$, separate thresholds are fitted to the model lower
+pole and the observed $\Bsone(5830)$.  The direct Monte Carlo gives
+\begin{equation}
+ f_1^{(B_s)}=0.5358[0.5096,0.5586]~\GeV,\qquad
+ f_2^{(B_s)}=0.08896[0.08496,0.09278]~\GeV .
+\end{equation}
+Of 2000 generated samples, 1757 satisfy all stated stability criteria.
+No Pullin--Zwicky decay constant and no
+off-diagonal overlap closure enters the final bottom normalization; their
+earlier use is retained only in the internal historical comparison.
 
 \section{Numerical Inputs and Scale Convention}
 
 Table~\ref{tab:inputs-polished} lists the main inputs.  Hadron masses, quark
-masses, charges, and $\alpha_{\rm em}$ are taken from PDG summaries
-\cite{PDG2024}.  The pseudoscalar decay constants are taken in the lattice
-context summarized by FLAG \cite{FLAG2024}.  Photon DAs follow Ball, Braun and
+masses, charges, and $\alpha_{\rm em}$ are taken from the PDG review and
+online listings \cite{PDG2024,PDG2026}.  The pseudoscalar decay constants are
+taken in the lattice context summarized by the published FLAG review
+\cite{FLAG2024}.  Photon DAs follow Ball, Braun and
 Kivel \cite{Ball:2002ps}; the legacy susceptibility comparison follows
 Rohrwild \cite{Rohrwild2007}; the modern photon normalization follows the
 lattice result of Bacchio et al. \cite{Bacchio2024}.  The input bookkeeping is
@@ -256,10 +261,11 @@ comparison with older analyses.
       & fixed-angle $AA/AB/BB$ projection\\
     pure axial benchmark & $f_A(D_{s1})$
       & $0.345(17)~\GeV$ & corrected Wang v4 pure-current check\\
-    bottom basis constants & $f_{\Bsone,A}^{\rm PZ},f_{\Bsone}^{T,\rm PZ}$
-      & $0.305(27),\,0.285(27)~\GeV$ & Pullin--Zwicky\\
     bottom physical constants & $f_1^{(B_s)},f_2^{(B_s)}$
-      & $0.430[0.369,0.479],\,0.215[0.117,0.292]~\GeV$ & this work\\
+      & $0.5358[0.5096,0.5586],\,0.08896[0.08496,0.09278]~\GeV$
+      & direct $AA/AB/BB$ projection\\
+    bottom two-point window & $M_{\rm 2pt}^2$
+      & $6.50$--$7.30~\GeV^2$ & pole/OPE/mass stability\\
     legacy photon input & $\chi_s(1~\GeV)$
       & $+3.15(30)~\GeV^{-2}$ & comparison scenario\\
     lattice photon input & $f_{\gamma,s}^{\perp}(1~\GeV)$
@@ -298,7 +304,8 @@ comparison with older analyses.
 
 \section{Results}
 
-The final predictions are summarized in Table~\ref{tab:results-polished}.  We
+The final numerical results are summarized in
+Table~\ref{tab:results-polished}.  We
 quote medians and 16--84 percentile intervals rather than Gaussian means and
 standard deviations.  This is important because the $\Dsone(2536)$ and
 $\Bsone(5830)$ amplitudes can pass close to zero; their width distributions are
@@ -314,28 +321,28 @@ therefore non-Gaussian.
     \midrule
     $D_s$ & $\Dsone(2460)\to\Ds\gamma$ & legacy $\chi_s$
       & $26.6(6)^\circ$ & $f_1=0.405[0.381,0.429]$
-      & $-0.500[-0.560,-0.432]$ & $52.39[39.30,66.13]$\\
+      & $-0.542[-0.611,-0.479]$ & $61.66[48.37,78.46]$\\
     $D_s$ & $\Dsone(2536)\to\Ds\gamma$ & legacy $\chi_s$
       & $26.6(6)^\circ$ & $f_2=0.168[0.159,0.175]$
-      & $-0.196[-0.250,-0.147]$ & $11.89[6.74,19.34]$\\
+      & $-0.0790[-0.153,-0.00266]$ & $2.220[0.226,7.379]$\\
     $D_s$ & $\Dsone(2460)\to\Ds\gamma$ & lattice $f_{\gamma,s}^{\perp}$
       & $26.6(6)^\circ$ & $f_1=0.405[0.379,0.430]$
-      & $-0.357[-0.393,-0.324]$ & $26.71[22.01,32.44]$\\
+      & $-0.408[-0.455,-0.365]$ & $34.96[28.06,43.53]$\\
     $D_s$ & $\Dsone(2536)\to\Ds\gamma$ & lattice $f_{\gamma,s}^{\perp}$
       & $26.6(6)^\circ$ & $f_2=0.168[0.160,0.175]$
-      & $-0.0730[-0.104,-0.0384]$ & $1.656[0.457,3.378]$\\
+      & $+0.0518[+0.00244,+0.1067]$ & $0.988[0.092,3.555]$\\
     $B_s$ & $\Bsone(5830)\to\Bs\gamma$ & legacy $\chi_s$
-      & $38.5(1)^\circ$ & $f_2^{(B_s)}=0.206[0.130,0.306]$
-      & $-0.116[-0.198,-0.0791]$ & $2.830[1.327,8.273]$\\
+      & $38.5(1)^\circ$ & $f_2^{(B_s)}=0.0894[0.0854,0.0929]$
+      & $-0.269[-0.302,-0.235]$ & $15.37[11.75,19.31]$\\
     $B_s$ & $\Bsone(5830)\to\Bs\gamma$ & lattice $f_{\gamma,s}^{\perp}$
-      & $38.5(1)^\circ$ & $f_2^{(B_s)}=0.215[0.117,0.292]$
-      & $-0.0842[-0.159,-0.0621]$ & $1.504[0.818,5.342]$\\
+      & $38.5(1)^\circ$ & $f_2^{(B_s)}=0.0888[0.0845,0.0926]$
+      & $-0.203[-0.230,-0.175]$ & $8.702[6.474,11.23]$\\
     $B_s$ & $\Bsone^{\rm low}(5750)\to\Bs\gamma$ & legacy $\chi_s$
-      & $38.5(1)^\circ$ & $f_1^{(B_s)}=0.427[0.368,0.485]$
-      & $+0.278[+0.216,+0.358]$ & $9.178[5.488,16.20]$\\
+      & $38.5(1)^\circ$ & $f_1^{(B_s)}=0.533[0.508,0.557]$
+      & $+0.216[+0.181,+0.249]$ & $5.435[3.949,7.588]$\\
     $B_s$ & $\Bsone^{\rm low}(5750)\to\Bs\gamma$ & lattice $f_{\gamma,s}^{\perp}$
-      & $38.5(1)^\circ$ & $f_1^{(B_s)}=0.433[0.371,0.489]$
-      & $+0.385[+0.333,+0.457]$ & $18.16[13.03,27.94]$\\
+      & $38.5(1)^\circ$ & $f_1^{(B_s)}=0.536[0.510,0.558]$
+      & $+0.308[+0.288,+0.332]$ & $11.34[9.144,14.06]$\\
     \bottomrule
   \end{tabular}%
   }
@@ -343,8 +350,7 @@ therefore non-Gaussian.
   is the preferred modern normalization; the legacy susceptibility input is
   kept as a comparison with older photon-DA analyses.  The
   $\Bsone^{\rm low}(5750)$ entries are lower-partner diagnostics, not observed
-  resonances.  The $B_s$ rows are conditional on the physical samples accepted
-  by the basis-input diagonal closure.}
+  resonances.  Both sectors use direct $AA/AB/BB$ two-point residues.}
   \label{tab:results-polished}
 \end{table}
 
@@ -354,7 +360,7 @@ the same axial and tensor basis amplitudes enter with the opposite physical
 combination in Eq.~\eqref{eq:stage3}, driving the amplitude close to zero for a
 wide part of the accepted input range.  The observed $\Bsone(5830)$ behaves
 similarly in the bottom sector.  Its median width is at the keV scale after the
-physical-current normalization and retains a long upper tail.
+direct physical-current normalization.
 
 Table~\ref{tab:interference-polished} makes this cancellation explicit.  The
 entries are the two normalized pieces of Eq.~\eqref{eq:stage3}.  For
@@ -372,23 +378,40 @@ mode is difficult to observe.
     & $A_{2536}$ & $B_{2536}$ & $G_{2536}$ & $|G_{2460}/G_{2536}|$\\
     \midrule
     previous-study nominal & $26.6^\circ$
-      & $-0.0848$ & $-0.2776$ & $-0.3624$
-      & $-0.4047$ & $+0.3324$ & $-0.0723$ & $5.01$\\
+      & $-0.0749$ & $-0.3365$ & $-0.4113$
+      & $-0.3648$ & $+0.4110$ & $+0.0463$ & $8.89$\\
     truncated-matrix diagnostic & $30.61^\circ$
-      & $-0.0963$ & $-0.2668$ & $-0.3631$
-      & $-0.3991$ & $+0.3873$ & $-0.0118$ & $30.77$\\
+      & $-0.0850$ & $-0.3234$ & $-0.4084$
+      & $-0.3597$ & $+0.4789$ & $+0.1192$ & $3.43$\\
     HQET benchmark & $35.3^\circ$
-      & $-0.1093$ & $-0.2533$ & $-0.3626$
-      & $-0.3726$ & $+0.4327$ & $+0.0601$ & $6.04$\\
+      & $-0.0966$ & $-0.3070$ & $-0.4035$
+      & $-0.3358$ & $+0.5350$ & $+0.1992$ & $2.03$\\
     \bottomrule
   \end{tabular}%
   }
   \caption{Central lattice-photon benchmark at the midpoint of the selected
   transition window.  The $2460$ pieces remain constructive and the $2536$
   pieces remain destructive; the angle changes the distance from the
-  cancellation near $31.37^\circ$.  All $G$ values are in $\GeV^{-1}$.}
+  cancellation near $23.96^\circ$.  All $G$ values are in $\GeV^{-1}$.}
   \label{tab:interference-polished}
 \end{table}
+
+The suppression is not a phase-space effect or an exact selection rule.  At
+the nominal angle the two high-state pieces are individually of order
+$0.4~\GeV^{-1}$,
+\begin{equation}
+G_{2536}^{(A)}=-0.3648~\GeV^{-1},\qquad
+G_{2536}^{(B)}=+0.4110~\GeV^{-1},
+\end{equation}
+but their sum is only $+0.0463~\GeV^{-1}$.  Since the width is proportional
+to $|G|^2q_\gamma^3$, this amplitude-level compensation becomes a much stronger
+width suppression.  It is also why calculations with a different mixing
+angle, current normalization, or relative axial--tensor basis amplitude can
+obtain substantially larger widths: at the HQET benchmark angle the same
+central OPE gives $G_{2536}=0.199~\GeV^{-1}$ and
+$\Gamma_{2536}=12.3~\keV$.  The robust prediction is therefore the
+destructive-interference mechanism and the hierarchy relative to the lower
+state; the precise sub-keV median is intrinsically cancellation sensitive.
 
 The lower $\Bsone$ row in Table~\ref{tab:results-polished} is retained only as
 a model-state diagnostic.  It is not an experimentally established resonance
@@ -446,33 +469,39 @@ figure.  The machine-readable version is
 
 \section{Conclusions}
 
-We have computed the radiative transitions of strange heavy axial mesons in a
-staged light-cone QCD sum-rule framework.  The calculation includes hard photon
+We have developed a staged light-cone QCD sum-rule framework for the radiative
+transitions of strange heavy axial mesons.  The calculation includes hard photon
 emission from both quark lines, two-particle and three-particle photon
 distribution amplitudes, and explicit strange-quark-mass terms.  The charm
 residue normalization has been separated from the basis-current OPE and checked
 by projection onto the pure axial channel.  This projection is the meaningful
 comparison with Wang's one-current calculation; reproducing Wang's one-pole
 number is not used as a criterion for the correctness of the two mixed
-residues.  The bottom result uses
-Pullin--Zwicky basis-current inputs followed by the mixed-current
-diagonalization closure; its low physical-sample acceptance makes those
-predictions conditional pending a direct bottom-sector two-point matrix.
+residues.  The bottom residues are now obtained from the direct heavy-flavour
+continuation of the same normalized-current $AA/AB/BB$ matrix, rather than
+from basis-current decay constants or an overlap closure.
+The former QCD-side pole-mass numerator shortcut has been withdrawn.  The
+complete off-shell double-Borel reduction given in the appendix has now been
+propagated through the numerical uncertainty scan.  At the central charm and
+bottom checkpoints, 145 convolution, invariant, coupling, residue, and width
+quantities agree between the Python and Mathematica implementations within the
+stated $10^{-8}$ absolute-or-relative regression tolerance.
 
 Table~\ref{tab:conclusion-comparison} gives the requested consolidated
 comparison with experiment and representative calculations.  The
-$\Dsone(2460)$ result overlaps the original single-current LCSR interval of
-Colangelo et al.\ \cite{Colangelo2005}.  Combining our preferred partial width
+$\Dsone(2460)$ interval overlaps the upper edge of the original single-current
+LCSR range of Colangelo et al.\ \cite{Colangelo2005}.  Combining our preferred partial width
 with the PDG 2025-update branching fraction
 $\mathcal B(\Dsone(2460)\to\Ds\gamma)=18\pm4\%$ gives an indicative total width
-near $0.15~\MeV$, comfortably below the direct $3.5~\MeV$ upper limit
+near $0.19~\MeV$, comfortably below the direct $3.5~\MeV$ upper limit
 \cite{PDG2025Update}.  For $\Dsone(2536)$, the measured
 $0.92\pm0.05~\MeV$ total width implies
-$\mathcal B_\gamma\simeq0.18\%$ at our median, with a 16--84 percentile range
-of approximately $0.05$--$0.37\%$.  This is below the indirect
+$\mathcal B_\gamma\simeq0.107\%$ at our median, with a 16--84 percentile range
+of approximately $0.010$--$0.386\%$.  This is below the indirect
 $\mathcal B_\gamma<0.9\%$, or $\Gamma_\gamma<8~\keV$, constraint inferred by
 Bondar \cite{Bondar2025Why}.  The observed $\Bsone(5830)$ has no direct
-radiative measurement, so that row remains a conditional prediction.
+radiative measurement, so that row remains a genuine prediction of the
+direct-normalization calculation.
 
 \begin{table}[htbp]
   \centering
@@ -485,26 +514,27 @@ radiative measurement, so that row remains a conditional prediction.
       & Selected theory [keV] & Assessment\\
     \midrule
     $\Dsone(2460)\to\Ds\gamma$\newline
-      $26.71[22.01,32.44]$
+      $34.96[28.06,43.53]$
       & $\mathcal B_\gamma=18(4)\%$;\newline
         $\Gamma_{\rm tot}<3.5~\MeV$
         \cite{PDG2025Update}
       & LCSR $19$--$29$ \cite{Colangelo2005};
         QM $3.53$--$17.2$ \cite{GoityRoberts2001,Chen2020Electric}
-      & overlaps the earlier LCSR\\
+      & overlaps the upper edge of the earlier LCSR\\
     $\Dsone(2536)\to\Ds\gamma$\newline
-      $1.656[0.457,3.378]$
+      $0.988[0.092,3.555]$
       & $\Gamma_{\rm tot}=0.92(5)~\MeV$ \cite{PDG2025Update};\newline
         indirect $\Gamma_\gamma<8$ \cite{Bondar2025Why}
       & $1.6\pm2.3$ \cite{KornerPirjolSchilcher1993};
-        $7$--$61$ (models), $12$ \cite{BondarMilstein2025}
+        $7$--$61$ (models, incl. $15$ from Ref.~\cite{Godfrey2003Radiative});
+        $12$ \cite{BondarMilstein2025}
       & compatible with the bound; cancellation sensitive\\
     $\Bsone(5830)\to\Bs\gamma$\newline
-      $1.504[0.818,5.342]$
+      $8.702[6.474,11.23]$
       & no direct radiative measurement \cite{CMS2018}
       & $27$--$56.6$ \cite{LiNiZhong2021,GodfreyMoatsSwanson2016,LuPanWang2016};
         $28$ \cite{BondarMilstein2025}
-      & conditional low-width prediction\\
+      & below existing models; cancellation sensitive\\
     \bottomrule
   \end{tabular}
   \caption{Consolidated experiment and literature comparison for the preferred
@@ -518,9 +548,9 @@ an artificially precise high-state number.  The $\Dsone(2460)$ amplitude is
 constructive and naturally lies at the tens-of-keV level.  The
 $\Dsone(2536)$ amplitude is destructive and the final-angle stability plot
 shows enhanced threshold and angle sensitivity near its zero.  The observed
-$\Bsone(5830)$ is likewise a cancellation channel, but its absolute
-normalization is less secure because a dedicated bottom $AA/AB/BB$ two-point
-matrix is not yet available.
+$\Bsone(5830)$ is likewise a cancellation channel.  Its direct two-point
+normalization raises the preferred width relative to the former closure
+diagnostic, but it remains below the representative quark-model predictions.
 
 \appendix
 
@@ -590,16 +620,26 @@ $(g_s,G)$ for the gluon field.  Equations
 explicitly that no ordinary local term such as
 $-\langle\bar ss\rangle/12$ is inserted into the transition calculation.
 The condensate-dependent terms instead occur in nonlocal photon matrix
-elements, for example
+elements.  In Rohrwild notation,
 \begin{align}
- \langle\gamma(q,\varepsilon)|\bar s(x)\sigma_{\mu\nu}s(0)|0\rangle
- ={}&-\ii e e_s\ssbar
- (\varepsilon_\mu q_\nu-\varepsilon_\nu q_\mu)
- \int_0^1du\,e^{\ii\bar u q\cdot x}
- \left[\chi_\gamma\phi_\gamma(u)
- +\frac{x^2}{16}\mathbb A(u)\right]+\cdots .
+ \langle0|\bar s(0)[0,x]\sigma_{\mu\nu}s(x)|0\rangle_F
+ ={}&e e_s\ssbar\int_0^1du\Bigg\{
+ \left[\chi_\gamma\phi_\gamma(u)+\frac{x^2}{16}\mathcal A(u)\right]
+ F_{\mu\nu}(ux)\nonumber\\
+ &+\frac{\mathcal B(u)}8x^\rho
+ [x_\nu F_{\mu\rho}(ux)-x_\mu F_{\nu\rho}(ux)]
+ \Bigg\}.
  \label{eq:app-photon-matrix-element}
 \end{align}
+The operator dictionary to the alternative notation is
+\begin{equation}
+ \mathcal B(u)=-4\int_0^u d\alpha\,(u-\alpha)h_\gamma(\alpha),
+ \qquad
+ \mathbb A(u)-8\bar H_\gamma(u)=\mathcal A(u)+2\mathcal B(u).
+ \label{eq:app-Rohrwild-B-dictionary}
+\end{equation}
+In particular, the Rohrwild counterpart of the Colangelo
+$\bar H_\gamma$ term is $2\mathcal B$, not a new $H_\gamma$ amplitude.
 
 \subsection{Double-Borel normalization and axial invariant}
 
@@ -629,27 +669,29 @@ For $\mathcal M_1^2=\mathcal M_2^2=2M^2$,
  \label{eq:app-physical-lcsr}
 \end{align}
 
-Let $E_Q=e^{-m_Q^2/M^2}$, $E_0=e^{-s_0/M^2}$ and $u_0=1/2$.  In the
+Let $E_Q=e^{-m_Q^2/M^2}$, $E_0=e^{-s_0/M^2}$,
+$\Delta E_Q=E_Q-E_0$, and $u_0=1/2$.  In the
 positive-magnitude susceptibility convention used in the numerical code, the
 paper-default axial invariant is
 \begin{align}
  \widehat T_A^{\rm RW}={}&
  \int_{(m_Q+m_s)^2}^{s_0}ds\,e^{-s/M^2}\rho_A^P(s)
- +e_s\ssbar(E_Q-E_0)M^2\chi_\gamma\phi_\gamma(u_0)\nonumber\\
- &-e_s\ssbar E_Q\left[
- -\frac14\{\mathbb A(u_0)-8\bar H_\gamma(u_0)\}
+ +e_s\ssbar\Delta E_QM^2\chi_\gamma\phi_\gamma(u_0)\nonumber\\
+ &+e_s\ssbar E_Q\left[
+ \frac14\{\mathcal A(u_0)+2\mathcal B(u_0)\}
  \left(1+\frac{m_Q^2}{M^2}\right)
- -\mathcal I_{\mathcal F_1}(u_0)\right]\nonumber\\
- &+2e_sf_{3\gamma}m_QE_Q\Psi^v(u_0)
- +\mathcal I_A^{\rm em}.
+ +\mathcal I_{\mathcal F_1}(u_0)\right]\nonumber\\
+ &+e_sf_{3\gamma}m_QE_Q\overline\psi^{(V)}(u_0)
+ +\widehat T_A^{\rm 3p,\gamma}.
  \label{eq:app-axial-invariant}
 \end{align}
+Thus the continuum factors are not universal:
+twist~2 carries $\Delta E_Q$, whereas twist~3, twist~4, and the gluonic
+three-particle term carry $E_Q$.  The separate gauge-completion
+electromagnetic term below follows Rohrwild's $I_F$-type
+$\Delta E_Q$ subtraction.
 Here
-\begin{align}
- \bar H_\gamma(u_0)&=\int_0^{u_0}du\int_0^u dv\,h_\gamma(v),&
- \Psi^v(u_0)&=\int_0^{u_0}du\,\psi^v(u),
-\end{align}
-and
+$\overline\psi^{(V)}(u)=2\int_0^u dv\,\psi^v(v)$, and
 \begin{align}
  \mathcal I_{\mathcal F_1}(u_0)={}&
  \int_0^{1-u_0}\!dv\int_0^{u_0/(1-v)}\!d\alpha_g\,
@@ -694,53 +736,249 @@ where $d=m_Q+m_s$,
  a_s=\frac{m_Qm_s}{d},\quad b_s=\frac{m_s^2s}{d},\qquad
  a_Q=\frac{2m_Q^2-m_Qm_s}{d},\quad b_Q=-\frac{m_Q^2s}{d}.
 \end{equation}
-At the Borel saddle, the two-particle tensor-DA pieces obey
+On the QCD side, $p'^2$ and $p^2$ remain independent until the double Borel
+transformation:
+\begin{equation}
+ q^2=0,\qquad p'=p+q,\qquad
+ 2p\cdot q=p'^2-p^2,\qquad
+ D(u)=m_Q^2-\bar u p'^2-up^2 .
+ \label{eq:app-offshell-kinematics}
+\end{equation}
+The substitutions $p'^2=M_i^2$, $p^2=m_P^2$ and
+$2p\cdot q=M_i^2-m_P^2$ belong only to the isolated phenomenological pole
+residue and must not be made inside a QCD-side numerator.
+
+The current traces give the exact kinematics-independent relations
+\begin{equation}
+ \widehat T_B^{\rm tw2}
+ =\frac{m_Q}{d}\widehat T_A^{\rm tw2},\qquad
+ \widehat T_B^{\rm tw4}
+ =\frac{m_Q}{d}\widehat T_A^{\rm tw4}.
+ \label{eq:app-tensor-safe-ratios}
+\end{equation}
+The vector-DA and $\mathbb P$ three-particle terms contain
+$p^2$ or $p\cdot q$ and must therefore be transformed off shell.  For
+$I_n[F]=\int_0^1du\,F(u)/D(u)^n$, define
+\begin{equation}
+ \frac1{M^2}=\frac1{\mathcal M_1^2}+\frac1{\mathcal M_2^2},\qquad
+ u_0=\frac{\mathcal M_1^2}{\mathcal M_1^2+\mathcal M_2^2},\qquad
+ A_n=\frac{(M^2)^{2-n}}{\Gamma(n)}e^{-m_Q^2/M^2}.
+\end{equation}
+Then, for $n>1$ and vanishing endpoint terms,
 \begin{align}
- \widehat T_B^{\rm tw2+tw4}
- &=\frac{m_Q}{d}\widehat T_A^{\rm tw2+tw4},\nonumber\\
+ \mathcal B_{12} I_n[F]&=A_nF(u_0),\nonumber\\
+ \mathcal B_{12}\!\int_0^1du\,\frac{(p\cdot q)F(u)}{D(u)^n}
+ &=\frac{A_{n-1}}{2(n-1)}F'(u_0),\nonumber\\
+ \mathcal B_{12}\!\int_0^1du\,\frac{p^2F(u)}{D(u)^n}
+ &=m_Q^2A_nF(u_0)-A_{n-1}F(u_0)
+ -\frac{A_{n-1}}{n-1}[\bar uF(u)]'_{u=u_0}.
+ \label{eq:app-borel-numerators}
+\end{align}
+Nonvanishing endpoints generate additional contact terms.  These identities
+replace the former pole-mass numerator prescription.
+
+For the vector DA set $a=1-u$, $a_0=1-u_0$ and
+$D_a=m_Q^2-ap'^2-(1-a)p^2$.  The reduced pre-Borel kernels and the explicit
+tensor-current Borel result are
+\begin{align}
+ K_A^{(V)}(a)&=-\frac{8m_Q}{D_a^2},\nonumber\\
+ K_B^{(V)}(a)&=-\frac{8[m_Q^2+(1-a)p\cdot q]}{dD_a^2},
+ \nonumber\\[-2pt]
  \widehat T_B^{\rm tw3}
- &=R_v\,\widehat T_A^{\rm tw3},\qquad
- R_v=\frac{3m_P^2+(2\bar u_0+3)p\cdot q}{3m_Qd}.
- \label{eq:app-tensor-2p}
+ &=\frac{e_sf_{3\gamma}E_Q}{d}
+ \left[
+ m_Q^2\overline\psi^{(V)}(a_0)
+ -\frac{M^2}{2}
+ \left.\frac{d}{da}
+ \{(1-a)\overline\psi^{(V)}(a)\}\right|_{a=a_0}
+ \right].
+ \label{eq:app-tensor-tw3-explicit}
 \end{align}
-The matched three-particle term is
+At $a_0=1/2$,
+\begin{equation}
+ \widehat T_A^{\rm tw3}=0,\qquad
+ \widehat T_B^{\rm tw3}
+ =-\frac{e_sf_{3\gamma}M^2E_Q}{4d}
+ \overline\psi^{(V)\prime}(1/2).
+ \label{eq:app-symmetric-tw3}
+\end{equation}
+
+For the three-particle pieces the heavy-line fraction is
+$a(\alpha_i,v)=\alpha_{\bar q}+v\alpha_g$.  After performing the
+delta-function integration over the physical simplex, define
 \begin{align}
- \widehat T_B^{\rm 3p}
- &=\frac{m_Q}{d}\,e_s\ssbar E_Q\,\mathcal I_B^{\rm 3p},\nonumber\\
- \mathcal I_B^{\rm 3p}
- &=\mathcal I_\sigma+
- \left(1+\frac{p\cdot q}{2m_Q^2}\right)(\mathcal I_S+\mathcal I_{T_2})
- +\mathcal I_{T_3}-\frac{p\cdot q}{2m_Q^2}\mathcal I_{T_4},
- \label{eq:app-tensor-3p}
+ \mathcal J_z[\mathcal F]={}&
+ \int_0^z dv\int_0^{(1-z)/(1-v)}d\alpha_g\,
+ \mathcal F(1-z-(1-v)\alpha_g,z-v\alpha_g,\alpha_g,v)
+ \nonumber\\
+ &+\int_z^1dv\int_0^{z/v}d\alpha_g\,
+ \mathcal F(1-z-(1-v)\alpha_g,z-v\alpha_g,\alpha_g,v).
+ \label{eq:app-line-projection}
 \end{align}
-where each $\mathcal I_X$ is the same two-domain light-cone integral as
-Eq.~\eqref{eq:app-f1-integral} with the indicated photon DA kernel.
-Finally, with
-$p^2=m_P^2$ and $p\cdot q=(m_A^2-m_P^2)/2$, the nonlocal electromagnetic
-terms are
+The $1/(q\cdot x)$ terms require the support density
 \begin{align}
- \mathcal I_A^{\rm em}
- &=e_Q\ssbar(E_Q-E_0)
- \frac{2(m_P^2-m_A^2)}{M^2}P_\gamma,\nonumber\\
- \mathcal I_B^{\rm em}
- &=e_Q\ssbar(E_Q-E_0)\left[
- (r_0-r_S)\frac{25}{16}-r_T\frac{5}{16}
- +2r_0\frac{m_P^2-m_A^2}{M^2}P_\gamma\right],
- \label{eq:app-em-terms}\\
- P_\gamma&=\ln8-\frac{1181}{320},\qquad
- r_0=\frac{m_Q}{d},\quad
- r_S=\frac{m_Q^2+\tfrac12p\cdot q}{m_Qd},\quad
- r_T=\frac{-m_Q^2+m_P^2+\tfrac32p\cdot q}{m_Qd}.\nonumber
+ \mathcal L_z[X]={}&
+ \int_0^{1-z}d\alpha_q\int_0^{\alpha_q}d\alpha_q'
+ \int_0^z d\alpha_{\bar q}\,
+ \frac{z-\alpha_{\bar q}}{(1-\alpha_q-\alpha_{\bar q})^2}
+ X(\alpha_q,\alpha_{\bar q},1-\alpha_q-\alpha_{\bar q})
+ \nonumber\\
+ &-\int_0^{1-z}d\alpha_q\int_z^{1-\alpha_q}d\beta\,
+ \frac{z}{\beta^2}\int_0^\beta d\alpha_{\bar q}'\,
+ X(\alpha_q,\alpha_{\bar q}',1-\alpha_q-\alpha_{\bar q}')
+ \nonumber\\
+ &+\int_0^{1-z}d\alpha_q\,\frac{z}{(1-\alpha_q)^2}
+ \int_0^{\alpha_q}d\alpha_q'
+ \int_0^{1-\alpha_q'}d\alpha_{\bar q}\,
+ X(\alpha_q',\alpha_{\bar q},1-\alpha_q'-\alpha_{\bar q}).
+ \label{eq:app-P-line-density}
 \end{align}
-Equations \eqref{eq:app-rho-b}--\eqref{eq:app-em-terms}, together with
+The lower limit $\beta=z$ in the second line is required by the double-Borel
+support; extending it to zero produces a spurious logarithmic divergence.
+
+The $x_\alpha G^{\alpha\beta}\gamma_\beta$ heavy-propagator term has no
+$(\slashed k+m_Q)$ numerator.  Its explicit E1 trace therefore gives
+\begin{align}
+ \mathfrak X_{A,S}[F]&=-8E_QF(a_0),&
+ \mathfrak X_{A,T_1}[F]&=48\ii E_QF(a_0),\nonumber\\
+ \mathfrak X_{A,T_2}[F]&=16\ii E_QF(a_0),&
+ \mathfrak X_{A,T_3}[F]&=-16\ii E_QF(a_0),\nonumber\\
+ \mathfrak X_{A,T_4}[F]&=0,
+ \label{eq:app-A-xgamma-explicit}\\
+ \mathfrak X_{B,S}[F]&=\mathfrak X_{B,T_1}[F]
+ =\mathfrak X_{B,T_2}[F]=\mathfrak X_{B,T_3}[F]
+ =\mathfrak X_{B,T_4}[F]=0 .
+ \label{eq:app-B-xgamma-explicit}
+\end{align}
+The corresponding $\sigma_{\alpha\beta}$ coefficients are
+$\{8,-16\ii\}$ for $A$ and
+$\{8m_Q/d,-16\ii m_Q/d\}$ for $B$.
+Equations~\eqref{eq:app-A-xgamma-explicit}--\eqref{eq:app-B-xgamma-explicit}
+are raw Borel images.  The final continuum prescription is term-specific:
+twist~2 uses $\Delta E_Q$, twist~3, twist~4, and the gluonic
+three-particle term retain $E_Q$, and the separate gauge-completion
+electromagnetic term uses $\Delta E_Q$.
+
+Suppressing the arguments $(\alpha_q,\alpha_{\bar q},\alpha_g)$, the complete
+gluonic operator weights are
+\begin{align}
+ \mathcal F^g_{A,\sigma}
+ &=\mathcal S+\widetilde{\mathcal S}
+   -\mathcal T_1-\mathcal T_2+\mathcal T_3+\mathcal T_4,\nonumber\\
+ \mathcal F^g_{A,x\gamma}
+ &=2v(-\mathcal S-\mathcal T_3+\mathcal T_2),\nonumber\\
+ \mathcal F_A^g&=\mathcal F^g_{A,\sigma}
+                 +\mathcal F^g_{A,x\gamma},&
+ \mathcal F_B^g&=\frac{m_Q}{d}\mathcal F^g_{A,\sigma}.
+ \label{eq:app-gluonic-weights}
+\end{align}
+Their explicit post-Borel invariants are
+\begin{equation}
+ \widehat T_A^{\rm 3p,g}
+ =e_s\ssbar E_Q\mathcal J_{a_0}[\mathcal F_A^g],\qquad
+ \widehat T_B^{\rm 3p,g}
+ =e_s\ssbar E_Q\mathcal J_{a_0}[\mathcal F_B^g].
+ \label{eq:app-gluonic-terms}
+\end{equation}
+
+For the nonlocal electromagnetic operators,
+\begin{equation}
+ \mathcal F_A^\gamma=(1-2v)\mathcal S_\gamma-\mathcal T_4^\gamma,
+ \qquad
+ \mathcal F_B^\gamma=\frac{m_Q}{d}
+ (\mathcal S_\gamma-\mathcal T_4^\gamma).
+ \label{eq:app-em-weights}
+\end{equation}
+The exact off-shell Borel transform replaces the former pole-mass numerator
+by
+\begin{equation}
+ \frac{2(m_P^2-M_i^2)}{M^2}\,
+ \mathcal L_{a_0}[\mathcal T_4^\gamma]
+ \longrightarrow
+ 2\left.\frac{d}{dz}\mathcal L_z[\mathcal T_4^\gamma]
+ \right|_{z=a_0}.
+ \label{eq:app-P-borel-replacement}
+\end{equation}
+Writing $\Delta E_Q=E_Q-E_0$, the complete electromagnetic terms are
+\begin{align}
+ \widehat T_A^{\rm 3p,\gamma}
+ &=e_Q\ssbar\Delta E_Q
+ \left\{\mathcal J_{a_0}[
+ (1-2v)\mathcal S_\gamma-\mathcal T_4^\gamma]
+ +2\left.\frac{d}{dz}\mathcal L_z[\mathcal T_4^\gamma]
+ \right|_{z=a_0}\right\},\nonumber\\
+ \widehat T_B^{\rm 3p,\gamma}
+ &=e_Q\ssbar\Delta E_Q\frac{m_Q}{d}
+ \left\{\mathcal J_{a_0}[
+ \mathcal S_\gamma-\mathcal T_4^\gamma]
+ +2\left.\frac{d}{dz}\mathcal L_z[\mathcal T_4^\gamma]
+ \right|_{z=a_0}\right\}.
+ \label{eq:app-em-terms}
+\end{align}
+Thus the Rohrwild tensor invariant has the parallel structure
 \begin{equation}
  \widehat T_B^{\rm RW}=\int ds\,e^{-s/M^2}\rho_B^P
- +\widehat T_B^{\rm tw2+tw4}
+ +\widehat T_B^{\rm tw2}
  +\widehat T_B^{\rm tw3}
- +\widehat T_B^{\rm 3p}
- +\mathcal I_B^{\rm em},
+ +\widehat T_B^{\rm tw4}
+ +\widehat T_B^{\rm 3p,g}
+ +\widehat T_B^{\rm 3p,\gamma}.
 \end{equation}
-are the explicit tensor prescription used in the Python analysis.
+Equations~\eqref{eq:app-line-projection}--\eqref{eq:app-em-terms} display all
+integration limits, operator weights and Borel derivatives.  No physical
+pole mass and no ordinary local condensate enters a QCD-side numerator.
+
+\subsection{Numerical convolution and cross-code checkpoint}
+
+At the symmetric saddle the DA-only convolutions are
+\begin{align}
+ \mathcal J_{1/2}[\mathcal F^g_{A,\sigma}]&=-0.1562500000,&
+ \mathcal J_{1/2}[\mathcal F^g_{A,x\gamma}]&=+0.2265798500,\nonumber\\
+ \mathcal J_{1/2}[\mathcal F^g_A]&=+0.0703298500,&
+ \mathcal J_{1/2}[\mathcal F^\gamma_A]&=0,\nonumber\\
+ \mathcal J_{1/2}[\mathcal S_\gamma-\mathcal T_4^\gamma]
+ &=1.5625000000,&
+ \mathcal L_{1/2}[\mathcal T_4^\gamma]&=0.1111834583,\nonumber\\
+ \left.\frac{d}{dz}\mathcal L_z[\mathcal T_4^\gamma]\right|_{z=1/2}
+ &=0.4098669166.&&
+ \label{eq:app-numerical-convolutions}
+\end{align}
+For the central charm regression point
+$M^2=3.75~\GeV^2$, $s_0=8.0~\GeV^2$, the lattice photon
+normalization, $\theta=26.6^\circ$, and
+$(f_1,f_2)=(0.4005893,0.1666704)~\GeV$, the invariant breakdown is
+\begin{table}[H]
+ \centering
+ \begin{tabular}{lrr}
+  \toprule
+  contribution & $\widehat T_A~(\GeV^3)$ & $\widehat T_B~(\GeV^3)$\\
+  \midrule
+  perturbative & $-8.8661701\times10^{-2}$ & $-1.1226165\times10^{-1}$\\
+  twist 2 & $+5.4942081\times10^{-2}$ & $+5.1193282\times10^{-2}$\\
+  twist 3 & $0$ & $-5.2253296\times10^{-3}$\\
+  twist 4 & $+5.5991083\times10^{-3}$ & $+5.2170708\times10^{-3}$\\
+  three-particle gluonic & $+1.6863557\times10^{-4}$ & $-3.4908999\times10^{-4}$\\
+  three-particle electromagnetic & $-3.2152535\times10^{-3}$ & $-8.7063197\times10^{-3}$\\
+  \midrule
+  total & $-3.1167129\times10^{-2}$ & $-7.0132040\times10^{-2}$\\
+  \bottomrule
+ \end{tabular}
+ \caption{Central invariant checkpoint.  The corresponding single-point
+ couplings are $G_1=-0.4113424~\GeV^{-1}$ and
+ $G_2=+0.0464987~\GeV^{-1}$, giving $35.5665$ and $0.67094~\keV$.
+ These are regression values, not the Monte Carlo medians in
+ Table~\ref{tab:results-polished}.}
+ \label{tab:app-central-invariant-check}
+\end{table}
+The independent Python and Mathematica tables contain 145 common numerical
+entries and pass an absolute-or-relative $10^{-8}$ comparison.  The executable
+sources and machine-readable residuals are, respectively,
+\begin{center}
+\small
+\path{scripts/corrected_transition_central_python.py},\\
+\path{scripts/mathematica_corrected_transition_numerics.wl},\\
+\path{outputs/corrected_transition_python_mathematica_comparison.csv}.
+\end{center}
 
 \begin{table}[htbp]
  \centering
@@ -762,7 +1000,7 @@ are the explicit tensor prescription used in the Python analysis.
 \end{table}
 
 The alternative Colangelo axial invariant is obtained by removing
-$\mathcal I_A^{\rm em}$ from Eq.~\eqref{eq:app-axial-invariant} and adding
+$\widehat T_A^{\rm 3p,\gamma}$ from Eq.~\eqref{eq:app-axial-invariant} and adding
 \begin{equation}
  e_QE_Q\ssbar\left[1-\frac{m_Qm_s}{M^2}
  +\frac{m_s^2}{2M^2}\left(1+\frac{m_Q^2}{M^2}\right)\right].
@@ -858,22 +1096,71 @@ invariants are
  +(c_\theta^2-s_\theta^2)\widehat\Pi_{AB}.
  \label{eq:app-rotated-pi}
 \end{align}
-The decay-constant sum rules are therefore
+For $n=0,1,2,5$, define the fully specified scalar projections of the matrices
+in Eq.~\eqref{eq:app-q-matrices} by
 \begin{align}
- f_1^2(\theta)&=\frac{e^{M_1^2/M^2}}{M_1^2}
- [s_\theta^2\widehat\Pi_{AA}
- +c_\theta^2\widehat\Pi_{BB}
- +2s_\theta c_\theta\widehat\Pi_{AB}],\nonumber\\
- f_2^2(\theta)&=\frac{e^{M_2^2/M^2}}{M_2^2}
- [c_\theta^2\widehat\Pi_{AA}
- +s_\theta^2\widehat\Pi_{BB}
- -2s_\theta c_\theta\widehat\Pi_{AB}].
+ q_1^{(n)}&=s_\theta^2(\mathcal Q_n)_{AA}
+ +c_\theta^2(\mathcal Q_n)_{BB}
+ +2s_\theta c_\theta(\mathcal Q_n)_{AB},\nonumber\\
+ q_2^{(n)}&=c_\theta^2(\mathcal Q_n)_{AA}
+ +s_\theta^2(\mathcal Q_n)_{BB}
+ -2s_\theta c_\theta(\mathcal Q_n)_{AB}.
+\end{align}
+The two pole channels use separate thresholds.  The expressions actually
+evaluated are
+\begin{align}
+ \widehat\Pi_{11}^{(1)}={}&
+ \int_{d^2}^{s_0^{(1)}}ds\,e^{-s/M^2}
+ [s_\theta^2\rho_{AA}+c_\theta^2\rho_{BB}
+  +2s_\theta c_\theta\rho_{AB}]
+ \nonumber\\
+ &+e^{-m_Q^2/M^2}
+ \{C_3[q_1^{(0)}+q_1^{(1)}+q_1^{(2)}]+C_5q_1^{(5)}\},
+ \nonumber\\
+ \widehat\Pi_{22}^{(2)}={}&
+ \int_{d^2}^{s_0^{(2)}}ds\,e^{-s/M^2}
+ [c_\theta^2\rho_{AA}+s_\theta^2\rho_{BB}
+  -2s_\theta c_\theta\rho_{AB}]
+ \nonumber\\
+ &+e^{-m_Q^2/M^2}
+ \{C_3[q_2^{(0)}+q_2^{(1)}+q_2^{(2)}]+C_5q_2^{(5)}\}.
+\end{align}
+Consequently,
+\begin{align}
+ \boxed{f_1(M^2,s_0^{(1)},\theta)}
+ &=\frac{e^{M_1^2/(2M^2)}}{M_1}
+ \sqrt{\widehat\Pi_{11}^{(1)}},\nonumber\\
+ \boxed{f_2(M^2,s_0^{(2)},\theta)}
+ &=\frac{e^{M_2^2/(2M^2)}}{M_2}
+ \sqrt{\widehat\Pi_{22}^{(2)}}.
  \label{eq:app-decay-constants}
 \end{align}
 We insert the previous-study angle $26.6\pm0.6^\circ$
 \cite{AlievBilmisSavci2024} here; we do not refit it in the radiative paper.
 Setting $\widehat\Pi_{12}=0$ gives the
 $30.63[29.94,31.29]^\circ$ truncation diagnostic quoted in the text.
+At the central point
+$M^2=2.35~{\rm GeV}^2$,
+$s_0^{(1)}=7.925~{\rm GeV}^2$ and
+$s_0^{(2)}=9.975~{\rm GeV}^2$, these expressions give
+$f_1=0.4005893~{\rm GeV}$ and $f_2=0.1666704~{\rm GeV}$.  The values quoted
+in the results tables are the corresponding Monte Carlo medians and
+16--84 percentile intervals.
+
+For the bottom channel the same formulas are evaluated with $m_Q=m_b$,
+$\theta_{B_s}=38.5^\circ$, $M^2=7.00~\GeV^2$,
+$s_0^{(1)}=44.35~\GeV^2$, and
+$s_0^{(2)}=43.025~\GeV^2$.  The central direct residues are
+\begin{equation}
+ f_1^{(B_s)}=0.5381107~\GeV,\qquad
+ f_2^{(B_s)}=0.0888787~\GeV .
+\end{equation}
+The corresponding pole fractions are $0.805$ and $0.556$, while the
+dimension-five fractions are $0.0029$ and $0.0348$.  Diagonalizing the
+truncated bottom matrix gives $39.50^\circ$ as a diagnostic, close to the
+external angle; the normalized off-diagonal residual is $0.104$.  Varying the
+OPE inputs and the two-point Borel parameter produces the Monte Carlo
+intervals quoted in the text.
 
 \subsection{Projection onto Wang's pure axial channel}
 

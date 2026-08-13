@@ -139,23 +139,22 @@ def psi_a(u):
 #  three-particle A(alpha) below.
 # ============================================================================
 def A_t4(u):
-    """Twist-4 two-particle DA  A(u), Rohrwild Eq.(39)."""
-    u = np.asarray(u, dtype=float)
-    ub = 1.0 - u
-    k, kp = val("kappa"), val("kappa_p")
-    z2, z2p = val("zeta2"), val("zeta2_p")
-    # guard the logs at endpoints
-    lnu  = np.log(np.clip(u,  1e-12, 1.0))
-    lnub = np.log(np.clip(ub, 1e-12, 1.0))
-    bracket = ( u*ub*(2.0 + 13.0*u*ub)
-                + u**3*(10.0 - 15.0*u + 6.0*u**2)*lnu
-                + ub**3*(10.0 - 15.0*ub + 6.0*ub**2)*lnub )
-    return 40.0*u*ub*(3.0*k - kp + 1.0) + 8.0*(z2p - 3.0*z2)*bracket
+    """Twist-4 two-particle DA A(u) in the BBK/Rohrwild operator basis.
+
+    Rohrwild's printed Appendix formula drops powers/factors relative to the
+    defining BBK expression.  Use the operator-consistent BBK form, which is
+    also the A(u) used in the Colangelo appendix.
+    """
+    return A_t4_colangelo(u)
 
 def B_t4(u):
-    """Twist-4 two-particle DA  B(u), Rohrwild Eq.(40) (integral form done
-    analytically). B(u) = 40 * int_0^u dalpha (u-alpha)(1+3kappa^+)
-                              [ -1/2 + (3/2)(2alpha-1)^2 ]."""
+    """Twist-4 two-particle DA B(u) in the BBK/Rohrwild operator basis.
+
+    The exact dictionary is
+      B(u) = -4 int_0^u d alpha (u-alpha) h_gamma(alpha).
+    With the conformal model for h_gamma this is
+      40 (1+2 kappa^+) int_0^u d alpha (u-alpha) C_2^{1/2}(2 alpha-1).
+    """
     u = np.asarray(u, dtype=float)
     kp = val("kappa_p")
     # int_0^u (u-a)[-1/2 + (3/2)(2a-1)^2] da  -- closed form:
@@ -164,7 +163,7 @@ def B_t4(u):
     #     = u*int_0^u(6a^2-6a+1)da - int_0^u a(6a^2-6a+1)da
     #     = u*(2u^3-3u^2+u) - (1.5u^4-2u^3+0.5u^2)
     inner = u*(2.0*u**3 - 3.0*u**2 + u) - (1.5*u**4 - 2.0*u**3 + 0.5*u**2)
-    return 40.0*(1.0 + 3.0*kp)*inner
+    return 40.0*(1.0 + 2.0*kp)*inner
 # CHECK: B(0)=0 by construction (lower limit of the integral).
 
 # ============================================================================

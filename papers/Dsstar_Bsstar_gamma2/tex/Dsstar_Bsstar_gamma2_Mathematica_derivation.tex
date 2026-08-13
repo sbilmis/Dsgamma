@@ -1,0 +1,460 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=18mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{booktabs,longtable,tabularx,array}
+\usepackage{siunitx}
+\usepackage{graphicx,subcaption,float}
+\usepackage{listings,fancyvrb}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,allcolors=MidnightBlue]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{placeins}
+\graphicspath{{../outputs/figures/}}
+\sisetup{round-mode=places,round-precision=4,scientific-notation=true}
+\allowdisplaybreaks
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\fancyhf{}
+\lhead{Wolfram Language derivation ledger}
+\rhead{\thepage}
+\input{generated/numerical_macros.tex}
+
+\definecolor{cellblue}{RGB}{232,240,248}
+\definecolor{outputgray}{RGB}{245,245,245}
+\newcommand{\InputCell}[1]{%
+  \par\medskip\noindent\colorbox{cellblue}{%
+  \parbox{\dimexpr\linewidth-2\fboxsep}{\texttt{In:}\quad #1}}\par\smallskip}
+\newcommand{\OutputCell}[1]{%
+  \par\smallskip\noindent\colorbox{outputgray}{%
+  \parbox{\dimexpr\linewidth-2\fboxsep}{\texttt{Out:}\quad #1}}\par\medskip}
+\lstdefinestyle{wl}{
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{MidnightBlue},
+  commentstyle=\color{ForestGreen},
+  stringstyle=\color{BrickRed},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  breaklines=true,
+  breakatwhitespace=false,
+  frame=single,
+  rulecolor=\color{gray!45},
+  columns=fullflexible,
+  keepspaces=true,
+  showstringspaces=false,
+  tabsize=2
+}
+\lstset{style=wl}
+
+\title{\textbf{Detailed Wolfram Language derivation and audit notebook}\\
+Mixed-current $D_{s1},B_{s1}\to D_s^\ast,B_s^\ast\gamma$ sum rules}
+\author{Machine-reproducible clean-room calculation}
+\date{29 July 2026}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Notebook status}
+
+\InputCell{Evaluate the kernel, symbolic derivation, native numerical
+regression, Python comparison, scans, and document generator.}
+\begin{Verbatim}[fontsize=\small]
+/Applications/Wolfram.app/Contents/MacOS/WolframKernel
+  -noinit -noprompt -run 'Print[1+1];Quit[]'
+Out: 2
+
+Wolfram Kernel version: 15.0.0 for Mac OS X ARM (64-bit)
+Random seed (Python uncertainty scan): 20260729
+Regression: 42/42 entries pass
+\end{Verbatim}
+\OutputCell{The kernel is operational.  The symbolic and numerical Wolfram
+Language paths complete without importing Python results.}
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{lll}
+\toprule
+Layer & independent implementation & artifact\\
+\midrule
+symbolic Dirac/OPE & Wolfram Language & \path{outputs/analytic_formulas.wl}\\
+symbolic report & Wolfram Language & \path{outputs/symbolic_validation.txt}\\
+notebook & Wolfram Language & \path{notebooks/Dsstar_Bsstar_gamma2_derivation.nb}\\
+numerical regression & Wolfram Language & \path{outputs/csv/mathematica_regression.csv}\\
+full grids and MC & Python/NumPy & \path{outputs/csv/*.csv}\\
+termwise comparison & Python/pandas & \path{outputs/csv/python_mathematica_regression.csv}\\
+\bottomrule
+\end{tabular}
+\caption{Reproducibility layers.}
+\end{table}
+
+\section{Cell group 1: conventions and explicit gamma matrices}
+
+\InputCell{Define the mostly-minus Dirac representation, $\gamma_5$,
+$\sigma_{\mu\nu}$, and the Dirac adjoint.}
+\begin{lstlisting}
+z2 = ConstantArray[0, {2, 2}];
+id2 = IdentityMatrix[2];
+g0 = DiagonalMatrix[{1, 1, -1, -1}];
+gSpatial[sig_] := ArrayFlatten[{{z2, sig}, {-sig, z2}}];
+g = {g0, gSpatial[PauliMatrix[1]], gSpatial[PauliMatrix[2]],
+     gSpatial[PauliMatrix[3]]};
+g5 = I g[[1]].g[[2]].g[[3]].g[[4]];
+sigma[mu_, nu_] :=
+ I (g[[mu + 1]].g[[nu + 1]] - g[[nu + 1]].g[[mu + 1]])/2;
+diracBar[x_] := g0.ConjugateTranspose[x].g0;
+\end{lstlisting}
+\OutputCell{$g_{\mu\nu}=(+,-,-,-)$,
+$\gamma_5=i\gamma^0\gamma^1\gamma^2\gamma^3$,
+$\epsilon^{0123}=+1$, and $p'=p+q$.}
+
+The current basis and physical rotation are
+\begin{align}
+J_A^\mu&=\bar s\gamma^\mu\gamma_5Q,&
+J_B^\mu&={i\over m_Q+m_s}\bar s\sigma^{\mu\nu}p'_\nu\gamma_5Q,\\
+\begin{pmatrix}J_L\\J_H\end{pmatrix}
+&=\begin{pmatrix}\sin\theta&\cos\theta\\
+\cos\theta&-\sin\theta\end{pmatrix}
+\begin{pmatrix}J_A\\J_B\end{pmatrix}.
+\end{align}
+The final current is $J_V^\mu=\bar s\gamma^\mu Q$.
+
+\section{Cell group 2: cut traces and spectral matrix}
+
+\InputCell{Place the two cut particles back-to-back in the $p'$ rest frame
+and average the three transverse polarizations.}
+\begin{lstlisting}
+kSlash = g[[1]] eQ - g[[4]] kabs;
+lSlash = g[[1]] es + g[[4]] kabs;
+vertexA[i_] := g[[i + 1]].g5;
+vertexB[i_] := I rootS sigma[i, 0].g5/(mQ + ms);
+cutTrace[x_, y_, i_] :=
+ Tr[(lSlash - ms IdentityMatrix[4]).x[i].
+    (kSlash + mQ IdentityMatrix[4]).diracBar[y[i]]];
+traceAAraw = FullSimplify[
+ Sum[cutTrace[vertexA, vertexA, i], {i, 1, 3}]/3];
+traceABraw = FullSimplify[
+ Sum[cutTrace[vertexA, vertexB, i], {i, 1, 3}]/3];
+traceBBraw = FullSimplify[
+ Sum[cutTrace[vertexB, vertexB, i], {i, 1, 3}]/3];
+\end{lstlisting}
+
+Use
+\begin{equation}
+E_Q={s+m_Q^2-m_s^2\over2\sqrt s},\quad
+E_s={s+m_s^2-m_Q^2\over2\sqrt s},\quad
+|\bm k|^2={\lambda(s,m_Q^2,m_s^2)\over4s}.
+\end{equation}
+The phase-space normalization then yields
+\begin{align}
+\rho_{AA}&={\sqrt\lambda\over8\pi^2}
+{[s-(m_Q+m_s)^2][(m_Q-m_s)^2+2s]\over s^2},\\
+\rho_{AB}=\rho_{BA}&={\sqrt\lambda\over8\pi^2}
+{3(m_Q-m_s)[s-(m_Q+m_s)^2]\over(m_Q+m_s)s},\\
+\rho_{BB}&={\sqrt\lambda\over8\pi^2}
+{[s-(m_Q+m_s)^2][s+2(m_Q-m_s)^2]\over(m_Q+m_s)^2s}.
+\end{align}
+\OutputCell{The AB and BA entries agree identically.  Every entry has mass
+dimension two and the physical lower limit is $(m_Q+m_s)^2$.}
+
+\InputCell{Factor the determinant of the spectral matrix.}
+\begin{lstlisting}
+spectralDeterminant =
+ Factor[rhoAA rhoBB - rhoAB^2]
+\end{lstlisting}
+\OutputCell{\[
+\det\rho={\left[s-(m_Q+m_s)^2\right]^3
+\left[s-(m_Q-m_s)^2\right]^3
+\over32\pi^4(m_Q+m_s)^2s^3}\ge0 .
+\]}
+
+\section{Cell group 3: Borel matrix and physical residues}
+
+\InputCell{Construct the continuum-subtracted perturbative matrix and add
+the explicit dimension-three, finite-$m_s$, and dimension-five matrices.}
+\begin{align}
+\widehat\Pi^{(3)}&=\langle\bar ss\rangle e^{-m_Q^2/M^2}
+\begin{pmatrix}
+m_Q&m_Q^2/S\\m_Q^2/S&m_Q^3/S^2
+\end{pmatrix},\\
+\widehat\Pi^{(m_s)}&=\langle\bar ss\rangle e^{-m_Q^2/M^2}
+\left(-{m_Q^2m_s\over2M^2}+{m_Q^3m_s^2\over2M^4}\right)
+\begin{pmatrix}1&m_Q/S\\m_Q/S&m_Q^2/S^2\end{pmatrix},\\
+\widehat\Pi^{(5)}&=e^{-m_Q^2/M^2}
+\begin{pmatrix}
+-m_0^2\langle\bar ss\rangle m_Q^3/(4M^4)&
+-{m_0^2\langle\bar ss\rangle\over4S}
+(m_Q^4/M^4-m_Q^2/M^2-1)\\
+\mathrm{sym.}&
+{m_0^2\langle\bar ss\rangle\over S^2}
+[-m_Q^5/(4M^4)+m_Q^3/(2M^2)]
+\end{pmatrix}.
+\end{align}
+Here $S=m_Q+m_s$.  The final basis matrix is
+\begin{equation}
+\widehat\Pi(M^2,s_0)=
+\int_{S^2}^{s_0}ds\,e^{-s/M^2}
+\begin{pmatrix}\rho_{AA}&\rho_{AB}\\\rho_{AB}&\rho_{BB}\end{pmatrix}
++\widehat\Pi^{(3)}+\widehat\Pi^{(m_s)}+\widehat\Pi^{(5)}.
+\end{equation}
+
+\InputCell{Rotate the complete matrix; do not diagonalize or zero AB by hand.}
+\begin{lstlisting}
+rotation = {{Sin[theta], Cos[theta]},
+            {Cos[theta], -Sin[theta]}};
+piPhysical = Expand[
+  rotation.piBasis.Transpose[rotation]]
+\end{lstlisting}
+\OutputCell{\[
+\Pi_{LL}=s_\theta^2\Pi_{AA}+2s_\theta c_\theta\Pi_{AB}
++c_\theta^2\Pi_{BB},\quad
+\Pi_{HH}=c_\theta^2\Pi_{AA}-2s_\theta c_\theta\Pi_{AB}
++s_\theta^2\Pi_{BB}.
+\]}
+
+The residue and derivative mass checks are
+\begin{equation}
+f_a={e^{m_a^2/(2M^2)}\sqrt{\Pi_{aa}^{\rm phys}}\over m_a},
+\qquad
+m_{\rm SR}^2={-\partial_{1/M^2}\Pi_{aa}^{\rm phys}
+\over\Pi_{aa}^{\rm phys}}.
+\end{equation}
+The accepted windows are reproduced directly from the full scan:
+\begin{table}[H]
+\centering\small
+\input{generated/windows_table.tex}
+\caption{Two-point acceptance ledger.}
+\end{table}
+
+\section{Cell group 4: vector final state}
+
+\InputCell{Repeat the sum-rule extraction for
+$J_V^\mu=\bar s\gamma^\mu Q$.}
+\begin{equation}
+\rho_V(s)={\sqrt\lambda\over8\pi^2}
+\left[2-{m_Q^2+m_s^2-6m_Qm_s\over s}
+-{(m_Q^2-m_s^2)^2\over s^2}\right].
+\end{equation}
+The local AA contribution changes sign under the parity flip.  The same pole
+and local-fraction gates are applied.  The Monte Carlo vector residues are
+listed together with the initial residues in \cref{tab:nbresults}.
+
+\section{Cell group 5: external-photon LCSR}
+
+\InputCell{Project the correlator onto
+$ie\,\epsilon_{\alpha\beta\rho\sigma}
+\eta^\alpha\xi^{*\beta}\varepsilon^{*\rho}q^\sigma$.}
+\begin{equation}
+T_{\mu\nu}^i=i\int d^4x\,e^{ipx}
+\langle\gamma|T\{J_{V\mu}^\dagger(x)J_\nu^i(0)\}|0\rangle .
+\end{equation}
+The Wick contraction supplies the global minus sign:
+\begin{equation}
+T_{\mu\nu}^i=-i\int d^4x\,e^{ipx}
+\langle\gamma|\bar s(x)\gamma_\mu S_Q(x,0)\Gamma_\nu^i s(0)|0\rangle.
+\end{equation}
+Hard emission from both charged lines and nonlocal photon DAs through twist
+four are included.  No ordinary local transition condensate is included.
+
+\InputCell{Apply the equal double-Borel transform.}
+\begin{equation}
+{\cal B}_{M_1^2}{\cal B}_{M_2^2}{1\over
+[m_Q^2-(1-u)p^2-up'^2]^n}
+={({\cal M}^2)^{2-n}\over\Gamma(n)}
+e^{-m_Q^2/{\cal M}^2}\delta(u-u_0),
+\end{equation}
+where $u_0=M_1^2/(M_1^2+M_2^2)$ and
+${\cal M}^2=M_1^2M_2^2/(M_1^2+M_2^2)$.  The choice
+$M_1^2=M_2^2=2M^2$ gives $u_0=1/2$ and ${\cal M}^2=M^2$.
+
+With $E=e^{-m_Q^2/M^2}$ and $E_0=e^{-s_0/M^2}$, the six included terms are
+\begin{align}
+\widehat T_{\rm hard}&=\int_{(m_Q+m_s)^2}^{s_0}ds\,
+e^{-s/M^2}\rho_T(s),\\
+\widehat T_{\rm tw2}&=e_sm_Q\langle\bar ss\rangle\chi
+M^2(E-E_0)\phi_\gamma(u_0),\\
+\widehat T_{\rm tw4,2p}&=e_sm_Q\langle\bar ss\rangle E
+\left[-{m_Q^2{\cal A}\over4M^2}-(1-u_0)H_\gamma-\bar H_\gamma
++{2m_Q^2\bar H_\gamma\over M^2}\right],\\
+\widehat T_{\rm tw3,2p}&=e_sf_{3\gamma}M^2(E-E_0)
+\left[{(1-u_0)\psi^{a\prime}\over4}-{\psi^a\over4}
+-(1+2m_Q^2/M^2)\Psi^v+(1-u_0)\psi^v\right],\\
+\widehat T_{\rm tw4,3p}&=m_Qe_s\langle\bar ss\rangle E I_{{\cal F}_2},\\
+\widehat T_{\rm tw3,3p}&=-e_sf_{3\gamma}M^2(E-E_0) I_{{\cal F}_3}.
+\end{align}
+The hard density is
+\begin{equation}
+\rho_T={3m_sm_Q\over4\pi^2}\left[
+e_s\ln{a_s-\sqrt\lambda\over a_s+\sqrt\lambda}
++e_Q\ln{a_Q-\sqrt\lambda\over a_Q+\sqrt\lambda}\right],
+\end{equation}
+$a_s=s-m_Q^2+m_s^2$ and $a_Q=s-m_s^2+m_Q^2$.
+
+\begin{table}[H]
+\centering\scriptsize
+\resizebox{\textwidth}{!}{\input{generated/transition_table.tex}}
+\caption{Numerical transition OPE ledger in $\mathrm{GeV}^4$.  The local
+diagnostic is excluded.}
+\end{table}
+
+\section{Cell group 6: tensor-current projection}
+
+\InputCell{Evaluate the twist-two Dirac traces for A and B before Borel
+transformation.}
+\begin{lstlisting}
+twist2TraceA = -8 mQ;
+twist2TraceB = -8 k2/(mQ + ms);
+twist2PreBorelRatio =
+ Factor[twist2TraceB/twist2TraceA]
+\end{lstlisting}
+\OutputCell{\[
+{T_B^{(2)}\over T_A^{(2)}}={k^2\over m_Q(m_Q+m_s)}.
+\]}
+The identity
+$k^2/(m_Q^2-k^2)=m_Q^2/(m_Q^2-k^2)-1$ separates a contact term whose Borel
+image is zero.  Hence
+\begin{equation}
+\widehat T_B={m_Q\over m_Q+m_s}\widehat T_A.
+\end{equation}
+This leading-power projection is used term by term.  The uncalculated
+subleading tensor kernels carry an explicit 15\% charm or 5\% bottom
+correlated nuisance.
+
+\section{Cell group 7: physical coupling and width}
+
+For row $a$ of the rotation matrix,
+\begin{equation}
+\widehat T_a=R_{aA}\widehat T_A+R_{aB}\widehat T_B,\qquad
+g_a={e^{(m_a^2+m_V^2)/(2M^2)}\widehat T_a
+\over f_af_Vm_am_V}.
+\end{equation}
+The amplitude and width are
+\begin{align}
+{\cal A}&=ie\,g_a\,\epsilon_{\alpha\beta\rho\sigma}
+\eta^\alpha\xi^{*\beta}\varepsilon^{*\rho}q^\sigma,\\
+\Gamma&={\alpha_{\rm em}g_a^2k_\gamma^3(m_a^2+m_V^2)
+\over3m_a^2m_V^2}.
+\end{align}
+\InputCell{Replace $\varepsilon\to q$ in the determinant form of the
+Levi-Civita contraction.}
+\begin{lstlisting}
+wardDeterminant =
+ Det[{{eta0, eta1, eta2, eta3},
+      {xi0, xi1, xi2, xi3},
+      {q0, q1, q2, q3},
+      {q0, q1, q2, q3}}];
+FullSimplify[wardDeterminant] === 0
+\end{lstlisting}
+\OutputCell{True.  The retained structure satisfies the Ward identity
+exactly.}
+
+\section{Cell group 8: numerical results and non-Gaussian uncertainty}
+
+\begin{table}[H]
+\centering\small
+\resizebox{\textwidth}{!}{\input{generated/results_table.tex}}
+\caption{Medians and 16th--84th percentiles from 1200 accepted samples per
+state.}
+\label{tab:nbresults}
+\end{table}
+
+The median widths are \DsLowWidth, \DsHighWidth, \BsLowWidth, and
+\BsHighWidth\ keV in the state order of \cref{tab:nbresults}.  The charm
+coupling intervals cross zero, and both higher states show destructive
+current interference.  The width distributions are therefore non-Gaussian.
+
+\begin{table}[H]
+\centering\small
+\input{generated/stability_table.tex}
+\caption{Full-range relative variation $(\max-\min)/|\mathrm{mean}|$.}
+\end{table}
+\OutputCell{The $s_0$ scans are mild; the transition $M^2$ scans are not.
+The bottom widths vary by roughly 280--296\% across the declared window.
+These are exploratory predictions, not precision plateaus.}
+
+\section{Cell group 9: independent numerical regression}
+
+\InputCell{Evaluate the same selected densities, Borel matrices, transition
+terms, residues, couplings, and widths with native Mathematica
+\texttt{NIntegrate}.  Compare with the Python Gauss--Legendre implementation.}
+\input{generated/regression_table.tex}
+\OutputCell{\RegressionPass\ entries pass.  Maximum material relative
+difference: \RegressionMaxRel.  Maximum absolute difference:
+\RegressionMaxAbs.}
+
+\section{Cell group 10: validation gate ledger}
+
+\input{generated/validation_table.tex}
+
+\section{Complete figure atlas}
+
+Every plotted PDF below has a PNG twin and a companion CSV.  The sequence is
+fixed across states: $D_{s1}(2460)$, $D_{s1}(2536)$, $B_{s1}^{L}$, and
+$B_{s1}(5830)$.
+
+\newcommand{\FourPlots}[5]{%
+\begin{figure}[p]\centering
+\begin{subfigure}{0.48\textwidth}\includegraphics[width=\linewidth]{Ds1_2460_#1.pdf}\caption{$D_{s1}(2460)$}\end{subfigure}
+\begin{subfigure}{0.48\textwidth}\includegraphics[width=\linewidth]{Ds1_2536_#1.pdf}\caption{$D_{s1}(2536)$}\end{subfigure}\\
+\begin{subfigure}{0.48\textwidth}\includegraphics[width=\linewidth]{Bs1_lower_#1.pdf}\caption{$B_{s1}^{L}$}\end{subfigure}
+\begin{subfigure}{0.48\textwidth}\includegraphics[width=\linewidth]{Bs1_5830_#1.pdf}\caption{$B_{s1}(5830)$}\end{subfigure}
+\caption{#2.  #3}\label{#4}
+\end{figure}\FloatBarrier}
+
+\FourPlots{coupling_vs_M2}{Coupling versus transition Borel mass}{$s_0$ fixed
+at its central value.}{fig:all-gm2}{}
+\FourPlots{width_vs_M2}{Width versus transition Borel mass}{$s_0$ fixed at
+its central value.}{fig:all-wm2}{}
+\FourPlots{coupling_vs_s0}{Coupling versus continuum threshold}{$M^2$ fixed
+at its central value.}{fig:all-gs0}{}
+\FourPlots{width_vs_s0}{Width versus continuum threshold}{$M^2$ fixed at its
+central value.}{fig:all-ws0}{}
+\FourPlots{coupling_vs_angle}{Coupling versus mixing angle}{The selected
+angle and pure-current endpoints are displayed.}{fig:all-angle}{}
+\FourPlots{pc_vs_M2}{Two-point pole contribution}{Central two-point threshold.}
+{fig:all-pc}{}
+\FourPlots{mass_sr_vs_M2}{Two-point reconstructed mass}{Horizontal reference
+is the physical or adopted lower-state mass.}{fig:all-mass}{}
+\FourPlots{f_vs_M2}{Two-point current residue}{Central two-point threshold.}
+{fig:all-f}{}
+\FourPlots{d5frac_vs_M2}{Dimension-five OPE fraction}{Central two-point
+threshold.}{fig:all-d5}{}
+
+\section{Raw symbolic output}
+
+\InputCell{Import the text artifact written directly by the symbolic
+Wolfram Language script.}
+\lstinputlisting{../outputs/symbolic_validation.txt}
+
+\appendix
+\section{Complete symbolic Wolfram Language source}
+
+The listing below is the source that generated the notebook, analytic formula
+association, and symbolic validation report.
+\lstinputlisting{../scripts/symbolic_derivation.wl}
+
+\section{Complete independent Mathematica regression source}
+
+This listing evaluates native numerical integrals and writes the Mathematica
+CSV.  It never reads a Python result.
+\lstinputlisting{../scripts/mathematica_regression.wl}
+
+\section{Reproduction commands}
+
+\begin{lstlisting}
+export PROJECT_PYTHON=/Users/sbilmis/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3
+"$PROJECT_PYTHON" scripts/run_analysis.py
+/Applications/Wolfram.app/Contents/MacOS/WolframKernel -noinit -noprompt -script scripts/symbolic_derivation.wl
+/Applications/Wolfram.app/Contents/MacOS/WolframKernel -noinit -noprompt -script scripts/mathematica_regression.wl
+"$PROJECT_PYTHON" scripts/compare_regression.py
+"$PROJECT_PYTHON" scripts/build_documents.py
+latexmk -pdf -interaction=nonstopmode -halt-on-error -cd tex/Dsstar_Bsstar_gamma2_paper.tex
+latexmk -pdf -interaction=nonstopmode -halt-on-error -cd tex/Dsstar_Bsstar_gamma2_Mathematica_derivation.tex
+\end{lstlisting}
+
+\end{document}

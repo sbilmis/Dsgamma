@@ -1,33 +1,31 @@
-Final Python Rohrwild-nonlocal recalculation
-============================================
+Exact post-Borel Rohrwild-nonlocal numerical summary
+====================================================
 Transition OPE: ordinary local condensate excluded; nonlocal
-S_gamma/T4^gamma included.  Colangelo local mode is comparison-only.
-The tensor-current numerator is evaluated with the documented
-physical-residue prescription p^2=m_P^2, p.q=(m_A^2-m_P^2)/2.
+S_gamma/T4^gamma included.
+Tensor vector-DA and electromagnetic P-functional numerators are
+double-Borel transformed off shell. No physical pole mass is inserted
+in a QCD-side numerator.
 
-Axial-current central checkpoint (M2=4.5 GeV^2, sqrt(s0)=2.55 GeV)
-  Colangelo local OPE = -5.023454e-03 GeV^3
-  Rohrwild nonlocal EM OPE = -5.316342e-03 GeV^3
-  ratio EM/local = +1.058304
-  g_A Colangelo-local = -0.356893 GeV^-1
-  g_A Rohrwild-nonlocal = -0.359137 GeV^-1
-  Gamma_A Rohrwild-nonlocal = 27.111620 keV
+Central charm checkpoint (M2=3.75 GeV^2, s0=8.0 GeV^2)
+  T_A = -3.116712899e-02 GeV^3
+  T_B = -7.013203951e-02 GeV^3
+  g1 = -0.411342385 GeV^-1
+  g2 = +0.046498676 GeV^-1
+  Gamma1 = 35.566544580 keV
+  Gamma2 = 0.670936382 keV
 
 Preferred final-window outputs (lattice photon input)
-  Ds1(2460): Gamma = 26.710333143372118 [22.008224850911617, 32.435570353872144] keV
-  Ds1(2536): Gamma = 1.6563431730005054 [0.4566782926785038, 3.377589024931013] keV
-  Bs1(5750): Gamma = 18.155092829586003 [13.030163829287709, 27.94398033166189] keV
-  Bs1(5830): Gamma = 1.503801487320899 [0.8180104198082949, 5.341759988054683] keV
+  Ds1(2460): Gamma = 34.96477155324975 [28.058371279172775, 43.525678633937815] keV
+  Ds1(2536): Gamma = 0.9882750096378166 [0.09213989147937901, 3.5553394806609115] keV
+  Bs1(5750): Gamma = 11.339325317828058 [9.143895797671119, 14.058550503889586] keV
+  Bs1(5830): Gamma = 8.7019139091283 [6.473568625061638, 11.22524271887634] keV
 
 Decay-constant provenance
   Ds theta=26.6+-0.6 deg is external; f1/f2 are AA/AB/BB projections at that angle.
-  Bs f1 and f2 are diagonal-closure-derived from basis inputs.
-  Nominal Bs closure acceptance: 245/500 (5750), 236/500 (5830).
-  Bs predictions are conditional pending a direct AA/AB/BB two-point matrix.
-  Bs theta=38.5+-0.1 deg is external.
-  The Ds OPE truncation is exact-mass LO + local d=3 + local d=5.
+  Bs theta=38.5+-0.1 deg is external; f1/f2 are direct AA/AB/BB projections at that angle.
+  Both two-point matrices use exact-mass LO + local d=3 + local d=5.
 
 Mathematica status
-  The spectral and local traces have separate exact audits.
-  The fixed-angle notebook has been regenerated.
-  The numerical regression agrees with Python below 10^-7 at the central point.
+  STATUS=PASS
+  145 central quantities are compared term by term.
+  Every entry passes the 1e-8 absolute-or-relative tolerance.

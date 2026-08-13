@@ -1,0 +1,21 @@
+Direct Bs1 AA/AB/BB two-point QCD sum rule
+==========================================
+OPE: exact-mass LO perturbative + local d=3 through ms^2 + local d=5.
+No external fA, fT, f1, f2, or overlap parameter is used.
+theta_Bs=38.5+-0.1 deg is external.
+Angle source: Aliev-Bilmis-Savci, arXiv:2408.08014v2.
+Selected two-point window: M^2=[6.50,7.30] GeV^2.
+
+Central point M^2=7.00 GeV^2:
+s01: 44.35 GeV^2
+s02: 43.025 GeV^2
+m_eff1: 5.75019813 GeV
+m_eff2: 5.82910879 GeV
+f1: 0.538110737 GeV
+f2: 0.0888786545 GeV
+pole fraction 1: 0.804771326
+pole fraction 2: 0.556171437
+d5 fraction 1: 0.00294528619
+d5 fraction 2: 0.0347572524
+matrix-angle diagnostic: 39.4966226 deg
+normalized off-diagonal residual: 0.103551881

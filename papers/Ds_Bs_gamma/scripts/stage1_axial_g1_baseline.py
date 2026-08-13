@@ -96,7 +96,7 @@ def rho_p_colangelo_g1(s, mc, ms, ec, es):
 
 
 def hbar_gamma(u0: float) -> float:
-    """bar H_gamma(u0) = int_0^u0 du' int_0^u' dv h_gamma(v)."""
+    """Legacy Colangelo notation used only to audit the B(u) dictionary."""
     return gauss_legendre_integral(
         lambda u: (u0 - u) * pda.h_gamma_colangelo(u), 0.0, u0, n=240
     )
@@ -166,18 +166,18 @@ def g1_stage1(
     chi_sign = 1.0 if chi_positive_convention else -1.0
     twist2 = chi_sign * es * ss * (exp_mc - exp_s0) * M2 * chi * pda.phi_gamma(u0)
 
-    A = float(pda.A_t4_colangelo(u0))
-    hbar = hbar_gamma(u0)
+    A = float(pda.A_t4(u0))
+    B = float(pda.B_t4(u0))
     twist4_2p = (
         -es
         * ss
         * exp_mc
         * (
-            -0.25 * (A - 8.0 * hbar) * (1.0 + mc**2 / M2)
+            -0.25 * (A + 2.0 * B) * (1.0 + mc**2 / M2)
         )
     )
 
-    twist3_2p = 2.0 * es * f3g * mc * exp_mc * psi_v_integral(u0)
+    twist3_2p = es * f3g * mc * exp_mc * float(pda.psi_v(u0))
 
     qcd_side = pert + heavy_local + twist2 + twist4_2p + twist3_2p
     prefactor = (

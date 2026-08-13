@@ -14,8 +14,8 @@ Contribution breakdown at M2=4.5 GeV^2, sqrt(s0)=2.55 GeV:
   B 3p DA: G2460 +0.00044, G2536 -0.00031
   B EM 3p: G2460 -0.00268, G2536 +0.00190
 Literature comparison entries:
-  This work (lattice photon input): 13.41 to 21.5 keV
-  This work (legacy chi): 28.48 to 51.07 keV
+  This work (lattice photon input): 28.058 to 43.526 keV
+  This work (legacy chi): 48.37 to 78.455 keV
   Colangelo LCSR: 19.0 to 29.0 keV
   VMD: 3.3 to 3.3 keV
   QM [15]: 6.2 to 6.2 keV

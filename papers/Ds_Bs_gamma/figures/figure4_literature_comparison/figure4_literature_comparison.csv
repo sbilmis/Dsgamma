@@ -1,0 +1,5 @@
+channel,state_key,this_work_median_keV,this_work_p16_keV,this_work_p84_keV,bondar_milstein_2025_keV
+D_{s1}(2460)\to D_s\gamma,Ds1_2460,32.7,26.5,39.4,297
+D_{s1}(2536)\to D_s\gamma,Ds1_2536,0.425,0.035,1.777,12
+B_{s1}(5750)\to B_s\gamma,Bs1_5750,19.3,14.1,27.2,47
+B_{s1}(5830)\to B_s\gamma,Bs1_5830,0.504,0.057,1.677,28

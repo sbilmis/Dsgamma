@@ -1,6 +1,6 @@
-"""Rohrwild-nonlocal Stage-2 baseline for Bs1 -> Bs gamma.
+"""Exact post-double-Borel Rohrwild baseline for Bs1 -> Bs gamma.
 
-This script reuses the completed Ds1 LCSR machinery with the heavy-quark
+This script reuses the corrected Ds1 LCSR machinery with the heavy-quark
 replacement c -> b.  The imported functions still use the internal key ``mc``
 for the heavy-quark mass; in this file that key should be read as m_b.
 
@@ -26,11 +26,10 @@ OUT.mkdir(exist_ok=True)
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from final_stage2_uncertainty_scan import matched_f1_integral, precompute_f1_basis
-from stage1_tensor_gb_hard_candidate import hard_tensor_gb
-from stage1_tensor_gb_soft2p_estimate import gb_soft_two_particle, width_keV
-from stage2_axial_g1_three_particle import F1_integral, g1_stage2
-from stage2_tensor_gb_three_particle_estimate import gb_em_da, gb_three_particle_from_integral
+from final_stage2_uncertainty_scan import precompute_f1_basis
+from stage1_tensor_gb_soft2p_estimate import width_keV
+from stage2_axial_g1_three_particle import F1_integral
+from rohrwild_transition_exact import precompute_convolutions, transition_invariants
 
 
 FPERP_S_2GEV = -0.0510
@@ -82,21 +81,42 @@ def bs1_inputs(m_initial: float, scenario: str) -> dict[str, float]:
 
 
 def evaluate_point(inputs: dict[str, float], M2: float, s0_root: float, theta_deg: float, f1_axial: float, f1_basis: dict[str, float]):
+    """Evaluate a point with the exact off-shell post-Borel invariants.
+
+    ``f1_axial`` and ``f1_basis`` remain in the signature for compatibility
+    with older scan drivers; the corrected calculation obtains the
+    three-particle terms directly and does not use those legacy matched-ratio
+    inputs.
+    """
+
+    del f1_axial, f1_basis
     calc_inputs = dict(inputs)
     fT = calc_inputs.pop("fT")
     fperp = calc_inputs.pop("fperp_s_used")
     s0 = s0_root * s0_root
     theta = math.radians(theta_deg)
 
-    axial = g1_stage2(M2, s0, calc_inputs, f1_axial)
-    GA = axial["g1_stage2_GeV_inv"]
     fB = fT * calc_inputs["m_ds1"] / (calc_inputs["mc"] + calc_inputs["ms"])
-    GB_hard, hard_qcd = hard_tensor_gb(M2, s0, calc_inputs, fB)
-    GB_soft = gb_soft_two_particle(axial, calc_inputs, fB)
-    f1_tensor = matched_f1_integral(calc_inputs, f1_basis)
-    GB_3p = gb_three_particle_from_integral(axial, calc_inputs, fB, f1_tensor)
-    GB_em, _ = gb_em_da(axial, calc_inputs, fB)
-    GB = GB_hard + GB_soft + GB_3p + GB_em
+    invariants = transition_invariants(
+        M2,
+        s0,
+        calc_inputs,
+        convolutions=precompute_convolutions(),
+    )
+    prefactor_common = (
+        math.exp(
+            (calc_inputs["m_ds1"] ** 2 + calc_inputs["m_ds"] ** 2)
+            / (2.0 * M2)
+        )
+        * (calc_inputs["mc"] + calc_inputs["ms"])
+        / (
+            calc_inputs["m_ds1"]
+            * calc_inputs["m_ds"] ** 2
+            * calc_inputs["f_ds"]
+        )
+    )
+    GA = prefactor_common * invariants["T_A"] / calc_inputs["f_ds1"]
+    GB = prefactor_common * invariants["T_B"] / fB
 
     G_low = math.sin(theta) * GA + math.cos(theta) * GB
     G_high = math.cos(theta) * GA - math.sin(theta) * GB
@@ -108,19 +128,36 @@ def evaluate_point(inputs: dict[str, float], M2: float, s0_root: float, theta_de
         "theta_deg": theta_deg,
         "GA": GA,
         "GB": GB,
-        "GB_hard": GB_hard,
-        "GB_soft2p": GB_soft,
-        "GB_3p": GB_3p,
-        "GB_em": GB_em,
+        "T_A": invariants["T_A"],
+        "T_B": invariants["T_B"],
+        "T_A_pert": invariants["T_A_pert"],
+        "T_A_tw2": invariants["T_A_tw2"],
+        "T_A_tw3": invariants["T_A_tw3"],
+        "T_A_tw4": invariants["T_A_tw4"],
+        "T_A_3p_g": invariants["T_A_3p_g"],
+        "T_A_3p_gamma": invariants["T_A_3p_gamma"],
+        "T_B_pert": invariants["T_B_pert"],
+        "T_B_tw2": invariants["T_B_tw2"],
+        "T_B_tw3": invariants["T_B_tw3"],
+        "T_B_tw4": invariants["T_B_tw4"],
+        "T_B_3p_g": invariants["T_B_3p_g"],
+        "T_B_3p_gamma": invariants["T_B_3p_gamma"],
+        "GB_hard": prefactor_common * invariants["T_B_pert"] / fB,
+        "GB_soft2p": prefactor_common
+        * (invariants["T_B_tw2"] + invariants["T_B_tw3"] + invariants["T_B_tw4"])
+        / fB,
+        "GB_3p": prefactor_common * invariants["T_B_3p_g"] / fB,
+        "GB_em": prefactor_common * invariants["T_B_3p_gamma"] / fB,
         "G_low_combo": G_low,
         "G_high_combo": G_high,
         "Gamma_low_combo_keV": width_keV(calc_inputs["m_ds1"], calc_inputs["m_ds"], G_low),
         "Gamma_high_combo_keV": width_keV(calc_inputs["m_ds1"], calc_inputs["m_ds"], G_high),
         "fB_effective": fB,
-        "hard_qcd_side": hard_qcd,
-        "f1_tensor_matched": f1_tensor,
+        "hard_qcd_side": invariants["T_B_pert"],
+        "f1_tensor_matched": invariants["J_g_sigma"],
         "chi_effective": calc_inputs["chi"],
         "fperp_s_used_GeV": fperp,
+        "transition_scheme": invariants["transition_scheme"],
     }
 
 
@@ -207,8 +244,9 @@ def main():
         "Ordinary transition local condensate: excluded.",
         "S_gamma/T4^gamma electromagnetic sector: included.",
         "Internal key mc is used as m_b in this script.",
-        "Hard photon and complete two-/three-particle terms are included within",
-        "the stated tensor physical-residue prescription.",
+        "Tensor and electromagnetic numerator factors use the exact off-shell",
+        "double-Borel reduction; no phenomenological pole mass is inserted on",
+        "the QCD side.",
         "Borel window: M^2 in [8,14] GeV^2.",
         "The Bs1 decay constants are working HQ-scaled estimates, not final inputs.",
         "",
