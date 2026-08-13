@@ -31,6 +31,8 @@ as a comparison against the older photon-DA literature.
 
 ## Key Files
 
+- `arxiv/main-3.pdf` - final Prism PDF selected for arXiv submission.
+- `arxiv/figures/` - final figure PDFs used with the Prism/arXiv version.
 - `../../shared/conventions.md` - shared metric, gamma-matrix, current, and amplitude conventions.
 - `inputs_table.csv` - numerical inputs used in the analysis.
 - `../../shared/photon_da.py` - shared photon DA functions through twist 4.
@@ -49,15 +51,20 @@ as a comparison against the older photon-DA literature.
   Mathematica calculation of the charm mixing angle and both physical residues.
 - `outputs/` - generated symbolic outputs, Monte Carlo scans, plots, citation maps,
   and publication-ready tables.
+- `archive/legacy_latex/` - preserved older LaTeX paper drafts; these are not
+  the current Prism source of truth.
 
 ## Active Working Entry Points
 
+- Use `arxiv/main-3.pdf` as the final paper snapshot selected for arXiv.
 - Use `notes/Ds1_to_Ds_gamma_LCSR_notes.tex` as the active calculation and redo-analysis record.
 - Use `notes/Ds1_to_Ds_gamma_LCSR_notes.pdf` to read the compiled notes.
 - Use `notes/DsBs_gamma_Mathematica_derivation.tex` only for the independent
   symbolic restart and its continuation.
-- Keep `draft_prd/main.tex` only as a reference copy for the detailed PRD-style derivation.
-- Use `manuscript/dsbs_radiative_lcsr_polished.tex` for the current paper text.
+- Keep `archive/legacy_latex/draft_prd/main.tex` only as a reference copy for
+  the older detailed PRD-style derivation.
+- Keep `archive/legacy_latex/manuscript/` as a preserved pre-Prism manuscript
+  snapshot.
 
 ## Current Headline Outputs
 

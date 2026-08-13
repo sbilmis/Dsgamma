@@ -2,6 +2,11 @@
 __pycache__/
 *.py[cod]
 .venv/
+.cache/
+.matplotlib/
+**/.cache/
+**/.matplotlib/
+**/__pycache__/
 
 # LaTeX build products
 *.aux
