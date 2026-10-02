@@ -1,0 +1,5 @@
+{
+  "black_box_comparison/recalculation/lattice_twist_contributions_handout.md": "7b8ea011d124502a4c67127c33de0213f0e280bfa93a64f331f14edfcd4d859e",
+  "output/pdf/lattice_twist_contributions.pdf": "9620b9ea79551bceb055bd58d70de5423bef9388fa4daf101aecf248b5760923",
+  "black_box_comparison/scripts/build_shareable_contributions.py": "107e185cc52d46e95d9aa92cf6e0f1e79af262ecfbfd7991c00e5dd62ccdfbbf"
+}
