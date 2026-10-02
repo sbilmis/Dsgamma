@@ -1,0 +1,16 @@
+{
+  "created_utc": "2026-10-02T21:24:12.374980+00:00",
+  "counterpart_data_used": false,
+  "outputs": {
+    "twist_split_note.md": "65e1b91cabb4850fd6904befb6a288383b4842775bcfd40694e4a1e2ed1cbe9a",
+    "twist_split_summary.csv": "1bd9dcb410976af718ff386722534434420ae20f6badc3901dfdedb93b7cb49a",
+    "twist_split_windows.csv": "6dba526a0e07c22b6de2bbd191e9e39e754f993a995794409364c9ecfdbfdd78"
+  },
+  "sources": {
+    "papers/multipole_moments/black_box_comparison/scripts/compute_blind_lattice_twist_split.py": "064b2bce635d2899a6b806027858955846d8f7f09402b8c2896ac9277ebf5093",
+    "papers/multipole_moments/black_box_comparison/scripts/recalculation_engine.py": "1aa1ee0736a223109f9af5b5c1eee77be6519fc8477ddb7660f8cd4f963efa70",
+    "papers/multipole_moments/black_box_comparison/recalculation/hard_two_particle_coefficients.json": "2cacfd68ae7fa0f9541390f181a5da5a3b8ae318b974c7075194d63654823363",
+    "papers/multipole_moments/black_box_comparison/recalculation/three_particle_coefficients.json": "98f4ed1ce18abe49e0082c8d18527b032d115cd9adde6d0e93c4c00a133edcfa",
+    "papers/multipole_moments/black_box_comparison/recalculation/contact_coefficients.json": "40160fc3b0025d0f56b725febe2da89ec1030aa6f4966fe3c3ced83d234edcdf"
+  }
+}
