@@ -1,0 +1,13 @@
+{
+  "figures/lattice_twist_borel/nominal_mu_over_muN_plus.png": "a1ad5a9a820023eb21ca4300345c15f5e86a574ffdd5235cc39953df32236a58",
+  "figures/lattice_twist_borel/nominal_mu_over_muN_minus.png": "a022dd2b3def3b725ca5274daabd4ff97b9b082dc758abf06822690908d489ae",
+  "figures/lattice_twist_borel/nominal_FD_plus.png": "ffe28a8db972a5365e153281c7e7899555817ec9dc8e20cdc907a911bf188978",
+  "figures/lattice_twist_borel/nominal_FD_minus.png": "7d115948cdbd910fe7e979a0ea5eae250abfd1700a24ce5588790482406ad251",
+  "figures/lattice_twist_borel/theta90_mu_over_muN_plus.png": "302be6b9026f6f42e5b256c91376c983cd3b682a9100e151849ec140062cfd84",
+  "figures/lattice_twist_borel/theta90_mu_over_muN_minus.png": "34be09bdad511938eb89523373c32363c0eacbf69723bc7f1755595af3464a55",
+  "figures/lattice_twist_borel/theta90_FD_plus.png": "23dc5fc4004300b37b3efe39669afa4e2ef87fb00c8c8c179d86a47329180f19",
+  "figures/lattice_twist_borel/theta90_FD_minus.png": "ef50d4d1b4f6b6bfc0b0fd1e2add665e6e3e70ee72a1e71bf9d0bff26186fca0",
+  "output/pdf/lattice_twist_contributions_vs_M2.pdf": "6a9683aa4fe3ccb251f80a16fa242470874893a08fc8e769a88df50873ff3476",
+  "black_box_comparison/scripts/plot_lattice_twist_borel.py": "a6ae1523c5eca2f8ea9fd7da6738de3c9ac6aac69f6954c1be8ee030af70da70",
+  "figures/lattice_twist_borel/plot_setup.json": "09e3a9dbe83141bf7ad408d38728eaf04e90a599251f5066941b2b4607464fe5"
+}

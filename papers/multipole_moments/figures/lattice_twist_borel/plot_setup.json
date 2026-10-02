@@ -1,0 +1,256 @@
+{
+  "source_sha256": "6dba526a0e07c22b6de2bbd191e9e39e754f993a995794409364c9ecfdbfdd78",
+  "pages": [
+    {
+      "angle": "nominal",
+      "metric": "mu_over_muN",
+      "twist2_sign": "+1",
+      "highlighted_thresholds": [
+        {
+          "state": "Ds_1(2460)",
+          "s0_GeV2": 8.75864025,
+          "delta_GeV": 0.5,
+          "n_windows": 37
+        },
+        {
+          "state": "Ds_1(2536)",
+          "s0_GeV2": 9.2118927121,
+          "delta_GeV": 0.5,
+          "n_windows": 25
+        },
+        {
+          "state": "Bs_1(5750)",
+          "s0_GeV2": 39.06500004000001,
+          "delta_GeV": 0.5,
+          "n_windows": 57
+        },
+        {
+          "state": "Bs_1(5830)",
+          "s0_GeV2": 40.0576333921,
+          "delta_GeV": 0.5,
+          "n_windows": 17
+        }
+      ]
+    },
+    {
+      "angle": "nominal",
+      "metric": "mu_over_muN",
+      "twist2_sign": "-1",
+      "highlighted_thresholds": [
+        {
+          "state": "Ds_1(2460)",
+          "s0_GeV2": 8.75864025,
+          "delta_GeV": 0.5,
+          "n_windows": 37
+        },
+        {
+          "state": "Ds_1(2536)",
+          "s0_GeV2": 9.2118927121,
+          "delta_GeV": 0.5,
+          "n_windows": 25
+        },
+        {
+          "state": "Bs_1(5750)",
+          "s0_GeV2": 39.06500004000001,
+          "delta_GeV": 0.5,
+          "n_windows": 57
+        },
+        {
+          "state": "Bs_1(5830)",
+          "s0_GeV2": 40.0576333921,
+          "delta_GeV": 0.5,
+          "n_windows": 17
+        }
+      ]
+    },
+    {
+      "angle": "nominal",
+      "metric": "FD",
+      "twist2_sign": "+1",
+      "highlighted_thresholds": [
+        {
+          "state": "Ds_1(2460)",
+          "s0_GeV2": 8.75864025,
+          "delta_GeV": 0.5,
+          "n_windows": 37
+        },
+        {
+          "state": "Ds_1(2536)",
+          "s0_GeV2": 9.2118927121,
+          "delta_GeV": 0.5,
+          "n_windows": 25
+        },
+        {
+          "state": "Bs_1(5750)",
+          "s0_GeV2": 39.06500004000001,
+          "delta_GeV": 0.5,
+          "n_windows": 57
+        },
+        {
+          "state": "Bs_1(5830)",
+          "s0_GeV2": 40.0576333921,
+          "delta_GeV": 0.5,
+          "n_windows": 17
+        }
+      ]
+    },
+    {
+      "angle": "nominal",
+      "metric": "FD",
+      "twist2_sign": "-1",
+      "highlighted_thresholds": [
+        {
+          "state": "Ds_1(2460)",
+          "s0_GeV2": 8.75864025,
+          "delta_GeV": 0.5,
+          "n_windows": 37
+        },
+        {
+          "state": "Ds_1(2536)",
+          "s0_GeV2": 9.2118927121,
+          "delta_GeV": 0.5,
+          "n_windows": 25
+        },
+        {
+          "state": "Bs_1(5750)",
+          "s0_GeV2": 39.06500004000001,
+          "delta_GeV": 0.5,
+          "n_windows": 57
+        },
+        {
+          "state": "Bs_1(5830)",
+          "s0_GeV2": 40.0576333921,
+          "delta_GeV": 0.5,
+          "n_windows": 17
+        }
+      ]
+    },
+    {
+      "angle": "theta90",
+      "metric": "mu_over_muN",
+      "twist2_sign": "+1",
+      "highlighted_thresholds": [
+        {
+          "state": "Ds_1(2460)",
+          "s0_GeV2": 8.75864025,
+          "delta_GeV": 0.5,
+          "n_windows": 55
+        },
+        {
+          "state": "Ds_1(2536)",
+          "s0_GeV2": 9.2118927121,
+          "delta_GeV": 0.5,
+          "n_windows": 79
+        },
+        {
+          "state": "Bs_1(5750)",
+          "s0_GeV2": 39.06500004000001,
+          "delta_GeV": 0.5,
+          "n_windows": 64
+        },
+        {
+          "state": "Bs_1(5830)",
+          "s0_GeV2": 40.0576333921,
+          "delta_GeV": 0.5,
+          "n_windows": 30
+        }
+      ]
+    },
+    {
+      "angle": "theta90",
+      "metric": "mu_over_muN",
+      "twist2_sign": "-1",
+      "highlighted_thresholds": [
+        {
+          "state": "Ds_1(2460)",
+          "s0_GeV2": 8.75864025,
+          "delta_GeV": 0.5,
+          "n_windows": 55
+        },
+        {
+          "state": "Ds_1(2536)",
+          "s0_GeV2": 9.2118927121,
+          "delta_GeV": 0.5,
+          "n_windows": 79
+        },
+        {
+          "state": "Bs_1(5750)",
+          "s0_GeV2": 39.06500004000001,
+          "delta_GeV": 0.5,
+          "n_windows": 64
+        },
+        {
+          "state": "Bs_1(5830)",
+          "s0_GeV2": 40.0576333921,
+          "delta_GeV": 0.5,
+          "n_windows": 30
+        }
+      ]
+    },
+    {
+      "angle": "theta90",
+      "metric": "FD",
+      "twist2_sign": "+1",
+      "highlighted_thresholds": [
+        {
+          "state": "Ds_1(2460)",
+          "s0_GeV2": 8.75864025,
+          "delta_GeV": 0.5,
+          "n_windows": 55
+        },
+        {
+          "state": "Ds_1(2536)",
+          "s0_GeV2": 9.2118927121,
+          "delta_GeV": 0.5,
+          "n_windows": 79
+        },
+        {
+          "state": "Bs_1(5750)",
+          "s0_GeV2": 39.06500004000001,
+          "delta_GeV": 0.5,
+          "n_windows": 64
+        },
+        {
+          "state": "Bs_1(5830)",
+          "s0_GeV2": 40.0576333921,
+          "delta_GeV": 0.5,
+          "n_windows": 30
+        }
+      ]
+    },
+    {
+      "angle": "theta90",
+      "metric": "FD",
+      "twist2_sign": "-1",
+      "highlighted_thresholds": [
+        {
+          "state": "Ds_1(2460)",
+          "s0_GeV2": 8.75864025,
+          "delta_GeV": 0.5,
+          "n_windows": 55
+        },
+        {
+          "state": "Ds_1(2536)",
+          "s0_GeV2": 9.2118927121,
+          "delta_GeV": 0.5,
+          "n_windows": 79
+        },
+        {
+          "state": "Bs_1(5750)",
+          "s0_GeV2": 39.06500004000001,
+          "delta_GeV": 0.5,
+          "n_windows": 64
+        },
+        {
+          "state": "Bs_1(5830)",
+          "s0_GeV2": 40.0576333921,
+          "delta_GeV": 0.5,
+          "n_windows": 30
+        }
+      ]
+    }
+  ],
+  "zero_charge_added_to_FD_parts": false,
+  "quadrupole_total": "FD_without_QH_total",
+  "axis_limits": "shared between signs for each state and angle; include every accepted threshold"
+}
