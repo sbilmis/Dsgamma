@@ -1,0 +1,17 @@
+{
+  "points": 18,
+  "matched_scalar_values": 126,
+  "maximum_absolute_errors": {
+    "theta_old_deg": 3.197442310920451e-14,
+    "theta_new_deg": 2.4868995751603507e-14,
+    "delta_theta_deg": 1.5654144647214707e-14,
+    "A1_old": 8.881784197001252e-16,
+    "A1_new": 8.881784197001252e-16,
+    "A2_old": 2.7755575615628914e-16,
+    "A2_new": 2.7755575615628914e-16
+  },
+  "all_pass": true,
+  "method": "Independent Wolfram algebra grouped by condensate power; 50-digit adaptive quadrature",
+  "limitation": "Numerical/transcription agreement does not establish the original program or resolve the OPE audit",
+  "manuscript_and_input_sources_unchanged": true
+}

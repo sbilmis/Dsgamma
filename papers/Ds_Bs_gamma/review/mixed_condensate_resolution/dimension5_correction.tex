@@ -1,0 +1,57 @@
+% Author-review derivation note, 19 October 2026. Not a manuscript insertion.
+% Tree-level leading mixed-condensate Wilson coefficients; no ms*C5 terms.
+% See README.md and the independent symbolic/covariant checks in this folder.
+\subsection*{Completion of the leading mixed-condensate contribution}
+
+Let $m=m_Q$, $d=m_Q+m_s$, $K=M^2$, and
+$C_5=\langle\bar s g_s\sigma\!\cdot\!G s\rangle$.
+We use the currents
+\begin{equation}
+J_A^\mu=\bar s\gamma^\mu\gamma_5 Q,
+\qquad
+J_B^\mu=\frac{i}{d}\bar s\sigma^{\mu\nu}p_\nu\gamma_5 Q,
+\end{equation}
+and the coefficient of $-g^{\mu\nu}+p^\mu p^\nu/p^2$ as the spin-one
+invariant. At tree level, the leading dimension-five contribution contains
+both the light-bilocal $-x^2 C_5/192$ term and the heavy-propagator term with
+one background gluon contracted with the local quark--gluon operator.
+The latter contribution, absent from the existing implementation, is
+\begin{equation}
+\delta\widehat{\boldsymbol\Pi}_5
+=C_5e^{-m^2/K}\left(1-\frac{m^2}{K}\right)
+\begin{pmatrix}
+0 & \dfrac{1}{12d}\\[4pt]
+\dfrac{1}{12d} & \dfrac{m}{6d^2}
+\end{pmatrix}.
+\end{equation}
+The complete leading coefficients are therefore
+\begin{align}
+\widehat\Pi_{AA}^{(5)}
+&=-C_5e^{-m^2/K}\frac{m^3}{4K^2},\\
+\widehat\Pi_{AB}^{(5)}=\widehat\Pi_{BA}^{(5)}
+&=C_5e^{-m^2/K}\frac{4K^2+2Km^2-3m^4}{12dK^2},\\
+\widehat\Pi_{BB}^{(5)}
+&=C_5e^{-m^2/K}\frac{m(2K^2+4Km^2-3m^4)}{12d^2K^2}.
+\end{align}
+The Wilson coefficients are evaluated at vanishing light mass, while the
+specified current normalization $d=m_Q+m_s$ is retained. Terms proportional
+to $m_s C_5$ and radiative corrections are not included.
+
+For $m_s=0$, and hence $d=m$, the difference becomes
+\begin{equation}
+\left(\widehat\Pi_{AA}-\widehat\Pi_{BB}\right)_{C_5}
+=-C_5e^{-m^2/K}\left(\frac{m}{3K}+\frac{1}{6m}\right).
+\end{equation}
+The existing light-bilocal contribution alone gives
+$-C_5e^{-m^2/K}m/(2K)$, whereas the earlier printed appendix, under the
+leading-term label assignment documented in the audit, gives
+$-C_5e^{-m^2/K}m/K$. Thus the difference is not resolved by selecting one
+of these two coefficients; the second contribution must be included.
+
+The additional term vanishes in the $AA$ entry, so the pure axial-current
+check is unaffected. Explicit symbolic traces and independent covariant
+Dirac/color contractions agree. Axial, vector, and pseudoscalar control
+channels reproduce their standard leading mixed-condensate terms.
+This calculation establishes the leading coefficient in the present
+approximation; it does not identify which formula was used in the original
+2025 numerical program.

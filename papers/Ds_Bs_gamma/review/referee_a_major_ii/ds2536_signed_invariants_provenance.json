@@ -1,0 +1,16 @@
+{
+  "figure": "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_major_ii/ds2536_signed_invariants.png",
+  "source_data": "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_major_ii/ds2536_signed_contributions_data.csv",
+  "source_data_sha256": "37e152027fe0e345407ca23f89e417ff1afb177f8a7668383aa9f8ae71e0f66c",
+  "plot_script_sha256": "7660f7de0233a85cf5d66854a33de5f71f5a41a9c29c72589c5431ef47e40ea6",
+  "third_panel": "Pi_2 = cos(theta) Pi_A - sin(theta) Pi_B; not the normalized g2",
+  "all_panel_units": "GeV^3",
+  "central_s0_GeV2": 9.5,
+  "shading": "Pointwise envelope over the existing 21-point s0 scan from 9 to 10 GeV^2",
+  "style_reference": "/Users/sbilmis/Downloads/r1-2.pdf, Figure 2",
+  "max_abs_projection_error_GeV3": 0.0,
+  "max_abs_component_sum_error_GeV3": 2.7755575615628914e-17,
+  "max_abs_g2_normalization_error_GeV_minus1": 2.220446049250313e-16,
+  "source_data_and_manuscript_unchanged": true,
+  "midpoint_Pi2_GeV3": -0.0018441970136229627
+}

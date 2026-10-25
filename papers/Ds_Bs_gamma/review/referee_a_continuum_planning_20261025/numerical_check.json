@@ -1,0 +1,8 @@
+{
+  "max_infinite_integral_control_difference": 3.191891195797325e-15,
+  "max_absolute_retention_quadrature_change": 4.3298697960381105e-15,
+  "numerator": "previously saved n=1600 diagonal hard integral",
+  "denominator": "same density integrated to infinity, threshold square-root substitution",
+  "meaning": "signed hard-sector retention only; not a positive full-transition pole probability",
+  "new_widths_or_ensembles_computed": false
+}

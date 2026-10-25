@@ -1,0 +1,106 @@
+% Proposed replacement for the Response to Referee 1, Comment 1.
+% Author review, 24 October 2026; NOT automatically approved for submission.
+% Based on the supplied r1-1.pdf and ref1_reply.pdf.
+% The numerical section explicitly uses the independently completed current
+% LO + quark + leading mixed-condensate OPE. It is NOT the original-paper rerun.
+% Before submission, discuss this scope and consistently implement/recompute
+% the outstanding Appendix C correction and its dependent results.
+% No manuscript file or baseline numerical output has been changed.
+
+\noindent\textbf{Response:}
+
+We thank the referee for this helpful suggestion. We have expanded
+Sec.~II, following the two-point sum rules for the decay constants, to
+summarize the mixing-angle determination in our earlier work. The added
+discussion, Eqs.~(39)--(43) of the revised manuscript, explains the
+current rotation, the diagonalization condition, and the role of the
+physical diagonal correlators. The published mixing angles are quoted
+in Eq.~(46).
+
+Within the adopted two-state description, the angle is determined by
+requiring the Borel-transformed and continuum-subtracted spin-one
+correlation matrix to be diagonal in the rotated current basis.
+For the current convention used in the manuscript,
+\begin{equation}
+R(\theta)=
+\begin{pmatrix}
+\sin\theta & \cos\theta\\
+\cos\theta & -\sin\theta
+\end{pmatrix},
+\qquad
+\left[R(\theta)\widehat{\boldsymbol\Pi}R^T(\theta)\right]_{12}=0.
+\end{equation}
+With a common Borel parameter and continuum-subtraction prescription,
+this gives
+\begin{equation}
+\tan(2\theta)=-\frac{2\widehat\Pi_{AB}(M^2,s_0)}
+{\widehat\Pi_{AA}(M^2,s_0)-\widehat\Pi_{BB}(M^2,s_0)}.
+\end{equation}
+The two physical diagonal correlators need not be equal: their
+difference cancels in the ratio wherever it is defined. Different
+physical masses and pole residues are therefore compatible with this
+relation within the adopted description. The earlier results,
+\begin{equation}
+\theta_{D_s}=(26.6\pm0.6)^\circ,
+\qquad
+\theta_{B_s}=(38.5\pm0.1)^\circ,
+\end{equation}
+are retained, with their quoted uncertainties, as external inputs.
+
+We have also added a footnote clarifying a typographical omission in
+the earlier article: the tensor-current normalization factor
+$1/(m_Q+m_s)$, with $Q=c,b$, was included in the calculations but
+inadvertently omitted from the printed current definition. The two
+studies thus use the same current normalization.
+
+The light-quark condensate at $1\,\mathrm{GeV}$ changes from
+$-(1.65\pm0.15)\times10^{-2}\,\mathrm{GeV}^3$ in the earlier study
+to $-(0.240\pm0.010)^3\,\mathrm{GeV}^3$ in the present analysis.
+The central value of $\langle\bar ss\rangle/\langle\bar qq\rangle$
+remains $0.80$, while its uncertainty changes from $0.20$ to $0.10$.
+
+To assess the sensitivity to the central condensate value, we performed
+an independent paired check of the mixing-angle ratio using the
+leading-order perturbative contribution, the quark-condensate terms,
+and the complete leading dimension-five mixed-condensate contribution.
+Gluon-condensate and radiative corrections are omitted in this
+auxiliary check. With this OPE prescription and all other inputs fixed,
+we changed
+\begin{equation}
+\langle\bar qq\rangle=-0.0165\,\mathrm{GeV}^3
+\quad\longrightarrow\quad
+-0.013824\,\mathrm{GeV}^3
+\qquad (\mu=1\,\mathrm{GeV}),
+\end{equation}
+changing the strange and mixed condensates consistently through
+\begin{equation}
+\langle\bar ss\rangle=0.8\langle\bar qq\rangle,
+\qquad
+\langle\bar s g_s\sigma\!\cdot\!G s\rangle
+=m_0^2\langle\bar ss\rangle,
+\qquad m_0^2=0.8\,\mathrm{GeV}^2.
+\end{equation}
+At $(M^2,s_0)=(4.5,10)\,\mathrm{GeV}^2$ for $D_s$ and
+$(11,43)\,\mathrm{GeV}^2$ for $B_s$, the shifts
+$\Delta\theta=\theta_{\mathrm{new}}-\theta_{\mathrm{old}}$ are
+\begin{equation}
+\Delta\theta_{D_s}=+0.175^\circ,
+\qquad
+\Delta\theta_{B_s}=+0.045^\circ.
+\end{equation}
+A $21\times21$ grid gives
+\begin{equation}
+\Delta\theta_{D_s}=0.116^\circ\text{--}0.331^\circ,
+\qquad
+\Delta\theta_{B_s}=0.036^\circ\text{--}0.060^\circ,
+\end{equation}
+over $M^2=3$--$6\,\mathrm{GeV}^2$, $s_0=9$--$11\,\mathrm{GeV}^2$
+for $D_s$, and $M^2=9$--$13\,\mathrm{GeV}^2$,
+$s_0=42$--$44\,\mathrm{GeV}^2$ for $B_s$.
+Within this specified truncation, the shifts remain below the quoted
+angle uncertainties throughout the sampled regions. This is a
+central-input sensitivity test, not a reproduction of the full earlier
+extraction or a new propagation of its uncertainties; in particular,
+the changed uncertainty in the strange-to-light condensate ratio is
+not propagated here. The published mixing angles remain the external
+inputs of the radiative-decay analysis.

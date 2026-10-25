@@ -1,0 +1,1638 @@
+{
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/.cache/fontconfig/4033fa038ca166f7832d96d5dc0cc65b-le64.cache-8": {
+    "sha256": "1ac30858e468915cf61e6efbe19ec21ea1179517908c2457f31fabd6a82a0367",
+    "bytes": 4293680
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/.cache/fontconfig/84c0f976e30e948e99073af70f4ae876-le64.cache-8": {
+    "sha256": "5fa228c33b1f9d578e86af359c415f5e1be708b825cc67798cf2c5fa52a8f16e",
+    "bytes": 5808
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/.cache/fontconfig/CACHEDIR.TAG": {
+    "sha256": "05e7633fb31bf1f6f8d89020c16b9f24587fdf7638e951c9745b192f5fc3b682",
+    "bytes": 200
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/.cache/fontconfig/b0a71e6bf6a8a1a908413a823d76e21f-le64.cache-8": {
+    "sha256": "213b7d0fd5f4e68ece714562c0c1f94a509181fe2d9a927b5e63e2d57017ab85",
+    "bytes": 3709072
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/.cache/fontconfig/c6cafe6b1a56ed8b739253d6df90ca6a-le64.cache-8": {
+    "sha256": "789b062b3ebcb71a73933af3d333b5421f42a53c32278d2353b19cfb005685fc",
+    "bytes": 1104256
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/README.md": {
+    "sha256": "b477f1d66150c23bd8f06332d3c62b9dfe6d1dd3a3c733bad5d38692dcf17e4e",
+    "bytes": 3389
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/build_figure1_data.py": {
+    "sha256": "b69494cdc7b688c0de2a3494ffdf3d545d6b7569293695705c0f624d1b950467",
+    "bytes": 5241
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/colangelo_pure_axial_reconstruction.csv": {
+    "sha256": "0f051ae5f598d44c386168b1c46447fe9efa6657c927469a3e6fa5bbe728ad3c",
+    "bytes": 49985
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/figure1_borel_decay_widths_python.pdf": {
+    "sha256": "278a90c7a3165d68e5f046bfc57dd87a6d811d6a8e11cb63d93e14e6ff185d13",
+    "bytes": 19692
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/figure1_borel_decay_widths_python.png": {
+    "sha256": "81daaf8a22215cb1a21150d7701d770da6de6a52ef2869c8a808827b86f1835b",
+    "bytes": 200207
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/figure1_borel_decay_widths_theta_35p3.pdf": {
+    "sha256": "91da09618e2cb60c24ba3df35ccb5319e2eb522aa0cdca268e9f2d9c65e3c6a4",
+    "bytes": 19707
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/figure1_borel_decay_widths_theta_35p3.png": {
+    "sha256": "7c35e8d94c3371ebe2099a2b27ff03034f8761f11ae4691fac56a3ad83b83667",
+    "bytes": 203294
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/figure1_borel_decay_widths_theta_90p0.pdf": {
+    "sha256": "52febe44d9ed3b3ae9f95b95fde1f7725355fb62cef72b6860430b7f74d35262",
+    "bytes": 19725
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/figure1_borel_decay_widths_theta_90p0.png": {
+    "sha256": "a3b1b2e9afe08b275095e5370805ec60cf3231dc784ba0d0d722b7a4b5151ec5",
+    "bytes": 201560
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/figure1_borel_form_factors.csv": {
+    "sha256": "ff3b512d690dd1e3c27a4985952d3f87969d3032953e0861b6b5ea2ae99cc5e9",
+    "bytes": 41068
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/figure1_borel_form_factors.pdf": {
+    "sha256": "362d4c6264b69e2394ec4a5664f17588d72dc99451412d55d1a1f8b9551dd247",
+    "bytes": 63750
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/figure1_borel_form_factors.png": {
+    "sha256": "2e851672a17baf499f9d32abcf487543df257420d36f3ccc1f7317138a4d9ff0",
+    "bytes": 269503
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/figure1_borel_form_factors_mathematica.pdf": {
+    "sha256": "599ffb43abbe7e9a3b36973329bb1ea3601ed138948972ccc46bb09d1bbb074a",
+    "bytes": 59308
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/figure1_borel_form_factors_mathematica.png": {
+    "sha256": "61ff27cfe5a9b3fdd41cc621d300dbe7af68abeb62b34dce0a5247a97c88f030",
+    "bytes": 273414
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/figure1_borel_form_factors_python.pdf": {
+    "sha256": "3c2eb4e54f2c77fb97af13e7500984f3f5e10d42fce2d97ed079a41196ebe70d",
+    "bytes": 20203
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/figure1_borel_form_factors_python.png": {
+    "sha256": "5312de2984c192f4ac17a4f994ab3febd651c060b9b9e62ae7c5e00dadf37a79",
+    "bytes": 209791
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/figure1_borel_form_factors_theta_35p3.pdf": {
+    "sha256": "9930dcdf32a78500d2c2dff360369897c2c69112702d08d00de4946da091520e",
+    "bytes": 20119
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/figure1_borel_form_factors_theta_35p3.png": {
+    "sha256": "cfa6eb418b9072edce527df597fffdca21439446d8013ac19377492595f379e9",
+    "bytes": 218256
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/figure1_borel_form_factors_theta_90p0.pdf": {
+    "sha256": "e3ebeddfc83195199c1696f5ab7702cb3a8d76da0460ce1305535df9f16af2a4",
+    "bytes": 20109
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/figure1_borel_form_factors_theta_90p0.png": {
+    "sha256": "c15d74668966effb3d5e5b4cbb267b806ceb3171d3d6647b37736a9f96700702",
+    "bytes": 212435
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/figure1_borel_signed_form_factors_python.pdf": {
+    "sha256": "8e34e4a43ab0aa9e0d9b3e32ace1c1ca2831d1a767500dd73a776f18b212d12e",
+    "bytes": 20010
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/figure1_borel_signed_form_factors_python.png": {
+    "sha256": "5286fa6aa744bb2d03d90b9fded8368472db6029e3f2f080f7e463e74cf9be4c",
+    "bytes": 212113
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/internal_colangelo_theta90_side_by_side.pdf": {
+    "sha256": "e395d15c5bfd11804dc686a2146c6acb7a0baeb5a778f2224732b2832a7b67af",
+    "bytes": 56106
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/internal_colangelo_theta90_side_by_side.png": {
+    "sha256": "ad6badb10cdfda2765945acdaced7841b57020a7a4c001283ff60cfd82ee5a63",
+    "bytes": 267956
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/plot_angle_comparisons.py": {
+    "sha256": "50ba91a4232e67579e05f9a5b86e9a47e7d564bb587ec5dfc28aa74ee94b2582",
+    "bytes": 7354
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/plot_colangelo_side_by_side.py": {
+    "sha256": "ebe43bf4ed00b450fa2919d88d59159994af387d4e88f765c5022ef9c387b12b",
+    "bytes": 7970
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/plot_figure1.wl": {
+    "sha256": "9e6c57c8e71309cd17bf9bc3b2a8c2fb6348afcad81ddbbba35c69508a7fddcd",
+    "bytes": 6656
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure1_borel_form_factors/plot_figure1_preview.py": {
+    "sha256": "bbc14bad814a0bf98b57b55f2caf68cd64701c96d1fc7231cff678dbacf8ff30",
+    "bytes": 6479
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure2_mixing_angle_widths/README.md": {
+    "sha256": "9fee0bac09e7bdaff91ad6d0046dd25bf0de37b66eaf86a3aa665d1c168345b6",
+    "bytes": 1262
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure2_mixing_angle_widths/build_figure2_data.py": {
+    "sha256": "0146d8ae94ed479bbb93af418f537c4948292b08efd3362d205c8f9ae72f9ad8",
+    "bytes": 10382
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure2_mixing_angle_widths/figure2_mixing_angle_widths.csv": {
+    "sha256": "131321ade08f1f6173debb7b93631d8e050c5514f693ea9e38c92b91e47de384",
+    "bytes": 158600
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure2_mixing_angle_widths/figure2_mixing_angle_widths_mathematica.pdf": {
+    "sha256": "c6544d1af2ea0ae9209e2225c24e6b39cdd01983bd1b105e2c77aa1c8047e074",
+    "bytes": 33354
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure2_mixing_angle_widths/figure2_mixing_angle_widths_mathematica.png": {
+    "sha256": "e99016697b8e21a6d3bb2f66d175d802cc6818170cf7f98e8a58137813df9284",
+    "bytes": 109009
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure2_mixing_angle_widths/figure2_mixing_angle_widths_python.pdf": {
+    "sha256": "7f251911b869b66bc186be85bc7845ac966bdd887e03c44d4a14038b209e18f4",
+    "bytes": 15242
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure2_mixing_angle_widths/figure2_mixing_angle_widths_python.png": {
+    "sha256": "4dcc0c9e0a70d82911b9fb3a6489d7112d8177b13e1d9960a5c2f60142a52b48",
+    "bytes": 77669
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure2_mixing_angle_widths/plot_figure2.wl": {
+    "sha256": "6443d72134f3efd7b6d2a0ce2fce7a1d7689261b01334cd39b754b823a8a2b01",
+    "bytes": 4893
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure2_mixing_angle_widths/plot_figure2_preview.py": {
+    "sha256": "05b4860b013d1d9e2d0394546e2a7c5046228378c8c7481ab858864d5a82c1a8",
+    "bytes": 4385
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure5_monte_carlo_widths/README.md": {
+    "sha256": "983438bf0d410657250df1263bd732ef058257712d27323e48bd762413b1cf96",
+    "bytes": 1410
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure5_monte_carlo_widths/build_figure5_data.py": {
+    "sha256": "d9203100987da4f8c50cf16504c7d8dbabc219803b7f5cf718ab76991b31e9f9",
+    "bytes": 3847
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure5_monte_carlo_widths/figure3_caption_revised.tex": {
+    "sha256": "521db0c69e51e9d08b2ca83f48695938156c9348641c3cbc121838db2b229ba6",
+    "bytes": 651
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure5_monte_carlo_widths/figure3_preferred_mixing_priors.pdf": {
+    "sha256": "638105e68f8773da9bcf851fb7ebbd273bf1356452f798e11e19c3e887f44018",
+    "bytes": 19492
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure5_monte_carlo_widths/figure3_preferred_mixing_priors.png": {
+    "sha256": "de9ab99622e1092847022e27c705af8587aec122e7a787109645183902dc7b60",
+    "bytes": 100423
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure5_monte_carlo_widths/figure5_monte_carlo_summary.csv": {
+    "sha256": "585980ee6e290fd406a90f9c5869eb704c6ca244045700c1c1fb40b05802df5d",
+    "bytes": 978
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure5_monte_carlo_widths/figure5_monte_carlo_widths.csv": {
+    "sha256": "879759b92a63863cd297f6ae44e22fbe3b0289c20993a0167142309cf013dc73",
+    "bytes": 1536364
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure5_monte_carlo_widths/figure5_monte_carlo_widths_mathematica.pdf": {
+    "sha256": "e7cfbf909787997118a7a3d94b987d7c159342fad563bbc07e3350d50439d658",
+    "bytes": 19602
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure5_monte_carlo_widths/figure5_monte_carlo_widths_mathematica.png": {
+    "sha256": "de9ab99622e1092847022e27c705af8587aec122e7a787109645183902dc7b60",
+    "bytes": 100423
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure5_monte_carlo_widths/figure5_monte_carlo_widths_python.pdf": {
+    "sha256": "638105e68f8773da9bcf851fb7ebbd273bf1356452f798e11e19c3e887f44018",
+    "bytes": 19492
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure5_monte_carlo_widths/figure5_monte_carlo_widths_python.png": {
+    "sha256": "21a57bec22f3471dadc4e4f0a61a2af28debbee24558e8242047353744a78b7f",
+    "bytes": 99155
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure5_monte_carlo_widths/plot_figure5.wl": {
+    "sha256": "9ddbd025482950f0029c983233033c30652c52e56d637a62cd8621cb655b8d5b",
+    "bytes": 3934
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/figure5_monte_carlo_widths/plot_figure5_preview.py": {
+    "sha256": "44c411b403fae1e25a6a6ae3bb2f84f1caaad24bbda97c74d6909db62b4b6eef",
+    "bytes": 2355
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/figures/ope_topologies/ope_topologies.tex": {
+    "sha256": "c2cefbbd214115ac6970e28738ede584f8adbb5abba026c17cec565aadecfa6a",
+    "bytes": 3955
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/final_manuscript/all.bib": {
+    "sha256": "99410eb92b09d7c83e3ff70a64fdb760eea83ec58daaa61148f1a4bbd7457d3e",
+    "bytes": 210892
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/final_manuscript/appendix_revised.tex": {
+    "sha256": "1971a7a4deb29c87d0daa8ea63e3059aa1a5e03fa4e4ccabdddef81f09ee620d",
+    "bytes": 14224
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/final_manuscript/fig1.pdf": {
+    "sha256": "8e34e4a43ab0aa9e0d9b3e32ace1c1ca2831d1a767500dd73a776f18b212d12e",
+    "bytes": 20010
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/final_manuscript/fig2.pdf": {
+    "sha256": "7f251911b869b66bc186be85bc7845ac966bdd887e03c44d4a14038b209e18f4",
+    "bytes": 15242
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/final_manuscript/fig3.pdf": {
+    "sha256": "638105e68f8773da9bcf851fb7ebbd273bf1356452f798e11e19c3e887f44018",
+    "bytes": 19492
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/final_manuscript/main3_savci.tex": {
+    "sha256": "1656f0f46c4be8defc952e657739b1dde39c3ddbc4b133a5a84c59afe4e0bb46",
+    "bytes": 134831
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/final_manuscript/my_preamble.tex": {
+    "sha256": "82403b77ef1d05ec5ba408dc676643094295ad37a97e2f47d4df2e6c98acae1c",
+    "bytes": 8356
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/final_manuscript/numerical_analysis_revised.tex": {
+    "sha256": "08dc1caaea1a07717497668107f5cc718d52cd83dd0f0d60f385a6bbb62dd2a4",
+    "bytes": 14620
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/final_manuscript/orcidlink.sty": {
+    "sha256": "2941c36b772ae89cbcaca60fb14d888b59e41733c6255c5a0ef23043c190bc74",
+    "bytes": 2267
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/final_manuscript/theoretical_framework_revised.tex": {
+    "sha256": "c1178df7fcc2a529250b276403a40e03ef9aa5cd83482142c81cb14b40db6d78",
+    "bytes": 10743
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/final_manuscript/utcaps_mod.bst": {
+    "sha256": "16a2d0ee607a9a11a1ac8b9d7b06675ee34dd41c40c77f46dd07f6715d4f86dd",
+    "bytes": 25598
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/README.md": {
+    "sha256": "0a5f8302db182054bdd3bddf3e999dcb864de5a11e6cf6d4bc33d48a77fa8723",
+    "bytes": 2635
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/bondar_literature_comparison_table.csv": {
+    "sha256": "446a5af3f24060f2a0b0afb82b894f9fdba5134393ca7eaabe9f30b98800a67f",
+    "bytes": 1252
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/bs1_5830_mc_width_histograms.pdf": {
+    "sha256": "0b701d2b0cf66fc1c9da669506bbe0f6a0bb99f27a579149001e3cf9b99b3534",
+    "bytes": 23822
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/bs1_5830_mc_width_histograms.png": {
+    "sha256": "f2caa6d0509d5c1ddd0ca6de041d54bc37e853e94b4cf0d8583cf993a32d37c7",
+    "bytes": 60415
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/bs1_5830_stability.pdf": {
+    "sha256": "fb99383db2ac5dc66f1f071d085c93baa20d1a76be2d73ed2a7606d6f935e165",
+    "bytes": 28562
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/bs1_5830_stability.png": {
+    "sha256": "1f2034fdbe050ea05fc212c6d754ba6dd7c69e29f8c023163ce82ffbb9e70e3e",
+    "bytes": 272306
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/bs1_borel_window_candidate_grid.csv": {
+    "sha256": "8a3b5e71e2fa5b9714c47df32e005d315295ad82c5f9e12e89a0f15a8815d660",
+    "bytes": 241630
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/bs1_borel_window_candidate_scan.pdf": {
+    "sha256": "cdc2a225badb3b3b7485807c0efc1f53494683adff60cadaf0cec5c8c024aa8e",
+    "bytes": 15532
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/bs1_borel_window_candidate_scan.png": {
+    "sha256": "b5d33174be1ec6ab5e16affa9dd41d946182f9e264cd89b1846b5ca497415d89",
+    "bytes": 124910
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/bs1_borel_window_candidate_summary.csv": {
+    "sha256": "6854493896e39db0ed0c0a04f3b2491fb8d15f8a7c05f016e63e244678c2e127",
+    "bytes": 2908
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/bs1_borel_window_candidate_summary.txt": {
+    "sha256": "5c6dc696df7b2344805cd6b3ac0d130fb2059f3466a814ad1d6acc0977831b50",
+    "bytes": 1982
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/bs1_stage2_baseline.csv": {
+    "sha256": "6720ee0e738f791a3257f67ce76e57161bf1e0a851464708491ef1ab05e4ff3c",
+    "bytes": 128202
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/bs1_stage2_baseline_summary.txt": {
+    "sha256": "5ad5cf7aac20457b5ec2b02d3baa8c2d0b6ea18f6093b73fb344dc949c595138",
+    "bytes": 1542
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/bs1_stage2_mc_scan.csv": {
+    "sha256": "1539ae199c9bcc5fe1140c5ac5fd0894ff107df43b0ed094769f2c5df99afd0e",
+    "bytes": 1880685
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/bs1_stage2_mc_summary.csv": {
+    "sha256": "8b3e9809af927266f4b49d9e0ab5ce7a5e389bcf3fb2a5f5c9988d9c2628985c",
+    "bytes": 2281
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/bs1_stage2_mc_summary.txt": {
+    "sha256": "67e3ed30203cb2edf20dc513c47b5b7ca09609751b148402ff60ec79c4fcbd83",
+    "bytes": 1478
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/combined_recommended_results_table.csv": {
+    "sha256": "6763acd0083a92300b0e21d23c065e32c6dcf2a030e1c12bec5715b82e3aab2c",
+    "bytes": 9383
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/corrected_transition_central_mathematica.csv": {
+    "sha256": "e0c2f9e84b62b42c696c815ddfd978c4c28daf9a795983873c048f826bf7382d",
+    "bytes": 7604
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/corrected_transition_central_mathematica.txt": {
+    "sha256": "9907fb27339db9d75d96d0d76f322f7cf63a74f7a7f035fab93632f3c5268cae",
+    "bytes": 5233
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/corrected_transition_central_python.csv": {
+    "sha256": "b62f8a37d7669bd80eea5ad7c7a8700a822c3ab5e37bc045383935ea537846d6",
+    "bytes": 6459
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/corrected_transition_central_python.txt": {
+    "sha256": "b882d3276a6bb4ed7ea6f4718b5b3a8b48b1f2caffaa7affd0180f6b55eede64",
+    "bytes": 1085
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/corrected_transition_python_mathematica_comparison.csv": {
+    "sha256": "7ba0cf7dfbe9bed89b677150877c2be7dbbf48d3eb4bbb8a93b0dedbdd2a8507",
+    "bytes": 14140
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/corrected_transition_python_mathematica_comparison.txt": {
+    "sha256": "4cf72e633bc5adcf8f6036450df90d0aa35841c0b74d2a9a4790e45c0bce7b1d",
+    "bytes": 683
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/decay_constant_provenance_audit.txt": {
+    "sha256": "04c92c0f49be6c78926b0f8223d7241e1b16878a969cc2d5f078871722b33c6e",
+    "bytes": 1908
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/ds1_interference_diagnostic_scan.csv": {
+    "sha256": "4b71b6be0121fcaadfbbd856f61d3ca96c77ae4edd3713f363f792decda828ab",
+    "bytes": 375089
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/ds1_interference_diagnostic_summary.csv": {
+    "sha256": "dfa8768ee55bcbe7f431d10f1ded1228080149f190e8f87d7fd2abfd60c34907",
+    "bytes": 1352
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/ds1_interference_diagnostic_summary.txt": {
+    "sha256": "74b66fd391f8593a693c23863668845b4bd9e3cde0d67513a80a2b47f4122611",
+    "bytes": 1000
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/ds1_recommended_results_table.csv": {
+    "sha256": "a6e5f446c19382b85db881e1e437b580ffaa552df8b633096caa1c40782e01e2",
+    "bytes": 1441
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/ds_mixing_angle_benchmark_summary.txt": {
+    "sha256": "74b66fd391f8593a693c23863668845b4bd9e3cde0d67513a80a2b47f4122611",
+    "bytes": 1000
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/ds_mixing_angle_benchmark_table.csv": {
+    "sha256": "dfa8768ee55bcbe7f431d10f1ded1228080149f190e8f87d7fd2abfd60c34907",
+    "bytes": 1352
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/experimental_comparison_table.csv": {
+    "sha256": "3bb7de10c2b10f56fd2621620b639204e0b7fa9eb968fd0095c914014a49b451",
+    "bytes": 1997
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/final_angle_stability.csv": {
+    "sha256": "a4b0003dc864c6ad4ccf67b2e8c2af2067605e00541466b9616061b49bbd815b",
+    "bytes": 65510
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/final_angle_stability.pdf": {
+    "sha256": "ce0221f3116381f834350326db53e7d8d95ce126d58a9c993d81059b2a1179b1",
+    "bytes": 34344
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/final_angle_stability.png": {
+    "sha256": "c2f4ea0fc31c84f41349bf4318b81253c5f2e771bdde2eaf83aee9fd9106da63",
+    "bytes": 443798
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/final_angle_stability_summary.txt": {
+    "sha256": "308b241d0f1de140ab1ed97e9da49729667b6d793d2cb5b4bc7b7d53f6d9a6f7",
+    "bytes": 793
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/final_stage2_uncertainty_scan.csv": {
+    "sha256": "f74c00254bbaf2d81e4810ee1551588b329fea8d958707a1de445b10232a36b4",
+    "bytes": 620060
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/final_stage2_uncertainty_scan_summary.txt": {
+    "sha256": "9e5b8382b0ebb41a1eb56988b70e24c546b4b704a16090bb75f9c4b7dacad4b7",
+    "bytes": 1447
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/final_window_bs_window_crosscheck.pdf": {
+    "sha256": "663163fdf8eb28ef9cca7f4bd01a90105df30b9d02445a52a66239420f468c31",
+    "bytes": 18777
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/final_window_bs_window_crosscheck.png": {
+    "sha256": "62684fdd4cbe7255818345b352b8d1a96f59665ad1be8b01feac96480842e0e9",
+    "bytes": 80451
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/final_window_mc_scan.csv": {
+    "sha256": "e60526db2c791ccbadb0b7cec3c32c356f89809cb3b0d21fd63842c53d2a5c16",
+    "bytes": 11280687
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/final_window_mc_summary.csv": {
+    "sha256": "d601fdb74881577fb06c55a5f6d774dee4631f9c435657d90962f47f729199f2",
+    "bytes": 8781
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/final_window_mc_summary.txt": {
+    "sha256": "de053d67d049b6a518af4654b6b7e60b719a8e0b69817d24523ffa5a200f5871",
+    "bytes": 1745
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/final_window_mc_width_histograms.pdf": {
+    "sha256": "020f43179588ec40cf8d928a27be9b7331346febd8ce2a338f02f585a69c113e",
+    "bytes": 19971
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/final_window_mc_width_histograms.png": {
+    "sha256": "12e147308ea92f622144f7f2e8b09e19cbab89fb3faa7d26083e7c8402f9c47b",
+    "bytes": 140435
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/input_citation_map.csv": {
+    "sha256": "040a6369c172093f8943f5382c362514e0374260ba758972517f82778a2a5ce0",
+    "bytes": 5479
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/lattice_fperp_comparison_histograms.pdf": {
+    "sha256": "b155a0cab2568ce29e99ca36a6dcd471efe9e0a435afd0efac5c1084c1ceec83",
+    "bytes": 24402
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/lattice_fperp_comparison_histograms.png": {
+    "sha256": "a2b297e8a9af0ec1dcb6f1599bfbaceb014eec11921ebd9af184b22fa47a5082",
+    "bytes": 66057
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/lattice_fperp_comparison_scan.csv": {
+    "sha256": "407f9435efde14102fd765ee8e5a11e6eae20006c1f3fb2109b92764ecf80919",
+    "bytes": 809416
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/lattice_fperp_comparison_summary.csv": {
+    "sha256": "a32c6e4dd0f0dc5f965638af3875ddfe7c43aecd4d6ba218502ee8f0893acb93",
+    "bytes": 3211
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/lattice_fperp_comparison_summary.txt": {
+    "sha256": "283918d60588a08703ef213832bafba1d1355e0ec95a6da1ca3ad49b4bc94af9",
+    "bytes": 2456
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/lattice_fperp_gaussian_fit_summary.csv": {
+    "sha256": "cdd374923c9ea668033daca36baf3775f032c490ae8d673318b8ff043c759a9d",
+    "bytes": 640
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/lattice_fperp_mc_width_histograms_theta_fixed.pdf": {
+    "sha256": "79143185b16aeff62022ac25bc00e7dd35cf7d8363a60aa052e7b436cf55e9c0",
+    "bytes": 22690
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/lattice_fperp_mc_width_histograms_theta_fixed.png": {
+    "sha256": "205b2027c675bbf42bb52a42339c7f8719f9cc278b1655ca440403d80e90f56e",
+    "bytes": 103000
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/lattice_fperp_mc_width_histograms_theta_scan.pdf": {
+    "sha256": "9cc431f1bc526c352d97476f1b03ef6233c3f8920cca3896f688940a2e4e0ed7",
+    "bytes": 23172
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/lattice_fperp_mc_width_histograms_theta_scan.png": {
+    "sha256": "52b739c78f33ba60bf0dc11425d67d029cecd76fe0f069af30a6f606f6b1197d",
+    "bytes": 106730
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/literature_comparison_2460.csv": {
+    "sha256": "7fc7d1d960093a70349a2ce54e456323ec44cd859d841d3c1352e10539a019a7",
+    "bytes": 255
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/literature_comparison_2460.pdf": {
+    "sha256": "cb91e876bc32540b68fffad54c7aabe0b0dd686b8fc2028b485d7979c2f2887d",
+    "bytes": 20685
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/literature_comparison_2460.png": {
+    "sha256": "12343c2f1440851d81c6b4aae18ec6019af9b292fd67259035594b99ea0d4a23",
+    "bytes": 57687
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/local_scheme_comparison_summary.txt": {
+    "sha256": "209dcd7d55172cd44664ceeb4a3176d5e3112e15e28c08ca7e76361d933d443a",
+    "bytes": 1409
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/local_scheme_comparison_table.tex": {
+    "sha256": "bf26feb8c38d7e8c34a408ef8cbb82e45045d9b8d0a20ff2799f4cf8432b1682",
+    "bytes": 798
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/local_scheme_conceptual_comparison.csv": {
+    "sha256": "0ec5a7aa576291ffcafa7d3bd99dae07257c149c8826ec7394359f04f161a482",
+    "bytes": 719
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/local_scheme_numerical_comparison.csv": {
+    "sha256": "ef3c19f4c362d1ff34c7e5cef3e013a2387c2a15a2c63bd9f4c6b2d10101d1f0",
+    "bytes": 1520
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/local_scheme_scan_summary.csv": {
+    "sha256": "25b8392649778f76f75771ed8eca8ab8c18100e91ad46de3206e979d32f4f8fd",
+    "bytes": 721
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/manuscript_reproducibility_map.csv": {
+    "sha256": "04e6ec5968293023b64d4b8c8aac4b80a3efa7c9b3527fd120036588c0145ede",
+    "bytes": 2527
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/mathematica_correlator_routing_audit.txt": {
+    "sha256": "384d742b0041eaa2d1b110a6ac0a2705d8fa28088757fc7d99e5076875610aee",
+    "bytes": 1814
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/mathematica_current_wick_trace_audit.txt": {
+    "sha256": "6efcc81c2e277ea85353e01cc70b36afaf8c680f49ed3778f6f1566ab506d30c",
+    "bytes": 21108
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/mathematica_hard_loop_parameterization.txt": {
+    "sha256": "394b4bc5070c873466df5042c1efb15c4eedfd9a579d4125b5ed1f5cf0886e01",
+    "bytes": 1138
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/mathematica_twopoint_bs1_matrix_check.txt": {
+    "sha256": "7bf3b20e375af136475ccb1922838ecc6b1416c4e7e5d285498e49e3f58f4648",
+    "bytes": 1362
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/mathematica_twopoint_ds1_matrix_check.txt": {
+    "sha256": "a8f6704e642ae723d5c70e0bd24338e56c1461ecef25af3a000439cea99c5520",
+    "bytes": 1137
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/mathematica_twopoint_ds1_matrix_scan.csv": {
+    "sha256": "52bbea6ccfab789df37b3274ca3456040726f7d6a3405ed040cdd51d4e62a964",
+    "bytes": 270
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/mc_width_gaussian_fit_summary.csv": {
+    "sha256": "658f2a7c96c7ace1c438ec65c41dc18ad4c7595ecd050931cc1c4f15e0b25418",
+    "bytes": 550
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/mc_width_histograms_theta_fixed.pdf": {
+    "sha256": "4908ac3126375592209ce4dddfb6e1c5895228dd70096e1bfba8f8a6e39b8b05",
+    "bytes": 22118
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/mc_width_histograms_theta_fixed.png": {
+    "sha256": "be0569fe71fd2c4fbdc291de5305146f226d8998b880a845f1d12724c18eb217",
+    "bytes": 125401
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/mc_width_histograms_theta_scan.pdf": {
+    "sha256": "a5ff389cd0de374ba639d8b9a49b7087c6361d792c8af73ad0328c922152923f",
+    "bytes": 22377
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/mc_width_histograms_theta_scan.png": {
+    "sha256": "4a99cf431c84f4bad3c029c27e00d0d1db26518888b833cb20ba0bcdd958812f",
+    "bytes": 115484
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/paper_final_results_rohrwild_nonlocal.csv": {
+    "sha256": "08969bdf92c49a43c9f6216391d6aaac0709480a99f4235b2c2647225b8257f0",
+    "bytes": 6917
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/paper_input_summary_table.csv": {
+    "sha256": "c1faa7665d0fc3172b355f7ff3d10263c97d522001675418e03f78fea83e42b8",
+    "bytes": 3418
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/publication_plots_summary.txt": {
+    "sha256": "b86da92d209705be63807fe52315f646b3017dd9445a3226019cc32cb14cfd38",
+    "bytes": 850
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/publication_selected_window_stability.csv": {
+    "sha256": "280d5123aea072c504241c38c5800cec27cc82f6e774da9d6a8f016dfbb9a684",
+    "bytes": 177949
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/publication_selected_window_stability.pdf": {
+    "sha256": "1f55b825ec5fe4bac1c55abecb13071508c9eec8486584846d28fb4c78b5e9bd",
+    "bytes": 28111
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/publication_selected_window_stability.png": {
+    "sha256": "498e018cc8ef7da59282ff892eef520131d33e74cba512702bb478724b32d624",
+    "bytes": 302675
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/publication_selected_window_stability_normalized.pdf": {
+    "sha256": "69011e968a024627a4cea0cc8a9156c65f7d85870653c6c1a8b684a0901c9003",
+    "bytes": 28537
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/publication_selected_window_stability_normalized.png": {
+    "sha256": "8a01c222444a7a7954c74881d7f2529ec2a0d0ad98037e070a91d1abb0d0eed6",
+    "bytes": 379658
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/publication_selected_window_stability_summary.txt": {
+    "sha256": "c8bd55962a18c0c13857cfe344c633f46985c21f4034664b5fe366e7f7f7f76d",
+    "bytes": 1601
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/publication_stability_bs1_5830_M2.pdf": {
+    "sha256": "a239aa30b4fc35a7883dfd301fec48e7ab5eabb0e0dd5f87cd5e87801d491263",
+    "bytes": 14608
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/publication_stability_bs1_5830_M2.png": {
+    "sha256": "82dd41d14aa58c65a4c6f3bd53c6180fe4ce32c6653dcabd03fe4cfe905de8da",
+    "bytes": 68048
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/publication_stability_bs1_5830_s0.pdf": {
+    "sha256": "53e6f5f7c1092578ac65744b4e8e4dc07f3499c99e107475d19a49fd06c9c569",
+    "bytes": 14503
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/publication_stability_bs1_5830_s0.png": {
+    "sha256": "17873fd173bb8bd2f4e2ceb42ddc6ba21660b9a14334e13d003bfe1faa0cb58e",
+    "bytes": 84998
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/publication_stability_bs1_low_5750_M2.pdf": {
+    "sha256": "432866a66c2126df55e06ab3a4e7758860843b3d24d4d20442b24e5897ef1318",
+    "bytes": 14836
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/publication_stability_bs1_low_5750_M2.png": {
+    "sha256": "0ed764a752fc4f56315bde75db3dbc400a475b4f378c0776f1b5989d7de59886",
+    "bytes": 91437
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/publication_stability_bs1_low_5750_s0.pdf": {
+    "sha256": "0b8dcad0577672c9de645bdf45008ed346ac178dab1ab143f1117b155dd3f949",
+    "bytes": 15239
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/publication_stability_bs1_low_5750_s0.png": {
+    "sha256": "0245b47a098e11276bab42976ca217b3bdf9ea04d9c8622c72cb1dc9877fcc64",
+    "bytes": 66727
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/publication_stability_ds1_2460_M2.pdf": {
+    "sha256": "f8dcbef51d1df3abac2b8e3af40ae6166731f7f0316f0a9f49b4e2f47068144e",
+    "bytes": 14691
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/publication_stability_ds1_2460_M2.png": {
+    "sha256": "4910195653409075d7b3add64682ae1252e91a2f77f2b0b767d5cb4c5a01dec6",
+    "bytes": 65342
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/publication_stability_ds1_2460_s0.pdf": {
+    "sha256": "ddfb73e034589b9b87c7c90038c607dc23befd1fed1450d93ff63eb9da4760eb",
+    "bytes": 14579
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/publication_stability_ds1_2460_s0.png": {
+    "sha256": "6ab54e7374d8971fc0d51091dc2567de24961aa236dd0ae46de6ab194082d116",
+    "bytes": 78189
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/publication_stability_ds1_2536_M2.pdf": {
+    "sha256": "c00c301a3d79b79dd79b0849b0ce859c0f470f29fe4aa76142007dd94dfd28b3",
+    "bytes": 14638
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/publication_stability_ds1_2536_M2.png": {
+    "sha256": "48d6c10d77838be68d18cfd18e290346856ad3e72d2566dbe64718af047de9ec",
+    "bytes": 63841
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/publication_stability_ds1_2536_s0.pdf": {
+    "sha256": "708ac30d525a23b790d3da1578a0dff7cce5842c8414765e4bf535acbf367835",
+    "bytes": 14529
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/publication_stability_ds1_2536_s0.png": {
+    "sha256": "72f089990b4abac46b5221d497d2d9b2721ec0087e13397d730fbc8ff2284fdc",
+    "bytes": 75290
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/redo_bs1_5830_stability_windows.pdf": {
+    "sha256": "c237c692cb4d6f1abe1d420f86296c53d36ff2057f34c1db647e5536bc0eb935",
+    "bytes": 26452
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/redo_bs1_5830_stability_windows.png": {
+    "sha256": "880cc373337d2abed61982b7169059fb6f86e617d7c2ebdb5779f94740396fe1",
+    "bytes": 309670
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/redo_bs1_low_stability_windows.pdf": {
+    "sha256": "9b981557044c026e3a29625059080e5a60c7769970f9119bfee7cafb20ba3f3a",
+    "bytes": 26465
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/redo_bs1_low_stability_windows.png": {
+    "sha256": "b0c1eca401d970617afeb2bf7a2580d1dba843d0846abb49d1a9ec003e99134d",
+    "bytes": 332266
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/redo_bs1_stability_windows.csv": {
+    "sha256": "ffb54cd99fc1443f2b7160b65e725261777f53282c6e9527e9f6432c4692a8ef",
+    "bytes": 71224
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/redo_ds1_stability_windows.csv": {
+    "sha256": "8f271cd68b51b356917fb05c9e67e3eb4dba03488736e9b99a8600da3b2a9866",
+    "bytes": 31156
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/redo_ds1_stability_windows.pdf": {
+    "sha256": "88fc5c413f706cf9ff6bbdb8814b2a06001f70f086bed9a9b4e7e43ebe1a24b0",
+    "bytes": 25316
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/redo_ds1_stability_windows.png": {
+    "sha256": "e157d5c62e2af046d218f9d0bc98c2fa1149922a9fd31f4e91ed02028e34d757",
+    "bytes": 333812
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/redo_stability_windows_summary.txt": {
+    "sha256": "b80994b6ccbff9d11ed33d2832e729090033790d47d171a68749db01177665d6",
+    "bytes": 2070
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/rohrwild_local_free_recalculation_summary.txt": {
+    "sha256": "3f35b938e8ebe69ae8aebc272f2c04d88c2562c00b3f83758b9f3ed97ca41792",
+    "bytes": 1553
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/rohrwild_nonlocal_final_summary.txt": {
+    "sha256": "2077fa2394c051d87f48e70505ddb2059dbac3335f6ed146ceef7916a653b274",
+    "bytes": 1726
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage1_axial_g1_baseline.csv": {
+    "sha256": "8228be2c054f9c748a3a9fdf2b59dc5e5aea5c1f307cc5f17b9b816280e1ae7a",
+    "bytes": 33844
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage1_axial_g1_baseline_summary.txt": {
+    "sha256": "e76cddf168427b2135990aa7c0e138b1c83de7e16117f6c3415eb548f256da3f",
+    "bytes": 771
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage1_tensor_gb_hard_candidate.csv": {
+    "sha256": "395e851e174455a1bf9923ed8ee073b994042a713cf2dd91ad4ea75066bfe4b4",
+    "bytes": 18629
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage1_tensor_gb_hard_candidate_summary.txt": {
+    "sha256": "cf40ba0bbcb646deff4aef146418d6bf556bd01a0e0ae8feb66c9592e7c363d3",
+    "bytes": 690
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage1_tensor_gb_leading_twist_partial.csv": {
+    "sha256": "90430d299fde2391485342ce7e6560a76f5e13067535e6e096a2a0c4ca00f082",
+    "bytes": 13834
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage1_tensor_gb_leading_twist_partial_summary.txt": {
+    "sha256": "a6bbafb992b87da4a0db05fb79ba01d0c3ba5a8975665fc924cda6f379fa2b24",
+    "bytes": 540
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage1_tensor_gb_soft2p_estimate.csv": {
+    "sha256": "94a08a916be03e6f03c717e94453e78ff5032e340295170ce4bc3e4dd05b5de6",
+    "bytes": 35054
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage1_tensor_gb_soft2p_estimate_summary.txt": {
+    "sha256": "5e256c10571225aef362a74a0b9ae5c7d0fc41d62073c2dc87a69b1fbe4583d5",
+    "bytes": 789
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage2_axial_g1_three_particle.csv": {
+    "sha256": "d224c358be46c9f3ba3934a2db918f7ec6d93d5b21d1463c2b0f315b460cc748",
+    "bytes": 15423
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage2_axial_g1_three_particle_summary.txt": {
+    "sha256": "ea49dc78aac767a0832d44c0e4043b98b1b3f157c7ffa8dc137bfe35e49fd9a6",
+    "bytes": 808
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage2_contribution_breakdown.csv": {
+    "sha256": "c721d5c9b4ad2d264f47009c8fafbda19c6f988306caf80513fc99f397506a61",
+    "bytes": 552
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage2_contribution_breakdown.pdf": {
+    "sha256": "684858ab7122e88cf0a437614c5347f27ea0cb27cbb62d91cd122c517a899ef9",
+    "bytes": 21588
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage2_contribution_breakdown.png": {
+    "sha256": "a4401ac1122531435d68445888f4b7d6e8d941d0236c4e77d756811b9ee42738",
+    "bytes": 69745
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage2_mixing_angle_dependence.csv": {
+    "sha256": "c7146bba4dbc21d67dd61b5c32c6e23bdacb149bf2db6e41eb1606f4eff1397d",
+    "bytes": 24032
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage2_mixing_angle_dependence.pdf": {
+    "sha256": "2524300aa7e07335c4a3bd34cef4372603261ed5bab01e0b244ab7fe7471419e",
+    "bytes": 20231
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage2_mixing_angle_dependence.png": {
+    "sha256": "b5cf927159c8f5ec19a2ad24e20ceef67d699fdbe581540f95a5b046eeb5fc34",
+    "bytes": 93955
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage2_stability_central.csv": {
+    "sha256": "0c7d323a0db303cf2050b28de5717ee46bd39c99b72a8efa3138d6894365acca",
+    "bytes": 11381
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage2_stability_central.pdf": {
+    "sha256": "e70097bf76d68581d6e47cc9231c7fa20e91351f604fc0583af5913798ce9a6f",
+    "bytes": 32579
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage2_stability_central.png": {
+    "sha256": "cb51cbad9b98c28b4d20acd1b01ac111a39a561c3cb111d43858eeb8967e7982",
+    "bytes": 215926
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage2_stability_central_summary.txt": {
+    "sha256": "26c7a472f5282b011690779b5dc7d161fbe91ce4c2013d814cd7e3cae19c760c",
+    "bytes": 804
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage2_tensor_gb_three_particle_estimate.csv": {
+    "sha256": "96aa10cb8c125ed58121cc86bcba782ba4bdad3d12d75c251c4c7db38cf9e7e7",
+    "bytes": 50598
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage2_tensor_gb_three_particle_estimate_summary.txt": {
+    "sha256": "4d09e4b4fd0bd5c77ba376888ba04c1ccfc1ab6deaf65ecdc9a37b79bcb98ef9",
+    "bytes": 1851
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage2_threshold_dependence.csv": {
+    "sha256": "40f207e7cca7e26548edef90879d36581dd000ff01b5e31e34dd232210705fae",
+    "bytes": 15296
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage2_threshold_dependence.pdf": {
+    "sha256": "fa5643d56a52a82020194b3ad5a4e5b7da1ab9a7b060b7aeb4f512311755e284",
+    "bytes": 25465
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage2_threshold_dependence.png": {
+    "sha256": "e482a38139a5551ca27d4211000d34d46155084f701d783c114f9234a21ab6bd",
+    "bytes": 130086
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage3_bs1_physical_decay_constant_scan.csv": {
+    "sha256": "5f7e31c9c8f82a64de9a307bf2d330cdf1820f4276a900d79479e455fd5a9b59",
+    "bytes": 2005973
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage3_bs1_physical_decay_constant_summary.csv": {
+    "sha256": "746d0d7869ce6d2c0569e2555eba1a495d347b4e708226aba202cafcc0583c5a",
+    "bytes": 6758
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage3_bs1_physical_decay_constant_summary.txt": {
+    "sha256": "d84a93f3e0123f23f3685eccd9dcfb4f4433827e971baebca146b8e7e1712f57",
+    "bytes": 3017
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage3_bs1_physical_width_histograms.pdf": {
+    "sha256": "105d2a3a769a50ab4193712f7020d97b3601be6c546f126833a0229db2f0729e",
+    "bytes": 23354
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage3_bs1_physical_width_histograms.png": {
+    "sha256": "8beca2fedb6ba777b29188a537b4e2b94c17f46dbd721c4fb22ac6eadc4580f1",
+    "bytes": 59519
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage3_bs1_pz_decay_constant_scan.csv": {
+    "sha256": "e8dcdd844770f647469ccecc1393347519a5f90dc637a5111ee6ecbb3434404a",
+    "bytes": 1968506
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage3_bs1_pz_decay_constant_summary.csv": {
+    "sha256": "114ba90448df9780c583a131101ab141ae1ff808fae3b1b1db1216dc776d720e",
+    "bytes": 2372
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage3_bs1_pz_decay_constant_summary.txt": {
+    "sha256": "166cff41361d168b9c9eb6dfa819bae504d2917d8d37d7f5b7a9c4d67892524c",
+    "bytes": 1412
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage3_bs1_pz_width_histograms.pdf": {
+    "sha256": "a2602c8803113f0c56d3d5a57eab9c6c8e06e5403017a9cb57f54633ba30a16c",
+    "bytes": 22988
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage3_bs1_pz_width_histograms.png": {
+    "sha256": "bfea2c0b87a16cf660868eb42eed4b41aa14a066b72ce53ea230b04361374ff5",
+    "bytes": 61230
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage3_ds1_physical_residue_scan.csv": {
+    "sha256": "3a9307193586d8e6020800f18d0cc7715984eaf39fff3a8d98d7141f63e6f49a",
+    "bytes": 728676
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage3_ds1_physical_residue_summary.csv": {
+    "sha256": "08e676f09628671adab8eb51ee62a47f491a371fad3727b3477533f5f549c0dd",
+    "bytes": 2125
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage3_ds1_physical_residue_summary.txt": {
+    "sha256": "cf82aa2f468a308f4ffc7f22ff0d953c79c956f6e9e39abc6fd4310a09c1b17b",
+    "bytes": 1706
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage3_residue_benchmark_checks.csv": {
+    "sha256": "d2a58d899991f8d9e3185eb8e028c1b08f8528d7d069aef651d28e414e922535",
+    "bytes": 901
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/stage3_residue_benchmark_checks.txt": {
+    "sha256": "aeb56bd20a27bf060e937a8c8a6d144ecf081db6602f3fab7d9ed08a57173b68",
+    "bytes": 1420
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/step10_stage2_f1_split.txt": {
+    "sha256": "84ecfa81eac45ad5b2e82e3ff87a7f84a8a3f3dc09e2f1bc086f83ae26081a7c",
+    "bytes": 770
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/step11_tensor_xgamma_ratio_integral.txt": {
+    "sha256": "51306db497f503ca32b4fa6f1b910ff1e8777d11caae69b92fd8fb7a14b7d830",
+    "bytes": 1328
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/step12_em_da_current_kernels.txt": {
+    "sha256": "b41bc9050cde64821c7c477b2c19161ebff5305d36cd1a29a45a3e6703244437",
+    "bytes": 822
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/step13_soft_vector_da_borel.txt": {
+    "sha256": "dc5d5af05c725fb0a5cab80a0db62f6f1b9197667fdfa1d5a60531090c504435",
+    "bytes": 669
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/step14_explicit_double_borel_forms.txt": {
+    "sha256": "877f3347331a50efb0b95f11ec0678fadef29a9f091bd74e70d234533efc163f",
+    "bytes": 821
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/step15_complete_three_particle_borel.txt": {
+    "sha256": "8ad515a69be1665dcc08cb421e3002c230752c2fabe1a1aa51980c5472171a51",
+    "bytes": 4057
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/step2_e1_projected_hard_numerators.txt": {
+    "sha256": "d6b7b54902ff1464e9ed62877029be0f084a7eae1f5bc948dea033b4b1776e0c",
+    "bytes": 8025
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/step2_hard_photon_numerators.txt": {
+    "sha256": "331238beaf7bfe9564bc645d26649ca7f195d96b2768451810a782115a7110f9",
+    "bytes": 16359
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/step2_soft_2p_fierz_traces.txt": {
+    "sha256": "42547dc5613dd8c9f70aadc96b1abb455aa9d673a48f0848066010493ca1defc",
+    "bytes": 1406
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/step3_axial_hard_triangle_reduction.txt": {
+    "sha256": "7fe053667dd4761a4b15215d807cadb5094b794d7b222c58fdb38c65ecaecd52",
+    "bytes": 1258
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/step3_soft_2p_e1_projection.txt": {
+    "sha256": "174ebde745d67fa4a80a1035d15444a0b19702ce9b792976f5556621612d8d27",
+    "bytes": 621
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/step3_tensor_hard_triangle_reduction.txt": {
+    "sha256": "6d40b5db07cf1428bd4c9be54a76291acf9c15eebb0212f8a506614193f6ef4a",
+    "bytes": 1180
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/step4_double_pole_p2_reduction.txt": {
+    "sha256": "9d82e288a7705243c7809240b14633716be083d6a80e9cd6d3fe8d49fb880bfc",
+    "bytes": 745
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/step5_soft_3p_trace_kernels.txt": {
+    "sha256": "89cc695b88da8ec780237308c3b7ad5ca5f93824c1d1eb3fd24b478ffba02706",
+    "bytes": 666
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/step6_soft_3p_x_dependent_kernels.txt": {
+    "sha256": "c2ab01a246a00db2b3113a993533f653e3dbb2f18542e65f9c6d7c3a42d846ac",
+    "bytes": 490
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/step7_soft_3p_xgamma_kernels.txt": {
+    "sha256": "54573b66fa5972917c4062de7c71987acc3bb7c7fcdc44a6943af8ea1b40bb34",
+    "bytes": 796
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/step8_xgamma_saddle_reduction.txt": {
+    "sha256": "4e7195d2156d407fdf60e63c5087b566b9f3ba540433d951c334ab80abeb38eb",
+    "bytes": 905
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/step9_xgamma_derivative_reduction.txt": {
+    "sha256": "ee4c664373d54ab8affaded92910b97c50c25df77e1fdfccf9a82ed2091d249a",
+    "bytes": 828
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/twopoint_bs1_matrix_mc.csv": {
+    "sha256": "9915e6318f9c073cbeddc799867076251684f03869e2ceb4cd0509cc559db295",
+    "bytes": 827157
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/twopoint_bs1_matrix_mc_summary.txt": {
+    "sha256": "d4175803992526d439b230ac2c4bb6d3d45e2c459bf90068e0dc74b178f9ead4",
+    "bytes": 769
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/twopoint_bs1_physical_residue_grid.csv": {
+    "sha256": "1f2f4fc3fd33bd692ef8a4e0b679bf33c78149ee12d9f11f783c36ba9b782424",
+    "bytes": 6099
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/twopoint_bs1_physical_residue_summary.txt": {
+    "sha256": "d91e599a0b8ae14139363ed62c374ebe360edada4a474afa1ba13ba739d50b71",
+    "bytes": 708
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/twopoint_dirac_spectral_audit.txt": {
+    "sha256": "a80c3890f1dfdbeb2bcdb7bef9f111e645bf254a564f088ea852beb71b0806af",
+    "bytes": 1110
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/twopoint_ds1_matrix_grid.csv": {
+    "sha256": "53ab1e45b3806e6ccbbe744459808db40432c1eb3338c529b04f41e75cb700dc",
+    "bytes": 298431
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/twopoint_ds1_matrix_mc.csv": {
+    "sha256": "28ab007d79d3bb44197092470187b96f0fa689876d7a8af042cd55c6426aca1f",
+    "bytes": 683031
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/twopoint_ds1_matrix_mc_summary.txt": {
+    "sha256": "6b71fc1e21048384431e83b2650bc606b10e1068f34bac14aa19eef212553f2a",
+    "bytes": 753
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/twopoint_ds1_matrix_summary.txt": {
+    "sha256": "14c4e17e304dfe9a77155e230229664599d3add43adbe9d6d35f9f6c8d1f5171",
+    "bytes": 745
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/twopoint_ds1_physical_residue_grid.csv": {
+    "sha256": "27938040bde12f93759fef9c16589864b7f9df84ad0654a7e7a37ade96b1d495",
+    "bytes": 15860
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/twopoint_ds1_physical_residue_summary.txt": {
+    "sha256": "bdd09777048b95f199b7a016a8797af8e9cdf2b96aa087e6197f54b14c984e96",
+    "bytes": 987
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/twopoint_local_condensate_audit.txt": {
+    "sha256": "a221c430a84309045de60a910cf27b72a2e271b64852d52d000ebfee77512cfe",
+    "bytes": 922
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/twopoint_residues_pole_fractions_vs_theta_common_windows.pdf": {
+    "sha256": "d0a4cf32d87aae9311a37a2684bb46ce64391f96f7e9ae77874da4b4495c79c2",
+    "bytes": 83127
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/twopoint_residues_pole_fractions_vs_theta_common_windows.png": {
+    "sha256": "aec4c38acac21fb3105c57a7378e063e4254060680ddfee56e40065968e27497",
+    "bytes": 258993
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/uncertainty_budget_one_at_time.csv": {
+    "sha256": "7b64b8ae5461f461f3b4297b46604edd1231fe04d7eecce64a575d7faf5b6e77",
+    "bytes": 658915
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/uncertainty_budget_one_at_time_summary.csv": {
+    "sha256": "99ece0fc1a0234a6d18fd7cbdab6fe64febaa2e47b0c02e506dce80f879b48a5",
+    "bytes": 1464
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/uncertainty_budget_one_at_time_summary.txt": {
+    "sha256": "ef7e0081196f32ed9db4f78a7e1d4ca48966fd763c0ee0de0651cf4a8bdc6856",
+    "bytes": 922
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/uncertainty_budget_ranked.csv": {
+    "sha256": "0bb81cc85837ca35a55c3c9513f0f17d613268bac7a95cfeb285576577b5a77c",
+    "bytes": 614
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/uncertainty_budget_ranked.pdf": {
+    "sha256": "ea69d9d3667cc154cfa5fc339b0e6cbcd6973eb2019f8f606eb96f17330616f5",
+    "bytes": 20805
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/uncertainty_budget_ranked.png": {
+    "sha256": "f34529812539d5388e3e06a6c7af5ea6c778f3a16fe3ac894e231d58b86d66af",
+    "bytes": 82428
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/uncertainty_publication_plots_summary.txt": {
+    "sha256": "12982f311fbc953b88bda6552e71b4819b3489f9de1a76e55efdd7f9d8ddc6fd",
+    "bytes": 911
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/validation_checks_summary.txt": {
+    "sha256": "1f6934a9ef9733955cb55d2fdbba90c64e2eb9d650159784b3456c3b256f1830",
+    "bytes": 1252
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/validation_limiting_cases.csv": {
+    "sha256": "fc682bdfdc192e0e2715982c85ae745a6cddc73ecd47c4b049d7f1f71cd26f6f",
+    "bytes": 1612
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/wang_pure_axial_residue_comparison_table.csv": {
+    "sha256": "d2a58d899991f8d9e3185eb8e028c1b08f8528d7d069aef651d28e414e922535",
+    "bytes": 901
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/wang_pure_axial_validation.txt": {
+    "sha256": "092fa701935ad7ff996109e0ccbe77b3ef414214d47337e7af59adcdffb9a764",
+    "bytes": 1364
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/ward_transversality_check.txt": {
+    "sha256": "8640b462c2faf656a6bf171a042e275d38e6cce46bcfeb8a4f128eefcd1c7b5b",
+    "bytes": 455
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/window_diagnostics_grid.csv": {
+    "sha256": "674a85dee5a5999f939e177fa16fa927524e4c19e891c4a1c398fa45bf23e16e",
+    "bytes": 236652
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/window_diagnostics_summary.csv": {
+    "sha256": "864c8337d687d6cf6271a60c5131a921623f3ba04f5b00e0033fe3ec1c6d1601",
+    "bytes": 3721
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/window_diagnostics_summary.pdf": {
+    "sha256": "f47bb4262d30f4efae606882809e5f0d51babcc05c6d64e652e1865d0a1ecc16",
+    "bytes": 16145
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/window_diagnostics_summary.png": {
+    "sha256": "13d86e1291af280817c2da40b2dc518d89adc9e914bbe9a5b188ea2c99cf9c6b",
+    "bytes": 196025
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/outputs/window_diagnostics_summary.txt": {
+    "sha256": "d29ccebf29bd89685b215669120875feb37db962315ad297b590c2244b660039",
+    "bytes": 2775
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/.matplotlib/fontlist-v390.json": {
+    "sha256": "c235195ccd45edd7da2fbcbf91bc22c1e1c00aa7b0b4a0e22cd0d3f03aedabfa",
+    "bytes": 833929
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/benchmark_values.csv": {
+    "sha256": "5069b230327b2e5468a3ba378bb4644a947fc2d1245db12b7ae42cfeb9d77d12",
+    "bytes": 561
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/build/constants_pdf.png": {
+    "sha256": "e3f179b400c406f044efabb89cd8c27a5c2cf881f4b1eadbd8c46b40a767ba6b",
+    "bytes": 69923
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/build/ratio_pdf.png": {
+    "sha256": "37068789ac2446cca1a5af46f13d0d0ec69ab40299919cefd737c6a4e206c0b0",
+    "bytes": 60265
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/build/referee1_reply.pdf": {
+    "sha256": "d13aaad53880f85bbfce24747f13da2dab5483327b58510eb3b94ce32923028f",
+    "bytes": 225393
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/build/reply-1.png": {
+    "sha256": "c0fd34dccc68f6160f805d1ebdd7155570966fc2dbebd928daaa5e01f7daed1f",
+    "bytes": 315952
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/build/reply-2.png": {
+    "sha256": "58ca950458b73700fcb82ac128fc9dbb6ce51c192c9b45c724661979121e8ca2",
+    "bytes": 317009
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/build/reply-3.png": {
+    "sha256": "fe2b833f17812ee19185ecd0ae9ee5ad76de7742fb6c6c007752e9da4a8f20e3",
+    "bytes": 197887
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/build/snippet-1.png": {
+    "sha256": "f0ff092ef08582a6ab46c89b1a984c2f0fe0dd0741062346e5c70fa2e0ace1ec",
+    "bytes": 294936
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/build/snippet-2.png": {
+    "sha256": "109b40d4be40264e7ee531499b478f31e36b9dd7592ae3c436666b3b324f8aa2",
+    "bytes": 114854
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/build/snippet-3.png": {
+    "sha256": "7d58af946d45908c1509e28223b010f4a5d565730088c8c14623b696225ca460",
+    "bytes": 62550
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/build/snippet_check.pdf": {
+    "sha256": "8bcba2078cf7846175dca1958bad687cf1de69526c2901a4dd9c8bf1710bc764",
+    "bytes": 200780
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/build/snippet_check.tex": {
+    "sha256": "001bc3e5169557f43786d0d280d23a8d291535963dbf640c7c1bd73678890006",
+    "bytes": 670
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/build_decay_constant_figures.py": {
+    "sha256": "c9f8c1eeb272ff8439c232453260dd66a540d6595b0e067eeea35f3f28441dad",
+    "bytes": 9974
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/comment1_response_proposal_20261024.tex": {
+    "sha256": "33d8942cf279e89080f117aa02a572b2c4f52154ab48b20e6935379d2a70482f",
+    "bytes": 4645
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/comment3_response_proposal_20261024.tex": {
+    "sha256": "d155c596fdac7f30713f7536f2fad2bfa954ab7ff382ef7f0ff43646afc73b96",
+    "bytes": 3377
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/decay_constants_theta.csv": {
+    "sha256": "1f4b90db4e0476cdd054d405939bb468f1fde0dd0d8f0786d08338f2deb0579c",
+    "bytes": 21408
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/figures/decay_constant_ratio_vs_theta.pdf": {
+    "sha256": "467a31582f47be388002b9af045bb1bb6dc04b53b564569c4ea22faa94a0f475",
+    "bytes": 17293
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/figures/decay_constant_ratio_vs_theta.png": {
+    "sha256": "f74b066235ac87242f52d8e00a25fd631f235ab8e069886cfa7d014d60183b55",
+    "bytes": 64146
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/figures/decay_constants_vs_theta.pdf": {
+    "sha256": "53a93f065a77243d82608fc4e6994c9457ecb2c0894fb484f78775ad40eeca86",
+    "bytes": 19101
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/figures/decay_constants_vs_theta.png": {
+    "sha256": "fc116c74a713154b30d7b24ef36678af572686ebf374a51e3881de06b7490817",
+    "bytes": 68874
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/manuscript_figure2_clarification.tex": {
+    "sha256": "c54b4bdb3a300063caa6239627382de7632e738aa3018a6c39ca7f9f66d76e86",
+    "bytes": 1281
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/manuscript_item1_method.tex": {
+    "sha256": "fab48d0b387e7dd384223d4dda0fb4d71c8475ef70b9c5b2ff71e806cfd5406b",
+    "bytes": 2788
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/manuscript_item2_outlook.tex": {
+    "sha256": "a84d0fd4c822888cf0a2eac4612b35d6ad2d9d2c3155aca1334ef49b4703d395",
+    "bytes": 640
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/manuscript_item3_figure.tex": {
+    "sha256": "e9055fba060ae8d35080e497ff37a2753fa6749e743bbaa0f3cc4ebb4d9ef946",
+    "bytes": 1955
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/provenance.json": {
+    "sha256": "0f671401e617da40321baa2fb5621656cb7b92a1e827bfd2bfdae95cbc8693b6",
+    "bytes": 4266
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/referee1_reply.pdf": {
+    "sha256": "d13aaad53880f85bbfce24747f13da2dab5483327b58510eb3b94ce32923028f",
+    "bytes": 225393
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee1_revision/referee1_reply.tex": {
+    "sha256": "872e703e85db7038e915e0fe44ddb2e724982c51843d5070a0d9bd5f10798504",
+    "bytes": 10210
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_borel_asymmetry_20261025/.cache/matplotlib/fontlist-v390.json": {
+    "sha256": "b3f98f7d83fae2f37a3dbb8514dddb80f5d8cf16e91415f7cbad47dc3249df7e",
+    "bytes": 833929
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_borel_asymmetry_20261025/analytic_derivative_checks.csv": {
+    "sha256": "e9b48f61c940c447461904c029748a8b20db0da4d57ddc8bcc6b420d7503cb71",
+    "bytes": 672
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_borel_asymmetry_20261025/baseline_sha256.json": {
+    "sha256": "20d7ad22b961dc8c08a42f5b6f7676a036fed4c34f3e1043e612470c6e062e29",
+    "bytes": 13781
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_borel_asymmetry_20261025/benchmark_midpoints.csv": {
+    "sha256": "41beb7975d6503594cbfd3e5f81378cc8b8e65a0a8bf7d5a2954bc89e2ce41e8",
+    "bytes": 5492
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_borel_asymmetry_20261025/benchmark_window_ranges.csv": {
+    "sha256": "da008a2fbabe9a45cc89b4a167375a069559dbd7f43a0b8848c2e1349f8a2411",
+    "bytes": 910
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_borel_asymmetry_20261025/borel_comparison_author_review.tex": {
+    "sha256": "22be53d32acdd97fcb26ee7eb7a3916f69dd32d337ac7b5241e4b40bfdce2f51",
+    "bytes": 1320
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_borel_asymmetry_20261025/borel_ratio_plot_caption.tex": {
+    "sha256": "f6760ac9721e4f56438754f5a987bcef7111fb3f130416cfd950f32145568416",
+    "bytes": 551
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_borel_asymmetry_20261025/borel_ratio_signed_g2.png": {
+    "sha256": "8d291a63520c0de3d052b8c3b9062b8347f2cc6d64afb3f5a3a0e379178c0250",
+    "bytes": 99615
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_borel_asymmetry_20261025/borel_ratio_signed_g2.svg": {
+    "sha256": "b5ff5515d997f5145015de0ed27007c761c4596005725b448b08f683f7463e29",
+    "bytes": 58352
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_borel_asymmetry_20261025/calculate_borel_sensitivity.py": {
+    "sha256": "4d2c1da747f3e58052ed8a12de6695c15398e501d4e6d58f3266292169ff2cb4",
+    "bytes": 13469
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_borel_asymmetry_20261025/derive_borel_checks.wl": {
+    "sha256": "21260c7373a4eb50e4ac6f25532b92f987bf95a24a216c9de4692e2bf592f16f",
+    "bytes": 1790
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_borel_asymmetry_20261025/fraction_convention_diagnostic.csv": {
+    "sha256": "8ff7a5ece471a602a9b588d054a89462c4dc6227c3563816d3ba5b1ed66ba2fa",
+    "bytes": 5623
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_borel_asymmetry_20261025/hard_quadrature_checks.csv": {
+    "sha256": "38ee163e3e26bf35a52cb55387065ad8ae0ca952ceb935117521efd9d28750bd",
+    "bytes": 144
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_borel_asymmetry_20261025/independent_convolution_checks.csv": {
+    "sha256": "cbbd45b125a7ef015ae5aea3a00479ab1e99d1c2998e9942c0dbbb97d4c83cf3",
+    "bytes": 4545
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_borel_asymmetry_20261025/inputs.json": {
+    "sha256": "a0209c8d0eb06bfd96e41f846f3b8583a7c71a071f14e5cda7bca9237c026362",
+    "bytes": 3538
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_borel_asymmetry_20261025/numerical_checks.json": {
+    "sha256": "25815d11d6c809727f6a0f66501c65a2498edb525ac150edb0daa5ebcaff1c8c",
+    "bytes": 477
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_borel_asymmetry_20261025/present_results.py": {
+    "sha256": "dfcd03675031db0cbc74897ebc108d338e94582d982a34942e00eef9189b5bd0",
+    "bytes": 5555
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_borel_asymmetry_20261025/ratio_scan.csv": {
+    "sha256": "5e0440435c387145289594ffdd40aa3c4642f5fb4da72d6d0af3a267dfc0a7e3",
+    "bytes": 190412
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_borel_asymmetry_20261025/result_sha256.json": {
+    "sha256": "eb4bda9104c186b9b8dea194b936fff6696ceef2db5bf2b3224d5b3b4c667f26",
+    "bytes": 2404
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_borel_asymmetry_20261025/rohrwild_0708.1405.pdf": {
+    "sha256": "a43685dbadf6e5974ac68009fa7850b07f339abc3cf7ced8cc2d4a3197861b10",
+    "bytes": 214920
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_borel_asymmetry_20261025/scan_envelopes.csv": {
+    "sha256": "dfbd776ca2f313031b4d7891d09e71b4245cc66f1cf3794420d0be4a9ba78940",
+    "bytes": 1401
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_borel_asymmetry_20261025/symbolic_checks.json": {
+    "sha256": "e4c1722a60487f7b57f975999416cd15c34b687e603f4694b1fca29d39fad40c",
+    "bytes": 425
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_major_ii/.cache/matplotlib/fontlist-v390.json": {
+    "sha256": "6657c57226c15519edeba22298c7fba47549973d3dd7c502da431efe56215dd7",
+    "bytes": 833929
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_major_ii/build_signed_contribution_figure.py": {
+    "sha256": "81b9b945dd14c5b5a04107b691ea49d4e123ee3fe174bfc29a1ed0d0fef3acf1",
+    "bytes": 13685
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_major_ii/ds2536_signed_contributions.png": {
+    "sha256": "535cbf3e23da68c3bb6a9d276dc4a6c2a2d721a2c59d3b83f5e4222e9d45a84c",
+    "bytes": 228208
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_major_ii/ds2536_signed_contributions.svg": {
+    "sha256": "8ae6b9bacf2125e83b17c70e8e1d25c32307bd6804358b3996f5eb6d892cbb35",
+    "bytes": 181494
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_major_ii/ds2536_signed_contributions_data.csv": {
+    "sha256": "37e152027fe0e345407ca23f89e417ff1afb177f8a7668383aa9f8ae71e0f66c",
+    "bytes": 969594
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_major_ii/ds2536_signed_contributions_midpoint.csv": {
+    "sha256": "62fcd5eca8e95ed12f645b3e4eaee1456f36cf656096cccf11b90d017cf9efc3",
+    "bytes": 584
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_major_ii/ds2536_signed_contributions_provenance.json": {
+    "sha256": "62112adf46e8f327267ed4a1a839396a0eeb33de32a73172e71b90f6cbcef69c",
+    "bytes": 7275
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_major_ii/ds2536_signed_invariants.png": {
+    "sha256": "3b210bd64597e426a00b95fa6acaa81b2820daf2be9d10ff48781f8f289d00dc",
+    "bytes": 128309
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_major_ii/ds2536_signed_invariants.svg": {
+    "sha256": "fb813d93bace58832292d9c7de2896c65db7e771e96dc65493a972d2216627a8",
+    "bytes": 126489
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_major_ii/ds2536_signed_invariants_caption.tex": {
+    "sha256": "361f9443e7d83f0160167898e812a5060ca904182d9982fbe4e2dc4ace7bee71",
+    "bytes": 936
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_major_ii/ds2536_signed_invariants_midpoint.csv": {
+    "sha256": "a450ca768b322645fd26cff7027024c01773a09b2ea2d087d54e9c9122d83d94",
+    "bytes": 591
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_major_ii/ds2536_signed_invariants_provenance.json": {
+    "sha256": "9ea3ee93faf557dd04b1600f26df22d84c8be27ff36e38d36636fcae67053c98",
+    "bytes": 988
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/review/referee_a_major_ii/plot_signed_invariants.py": {
+    "sha256": "7660f7de0233a85cf5d66854a33de5f71f5a41a9c29c72589c5431ef47e40ea6",
+    "bytes": 7062
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/README.md": {
+    "sha256": "01437074546f88feb39ab5cbd008c3009c580a127d2ea4e3faf962f4e3ae22ad",
+    "bytes": 7501
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/bs1_stage2_baseline.py": {
+    "sha256": "15808804b964b5aadb6d6d60294d941042452aadefe8ee2d8fcbc08c3f073db4",
+    "bytes": 10445
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/bs1_uncertainty_and_plots.py": {
+    "sha256": "dae51081fd4143703f4115b6ac77ed42822cf71cb26ba3cc10cff7b0d1dcad37",
+    "bytes": 11468
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/bs1_window_candidate_scan.py": {
+    "sha256": "043e0dcc9bd8afacb57153e3247b38d91a88c4d469d12deddd7110fd85ec7553",
+    "bytes": 5838
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/build_dsbs_symbolic_notebook.wl": {
+    "sha256": "62683f0e67443677fbeeae2441d0d339550efab87eac736112b1e130ec88811d",
+    "bytes": 52603
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/build_twopoint_ds1_matrix_notebook.wl": {
+    "sha256": "ab5e9bfe1102d014e2f750a8b417610652c91c2eb4214a6472b0867f0f2a08d7",
+    "bytes": 16196
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/check_dsbs_symbolic_notebook.wl": {
+    "sha256": "1584ba427f8921827b7d0a043da0f66756988b3e6f5a2ad5c03dd871e4ff45ea",
+    "bytes": 2029
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/check_twopoint_transition_windows.py": {
+    "sha256": "ed5a721715558b271a428aa9ff15fbc3401eac76bce6a6ac392c0b0ffd4af4ab",
+    "bytes": 7316
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/compare_corrected_transition_numerics.py": {
+    "sha256": "19c06b82eb355ec9acf9b2c1616f2f01ed12c7d3f0fbbc817c5a300867cbb4c1",
+    "bytes": 4082
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/corrected_transition_central_python.py": {
+    "sha256": "c85b976089b0e0b1e1433bdda6d1d35a5e1459e8aa31cd2b74f6fa86395d1c07",
+    "bytes": 8628
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/decay_constant_provenance_audit.py": {
+    "sha256": "b749dd762489dc981d111a686e65c0842b6177d33a1a81abe8f1dc4609a3543b",
+    "bytes": 6458
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/ds1_interference_diagnostic.py": {
+    "sha256": "1075067ba72531d8e108d092135deedb038117d27b8d2f3a806606436463add5",
+    "bytes": 153
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/ds_angle_benchmark.py": {
+    "sha256": "35790e621c5d339c375770b558b40ec7707ecdc73ad0e7f9410f2c06f71f65bb",
+    "bytes": 6408
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/final_angle_stability_plots.py": {
+    "sha256": "3b894d763c2bb9c7d612939f6637660948e3cf59033f1f71fa2af35baa2fd0db",
+    "bytes": 13592
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/final_stage2_uncertainty_scan.py": {
+    "sha256": "77b640d9b3303085c7b823b1abd95f54d46ff37190b9d457e696a6293b370361",
+    "bytes": 8081
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/final_window_monte_carlo.py": {
+    "sha256": "46e92d301317f4dae8209b5b15b7fa41d11f1160a9f182e84b30a4704635bced",
+    "bytes": 25435
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/lattice_photon_normalization_comparison.py": {
+    "sha256": "21861e6772c248ae0846844b79bcf1abac26324c8cbd6c49ad07fdf8eed96bb9",
+    "bytes": 16170
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/local_scheme_comparison.py": {
+    "sha256": "b793b52147f228e3ab93baef09001753ff4465fcf87f0b672f95df01e43505e5",
+    "bytes": 9749
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/mathematica_corrected_transition_numerics.wl": {
+    "sha256": "5085f86b05d00f82d4979d7ec2149f94f95e451bdb6c078d3e5a4ebe6b332c02",
+    "bytes": 17348
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/mathematica_correlator_routing_audit.wl": {
+    "sha256": "4a721d6cf9d96b0469b923c3e4f8dcce8f72218db05eba1740c887551c74024f",
+    "bytes": 9952
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/mathematica_current_wick_trace_audit.wl": {
+    "sha256": "fcfeea86321c54b92011c4bef61b16d9e1e4490242c341ae0c190732ae5bf682",
+    "bytes": 17468
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/mathematica_hard_loop_parameterization.wl": {
+    "sha256": "0a8c9e1880c8da9a54f412262843169549a1f31da08ce3b4e3810db77a6ad6e4",
+    "bytes": 5107
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/mathematica_state_mixing_projection.wl": {
+    "sha256": "f10327e53986d35e4f0aed355b7988ae321aaa3bed0d6c1d9b430acf695d9f4e",
+    "bytes": 15503
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/mathematica_twopoint_bs1_matrix_check.wl": {
+    "sha256": "048cf8f13b9301cb5562ba781cbae9774335cd0e42592036b30e7001886c9ef0",
+    "bytes": 7570
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/mathematica_twopoint_ds1_matrix_check.wl": {
+    "sha256": "ec0bbb9c59d266e82fa3488a5ccba935c04ec3c606b65ec57eba7e040c82786f",
+    "bytes": 9210
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/mixing_angle_inputs.py": {
+    "sha256": "d70578355686d43811a2a2f9f12e68295fe19c9ee00af9f282b2ac1d8a110f64",
+    "bytes": 1002
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/paper_results_summary.py": {
+    "sha256": "3e6296d1234b173e3edc768c497d485c1b973e1f9c6e6da9f14733e8e89007c8",
+    "bytes": 5992
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/plot_twopoint_theta_diagnostic.py": {
+    "sha256": "223560759022a97795ad65fff8d908983fb402016cd07dcc0b551eecfb8635d3",
+    "bytes": 7136
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/publication_plots.py": {
+    "sha256": "264e8aa440f6e79a34860b2716f93256282be05043a2cd49e0130caf3d3d35dc",
+    "bytes": 10786
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/publication_stability_selected_windows.py": {
+    "sha256": "11f9f9879e1caebf90ebda68b64db4f08cbe4e22bb484fcda7ce39ce9d9f859c",
+    "bytes": 20589
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/redo_stability_windows.py": {
+    "sha256": "628e5ca93e02904e2ab5782455033802c89b093d74e5b34048b1ee7c3e5af286",
+    "bytes": 12315
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/rohrwild_em_da.py": {
+    "sha256": "9b8d5e2385ceb0a4bbd7b6dec7b9ce392e3a13ed56a0c19b39951e245666ffdf",
+    "bytes": 6370
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/rohrwild_local_free_recalculation_summary.py": {
+    "sha256": "1a7c7614e380e7cfdbbc4bb5be1086828d01bc23265d867f695614a73c0d6f49",
+    "bytes": 4284
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/rohrwild_nonlocal_final_summary.py": {
+    "sha256": "588a8ccd73c465b6c599f92bc0cdbe5553d3f5198aa8fdf4aac2edf1d9352216",
+    "bytes": 4408
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/rohrwild_transition_exact.py": {
+    "sha256": "3c5718b8b6522a630cba832cc4501e17b45fe8b3b9f4a443edb4e423047e72f8",
+    "bytes": 14153
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/stage1_axial_g1_baseline.py": {
+    "sha256": "4ad9d1ce5bdc952a07096326e2a63d5c6429d89fc24ddba1b2196e8092336e52",
+    "bytes": 11878
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/stage1_tensor_gb_hard_candidate.py": {
+    "sha256": "445d27b5431e4e1da78a9cf6c714156402f1dc564b95232098987849098c2c9c",
+    "bytes": 7785
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/stage1_tensor_gb_leading_twist.py": {
+    "sha256": "be6c53fee07e955c60c7fe58a7ec355d9a5ce763ebe88b567b79693de43af9ff",
+    "bytes": 4590
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/stage1_tensor_gb_soft2p_estimate.py": {
+    "sha256": "06109ef716195dfa35f1d5f77a50b74d84b4376380fbe7786e224105f3c29163",
+    "bytes": 6549
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/stage2_axial_g1_three_particle.py": {
+    "sha256": "63e83a5b6d4c1460f7abf086891527e30929a204141ab80affa4806672a0fe26",
+    "bytes": 8429
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/stage2_stability_plots.py": {
+    "sha256": "a3c1bc41be2c883dcc06f692473ea18957a8d07215d78ff03b30171ad7b3a1c1",
+    "bytes": 4828
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/stage2_tensor_gb_three_particle_estimate.py": {
+    "sha256": "e82914134e60ba5caf2123432a34eff8a0a6a0b776b748af192c6260a3761df7",
+    "bytes": 12998
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/stage3_bs1_physical_decay_constants.py": {
+    "sha256": "0e150eebfcc3fdaadef65fda3dd68d9c4a28cca6f2cc68c3894e684f34a74480",
+    "bytes": 14063
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/stage3_bs1_pz_decay_constants.py": {
+    "sha256": "8984bb6349fe67a56620f58c3a5d4862db8ebba3fc13c8d0dd0f9cfb0cc47c8d",
+    "bytes": 9719
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/stage3_ds1_physical_residue_normalization.py": {
+    "sha256": "0f980aa6b0ea424219f4f610d62b8875a92a2f2b92b3b6ec72e121341b4cde5c",
+    "bytes": 10289
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/stage3_residue_benchmark_checks.py": {
+    "sha256": "ce6c2a0f0217cc8afff3dfaaed6e3c7fb53ed67040f6344c70e4df6ceafbd8fd",
+    "bytes": 377
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/step10_stage2_f1_split.py": {
+    "sha256": "1f18d32879cfe3b0c65c18b345c251e39a51e45d1ce9fc08720e19543fcdfd8a",
+    "bytes": 3815
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/step11_tensor_xgamma_ratio_integral.py": {
+    "sha256": "be7a2791d682120102320146afe83614ef34d2fcb56407137abd159aaf5d10dd",
+    "bytes": 5819
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/step12_em_da_current_kernels.wl": {
+    "sha256": "2fd2c6a7f605fadf1b46436e2eb19df2287e9cd48b573db0016a86d4e83c4ce9",
+    "bytes": 4912
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/step13_soft_vector_da_borel.wl": {
+    "sha256": "a1f3f57372c6bbf5b12f309a27bf375363840a8149082dec7fe84f24661ca7a4",
+    "bytes": 4653
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/step14_explicit_double_borel_forms.wl": {
+    "sha256": "156ae85f02018219acc9edb4c87efbb66554e2029fa7f76104aed36176acfe77",
+    "bytes": 3738
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/step15_complete_three_particle_borel.wl": {
+    "sha256": "4d552f8139da51d4f706f930c234a4c6073d419292f91eb1278ab5d2919cfe0f",
+    "bytes": 5563
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/step2_current_building_blocks.wl": {
+    "sha256": "50167c83145ef23fb96808904f5433d02fc1812cbe207faaba2b0d0793004686",
+    "bytes": 2582
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/step2_e1_project_hard_numerators.wl": {
+    "sha256": "eb56b88eb8d681df343e1b6e53f91b8b4c8717ef7632b2b250bca59ca8887858",
+    "bytes": 3764
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/step2_hard_photon_numerators.wl": {
+    "sha256": "ee21b7a8c37b91847f88bed8543c590303965c0e06979801d44abcaf1527b4e8",
+    "bytes": 3825
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/step2_soft_2p_fierz_traces.wl": {
+    "sha256": "aa38e5669e3ccb9b669b2ddc82a6ec58493d82cb2a16f07225e39f55c5647c06",
+    "bytes": 2634
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/step3_axial_hard_triangle_reduction.wl": {
+    "sha256": "f82ad78b82487133726b3ca40cafd95e9dee2f7f04a4d95edaaef0b9971babd6",
+    "bytes": 3426
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/step3_soft_2p_e1_projection.wl": {
+    "sha256": "e6eb60c097f648381c0efa5b79980a9ea181ce35dabb93b9f16bbd9f47e51afb",
+    "bytes": 3086
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/step3_tensor_hard_triangle_reduction.wl": {
+    "sha256": "6fdd5953d4b030d025bd779f15feb3a30399886ee1de6d446b86657544fde01a",
+    "bytes": 4282
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/step4_double_pole_p2_reduction.py": {
+    "sha256": "8abb5ead0650b6d4a09cae8371ca1c56f55690057b3d9ded2b8de6f54f3169c5",
+    "bytes": 2032
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/step5_soft_3p_trace_kernels.wl": {
+    "sha256": "0c6a89a1e09772b9958056b8a443107d672bbd0e7aab4200eb361582b87793f2",
+    "bytes": 4898
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/step6_soft_3p_x_dependent_kernels.wl": {
+    "sha256": "38b33dab726acb73620c6e83950dab2cb0caaf9bfba54b0a1620ad230fb885ca",
+    "bytes": 4609
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/step7_soft_3p_xgamma_kernels.wl": {
+    "sha256": "70dd4829d93e435ea58b29880d118cf29d9e9d8f5de1c8b6261a385e65cd7dbc",
+    "bytes": 6113
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/step8_xgamma_saddle_reduction.py": {
+    "sha256": "7a9352c5a732c67e27646b59ae255af3c5014710b473c48fd78df84dd8a1d792",
+    "bytes": 2453
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/step9_xgamma_derivative_reduction.wl": {
+    "sha256": "23186931c3cbae142c8258daccd4e49f5f0b48826a774213fd0f390e0a450e45",
+    "bytes": 4440
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/twopoint_bs1_matrix_sumrule.py": {
+    "sha256": "5c027b48e5bf29238dee4f65451bfbff2030e539ebab0b68841935d0ba5666c7",
+    "bytes": 14569
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/twopoint_dirac_spectral_audit.wl": {
+    "sha256": "70be2eefbf2766240c2fe3390e3d7f793ef8e54e6dd3c50aef272a75d92ea49f",
+    "bytes": 3915
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/twopoint_ds1_matrix_sumrule.py": {
+    "sha256": "a64267ae6693d14881f3368ce4908dc8116d475c87e5e1242ce3a87452df7716",
+    "bytes": 27655
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/twopoint_local_condensate_audit.wl": {
+    "sha256": "28dc29038b85866c6f339ad2f3b4238417998972e91ac5ed959bd7eade433342",
+    "bytes": 3727
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/uncertainty_budget_one_at_time.py": {
+    "sha256": "f619115c1e5d0d3218b32552b5d5ff2517c9bdda2243c526cd5dd21888c70123",
+    "bytes": 8645
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/uncertainty_publication_plots.py": {
+    "sha256": "752262cd1891d38a0cb6f3883abf3fb031e8db8595060b0e85e611c0964c4ce8",
+    "bytes": 7565
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/validation_checks.py": {
+    "sha256": "d6164f36f56551b155f26720e16def133c82f88bd4f4394a22cce9457bc9f5a1",
+    "bytes": 8960
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/wang_pure_axial_validation.py": {
+    "sha256": "0fe544a1b6629091ddab6c1f42cbac9178470466ece30c87918fe32e0108b2a4",
+    "bytes": 8318
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/ward_transversality_check.wl": {
+    "sha256": "6562aaf3c7bf0bda3bd766582b46b6c9b0b2902cf6af194e776d52b12ec73a6d",
+    "bytes": 3119
+  },
+  "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma/scripts/window_diagnostics.py": {
+    "sha256": "9903686e5ee2f73b3f7bb6c862b8df95242d827129be7d671c3f46cd902da452",
+    "bytes": 17475
+  },
+  "/Users/sbilmis/Dsgamma/shared/README.md": {
+    "sha256": "2ced2b3dcaae96698ba06cd0cbab220016b7f7fb27c55e25f822e748af68b305",
+    "bytes": 392
+  },
+  "/Users/sbilmis/Dsgamma/shared/bibliography/all.bib": {
+    "sha256": "423d025e935400c2325d841d85fc5ac5718315c5ef17c1e1a0cb1d909ab81768",
+    "bytes": 11567
+  },
+  "/Users/sbilmis/Dsgamma/shared/conventions.md": {
+    "sha256": "cdfe823c1e7315048912c91864c34b69c902976b273b34592e3bd0b00414363a",
+    "bytes": 6334
+  },
+  "/Users/sbilmis/Dsgamma/shared/photon_da.py": {
+    "sha256": "92518245996212e42f62880be1d1f9f11bbfc4b31dd2bd33432671fb82d4301e",
+    "bytes": 12186
+  }
+}

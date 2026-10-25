@@ -1,0 +1,304 @@
+{
+  "entry_points": [
+    "scripts/twopoint_ds1_matrix_sumrule.py",
+    "scripts/twopoint_bs1_matrix_sumrule.py",
+    "scripts/final_window_monte_carlo.py",
+    "scripts/corrected_transition_central_python.py",
+    "figures/figure1_borel_form_factors/build_figure1_data.py",
+    "figures/figure2_mixing_angle_widths/build_figure2_data.py",
+    "figures/figure5_monte_carlo_widths/build_figure5_data.py",
+    "review/referee1_revision/build_decay_constant_figures.py"
+  ],
+  "active_transitive_python": [
+    "figures/figure1_borel_form_factors/build_figure1_data.py",
+    "figures/figure2_mixing_angle_widths/build_figure2_data.py",
+    "figures/figure5_monte_carlo_widths/build_figure5_data.py",
+    "review/referee1_revision/build_decay_constant_figures.py",
+    "scripts/bs1_stage2_baseline.py",
+    "scripts/corrected_transition_central_python.py",
+    "scripts/final_stage2_uncertainty_scan.py",
+    "scripts/final_window_monte_carlo.py",
+    "scripts/lattice_photon_normalization_comparison.py",
+    "scripts/mixing_angle_inputs.py",
+    "scripts/rohrwild_em_da.py",
+    "scripts/rohrwild_transition_exact.py",
+    "scripts/stage1_axial_g1_baseline.py",
+    "scripts/stage1_tensor_gb_hard_candidate.py",
+    "scripts/stage1_tensor_gb_soft2p_estimate.py",
+    "scripts/stage2_axial_g1_three_particle.py",
+    "scripts/stage2_tensor_gb_three_particle_estimate.py",
+    "scripts/step10_stage2_f1_split.py",
+    "scripts/step11_tensor_xgamma_ratio_integral.py",
+    "scripts/twopoint_bs1_matrix_sumrule.py",
+    "scripts/twopoint_ds1_matrix_sumrule.py"
+  ],
+  "imports": {
+    "scripts/ds1_interference_diagnostic.py": [
+      "scripts/ds_angle_benchmark.py"
+    ],
+    "scripts/publication_plots.py": [
+      "scripts/final_stage2_uncertainty_scan.py",
+      "scripts/stage1_axial_g1_baseline.py",
+      "scripts/stage1_tensor_gb_hard_candidate.py",
+      "scripts/stage1_tensor_gb_soft2p_estimate.py",
+      "scripts/stage2_axial_g1_three_particle.py",
+      "scripts/stage2_stability_plots.py",
+      "scripts/stage2_tensor_gb_three_particle_estimate.py"
+    ],
+    "scripts/stage2_axial_g1_three_particle.py": [
+      "scripts/rohrwild_em_da.py",
+      "scripts/stage1_axial_g1_baseline.py"
+    ],
+    "scripts/check_twopoint_transition_windows.py": [
+      "scripts/mixing_angle_inputs.py",
+      "scripts/twopoint_bs1_matrix_sumrule.py",
+      "scripts/twopoint_ds1_matrix_sumrule.py"
+    ],
+    "scripts/corrected_transition_central_python.py": [
+      "scripts/bs1_stage2_baseline.py",
+      "scripts/final_stage2_uncertainty_scan.py",
+      "scripts/rohrwild_transition_exact.py",
+      "scripts/stage1_axial_g1_baseline.py",
+      "scripts/twopoint_ds1_matrix_sumrule.py"
+    ],
+    "scripts/stage2_stability_plots.py": [
+      "scripts/final_stage2_uncertainty_scan.py",
+      "scripts/stage1_axial_g1_baseline.py",
+      "scripts/stage1_tensor_gb_hard_candidate.py",
+      "scripts/stage1_tensor_gb_soft2p_estimate.py",
+      "scripts/stage2_axial_g1_three_particle.py",
+      "scripts/stage2_tensor_gb_three_particle_estimate.py"
+    ],
+    "scripts/redo_stability_windows.py": [
+      "scripts/bs1_stage2_baseline.py",
+      "scripts/final_stage2_uncertainty_scan.py",
+      "scripts/lattice_photon_normalization_comparison.py",
+      "scripts/stage1_tensor_gb_soft2p_estimate.py",
+      "scripts/stage2_axial_g1_three_particle.py",
+      "scripts/stage3_bs1_physical_decay_constants.py",
+      "scripts/stage3_ds1_physical_residue_normalization.py"
+    ],
+    "scripts/mixing_angle_inputs.py": [],
+    "scripts/rohrwild_em_da.py": [],
+    "scripts/final_stage2_uncertainty_scan.py": [
+      "scripts/stage1_axial_g1_baseline.py",
+      "scripts/stage1_tensor_gb_hard_candidate.py",
+      "scripts/stage1_tensor_gb_soft2p_estimate.py",
+      "scripts/stage2_axial_g1_three_particle.py",
+      "scripts/stage2_tensor_gb_three_particle_estimate.py",
+      "scripts/step10_stage2_f1_split.py"
+    ],
+    "scripts/stage1_tensor_gb_soft2p_estimate.py": [
+      "scripts/stage1_axial_g1_baseline.py"
+    ],
+    "scripts/final_window_monte_carlo.py": [
+      "scripts/final_stage2_uncertainty_scan.py",
+      "scripts/lattice_photon_normalization_comparison.py",
+      "scripts/mixing_angle_inputs.py",
+      "scripts/rohrwild_transition_exact.py",
+      "scripts/stage1_tensor_gb_soft2p_estimate.py",
+      "scripts/twopoint_ds1_matrix_sumrule.py"
+    ],
+    "scripts/rohrwild_local_free_recalculation_summary.py": [
+      "scripts/stage1_axial_g1_baseline.py",
+      "scripts/stage2_axial_g1_three_particle.py"
+    ],
+    "scripts/stage3_bs1_physical_decay_constants.py": [
+      "scripts/bs1_stage2_baseline.py",
+      "scripts/final_stage2_uncertainty_scan.py",
+      "scripts/stage1_tensor_gb_soft2p_estimate.py",
+      "scripts/stage2_axial_g1_three_particle.py"
+    ],
+    "scripts/uncertainty_budget_one_at_time.py": [
+      "scripts/final_stage2_uncertainty_scan.py",
+      "scripts/stage1_axial_g1_baseline.py",
+      "scripts/stage1_tensor_gb_hard_candidate.py",
+      "scripts/stage1_tensor_gb_soft2p_estimate.py",
+      "scripts/stage2_axial_g1_three_particle.py",
+      "scripts/stage2_tensor_gb_three_particle_estimate.py"
+    ],
+    "scripts/bs1_window_candidate_scan.py": [
+      "scripts/final_stage2_uncertainty_scan.py",
+      "scripts/stage2_axial_g1_three_particle.py",
+      "scripts/window_diagnostics.py"
+    ],
+    "scripts/stage2_tensor_gb_three_particle_estimate.py": [
+      "scripts/rohrwild_em_da.py",
+      "scripts/stage1_axial_g1_baseline.py",
+      "scripts/stage1_tensor_gb_hard_candidate.py",
+      "scripts/stage1_tensor_gb_soft2p_estimate.py",
+      "scripts/stage2_axial_g1_three_particle.py",
+      "scripts/step10_stage2_f1_split.py",
+      "scripts/step11_tensor_xgamma_ratio_integral.py"
+    ],
+    "scripts/compare_corrected_transition_numerics.py": [],
+    "scripts/stage3_bs1_pz_decay_constants.py": [
+      "scripts/bs1_stage2_baseline.py",
+      "scripts/final_stage2_uncertainty_scan.py",
+      "scripts/stage2_axial_g1_three_particle.py"
+    ],
+    "scripts/rohrwild_nonlocal_final_summary.py": [],
+    "scripts/ds_angle_benchmark.py": [
+      "scripts/lattice_photon_normalization_comparison.py",
+      "scripts/mixing_angle_inputs.py",
+      "scripts/rohrwild_transition_exact.py",
+      "scripts/twopoint_ds1_matrix_sumrule.py"
+    ],
+    "scripts/uncertainty_publication_plots.py": [],
+    "scripts/local_scheme_comparison.py": [
+      "scripts/bs1_stage2_baseline.py",
+      "scripts/rohrwild_em_da.py",
+      "scripts/stage1_axial_g1_baseline.py",
+      "scripts/stage2_axial_g1_three_particle.py"
+    ],
+    "scripts/step8_xgamma_saddle_reduction.py": [],
+    "scripts/decay_constant_provenance_audit.py": [
+      "scripts/mixing_angle_inputs.py",
+      "scripts/stage3_ds1_physical_residue_normalization.py"
+    ],
+    "scripts/window_diagnostics.py": [
+      "scripts/bs1_stage2_baseline.py",
+      "scripts/final_stage2_uncertainty_scan.py",
+      "scripts/lattice_photon_normalization_comparison.py",
+      "scripts/stage1_axial_g1_baseline.py",
+      "scripts/stage1_tensor_gb_hard_candidate.py",
+      "scripts/stage1_tensor_gb_soft2p_estimate.py",
+      "scripts/stage2_axial_g1_three_particle.py",
+      "scripts/stage2_tensor_gb_three_particle_estimate.py",
+      "scripts/stage3_bs1_physical_decay_constants.py",
+      "scripts/stage3_ds1_physical_residue_normalization.py"
+    ],
+    "scripts/stage3_ds1_physical_residue_normalization.py": [
+      "scripts/stage1_tensor_gb_soft2p_estimate.py"
+    ],
+    "scripts/stage1_tensor_gb_hard_candidate.py": [
+      "scripts/stage1_axial_g1_baseline.py",
+      "scripts/stage1_tensor_gb_soft2p_estimate.py"
+    ],
+    "scripts/bs1_stage2_baseline.py": [
+      "scripts/final_stage2_uncertainty_scan.py",
+      "scripts/rohrwild_transition_exact.py",
+      "scripts/stage1_tensor_gb_soft2p_estimate.py",
+      "scripts/stage2_axial_g1_three_particle.py"
+    ],
+    "scripts/stage3_residue_benchmark_checks.py": [
+      "scripts/wang_pure_axial_validation.py"
+    ],
+    "scripts/step4_double_pole_p2_reduction.py": [],
+    "scripts/twopoint_ds1_matrix_sumrule.py": [
+      "scripts/mixing_angle_inputs.py"
+    ],
+    "scripts/plot_twopoint_theta_diagnostic.py": [
+      "scripts/twopoint_bs1_matrix_sumrule.py",
+      "scripts/twopoint_ds1_matrix_sumrule.py"
+    ],
+    "scripts/step11_tensor_xgamma_ratio_integral.py": [
+      "scripts/stage1_axial_g1_baseline.py",
+      "scripts/step10_stage2_f1_split.py"
+    ],
+    "scripts/bs1_uncertainty_and_plots.py": [
+      "scripts/bs1_stage2_baseline.py",
+      "scripts/final_stage2_uncertainty_scan.py",
+      "scripts/stage2_axial_g1_three_particle.py"
+    ],
+    "scripts/lattice_photon_normalization_comparison.py": [
+      "scripts/final_stage2_uncertainty_scan.py",
+      "scripts/rohrwild_transition_exact.py",
+      "scripts/stage1_axial_g1_baseline.py",
+      "scripts/stage1_tensor_gb_soft2p_estimate.py",
+      "scripts/stage2_axial_g1_three_particle.py"
+    ],
+    "scripts/paper_results_summary.py": [],
+    "scripts/wang_pure_axial_validation.py": [
+      "scripts/twopoint_ds1_matrix_sumrule.py"
+    ],
+    "scripts/stage1_tensor_gb_leading_twist.py": [
+      "scripts/stage1_axial_g1_baseline.py"
+    ],
+    "scripts/rohrwild_transition_exact.py": [
+      "scripts/stage1_axial_g1_baseline.py",
+      "scripts/stage1_tensor_gb_hard_candidate.py"
+    ],
+    "scripts/publication_stability_selected_windows.py": [
+      "scripts/final_stage2_uncertainty_scan.py",
+      "scripts/redo_stability_windows.py",
+      "scripts/stage2_axial_g1_three_particle.py"
+    ],
+    "scripts/final_angle_stability_plots.py": [
+      "scripts/final_stage2_uncertainty_scan.py",
+      "scripts/lattice_photon_normalization_comparison.py",
+      "scripts/mixing_angle_inputs.py",
+      "scripts/rohrwild_transition_exact.py"
+    ],
+    "scripts/stage1_axial_g1_baseline.py": [],
+    "scripts/step10_stage2_f1_split.py": [
+      "scripts/stage1_axial_g1_baseline.py",
+      "scripts/stage2_axial_g1_three_particle.py"
+    ],
+    "scripts/validation_checks.py": [
+      "scripts/final_stage2_uncertainty_scan.py",
+      "scripts/rohrwild_em_da.py",
+      "scripts/stage1_axial_g1_baseline.py",
+      "scripts/stage1_tensor_gb_hard_candidate.py",
+      "scripts/stage1_tensor_gb_soft2p_estimate.py",
+      "scripts/stage2_axial_g1_three_particle.py",
+      "scripts/stage2_tensor_gb_three_particle_estimate.py"
+    ],
+    "scripts/twopoint_bs1_matrix_sumrule.py": [
+      "scripts/mixing_angle_inputs.py",
+      "scripts/twopoint_ds1_matrix_sumrule.py"
+    ],
+    "figures/figure1_s0_stability_diagnostic/plot_s0_stability_preview.py": [],
+    "figures/figure1_s0_stability_diagnostic/build_s0_stability_data.py": [
+      "scripts/final_stage2_uncertainty_scan.py",
+      "scripts/publication_stability_selected_windows.py",
+      "scripts/redo_stability_windows.py",
+      "scripts/stage2_axial_g1_three_particle.py"
+    ],
+    "figures/figure1_borel_form_factors/plot_figure1_preview.py": [],
+    "figures/figure1_borel_form_factors/plot_angle_comparisons.py": [
+      "scripts/corrected_transition_central_python.py",
+      "scripts/ds_angle_benchmark.py",
+      "scripts/final_stage2_uncertainty_scan.py",
+      "scripts/rohrwild_transition_exact.py",
+      "scripts/twopoint_bs1_matrix_sumrule.py",
+      "scripts/twopoint_ds1_matrix_sumrule.py"
+    ],
+    "figures/figure1_borel_form_factors/build_figure1_data.py": [
+      "scripts/corrected_transition_central_python.py",
+      "scripts/final_stage2_uncertainty_scan.py",
+      "scripts/rohrwild_transition_exact.py"
+    ],
+    "figures/figure1_borel_form_factors/plot_colangelo_side_by_side.py": [
+      "scripts/corrected_transition_central_python.py",
+      "scripts/ds_angle_benchmark.py",
+      "scripts/final_stage2_uncertainty_scan.py",
+      "scripts/rohrwild_transition_exact.py",
+      "scripts/stage1_axial_g1_baseline.py",
+      "scripts/stage2_axial_g1_three_particle.py",
+      "scripts/validation_checks.py"
+    ],
+    "figures/figure5_monte_carlo_widths/build_figure5_data.py": [],
+    "figures/figure5_monte_carlo_widths/plot_figure5_preview.py": [],
+    "figures/figure2_mixing_angle_widths/build_figure2_data.py": [
+      "scripts/final_window_monte_carlo.py",
+      "scripts/lattice_photon_normalization_comparison.py",
+      "scripts/mixing_angle_inputs.py",
+      "scripts/rohrwild_transition_exact.py",
+      "scripts/twopoint_ds1_matrix_sumrule.py"
+    ],
+    "figures/figure2_mixing_angle_widths/plot_figure2_preview.py": [],
+    "figures/figure3_amplitude_decomposition/plot_figure3_preview.py": [],
+    "figures/figure3_amplitude_decomposition/build_figure3_data.py": [
+      "figures/figure2_mixing_angle_widths/build_figure2_data.py",
+      "scripts/mixing_angle_inputs.py",
+      "scripts/rohrwild_transition_exact.py"
+    ],
+    "figures/figure4_literature_comparison/plot_figure4_preview.py": [],
+    "review/referee1_revision/build_decay_constant_figures.py": [
+      "scripts/twopoint_ds1_matrix_sumrule.py"
+    ]
+  },
+  "parse_errors": [],
+  "limits": "Static local Python imports only; standalone Wolfram audits and dynamic/file dependencies need separate review."
+}

@@ -1,0 +1,2625 @@
+                                                      Published for SISSA by         Springer
+                                                                         Received: July 5, 2021
+                                                                     Accepted: August 17, 2021
+                                                                   Published: September 6, 2021
+
+
+
+
+Radiative decays of heavy-light mesons and the
+
+
+
+
+                                                                                                   JHEP09(2021)023
+ (T )
+fH,H ∗,H1 decay constants
+
+
+
+Ben Pullin and Roman Zwicky
+ Higgs Centre for Theoretical Physics, School of Physics and Astronomy, University of Edinburgh,
+ Edinburgh EH9 3JZ, Scotland
+
+ E-mail: b.pullin@ed.ac.uk, roman.zwicky@ed.ac.uk
+
+Abstract: The on-shell matrix elements, or couplings gHH ∗ (H1 )γ , describing the B(D)∗q →
+B(D)q γ and B1q → Bq γ (q = u, d, s) radiative decays, are determined from light-cone sum
+rules at next-to-leading order for the first time. Two different interpolating operators are
+used for the vector meson, providing additional robustness to our results. For the D∗ -
+meson, where some rates are experimentally known, agreement is found. The couplings
+are of additional interest as they govern the lowest pole residue in the B(D) → γ form
+factors which in turn are connected to QED-corrections in leptonic decays B(D) → `ν̄.
+Since the couplings and residues are related by the decay constants fH ∗ (H1 ) and fHT
+                                                                                       ∗ (H ) ,
+                                                                                           1
+                                                                               T   T
+we determine them at next-leading order as a by-product. The quantities {fH ∗ , fH1 } have
+not previously been subjected to a QCD sum rule determination. All results are compared
+with the existing experimental and theoretical literature.
+
+Keywords: NLO Computations, QCD Phenomenology
+
+ArXiv ePrint: 2106.13617
+
+
+
+
+Open Access, c The Authors.
+                                                     https://doi.org/10.1007/JHEP09(2021)023
+Article funded by SCOAP3 .
+Contents
+
+1 Introduction                                                                      1
+
+2 The couplings gHH ∗ (H1 )γ and their relation to H → γ form factors               1
+
+3 The gHH ∗ (H1 )γ couplings from light-cone sum rules                              3
+  3.1 The computation                                                               3
+  3.2 The dispersion relation                                                       4
+
+
+
+
+                                                                                        JHEP09(2021)023
+  3.3 The light-cone operator product expansion                                     5
+      3.3.1 The “partonic” dispersion relation                                      5
+      3.3.2 Borel transformation of LO terms for generic distribution amplitudes    5
+  3.4 The sum rule                                                                  6
+      3.4.1 Duality region as a function of the duality parameter a                 7
+  3.5 Numerical analysis                                                            8
+      3.5.1 Comparison with literature and experiment                              15
+
+                         T and f T decay constants from QCD sum rules
+4 The fH , fH ∗ , fH1 , fH                                                         17
+                           ∗    H1
+  4.1 The computation                                                              17
+  4.2 Numerical analysis                                                           18
+      4.2.1 Ratios of decay constants                                              20
+
+5 Summary and discussion                                                           22
+
+A Convention, definitions and additional tables                                    23
+  A.1 Convention and definitions                                                   23
+  A.2 Additional tables                                                            24
+
+                                              T and f T decay constants
+B Analytic results for the fH , fH ∗ , fH1 , fH                                    24
+                                                ∗    H1
+
+C Double dispersion relation                                                       28
+  C.1 Leading order                                                                28
+  C.2 Next-to-leading order                                                        29
+
+D Subtracted Borel transformation of tree level DA terms                           30
+  D.1 The special case a = 1 and s̃0 = t̃0 , M12 = M22                             32
+
+
+
+
+                                        –i–
+1   Introduction
+In this paper, we consider the on-shell couplings gHH ∗ γ and gHH1 γ , for B(D)∗q → B(D)q γ
+and B1q → Bq γ where q = u, d, s, from light-cone sum rules (LCSR) [1, 2].1 Our own
+interest in these couplings is two-fold. Firstly they describe the decay H ∗ (H1 ) → Hγ;
+secondly they appear as residues of the m2H ∗ (H1 ) -pole for the H → γ form factor e.g. [3].
+The latter is of phenomenological importance for invisible particle searches, e.g. flavoured
+axion and dark photon in Bs → `` at the LHCb [4] and is indirectly related to QED-
+corrections to H → `ν̄ as the pole is not far from the kinematic endpoint.
+     The results derive from the same correlation functions as the form factors but involve
+
+
+
+
+                                                                                                             JHEP09(2021)023
+a double, rather than a single, dispersion relation. The additional dispersion variable is the
+momentum transfer of the form factor q 2 where the H ∗ , H1 -meson is the lowest lying state.
+This is a technically involved matter at next-to-leading order (NLO), and our computation
+provides the first complete NLO computation at twist-1 and -2 level, utilising the master
+integrals from [3, 5]. A notable aspect is that the kinetic mass scheme [6], gives more stable
+results than the MS- and the pole-scheme.
+     The residues and the couplings differ, apart from ratios of known hadron masses, by
+decay constants (cf. section 2). We determine five distinct decay constants from local QCD
+sum rules (SRs) [7, 8] to ensure consistency of our results; the well-known pseudoscalar fH
+and both the vector fH ∗ (fH1 ) and tensor fH T (f T ) of the 1− (1+ ) state. To the best of our
+                                               ∗  H1
+               T    T
+knowledge {fH ∗ , fH1 } have not previously been determined from QCD SRs. A relevant
+feature is that some D∗ couplings are known from experiment. This is not the case for the
+B ∗ as the unknown total width means that the coupling values cannot be inferred.
+     The gH ∗ Hγ couplings have been considered in LCSR to LO in [9] and at NLO at twist-
+2 level [10]. Lattice determinations of gD∗ Dγ (with large uncertainty) [11] and gDs∗ Ds γ
+(with small uncertainty) [12] are available. Heavy-light meson decay constants have been
+evaluated to NLO (and partially beyond) in [13–15] in SR. Lattice results are numerous
+and include [16, 17].
+     The paper is organised as follows. In section 2 we define the couplings and give their
+relations to the residues of the form factors. Section 3 is concerned with the main SR
+aspects of the couplings e.g. the computation, the double dispersion relation and the Borel
+transform (with more detail in Appendices C and D). The main results for the residues
+and the couplings are given in tables 6 and 7 respectively. The decay constants, as bona
+fide predictions, are presented in section 4, with analytic results in appendix B. Numerical
+values of decay constants and ratios thereof are collected in tables 8 and 10 respectively.
+We conclude in section 5. Conventions, definitions and inputs are grouped into appendix A.
+
+2   The couplings gHH ∗ (H1 )γ and their relation to H → γ form factors
+The purpose of this section is to discuss relevant method-independent aspects of the com-
+putation. For concreteness we shall write H = B, throughout this section, which stands
+   1
+     For the 1+ state H1 we only consider the B1 -state since the D1 -state is already overshadowed by the
+Dππ 3-particle state (mD1 − mD − 2mπ ≈ 270 MeV). This effect is less pronounced, as a result of mc /mb
+suppression, for the B1 since mB1 − mB − 2mπ ≈ 160 MeV.
+
+
+
+
+                                                  –1–
+for either of the beauty Bu,d,s - or charmed Du,d,s -mesons. The couplings of interest are
+defined from the on-shell amplitudes2
+
+                                       i
+                             AB ∗ →Bγ = se e εαβγδ (pB )α ηβ Fγδ gBB ∗ γ ,
+                                       2
+                             AB1 →Bγ = −se eFαβ (pB )α η β gBB1 γ ,                                       (2.1)
+
+where Dµ = ∂µ + iese Aµ (with se = ±1 depending on convention), η is the vector meson’s
+polarisation, Fαβ = ik[α ∗β] stands for the photon’s outgoing plane wave and the coupling’s
+mass dimension is [gBB ∗ γ ] = [gBB1 γ ] = −1. We refer the reader to appendix A for more
+
+
+
+
+                                                                                                                  JHEP09(2021)023
+details on conventions. For the decay rates, with α = e2 /4π as the fine structure constant,
+we obtain
+                                                                         !3
+                                 ∗      α     m2
+                            Γ(B → Bγ) =    1 − 2B                             m3B ∗ gBB
+                                                                                     2
+                                                                                        ∗γ ,
+                                        24    mB ∗
+                                                                         !3
+                                         α     m2
+                            Γ(B1 → Bγ) =    1 − 2B                            m3B1 gBB
+                                                                                    2
+                                                                                       1γ
+                                                                                          ,               (2.2)
+                                         24    mB 1
+
+where the first expression agrees with [18] for example. These rates follow from an effective
+Lagrangian of the form3
+
+                                  1
+                 Leff = se gBB ∗ γ (B ∗ , ∂B † , F ) − ise gBB1 γ Bα∗ ∂β B † F αβ + h.c. .               (2.3)
+                                  2
+
+This Lagrangian can be used at small recoil and has to be supplemented by higher order
+couplings away from it.
+    As mentioned earlier, another point of interest in the couplings arises from their relation
+to pole-residues of the B̄ → γ form factors [3] (and cf. appendix A).4 For clarity let us
+consider the dispersion representation of the vector form factor
+
+                                                     B̄→γ                         V
+                   B̄→γ 2      1
+                                     Z ∞         Im[V⊥[k] (t)]                   r⊥[k]
+                  V⊥[k] (q ) =              dt                       =                          + ... ,   (2.4)
+                               π      cut         t − q 2 − i0           1 − q 2 /m2B ∗ [B1 ]
+
+   2
+     More concretely the couplings parametrise the on-shell matrix elements hB̄(pB )γ(k)|B̄ ∗ (q)i =
+[−i(2π)4 δ (4) ( pi )] AB ∗ →Bγ and hB̄(pB )γ(k)|B̄1 (q)i = [−i(2π)4 δ (4) ( pi )] AB1 →Bγ .
+                P                                                           P
+   3
+     One might wonder whether the proximity of the B and B ∗ mass leads to any enhanced terms in the soft
+photon region in diagrams where the photon couples to an external B-meson and a lepton for instance (e.g.
+diagram top left of figure 3 in [19] where the weak Hamiltonian corresponds to B ∗ → K``). The behaviour of
+                                                          1      1   1             2    2    2
+the denominator in the soft region (i.e. kµ → 0), 2k·p +∆M    2 k·` k2 with ∆MB = mB ∗ −mB = O(mb ΛQCD ),
+                                                                   1
+                                                        B        B
+                                                                                                     2
+is softened by the derivative term Fαβ and avoids unsuppressed large logarithms of the form ln(∆MB     /m2B ).
+This is another manifestation, with a different twist, of the finding in [19] (cf. section 3.4 therein) that
+structure dependent terms do not generate large logarithms.
+    4
+      We note that when translating between the B̄ → γ and B → γ form factors only the axial, and not the
+vector parts change sign, as can be inferred by applying a charge C-transformation with C|B̄i = |Bi. We
+stress that our results are formally quoted for the B̄-meson.
+
+
+
+
+                                                       –2–
+where the dots represent higher terms in the spectrum. For the tensor form factor,
+ B̄→γ 2
+T⊥[k] (q ), the analogous form holds. The relation of the residues to the couplings are
+
+                       V    mB f B ∗                         T
+                      r⊥ =           gBB ∗ γ ,              r⊥ (µUV ) = fBT ∗ (µUV )gBB ∗ γ ,
+                             mB ∗
+                            mB f B 1
+                      rkV =          gBB1 γ ,               rkT (µUV ) = fBT1 (µUV )gBB1 γ ,                    (2.5)
+                             mB1
+                                    (T )
+with decay constants fB ∗ (B1 ) defined in (3.7). The following exact relations, with µUV -
+dependence suppressed,
+
+
+
+
+                                                                                                                        JHEP09(2021)023
+                                            V
+                                           r⊥   mB fB ∗           rkV       mB fB1
+                                            T
+                                              =            ,            =            ,                          (2.6)
+                                           r⊥   mB ∗ fBT ∗        rkT       mB1 fBT1
+
+are a consequence of the freedom to choose a particle’s interpolating operator in field
+theory. This provides us with a non-trivial consistency check of our SR evaluation. Finally
+a note on the ultraviolet (UV) scale dependence µUV . The couplings are of course scale-
+independent since they correspond to on-shell matrix elements. Thus the vector residues
+are scale-independent whereas the tensor ones scale like the tensor decay constant
+                                   d                                  d
+                 γT = −                 ln fBT ∗ (B1 ) (µUV ) = −              T
+                                                                           ln r⊥(k) (µUV ) ,                    (2.7)
+                               d ln µUV                           d ln µUV
+with
+                                                       αs
+                                                γT =      2CF + O(αs2 ) ,                                       (2.8)
+                                                       4π
+and CF = (Nc2 − 1)/(2Nc ) = 4/3.
+
+3     The gHH ∗ (H1 )γ couplings from light-cone sum rules
+
+3.1     The computation
+The couplings can be computed within the framework of QCD SRs on the light-cone.
+Proceeding via standard techniques we define two correlation functions [3]
+                           Z
+       ΠΓ⊥µ (pB , q) ≡ i           e−ipB ·x hγ(k, )|T JBq (x)O⊥µ
+                                                               Γ
+                                                                  (0)|0i = se Pµ⊥ ΠΓ⊥ (p2B , q 2 ) ,            (3.1)
+                               x
+                           Z                                                                             
+       ΠΓkµ (pB , q) ≡ i           e−ipB ·x hγ(k, )|T JBq (x)Okµ
+                                                               Γ
+                                                                  (0)|0i = se −Pµk ΠΓk (p2B , q 2 ) + . . . ,
+                               x
+
+with quantum numbers chosen such that ΠΓ⊥ and ΠΓk contain information on gBB ∗ γ and
+gBB1 γ , respectively and Γ ∈ {V, T }. Above the shorthand x = d4 x has been adopted and
+                                                          R     R
+
+the dots represent structures [3] which are not important for this discussion. The B-meson
+is interpolated by the operator JBq
+
+                           JBq ≡ (mb + mq )b̄iγ5 q ,              hB̄q |JBq |0i = m2Bq fBq ,                    (3.2)
+                            µ
+and the Lorentz structures P⊥,k are given by
+
+                      Pµ⊥ ≡ εµρβγ ∗ρ (pB )β k γ ,             Pµk ≡ i (pB ·k ∗µ − pB ·∗ kµ ) ,               (3.3)
+
+
+
+
+                                                           –3–
+with  the photon’s polarisation vector, pB = q + k and on-shell momentum k 2 = 0. The
+vector and tensor operators of the b → q effective Hamiltonian are given by
+
+                             V      1                             T   1
+                            O⊥µ ≡ − mBq q̄γµ b ,                 O⊥µ ≡ q̄iq ν σµν b ,
+                                    e                                 e
+                             V    1                               T   1
+                            Okµ ≡ mBq q̄γµ γ5 b ,                Okµ ≡ q̄iq ν σµν γ5 b .                             (3.4)
+                                  e                                   e
+For brevity, from this point onwards we drop the subscript denoting the quark flavour such
+that mBq = mB , fBq = fB , et cetera. As previously mentioned, the computation of the
+correlation function is the same as for the B̄ → γ form factor; we refer the reader to [3] for
+
+
+
+
+                                                                                                                             JHEP09(2021)023
+details of the calculation and now turn to the double dispersion relation.
+
+3.2     The dispersion relation
+The hadronic representation of the correlation functions is obtained from the double dis-
+continuity of the correlation function5
+                                                      1
+                            ρΓhad∗ (p2B , q 2 ) =          discq2 discp2 ΠΓ⊥ (p2B , q 2 ) ,                          (3.5)
+                                                    (2πi)2             B
+
+
+and reads
+                  X h0|JB |B̄iAB ∗ →Bγ hB̄ ∗ |O⊥µ
+                                               Γ |0i                 ZZ
+                                                                                          ρΓhad∗ (s, t)
+   se ΠΓ⊥µ =                                                 + Pµ⊥             ds dt                        + ...,
+                  pol
+                         (m2B ∗ − q 2 )(m2B − p2B )                       Σ⊥           (t − q 2 )(s − p2B )
+                                             Γ |0i
+                  X h0|JB |B̄iAB1 →Bγ hB̄1 |Okµ                     ZZ
+                                                                                         ρΓhad1 (s, t)
+      se ΠΓkµ =                                             − Pµk             ds dt                        + ...,    (3.6)
+                  pol
+                         (m2B1 − q 2 )(m2B − p2B )                       Σk           (t − q 2 )(s − p2B )
+
+where the sum runs over the vector meson’s polarisations. The integration domain Σ⊥,k
+ranges from a lower cut shifted by two pion masses from the poles up to infinity. The dots
+indicate single dispersion integrals which do not contribute to the final result, and can be
+seen as the analogues of the subtraction terms of single dispersion integrals.
+    The matrix elements to the right are the decay constants
+
+                  V †             1                                                     1
+            h0|(O⊥µ ) |B̄ ∗ i = − mB mB ∗ fB ∗ ηµ ,                     T †
+                                                                  h0|(O⊥µ ) |B̄ ∗ i = − m2B ∗ fBT ∗ ηµ ,
+                                  e                                                     e
+                   V †          1                                        T †          1
+             h0|(Okµ ) |B̄1 i = mB mB1 fB ∗ ηµ ,                   h0|(Okµ ) |B̄1 i = m2B1 fBT1 ηµ ,                 (3.7)
+                                e                                                     e
+where η is the vector mesons’ polarisation vector e.g. eq. (A.2). The SR procedure in-
+                                                                          q                       2   p2
+volves the Borel transformation in both variables, ΠΓk[⊥] (M12 , M22 ) ≡ BM         Γ      2    2
+                                                                            2 BM 2 Πk[⊥] (pB , q ),
+                                                                                B
+                                                                            2    1
+to enhance convergence. In the case of a dispersion relation of the form (3.6) this is
+straightforward due to the well-known formula
+                                                       1
+                                                            
+                                        q2                                2     2
+                                       BM  2                     = e−m /M .                                          (3.8)
+                                                    m − q2
+                                                     2
+
+We refer the reader to appendix D for the definition of the Borel transformation.
+  5
+      As Schwartz’s reflection principle applies, one may use Disc → 2i Im cf. [20] for instance.
+
+
+
+
+                                                         –4–
+3.3     The light-cone operator product expansion
+The correlation functions (3.1) are evaluated with perturbative QCD using the light-cone
+operator product expansion (LC-OPE) ordered, in practice, by a converging expansion in
+twist. The twist, known from deep inelastic scattering, is the dimension of the operator
+minus its spin. We refer to [3] for specific details and to the technical [21] and applied [2]
+reviews on the subject. It seems worthwhile to state that, contrary to intuition, the photon
+is more involved than an ordinary vector meson as it has both perturbative (twist-1) and
+non-perturbative nature (higher-twist). The latter is encoded in the photon distribution
+amplitude (DA) which can be understood as ρ/ω-γ or φ-γ conversions. At LO in αs we
+
+
+
+
+                                                                                                                 JHEP09(2021)023
+perform the computation up to twist-4 including 3-particle DAs, whilst at next-to-LO
+(NLO) twist-1 and twist-2 contributions have been computed. See however section 3.5 for
+remarks on the completeness of twist-4.
+
+3.3.1    The “partonic” dispersion relation
+One may also write a dispersion relation in perturbative QCD,
+                                               Z ∞        Z ∞            ρΓk[⊥] (s, t)
+                       ΠΓk[⊥] (p2B , q 2 ) =         ds         dt                           + ...      (3.9)
+                                               m2b        m2b        (t − q 2 )(s − p2B )
+
+which is formally distinct by its slightly different analytic structure with the discontinuity
+starting at m2b .6 The dots have the same meaning as for the “hadronic” dispersion relation.
+     Performing the double dispersion relation at NLO is complicated by pole singularities
+in q = p2B . Taking a single discontinuity, say in p2B , one is faced with
+    2
+
+
+                                                                3
+                                                                X ρi (q 2 , p2 )
+                                 discp2 ΠΓ⊥ (p2B , q 2 ) =                        B
+                                                                                         ,            (3.10)
+                                        B
+                                                                n=0
+                                                                    (q 2 − p2B )n
+
+where the ρi themselves contain non-trivial cuts.7 These singularities, dubbed second type
+singularities [20, 22], are solutions of the Landau equation for ΠΓ⊥ (p2B , q 2 ) but are not on
+the physical sheet. However this changes once the discontinuity is taken in p2B and they
+need to be taken into account. We refer the reader to appendix C for technical details.8
+
+3.3.2    Borel transformation of LO terms for generic distribution amplitudes
+As previously stated, for a given dispersion representation (3.9) the Borel transformation
+is straightforward due to (3.8). However, this demands committing to a specific DA. As
+   6
+     The mu,d,s masses are considered in the linear approximation for which we have derived new results
+such as the mq -correction to the twist-2 photon DA [3].
+   7
+     At LO this is not the case and this is what makes them considerably easier to handle in practice.
+   8
+     An alternative is to use Schwartz’s reflection principle, Disc → 2i Im, to obtain the discontinuity cf.
+footnote 5. One can then deform the dt-integration path into the complex plane, away from the poles, in
+order to obtain a working dispersion representation. This approach, whilst being computationally inefficient,
+provides numerically stable results as long as the upper integration boundaries in the dt and ds integrals are
+sufficiently far apart. However, given the almost degenerate values of the masses mB and mB ∗ a sufficient
+separation of the upper boundaries can not be justified, rendering this approach sub-optimal.
+
+
+
+
+                                                          –5–
+these can improve over time, due to better determination of hadronic parameters, there is
+some advantage in keeping them generic. Let us consider
+                                               (q 2 )` fn (u)
+                               Z 1
+             Π(p2B , q 2 ) ⊃         du                          ,                  ` = 0, 1 ,           n = 1, 2, 3 ,          (3.11)
+                                0         (m2b − up2B − ūq 2 )n
+where fn (u) is some function proportional to the DA with suitable features in order to be
+compatible with first principle analytic properties. How to perform the Borel transforma-
+tion and the continuum subtraction is described in appendix D. These results extend those
+currently seen in the literature and are presented in greater detail. In theory a double
+Borel transform provides two Borel parameters. In practice however, we content ourselves
+
+
+
+
+                                                                                                                                         JHEP09(2021)023
+to setting them equal
+                                M12 = M22 = 2M̄ 2 → 2M̂ 2 ,                         (3.12)
+(and u0 = 1/2 cf. (D.12)), which is justified since mB ≈ mB ∗ (≈ mB1 ). The 3-particle DAs
+can be handled with the same technique as they reduce to an effective 2-particle DA (cf.
+appendix D in reference [3]).
+
+3.4   The sum rule
+The final step in completing the SR is to invoke semi-global quark-hadron duality. For a
+double dispersion relation this is not straightforward. Before addressing this issue let us
+                                                                           (a)
+assume an integration region (parametrised by a single parameter a and δ̄s,t specified in
+the next subsection), implemented with step function on the spectral density
+                                                                                                          (a)
+                   ρΓhad1 [had∗ ] (s, t) = ρΓk[⊥] (s, t)Θ(s − δ̄s(a) (m2b ))Θ(t − δ̄t (s)) .                                    (3.13)
+
+Equating the“partonic” and “hadronic” parts one obtains the sum rule
+                                     Z δ̄s(a) (m2 )        Z δ̄ (a) (s)          m2 −s        m2         −t
+                       1                        b              t                   B           B1 [B ∗ ]
+          Γ
+      fB rk[⊥] =                                      ds                  dt e    2M̂ 2   e      2M̂ 2        ρΓk[⊥] (s, t) ,   (3.14)
+                   mB m2B1 [B ∗ ]
+                    2
+                                      m2b                   m2b
+
+                                                           Γ
+with the relation between the couplings and the residues rk[⊥] given in (2.5) and Γ = V, T .
+The somewhat unconventional factor of two in the exponent is a consequence of our defi-
+nition of the Borel mass (3.12). The LCSR determines the product fB rk[⊥]Γ    and to obtain
+the residues and the couplings one replaces the decay constants by a QCD SR to the same
+accuracy in αs , e.g.
+                                               Γ ]
+                                          [fB rk[⊥]
+                                   Γ                LCSR
+                                  rk[⊥] =                ,                           (3.15)
+                                              [fB ]SR
+and
+                                                  V                   T ]
+                                         m∗B [fB rk[⊥] ]LCSR    [fB rk[⊥]  LCSR
+                          gBB ∗ γ =                           =                    ,
+                                         mB [fB ]SR [fB ∗ ]SR   [fB ]SR [fBT ∗ ]SR
+                                            V                  T ]
+                                   mB1 [fB rk[⊥] ]LCSR   [fB rk[⊥] LCSR
+                          gBB1 γ =                     =           T
+                                                                          .                                                     (3.16)
+                                   mB [fB ]SR [fB1 ]SR   [fB ]SR [fB1 ]SR
+As previously mentioned, the two determinations for each couplings serve as an additional
+quality test of our SR.
+
+
+
+
+                                                             –6–
+                                                                                                                                      JHEP09(2021)023
+Figure 1. An overview of the duality interval. The left hand figure demonstrates how the pa-
+                                               (a)
+rameterisation (3.17), keeping the quantity σ0 fixed, leads to a range of possible duality windows
+depending on the value of the parameter a. The solid green, blue, yellow, and orange curves cor-
+respond to the a = 1/2, 1, 2, ∞, cases respectively. In the limit s̃0 → t̃0 the curves intersect at a
+                (a)
+single point, σ0 . The right hand plot provides a more detailed view of the case a = 1, which we
+adopt for our evaluation of the couplings. We note that the choice of duality window has little
+impact on the final result, cf. table 5. The dashed blue line indicates the lower boundary on the
+duality window, enforced by the restriction that both t and s can only take values above the cut
+starting at m2b . The dashed black line indicates a technical division of the duality region necessary
+for application of the principal part prescription, cf. (C.8).
+
+
+3.4.1    Duality region as a function of the duality parameter a
+Finally we turn to the question of the duality region encoded in (3.13) and derive explicit
+relations as a function of the parameter a. In defining the duality region,
+                                                             a                 a
+                                                        s                  t
+                                                                     
+                                                                  +                  ≤ 1,                                    (3.17)
+                                                       s̃0                t̃0
+we follow earlier work [1, 23] but extend it in that we consider s̃0 , t̃0 as a function of
+the parameter a. The solutions to the boundary defined by (3.17), and which therefore
+enter (3.13), are
+                                                      a 1/a                                                  a 1/a
+                                                 t                                                        s
+                                                                                                  
+                                                                            (a)
+                δ̄s(a) (t) = s̃0       1−                         ,       δ̄t (s) = t̃0         1−                       .   (3.18)
+                                                t̃0                                                      s̃0
+A further quantity that arising from the parameterisation, and thus appearing in results
+given in the appendix, is
+                                    (a)       s̃0 t̃0
+                                   σ0 = a                 .                       (3.19)
+                                         (s̃0 + t̃a0 )1/a
+Its geometric meaning can be inferred from figure 1. It takes on the rôle of the single
+dispersion effective threshold if ρΓ ∝ δ(s − t) which is the case for a large part of the
+contributions. Fortunately, variation of the duality parameter a does not lead to large
+
+
+
+
+                                                                  –7–
+effects when the daughter sum rule is invoked to constrain the SR parameters, as will be
+discussed in the next section.
+     We turn to the question of which choice of the parameter a is suitable. We find
+that in the majority of cases the dependence of the couplings on the duality window is
+rather limited, as evidenced by table 5. The exceptions are the B1s - and the Ds∗ -meson
+cases, showing more significant variation. It has been argued that for the Isgur-Wise
+function [24] and the small velocity limit [25] that a = 1 is a necessary choice. Whether or
+not this translates to other cases and in particular to the case at hand is an open question.
+We adopt a = 1 as our default choice, and include variations under the duality window in
+our estimate of the total uncertainty (cf. section 3.5.1).
+
+
+
+
+                                                                                                 JHEP09(2021)023
+3.5   Numerical analysis
+Physical input parameters used for the numerical evaluation of the SRs can be found in
+table 14 in the appendix.
+     As there are a number of different renormalisation scales involved we discuss them
+in some detail. The UV scale, µUV , has already been mentioned below eq. (2.6) and is
+set to the pole mass mb (mc )pole . For the LCSR there remains the scale of the coupling
+µαs , the mass µm (or µkin cf. below) and the LC-OPE factorisation scale µF . We set
+µ2F = m2B − (mkin            2      2     2
+                 b (1 GeV)) (= mD − mc (mc )) which is a standard albeit not a necessary
+choice and equate µαs = µF . The choice of a mass scale is linked with a choice of mass
+scheme. For the B → γ form factors we have found [3] that the MS- and the pole-
+scheme give rise to large effects in either higher twist or at O(αs ) rendering both of them
+suboptimal. For the gBB ∗ (B1 )γ couplings the evidence for adopting the kinetic- over the
+MS-scheme is less compelling (smaller improvement in twist-convergence). However, in an
+effort to remain consistent with our previous work [3], we choose to adopt the kinetic-scheme
+for the evaluation of both the FF residues and the effective couplings. As the kinetic mass
+scheme, originally devised for the inclusive decay operator product expansion (OPE) [6],
+can be considered as a compromise between the MS- and the pole-scheme. Moreover, it
+is indeed found that the kinetic scheme is stable under scale variation. The kinetic scale
+is set to µkin = 1 GeV, with further details in [3]. For the D-meson decays the situation is
+different and the MS scheme gives more stable results than the kinetic scheme and we thus
+employ the MS scheme with the standard choice µm = mc (mc ). This might not come as a
+surprise since mc itself is closer to µF as compared to the B-case.
+     As indicated in eqs. (3.15) and (3.16), to obtain the physical quantities one needs to
+divide by the decay constant(s) to the same order (cf. section 4 for their discussion). The
+new inputs are the condensates, given in table 14, and the factorisation scale of the local
+OPE, denoted by µcond , which is set to µcond = µF in order to facilitate cancellations in the
+ratio. A summary of all renormalisation scales is given in table 1 (left). Another aspect
+is that we drop twist-4 corrections, other than the pure quark condensates, as they are
+incomplete (requiring the inclusion of 4-particle DAs [3]). The resulting uncertainty ought
+to be captured, at least in part, by the variation of the Borel parameter.
+                              (a)
+     The SR parameters {σ0 , M̂ 2 } and {sf0B , Mf2B } are determined by a number of con-
+straints. As usual the Borel mass is determined subject to two competing factors, contami-
+
+
+
+
+                                            –8–
+            µ2F = µ2αs = µ2cond [ GeV2 ]   µUV [ GeV]        µm [ GeV]    µkin [ GeV]   µαs [ GeV]   µcond [ GeV]
+ B    Kin       m2B − (mpole
+                         b   )2            4.78(1.0)            −           1.0(4)      4.18(1.5)     3.0(1.0)
+ B    MS        m2B − (mpole
+                         b   )2            4.78(1.0)         4.18+1.7
+                                                                 −1.2         −         4.18(1.5)     3.0(1.0)
+ D    MS        m2D − mc (mc )2            1.67(30)          1.27+1.5
+                                                                 −0.2         −         1.27+1.0
+                                                                                            −0.2      2.0(1.0)
+
+Table 1. Summary of the scales involved in the determination of the residues (table 6) and coupling
+constants (table 7) to the left of the double separation line. To the right we have the scale changes
+used for the best determination of the decay constants (table 8). The quantity mc (mc ), above, is
+the MS mass at the scale mc . The uncertainty in µF , for the B-meson (D-meson), is chosen to be
+∆µF = ±1 GeV (∆µF =+1.0  −0.2 GeV).
+
+
+
+
+                                                                                                                    JHEP09(2021)023
+nation from higher states is effectively suppressed by a small M̂ 2 , whilst fast convergence of
+the LC-OPE favours a large M̂ 2 as higher terms in the expansion are accompanied by ever
+increasing inverse powers of the Borel mass. The compromise of these two criteria, resulting
+in an approximately flat curve, is known as the Borel-window. To constrain the effective
+thresholds {s̃0 , t̃0 } the, formally exact, daughter SR for the sum of meson masses (3.20)
+is employed
+                                                  (a)    2          (a)
+                                     d        δ̄s (mb )
+                                              Z             δ̄t (t)
+                                                                Z         s+t
+        m2B + m2B1 [B ∗ ] = 2M̂ 4         ln            ds          dt e− 2M̂ 2 ρΓk[⊥] (s, t) ,            (3.20)
+                                    dM̂ 2    m2b           m2b
+
+
+with the ratio of s̃0 , t̃0 matched to the ratio of meson masses in the respective channels
+                                                        Bd,u                           fB ∗ [B1 ]
+cf. caption of table 2. In addition we impose s̃B   s
+                                                   0 /s̃0    ≈ m2Bs /m2Bd,u and sf0B /s0          ≈
+   2    2
+mB /mB ∗ [B1 ] to be satisfied reasonably well. We turn to the dependency on a specific
+duality parameter a. It is found that in the B-meson cases a single set of SR parameters
+is sufficient to satisfy (3.20) to within ≈ 2% for the a = {1/2, 1, 2} cases considered. For
+the D-mesons this no longer holds and a small modification to the SR parameters is made
+at each value of a.
+     We consider it worthwhile to comment on the specific numerical values of the thresholds
+found. The expectation for a single dispersive threshold s0 is (mBi + 2mπ )2 < s0 <
+(mBi + mρ )2 , and lying closer to the top boundary. Inspecting table 2, we note that this
+is indeed the case for the single dispersion threshold sf0B but not for the double dispersion
+              (a)                   (a)
+threshold σ0 (3.19). Whereas σ0 takes on a similar rôle to the single dispersive effective
+threshold, one must remember that it contains additional information on the excited vector
+meson channel, cf. (3.18) and might further be a result of the peculiar analytic structure
+in (s, t) of the LC-OPE.9
+     Let us turn to the correlation imposed on parameters based on physical arguments.
+Whilst the effective threshold for decay constant sf0B can be independently determined
+                                                                                  (a)
+it would contradict the method if it were completely independent of the σ0 -threshold,
+since they are both associated with the same state. A 50%-correlation is adopted between
+the two. The vector versus tensor results are correlated since, by the (exact) equation of
+  9
+    It is conceivable that if one were to adapt the daughter sum rule method to the extraction of gDD∗π
+and gBB ∗ π in [23], one could even find better agreement with experiment and/or the lattice.
+
+
+
+
+                                                        –9–
+                                                SR parameters [ GeV2 ]
+                              Bd              Bs               Bu                                         Bd,u             Bs
+   (a)        V T
+ {σ0 , M̂ 2 }r⊥ ,r⊥     37.7, 8.0          39.2, 11.0      37.7, 8.0         {s0 , M 2 }fB              34.3, 5.6    35.5, 6.4
+       (a)       rkV                                                                          T
+                                                                                       fB ∗ ,fB
+ {σ0 , M̂ 2 }           43.5, 12.0         45.5, 13.5      43.5, 12.0        {s0 , M 2 }        ∗       34.5, 5.7    35.9, 7.1
+       (a)       rkT                                                                         T
+                                                                                       fB1 ,fB
+ {σ0 , M̂ 2 }           42.5, 11.0         44.4, 13.5      42.5, 11.0        {s0 , M 2 }       1        38.9, 6.0    40.6, 8.6
+                              Dd              Ds               Du                                         Dd,u             Ds
+   (1/2)      V
+ {σ0 , M̂ 2 }r⊥           5.9, 3.1          6.6, 3.4        5.9, 3.1         {s0 , M 2 }fD               5.7, 1.9        6.3, 2.2
+   (1/2)      T                                                                               T
+                                                                             {s0 , M 2 }fD∗ ,fD∗
+
+
+
+
+                                                                                                                                     JHEP09(2021)023
+ {σ0 , M̂ 2 }r⊥           5.9, 2.6          6.6, 2.9        5.9, 2.6                                     6.1, 1.9        6.9, 2.6
+       (1)        V
+ {σ0 , M̂ 2 }r⊥           6.0, 2.9          6.7, 3.2        6.0, 2.9
+       (1)        T
+ {σ0 , M̂ 2 }r⊥           6.0, 2.4          6.7, 2.7        6.0, 2.4
+       (2)        V
+ {σ0 , M̂ 2 }r⊥           5.7, 2.9          6.5, 3.4        5.7, 2.9
+       (2)        T
+                 r⊥
+ {σ0 , M̂ 2 }             5.7, 2.4          6.5, 2.7        5.7, 2.4
+
+Table 2. Summary of the SR parameters used in the determination of the residues for the triangular
+duality window a = 1 (cf. section 3.5.1 for comments). The additional threshold parameter is fixed
+via the ratio of the scalar and vector mesons. For the B-mesons t̃0 /s̃0 = m2B ∗ /m2B ≈ 1.02 and
+t̃0 /s̃0 = m2B1 /m2B ≈ 1.18 in the ⊥ and k directions respectively. In the D-meson channels t̃0 /s̃0 =
+                                                                                (a)
+m2D∗ /m2D ≈ 1.15. Note the difference between the values of σ0 for the ⊥- and k-directions reflects
+the fact that m2B1 /m2B ∗ ≈ 1.16. We remind the reader that in the B-meson channels a single set of
+SR parameters is sufficient to satisfy the daughter SR (3.20) to within ≈ 2% for all three choices of
+the duality parameter a. For the B-meson (D-meson) processes we associate a uniform uncertainty
+to the threshold of ±2.0 GeV2 (±0.5 GeV2 ) and the Borel mass of ±2.0 GeV2 (±0.5 GeV2 ).
+
+
+motion, their difference is equal to a derivative operator which is numerically (and to some
+extent parametrically) suppressed at low recoil. In order to remain consistent this implies
+a correlation of the effective thresholds, as argued in [26] and more systematically exploited
+in [27].10 The correlations
+
+                                      4                                          1                                            2
+                                                                                                                
+              (a) V⊥ (a) T⊥                              (a) Vk (a) Tk                                 (a) V (a) T
+ corr        σ0     , σ0          |B = ,     corr       σ0     , σ0          |B = ,        corr       σ0 , σ 0           |D = ,
+                                      5                                          2                                            3
+                                                                                                                            (3.21)
+
+are imposed based on the contribution of the derivative operator to the equations of motion,
+which is ≈ 10% in the B ⊥- and ≈ 20% in the D ⊥-case. In the Bk-case the contribution
+is ≈ 40–45%.
+     Another relevant aspect concerning the plethora of predictions is that not all
+channels are of equal quality. This is highlighted by the two separate determina-
+tions of the residue, from the vector and tensor interpolating current. Let us de-
+                         T
+fine the ratio UB (i) = gBB         V
+                            (i) γ /gBB (i) γ which ideally is close to one. We find reassur-
+  10
+    However, for the k-direction the derivative term is not small and such a correlation does not make sense.
+See section 4.2 in [3] for a more elaborate discussion in the context of the B̄ → γ form factors.
+
+
+
+
+                                                            – 10 –
+ingly good values for the B ∗ -case (UB ∗0 , UBs∗ , UB ∗+ ) = (0.99, 0.98, 0.98), moderate devi-
+ations (UD∗+ , UDs∗ , UD∗0 ) = (0.81, 0.82, 0.91) for the D∗ -case and significant deviations
+(UB 0 , UB1s , UB + ) = (1.35, 1.26, 1.30) for the B1 -case as anticipated cf. footnote 1. For the
+    1            1
+D∗ -case it is the accidental cancellation of the two charge contributions in perturbation
+theory, to be discussed further below, and the sensitivity to higher twist which gives rise
+to larger deviation from one. For the B1 -case the concept of a well isolated resonance is
+not assured and for the D1 it simply does not hold cf. also footnote 1. Therefore we do
+not quote any results for the D1 whilst for the B1 the results are deemed just marginally
+acceptable to present.
+     It is instructive to present a breakdown in terms of charges for comparison with other
+
+
+
+
+                                                                                                     JHEP09(2021)023
+work and illustrate the, presumably accidental, cancellations in the charged D- and B1 -case
+which unfortunately implies that these results are less reliable. For definiteness we quote
+the breakdown for the couplings obtained from the vector interpolating current
+                  gDq Dq∗ γ ≈ −(1.05 Qq + 0.51 Qc )|PT − 1.74 Qq |twist-2 + ht ,
+                  gDs Ds∗ γ ≈ −(1.24 Qs + 0.51 Qc )|PT − 1.62 Qs |twist-2 + ht ,
+                   gBq Bq∗ γ ≈ −(1.20 Qq + 0.24 Qb )|PT − 1.20 Qq |twist-2 + ht ,
+                   gBs Bs∗ γ ≈ −(1.31 Qs + 0.25 Qb )|PT − 1.10 Qs |twist-2 + ht ,
+                  gBq B1q γ ≈ +(0.12 Qq + 0.02 Qb )|PT − 1.11 Qq |twist-2 + ht ,
+                  gBs B1s γ ≈ −(0.69 Qs − 0.52 Qb )|PT − 1.03 Qs |twist-2 + ht ,           (3.22)
+where Qi are the standard quark charges Qb = Qd = Qs = − 13 and Qc = Qu = 23 and
+“ht” stands for higher twist and q = u, d. The size of the higher twist can be inferred from
+table 3. The twist-3 contribution is up to 5% in some cases and, as previously argued, most
+twist-4 contributions have to be dropped since they are incomplete without the inclusion
+of 4-particle DAs (cf. section 3.5.1 for further relevant remarks in this direction).
+     We now proceed to discuss the numerical features of the B- and D-meson results in
+turn. Beginning with the B-mesons, for the values given in table 2 we find that the daugh-
+ter SRs (3.20) are, in all cases, satisfied to within . 2%. The continuum contributions
+range from . 25% in the ⊥-modes to . 35% in the k-modes. In the ⊥-modes the SR is
+dominated by the perturbative and twist-2 contributions which are approximately equal
+in size and are of the same sign. The remaining contributions make up ≈ 10–20% of the
+total. The story is repeated in the tensor k-modes, however the situation in the vector
+k-modes is somewhat altered. Here unfortunate cancellations act to suppress the pertur-
+bative contribution and the twist-2 sector is numerically dominant providing O(80)% of
+the total value. A breakdown of contributions according to twist is given in table 3 for a
+representative selection of residues. The O(αs ) corrections are mass scheme dependent. In
+the kinetic mass scheme (µkin = 1 GeV) employed the NLO results are sizeable, providing
+a correction of ≈ 20–35% and ≈ 20–25% at twist-1 and -2, respectively cf. table 3. The
+benefit and necessity of an NLO computation is clearly visible in the scale variation plots
+shown in figure 2 as residual effects are then of O(αs2 ).
+     The SR parameters for the D-mesons are determined subject to the same tests as
+outlined above. In all cases the continuum contribution remains below 30% and in the
+
+
+
+
+                                              – 11 –
+ twist   pa   DA                V (B )
+                               r⊥        rkV (Bd )    T (B )
+                                                     r⊥        rkT (Bd )    V (D )
+                                                                           r⊥         V (D )
+                                                                                     r⊥         T (D )
+                                                                                               r⊥
+                                    u                     s                     u         d         d
+
+   1     −    PT: O(αs0 )      −0.116    −0.014       0.102      0.033     −0.177      0.004    0.014
+   1     −    PT: O(αs )       −0.033      0.003      0.027    −0.005      −0.047    −0.002    < 10−3
+   2     2    φγ (u) O(αs0 )   −0.136      0.075      0.063      0.064     −0.220      0.110    0.078
+   2     2    φγ (u) O(αs )    −0.028      0.015      0.015      0.015     −0.028      0.014    0.018
+   3     2    Ψ(a) (u)          0.011          −      0.016    −0.001        0.021   −0.010    −0.010
+                (1)
+   3     2    Ψ(v) (u)              −    < 10−3       0.001    < 10−3           −         −     0.005
+   3     3    A(α)                  −          −     < 10−3    < 10−3           −         −    −0.001
+
+
+
+
+                                                                                                         JHEP09(2021)023
+   3     3    V(α)                  −          −     −0.002    −0.003           −         −    −0.014
+               (2)
+   4     2    hγ (u)                −    −0.003      < 10−3    −0.002           −         −    −0.003
+   4     2    A(u)              0.017     −0.05      −0.003    −0.003        0.033   −0.017    −0.006
+   4     3    S(α)+ S̃(α)      < 10−3    < 10−3      < 10−3    < 10−3      −0.003      0.001    0.002
+              4       (1)
+                               −0.001    < 10−3      < 10−3    < 10−3      −0.007              < 10−3
+              P
+   4     3          Ti (α)                                                             0.003
+              i=1
+
+   4     3    Sγ (α)           −0.008    < 10−3       0.003      0.003     −0.033    −0.033    −0.026
+   4     3    T4γ (α)           0.002    < 10−3      < 10−3    < 10−3        0.007     0.007   < 10−3
+   4     −    Qq hq̄qi              −      0.002          −          −          −         −         −
+   4     −    Qb hq̄qi          0.003    −0.002       0.002      0.002     −0.021    −0.021    −0.017
+              Total∗           −0.290      0.070      0.223      0.102     −0.475      0.096    0.081
+
+Table 3. A breakdown of contributions according to twist, “pa” = number of partons and the
+specific DA. The definitions of the DAs can be found in [3]. The asterisk in total is a reminder that
+it does not include twist-4 contributions not closing under the equations of motion cf. [3].
+
+
+
+neutral modes the daughter SR (3.20) is satisfied to within 3%. In the charged mode
+the daughter SR shows poor convergence. Again, this is due to the presumably artificial
+smallness of the perturbative contribution due to cancellation in Qc and Qu (cf. table 3
+and (3.22)). In contrast to the B-mesons we note that whilst the dominant contribution
+arises from the twist-1 or -2 sectors the twist-3 and -4 sectors are sizeable, in particular in
+the charged case. The O(αs ) corrections to twist-2 range from ≈ 12% of the LO result in
+the vector modes to ≈ 20% in the tensor modes. In the twist-1 sector the tensor modes
+and the neutral vector mode have radiative corrections ranging between ≈ 2–30%. In the
+charged vector modes, however, the corrections are > 50%, due to the previously mentioned
+large charge cancellation at LO.
+     The uncertainty due to the input parameters is estimated by varying each parameter,
+within the given interval, in turn and adding each individual uncertainty in quadrature.
+A breakdown of the individual uncertainties is given in table 4. To incorporate corre-
+lations between the various thresholds, discussed previously, we generate 300 samples of
+the thresholds according to a Gaussian distribution such that the mean corresponds to
+
+
+
+
+                                                 – 12 –
+Figure 2. Representative plots highlighting how the NLO result (dashed red) sees a reduction in
+the mass scheme scale µkin (µMS ) as compared to LO (solid blue). We note that in the B-meson case
+                                                                                                      JHEP09(2021)023
+the residue generally shows greater stability than the coupling which, in the above cases, inherits
+the (artificial) scale dependence of fB ∗ which is less pronounced for fD∗ as the plots show.
+
+
+
+
+the central value of each threshold and the standard deviation reproduces the associated
+uncertainty. We then evaluate the desired quantity for each of these samples, taking the
+standard deviation of the resulting points to be the uncertainty due to threshold variation.
+Our predictions for the couplings are given as the mean value of the vector and tensor inter-
+polating current determinations. We estimate the associated uncertainty as the standard
+deviation of the two evaluations. Moreover, the uncertainty associated with varying the
+duality window is taken to be the standard deviation of the a = {1/2, 1, 2} determinations
+(cf. table 5). This provides a small contribution in the B-meson cases, but notably a more
+significant contribution in the Ds mode. Adding in quadrature the uncertainty from all
+sources, we obtain the total uncertainty as quoted in table 7.
+
+     The final values for the residues and the couplings are shown in tables 6 and 7 respec-
+tively. The value of the coupling presented in the table is the average of the vector and
+tensor determinations.
+
+
+
+
+                                              – 13 –
+                      V (B )
+                     r⊥              rkV (Bd )      T (B )
+                                                   r⊥          rkT (Bd )     V (D )
+                                                                            r⊥            V (D )
+                                                                                         r⊥            T (D )
+                                                                                                      r⊥
+                          u                             s                        u            d            d
+
+        Value        -0.300          0.076         0.224       0.104        -0.473       0.095        0.073
+                     +0.034          +0.015        +0.023      +0.015       +0.054       +0.021       +0.020
+        Error        −0.033          −0.016        −0.024      −0.015       −0.053       −0.021       −0.020
+
+        ∆s0          ±0.021          ±0.007        ±0.017      ±0.007       ±0.033       ±0.004       ±0.004
+                     +0.005          +0.001        +0.000      +0.000       +0.004       +0.001       +0.004
+        ∆M̂ 2        −0.000          −0.002        −0.002      −0.002       −0.001       −0.002       −0.001
+                     +0.000          +0.001        +0.004      +0.001       +0.000       +0.001       +0.001
+        ∆Mf2B        −0.003          −0.000        −0.000      −0.000       −0.004       −0.000       −0.000
+
+        ∆mb,c        ±0.002          ±0.004        ±0.002      ±0.002       ±0.003       ±0.003       ±0.003
+
+
+
+
+                                                                                                                            JHEP09(2021)023
+        ∆τ           ±0.010          ±0.006        ±0.005      ±0.005       ±0.015       ±0.008       ±0.006
+        ∆hq̄qi       ±0.003          ±0.001        ±0.001      ±0.001       ±0.005       ±0.004       ±0.003
+        ∆a2          ±0.020          ±0.011        ±0.009      ±0.010       ±0.033       ±0.016       ±0.012
+        ∆t=3         ±0.006          < 10−3        ±0.004      ±0.003       ±0.011       ±0.006       ±0.011
+        ∆µkin        ±0.003          ±0.003        ±0.002      ±0.004           −            −            −
+                                                                            +0.008       +0.004       +0.004
+        ∆µm              −              −            −               −      −0.001       −0.006       −0.007
+                     +0.010          +0.001        +0.001      +0.001       +0.002                    +0.002
+        ∆µαs         −0.003          −0.004        −0.003      −0.001       −0.003       < 10−3       −0.001
+                     +0.002          +0.001        +0.002      +0.000       +0.005       +0.004       +0.000
+        ∆µF          −0.000          −0.004        −0.007      −0.001       −0.002       −0.001       −0.001
+
+        ∆µUV             −              −          ±0.002      ±0.001           −            −        ±0.001
+        ∆ hq̄qi
+          hs̄si          −              −          ±0.002            −          −            −            −
+        ∆Σ           ±0.001          ±0.003        ±0.006      ±0.006       ±0.013       ±0.002       ±0.006
+
+Table 4. Breakdown of the main contributions to the uncertainty for a representative selection of
+residues. ∆s0 includes the combined uncertainty, incorporating correlations, due varying all effective
+thresholds, cf. discussion above (3.1). ∆t=3 contains the total uncertainty due to all twist-3 hadronic
+parameters {f3γ , ωγA , ωγV }. The uncertainty due to the choice of duality region is encapsulated in the
+quantity ∆Σ which represents the standard deviation of the a = {1/2, 1, 2} evaluations. The total
+uncertainty, which also includes smaller contributions such as the gluon condensate, is obtained by
+added uncertainties in quadrature.
+
+
+
+             gBd Bd∗ γ   gBs Bs∗ γ     gBu Bu∗ γ   gBd B1d γ   gBs B1s γ    gBu B1u γ   gDd Dd∗ γ   gDs Ds∗ γ   gDu D∗u γ
+
+ a = 1/2          0.86       0.96       −1.43          0.35          0.42     −0.70        0.38        0.69      −2.03
+ a=1              0.86       0.95       −1.44          0.37          0.44     −0.72        0.40        0.60      −2.11
+ a=2              0.86       0.94       −1.43          0.40          0.48     −0.74        0.40        0.52      −2.03
+
+Table 5. Values of the coupling for different values of the duality parameter a (cf. section 3.4.1
+and (3.17)). The majority of couplings show little dependence on the duality parameter a. Notable
+exceptions are the neutral B1 -couplings and the charged D∗ -couplings. This does not come as a
+surprise as precisely those are plagued by, unfortunate, cancellations in the perturbative contribution
+of the Qb,c - and Qq -parts (cf. end of section 3.5.1 for comments).
+
+
+
+
+                                                            – 14 –
+                                         V
+                                        r⊥                   T
+                                                            r⊥               rkV                rkT
+                           Bd       0.179+0.019
+                                         −0.019        0.171+0.018
+                                                            −0.020       0.076+0.015
+                                                                              −0.016        0.104+0.015
+                                                                                                 −0.015
+       µkin = 1.0 GeV      Bs       0.235+0.024
+                                         −0.025        0.224+0.023
+                                                            −0.024       0.114+0.016
+                                                                              −0.018        0.146+0.017
+                                                                                                 −0.017
+                           Bu     −0.300+0.034
+                                        −0.033      −0.284+0.033
+                                                          −0.031       −0.159+0.031
+                                                                             −0.029       −0.199+0.028
+                                                                                                −0.028
+                           Dd       0.095+0.021
+                                         −0.021        0.073+0.020
+                                                            −0.020            −                 −
+       µMS = mc (mc )      Ds      0.172+0.033
+                                        −0.029       0.140+0.048
+                                                          −0.046              −                 −
+                                        +0.054            +0.049
+                           Du     −0.473−0.053      −0.412−0.049              −                 −
+
+
+
+
+                                                                                                                 JHEP09(2021)023
+Table 6. The residues (2.5), related to form factors, for the B- and D-mesons. The former are
+determined in the kinetic scheme and the latter in the MS scheme.
+
+
+3.5.1      Comparison with literature and experiment
+It is of interest to compare to the existing literature and experiment. The values of the
+couplings obtained in this work, which constitute the mean value of the tensor and vector
+determinations, along with determinations from other computations as well as experiment
+are collected in table 7. Unfortunately only two of the six couplings can be inferred from
+experiment as the widths of the vector mesons are too often unknown.11 Moreover, in this
+section we use (Bu , Bd , Dd , Du ) → (B + , B 0 , D+ , D0 ) which is the notation often used in
+experiment.
+     With regards to the two experimental values, we update the analysis in [11] and
+make some further comments. We first turn to the D∗+ , for which the width Γ(D∗+ ) =
+83.4(18) keV and branching fraction B(D∗+ → D+ γ) = 0.016(4) are known [31], and
+with (2.2) give |gD+ D∗+ γ | = 0.47(7) GeV−1 instead of the previous 0.50(8) GeV−1 in [11].
+For D∗0 the width is unknown and one needs to rely on isospin to infer it [11]. First we
+deduce gc , related to the D∗+ Dπ-coupling, as gc = 0.57(7), which is down from 0.61(7)
+in [11]. Considering all decay channels one then obtains Γ(D∗0 ) = 56.5(14.0) keV, down
+from 68(17) keV in [11]. Using the branching fraction B(D∗0 → D0 γ) = 0.353(9) keV, down
+from 0.381(29) keV we get |gD0 D∗0 γ | = 1.77(16) GeV−1 , down from 2.02(26) GeV−1 in [11].
+                                            −1
+     Our result gD0 D∗0 γ = 2.11+0.35
+                                  −0.34 GeV     is compatible with experiment and so are the
+                                                                           −1
+results of the other method. Our value for gD+ D∗+ γ = 0.40+0.12 −0.13 GeV    is again compatible
+                                                               −1
+with the new experimental value |gD+ D∗+ γ | = 0.47(7) GeV . Differences between this work
+and the LCSR computation [10] are noticeable and can be at least partially accounted for
+by computational differences. Firstly, we have computed twist-1 O(αs )-corrections whereas
+they did not. Secondly, we include linear quark mass correction at LO and in the magnetic
+vacuum susceptibility χq (cf. section 3.2.1 in [3]). Third and most importantly, we drop
+twist-4 corrections other than the Qb hq̄qi condensate cf. previous section. For the B-
+meson case the twist-4 corrections are not large and the impact is small and the differences
+can be attributed to the first two cases. For the D-mesons higher twist corrections are
+  11
+    The situation is different to the gBB ∗ π couplings as there the B ∗ → Bπ decay is kinematically forbidden
+and thus it seems unfortunate that the B ∗ (B1 ) → Bγ transitions are not known because of unknown
+total widths.
+
+
+
+
+                                                   – 15 –
+ units [ GeV−1 ]           gB 0 B ∗0 γ    gBs Bs∗ γ    gB + B ∗+ γ    gD+ D∗+ γ       gDs Ds∗ γ     gD0 D∗0 γ
+ This work                 0.86+0.15
+                               −0.15     0.95+0.15
+                                             −0.16     -1.44+0.27
+                                                            −0.26    0.40+0.12
+                                                                         −0.13      0.60+0.19
+                                                                                        −0.18      -2.11+0.35
+                                                                                                        −0.34
+
+ LCSR (NLL) [10]          -0.91+0.12
+                               −0.13     -0.74+0.09
+                                              −0.10    1.44+0.22
+                                                           −0.20     -0.15+0.11
+                                                                          −0.10     -0.079+0.086
+                                                                                          −0.078   1.48+0.29
+                                                                                                       −0.27
+
+ HHχPT [18]               -1.01+0.05
+                               −0.05     -0.70+0.06
+                                              −0.06    1.45+0.11
+                                                           −0.11     -0.27+0.05
+                                                                          −0.05     0.041+0.056
+                                                                                         −0.056    2.19+0.11
+                                                                                                       −0.11
+
+ VMD + HQET [28]          -0.58+0.12
+                               −0.10         −         0.99+0.19
+                                                           −0.13     -0.29+0.19
+                                                                          −0.11     -0.19+0.19
+                                                                                         −0.08     1.60+0.35
+                                                                                                       −0.45
+
+ CQM + HQET [29]          -0.82+0.06
+                               −0.05         −         1.45+0.11
+                                                           −0.12     -0.38+0.05
+                                                                          −0.04          −         1.91+0.09
+                                                                                                       −0.09
+
+ RQM [30]                 -0.93+0.05
+                               −0.05     0.65+0.03
+                                             −0.03     1.66+0.11
+                                                           −0.11     -0.44+0.06
+                                                                          −0.06     -0.19+0.03
+                                                                                         −0.03     2.15+0.11
+                                                                                                       −0.11
+
+ Lattice [11]∗ , [12]‡         −             −             −         -0.20+0.30 ∗   0.11+0.02 ‡    2.00+0.60 ∗
+
+
+
+
+                                                                                                                 JHEP09(2021)023
+                                                                          −0.30         −0.02          −0.60
+
+ Experiment [31]               −             −             −         0.47+0.07
+                                                                         −0.07           −         1.77+0.16
+                                                                                                       −0.16
+                                                                                                             †
+
+
+ units [ GeV−1 ]           gB 0 B 0 γ     gBs B1s γ     gB + B + γ
+                                   1                           1
+
+ This work                 0.37+0.12
+                               −0.12     0.44+0.12
+                                             −0.12     -0.72+0.21
+                                                            −0.20
+
+
+Table 7. † The experimental value of gD0 D∗0 γ requires the use of isospin symmetry to deduce
+the width of the D∗0 cf. the main text in section 3.5.1. Here we take (Bu , Bd , Dd , Du ) →
+(B + , B 0 , D+ , D0 ) to conform to PDG. Note that the sign cannot be determined from experi-
+ment and that for the theory results it is convention dependent cf. (A.3). We further note that
+              f   mB ∗
+gBs Bs∗ γ = fB∗s mBs |µ| ≈ 1.18 GeV−1 with |µ| = 1.13 GeV−1 from [32], deduced from D∗ -decays and
+              Bs    s
+
+subject to 1/mc corrections, is rather close to our value given the difference in methods. Whereas
+ref. [9] established that the D-couplings can be determined from LCSR we do not include the LO
+results presented therein as the input is outdated and a numerical comparison seems of limited use.
+
+
+more important per se, as they are less convergent. In addition, for the charged case
+perturbation theory is presumably artificially suppressed which makes these results less
+reliable in general. Another important aspect is that in the charged case the inclusion of
+Sγ and T4γ is definitely incomplete as the photon can connect to the external states. A sign
+of this is that in the neutral case the twist-4 contributions cancel, whereas in the charged
+case they are additive cf. table 3.
+     The lattice determination gDs Ds∗ γ |[12] = 0.11(2) is approximately three standard de-
+viations lower than our value gDs Ds∗ γ = 0.60(19). This is where the breakdown (3.22)
+is useful. We find gDs Ds∗ γ ≈ −0.6 Qc − 3.0 Qs and from figure 3 in [12] one deduces
+gDs Ds∗ γ |[12] ≈ −0.66Qc − 1.65Qs . Whilst it is noted that in both cases the charm and
+strange quark contribution largely cancel each other, the effect is more pronounced for the
+lattice result. The charm contribution is rather close and the deviation is in the strange
+quark part with almost a factor 2 difference, which seems large but not as large as the initial
+number would suggest. It is instructive to investigate the D∗+ → D+ γ case as by D-spin
+symmetry,12 one would roughly expect a 20–30%-deviation. For our computation this is
+indeed the case gD+ D∗+ γ ≈ −0.65 Qc − 2.5 Qd ≈ 0.40(13), which does agree reasonably well
+with experiment gD+ D∗+ γ = 0.47(7) (cf. table 7). Concerning the question of D-spin break-
+ing, some further guidance can be obtained from the lattice evaluation of the Dd,s → γ
+  12
+       The exchange of d ↔ s, which is still a good approximate symmetry under QED.
+
+
+
+
+                                                      – 16 –
+form factors [33]. The fits to a linear and an extended pole model are in agreement with
+20–30% D-spin breaking close to the kinematic endpoint. If the same level of D-spin break-
+ing were valid at the m2D∗ -pole, which some past experience suggests, then gD+ D+∗ γ and
+gDs Ds∗ γ should not deviate considerably more than 20–30% from each other. If the former is
+true then this gives rise to a tension between the experimental gD+ D∗+ γ = 0.47(7) and the
+lattice determination of gDs Ds∗ γ |[12] = 0.11(2). In conclusion it remains somewhat unclear
+what the resolution of this puzzle is. Whereas the sum rule results seems consistent, we
+wish to emphasise that, in exactly these modes, the sum rules are not the best of their
+kind for various reasons. It may well be that the level of cancellations between the strange
+and the charm charge contributions are so severe that past experience is overthrown. It
+
+
+
+
+                                                                                                                                      JHEP09(2021)023
+would be helpful to have further lattice determinations of these couplings and in particular
+a more precise one for gD+ D+∗ γ .
+
+                                T        T
+4        The fH , fH ∗ , fH1 , fH ∗ and fH
+                                           1
+                                             decay constants from QCD sum rules
+
+The main reason for computing the decay constants is that to the best of our knowl-
+edge {fH T , f T }, required for the relation between the couplings and the (form factor)
+          ∗   H1
+residues (2.5), have not been subjected to a QCD SR evaluation and are thus new. The
+quantities fB and fB ∗ have previously been computed [13–15] to NLO with even partial
+NNLO results. We recompute these SRs and find agreement with the analytic expressions
+of the first two references.13 In the work [15] the O(αs )hq̄qi corrections were computed
+independently and we do disagree with some the expression e.g. the incomplete Gamma
+function. Compare equation (21) [15] versus (B.6) and equation (59) in [14].
+
+4.1        The computation
+The starting points for the computations are the “diagonal” correlation functions
+                           Z
+            ΓfB (p) = i            eip·x h0|T {JB (x)JB† (0)}|0i    = ΓfB (p2 ) ,
+                           Zx
+                                   eip·x h0|T {Jα (x)Jβ† (0)}|0i
+             f
+                                                                    = Vαβ ΓfB∗ (p2 ) + Ṽαβ Γ̃fB∗ (p2 ) ,
+              B   ∗
+            Γαβ (p) = i
+                               x
+             T
+                           Z
+            fB                                         T†
+                                   eip·x h0|T {Jαβ
+                                                T
+                                                          (0)}|0i = T[αβ][γδ] Γf T ∗ (p2 ) + T̃αβγδ Γ̃f T ∗ (p2 ) ,
+               ∗
+           Γαβγδ (p) = i                           (x)Jγδ
+                               x                                                       B                          B
+
+
+where we have taken H = B for concreteness again. Above Jα = q̄γα b, Jαβ  T = q̄σ b and
+                                                                                 αβ
+the previously encountered JB is given in (3.2). The Lorentz structures are
+                 pα pβ                                                       pγ pδ
+    Vαβ =              − gαβ ,        Ṽαβ = pα pβ ,      Tαβγδ = −gαγ             ,       T̃αβγδ = εαβ ᾱβ̄ εγδγ̄ δ̄ Tᾱβ̄γ̄ δ̄ .
+                  p2                                                          p2
+The Lorentz invariant functions are related to the hadronic quantities as follows
+
+                   m4B fB2                             m2B ∗ fB2 ∗                            m2B ∗ (fBT ∗ )2
+         Γf B =            + ... ,          ΓfB∗ =                 + ... ,      Γf T ∗ =                      + ... ,         (4.1)
+                  m2B − p2                             m2B ∗ − p2                  B          m2B ∗ − p2
+    13
+    A direct comparison with [13, 14] can be made by taking the limit s0 → ∞ in the results in appendix B,
+as we provide the correlation functions after taking the Borel transform with continuum subtraction.
+
+
+
+
+                                                             – 17 –
+and the remaining structure Γ̃fB∗ (p2 ) is related to ΓfB (p2 ) up to contact terms by the
+equation of motion. The correlation functions for the {fB1 , fBT1 } decay constants follow
+with rules for the insertion of the γ5 into the currents cf. (B.10) and B ∗ → B1 in (4.1)
+following the ideas in [34].
+     The generic SR is parametrised by
+                      m2
+                        B(i)
+                      M2
+                                 f
+                       fB        Z B(i)      − 2s
+                                 s0
+                                              M
+                  e       (i)                   fB
+      fB2 (i) =                         ds e       (i) ρ
+                                                         fB(i) (s)+
+                      ωB(i)
+                                
+                                   m2b
+
+
+
+
+                                                                                                                                  JHEP09(2021)023
+                                        −m2
+                                                                                                                      
+                                           b                                                                     
+                                       M2
+                                        fB            fB(i)                 fB(i) D     E        mb fB(i)
+                                                                                      G2 +
+                                                                                                                    
+                                   e                  hq̄qi mb hq̄qi + chG2 i                        chq̄Gqi hq̄Gqi
+                                                 c
+                                                                                                                    ,    (4.2)
+                                           (i)
+                                                                                                 2
+                                                                                                Mf B
+                                                                                                       (i)
+
+
+
+where fB(i) stands for any {fB , fB ∗ , fBT ∗ , fB1 , fBT1 }, ωB = m4B /(mb +mq )2 and ωB(i) = m2B(i)
+otherwise. The local OPE is performed up to dim ≤ 5 including O(αs ) corrections to both
+the perturbative and quark condensate contributions. Four quark condensates (d = 6) give
+contributions at the sub per mille level and are omitted. We have checked that all the scale
+dependences, due to NLO computations, are correct. This includes the cancellation of the
+condensate scale, denoted by µcond , up to O(αs2 ) as well as the anomalous scaling of the
+scalar and transverse decay constants (2.7). Explicit results are given in appendix B.
+    The PDG value, for which the CKM matrix elements |Vcd(s) | are inputs, deviates close
+to three standard deviations from the lattice result.
+
+4.2     Numerical analysis
+The numerical analysis is the same as for the residues/couplings except that the scales
+are taken to be different as, in contrast, there is no motivation to cancel terms in ratios.
+Concretely, the condensate and αs scale are changed as shown, to the right of the verti-
+cal double separation, in table 1. This enforces a change in SR parameters {Mf2B , sf0B }
+according to the previous criteria, with thresholds fixed such that the daughter SR
+                                                                             f               −s
+                                                                          Z s B(i)          M2
+                                                    d                        0               fB
+                                m2B(i) = Mf4B                        ln              ds e       (i)   ρfB (s) ,           (4.3)
+                                              (i) dM 2                     m2b                           (i)
+                                                    fB         (i)
+
+
+reproduces the known value of the associated meson mass to ≈ 0.5%. The continuum
+contribution is kept below ≈ 45%. The SR parameters are given alongside the main
+results in table 8 (cf. table 12 for MS-evaluation of the B-meson decay constants) and a
+representative breakdown of the uncertainty is given in table 9. Isospin breaking effects
+impact at the sub per mille level e.g. [46] and are therefore not considered as they are
+superseded by the actual uncertainties. If considered, it would seem sensible to include QED
+effects as well, which would then necessitate the inclusion of the radiative mode in addition.
+     The uncertainties of the decay constants are around 10% and in agreement with lattice
+results of O(1–4%)-uncertainty. Moreover, we quote other QCD SR determinations, [14]
+
+
+
+
+                                                                     – 18 –
+ fB(i) \B(i) ( MeV)         B(5280)        Bs (5367)       B ∗ (5325)    Bs∗ (5415)    B1 (5726)     B1s (5829)
+ lattice [17, 35]           190.0(1.3)     230.3(1.3)      186.4(7.1)    223.1(5.6)         −             −
+ experiment [31]            188(17)(18)         −                 −          −              −             −
+ SR [14]                    207+17
+                               −9          242+17
+                                              −12          210+10
+                                                              −12        251+14
+                                                                            −16        335+18
+                                                                                          −18 [15]   348+18
+                                                                                                        −18 [15]
+ SR [36]                    193.4(16.6)    232.5(21.0)            −          −              −             −
+ this work                  192+20
+                               −19         225+21
+                                              −20          209+23
+                                                              −22        245+24
+                                                                            −23        247+31
+                                                                                          −29        305+27
+                                                                                                        −26
+ δPT , δhq̄qi               0.18, -0.03    0.20, -0.02     0.10, -0.08   0.13, -0.07   0.11, -0.09   0.14, -0.05
+
+
+
+
+                                                                                                                   JHEP09(2021)023
+  fB
+ s0 (i) , Mf2B              34.4, 5.7      35.6, 6.6       34.9, 6.2     36.2, 6.9     38.1, 5.7     40.9, 8.1
+                      (i)
+
+ fBT(i) \B(i) ( MeV)                                       B ∗ (5325)T   Bs∗ (5415)T   B1 (5726)T    B1s (5829)T
+
+ this work                                                 200+21
+                                                              −20        236+22
+                                                                            −21        230+29
+                                                                                          −28        285+25
+                                                                                                        −24
+ δPT , δhq̄qi                                              0.11, -0.08   0.14, -0.06   0.11, -0.09   0.14, -0.05
+  fB(i)
+ s0          , Mf2B                                        34.9, 6.2     36.3, 7.4     38.1, 5.7     40.9, 8.6
+                      (i)
+
+      (T )
+  fD(i) \D(i) ( MeV)        D(1865)        Ds (1968)       D∗ (2007)     Ds∗ (2112)    D∗ (2007)T    Ds∗ (2112)T
+
+ lattice [17, 35]           209.0(2.4)     248.0(1.6)      223.5(8.7)    268.8(6.5)         −             −
+ experiment [31]            203.7(47)(6)   257.8(41)(1)           −          −              −             −
+ SR [14]                    201+12
+                               −13         238+13
+                                              −23          242+20
+                                                              −12        293+19
+                                                                            −14             −             −
+ SR [36]                    206.2(12.4)    245.3(20.2)            −          −              −             −
+ this work                  190+15
+                               −15         226+17
+                                              −17          227+18
+                                                              −17        279+19
+                                                                            −19        202+16
+                                                                                          −16        256+16
+                                                                                                        −17
+ δPT , δhq̄qi               0.24, 0.02     0.28, 0.03      0.05, -0.15   0.11, -0.11   0.07, -0.14   0.14, -0.10
+  fB
+ s0 (i) , Mf2B              5.7, 1.9       6.3, 2.2        5.9, 2.0      6.8, 2.7      5.8, 2.2      6.9, 3.0
+                      (i)
+
+
+
+Table 8. QCD SR results for the decay constants, in units of MeV, with the exception of the
+Borel parameter and the threshold which are given in GeV2 -units. The kinetic (µkin = 1 GeV)
+and MS (µm = mc (mc )) schemes are employed for the B- and D-meson case respectively. Input
+values are given in table 14. For the B(D)-meson SR a uniform uncertainty ∆s0 = ±1.5 GeV2
+(∆s0 = ±0.5 GeV2 ), ∆M 2 = ±1.5 GeV2 (∆M 2 = ±0.5 GeV2 ) is applied to the threshold and the
+Borel parameter. The slightly smaller uncertainty assigned to the decay constant SR parameters
+versus those of the residues reflects the fact that the daughter SR is satisfied to within ≈ 0.5% in
+the former but only to within ≈ 2% in the latter. The relative size of the radiative corrections are
+denoted by δX such that fB(i) |XNLO = fB(i) |XLO (1+δX ), with X = {PT, hq̄qi}. For comparison we
+include the most recent lattice determinations. The J P = 0− decay constants are taken from [35]
+which averages over values in [37–40] and [41–45] for the B- and D-mesons, respectively. For the
+J P = 1− states we quote the values obtained in [17]. The experimental values are from the PDG
+review and the extraction of the decay constants involve the CKM matrix |Vub | and |Vcd(s) | as inputs.
+The PDG-error is from the experiment and the CKM input in the first and second parentheses
+respectively. Note that the central values for fB1 and fB1s from [15] deviate considerably from ours
+which might be due to discrepancies in the O(αs )hq̄qi-corrections (cf. remarks at the end of the
+first paragraph in section 4).
+
+
+
+
+                                                         – 19 –
+                             fB           f Bs    fB ∗     fBT ∗     fD     fDs     fD ∗     T
+                                                                                            fD ∗
+
+           Value         192.3        224.8      209.0    199.7    189.6   225.7   226.7   202.1
+                          +19.7       +21.3      +22.6    +20.7    +14.7   +17.1   +18.3   +16.0
+           Error          −18.6       −20.3      −21.2    −19.5    −15.4   −17.4   −16.5   −16.3
+
+           ∆sf0B          +11.0
+                          −9.5
+                                      +12.3
+                                      −10.8
+                                                 +12.0
+                                                 −10.4
+                                                          +10.7
+                                                          −9.2
+                                                                   +10.5
+                                                                   −8.9
+                                                                           +10.8
+                                                                           −9.2
+                                                                                   +13.1
+                                                                                   −11.1
+                                                                                           +11.6
+                                                                                           −9.9
+                           +0.0        +0.0       +0.0     +0.0     +0.0    +0.0    +0.6    +0.8
+           ∆Mf2B           −1.8        −2.0       −1.0     −0.5     −1.7    −1.6    −0.2    −0.0
+                          +11.4       +11.8      +14.1    +12.9     +2.0    +2.0
+           ∆mh            −11.7       −12.0      −14.6    −13.4     −1.9    −1.8   ±6.1    ±4.4
+           ∆hq̄qi         ±1.7        ±1.4       ±1.7     ±1.8     ±2.7    ±2.2    ±3.0    ±2.8
+                          +11.2       +11.9      +12.4    +11.2
+           ∆µkin                                                    −       −       −       −
+
+
+
+
+                                                                                                           JHEP09(2021)023
+                          −10.1       −10.8      −10.5    −9.5
+                                                                   +4.5    +4.4     +9.1    +6.6
+           ∆µm             −              −       −        −       −10.2   −11.8    −8.1    −9.2
+                           +1.8        +2.6       +1.0     +0.9     +7.5   +11.1    +0.7    +0.5
+           ∆µαs            −3.7        −5.2       −2.0     −1.8     −4.4   −6.4     −1.2    −0.9
+                                                           +1.7                             +3.2
+           ∆µUV            −              −       −        −2.0     −       −       −       −3.8
+
+           ∆ hq̄qi
+             hs̄si         −          ±2.8        −        −        −      ±3.4     −       −
+           ∆hd            ±1.0        ±0.5       ±3.1     ±3.7     ±3.8    ±3.2    ±5.4    ±5.8
+
+Table 9. Breakdown of the main contributions to the uncertainty for a representative selection
+of decay constants in units of MeV in the kinetic scheme. The uncertainty ∆hd covers higher
+dimensional condensates omitted from the OPE which are estimated as the values of the d = 4, 5
+condensates. This is conservative as the four quark condensates are known to be a sub per mille
+effect. The total uncertainty also includes contributions not shown in the table, such as ∆m20 which
+has a negligible impact.
+
+
+and [36]. We differ from these results mainly in two aspects. First we do not include
+partial NNLO effects but treat the mass scheme and the factorisation scale dependence
+µcond separately and thus more carefully. Secondly, we use a significant update of the
+strange quark condensate. We note that our values are also consistent with the classic
+Jamin and Lange result [13], (fB , fBs ) = (210(19), 244(21)) MeV.
+
+4.2.1   Ratios of decay constants
+Some of the decay constants are related by heavy quark and/or SU(3)F symmetries, and
+thus there is some tradition in investigating ratios and determining their deviation from
+unity. A total of 24 ratios are shown in table 10 (cf. table 13 for the MS-evaluation of the
+B-meson ratios).
+    SU(3)F -type ratios such as fBs /fB are typically above 1 as one would intuitively expect.
+We quote our results, denoted by “PZ” for brevity instead of “this work”, against some
+results from the literature
+                                              
+                     
+                         f Bs f D s
+                                              (1.17(7), 1.19(7)
+                                                               ) PZ SRs
+                             ,            = (1.209(5), 1.174(7) ) [35] lattice    .                (4.4)
+                         fB fD             
+                                             (−        1.265(36)) [31] experiment
+                                           
+
+Comparison with the lattice average and shows that there is good agreement albeit the
+precision in lattice QCD, at the sub per mille level, is beyond reach for QCD SRs. The
+
+
+
+
+                                                         – 20 –
+  fBs /fB     fBs∗ /fB ∗       fB1s /fB1    fBTs∗ /fBT ∗   fBT1s /fBT1       fDs /fD        fDs∗ /fD∗    T /f T
+                                                                                                        fD ∗
+                                                                                                           s D∗
+    1.17(7)    1.17(7)           1.23(8)     1.18(6)         1.24(8)         1.19(7)         1.23(8)     1.27(8)
+  fB ∗ /fB     fB1 /fB         fB1 /fB ∗     fBT ∗ /fB       fBT1 /fB     fBT1 /fBT ∗       fD∗ /fD      T /f
+                                                                                                        fD ∗  D
+
+    1.09(6)    1.29(9)           1.18(9)     1.04(6)         1.20(9)         1.15(9)        1.20(11)     1.07(9)
+ fBs∗ /fBs    fB1s /fBs        fB1s /fBs∗   fBTs∗ /fBs     fBT1s /fBs    fBT1s /fBTs∗       fDs∗ /fDs    T /f
+                                                                                                        fD ∗
+                                                                                                           s
+                                                                                                              Ds
+
+    1.09(6)    1.36(8)           1.24(8)     1.05(5)         1.27(8)         1.21(8)         1.23(9)     1.13(7)
+
+Table 10. Ratios of various decay constants in the kinetic(MS) scheme for the B(D)-mesons.
+
+
+
+
+                                                                                                                    JHEP09(2021)023
+Comparison with the literature can be found in section 4.2.1. Ratios in the MS scheme for the
+B-mesons are given in table 13.
+
+
+
+above lattice values are averaged over the works of [37, 39, 47, 48] and [42, 43, 45] for the B-
+and D-ratio respectively. The PDG value, for which the CKM matrix elements |Vcd(s) | are
+inputs, deviates close to three standard deviations from the lattice result. Further ratios
+of interest stem from heavy quark symmetry which groups the B and the B ∗ meson into
+the same multiplet as in this (non-relativistic) limit the spin ceases to matter. Deviations
+of the rations from one therefore highlight sensitivities to effects beyond that limit and
+comparison with the literature
+
+                                
+                                
+                                
+                                
+                                
+                                  (1.09(6),       1.09(6),       1.20(11), 1.23(9) ) PZ SRs
+                                  (1.02+0.02      1.04+0.01      1.20+0.13       +0.13
+                                
+                                       −0.09 ,        −0.08 ,        −0.07 , 1.24−0.05 ) [14] SRs
+                                
+                                
+                                
+                                
+                                
+                                
+                                  (0.944(11)(18), 0.947(23)(20), −           −         ) [49] SRs
+                                
+                                
+                                
+    fB ∗ fBs∗ fD∗ fDs∗
+                              
+                                
+        ,    ,   ,     = (−                           −                  −              1.10(2)    ) [12] lattice
+    f B f Bs f D f D s  
+                        
+                          (1.051(17),                 −                  1.208(27), −              ) [50] lattice
+                        
+                        
+                        
+                        
+                               
+                                  (0.941(26),         0.953(23),         −              −          ) [51] lattice
+                                
+                                
+                                
+                                
+                                
+                                
+                                (0.958(22),
+                                
+                                                      0.974(10),         1.078(36), 1.087(20)) [17] lattice
+
+
+does show some minor tension between the results. Note that the lattice result [50] is with
+Nf = 2 and [17, 51] are with Nf = 2 + 1 and thus more reliable. For further discussion of
+the possible reasons for discrepancies cf. section IV in [51].
+      We now proceed to give some detail on of the individual uncertainties of the ratios
+in the SR computation. In both the B- and D-meson rations the effective thresholds
+prove to be the largest source of uncertainty. Whilst correlations between the thresholds,
+discussed previously, act to constrain the error the contribution to the total uncertainty is
+still significant, sitting in the region of ≈ 70–80%. The remaining uncertainty can be mostly
+attributed to the associated quark mass and in the D-meson rations the coupling scale µαs
+provides a contribution to the total uncertainty of a similar order. For the SU(3)F -ratios
+in (4.4), the quark condensate ratio hs̄si/hq̄qi provides a notable contribution to the total
+uncertainty.
+
+
+
+
+                                                      – 21 –
+                        Γ(B ∗0 → B 0 γ)      Γ(Bs∗ → Bs γ)         Γ(B ∗+ → B + γ)
+                        0.16+0.06
+                            −0.06 keV        0.24+0.08
+                                                 −0.08 keV         0.45+0.17
+                                                                       −0.16 keV
+
+                        Γ(B10 → B 0 γ)       Γ(B1s → Bs γ)         Γ(B1+ → B + γ)
+                        26.22+17.00
+                             −17.00 keV      41.14+22.44
+                                                  −22.44 keV       99.30+57.92
+                                                                        −55.16 keV
+
+                        Γ(D∗0 → D0 γ)        Γ(Ds∗ → Ds γ)         Γ(D∗+ → D+ γ)
+                        27.83+9.23
+                             −9.50 keV       2.36+1.49
+                                                 −1.41 keV         0.96+0.58
+                                                                       −0.62 keV
+
+    Table 11. Decay rates based on the g-couplings in table 7 and the decay rate formula (2.2).
+
+
+
+
+                                                                                                                 JHEP09(2021)023
+5        Summary and discussion
+
+In this work we have determined the couplings of photons to heavy-light quark mesons (2.3)
+from light-cone sum rules at next-to-leading order in αs at the twist-1,-2 level, at leading
+order in twist-3, and partial twist-4.14 We have also investigated the effect of various
+duality regions (cf. section 3.4.1 and table 5) and have found the impact to be small. Our
+main results, with uncertainties of O(15%), are given in table 7 along other theoretical and
+experimental results for comparison. The residues related to the B̄ → γ form factors, as
+in (2.4) and (2.5), are given in table 6. As a by-product we have determined the heavy
+                                   T and f T (H = B, D) in QCD sum rules at next-to-leading
+decay constants fH , fH ∗ , fH1 , fH ∗    H1
+order. To the best of our knowledge {fBT ∗ (D∗ ) , fBT1 } have not been evaluated with QCD
+       15
+
+sum rules and we therefore close a gap in the literature. Agreement is found with existing
+results, where comparison is possible, on the analytic and numerical level cf. table 8. Our
+treatment differs, besides a significant update to the strange quark condensate, in that we
+treat the mass-scheme and the factorisation scale dependence µcond separately and thus
+more carefully, but do not include partial O(αs2 ) corrections to perturbation theory. Ratios
+of decay constant are given in table 10 and compared to the literature in section 4.2.1. We
+now turn to phenomenological aspects. The coupling determinations lead to the radiative
+decay predictions given in table 11, consistent with the experimentally known D+ /D0 -rates.
+It’s unfortunate that the B-rates are not experimentally known as our predictions are more
+reliable in that sector (e.g. independence of the interpolating current and convergence of
+the twist expansion). Particularly for the D+ /Ds -channels there is the additional issue of
+large cancelation of the Qc - and Qq/s -contributions which present a challenge for all theory
+approaches (cf. the discussion in section 3.5.1). An important aspect is the interplay
+with the real QED-corrections in leptonic decays H → `ν̄(γ). This is the case since
+the couplings describe the pole residue (2.4) and [52] which, bearing in mind previously
+mentioned cancellations, should play a significant role in the soft-photon emission. In
+view of the importance of QED-corrections at the precision frontier, these couplings will
+hopefully attract further attention from the experimental and theory community.
+    14
+     We have argued (cf. section 3.3. in [3]) that most twist-4 parameters require the inclusion of 4-particle
+distribution amplitudes which have not been classified to date. This can be seen from the equation of
+motion for the form factors not closing or by writing down the 4-particle distribution amplitude of twist-4
+and subjecting it to the equation of motion of distribution amplitudes.
+  15
+     With the exception of the D1 as it is not well isolated cf. footnote 1.
+
+
+
+
+                                                   – 22 –
+Acknowledgments
+
+RZ is supported by an STFC Consolidated Grant, ST/P0000630/1. BP is supported by
+an STFC Training Grant, ST/N504051/1. We are grateful to Marco Pappagallo, Christine
+Davies, Giuseppe Gagliardi, Christopher Sachrajda for useful discussions and to James
+Gratrex for thorough proofreading of the manuscript.
+
+A      Convention, definitions and additional tables
+
+In this appendix we collect conventions, definitions and input parameters.
+
+
+
+
+                                                                                                                         JHEP09(2021)023
+A.1      Convention and definitions
+We use the convention ε0123 = 1 for the Levi-Civita tensor and Dµ = ∂µ + se ieQf Aµ +
+sg igs Aµ for the covariant derivative (e > 0 and Qe = −1 for the electron as a u-spinor).
+Below we will keep explicit factors si in place, which are assumed si = 1 throughout the
+main text, in order to facilitate comparison with the literature. The Bq -meson (q = d, u, s)
+decay constant is defined by
+
+                                        h0|q̄γ µ γ5 b|B̄q (pB )i = sB ipµB fBq ,                                 (A.1)
+
+and for the Bq∗ (1− ) and B1q (1+ ) states via
+
+      h0|q̄ γ µ b|B̄q∗ (p)i = sB ∗ mBq∗ fBq∗ η µ ,        h0|q̄ γ µ γ5 b|B̄1q (p)i = mB1q sB1 fB1q η µ ,
+
+    h0|q̄ σ µν b|B̄q∗ (p)i = isB ∗ fBTq∗ η [µ pν] ,     h0|q̄ σ µν γ5 b|B̄1q (p)i = −isB1 fBT1q η [µ pν] .       (A.2)
+
+The definition for the D−, D∗ - and D1 -mesons are analogous. With these conventions the
+couplings the effective Lagrangian (2.3) assumes the form
+                        1
+       Leff = se sB sB ∗ gBB ∗ γ (B ∗ , ∂B † , F ) − ise sB sB1 gBB1 γ B1α ∂β B † F αβ + h.c. .                 (A.3)
+                        2
+For completeness we state the definition of the B → γ form factors used in [3]
+                                                                                                             !
+                                                                                    2fBq /mBq
+      hγ(k, )|OµV |B̄q (pB )i = sB se (Pµ⊥ V⊥ (q 2 ) − Pµk              2
+                                                                    Vk (q ) + QB̄q               + ...           ,
+                                                                                   1 − q 2 /m2Bq
+
+      hγ(k, )|OµT |B̄q (pB )i = sB se (Pµ⊥ T⊥ (q 2 ) − Pµk Tk (q 2 )) ,                                         (A.4)
+                       k
+where Pµ⊥ and Pµ are defined in the main text (3.3), QB̄q is the B̄-meson charge and the
+dots represents the Low-term (or contact term) which is not important for this paper (cf. [3]
+for details). Note that, the point-like term, proportional to fB , is not be included for the
+gBu B1u γ coupling as it is not associated with the B1u -pole. The local operators in (A.4)
+                V [T ]    V [T ]  V [T ]
+are given by Oµ        ≡ O⊥µ + Okµ , with
+
+                               V      1                         T   1
+                              O⊥µ ≡ − mBq q̄γµ b ,             O⊥µ ≡ q̄iq ν σµν b ,
+                                      e                             e
+                               V    1                           T   1
+                              Okµ ≡ mBq q̄γµ γ5 b ,            Okµ ≡ q̄iq ν σµν γ5 b .                           (A.5)
+                                    e                               e
+
+
+
+                                                        – 23 –
+H( MeV)                      B(5280)          Bs (5367)      B ∗ (5325)        Bs∗ (5415)      B1 (5726)          B1s (5829)
+fB(i)                        213+22
+                                −16           248+23
+                                                 −17         218+23
+                                                                −27            260+23
+                                                                                  −22          288+25
+                                                                                                  −24             341+20
+                                                                                                                     −24
+
+ δPT , δhq̄qi                -0.03, -0.11     0.03, -0.06    -0.18, -0.23      -0.12, -0.22    -0.11, -0.19       -0.05, -0.13
+    fB(i)
+ s0         , Mf2B           33.6, 6.0        34.9, 7.2      33.7, 6.5         35.0, 6.8       39.0, 7.5          40.8, 9.4
+                     (i)
+
+H( MeV)                                                      B ∗ (5325)T       Bs∗ (5415)T     B1 (5726)T         B1s (5829)T
+fBT(i)                                                       208+21
+                                                                −23            249+20
+                                                                                  −19          267+21
+                                                                                                  −22             318+18
+                                                                                                                     −22
+
+ δPT , δhq̄qi                                                -0.16, -0.24      -0.11, -0.24    -0.09, -0.19       -0.04, -0.14
+
+
+
+
+                                                                                                                                 JHEP09(2021)023
+    fB(i)
+ s0         , Mf2B                                           33.7, 6.5         35.0, 6.8       39.0, 6.2          40.8, 9.4
+                     (i)
+
+
+
+Table 12. B-meson decay constants, MeV-units, determined in the MS scheme (kinetic scheme
+values in table 8)) with the Borel parameter and effective threshold given in GeV2 -units.
+
+                           fBs /fB       fBs∗ /fB ∗    fB1s /fB1      fBTs∗ /fBT ∗   fBT1s /fBT1
+                      1.17+0.07
+                          −0.07        1.18+0.08
+                                           −0.08       1.18+0.08
+                                                           −0.06    1.19+0.07
+                                                                        −0.07        1.18+0.08
+                                                                                         −0.05
+
+                           fB ∗ /fB       fB1 /fB      fB1 /fB ∗       fBT ∗ /fB        fBT1 /fB    fBT1 /fBT ∗
+                      1.04+0.13
+                          −0.08        1.35+0.12
+                                           −0.08       1.30+0.09
+                                                           −0.10    0.98+0.11
+                                                                        −0.07        1.26+0.09
+                                                                                         −0.07     1.28+0.08
+                                                                                                       −0.10
+
+                       fBs∗ /fBs      fB1s /fBs        fB1s /fBs∗     fBTs∗ /fBs     fBT1s /fBs    fBT1s /fBTs∗
+                      1.05+0.12
+                          −0.07        1.37+0.09
+                                           −0.08       1.31+0.08
+                                                           −0.11    1.00+0.11
+                                                                        −0.07        1.28+0.08
+                                                                                         −0.07     1.27+0.10
+                                                                                                       −0.08
+
+Table 13. Ratios of decay constants in the MS scheme. The asymmetry of the uncertainty, most
+pronounced in the pseudo-scalar vs. vector vs. tensor channels, arises from an asymmetric variation
+of the MS scale, cf. table 1. The corresponding ratios in the kinetic scheme are given in table 10
+which are compatible within uncertainties.
+
+
+A.2         Additional tables
+Here we provide some additional tables, namely the input parameters table 14, MS deter-
+minations of the decay constants table 12 and their ratios table 13.
+     We note that when fixing the SR parameters via the daughter SR we observe that the
+optimal value of the effective threshold for the B ∗ decay constant sits below that of the
+B. Clearly this does not make sense from a physical point of view and so we relax the
+condition on the daughter SR (4.3) such that it reproduces the associated meson mass to
+within 1.5%, which allows for the physical ordering of the thresholds to be imposed. We
+do not observe this problem when evaluating in the kinetic scheme which is another reason
+in its favour.
+
+                                                     T        T
+B        Analytic results for the fH , fH ∗ , fH1 , fH ∗ and fH
+                                                                1
+                                                                  decay constants
+
+In this appendix we provide the analytic results for the decay constants {fB , fB ∗ , fB1 ,
+fBT ∗ , fBT1 }, with straightforward substitutions for the their D-meson counterparts. The
+
+
+
+
+                                                               – 24 –
+                                      Running coupling parameters
+   αs (mZ ) [31]       mZ [31]
+    0.1176(20)        91.19 GeV
+                                       J P = 0− Meson masses [31]
+       mB 0              mB +                  mB s               mD0               mD+                  mDs
+    5.280 GeV         5.280 GeV           5.367 GeV            1.865 GeV         1.870 GeV           1.968 GeV
+                                       J P = 1− Meson masses [31]
+
+
+
+
+                                                                                                                        JHEP09(2021)023
+       mB ∗0            mB ∗+                  mBs∗               mD∗0              mD∗+                 mDs∗
+    5.325 GeV         5.325 GeV           5.415 GeV            2.007 GeV         2.010 GeV           2.112 GeV
+                                       J P = 1+ Meson masses [31]
+       mB 0              mB +                  mB1s               mD0               mD+                 mD1s
+           1                 1                                        1                   1
+
+    5.726 GeV         5.726 GeV           5.829 GeV            2.421 GeV         2.423 GeV           2.460 GeV
+                                            Quark masses [31]
+     ms|2GeV           mb (mb )            mc (mc )               mpole
+                                                                   b                mpole
+                                                                                     c             mkin
+                                                                                                    b (1 GeV)
+                                                                                                              †
+
+
+   92.9(7) MeV       4.18(4) GeV         1.27(2) GeV           4.78(6) GeV      1.67(7) GeV         4.53(6) GeV
+                                                Condensates
+  hq̄qi|2GeV [53]      hs̄si [54]         hG2 i [7, 8]           m20 [55]
+ −(269(2) MeV)3      1.08(16)hq̄qi      0.012(4) GeV4          0.8(2) GeV2
+
+Table 14. Summary of input parameters. † Value obtained by using the O(αs2 ) conversion between
+the MS and the kinetic mass given in [38]. The uncertainty is obtained by adding in quadrature
+the uncertainty due to the MS mass and the conversion formula. For the meson masses we have
+not indicated an uncertainty as they are negligible. We refer to [3] for all the input concerning the
+photon DA that enters the light-cone sum rule computation.
+
+
+fBT ∗ , fBT1 results are new and comparison with the literature with regards to fB , fB ∗ , fB1 is
+commented on at the beginning of section 4. We give the results in terms of the densities
+                                          fB
+ρfB (s) and Wilson coefficients cj (i) that enter (4.2). The densities are related to the
+   (i)
+correlation functions as follows
+
+               1 Ims ΓfB (s)                      1                                      1
+   ρfB (s) =                 ,       ρfB∗ (s) =     Ims ΓfB∗ (s) ,        ρf T ∗ (s) =     Ims Γf T ∗ (s) .     (B.1)
+               π (mb + mq )2                      π                         B            π       B
+
+
+
+The Wilson coefficients are presented after integration and can therefore depend on the
+effective threshold. For comparison with the literature cf. footnote 13 in the main text.
+     The leading contribution to the local OPE is the perturbative one which we further
+decompose into LO and NLO parts
+                                                         αs (1)
+                                    ρ(s) = ρ(0) (s) +      ρ (s) + . . . .                                      (B.2)
+                                                         π
+
+
+
+                                                      – 25 –
+At LO, including corrections due to the light quark mass to O(m2q ), we find
+
+                                                              m2q
+                                                                     !
+                    (0)           Nc        2     mq
+                   ρfB (s) =           s z̄   + 2    z z̄ − 2     z ,
+                                  8π 2            mb          m2b
+                                                                       m2q
+                                                                                       !
+                    (0)            Nc                      mq
+                   ρfB∗ (s) =           s z̄ 2
+                                               (z + 2) + 6    z z̄ − 3   2 z(z 2 + 1) ,
+                                  24π 2                    mb          mb
+                                                                           m2q
+                                                                                   !
+                    (0)        Nc                               mq
+                   ρf T (s) =       s         z̄ 2 (2z + 1) + 6    z z̄ − 6 2 z 3 ,                   (B.3)
+                     B ∗      24π 2                             mb         mb
+
+
+
+
+                                                                                                              JHEP09(2021)023
+whilst at NLO,
+                         "                                                                             #
+   (1)      Nc C F           9
+  ρfB (s) =     2
+                   sz̄         z̄+(z−3)(2z−1) ln z+ z̄(2z−5+2 ln z) ln z̄+4z̄Li2 (z)−(3z−1)rS ,
+             16π             2
+                       "
+  (1)       Nc C F           5  2     5     1                   1
+ ρfB∗ (s) =     2
+                   s       1− z+ z 2 + z 3 + z(5z 2 −4z−5) ln z− z̄ 2 (5z+4−2(z+2) ln z) ln z̄
+             16π             2  3     6     3                   3
+                                                     #
+             4
+            + z̄ 2 (z+2)Li2 (z)+z(z 2 −1)rS ,
+             3
+                       "
+  (1)       Nc C F         7            32
+ ρf T (s) =        s         +2z−15z 2 + z 3 +2(8z 3 −11z 2 +2z−1) ln z+8z̄ 2 (2z+1)Li2 (z)
+   B ∗      96π 2          3            3
+                                                                               !           #
+                                                             µ2UV
+            −2z̄ 2 (8z+1−2(2z+1) ln z) ln z̄−2z̄ 2 (2z+1) ln      −12z 2 z̄rS ,                       (B.4)
+                                                             m2b
+
+with the O(mq ) corrections given by,
+                                  "
+       (1)      Nc CF mq
+  δmq ρfB (s) =          s            3z − 3z 2 + z(z 2 − 5z + 3) ln z + z z̄(z − 4 + ln z) ln z̄
+                 4π 2 mb
+                                                         #
+                                 1
+                 + 2z z̄Li2 (z) − z(3z − 2)rS ,
+                                 2
+                                  "
+       (1)       Nc CF mq             9           1
+  δmq ρfB∗ (s) =          s             z − 5z 2 + z 3 − z(z 2 + 4z − 3) ln z − z z̄(z + 5 − 2 ln z) ln z̄
+                  8π 2 mb             2           2
+                                                     #
+                 + 4z z̄Li2 (z) − z(2z − 1)rS ,
+
+                                  "
+       (1)       Nc CF mq
+  δmq ρf T (s) =          s           3z − 3z 2 − z(z 2 + z − 1) ln z − z z̄(z + 2 − ln z) ln z̄
+        B∗        4π 2 mb
+                                                         !                 #
+                                 1                µ2UV        1
+                 + 2z z̄Li2 (z) + z̄z ln                     + z(1 − 3z)rS ,                          (B.5)
+                                 4                m2b         4
+
+
+
+
+                                                      – 26 –
+where z ≡ m2b /s. The µUV dependence is consistent with the anomalous scaling (2.7).
+    The Borel subtracted non-perturbative contributions are given by,
+                    "
+                             mq mb mq
+       cfhq̄qi
+          B
+               =−       1−      −
+                             2mb 2M 2
+                              (                               !                 !      )#
+                αs CF        3   µ2cond   3 m2b
+              +       1+3Γ0 − ln        +  −    rS                                          ,
+                 2π          2    m2b     2 M2
+                    "
+        fB ∗                 mb mq
+
+
+
+
+                                                                                                                                      JHEP09(2021)023
+       chq̄qi =−        1−
+                             2M 2
+                              (                                         !                  !     )#
+                αs CF                m2       3   µ2cond   1 m2b
+              +                   −1− b2 Γ−1 − ln        +  −    rS                                   ,
+                 2π                  M        2    m2b     2 M2
+                    "
+        fBT
+            ∗                mq mb mq
+       chq̄qi =−        1+      −
+                             2mb 2M 2
+                              (                           !                     !                   !     )#
+                αs CF                       µ2UV   3    µ2cond   1 m2b
+              +                   −1−Γ0 −ln      −   ln        +  −    rS                                         ,           (B.6)
+                 2π                         m2b    2     m2b     2 M2
+
+
+                                                                                                                      !
+                 1                                fB ∗      1                 T
+                                                                             fB        1             2m2b
+       cfhG
+                                                                                ∗
+                                                     2i = −                     2i = −
+          B
+            2i =    ,                            chG           ,            chG                   1+      Γ−1             ,
+                 12                                         12                         12            M2
+                                       !                                                                  !
+                   1             m2b              fB ∗      m2b              fBT      1            3m2b
+       cfhq̄Gqi
+                                                                                 ∗
+          B
+                =−           1−             ,    chq̄Gqi =      ,           chq̄Gqi =           1+            ,               (B.7)
+                   2            2M 2                       4M 2                       6            2M 2
+
+where the Borel parameter M 2 → Mf2B                      accordingly, and
+                                                    (i)
+
+
+
+                                            m2
+                                                                                    !!
+                                                      s0                     m2
+                                                                 
+                                             b
+                                   Γk = e   M2    Γ k, 2               − Γ k, b2            ,                                 (B.8)
+                                                      M                      M
+
+                 R∞
+with Γ(n, z) =      z    dt tn−1 e−t denoting the incomplete gamma function. The quantity
+                                                   
+                                                    µ2m
+                                              3 ln      +4                   MS
+                                            
+                                            
+                                                    m2b
+                                            
+                                            
+                                            
+                                     rS =     0                              pole      ,                                      (B.9)
+                                            
+                                            
+                                                 µkin     µ2kin
+                                             16
+                                            
+                                            
+                                               3 m   b
+                                                      + 2    2    mb
+                                                                             kinetic
+
+is a factor that depends on the mass scheme. Above we have also included the leading
+light quark mass corrections to the LO quark condensate contribution. As mentioned in
+section 4.1, we have verified that the NLO scale dependence, in µUV and µcond , is consistent
+with the LO expression.
+
+
+
+
+                                                          – 27 –
+    The SRs for the J P = 1+ decay constants can be obtained from the J P = 1− ones by
+changing the sign of certain contributions according to their chirality,
+                                                                                   (T )                  (T )
+                                                                               fB                    f    ∗
+                                         ρf (T ) = ρf (T ) ,                  chq̄qi1 = −chq̄qi
+                                                                                           B
+                                                                                                ,
+                                            B1             B∗
+
+                                            (T )           (T )                (T )                      (T )
+                                          fB           f    ∗
+                                                                              fB                     f    ∗
+                                                     B
+                                         chG12 i = chG 2i ,
+                                                                                1
+                                                                            chq̄Gqi = −chq̄Gqi
+                                                                                         B
+                                                                                               ,                                       (B.10)
+
+in spirit with the parity doubling proposal in [34].
+
+C     Double dispersion relation
+
+
+
+
+                                                                                                                                                    JHEP09(2021)023
+In computing the densities we are faced with the following problem. We have an analytic
+function F (p2B , q 2 ) for which it is straightforward to derive a single dispersion relation
+
+                                                                                    ρ(s, q 2 )
+                                                                      Z ∞
+                                           F (p2B , q 2 ) =                  ds                ,                                        (C.1)
+                                                                      m2b         s − p2B − i0
+
+where the density is formally given by πρ(s, q 2 ) = Ims F (s, q 2 ). The density can be decom-
+posed into poles in s = q 2 such that
+                                                                                                             ρn (s, q 2 )
+                         X                                                            Z ∞
+      F (p2B , q 2 ) =         Fn (p2B , q 2 ) ,          Fn (p2B , q 2 ) =                     ds                             .        (C.2)
+                         n≥0                                                              m2b        (s − p2B − i0)(s − q 2 )n
+
+The singularities in s = q 2 are of so-called second type, which are special solutions of the
+Landau equations [20, 22]. It is our task to write the q 2 -dependence of (C.2) dispersively,
+say in an integral over dt, and impose a continuum subtraction. The duality interval is
+discussed in (3.17) in the main text.
+
+C.1     Leading order
+At LO in PT the ρi themselves contain no non-trivial cuts. Consequently, the poles provide
+the only contribution to the discontinuity in q 2 , allowing us to write
+                                                   Z δ̄s(a) (m2 )           Z δ̄ (a) (s)
+                                          1                       b             t               ρn (s, t)δ (n−1) (t − s)
+                   Fn (p2B , q 2 ) =                                  ds                   dt                            ,              (C.3)
+                                         Γ(n)       m2b                      m2b                  (s − p2B )(t − q 2 )
+
+where the continuum subtraction has been implemented as in (3.17). Partially integrating
+and performing the integrals over the δ-functions we obtain,
+
+                  (−1)   n−1 Z σ0(a)
+                                               (n−1)
+Fn (p2B , q 2 ) =
+                                                                                    
+                                         ds ∂t            ρn (s, t)g(s, t)                t→s
+                   Γ(n)           m2b
+                       n−1                   n−`
+                   1 X                s̃a
+                                                                                                                                
+                                                            (`−1)
+                +          (−1)`−1 a 0 a         ∂s(n−`−1) ∂t     [ρn (s, t)g(s, t)] t→δ̄(a) (s)                                                ,
+                  Γ(n) `=1         s̃0 + t̃0                                             t                                                (a)
+                                                                                                                                       s→σ0
+                                                                                                                                        (C.4)
+
+with g(s, t) = 1/(s − p2B − i0)(t − q 2 − i0). The double Borel transform can then be trivially
+                                                  2    2
+computed by taking g(s, t) → ĝ(s, t) = e−s/M1 −t/M2 .
+
+
+
+
+                                                                      – 28 –
+C.2      Next-to-leading order
+At NLO the situation is complicated by ρn (s, q 2 ) containing polylogarithmic terms that
+contribute to the discontinuity in q 2 in addition to the poles. To lessen this complication
+only provide a derivation of the double dispersion relation for n ≤ 3, which is sufficient for
+the case at hand where the density can be decomposed as
+                                      ρ1 (s, q 2 )   ρ2 (s, q 2 )   ρ3 (s, q 2 )
+                               ρ(s, q 2 ) = ρ0 (s, q 2 ) +
+                                              2
+                                                   +        2   2
+                                                                  +              . (C.5)
+                                       (s − q )      (s − q )       (s − q 2 )3
+Without committing to a specific value for the parameter a, we obtain formally a double
+dispersion relation, with continuum subtraction as in (3.17),
+
+
+
+
+                                                                                                                                                                JHEP09(2021)023
+                           Z δ̄ (a) (m2 )                       (a)
+                                                            δ̄s (t) ds                    δ̄t (mb ) dt
+                                                                                                               (a)       2
+                                                  dt
+                                                            Z                                              Z
+                                 t           b
+  Fs̃t̃00 (p2B , q 2 ) =                               P s               ρ̂(s, t)+P  (a)                 ρ̄(t, p2B , q 2 , s̃0 , t̃0 )
+                            m2b                  t−q 2     m2b     s−p2B            σ0   m2b       t−q 2
+                               Z σ(a)
+                                     0        ds
+                           +                       ρ̃(s, q 2 )+C(p2B , q 2 , s̃0 , t̃0 ) ,                                                              (C.6)
+                                 m2b         s−p2B
+where Fs̃t̃00 → F as s̃0 , t̃0 → ∞. The function ρ̄(t, p2B , q 2 , s̃0 , t̃0 ) arises from partial integra-
+tion in s in order to reduce the integrands to simple 1/(s − t)-poles. The natural order
+of integration has been reversed in an attempt to remove complications at the lower in-
+tegration boundary when integrating-by-parts. The order-1 poles, hidden in ρ̂(s, t) and
+ρ̄(t, p2B , q 2 , s̃0 , t̃0 ), are handled with the principle part prescription, with Px denoting the
+principal value w.r.t. to 1/(x − t). In terms of ρi , the above functions read
+                                                                                                                 !0                       !00 
+                              1          1                    Imt ρ2                                                      1        Imt ρ3
+                    ρ̂(s, t) = Imt ρ0+      Imt ρ1−(s−p2B )                                                            +                          ,
+                              π         s−t                    s−p2B                                                       2        s−p2B
+                                                                                                      !0 
+                                    1    Imt ρ2     1 1                                      Imt ρ3
+   ρ̄(t, p2B , q 2 , s̃0 , t̃0 ) = −     2       +                                                            
+                                    π (s−pB )(s−t) 2 s−t                                     s−p2B                       (a)
+                                                                                                                   s=δ̄s (t)
+                                                  "                                                                                      !#
+                                           1 1 t−q 2                        Imt ρ3
+                                         −       (a)
+                                                         ∂t            (a)                (a)
+                                                                                                                                              ,
+                                           π 2 δ̄s (t)−t    (t−q 2 )(δ̄s (t)−p2B )(1−∂t δ̄s (t))
+                                         "                            0                     00 #
+                              Reρ1    Reρ2                                   1       Reρ3
+                                                                                
+                             2
+                  ρ̃(s, q ) =     2
+                                    −                                      +                               ,
+                              s−q     t−q 2                                  2       t−q 2           t→s
+                                                                                                                                             (a)    2
+                                                                                              t=δ̄t (mb )
+                                                                                                                                    
+                                1 1                   Imt ρ3 s=δ̄(a) (t)
+        2    2                                                      s
+     C(pB , q , s̃0 , t̃0 ) = −                                                             
+                                π 2 (t−q 2 )(δ̄s(a) (t)−p2 )(δ̄s(a) (t)−t)(1−∂t δ̄s(a) (t))        2
+                                                                                     B                                                   t=mb
+                                                        
+                                                           Reρ2 s,t→σ(a)
+                                                                                                                                              !
+                                             s̃a                               1                                            Reρ3
+                                         + a 0 a                       0
+                                                                               + ∂t
+                                          s̃0 + t̃0  (σ (a) −p2 )(σ (a) −q 2 ) 2                                  (a)
+                                                                                                               (σ0 −p2B )(t−q 2 )                       (a)
+                                                        0      B    0                                                                              s,t→σ0
+
+                                                                              0        
+                                          1 s̃  a        Reρ 3       (a)
+                                                               t→δ̄t (s)
+                                                                                         
+                                         − a 0 a                                         ,                                                            (C.7)
+                                          2 s̃0 + t̃0 (s−p2 )(δ̄ (a) (s)−q 2 )       (a)
+                                                                                         
+                                                          B     t                 s→σ0
+
+
+
+
+                                                                             – 29 –
+where the prime denotes a derivative w.r.t. the variable s and ρi ≡ ρi (s, t). Above we have
+utilised the fact that Imt ρi (m2b , t) = (Imt ρi (s, t))0 |s→m2 = 0. Application of the principal
+                                                               b
+part to the double integral of (C.6) leads to a technical splitting of the integration region,
+which can be most clearly seen in figure 1. Schematically, one has
+                                                                                         
+    Z δ̄ (a) (m2 )           Z δ̄s(a) (t)          Z σ(a)       Z t−      Z δ̄s(a) (t)       Z δ̄ (a) (m2 ) Z δ̄s(a) (t)
+        t      b                                      0                                           t      b
+                     dt Ps                  ds ≡            dt       ds +              ds +               dt            ds ,
+                                                                                                                             (a)
+     m2b                      m2b                   m2b                 m2b                     t+                         σ0              m2b
+                                                                                                                                                  (C.8)
+which corresponds to triangles B, A, and C of figure 1 respectively.
+
+
+
+
+                                                                                                                                                          JHEP09(2021)023
+D      Subtracted Borel transformation of tree level DA terms
+
+We’re faced with the problem of finding the double Borel transformation of the following
+generic function (` = 0, 1)
+
+                                                                                             (q 2 )` fn (u)
+                                                                             Z 1
+                                                Fn,` (p2B , q 2 ) ≡                     du                  ,                                     (D.1)
+                                                                                0                  Sn
+
+with S ≡ m2b − up2B − ūq 2 and fn (u) some DA multiplying u-dependent prefactors. We
+explain the meaning of the silent label n further below. The formal solution is straightfor-
+ward
+                                             q        2                p2
+                       F̂n,` (M12 , M22 ) ≡ Bsub.M                   2    2
+                                                   2 Bsub.M 2 Fn,` (pB , q )
+                                                       B
+                                                               2                1
+                                                                                                                      
+                                                   Z δ̄s(a) (m2 )            Z δ̄ (a) (s)           −        s
+                                                                                                                + t2
+                                                                   b                t
+                                                                                                            M2   M
+                                               =                       ds                     dte             1    2       ρFn,` (s, t) ,         (D.2)
+                                                     m2b                        m2b
+
+            (a)                  (a)
+where δ̄s (t) and δ̄t (s) are defined in section 3.4.1 and (2πi)2 ρFn,` ((s, t) = discs disct
+Fn,` (s, t) is the density of the double dispersion representation of
+                                                               Z ∞            Z ∞
+                                                                                                 ρFn,` (s, t)
+                                       Fn,` (p2B , q 2 ) =              ds               dt                        .                              (D.3)
+                                                               m2b               m2b          (s − p2B )(t − q 2 )
+
+If one commits to a specific function f (u) the du-integral can be done and its double dis-
+persion integral can be worked out in a relatively straightforward manner. In the literature
+           (0)                                                                    (0,1)
+the case F1 has been worked out more generically [56] which we generalise to Fn . The
+function fn is expanded, anticipating a change of variable, as
+                                                           X
+                                             fn (u) =              ck̃ ūk̃ ,           k̃ ≡ k + (n − 1) ,                                        (D.4)
+                                                           k≥0
+
+and                                                            n−1
+                                                           d
+                                                                                                               X
+                                 fn(n−1) (u) =                              fn (u) = (−1)(n−1)                         c̄k ūk ,                  (D.5)
+                                                          du                                                    k≥0
+
+where c̄k ≡ k̃!k! ck̃ . Above we have assumed that fn (u) ∝ (uū)
+                                                                        n−1 (1 + O(u, ū)) which
+
+is a sufficient condition for the function Fn,` (p2B , q 2 ) (D.1) to be free from 1/(p2B − q 2 )
+
+
+
+
+                                                                            – 30 –
+singularities.16 The first dispersion representation can be obtained by a change of variable
+
+                                                  m2b − q 2                    s − m2b
+                                         u=                 ,        ū =              ,                                             (D.6)
+                                                  s − q2                       s − q2
+
+for which
+                                                                                       (s − m2b )k
+                                                                Z ∞
+                                              1 X
+                       Fn,0 (p2B , q 2 ) =            c̄k              ds                                          .                 (D.7)
+                                             Γ[n] k≥0            m2b           (s − p2B )(s − q 2 )1+k̃
+
+At this level any further singularities are induced by 1/(s − q 2 )1+k̃ and, as discussed in
+the previous section, correspond to so-called second type singularities. These singularities
+
+
+
+
+                                                                                                                                               JHEP09(2021)023
+cannot appear for Fn,0 (p2B , q 2 ) itself which is a fact that we have used in making the specific
+ansatz (D.4). The double dispersion relation then reads
+
+                                     1 X c̄k (−1)k̃                                        (s − m2b )k δ (k̃) (s − t)
+                                                                Z ∞            Z ∞
+              Fn,0 (p2B , q 2 ) =                                      ds             dt                              ,              (D.8)
+                                    Γ[n] k≥0  k̃!               m2b             m2b          (s − p2B )(t − q 2 )
+
+and its Borel subtracted form assumes the form
+                                                                                                           
+                                               Z δ̄s(a) (m2 )        Z δ̄ (a) (s)
+                      1 X c̄k (−1)k̃                      b                t                 −    s
+                                                                                                 M2
+                                                                                                     + t2
+F̂n,0 (M12 , M22 ) =                                            ds                    dt e         1
+                                                                                                      M
+                                                                                                        2       (s − m2b )k δ (k̃) (s − t) .
+                     Γ[n] k≥0  k̃!                m2b                  m2b
+                                                                                                                                     (D.9)
+We further decompose
+                                             F̂n,0 = I[F̂ ]n,0 + δ[F̂ ]n,0 ,                                                       (D.10)
+
+where I[. . . ] and δ[. . . ] correspond to the integral and boundary terms that arise from
+integration by parts. The former are easily evaluated to
+                              2
+             (M̂ 2 )2−n e−m̂b X
+                                                                     
+ I[F̂ ]n,0 =                      ck̃ ūk̃0 1−Ωk+1,σ(a) ,                                                                          (D.11)
+                    Γ[n]      k≥0
+                                                    0
+
+                              2
+             (M̂ 2 )3−n e−m̂b X                                                                                                
+ I[F̂ ]n,1 =                      ck̃ ūk̃0 m̂2b − k̃ū−1
+                                                       0    1−Ωk+1,σ(a) +(k+1) 1−Ωk+2,σ̂(a)                                               ,
+                    Γ[n]      k≥0
+                                                                    0                   0
+
+
+
+where
+                                            M22                                    M22 M12
+                                  u0 =             ,                 M̂ 2 =                 ,                                      (D.12)
+                                         M12 + M22                                M12 + M22
+and
+                                                                       (a)
+                                                          Γ[k, σ̂0 − m̂2b ]
+                                          Ωk,σ̂(a) =                        ,                                                      (D.13)
+                                                   0            Γ[k]
+        (a)
+with σ0 defined in (3.17) and m̂2b ≡ m2b /M̂ 2 . Above we have given the result for F̂n,1
+in addition which does not pose any new technical challenges as one can simply replace
+q 2 = s − (s − q 2 ) and treat the two terms separately.
+  16
+    There are some cases where this condition is not met do to the presence of ln u and ln ū terms, namely
+      (1)                                        (1)
+{A, T1,3 } and the mass corrections to {Ψ̃(a) , Ψ(v) }, for which an accurate polynomial fit can be made.
+
+
+
+
+                                                          – 31 –
+      The boundary terms evaluate to
+                                                  1 X
+                                δ[F̂ ]n,0 =               c̄k Xk̃k [1] ,
+                                                 Γ(n) k≥0
+                                                  1 X                               
+                                δ[F̂ ]n,1 =               c̄k Xk̃k [s] − X(k̃−1)k [1] ,                                                    (D.14)
+                                                 Γ(n) k≥0
+
+Xk̃k [g(s)] is the functional
+                                                                                                (a)
+                                                                                                                               
+                                                                                           s   δ̄     (s)
+                   k̃                                     k̃−l+1                 −           + t 2
+                         (M22 )1−l             s̃a0
+                                   
+                   X                                                                      M 2      M
+   Xk̃k [g(s)] =                                                     ∂sk̃−l e              1        2
+                                                                                                                (s − m2b )k g(s)                .
+                                                                                                                               
+                               k̃!          s̃a0 + t̃a0
+
+
+
+
+                                                                                                                                                     JHEP09(2021)023
+                   l=1                                                                                                                     (a)
+                                                                                                                                        s=σ0
+                                                                                     (D.15)
+     For further comparison with the literature we adopt the s̃0 , t̃0 → ∞ limit, for which
+Ωk,σ̂(a) → 0, to find
+      0
+                                                      2
+                         (M̂ 2 )2−n e−m̂b
+                 s̃0 ,t̃0 →∞
+            F̂n,0 −−−−−→                  f (u0 ) ,
+                                Γ[n]
+                                                      2
+                         (M̂ 2 )3−n e−m̂b 
+                 s̃0 ,t̃0 →∞
+                                                                                  
+            F̂n,1 −−−−−→                    f (u0 )(m̂2b +2−n)+(1 − ū0 )f 0 (u0 ) ,                                                       (D.16)
+                                Γ[n]
+                                                  k̃     0                        k̃−1
+                                        k≥0 ck̃ ū0 and f (u0 ) = −
+                                    P                               P
+where we used f (u0 ) =                                               k≥0 ck̃ k̃ū0 .
+
+D.1       The special case a = 1 and s̃0 = t̃0 , M12 = M22
+For the case a = 1 and s̃0 = t̃0 , M12 = M22 ≡ 2M̄ 2 with M̂ 2 → M̄ 2 and u0 → 1/2, which
+is the one considered in the literature [56], there are miraculous simplifications. First the
+exponential factor in (D.15) becomes s-independent and (D.14) assumes a more manageable
+form,
+                                                      2
+             a=1,M 2 =M 2      (M̂ 2 )2−n e−m̂b X ck̃
+   δ[F̂ ]n,0 −−−−−1−−−→
+                      2
+                                                        (Ωk+1,ŝ0 −δn1 Ω1,ŝ0 ) ,
+                                      Γ[n]      k≥0 2
+                                                     k̃
+
+                                                      2
+             a=1,M 2 =M 2      (M̂ 2 )3−n e−m̂b X ck̃ 
+   δ[F̂ ]n,1 −−−−−1−−−→
+                      2
+                                                        (k+1)(Ωk+2,ŝ0 −δn2 Ω1,ŝ0 −δn1 Ω2,ŝ0 )+
+                                      Γ[n]      k≥0 2k̃
+                                                                                                                                
+                                m̂2 (Ωk+1,ŝ0 −δn1 Ω1,ŝ0 )−2k̃(Ωk+1,ŝ0 −δn2 Ω1,ŝ0 −δn1 Ω2,ŝ0 ) ,                                       (D.17)
+
+where ŝ0 = s̃0 /2M̂ 2 . Secondly, by adding (D.11) and (D.17) we arrive at a form where
+                                2
+             (M̂ 2 )2−n e−m̂b X ck̃                        (M̂ 2 )2−n    1
+                                                                                                    
+                                                                                2
+   F̂n,0 =                             (1 − δn1 Ω1,ŝ0 ) =            fn   (e−m̂b − δn1 e−ŝ0 ) ,
+                    Γ[n]      k≥0 2
+                                    k̃                      (n−1)!       2
+                                2
+             (M̂ 2 )3−n e−m̂b X ck̃  2                                                              
+   F̂n,1 =                             m̂b (1−δn1 Ω1,ŝ0 ) + (2 − n − k̃)(1−δn2 Ω1,ŝ0 −δn1 Ω2,ŝ0 )
+                    Γ[n]      k≥0 2
+                                    k̃
+                         "
+            (M̂ 2 )3−n         1
+                                      
+                                      2
+          =            m̂2b fn   (e−m̂b −δn1 e−ŝ0 )
+             (n−1)!            2
+                                                 f0 (1)
+                                                             !                                                                  #
+                                           1
+                                                                                                                         
+                                                                         −m̂2b
+                 + (2−n)fn                      + n 2                e           −e   −ŝ0
+                                                                                             (δn2 +δn1 (1+ŝ0 − m̂2b )              ,      (D.18)
+                                           2        2
+
+
+
+                                                               – 32 –
+for which the k-dependence in the Ω-terms cancels! It is remarkable that for this special
+case the continuum subtraction vanishes for n > 1 (n > 2) in F̂n,0 (F̂n,1 ) and accidentally
+renders some results in the literature, where continuum subtractions have been neglected,
+more accurate. Note that F̂1,0 has previously been computed in appendix B of [56] and
+we agree with their result.
+
+Open Access. This article is distributed under the terms of the Creative Commons
+Attribution License (CC-BY 4.0), which permits any use, distribution and reproduction in
+any medium, provided the original author(s) and source are credited.
+
+
+
+
+                                                                                                    JHEP09(2021)023
+References
+
+ [1] Y.Y. Balitsky, V.M. Braun and A.V. Kolesnichenko, The decay Σ+ → pγ in QCD: Bilocal
+     corrections in a variable magnetic field and the photon wave functions, Sov. J. Nucl. Phys.
+     48 (1988) 348 [INSPIRE].
+ [2] P. Colangelo and A. Khodjamirian, QCD sum rules, a modern perspective, hep-ph/0010175
+     [INSPIRE].
+ [3] T. Janowski, B. Pullin and R. Zwicky, Charged and Neutral B̄u,d,s → γ Form Factors from
+     Light Cone Sum Rules at NLO, arXiv:2106.13616 [INSPIRE].
+ [4] J. Albrecht, E. Stamou, R. Ziegler and R. Zwicky, Probing flavoured Axions in the Tail of
+     Bq → µ+ µ− , arXiv:1911.05018 [INSPIRE].
+ [5] S. Di Vita, P. Mastrolia, A. Primo and U. Schubert, Two-loop master integrals for the
+     leading QCD corrections to the Higgs coupling to a W pair and to the triple gauge couplings
+     ZW W and γ ∗ W W , JHEP 04 (2017) 008 [arXiv:1702.07331] [INSPIRE].
+ [6] I.I.Y. Bigi, M.A. Shifman, N.G. Uraltsev and A.I. Vainshtein, The Pole mass of the heavy
+     quark. Perturbation theory and beyond, Phys. Rev. D 50 (1994) 2234 [hep-ph/9402360]
+     [INSPIRE].
+ [7] M.A. Shifman, A.I. Vainshtein and V.I. Zakharov, QCD and Resonance Physics. Theoretical
+     Foundations, Nucl. Phys. B 147 (1979) 385 [INSPIRE].
+ [8] M.A. Shifman, A.I. Vainshtein and V.I. Zakharov, QCD and Resonance Physics:
+     Applications, Nucl. Phys. B 147 (1979) 448 [INSPIRE].
+ [9] T.M. Aliev, D.A. Demir, E. Iltan and N.K. Pak, Radiative B ∗ → Bγ and D∗ → Dγ decays
+     in light cone QCD sum rules, Phys. Rev. D 54 (1996) 857 [hep-ph/9511362] [INSPIRE].
+[10] H.-D. Li, C.-D. Lü, C. Wang, Y.-M. Wang and Y.-B. Wei, QCD calculations of radiative
+     heavy meson decays with subleading power corrections, JHEP 04 (2020) 023
+     [arXiv:2002.03825] [INSPIRE].
+[11] D. Becirevic and B. Haas, D∗ → Dπ and D∗ → Dγ decays: Axial coupling and Magnetic
+     moment of D∗ meson, Eur. Phys. J. C 71 (2011) 1734 [arXiv:0903.2407] [INSPIRE].
+[12] G.C. Donald, C.T.H. Davies, J. Koponen and G.P. Lepage, Prediction of the Ds∗ width from
+     a calculation of its radiative decay in full lattice QCD, Phys. Rev. Lett. 112 (2014) 212002
+     [arXiv:1312.5264] [INSPIRE].
+[13] M. Jamin and B.O. Lange, fB and fBs from QCD sum rules, Phys. Rev. D 65 (2002) 056005
+     [hep-ph/0108135] [INSPIRE].
+
+
+
+
+                                             – 33 –
+[14] P. Gelhausen, A. Khodjamirian, A.A. Pivovarov and D. Rosenthal, Decay constants of
+     heavy-light vector mesons from QCD sum rules, Phys. Rev. D 88 (2013) 014015 [Erratum
+     ibid. 89 (2014) 099901] [Erratum ibid. 91 (2015) 099901] [arXiv:1305.5432] [INSPIRE].
+[15] Z.-G. Wang, Analysis of the masses and decay constants of the heavy-light mesons with QCD
+     sum rules, Eur. Phys. J. C 75 (2015) 427 [arXiv:1506.01993] [INSPIRE].
+[16] D. Becirevic, V. Lubicz, F. Sanfilippo, S. Simula and C. Tarantino, D-meson decay constants
+     and a check of factorization in non-leptonic B-decays, JHEP 02 (2012) 042
+     [arXiv:1201.4039] [INSPIRE].
+                                                        ∗        ∗
+[17] ETM collaboration, Masses and decay constants of D(s) and B(s) mesons with Nf = 2 + 1 + 1
+
+
+
+
+                                                                                                   JHEP09(2021)023
+     twisted mass fermions, Phys. Rev. D 96 (2017) 034524 [arXiv:1707.04529] [INSPIRE].
+[18] J.F. Amundson et al., Radiative D* decay using heavy quark and chiral symmetry, Phys.
+     Lett. B 296 (1992) 415 [hep-ph/9209241] [INSPIRE].
+[19] G. Isidori, S. Nabeebaccus and R. Zwicky, QED corrections in B → K`+ `− at the
+     double-differential level, JHEP 12 (2020) 104 [arXiv:2009.00929] [INSPIRE].
+[20] R. Zwicky, A brief Introduction to Dispersion Relations and Analyticity, in Quantum Field
+     Theory at the Limits: from Strong Fields to Heavy Quarks, pp. 93–120 (2017) [DOI]
+     [arXiv:1610.06090] [INSPIRE].
+[21] V.M. Braun, G.P. Korchemsky and D. Müller, The Uses of conformal symmetry in QCD,
+     Prog. Part. Nucl. Phys. 51 (2003) 311 [hep-ph/0306057] [INSPIRE].
+[22] C. Itzykson and J. Zuber, Quantum Field Theory, International Series In Pure and Applied
+     Physics, McGraw-Hill, New York (1980) [INSPIRE].
+[23] A. Khodjamirian, B. Melić, Y.-M. Wang and Y.-B. Wei, The D∗ Dπ and B ∗ Bπ couplings
+     from light-cone sum rules, JHEP 03 (2021) 016 [arXiv:2011.11275] [INSPIRE].
+[24] M. Neubert, Heavy meson form-factors from QCD sum rules, Phys. Rev. D 45 (1992) 2451
+     [INSPIRE].
+[25] B. Blok and M.A. Shifman, The Isgur-Wise function in the small velocity limit, Phys. Rev. D
+     47 (1993) 2949 [hep-ph/9207217] [INSPIRE].
+[26] C. Hambrock, G. Hiller, S. Schacht and R. Zwicky, B → K ? form factors from flavor data to
+     QCD and back, Phys. Rev. D 89 (2014) 074014 [arXiv:1308.4379] [INSPIRE].
+[27] A. Bharucha, D.M. Straub and R. Zwicky, B → V `+ `− in the Standard Model from
+     light-cone sum rules, JHEP 08 (2016) 098 [arXiv:1503.05534] [INSPIRE].
+[28] P. Colangelo, F. De Fazio and G. Nardulli, Radiative heavy meson transitions, Phys. Lett. B
+     316 (1993) 555 [hep-ph/9307330] [INSPIRE].
+[29] C.-Y. Cheung and C.-W. Hwang, Strong and radiative decays of heavy mesons in a covariant
+     model, JHEP 04 (2014) 177 [arXiv:1401.3917] [INSPIRE].
+[30] J.L. Goity and W. Roberts, Radiative transitions in heavy mesons in a relativistic quark
+     model, Phys. Rev. D 64 (2001) 094007 [hep-ph/0012314] [INSPIRE].
+[31] Particle Data Group collaboration, Review of Particle Physics, PTEP 2020 (2020)
+     083C01 [INSPIRE].
+[32] Y.G. Aditya, K.J. Healey and A.A. Petrov, Faking Bs → µ+ µ− , Phys. Rev. D 87 (2013)
+     074028 [arXiv:1212.4166] [INSPIRE].
+
+
+
+
+                                             – 34 –
+[33] A. Desiderio et al., First lattice calculation of radiative leptonic decay rates of pseudoscalar
+     mesons, Phys. Rev. D 103 (2021) 014502 [arXiv:2006.05358] [INSPIRE].
+[34] J. Gratrex and R. Zwicky, Parity Doubling as a Tool for Right-handed Current Searches,
+     JHEP 08 (2018) 178 [arXiv:1804.09006] [INSPIRE].
+[35] Flavour Lattice Averaging Group collaboration, FLAG Review 2019: Flavour Lattice
+     Averaging Group (FLAG), Eur. Phys. J. C 80 (2020) 113 [arXiv:1902.08191] [INSPIRE].
+[36] W. Lucha, D. Melikhov and S. Simula, Decay constants of heavy pseudoscalar mesons from
+     QCD sum rules, J. Phys. G 38 (2011) 105002 [arXiv:1008.2698] [INSPIRE].
+[37] A. Bazavov et al., B- and D-meson leptonic decay constants from four-flavor lattice QCD,
+
+
+
+
+                                                                                                        JHEP09(2021)023
+     Phys. Rev. D 98 (2018) 074512 [arXiv:1712.09262] [INSPIRE].
+[38] P. Gambino, A. Melis and S. Simula, Extraction of heavy-quark-expansion parameters from
+     unquenched lattice data on pseudoscalar and vector heavy-light meson masses, Phys. Rev. D
+     96 (2017) 014511 [arXiv:1704.06105] [INSPIRE].
+[39] C. Hughes, C.T.H. Davies and C.J. Monahan, New methods for B meson decay constants and
+     form factors from lattice NRQCD, Phys. Rev. D 97 (2018) 054509 [arXiv:1711.09981]
+     [INSPIRE].
+[40] C. McNeile, C.T.H. Davies, E. Follana, K. Hornbostel and G.P. Lepage, High-Precision fBs
+     and HQET from Relativistic Lattice QCD, Phys. Rev. D 85 (2012) 031503
+     [arXiv:1110.4510] [INSPIRE].
+[41] Y.-B. Yang et al., Charm and strange quark masses and fDs from overlap fermions, Phys.
+     Rev. D 92 (2015) 034517 [arXiv:1410.3343] [INSPIRE].
+[42] Fermilab Lattice and MILC collaborations, B- and D-meson decay constants from
+     three-flavor lattice QCD, Phys. Rev. D 85 (2012) 114506 [arXiv:1112.3051] [INSPIRE].
+[43] P.A. Boyle, L. Del Debbio, A. Jüttner, A. Khamseh, F. Sanfilippo and J.T. Tsang, The decay
+     constants fD and fDs in the continuum limit of Nf = 2 + 1 domain wall lattice QCD, JHEP
+     12 (2017) 008 [arXiv:1701.02644] [INSPIRE].
+[44] C.T.H. Davies, C. McNeile, E. Follana, G.P. Lepage, H. Na and J. Shigemitsu, Update:
+     Precision Ds decay constant from full lattice QCD using very fine lattices, Phys. Rev. D 82
+     (2010) 114504 [arXiv:1008.4018] [INSPIRE].
+[45] H. Na, C.T.H. Davies, E. Follana, G.P. Lepage and J. Shigemitsu, |Vcd | from D Meson
+     Leptonic Decays, Phys. Rev. D 86 (2012) 054510 [arXiv:1206.4936] [INSPIRE].
+[46] W. Lucha, D. Melikhov and S. Simula, Isospin breaking in the decay constants of heavy
+     mesons from QCD sum rules, Phys. Lett. B 765 (2017) 365 [arXiv:1609.05050] [INSPIRE].
+[47] ETM collaboration, Mass of the b quark and B -meson decay constants from Nf = 2 + 1 + 1
+     twisted-mass lattice QCD, Phys. Rev. D 93 (2016) 114505 [arXiv:1603.04306] [INSPIRE].
+[48] HPQCD collaboration, B-Meson Decay Constants from Improved Lattice Nonrelativistic
+     QCD with Physical u, d, s, and c Quarks, Phys. Rev. Lett. 110 (2013) 222003
+     [arXiv:1302.2644] [INSPIRE].
+[49] W. Lucha, D. Melikhov and S. Simula, Accurate decay-constant ratios fB ∗ /fB and fBs∗ /fBs
+     from Borel QCD sum rules, Phys. Rev. D 91 (2015) 116009 [arXiv:1504.03017] [INSPIRE].
+[50] D. Becirevic, A. Le Yaouanc, A. Oyanguren, P. Roudeau and F. Sanfilippo, Insight into
+     D/B → π`ν` decay using the pole models, arXiv:1407.1019 [INSPIRE].
+
+
+
+
+                                               – 35 –
+[51] HPQCD collaboration, B-meson decay constants: a more complete picture from full lattice
+     QCD, Phys. Rev. D 91 (2015) 114509 [arXiv:1503.05762] [INSPIRE].
+[52] D. Becirevic, B. Haas and E. Kou, Soft Photon Problem in Leptonic B-decays, Phys. Lett. B
+     681 (2009) 257 [arXiv:0907.1845] [INSPIRE].
+[53] G.S. Bali et al., Magnetic susceptibility of QCD at zero and at finite temperature from the
+     lattice, Phys. Rev. D 86 (2012) 094512 [arXiv:1209.6015] [INSPIRE].
+[54] C. McNeile et al., Direct determination of the strange and light quark condensates from full
+     lattice QCD, Phys. Rev. D 87 (2013) 034503 [arXiv:1211.6577] [INSPIRE].
+[55] B.L. Ioffe, Condensates in quantum chromodynamics, Phys. Atom. Nucl. 66 (2003) 30
+
+
+
+
+                                                                                                    JHEP09(2021)023
+     [hep-ph/0207191] [INSPIRE].
+[56] V.M. Belyaev, V.M. Braun, A. Khodjamirian and R. Ruckl, D∗ Dπ and B ∗ Bπ couplings in
+     QCD, Phys. Rev. D 51 (1995) 6177 [hep-ph/9410280] [INSPIRE].
+
+
+
+
+                                              – 36 –
+

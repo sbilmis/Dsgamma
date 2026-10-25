@@ -1,0 +1,102 @@
+--- a/scripts/twopoint_ds1_matrix_sumrule.py
++++ b/scripts/twopoint_ds1_matrix_sumrule.py
+@@ -11,11 +11,12 @@
+ 
+   * exact-mass leading-order perturbative spectral densities;
+   * the local strange-quark condensate through O(ms^2);
+-  * the local mixed condensate <sbar g sigma.G s> (dimension five).
+-
+-The AA entry reproduces the Colangelo two-point sum rule analytically.  The
+-AB and BB local terms are generated from the same coordinate-space propagator
+-and were independently traced in ``twopoint_local_condensate_audit.wl``.
++  * both tree-level topologies of the mixed condensate (dimension five).
++
++The AA entry reproduces the Colangelo two-point sum rule analytically. The
++local terms include the light-bilocal expansion and the heavy-line gluon
++contribution to the mixed operator. Their complete leading-d5 derivation
++and independent checks are in ``review/mixed_condensate_resolution/``.
+ 
+ The ordinary local condensates in this file belong to a two-point SVZ sum
+ rule.  Their presence does not conflict with their exclusion from the
+@@ -149,7 +150,7 @@
+ 
+ 
+ def local_components(m2: float, inp: Inputs) -> dict[str, np.ndarray]:
+-    """Borel-transformed d=3 and d=5 local contributions.
++    """Borel-transformed d=3 and complete leading d=5 local contributions.
+ 
+     The light-propagator expansion used here is
+ 
+@@ -202,7 +203,7 @@
+         dtype=float,
+     )
+ 
+-    # Dimension-five mixed condensate from the x^2 propagator term.
++    # Light-bilocal part of d=5 from the x^2 propagator term.
+     d5 = mixed * np.array(
+         [
+             [-mc**3 / (4.0 * m2**2),
+@@ -217,6 +218,15 @@
+              ) / den**2],
+         ],
+         dtype=float,
++    )
++
++    # Second d=5 topology: one background gluon on the heavy line,
++    # contracted with the local open quark-gluon operator. Its AA entry
++    # vanishes; include it in d5_mixed so OPE diagnostics use the total.
++    # Derivation: review/mixed_condensate_resolution/.
++    d5 += mixed * (1.0 - mc * mc / m2) * np.array(
++        [[0.0, 1.0 / (12.0 * den)],
++         [1.0 / (12.0 * den), mc / (6.0 * den**2)]], dtype=float,
+     )
+ 
+     return {
+--- a/scripts/mathematica_twopoint_ds1_matrix_check.wl
++++ b/scripts/mathematica_twopoint_ds1_matrix_check.wl
+@@ -87,6 +87,9 @@
+       -(mc^4/M2^2 - mc^2/M2 - 1)/(4 den),
+       -(mc^5/(4 M2^2) - mc^3/(2 M2))/den^2
+     }};
++  (* Heavy-line background-gluon contribution to the same C5 operator. *)
++  d5 += mixedSS (1 - mc^2/M2) {{0, 1/(12 den)},
++    {1/(12 den), mc/(6 den^2)}};
+   <|"d3_ms0" -> e q0, "d3_ms1" -> e q1,
+     "d3_ms2" -> e q2, "d5_mixed" -> e d5|>
+ ];
+--- a/scripts/mathematica_twopoint_bs1_matrix_check.wl
++++ b/scripts/mathematica_twopoint_bs1_matrix_check.wl
+@@ -67,6 +67,9 @@
+       -(mb^4/M2^2 - mb^2/M2 - 1)/(4 den),
+       -(mb^5/(4 M2^2) - mb^3/(2 M2))/den^2
+     }};
++  (* Heavy-line background-gluon contribution to the same C5 operator. *)
++  d5 += mixedSS (1 - mb^2/M2) {{0, 1/(12 den)},
++    {1/(12 den), mb/(6 den^2)}};
+   <|"d3_ms0" -> e q0, "d3_ms1" -> e q1,
+     "d3_ms2" -> e q2, "d5_mixed" -> e d5|>
+ ];
+--- a/scripts/build_twopoint_ds1_matrix_notebook.wl
++++ b/scripts/build_twopoint_ds1_matrix_notebook.wl
+@@ -109,8 +109,9 @@
+     textCell[
+       "The coordinate-space local light-quark terms used to generate this matrix are " <>
+       "-<sbar s>/12 [1 - i ms xslash/4 - ms^2 x^2/8] " <>
+-      "- x^2 <sbar g sigma.G s>/192. They are displayed here through their " <>
+-      "Borel-transformed matrix contributions, which are what enter the sum rule."
++      "- x^2 <sbar g sigma.G s>/192. The leading mixed-condensate matrix " <>
++      "also includes the heavy-line background-gluon contribution. Both are " <>
++      "included in d5_mixed below; see review/mixed_condensate_resolution/."
+     ],
+     inputCell[HoldComplete[
+       ClearAll[M2, ss, mixedSS, localPieces, localMatrix];
+@@ -132,6 +133,9 @@
+             -(mc^4/M2^2 - mc^2/M2 - 1)/(4 den)}, {
+             -(mc^4/M2^2 - mc^2/M2 - 1)/(4 den),
+             -(mc^5/(4 M2^2) - mc^3/(2 M2))/den^2}};
++        (* Heavy-line background-gluon contribution to the same C5 operator. *)
++        d5 += mixedSS (1 - mc^2/M2) {{0, 1/(12 den)},
++          {1/(12 den), mc/(6 den^2)}};
+         <|"d3_ms0" -> e q0, "d3_ms1" -> e q1,
+           "d3_ms2" -> e q2, "d5_mixed" -> e d5|>
+       ];

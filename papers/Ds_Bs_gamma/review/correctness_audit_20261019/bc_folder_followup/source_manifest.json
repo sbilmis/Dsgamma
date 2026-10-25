@@ -1,0 +1,126 @@
+{
+  "/Users/sbilmis/developer/physics/Bc_mixing/README.md": {
+    "sha256": "b4f32273093c7af8c19f24800b49177c032629df6df0472eef129dd6f827e46d",
+    "bytes": 51800
+  },
+  "/Users/sbilmis/developer/physics/Bc_mixing/FILE_GUIDE.md": {
+    "sha256": "ae3b1477b1d2a36c6609c172638d18b7256b77e57ec0e88fb768a66bc4c1296b",
+    "bytes": 10444
+  },
+  "/Users/sbilmis/developer/physics/Bc_mixing/BcMixingMomentum.wl": {
+    "sha256": "f83e2afddc7391043c6377e4bc6fac919dcfd04e318ab64cdf4e2ce4e9a67027",
+    "bytes": 87130
+  },
+  "/Users/sbilmis/developer/physics/Bc_mixing/BcMixingMomentum_claude.wl": {
+    "sha256": "22e0497fbf55b9f19c32b885927e25622359eda94511691fc06d5b6d8c3c1177",
+    "bytes": 87314
+  },
+  "/Users/sbilmis/developer/physics/Bc_mixing/BcMixingCoordinateOPE.wl": {
+    "sha256": "d79c9272e1d78994029f43a8851554e2db04894b53733d86440af7b4cf1c7c5f",
+    "bytes": 84356
+  },
+  "/Users/sbilmis/developer/physics/Bc_mixing/BcMixingMonteCarloSummaryPublication.csv": {
+    "sha256": "2df76e444e8e65f80a03af7ca2b5f0ce793eea97d262ce8d735c8724c0165103",
+    "bytes": 335
+  },
+  "/Users/sbilmis/developer/physics/Bc_mixing/BcMixingMonteCarloSummaryPublication_claude.csv": {
+    "sha256": "60166350c7494899765e8060a178fa4d9fa6d6f284b09a206f3b996a219817c8",
+    "bytes": 340
+  },
+  "/Users/sbilmis/developer/physics/LateX/papers/mixing_of_D_and_B_mesons/article.tex": {
+    "sha256": "b96e697aa47eb10df5db38b5863549a09d3d129d889736a3fb8e33d6bb6a26f7",
+    "bytes": 24397
+  },
+  "/Users/sbilmis/developer/physics/LateX/papers/mixing_of_D_and_B_mesons/Submission/article_R1.tex": {
+    "sha256": "1d08095064c6d2c88f2f65f6f4ff4590fbd50486ae3529744659301ab6a76446",
+    "bytes": 31052
+  },
+  "/Users/sbilmis/developer/physics/LateX/papers/mixing_of_D_and_B_mesons/Figures/data_points/fig1_D10_D10prime_data/fig1.py": {
+    "sha256": "d008c4529a3ad593ab1c09d6ed1c301545fec474a9d85d6d9fc6db043845c364",
+    "bytes": 1508
+  },
+  "/Users/sbilmis/developer/physics/LateX/papers/mixing_of_D_and_B_mesons/Figures/data_points/fig1_D10_D10prime_data/fig1_me.nb": {
+    "sha256": "2e35086f27564d084590fdadaae98f284f31c930dcbebe920d4b573a350da838",
+    "bytes": 1586626
+  },
+  "/Users/sbilmis/developer/physics/LateX/papers/mixing_of_D_and_B_mesons/Figures/data_points/fig1_D10_D10prime_data/mixing_angle_theta_D1_D1_s0_10.0.dat": {
+    "sha256": "9b1be49e65e49d3c4c71742c897ccd3f950a7691fe46e53e3f5f63ef2eb670f3",
+    "bytes": 1004
+  },
+  "/Users/sbilmis/developer/physics/LateX/papers/mixing_of_D_and_B_mesons/Figures/data_points/fig1_D10_D10prime_data/mixing_angle_theta_D1_D1_s0_8.00.dat": {
+    "sha256": "4d9733421a141449e3db79a3070b343a18890aeaa78fcbd1f9d255d710da5f38",
+    "bytes": 1004
+  },
+  "/Users/sbilmis/developer/physics/LateX/papers/mixing_of_D_and_B_mesons/Figures/data_points/fig1_D10_D10prime_data/mixing_angle_theta_D1_D1_s0_8.50.dat": {
+    "sha256": "4bb30c7f4113216a34d0a6a2aa795b8ef79266a8034b296475bb082800c2eeab",
+    "bytes": 1002
+  },
+  "/Users/sbilmis/developer/physics/LateX/papers/mixing_of_D_and_B_mesons/Figures/data_points/fig1_D10_D10prime_data/mixing_angle_theta_D1_D1_s0_9.0.dat": {
+    "sha256": "1c1dd994c70e5da12450bfe9a57dafd39a96cb0e22f42044eaab34ad7dd9e57f",
+    "bytes": 1004
+  },
+  "/Users/sbilmis/developer/physics/LateX/papers/mixing_of_D_and_B_mesons/Figures/data_points/fig1_D10_D10prime_data/mixing_angle_theta_D1_D1_s0_9.5.dat": {
+    "sha256": "2ba377907ff2868e2f3abb457133ae2acf486505939f7b11846b2aebf0790fae",
+    "bytes": 996
+  },
+  "/Users/sbilmis/developer/physics/LateX/papers/mixing_of_D_and_B_mesons/Figures/data_points/fig2_Ds1_Ds1prime_data/mixing_angle_theta_Ds1_Ds1_s0_10.0.dat": {
+    "sha256": "e6912c1b82fa12e25cd21846edce9e68bcd59f9a2254bb80274c28042dfc1aed",
+    "bytes": 993
+  },
+  "/Users/sbilmis/developer/physics/LateX/papers/mixing_of_D_and_B_mesons/Figures/data_points/fig2_Ds1_Ds1prime_data/mixing_angle_theta_Ds1_Ds1_s0_10.5.dat": {
+    "sha256": "d3451180c72f43660602ae308185c461f26a9e7706322ccb5404aae2e3188d3b",
+    "bytes": 998
+  },
+  "/Users/sbilmis/developer/physics/LateX/papers/mixing_of_D_and_B_mesons/Figures/data_points/fig2_Ds1_Ds1prime_data/mixing_angle_theta_Ds1_Ds1_s0_11.0.dat": {
+    "sha256": "f365ccc9e29d331bf5998ba95a47fc442d153f1507b004633ed36dcfa79e2955",
+    "bytes": 1001
+  },
+  "/Users/sbilmis/developer/physics/LateX/papers/mixing_of_D_and_B_mesons/Figures/data_points/fig2_Ds1_Ds1prime_data/mixing_angle_theta_Ds1_Ds1_s0_9.00.dat": {
+    "sha256": "2f995e81e3c9989820bc08215d0f725e731f5f56abec02bca738b0bebee44dc6",
+    "bytes": 990
+  },
+  "/Users/sbilmis/developer/physics/LateX/papers/mixing_of_D_and_B_mesons/Figures/data_points/fig2_Ds1_Ds1prime_data/mixing_angle_theta_Ds1_Ds1_s0_9.50.dat": {
+    "sha256": "bfe36150ea29d0740bedb355268f46bc03f2bb919c562d1c72eee8b2f04ee0c5",
+    "bytes": 997
+  },
+  "/Users/sbilmis/developer/physics/LateX/papers/mixing_of_D_and_B_mesons/Figures/data_points/fig3_B10_B10prime_data/mixing_angle_theta_B1d_B1d_s0_40.0.dat": {
+    "sha256": "933948989ae123761c64e1f521a73bc54875efbe2ce151a49826c4f692133c84",
+    "bytes": 939
+  },
+  "/Users/sbilmis/developer/physics/LateX/papers/mixing_of_D_and_B_mesons/Figures/data_points/fig3_B10_B10prime_data/mixing_angle_theta_B1d_B1d_s0_40.5.dat": {
+    "sha256": "9676f5552d6f5634bc8ab5719b053853f1a7fab4ba1172cf75afea1a21f6cf36",
+    "bytes": 945
+  },
+  "/Users/sbilmis/developer/physics/LateX/papers/mixing_of_D_and_B_mesons/Figures/data_points/fig3_B10_B10prime_data/mixing_angle_theta_B1d_B1d_s0_41.0.dat": {
+    "sha256": "398d492e1f1c84e8b776c0998dfdbec43b223d097ef032051a355a80339f7b1d",
+    "bytes": 941
+  },
+  "/Users/sbilmis/developer/physics/LateX/papers/mixing_of_D_and_B_mesons/Figures/data_points/fig3_B10_B10prime_data/mixing_angle_theta_B1d_B1d_s0_41.5.dat": {
+    "sha256": "31291db6a689b42f235a32b36fca5f005088663d5b0d193b4529290f00479c4c",
+    "bytes": 946
+  },
+  "/Users/sbilmis/developer/physics/LateX/papers/mixing_of_D_and_B_mesons/Figures/data_points/fig3_B10_B10prime_data/mixing_angle_theta_B1d_B1d_s0_42.0.dat": {
+    "sha256": "3ad1455baee4feb44808673ac2b67beade115e9aeea54285fe475ea6063a20b0",
+    "bytes": 942
+  },
+  "/Users/sbilmis/developer/physics/LateX/papers/mixing_of_D_and_B_mesons/Figures/data_points/fig4_B1s_B1sprime_data/mixing_angle_theta_Bs1_Bs1_s0_42.0.dat": {
+    "sha256": "b5f8410fecc25791e57889856580f402d96a15dbe0217754ae2b55ae25261d68",
+    "bytes": 943
+  },
+  "/Users/sbilmis/developer/physics/LateX/papers/mixing_of_D_and_B_mesons/Figures/data_points/fig4_B1s_B1sprime_data/mixing_angle_theta_Bs1_Bs1_s0_42.5.dat": {
+    "sha256": "395ca3da242bccbfd41d35a4fd2dbffc8345524228d17b1e4ac52bbd00852823",
+    "bytes": 952
+  },
+  "/Users/sbilmis/developer/physics/LateX/papers/mixing_of_D_and_B_mesons/Figures/data_points/fig4_B1s_B1sprime_data/mixing_angle_theta_Bs1_Bs1_s0_43.0.dat": {
+    "sha256": "9d494ddbd81c9a96369e741a9c7dd30cf07b8719521d9d5a9f98622e321ea7d5",
+    "bytes": 950
+  },
+  "/Users/sbilmis/developer/physics/LateX/papers/mixing_of_D_and_B_mesons/Figures/data_points/fig4_B1s_B1sprime_data/mixing_angle_theta_Bs1_Bs1_s0_43.5.dat": {
+    "sha256": "2a1f9d660c4927d803fd0a097aa1d3548942066d1f2406b56110b396fce76a03",
+    "bytes": 952
+  },
+  "/Users/sbilmis/developer/physics/LateX/papers/mixing_of_D_and_B_mesons/Figures/data_points/fig4_B1s_B1sprime_data/mixing_angle_theta_Bs1_Bs1_s0_44.0.dat": {
+    "sha256": "c33e9ce4229c5b5531be03e823beae0d1cdc620f66f76d198607b1869d414914",
+    "bytes": 951
+  }
+}

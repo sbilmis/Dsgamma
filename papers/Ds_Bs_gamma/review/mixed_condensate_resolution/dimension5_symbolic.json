@@ -1,0 +1,82 @@
+{
+	"coefficient_convention":"C3 or C5 factored out; positive transverse invariant",
+	"scope":"tree-level dimension five, ms=0 Wilson coefficient, d normalization retained",
+	"sigma_trace_normalization":48,
+	"checks":{
+		"AB_BA_symmetry":true,
+		"AA_matches_published_axial_control":true,
+		"V_matches_published_vector_control":true,
+		"P_matches_published_pseudoscalar_control":true,
+		"AA_light_equals_current_code":true,
+		"AB_light_equals_current_code":true,
+		"BB_light_equals_current_code":true
+	},
+	"channels":{
+		"AA":{
+			"q3_rational":"m\/(m^2 - s)",
+			"light_d5_rational":"m^3\/(2*(-m^2 + s)^3)",
+			"heavy_G_d5_rational":"0",
+			"full_d5_rational":"-1\/2*m^3\/(m^2 - s)^3",
+			"q3_borel":"m\/E^(m^2\/K)",
+			"light_d5_borel":"-1\/4*m^3\/(E^(m^2\/K)*K^2)",
+			"heavy_G_d5_borel":"0",
+			"full_d5_borel":"-1\/4*m^3\/(E^(m^2\/K)*K^2)"
+		},
+		"AB":{
+			"q3_rational":"s\/(d*m^2 - d*s)",
+			"light_d5_rational":"(s*(-3*m^2 + s))\/(4*d*(m^2 - s)^3)",
+			"heavy_G_d5_rational":"-1\/12*s\/(d*(m^2 - s)^2)",
+			"full_d5_rational":"-1\/6*((5*m^2 - 2*s)*s)\/(d*(m^2 - s)^3)",
+			"q3_borel":"m^2\/(d*E^(m^2\/K))",
+			"light_d5_borel":"(K^2 + K*m^2 - m^4)\/(4*d*E^(m^2\/K)*K^2)",
+			"heavy_G_d5_borel":"(K - m^2)\/(12*d*E^(m^2\/K)*K)",
+			"full_d5_borel":"(4*K^2 + 2*K*m^2 - 3*m^4)\/(12*d*E^(m^2\/K)*K^2)"
+		},
+		"BA":{
+			"q3_rational":"s\/(d*m^2 - d*s)",
+			"light_d5_rational":"(s*(-3*m^2 + s))\/(4*d*(m^2 - s)^3)",
+			"heavy_G_d5_rational":"-1\/12*s\/(d*(m^2 - s)^2)",
+			"full_d5_rational":"-1\/6*((5*m^2 - 2*s)*s)\/(d*(m^2 - s)^3)",
+			"q3_borel":"m^2\/(d*E^(m^2\/K))",
+			"light_d5_borel":"(K^2 + K*m^2 - m^4)\/(4*d*E^(m^2\/K)*K^2)",
+			"heavy_G_d5_borel":"(K - m^2)\/(12*d*E^(m^2\/K)*K)",
+			"full_d5_borel":"(4*K^2 + 2*K*m^2 - 3*m^4)\/(12*d*E^(m^2\/K)*K^2)"
+		},
+		"BB":{
+			"q3_rational":"(m*s)\/(d^2*(m^2 - s))",
+			"light_d5_rational":"-1\/2*(m^3*s)\/(d^2*(m^2 - s)^3)",
+			"heavy_G_d5_rational":"-1\/6*(m*s)\/(d^2*(m^2 - s)^2)",
+			"full_d5_rational":"-1\/6*(m*(4*m^2 - s)*s)\/(d^2*(m^2 - s)^3)",
+			"q3_borel":"m^3\/(d^2*E^(m^2\/K))",
+			"light_d5_borel":"(m^3*(2*K - m^2))\/(4*d^2*E^(m^2\/K)*K^2)",
+			"heavy_G_d5_borel":"(m*(K - m^2))\/(6*d^2*E^(m^2\/K)*K)",
+			"full_d5_borel":"(m*(2*K^2 + 4*K*m^2 - 3*m^4))\/(12*d^2*E^(m^2\/K)*K^2)"
+		},
+		"P":{
+			"q3_rational":"m\/(-m^2 + s)",
+			"light_d5_rational":"m^3\/(2*(m^2 - s)^3)",
+			"heavy_G_d5_rational":"-1\/2*m\/(m^2 - s)^2",
+			"full_d5_rational":"(m*s)\/(2*(m^2 - s)^3)",
+			"q3_borel":"-(m\/E^(m^2\/K))",
+			"light_d5_borel":"m^3\/(4*E^(m^2\/K)*K^2)",
+			"heavy_G_d5_borel":"-1\/2*m\/(E^(m^2\/K)*K)",
+			"full_d5_borel":"(-2*K*m + m^3)\/(4*E^(m^2\/K)*K^2)"
+		},
+		"V":{
+			"q3_rational":"m\/(-m^2 + s)",
+			"light_d5_rational":"m^3\/(2*(m^2 - s)^3)",
+			"heavy_G_d5_rational":"0",
+			"full_d5_rational":"m^3\/(2*(m^2 - s)^3)",
+			"q3_borel":"-(m\/E^(m^2\/K))",
+			"light_d5_borel":"m^3\/(4*E^(m^2\/K)*K^2)",
+			"heavy_G_d5_borel":"0",
+			"full_d5_borel":"m^3\/(4*E^(m^2\/K)*K^2)"
+		}
+	},
+	"massless_light_comparison":{
+		"current_light_only_AA_minus_BB":"-1\/2*m\/(E^(m^2\/K)*K)",
+		"independent_full_AA_minus_BB":"-1\/6*(K + 2*m^2)\/(E^(m^2\/K)*K*m)",
+		"printed_assignment_AA_minus_BB":"-(m\/(E^(m^2\/K)*K))",
+		"full_minus_printed":"-1\/6*(K - 4*m^2)\/(E^(m^2\/K)*K*m)"
+	}
+}

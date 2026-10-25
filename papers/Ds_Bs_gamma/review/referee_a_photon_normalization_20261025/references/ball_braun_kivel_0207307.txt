@@ -1,0 +1,1798 @@
+                                                                                                                  IPPP/02/40
+                                                                                                                  DCPT/02/80
+                                                                                                                  hep-ph/0207307
+
+
+
+
+                                        Photon Distribution Amplitudes in QCD
+
+
+
+
+arXiv:hep-ph/0207307v1 25 Jul 2002
+                                                              Patricia Ball1 , V.M. Braun2 , and N. Kivel2
+
+                                                         1
+                                                             IPPP, University of Durham, Durham DH1 3LE, UK
+                                                     2
+                                                         Institut für Theoretische Physik, Universität Regensburg,
+                                                                       D-93040 Regensburg, Germany
+
+
+
+
+                                                                                Abstract:
+
+                                     We develop a consistent technique for the calculation of real photon emission in hard
+                                     exclusive processes, which is based on the background field formalism and allows a conve-
+                                     nient separation of hard electromagnetic and soft hadronic components of the photon. The
+                                     latter ones are related to matrix-elements of light-cone operators in the electromagnetic
+                                     background field and can be parametrized in terms of photon distribution amplitudes. We
+                                     construct a complete set of photon distribution amplitudes up to and including twist-4,
+                                     for both chirality-conserving and chirality-violating operators. The distribution ampli-
+                                     tudes involve several nonperturbative parameters and, most importantly, the magnetic
+                                     susceptibility of the quark condensate. We review and update previous estimates of the
+                                     susceptibility and also give new estimates of parameters describing higher-twist amplitudes
+                                     from QCD sum rules.
+
+
+
+
+                                                                      Submitted to Nuclear Physics B
+Contents
+1 Introduction                                                                             1
+
+2 The Background Field Method                                                              2
+  2.1 Gauge-invariance and contact terms . . . . . . . . . . . . . . . . . . . . . .       2
+  2.2 Light-cone expansion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     5
+
+3 The Leading-Twist Photon Distribution Amplitude                                          7
+
+4 Distribution Amplitudes of Higher Twist                                                11
+  4.1 General classification . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+  4.2 Twist-3 distribution amplitudes . . . . . . . . . . . . . . . . . . . . . . . . 13
+  4.3 Twist-4 distribution amplitudes . . . . . . . . . . . . . . . . . . . . . . . . 15
+      4.3.1 Definitions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+      4.3.2 Conformal expansion of three-particle twist-4 distribution amplitudes 17
+      4.3.3 Equations of motion and two-particle twist-4 distribution amplitudes 21
+
+5 Summary and Conclusions                                                                 23
+
+A The Conformal Basis                                                                     23
+
+B QCD Sum Rules                                                                           24
+  B.1 The leading twist-2 distribution amplitude . . . . . . . . . . . . . . . . . .      24
+      B.1.1 Magnetic susceptibility . . . . . . . . . . . . . . . . . . . . . . . . .     25
+      B.1.2 Higher moments . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      28
+  B.2 Twist-3 Distributions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   30
+
+References                                                                                31
+1    Introduction
+Hard exclusive processes involving photon emission are attracting increasing attention.
+Examples include transition form factors like γ ∗ → πγ with one real and one virtual
+photon [1], deeply-virtual Compton scattering (DVCS) [2] and rare radiative B-decays
+like B → ℓν̄ℓ γ, B → ργ and B → K ∗ γ [3]. A specific feature of the QCD description of
+such processes is that a real photon contains both a “pointlike”, electromagnetic (EM),
+and a “soft”, hadronic, component. This distinction is familiar from the studies of the
+photon structure functions in deep inelastic scattering (see e.g. [4]), but so far has not
+been studied, in a systematic way, for exclusive processes. It is the objective of this work
+to develop an efficient formalism for describing either component of the photon and to
+give an update of the available information on the hadronic one.
+    We will work in the background (BG) field formalism. This technique was pioneered by
+Schwinger for QED [5] and later rediscovered as a convenient tool in QCD, in particular in
+connection with calculations of the QCD β-function [6], power-corrections to deep-inelastic
+scattering [7] and QCD sum rules [8, 9]. An excellent technical review can be found in
+[10]. The principal advantage of the BG field approach is its explicit gauge-invariance
+which allows the use of different gauges for the soft (classical) and hard (quantum) fields
+and also avoids contact terms; instead of the latter, the formalism involves new operators
+containing the EM instead of the gluonic field-strength tensor. It also allows an intuitive
+physics interpretation which is important by itself. As an example [9], consider quarks and
+antiquarks in the QCD vacuum, in a constant (electro)magnetic field. In the weak-field
+limit, the induced magnetisation of the vacuum is proportional to the applied field, the
+quark density, the quark electric charge eq and the parameter χ, the so-called magnetic
+susceptibility of the quark condensate:
+
+                               h0|q̄σαβ q|0iF = eq χ hq̄qi Fαβ .                        (1.1)
+
+Here hq̄qi is the quark condensate, Fαβ the field-strength tensor of the external EM field,
+and the index F indicates that the VEV is taken in the vacuum in the presence of the
+field Fαβ . If the magnetic field is allowed to vary with a certain frequency, the response
+becomes sensitive to the quark-antiquark separation and gets more complicated. In the
+limit of light-like separations z 2 = 0, which is relevant for hard exclusive processes, the
+magnetic susceptibility has to be substituted by a response function φγ [11]:
+
+                                                     Z1
+                h0|q̄(z)σαβ q(−z)|0iF = eq χ hq̄qi        du Fαβ ((1 − 2u)z)φγ (u) ,    (1.2)
+                                                     0
+
+                                                 R1
+where the normalization is chosen such that 0 du φγ (u) = 1. For a plane-wave configu-
+ration Fαβ (z) ∼ exp(−iqz), q 2 = 0, and in the infinite-momentum frame q+ → ∞, the
+matrix-element on the l.-h.s. of (1.2) describes the probability amplitude that a real photon
+with momentum q dissociates into a quark-antiquark pair at small transverse separation.
+The function φγ (u) can thus be identified with a photon distribution amplitude (DA) with
+u and 1 − u being the momentum fractions carried by the quark and the antiquark in the
+
+                                              1
+photon, respectively, in full analogy with DAs of mesons [12]. To the best of our knowledge,
+photon DAs have been introduced and studied for the first time in Refs. [11]. Some more
+results on higher-twist distributions can be found in [13], while in [14] the leading-twist
+amplitude has been calculated using a chiral quark model in the instanton-vacuum.
+    The subject of the present paper is the detailed study of these DAs, up to and in-
+cluding twist-4. Most of the discussion will refer to asymptotic real photon states, which
+correspond to a plane-wave configuration of the EM BG field, whose frequency is, however,
+not assumed to be small. This deviates from the usual procedure of expanding in slowly
+varying (classical) fields and requires special techniques which have been worked out in
+Ref. [15].
+    The paper is organized as follows: Section 2 is mainly introductory and summarizes
+notations and basic features of the BG field method. Section 3 contains a detailed discus-
+sion of the leading-twist photon DA. Section 4 is devoted to photon DAs of twist-3 and 4.
+Finally, in Sec. 5 we summarize. The paper also contains several appendices with results
+of more technical nature.
+
+
+2     The Background Field Method
+2.1    Gauge-invariance and contact terms
+The basic idea of the BG field method is to modify the quark part of the QCD action by
+including an EM field Bµ in addition to the colour gluon field Aaµ . In order to preserve
+EM gauge-invariance, the covariant derivative becomes
+
+                               Dµ = ∂µ − igAaµ ta − ieq Bµ ,                           (2.1)
+                    √
+where eq = eQq = 4πα Qq with Qu,c,t = +2/3, Qd,s,b = −1/3 is the quark electric charge
+and α = 1/137 . . . is the fine-structure constant. The action reads (for one flavour)
+                     Z                                      Z
+                         4                         QCD
+            Sq = d x q̄(x)[i 6D − mq ]q(x) = Sq        + eq d4 x Bµ (x)j µ (x) ,       (2.2)
+
+jµ = q̄γµ q is the vector current. The EM field Bµ is treated as purely classical, i.e. it
+does not participate in loops, and is weak, i.e. we only consider expressions linear in Bµ .
+In Lorentz-gauge, an ingoing photon with momentum q corresponds to the plane-wave
+field-configuration
+                                    Bµ (x) = eµ(λ) e−iqx .                             (2.3)
+      (λ)                                                (λ)
+Here eµ is the photon polarization vector with eµ q µ = 0. The corresponding gauge-
+invariant EM field-strength tensor is
+
+                             Fµν (x) = i(eµ(λ) qν − qµ eν(λ) )e−iqx .                  (2.4)
+
+To avoid confusion, we will always write Fµν for the EM and Gµν = Gaµν ta for the gluon
+field-strength tensors, respectively.
+    (Almost) any calculation in QCD relies on the separation of scales: the contribu-
+tions of quark and gluon exchanges with large momenta are calculated perturbatively and
+
+                                                2
+                                                      H
+
+
+
+
+                                                       S
+
+
+                Figure 1: Schematic representation of a hard-soft separation.
+
+form a hard contribution (coefficient function), the contributions with small momenta are
+parametrized in terms of various distribution functions, alias operator matrix-elements.
+Such a structure is indicated schematically in Fig. 1. A real photon (not shown) can be
+emitted from both the hard and the soft block. The advantage of the BG field method
+relies on the fact that it separates hard and soft photon-emission in an explicitly gauge-
+invariant way. This is not necessary, but convenient, as we will see below.
+    Technically, the gauge-invariance is seen most directly if, in the calculation of the hard
+block, one uses the following expression for the quark propagator in the BG field1 [15]:
+                                           Z1
+               i 6x                i
+       S(x) =    2  4
+                      [x, 0]F −              du [x, ux]F {ū 6 xσαβ + uσαβ 6 x}eq F αβ (ux)[ux, 0]F
+              2π x              16π 2 x2
+                                           0
+
+                 + terms containing Gαβ ,                                                             (2.5)
+
+where Pµ = iDµ is the momentum operator, ū = 1 − u and
+                          Z 1                                            
+                                            µ                µ
+            [x, y]F = Pexp i dt (x − y)µ[gA (tx + t̄y) + eq B (tx + t̄y)]                             (2.6)
+                                      0
+
+is the path-ordered gauge-link. Here and below the subscript F serves to indicate that the
+BG field is included, which means in particular that both the abelian EM and the non-
+abelian colour-phases are present.We will also use the notation [x, y] without a subscript
+if the EM field is not included.
+    The terms in Fαβ generate U(1) gauge-invariant contributions describing photon-emis-
+sion from small distances, whereas the gauge-factors [., .]F in the first term on the r.-h.s.
+of (2.5) eventually combine with quark fields that connect the hard and the soft block,
+producing nonlocal gauge-invariant operators. In the simplest situation with no external
+hadrons, one is left with the vacuum expectation values of such operators in the EM BG
+field, generically
+                                           Z1
+        h0|q̄(x)Γ[x, y]F q(y)|0iF = ieq         d4 z B µ (z) h0|T{q̄(x)Γ[x, y]q(y)j µ(z)}|0i
+                                           0
+  1
+      For simplicity we present the result for the massless quark propagator. For massive quarks, see [16].
+
+                                                       3
+                                              Z1
+                                      + ieq        dt (x − y)µ B µ (tx + t̄y)h0|q̄(x)Γ[x, y]q(y)|0i. (2.7)
+                                              0
+
+Here Γ is an arbitrary Dirac-structure. The first term on the r.-h.s. of (2.7) comes from
+the expansion of the action eiSq , cf. (2.2), whereas the second term originates from the
+gauge-link (2.6). The expression (2.7) is invariant under U(1) gauge-transformations Bµ →
+Bµ +∂µ φ. As an example, let us check this for plane-waves. Using (2.3), the r.-h.s. becomes
+                         Z
+                      ieq d4 z eµ(λ) e−iqz h0|T{q̄(x)Γ[x, y]q(y)j µ(z)}|0i
+
+                                 (x − y)µ  −iqy        
+                    + eq eµ(λ)             e     − e−iqx h0|q̄(x)Γ[x, y]q(y)|0i.                    (2.8)
+                                 q(x − y)
+
+Note that the expression in the first line is nothing but the amplitude of the photon-to-
+vacuum transition
+                                     Z
+    h0|q̄(x)Γ[x, y]q(y)|γ (q)i = ieq d4 z eµ(λ) e−iqz h0|T{q̄(x)Γ[x, y]q(y)j µ(z)}|0i.
+                         (λ)
+                                                                                       (2.9)
+
+                                          (λ)
+To check gauge-invariance, replace eµ → qµ . The first line in (2.8) then becomes
+                       Z
+                     eq d4 z e−iqz h0|∂µ T{q̄(x)Γ[x, y]q(y)j µ(z)}|0i,            (2.10)
+
+which is generally nonzero because of contact terms. To calculate the latter, use that
+inside the QCD functional integral the divergence of the vector current can be replaced
+by a functional derivative over the quark (antiquark) field:
+                                                              
+                     µ     iSq              δ iSq          δ iSq
+                 ∂µ j (z) e = −q̄(z)            e  −           e   q(z) .        (2.11)
+                                        δ q̄(z)          δq(z)
+
+Integrating by parts over the quark fields in the functional integral, one obtains
+       R          
+     eq d4 z e−iqz δ (4) (x − z)h0|q̄(z)Γ[x, y]q(y)|0i − δ (4) (y − z)h0|q̄(x)Γ[x, y]q(z)|0i
+                           = eq [e−iqx − e−iqy ] h0|q̄(x)Γ[x, y]q(y)|0i .                          (2.12)
+
+This is exactly what is obtained from the second term in (2.8), but with the opposite sign.
+One sees that restoration of U(1) gauge-invariance is achieved through elimination of the
+contact terms.
+   Calculation of the hard scattering amplitudes (hard block in Fig. 1) can usually be
+done for on-shell partons. In the operator product expansion language, this means that
+operators which vanish by virtue of the QCD equations of motion (EOM) can be omit-
+ted. The case of real photon emission is special, because the EOM operators can generate
+nonzero contact terms in correlation functions with the EM current. The BG field tech-
+nique provides an important simplification, since no contact terms are present whatsoever,
+
+
+                                                       4
+but instead the EOM are modified by the presence of the BG field. As a simple example,
+consider the following local operator with two covariant derivatives:
+                                                          → →
+                                           Oµν = q̄γµ γα D α Dν q .                           (2.13)
+
+For hadronic matrix-elements, one can use the identity [Dα , Dν ] = −igGαν to write
+                                                                          →   →
+                       hh′ |Oµν |hi = −ihh′ |q̄γµ γα gGαν q|hi + hh′ |q̄γµ D ν 6D q|hi        (2.14)
+
+and neglect the last term. For photons, one either has to take into account the EOM
+operator explicitly, or use the BG field formalism, in which case there is an additional
+term in the commutator: [Dα , Dν ] = −igGαν − ieFαν . We get
+                                                                              →   →
+          h0|Oµν |0iF = −ih0|q̄γµ γα gGαν q|0iF − ieq Fµν hq̄qi + h0|q̄γµ Dν 6D q|iF .        (2.15)
+
+The third term on the r.-h.s. is again zero by virtue of the EOM, 6 D q = 0, but there is
+an additional contribution containing the photon field (and the quark condensate hq̄qi),
+which illustrates the generic feature of the BG field formalism, the appearance of new
+operators containing the EM field-strength tensor.
+
+2.2       Light-cone expansion
+After these general remarks, we proceed to the explicit construction of the light-cone
+expansion of quark-antiquark operators in the BG field. We assume that the quark and
+the antiquark are separated by the distance xµ and take the limit x2 → 0 keeping the scalar
+product (q · x), q 2 = 0, fixed. As discussed in detail in [17, 18], the light-cone expansion of
+a generic nonlocal operator produces two sequences of terms that are singular and analytic
+on the light-cone, respectively:2
+
+   h0|q̄(x)Γ[x, y]F q(y)|0iF = h0|q̄(x)Γ[x, y]F q(y)|0isingular
+                                                        F       + h0|q̄(x)Γ[x, y]F q(y)|0ianalytic
+                                                                                          F        .
+                                                                                               (2.16)
+The singular contributions correspond to small distances, i.e. to the coefficient function
+in the OPE expansion, and the analytic contributions induce the corresponding operator
+matrix-elements. The separation between singular and analytic contrubutions involves, as
+usual, a factorization scale µF . In the case at hand, the singular contributions are given
+by
+                    h0|q̄(x)Γ[x, y]F q(y)|0isingular
+                                            F        = −Tr [Γ[x, y]F S(y − x)] ,               (2.17)
+where the trace is taken over both spinor and colour indices and S(y −x) is the quark prop-
+agator in the BG field (2.5). As for the analytic contributions, they can be parametrized
+in terms of nonperturbative photon DAs of increasing twist. To leading order in the QCD
+coupling and for massless quarks, one obtains for the chiral-even operators
+                                     Z1                                       
+                                          ν               Nc       (v)       2
+      h0|q̄(x)γµ [x, −x]F q(−x)|0iF = du x eq Fνµ (−ξx) − 2 2 ξ + G (u) + O(x ) ,
+                                                         4π x
+                                             0
+  2
+      Cf. in particular Eqs. (3.7)–(3.11) in [18].
+
+                                                      5
+                                     Z1                                          
+                                           ν   e            Nc        (a)       2
+  h0|q̄(x)γµ γ5 [x, −x]F q(−x)|0iF = i du x eq Fνµ (−ξx)           + G (u) + O(x ) ,(2.18)
+                                                           4π 2 x2
+                                            0
+
+where3
+                                                ξ = 2u − 1
+and G(v) (u), G(a) (u) are nonperturbative functions that depend on x2 at most logarith-
+mically and will be determined later. Here and below we use the standard notation
+Feαβ = (1/2)ǫαβµν F µν and the conventions for the ǫ tensor and γ5 matrix as defined in [19].
+Counting dimensions, one finds that the perturbative contribution in (2.18) is twist-1, and
+the nonperturbative corrections are twist-3. Note that this dimensional twist-counting
+refers to the “dynamical” twist of a matrix-element, as opposed to the “geometric” twist
+of a (local) operator. We will discuss this in more detail in Sec. 4.1.
+    For chiral-odd operators the perturbative (singular) contribution vanishes identically
+for massless quarks. One then has [13]
+
+                                                 Z1                                 
+                                                                               x2
+  h0|q̄(x)σµν [x, −x]F q(−x)|0iF = eq hq̄qi           du Fµν (−ξx) χφγ (u, µ) + A(u)
+                                                                               4
+                                                 0
+
+                                                      Z1
+                                         1
+                                        + eq hq̄qi         du xρ {xν Fµρ − xµ Fνρ } (−ξx) B(u) + . . . ,
+                                         2
+                                                       0
+
+       h0|q̄(x)[x, −x]F q(−x)|0iF = 0 .                                                             (2.19)
+
+The function φγ (u, µ) is the (nonperturbative) photon DA of leading twist-2, while the
+terms in A(u) and B(u) correspond to twist-4 corrections. They will be discussed in detail
+in the following sections. Note that the vacuum expectation value of the scalar operator
+does not contain any contribution linear in the BG field and thus vanishes identically.
+    For the strange quark, and also considering possible lattice calculations of DAs, it
+can be interesting to keep the lowest order term in the quark mass mq . To leading-twist
+accuracy one then has
+
+                                       Z1                      
+                                                                    Nc mq h     2 2
+                                                                                                      i
+  h0|q̄(x)σµν [x, −x]F q(−x)|0iF =          du eq Fµν (−ξx) −               ln[x µ  u(1 − u)] + const
+                                                                     4π 2
+                                        0
+                                                               
+                                        + χ hq̄qiφγ (u, µ) + . . .                                  (2.20)
+
+(cf. App. A in [11]). Note that in this case there is a weaker, logarithmic singularity on
+the light-cone. The calculation of the constant under the logarithm requires a careful
+matching with the UV-divergent contribution of the quark loop to the photon DA [11].
+   3
+    The definition of the integration variable u is a convention. It is chosen such that in the case of an
+ingoing photon u corresponds to the momentum fraction carried by the quark.
+
+
+
+                                                       6
+   It is instructive to verify that the perturbative (singular) contributions to (2.18) indeed
+correspond to the perturbative wave-function of the real photon in the infinite-momentum
+frame. To this end choose Fµν as a plane-wave, (2.4), and the coordinate system such
+that4 q = (q + , 0, 0), x = (0, x− ,~r), x2 = −r2 , where ~r is a two-dimensional vector in the
+transverse plane. For the leading-twist “plus” component, assuming physical (transverse)
+photon polarization, one obtains
+
+                                             Z1           h                               i
+           1±γ5                       iNc eq      iξq+ x−    (λ)                      (λ)
+h0|q̄(x)γ+      [x, −x]F q(−x)|0iF = − 2 2 q+ du e         (e · r)(2u − 1) ± iǫik ri ek ,
+            2                         8π r
+                                                          0
+                                                                                          (2.21)
+where ǫik = ǫik+− is the two-dimensional antisymmetric tensor in the transverse plane,
+i, k = 1, 2, which is the expected result. Indeed, the photon wave-function can be defined
+as
+                    Z
+          λ            dx− −ix− q+ (2u−1)            1+hγ5
+       ψh (u, r) =          e             h0|q̄(x)γ+       [x, −x]F q(−x)|0iF
+                        π                              2                      x+ =0,x⊥ =r
+
+                      iNc eq n                                  o
+                                                            (λ)
+                 = − 2 2 (e(λ) · r)(2u − 1) + h iǫik ri ek                                (2.22)
+                      8π r
+where h = ±1 corresponds   √ to the quark helicity. Choosing the photon polarisation vector
+     (±)
+as e       = (0, 1, ±i, 0)/ 2, one obtains the familiar expressions given in, for instance,
+         5
+[20, 21] .
+
+
+3        The Leading-Twist Photon Distribution Amplitude
+We proceed with the detailed study of the leading-twist DA of the photon. Like for a trans-
+versely polarized vector meson [22, 23], the leading-twist contribution corresponds to the
+chiral-odd Lorentz-structure. Following [11] we define the DA as the vacuum expectation
+value (VEV) of the nonlocal quark-antiquark operator with light-like separations,
+
+                                                                    Z1
+                      h0|q̄(z)σαβ [z, −z]F q(−z)|0iF = eq χ hq̄qi        du Fαβ (−ξz)φγ (u) ,             (3.1)
+                                                                    0
+
+where z 2 = 0 and we have inserted the path-ordered gauge-factor which was implied, but
+not shown in (1.2). This definition is equivalent to
+
+     Z                                                                                     Z1
+          4   −iqy          µ
+ i       d ye        h0|T{j (y)q̄(z)σαβ [z, −z]q(−z)}|0i = i(qβ gµα − qα gµβ )χ hq̄qi           du eiξqz φγ (u)
+                                                                                           0
+                                                 zµ  iqz     
+                                               +     e − e−iqz h0|q̄(z)σαβ [z, −z]q(−z)|0i,               (3.2)
+                                                 qz
+     4
+                                 √
+       We define a± = (a0 ± a3 )/ 2 for any four-vector a.
+     5
+       Up to a different normalization.
+
+
+                                                      7
+cf. (2.7) and (2.8). The first term on the r.-h.s. of (3.2) corresponds to the VEV in the BG
+field of the plane-wave, (3.1), (2.4), and the second term is the contact term. In fact, in the
+above case the contact term vanishes: the VEV h0|q̄(z)σαβ [z, −z]q(−z)|0i does not include
+any external momentum and from zα alone it is not possible to build an antisymmetric
+Lorentz-structure (in (α, β)).
+    Yet another form of the definition (3.2) is (cf. (2.9))
+
+                                                                            Z1
+                                                                        (λ)
+      h0|q̄(z)σαβ [z, −z]q(−z)|γ (λ) (q)i = i eq χ hq̄qi qβ eα(λ) − qα eβ        du eiξqz φγ (u) .   (3.3)
+                                                                                0
+
+Here we assume that the physical photon polarization is transverse to the (q, z) plane.
+The three definitions (3.1), (3.2) and (3.3) are equivalent and can be useful in different
+contexts.
+    As always in quantum field theory, the extraction of the asymptotic behaviour z 2 → 0
+creates divergences that have to be regularized. As a result, both the magnetic suscepti-
+bility χ and the DA φγ (u) are scale-dependent. To leading-logarithmic accuracy:
+
+                        χ(µ) = L(γ0 −γq̄q )/b χ(µ0 ) ,
+                                    "           ∞
+                                                                                         #
+                                               X
+                    φγ (u, µ) = 6uū 1 +              L(γn −γ0 )/b φn (µ0 )Cn3/2 (u − ū) ,          (3.4)
+                                              n=2,4,...
+
+           3/2
+where Cn (x) are Gegenbauer-polynomials, b = 11/3Nc − 2/3nf , L = αs (µ)/αs (µ0 ),
+γq̄q = −3CF is the anomalous dimension of the quark condensate and
+                                        "      n+1
+                                                     #
+                                               X   1
+                                γ n = CF 1 + 4                              (3.5)
+                                               j=2
+                                                   j
+
+are the anomalous dimensions of the chiral-odd local operators of leading-twist [24].
+   Photon DAs are interesting mainly because of the fact that the magnetic susceptibility
+χ appears to be rather large. A crude estimate of its value can be obtained in the vector-
+dominance approximation [25]: consider the correlation function
+          Z
+         i d4 y e−iqy h0|T{j µ (y)q̄(0)σαβ q(0)}|0i = i(qβ gµα − qα gµβ )χ(q 2 , µ) hq̄qi , (3.6)
+
+where in contrast to (3.2) the separation between the quarks is set zero and q 2 can be
+arbitrary, instead of q 2 = 0 for a real photon. From the normalization of the photon DA
+it follows that χ(µ) ≡ χ(q 2 = 0, µ). Assuming that the correlation function is dominated
+by the contribution of the lowest-lying states ρ0 and ω and using the standard definitions
+of couplings6 in the flavour-SU(2) limit
+
+          h0|[q̄γµ q]I=1(0) |ρ0 (ω)i = eµ(λ) fV mV ,                  fV = 215 MeV [26],
+                                                       (λ)
+        h0|[q̄σαβ q]I=1(0) |ρ0 (ω)i = i(eα(λ) qβ − eβ qα )fV⊥ ,       fV⊥ = (160 ± 10) MeV [23] , (3.7)
+                                                                                √
+  6                                                                       ¯
+   The currents with specific isospin are given by [q̄Γq]I=1(0) = (ūΓu ∓ dΓd)/  2. mV is the average
+mass of ω and ρ(770).
+
+                                                          8
+one obtains
+                                                          mV fV fV⊥
+                                       hq̄qiχ(q 2 ) ≃ −             ,                    (3.8)
+                                                          m2V − q 2
+and therefore
+                                                fV fV⊥
+                                  χVDM ≃ −              ≃ 2.7 GeV−2 ,                    (3.9)
+                                               mV hq̄qi
+using the value hq̄qi = −(250 MeV)3 (at 1 GeV)7 . Alternatively, one can assume that the
+vector-dominance approximation (3.8) is valid for large Euclidian q 2 → −∞, in which limit
+the leading contribution to the correlation function (3.6) is given by the quark condensate:
+
+                                                    q 2 →−∞    2
+                                          χ(q 2 )     =            .                    (3.10)
+                                                              −q 2
+
+Comparing this expression with (3.8), one obtains an even simpler estimate [25]
+                                                2
+                                      χLD ≃      2
+                                                   ≃ 3.3 GeV−2 ,                        (3.11)
+                                               mV
+
+which is rather close to (3.9). Here the subscript “LD” stands for the so-called local-duality
+approximation.
+    A more sophisticated study including contributions of higher resonances to (3.8) on one
+side, and contributions of higher-dimensional operators to (3.11) on the other side, com-
+bined with the usual QCD sum rule techniques to match between the two representations
+in the most efficient way, was done in [27, 28]. The result of this analysis,
+
+                                      χSR (1 GeV) ≃ 4.4 GeV−2 ,                         (3.12)
+
+was used in numerous QCD sum rule calculations of EM hadron properties over the last
+15 years. In App. B we give an update of the analysis of [27, 28], using new data for the
+resonances, the most recent value of αs and including O(αs ) radiative corrections to the
+sum rule. We obtain
+
+                             χSR (1 GeV) ≃ (3.15 ± 0.3) GeV−2 ,
+                              fγ⊥ (1 GeV) ≡ χhq̄qi = −(50 ± 15) MeV ,                   (3.13)
+
+which is smaller compared to the older estimate, mostly due to the large negative radiative
+correction.
+    The contribution of the photon DA (twist-2) to a generic hard exclusive process is,
+compared to the perturbative contribution (twist-1), suppressed by one power of the hard
+scale Q and is of order
+                               1 (2π)2 |hq̄qi|   650 MeV
+                                 χ             ≈          .                          (3.14)
+                              Q        Nc           Q
+This relatively large mass scale is due to the large magnetic susceptibility and to the well-
+known fact the the quark condensate contribution to physical observables is enhanced by
+  7
+      The sign of χ depends on the sign convention used for the EM coupling in (2.1).
+
+
+                                                      9
+a factor (2π)2 compared to the perturbative contributions because of a different structure
+of the phase-space integrals, cf. Eqs. (2.18) and (2.19).
+    The available information on the shape of the photon DA is more controversial. At
+large virtualities, the shape is uniquely determined by the renormalization properties of
+the relevant operators, cf. (3.4). As the anomalous dimensions in (3.5) rise with n, one
+obtains, for very large scales µ, the asymptotic photon DA
+
+                                        φasy
+                                         γ (u) = 6u(1 − u),                            (3.15)
+
+which is the same as for π, ρ, . . . mesons. In Ref. [11] arguments were given suggesting
+that at smaller virtualities of order 1 GeV the photon DA is still close to the asymptotic
+form. The physical picture behind the argumentation in [11] was that corrections to the
+asymptotic DA are nonperturbative in nature, and are expected to be washed out when
+                                                                    ′′
+one sums over contributions of different hadron resonances ρ, ρ′ , ρ , . . .. This qualitative
+conclusion was supported by the calculation of the second Gegenbauer-coefficient φ2 at the
+scale 1 GeV using QCD sum rules, yielding a small number. Unfortunately, this estimate
+appears to be very sensitive to the choice of input parameters, see App. B. In addition,
+there has been increasing evidence in the last years indicating that “standard” QCD sum
+rule estimates of corrections to asymptotic DAs are not reliable. We therefore believe that
+the existing evidence in favour of the asymptotic DA of the photon at low scales is only
+qualitative.
+    Another calculation of the photon DA was done in [14], using the instanton-model of
+the QCD vacuum. This approach neglects altogether perturbative gluon radiation which
+generates the asymptotic DA, and the results correspond to a very low normalization point
+of order of the characteristic instanton-size ρI ∼ 600 MeV. The resulting photon DA can
+to a good accuracy be represented by a simple expression
+                                                        1
+                           φIM
+                            γ (u, µ = 600 MeV) =           [a − 6u(1 − u)]             (3.16)
+                                                       a−1
+with a ≃ 7.58.8 In the instanton-model the shape of the pion and the photon DA turn
+out to be very different. The reason for this is that for the pion there exists an additional
+(to perturbative radiation) mechanism that suppresses the DA at the end-points [14].
+Roughly speaking, this effect is due to a nonvanishing size of a constituent quark when
+it is probed by the axial current, which is required quite generally by chiral symmetry
+breaking. For the vector current (photon) the constituent quarks appear to be pointlike,
+and the suppression is not required. As a result, the pion distribution is predicted in this
+model to be close to the asymptotic one already at very low scales, while the photon DA
+is almost flat and does not vanish at the end-points, see Eq. (3.16) and Fig. 2. From our
+point of view this evidence is not conclusive either, since the observed end-point behaviour
+corresponds to contributions of large invariant masses, and it is not clear where inclusion
+of them in the instanton-model calculation is legitimate. By its physical meaning, the
+distribution amplitude corresponds to the contributions of low momenta and we expect
+that an asymptotic-like shape would be recovered if the calculations were made with an
+  8
+      V.M.B. thanks M. Polyakov and C. Weiss for providing this parametrization.
+
+
+                                                  10
+                                           1.4
+                                           1.2
+                                           1.0
+
+                                 φ γ (u)
+                                           0.8
+                                           0.6
+                                           0.4
+                                           0.2
+
+                                                 0.2     0.4   0.6   0.8   1
+
+                                                               u
+
+Figure 2: The chiral-odd photon DA of leading twist. The two curves correspond to
+the asymptotic DA (3.15) (solid) and the instanton model at the low normalization point
+0.6 GeV (3.16) (dashed).
+
+explicit ultraviolet cutoff of order of the instanton-size. We believe that this question will
+eventually be decided by lattice calculations and/or experiments on hard exclusive dijet
+photoproduction in which the shape of the photon DA can be measured [29].
+    For the strange quark, one might want to take into account the quark mass correc-
+tions, in which case there is the complication that the separation of singular and analytic
+contributions on the light-cone involves a factorization scale, cf. (2.20). For completeness,
+we quote here the corresponding result from [11]:
+                                                              
+                                (λ)               (λ)      (λ)
+     h0|s̄(x)σαβ [x, −x]s(−x)|γ (q)i = ies qβ eα − qα eβ ×
+
+          Z1              (                      !                 "                         #)
+                                                                                        2
+                                        27ms                  3ms                   36π
+      ×        du eiξqx       χs hs̄si − 2           φγ (u) −       ln(−x2 w0 uū) − 2 + 2γE   (3.17)
+                                                                                                .
+                                         gφ                   4π 2                   gφ
+          0
+
+The quantity w0 = 2 GeV2 is the continuum threshold in the classical QCD sum rule
+for the φ-meson [30] and 4π 2 /gφ2 ≃ 11.7 is the φ-meson coupling (squared) to the EM
+current. By definition, the magnetic susceptibility of the quark condensate does not include
+perturbative contributions of the quark loop ∼ ms .
+
+
+4     Distribution Amplitudes of Higher Twist
+4.1    General classification
+The aim of this section is to give a general classification of photon DAs up to twist-4. As
+already stated in Sec. 1, we define DAs as (renormalized) matrix-elements, in the EM BG
+field, of nonlocal gauge-invariant operators at strictly light-like separations. For brevity,
+starting from this section we will not show path-ordered gauge-factors between the fields,
+they are always implied. We distinguish between matrix-elements of operators with an
+odd number of Dirac γ-matrices, which we term chiral-even, and operators with an even
+number of γ-matrices, which we refer to as chiral-odd.
+    The twist-counting employed in this classification is based on counting of powers of
+the photon momentum in the infinite-momentum frame, cf. the discussion in [31]. To
+
+                                                         11
+                          Twist (µ) q̄γµ q q̄γµ γ5 q (µν) q̄σµν q
+                             2                              +⊥       φγ
+                             3    ⊥       ψ (v)     ψ (a)
+                             4                              ⊥−       hγ
+
+
+Table 1: Identification of two-particle DAs with projections onto different light-cone
+components of the nonlocal operators. For example, ⊥ refers to q̄γ⊥ γ5 q.
+
+
+                   e µν γα γ5 q q̄Gµν γα q (µναβ)
+    Twist (µνα) q̄ G                                                                    eµν γ5 q
+                                                            q̄Gµν σαβ q (µν) q̄Gµν q q̄ G
+       3    +⊥+          A            V
+       4                                          ⊥⊥ + ⊥       T1         +⊥     S        Se
+                                                  + ⊥⊥⊥        T2
+                                                  +−+⊥         T3
+                                                  + ⊥+ −       T4
+
+
+                                                                     e+⊥ γ⊥ γ5 q etc.
+    Table 2: Same as Tab. 1 for three-particle DAs. + ⊥⊥ refers to q̄G
+
+explain this, take a plane-wave configuration for Fµν and choose the frame of reference such
+that qµ = (q+ , 0, 0⊥ ), zµ = (0, z− , 0⊥ ) with q+ → ∞. The twist-expansion corresponds
+to counting powers of the large momentum q+ , taking into account that the photon’s
+                                               (λ)
+transverse polarization vector is of order eµ ∼ (q+ )0 and zµ ∼ (q+ )−1 . Matrix-elememts
+of nonlocal operators typically involve several Lorentz-structures which can be separated
+by suitable projection operators. In this way, the leading-twist structures correspond to
+the maximum number of “plus” components. Each replacement of a “plus” projection by
+a transverse one increases the twist by one unit, and each “minus” projection adds two
+units of twist.
+    The complete classification of the relevant two- and three-particle DAs and their re-
+lation to specific light-cone projections of the matrix-elements is given in Tabs. 1 and
+2, respectively. As is well known, “minus” components of quark-field operators do not
+describe independent partonic degrees of freedom, but can be expressed in terms of mul-
+tiparton DAs. The explicit definitions and relations between various distributions will be
+worked out in the next sections.
+    Note that the classification of photon DAs is very similar to the classification of the DAs
+of the transversely polarized ρ-meson discussed in [31, 32]. For the twist-3 distributions
+considered in the next section the analogy is in fact one-to-one. For twist-4 distributions
+the situation is somewhat more complicated because of the different structure of the QCD
+EOM in the presence of the BG field.
+
+
+                                                   12
+4.2     Twist-3 distribution amplitudes
+The twist-3 DAs of a real photon are related to matrix-elements of chiral-even operators.
+Since the vacuum expectation value of the vector current in the BG EM field vanishes
+by the EOM, h0|q̄γµ q|0iF = 0, the relevant local operator with lowest dimension has to
+include the gluon field:
+                                  eµν γα γ5 q|0iF = eq f3γ Dα Fµν ,
+                           h0|q̄g G                                                 (4.1)
+where Dα is the covariant derivative. The nonperturbative constant f3γ has dimension
+GeV2 and provides a natural mass-scale for the twist-3 DAs. There are two two-particle
+DAs which we define as (cf. Tab. 1)
+                                                          Z 1
+                  h0|q̄(z)γµ q(−z)|0iF = eq f3γ                   du ψ̄ (v) (u, µ)Fzµ(−ξz) ,
+                                                              0
+                                                              Z 1
+                                                 i
+                h0|q̄(z)γµ γ5 q(−z)|0iF = eq f3γ                      du ψ (a) (u, µ)Fezµ(−ξz) ,   (4.2)
+                                                 2                0
+
+where
+                                            Fzµ = Fρµ z ρ .
+We will use similar
+             R1     shorthand R 1notations in what follows. The normalization of the DAs
+                    (v)              (a)
+is such that 0 duψ̄ (u) = 0 duψ (u) = 0. Note that the regularization (and renor-
+malization) removes the singular 1/z 2 contributions, so that the matrix-elements in (4.2)
+correspond to the analytic parts of the amplitudes in the light-cone limit, in the sense of
+the separation in Eq. (2.16). Comparing (4.2) with (2.18) we find
+
+                             G(v) (u) = f3γ ψ̄ (v) (u, µ ∼ 1/|x|) ,
+                                             1
+                             G(a) (u) =        f3γ ψ (a) (u, µ ∼ 1/|x|) .                          (4.3)
+                                             2
+In addition, there exist two three-particle chiral-even twist-3 distributions:
+                                                      Z
+                      e
+            h0|q̄(z)g Gµν (vz)γα γ5 q(−z)|0iF = eq f3γ Dα A(α)Dα Fµν (αv z) ,
+                                                                      Z
+              h0|q̄(z)gGµν (vz)iγα q(−z)|0iF = eq f3γ                     Dα V(α)Dα Fµν (αv z) ,   (4.4)
+
+where αv = αq̄ − αq + vαg , and α is the set of the three momentum fractions α =
+{αq , αq̄ , αg }. The integration measure is defined as
+                     Z          Z 1         Z 1          Z 1               X 
+                         Dα ≡         dαq         dαq̄            dαg δ 1 −  αi .                  (4.5)
+                                 0           0            0
+
+Alternatively, the same distributions can be defined as matrix-elements between the ingo-
+ing photon state and the vacuum, and in this form they are very similar to the definitions
+adopted in [31, 32] for the transversely polarized ρ-meson, apart from a different overall
+
+
+
+                                                     13
+normalization. For two-particle distributions:
+                                                                   Z 1
+                                                             (λ)
+                   h0|q̄(z)γµ q(−z)|γ   (λ)
+                                              (q)i = eq f3γ e⊥µ          du eiξqz ψ (v) (u, µ) ,
+                                                                    0
+                                                                            Z 1
+                                                    1              (λ)
+                h0|q̄(z)γµ γ5 q(−z)|γ   (λ)
+                                              (q)i = eq f3γ ǫµνqz e⊥ν             du eiξqz ψ (a) (u, µ) .       (4.6)
+                                                    2                         0
+
+The functions ψ̄ (v) (u, µ) and ψ (v) (u, µ) are related by integration by parts:
+                                                Z u
+                                 (v)
+                               ψ̄ (u, µ) = 2        dα ψ (v) (α, µ) .                                           (4.7)
+                                                         0
+
+For the three-particle distributions one has
+                                                                                         Z
+                 eµν (vz)γα γ5 q(−z)|γ (λ) (q)i = eq f3γ qα [qν e(λ) − qµ e(λ) ]
+       h0|q̄(z)g G                                                                           DαA(α)e−iqzαv ,
+                                                                 ⊥µ        ⊥ν
+
+                                                                                         Z
+                                          (λ)                         (λ)      (λ)
+         h0|q̄(z)gGµν (vz)iγα q(−z)|γ           (q)i = eq f3γ qα [qν e⊥µ − qµ e⊥ν ]          DαV(α)e−iqzαv . (4.8)
+
+Like the corresponding ρ-meson DAs, the two-particle distributions ψ (v) (u) and ψ (a) (u) are
+not independent and can be related to three-particle distributions using the QCD EOM. A
+closer inspection shows that all corrections to the EOM in the BG field vanish in the chiral-
+even case, so that these relations remain intact.9 As result, the photon DAs can be read
+off the corresponding expressions for the ρ-meson [32], where one must omit the so-called
+Wandzura-Wilczek parts that are due to the nonzero meson mass. To next-to-leading
+order in the conformal expansion, cf. Sec. 4.3, we obtain
+                      V(α) = 540 ωγV (αq − αq̄ )αq αq̄ αg2 ,
+                                                            
+                                         2        A 1
+                      A(α) = 360 αq αq̄ αg 1 + ωγ (7αg − 3) ,
+                                                    2
+                                                 3
+                    ψ (v) (u) = 5(3ξ 2 − 1) +      (15ωγV − 5ωγA )(3 − 30ξ 2 + 35ξ 4) ,
+                                                64
+                                                     5      9         3
+                    ψ (a) (u) = (1 − ξ 2 )(5ξ 2 − 1) (1 + ωγV − ωγA ) ,
+                                                     2     16        16
+                                             15              
+                    ψ̄ (v) (u) = −20uūξ +         ωγA − 3ωγV uūξ(7ξ 2 − 3),                                   (4.9)
+                                             16
+where the parameters ωγA and ωγV correspond to matrix-elements of local operators of
+dimension 6, see [32] and App. B.
+   In vector-dominance approximation one finds
+                                 VDM
+                                f3γ  = −fρ2 ζ3 ≃ −(4 ± 2) · 10−3 GeV2 ,
+                              ωγV,VDM = ωρV ≃ 3.8 ± 1.8 ,
+                              ωγA,VDM = ωρA ≃ −2.1 ± 1.0 ,                                                     (4.10)
+   9
+    This is in contrast to the chiral-odd ones, to be discussed in the following subsection, where one VEV
+is nontrivial, and induces a nonzero conformal expansion of an exactly vanishing DA.
+
+                                                         14
+where fρ ζ3 ≃ (20 ± 10) MeV (see App. B) is the ρ-meson coupling to the quark-antiquark-
+gluon current in (4.1). Our result for this coupling is by a factor 3 larger than an old
+estimate in obtained in Ref. [33], and quoted in [31, 32]. We have estimated corrections
+to the vector-dominance approximation for f3γ using QCD sum rules, see App. B, with
+the result that these corrections are smaller than the (large) error bars for the ρ-meson
+contribution. We, therefore, accept the vector-dominance approximation for the present.
+    The scale-dependence of the twist-3 parameters is given by, cf. Ref. [31], (CA = Nc ):
+                                      f                         1
+                       f3γ (µ2 ) = Lγ /b f3γ (µ20 ),     γ f = − CF + 3CA ,                    (4.11)
+                                                                3
+and
+                                      µ2           V        µ2
+                             ωγV − ωγA        Γω /b  ωγ − ωγA 0
+                                           =L                      ,
+                             ωγV + ωγA               ωγV + ωγA
+                                                            
+                            ω      3CF − 32 CA 23 CF − 32 CA
+                           Γ = 5                               .                               (4.12)
+                                    C − 43 CA 21 CF + CA
+                                   3 F
+
+
+4.3     Twist-4 distribution amplitudes
+4.3.1   Definitions
+Twist-4 DAs, which are all chiral-odd, are more involved and require a detailed discussion.
+The general parametrization of the nonlocal quark-antiquark operator on the light-cone
+involves two invariant functions:
+                                               Z1
+           h0|q̄(z)σµν q(−z)|0iF = eq χhq̄qi        du φγ (u, µ) Fµν (−ξz)
+                                               0
+
+                                               Z1
+                                   1
+                                  + eq hq̄qi        du h̄γ (u, µ) {zν Fµz − zµ Fνz } (−ξz) ,
+                                   2
+                                                0
+
+              h0|q̄(z)q(−z)|0iF = 0 .                                                          (4.13)
+
+Here φγ (u) is the leading-twist distribution discussed in Sec. 3 and h̄γ (u, µ) is a new DA
+of twist-4, cf. Tab. 1. Note that the third possible Lorentz-structure z ρ {D ν Fµρ − Dµ Fνρ }
+is not independent and can be eliminated using the QED Bianci-identity.
+    The three-particle DAs are more numerous and can be defined as:
+                                                        Z
+                   h0|q̄(z)gGµν (vz)q(−z)|0iF = eq hq̄qi Dα S(α)Fµν (αv z) ,
+                                                              Z
+               h0|q̄(z)g G̃µν (vz)iγ5 q(−z)|0iF = eq hq̄qi        Dα S̃(α)Fµν (αv z)           (4.14)
+
+and
+
+      h0|q̄(z)σαβ gGµν (vz)q(−z)|0iF =
+
+                                                    15
+                                                                        Z
+                             ⊥        ⊥
+                                                         
+            = ieq hq̄qi gµρ {gαν Dβ − gβν Dα } − (µ ↔ ν)                    Dα T̄1 (α)Fρz (αv z)
+                                                                            Z
+                                ⊥        ⊥
+                                                            
+               + ieq hq̄qi gαρ {gβµ Dν − gβν Dµ } − (α ↔ β)                     Dα T̄2 (α)Fρz (αv z)
+                                                Z
+               + ieq hq̄qi [Dµ zν − Dν zµ ]         Dα T̄3 (α)Fαβ (αv z)
+                                                Z
+               + ieq hq̄qi [Dα zβ − Dβ zα ]             Dα T̄4 (α)Fµν (αv z) ,                              (4.15)
+
+see Tab. 2 for the identification of the relevant light-cone projections.
+    In addition, we have to consider also quark-antiquark-photon operators:
+
+                         h0|q̄(z)eq Fµν (vz)q(−z)|0iF = eq hq̄qiFµν (vz)                                    (4.16)
+
+and
+                               h0|q̄(z)σαβ eq Fµν (vz)q(−z)|0iF = 0.                                        (4.17)
+It is convenient to rewrite these expressions introducing auxilary three-particle DAs:
+                                                       Z
+                h0|q̄(z)eq Fµν (vz)q(−z)|0iF = eq hq̄qi Dα Sγ (α)Fµν (αv z),        (4.18)
+
+                                                                            Z
+   h0|q̄(z)σαβ eq Fµν (vz)q(−z)|0iF = ieq hq̄qi [Dα zβ − Dβ zα ]                Dα T̄4γ (α)Fµν (αv z) + . . .(4.19)
+
+with
+
+                               Sγ (α) = δ(αq̄ )δ(αq ),           T̄4γ (α) = 0 .                             (4.20)
+
+As explained in the next subsection, we need the conformal expansion of Sγ (α) and T̄4γ (α),
+which turn out to have nonzero coefficients.
+    In some applications it can be advantageous to rewrite the definitions (4.13) to (4.19)
+for the particular case of a photon in the initial state. For two-particle DAs we obtain
+
+                                                                         Z1
+                                                                     (λ)
+         h0|q̄(z)σαβ q(−z)|γ   (λ)                           (λ)
+                                     (q)i = i eq χ hq̄qi qβ eα − qα eβ        du eiξqz φγ (u, µ)
+                                                                                     0
+
+                                                                               Z1
+                                        1    hq̄qi  (λ)        (λ)
+                                       + ieq        zβ eα − zα eβ                    du eiξqz hγ (u, µ) .   (4.21)
+                                        2     qz
+                                                                                0
+
+It is easy to see that                          Z u
+                                h̄γ (u) = −4             dα(u − α)hγ (α, µ).                                (4.22)
+                                                    0
+
+C-parity implies the symmetry h̄γ (u) = −h̄γ (1 − u) and hγ (u) = hγ (1 − u).
+
+
+                                                          16
+   For three-particle distributions the corresponding definitions read
+                                                                   Z
+                                                      (λ)      (λ)
+        h0|q̄(z)gGµν (vz)q(−z)|γ (q)i = ieq hq̄qi[qν e⊥µ − qµ e⊥ν ] DαS(α)e−i(qz)αv ,
+                                 (λ)
+
+
+                                                                                         Z
+                                       (λ)                        (λ)      (λ)
+      h0|q̄(z)g G̃µν (vz)iγ5 q(−z)|γ         (q)i = ieq hq̄qi[qν e⊥µ − qµ e⊥ν ]              DαS̃(α)e−i(qz)αv , (4.23)
+
+and
+
+  h0|q̄(z)σαβ gGµν (vz)q(−z)|γ (λ) (q)i =
+                           (λ) ⊥            ⊥(λ)         ⊥       (λ)  ⊥      (λ)
+              eq hq̄qi[qα e⊥µ gβν − qβ e⊥µ gαν − qα e⊥ν gβµ + qβ e⊥ν gαµ ]T1 (v, qz)
+                                 (λ)
+                                  ⊥            ⊥   (λ)      ⊥          (λ)
+                                                                         ⊥         (λ)
+               + eq hq̄qi[qµ e⊥α gβν − qµ e⊥β gαν − qν e⊥α gβµ + qν e⊥β gαµ ]T2 (v, qz)
+                   eq hq̄qi         (λ)            (λ)            (λ)            (λ)
+               +            [qα qµ e⊥β zν − qβ qµ e⊥α zν − qα qν e⊥β zµ + qβ qν e⊥α zµ ]T3 (v, qz)
+                     qz
+                   eq hq̄qi         (λ)            (λ)            (λ)            (λ)
+               +            [qα qµ e⊥ν zβ − qβ qµ e⊥ν zα − qα qν e⊥µ zβ + qβ qν e⊥µ zα ]T4 (v, qz),            (4.24)
+                     qz
+where
+                                                       Z
+                                   Ti (v, qz) =            Dα e−i(qz)αv Ti (α).                                (4.25)
+
+The functions Ti (α) are related to the distributions for a generic EM BG field by integration
+by parts:
+                                       Z αq̄
+                          T̄i (α) = −2       du Ti ( u, αq̄ + αq − u) .                 (4.26)
+                                                   0
+
+Here we imply Ti (α) ≡ Ti (αq̄ , αq ). The corresponding equivalent definitions of Sγ and T4γ
+are analogous to (4.23) and (4.24), respectively; the relation between T̄4γ and T4γ is the
+same as in (4.26).
+
+4.3.2    Conformal expansion of three-particle twist-4 distribution amplitudes
+In practical calculations one has to use models for the higher-twist DAs with a few non-
+perturbative parameters. The major difficulty in constructing such models is that the
+QCD EOM imply the existence of relations between different amplitudes and that these
+relations have to be obeyed identically. The standard approach [11, 34] is to expand the
+amplitudes in contributions of operators with increasing conformal spin and retain only
+a few leading terms. The reason why this helps is that the QCD EOM are essentially
+tree-level relations that respect the same symmetries as the QCD Lagrangian. Relations
+between DAs imposed by EOM are therefore “horizontal” in the sense that they relate
+contributions of only the same conformal spin. This implies that the EOM can be solved
+order by order in the conformal expansion and, most importanly, the truncation of the
+conformal expansion at a certain order is not in conflict with the QCD EOM. In addition,
+
+                                                            17
+as familiar from leading-twist, the conformal expansion is consistent with renormalization
+at LO level: contributions with different conformal spin do not mix with each other to
+leading-logarithmic accuracy. This ensures that higher-spin contributions omitted in the
+model at a certain scale will not reappear at different scales through the evolution.
+    Technically speaking, the conformal expansion of distribution amplitudes is the ex-
+pansion in orthogonal polynomials that correspond to irreducible representations of the
+conformal group. A suitable basis is defined in App. A. We have already seen examples
+of conformal expansion in Eqs. (3.4) and (4.9). The expansion of the three-particle DAs
+of the photon of twist-4 is completely analogous to that of the ρ, done in [32]. Without
+going into details we just quote the results:
+
+        T1 (α) = −120(3ζ2 + ζ2+ )(αq̄ − αq )αq̄ αq αg ,
+                                                                                   
+        T2 (α) = 30αg2(αq̄ − αq ) (κ − κ+ ) + (ζ1 − ζ1+ ) (1 − 2αg ) + ζ2 (3 − 4αg ) ,
+        T3 (α) = −120(3ζ2 − ζ2+ )(αq̄ − αq )αq̄ αq αg ,
+                                                                                   
+        T4 (α) = 30αg2(αq̄ − αq ) (κ + κ+ ) + (ζ1 + ζ1+ ) (1 − 2αg ) + ζ2 (3 − 4αg ) ,
+                      
+         S(α) = 30αg2 (κ + κ+ ) (1 − αg ) + (ζ1 + ζ1+ )(1 − αg )(1 − 2αg )
+                +ζ2 [3(αq̄ − αq )2 − αg (1 − αg )] ,
+                      
+         e
+         S(α) = −30αg2 (κ − κ+ ) (1 − αg ) + (ζ1 − ζ1+ )(1 − αg )(1 − 2αg )
+                  +ζ2 [3(αq̄ − αq )2 − αg (1 − αg )] .                                   (4.27)
+
+Here terms in κ and κ+ correspond to the lowest conformal spin-3 and the contributions
+of ζs are next-to-leading with conformal spin-4. For the lowest spin the definitions are:
+
+                             h0|q̄gGµν q|0iF = eq hq̄qi(κ+ + κ) Fµν ,
+                                  eµν γ5 q|0iF = eq hq̄qi (κ+ − κ) Fµν ;
+                           h0|q̄g G                                                      (4.28)
+
+κ and κ+ renormalize multiplicatively [11]:
+
+                                    +                                   5
+                    κ+ (µ2 ) = L(γ −γq̄q )/b κ+ (µ20 ),    γ+ = 3CA −     CF ,
+                                                                        3
+                                    −
+                     κ(µ2 ) = L(γ −γq̄q /b) κ(µ20 ),      γ− = 4CA − 3CF .               (4.29)
+
+The ζ-parameters can be expressed in terms of reduced matrix elements hhQ(i) ii of lo-
+cal quark-antiquark-gluon operators with one extra covariant derivative and also receive
+contributions of quark-antiquark-photon operators. One finds [11]
+                         21 (1)              7      7            21
+                  ζ1 =      hhQ ii, ζ2 =        + hhQ(3) ii −       hhQ(1) ii,
+                         20                 22 22               220
+                                                                                         (4.30)
+                                                      7
+                               ζ1+ = 7hhQ(5) ii, ζ2+ = hhQ(3) ii,
+                                                      4
+
+
+                                                 18
+                                       κ      κ+       ζ1        ζ2     ζ1+ ζ2+
+                                      0.2         0    0.4 0.3          0       0
+
+Table 3: Numerical values of parameters of twist-4 chiral-odd DAs taken from [11]. Renor-
+malization scale is µ = 1 GeV.
+
+where Q(1) , Q(3) , and Q(5) are multiplicatively renormalizable operators (in pure QCD,
+that is not including mixing with photon operators) listed in Sec. 4 of Ref. [11]:
+                             (γ       −γq̄q )/b
+           hhQ(i) ii(µ2 ) = L Q(i)                hhQ(i) ii(µ20 )
+                           11                                         13                          8
+            with γQ(1) =      CA − 3CF ,               γQ(3) =           CF ,       γQ(5) = 5 CA − CF .   (4.31)
+                           2                                          3                           3
+The exact definition of these operators is not important here. Numerical estimates [11]
+are collected in Tab. 3.
+    Note that four parameters are defined by three independent matrix elements so that
+there is one (exact) relation:
+                                                       7
+                                   ζ1 + 11ζ2 − 2ζ2+ = ,                                (4.32)
+                                                       2
+which is a consequence of the theorem by Ferrara-Grillo-Parisi-Gatto [35], which states
+that the divergence of a conformal operator vanishes (in a conformally-invariant theory). In
+the present case, the theorem implies that the divergence of the leading-twist-2 conformal
+operator with two covariant derivatives vanishes in free theory and, therefore, in full QCD
+can be expressed in terms of operators including either the gluon or the photon field
+strength. One obtains [11, 32]
+                                2        2                              (4)          (4F )
+                           ∂µ (Oξ,ηαµ − Oη,ξαµ ) = 20(Qα,ξµ + Qα,ξµ ),                                    (4.33)
+                           ↔      ↔
+        2
+where O⊥,+++   = 15
+                  2
+                    q̄σ⊥+ D + D + q − 23 ∂+
+                                          2
+                                            q̄σ⊥+ q and the explicit expression for the quark-
+                             (4)                                        (4F )
+antiquark-gluon operator Qα,ξµ is given in Eq. (4.23) in [11]. Qα,ξµ is obtained from
+  (4)
+Qα,ξµ by the substitution gGµν → eq Fµν . The vacuum expectation value of the l.-h.s. of
+                                                             (4F )
+(4.33) in the EM field vanishes, whereas hhQα,ξµ ii is equal to a constant times the quark
+condensate [11]. It follows that the reduced matrix element of the complicated quark-
+                              (4)
+antiquark gluon operator Qα,ξµ in the BG field can be calculated exactly in terms of the
+condensate, and this is how Eq. (4.32) emerges. This relation is of principal importance
+since it tells that contributions of gluon and photon operators cannot be separated in a
+meaningful way. Hence the use of an approximation for gluon contributions necessarily
+entails the use of the corresponding approximation for photon contributions as well. In
+particular, the quark-antiquark-photon DAs have to be taken into account to the same
+accuracy in the conformal expansion as the quark-antiquark-gluon ones, notwithstanding
+that the former are known exactly (as given in (4.20)).
+    The conformal expansion of quark-antiquark-photon DAs is constructed following the
+approach of Ref. [34]. To this end one has to separate different quark-spin projections.
+
+                                                            19
+We define the auxiliary amplitudes
+
+                     h0|q̄(z)γ+ γ− Fµν (vz)q(−z)|0i = hq̄qiFµν S ↑↓ (v, pz),
+                     h0|q̄(z)γ− γ+ Fµν (vz)q(−z)|0i = hq̄qiFµν S ↓↑ (v, pz).             (4.34)
+
+Then
+                       1 ↑↓                                 1 ↑↓
+            Sγ (α) =     (S (α) + S ↓↑ (α)),    T4γ (α) =     (S (α) − S ↓↑ (α)) = 0 .   (4.35)
+                       2                                    2
+The auxiliary amplitudes are expanded in conformal polynomials as
+                                                                 
+                ↑↓            2                3
+               S (α) = 60αq̄ αg f00 + f10 αg − αq̄ + f01 (αg − 3αq ) ,
+                                               2
+                                                                 
+                ↓↑            2                3
+               S (α) = 60αq αg f00 + f10 αg − αq + f01 (αg − 3αq̄ ) .                    (4.36)
+                                               2
+As for the quark-antiquark-gluon DAs, the contributions in f00 have conformal spin-3,
+those in f01 and f10 conformal spin-4. The constants fij can be easily obtained by imposing
+the relations
+                       Z                      Z
+                              ↑↓
+                         Dα S (α) = f00 ,        Dα S ↑↓ (α)αq,q̄ = 0,               (4.37)
+
+and using the exact expressions (4.20) for Sγ and T4γ . We find
+                                                  14        7
+                                f00 = 1 , f10 =      , f01 = .                           (4.38)
+                                                  3         3
+With (4.35) we then arrive at the following expressions:
+                                                                                    
+             2               14                3 2       2   7
+ Sγ (α) = 30αg [ (1 − αg ) +     αg (1 − αg ) − (αq̄ + αq ) + {αg (1 − αg ) − 6αq̄ αq }
+                             3                 2             3
+        = 60αg2(αq + αq̄ )(4 − 7(αq + αq̄ )),
+                                               
+  γ           2                 7             7
+ T4 (α) = 30αg (αq̄ − αq ) 1 + (5αg − 3) + αg
+                                3             3
+        = 60αg2(αq − αq̄ )(4 − 7(αq + αq̄ )).                                            (4.39)
+
+We would like to stress that the conformal expansion of T4γ ≡ 0 is nontrivial: to any finite
+order in the expansion one obtains a nonzero result. This complication arises because T4γ ,
+in contrast to the chiral-even twist-3 DAs, does not have simple transformation properties
+under the conformal transformation and corresponds to the difference of two amplitudes
+S ↑↓ and S ↓↑ with fixed spin projections. The symmetry S ↑↓ = S ↓↑ is broken to each finite
+order in the expansion and is only restored in the infinite sum. Note that if N conformal
+partial waves are taken into account, then the first N moments of T4γ vanish. In the next
+section we will consider an example to illustrate why using the truncated expressions in
+(4.39) is mandatory for selfconsistency of the OPE. This complication was overlooked in
+[11, 13] so that the corresponding expressions have to be revised.
+
+                                                20
+4.3.3    Equations of motion and two-particle twist-4 distribution amplitudes
+With the three-particle DAs in hand, we are in a position to calculate the two-particle
+DAs. To this end, it is convenient to use operator identities for the derivatives of the
+relevant chiral-odd nonlocal operators and take the vacuum averages in the BG field. For
+example, one obtains10
+                                                  Z 1
+                               ∂
+       ∂µ q̄(x)σµν q(−x) = −i      q̄(x)q(−x) +       dv v q̄(x)(gGxν + eq Fxν )(vx)q(−x)
+                              ∂xν                  −1
+                               Z 1
+                           −i       dv q̄(x)xρ (gGρµ + eq Fρµ )(vx)σµν q(−x),
+                                           −1
+                                                 Z 1
+        ∂
+           q̄(x)σµν q(−x) = −i∂ν q̄(x)q(−x) +        dv q̄(x)(gGxν + eq Fxν )(vx)q(−x)
+       ∂xν                                        −1
+                               Z 1
+                            −i       dv v q̄(x)(gGxµ + eq Fxµ )(vx)σµν q(−x).                   (4.40)
+                                           −1
+
+These identities can be obtained from the ones derived in [31, 32] by the replacement
+gG → gG + eq F . Taking matrix-elements and comparing with the definitions in (2.19)
+and (4.21), one obtains the following relations
+               Z u     Z ū                                                            
+             d                   2 αq − αq̄ − (2u − 1)
+ hγ (u) = −        dαq      dαq̄                       [S(α) + Sγ (α)] + T3 (α) − T2 (α) ,
+            du 0        0        αg         αg
+           Z u
+  A(u) = 2     dv(4u + 1 − 6v)hγ (v)                                                   (4.41)
+              0
+                  Z u         Z ū                                                                
+                                          1 αq − αq̄ − (2u − 1)
+           −4           dαq          dαq̄                       (T2 (α) − T3 (α)) − [S(α) + Sγ (α)] ,
+                   0           0          αg         αg
+
+from the first and from the second of the identities in (4.40), respectively. These relations,
+again, correspond to (A.13) and (A.14) in [31] with the replacement S → S + Sγ . Inserting
+expressions for the three-particle DAs at next-to-leading order in the conformal expansion
+and using (4.32), we obtain for hγ :
+                                                               1/2
+                                      hγ (u) = −10(1 + 2κ+ )C2 (2u − 1).                        (4.42)
+
+The cancellation of contributions ∼ ζi is a consequence of conformal symmetry. To see
+this, notice that hγ corresponds to the configuration with both the quark and the antiquark
+having “minus” light-cone projections and therefore a well-defined conformal expansion
+                                             1/2
+in terms of Gegenbauer-polynomials Cj−1 where j is the conformal spin, cf. [34, 31]. The
+symmetry hγ (u) = hγ (1 − u) implies that only odd conformal spins can contribute, and
+in addition the contribution of the lowest possible spin j = 1 vanishes by EOM. Hence
+j = 3, 5, . . ., and in particular the result in (4.42) corresponds to j = 3. The ζ-contributions
+  10
+     Here and below we use ∂µ to denote the derivative of a nonlocal operator with respect to the total
+translation, cf. [15].
+
+
+                                                       21
+to three-particle DAs have j = 4; they cannot appear in the expansion of hγ and indeed
+cancel by virtue of (4.32).
+    The situation with A is different, since this function is defined off the light-cone and
+its conformal expansion is more complicated. Using the result in (4.42) and the second
+relation in (4.41) we obtain
+                                              
+  A(u) = 40u2 ū2 3κ − κ+ + 1 + 8 ζ2+ − 3ζ2 ×
+                                                                                         
+           × uū(2 + 13uū) + 2u3 (10 − 15u + 6u2 ) ln u + 2ū3 (10 − 15ū + 6ū2 ) ln ū . (4.43)
+
+    We emphasize that our results for the DAs hγ and A are consistent with the approxima-
+tions adopted for the three-particle DAs; that is, this set of photon distribution amplitudes
+satisfies all exact QCD identities that are consequence of EOM. This issue is nontrivial.
+For example, consider an important operator identity which is an extension of Eq. (24) in
+[13]:11
+                   Z 1                                                 Z 1
+                           ∂
+q̄(x)σµν q(−x) = duu           q̄(ux)σµx q(−ux) − (µ ↔ ν) − εµνxξ ∂ξ duu2q̄(ux)γ5 q(−ux)
+                    0     ∂x ν                                             0
+                          Z 1      Z u
+                   −iεµνxξ duu2       dv q̄(ux) {gGxξ (vx) + eq Fxξ (vx)} γ5 q(−ux)
+                                   0        −u
+                       Z 1 Z u
+                     +i duu dvv q̄(ux) {[gGµx (vx) + eq Fµx (vx)]σ νx − (µ ↔ ν)} q(−ux).
+                           0           −u
+                                                                                                      (4.44)
+
+Taking the vacuum average in the BG field and using the definitions of photon DAs, this
+implies one more relation
+            Z u
+  A(u) = 2      dv (2v − 1) hγ (v)
+                 0
+               Z u         Z ū                                                               
+                                       1 αq − αq̄ − (2u − 1)            γ
+          −4         dαq          dαq̄                       (T4 (α) + T4 (α) − T3 (α)) + S̃(α) .
+                 0          0          αg         αg
+                                                                                              (4.45)
+
+One can check that the resulting expression for A coincides with the result given in (4.43) if
+and only if full expressions for the three-particle DAs and in particular the nonzero result
+for T4γ (4.39) are used. In Ref. [13] the DAs hγ and A were derived using a truncated
+version of (4.44) neglecting T4γ and quark-antiquark-gluon operators. In view of relation
+(4.32) this approximation is inconsistent and the resulting DAs are superseded by the ones
+obtained in this paper.
+
+  11
+     This identity is very useful in practical calculations since it allows to express the chiral-odd operator
+with two free Lorentz-indices through a simpler nonlocal operator with one open index and three-particle
+operators of higher twist.
+
+
+
+
+                                                     22
+5    Summary and Conclusions
+In this paper we have given the first comprehensive analysis of photon distribution am-
+plitudes. The special interest (and complication) springs from the interplay between hard
+(perturbative) and soft (nonperturbative) contributions to the photon structure, as dis-
+cussed in Sec. 2.2. This interplay becomes nontrivial in higher twists, as QCD equations
+of motion receive additional contributions from photon operators. (Alternatively, one may
+leave equations of motion intact, but take into account contact terms.)
+    We have defined and classified all two- and three-particle distribution amplitudes of
+the photon up to twist-4. For the chiral-odd ones, we could largely draw on the results
+obtained in Ref. [11], the remaining definitions resemble those for the ρ-meson discussed
+in [31, 32]. The main theoretical result of our analysis is the conformal expansion of DAs
+in presence of the background field. We provide a selfconsistent approximation for photon
+DAs up to twist-4 that contains a minimal number of nonperturbative parameters and is
+consistent with the exact QCD equations of motion. The final expressions are collected
+in Eqs. (4.9) (twist-3) and (4.27), (4.39), (4.42), (4.43) (twist-4). The numerical values
+of the parameters are estimated, when possible, using QCD sum rules. In particular, we
+give a new estimate of the magnetic susceptibility of the quark condensate and derive a
+sum rule for the normalization of twist-three distributions. All parameters are accessible
+to lattice-simulations, and we hope that the lattice-community will take up the task and
+provide more accurate estimates.
+    We believe that the results of this work can be applied to the studies of hard exclusive
+processes involving photon emission (or absorption) in the framework of QCD factoriza-
+tion. A few examples are mentioned in the introduction. A more detailed discussion and
+concrete calculations go beyond the tasks of this paper.
+
+
+Acknowledgments
+The work of N.K. is supported by DFG, projects 920585 and 92070. P.B. thanks the
+physics department of the university of Regensburg for kind hospitality during the final
+stages of this work.
+
+
+Appendices
+
+A     The Conformal Basis
+For a generic three-particle operator a “conformal basis” can be constructed as follows
+[36, 37]: conformal symmetry allows one to fix the total three-particle conformal spin
+                                                                   (12)3
+J = j1 + j2 + j3 + N of a state. We define a set of functions YJj        by requiring that,
+in addition to a fixed J, they also have a definite value of the conformal spin in the
+quark-antiquark channel (12), for definiteness: j = j1 + j2 + n with n = 0, . . . , N.
+                                                                         (12)3
+    Taken together, these two conditions determine the polynomials YJj         uniquely and
+
+
+                                            23
+yield the following expression:
+                                                                                                         
+             (12)3                        (2j3 −1,2j−1)             (2j −1,2j −1)               α2 − α1
+            YJj (αi ) = (1 − α3 )j−j1−j2 PJ−j−j         (1 − 2α3 ) Pj−j11−j2 2                                . (A.1)
+                                                 3
+                                                                                                1 − α3
+            (α,β)
+Here Pn (x) is the Jacobi-polynomial.
+                           (12)3
+    The basis functions YJj (αi ) are mutually orthogonal with respect to the conformal
+scalar product:
+               Z 1
+                                                  (12)3     (12)3
+                   Dα α12j1 −1 α22j2 −1 α32j3 −1 YJj (αi )YJ ′ j ′ (αi ) = NJj δJJ ′ δjj ′ , (A.2)
+                           0
+
+where
+                        Γ(j +j1 −j2 )Γ(j −j1 +j2 )            Γ(J −j +j3 )Γ(J +j −j3 )
+  NJj =                                                                                    .
+                 Γ(j −j1 −j2 +1)Γ(j +j1 +j2 −1)(2j −1) Γ(J −j −j3 +1)Γ(J +j +j3 −1)(2J −1)
+                                                                                        (A.3)
+
+The above construction of the conformal basis involves the obvious ambiguity in what
+order to couple the spins of partons to the total spin J. Choosing a different two-particle
+channel one obtains a different conformal basis related to the original one through the
+matrix Ω of Racah 6j-symbols of SL(2, R), e.g.
+                         (31)2
+                                        X                  (12)3
+                       YJj (xi ) =              Ωjj ′ (J) YJj ′ (xi ) .              (A.4)
+                                                 j1+j2 ≤j ′ ≤J−j3
+
+
+The properties of the Racah 6j-symbols as well as explicit expressions in terms of the
+generalized hypergeometric series 4 F3 (1) are summarized in [37].
+
+
+B           QCD Sum Rules
+Given the considerable time that has passed since the existing numerical estimates of the
+parameters of photon DAs were obtained [27, 28, 11], we feel that the corresponding QCD
+sum rules deserve a fresh look. Some new results are also included: we calculate the radia-
+tive correction to the leading-twist sum rule and derive a sum rule for the normalization
+of twist-3 distributions.
+
+B.1         The leading twist-2 distribution amplitude
+The QCD sum rules for the leading-twist photon DA φγ (u) are derived from the correlation
+function of the nonlocal tensor operator on the light-cone with the vector current. For
+massless quarks:
+
+        Z                                                                         Z1
+             4      −iqy                                               qz
+    i       d ye           h0|T [q̄γz q](y)q̄(0)σµz [0, z]q(z)|0i = izµ 2 hq̄qi        du e−iquz Φ(u, q 2 )     (B.1)
+                                                                       q
+                                                                                  0
+
+
+
+                                                            24
+with
+                                      αs C F        1 m20
+Φ(u, q 2 ) = −[δ(u)+δ(1−u)]−                 F (u)−       [δ(u)+δ(1−u)+δ ′(u)+δ ′(1−u)]+O(1/q 4)
+                                       2π           3 q2
+                                                                                          (B.2)
+where δ ′ (x) = (d/dx)δ(x) and
+                                          h ū i   h u i   ū ln(uū)                 
+               −q 2                                                                u ln(uū)
+ F (u) = ln 2 − 1         2δ(u) + 2δ(ū) −          −          −               −                 .
+                µ                              u +      ū +          u      +         ū      +
+                                                                                           (B.3)
+Here the [ ]+ prescription is defined as usual
+                                                      Z 1
+                            [f (u)]+ = f (u) − δ(u0)       dw f (w) ,
+                                                               0
+
+where u0 = 0 or u0 = 1 is the position of the singularity, and m20 parametrizes the mixed
+condensate: hq̄σgGqi ≡ m20 hq̄qi. The radiative correction to the quark condensate in (B.3)
+is a new result12 . By expanding (B.1) around z = 0 in terms of conformal invariant local
+operators one obtains the functions An (q 2 ) given in Eq. (4.7) in [11], up to the terms in
+αs .
+
+B.1.1        Magnetic susceptibility
+The magnetic susceptibility of the quark condensate, χ, is obtained from the correlation
+function
+                  Z1                                          
+       2    2                  2          8 αs        µ2           2 m20       hg 2 G2 i
+   q χ(q ) =           du Φ(u, q ) = −2 +          ln      + 1   −       + 0 ·           + ...,   (B.4)
+                                          3π          −q 2         3 q2           q4
+                  0
+
+where we have also indicated that the gluon condensate contribution vanishes in factoriza-
+tion approximation [28]. We write the physical spectral density of this correlation function
+as a sum over several narrow resonances plus a smooth continuum starting at a threshold
+s0 . Assuming quark-hadron duality, the continuum contribution can be represented by
+the perturbative imaginary part of the radiative correction, so that
+                                X mi fi f T               Z ∞
+                    2                     i     8αs                  1
+                 χ(q )hq̄qi = −               +     hq̄qi     ds             ,         (B.5)
+                                i
+                                    m2i − q 2   3π         s0    s(s − q 2 )
+
+where fi and fiT denote the couplings of the resonance i to the vector and tensor current,
+and are defined as in (3.7). The factor 8/3 in front of the integral is related to the
+anomalous dimensions defined in (3.4): 1/2(γ0 − γhq̄qi ) = 8/3. Once these parameters are
+fixed, the magnetic susceptibility is obtained from (B.5) as χ = χ(0).
+    In a first approximation one can retain the contribution of the lowest-lying ρ-meson
+state only and use the same value of the continuum threshold as obtained in the sum rules
+  12
+       The expression given in [23] for the local limit z → 0 contains a typo.
+
+
+
+                                                      25
+for the correlation function of vector currents, s0 = 1.5 GeV2 [30]. Using the QCD sum
+rule estimate fρ⊥ = 160 MeV one obtains
+
+                                      fρ fρ⊥    8αs 1
+                      χ(1 GeV) = −            +       ≃ 3.0 GeV−2 ,                   (B.6)
+                                     mρ hq̄qi   3π s0
+
+which is an improvement over the pure VDM estimate in (3.9). Including more resonances
+and at the same time increasing the continuum threshold, one may hope to get a better
+accuracy. The corresponding sum rules can be constructed in two different ways: either
+matching the expansion of (B.5) for q 2 → −∞ to the power series in (B.4) [28] or perform-
+ing the Borel-transformation of both expressions and matching the results for intermediate
+values of the Borel-parameter of the order of a few GeV [27]. Once the parameters are
+fixed, the magnetic susceptibility is obtained from (B.5) as χ = χ(0).
+    Following the first procedure we obtain the so-called local-duality sum rules:
+                 X                                                       
+                             T                        4αs (µ)       s0
+                      mi fi fi (µ) = −2hq̄qi(µ) 1 +             ln 2 − 1 ,
+                                                        3π          µ
+                 X                                                    
+                        3    T                   4αs (µ)      m20 (µ)
+                     mi fi fi (µ) = −2hq̄qi(µ)           s0 +            ,
+                                                   3π             3
+                 X                                                   
+                        5    T                   αs (µ) 2           2
+                     mi fi fi (µ) = −4hq̄qi(µ)         s + 0 · hG i .                (B.7)
+                                                  3π 0
+
+For the couplings of the ground-state resonance ρ(770) one can use the values quoted
+in (3.7). The three local-duality sum rules in (B.7) can be used to determine the con-
+tributions of three more resonances, so that we truncate the sums in (B.7) after four
+terms. Experimentally, the three lowest-lying resonances ρ(770), ρ(1450) and ρ(1700) are
+established [26]. The magnetic susceptibility χ(µ) then exhibits a mild dependence on
+s0 and on the unknown mass of the fourth resonance m4 . As an example, we show in
+Fig. 3 χ(1 GeV) as function of m4 with s0 fixed as s0 = (m4 + 0.1 GeV)2 (solid line) and
+(m4 + 0.2 GeV)2 (dashed line). In this calculation we use hq̄qi(1 GeV) = (−0.25 GeV)3 ,
+m20 (1 GeV) = 0.65 GeV2 , cf. [23], and the value αs (1 GeV) = 0.51.
+     Neglecting for the moment the uncertainty of f1 f1T and the local-duality approximation
+itself, we obtain from local-duality sum rules with four resonances
+
+                             χ(1 GeV) = (3.08 ± 0.02) GeV−2 .                         (B.8)
+
+For a typical value of m4 , the breakdown of the total number in contributions from the
+different resonances and the continuum is 2.73 + 0.30 − 0.07 + 0.04 + 0.10, which shows
+a clear dominance of ρ(770). Neglecting radiative corrections altogether, we would find
+χ = (3.3 ± 0.1) GeV−2 .
+    As a consistency check, we relax the condition that the known value of f1 f1T be used as
+input and include only three resonances in the sums in (B.7). We then find f1T (1 GeV) =
+(170 ± 7) MeV for m23 ≤ s0 ≤ 5 GeV2 , which is consistent with the result from Borel sum-
+rules quoted above, and χ(1 GeV) = (3.20 ± 0.15) GeV−2 , in complete agreement with
+(B.8).
+
+                                            26
+                             3.1
+                             3.095
+                             3.09
+                             3.085
+                             3.08
+                             3.075
+                             3.07
+                             3.065
+                                     1.8      2   2.2 2.4 2.6 2.8       3
+
+
+Figure 3: χ(1 GeV) as function of m4 with s0 fixed as s0 = (m4 + 0.1 GeV)2 (solid line)
+and (m4 + 0.2 GeV)2 (dashed line).
+
+      0.0125                                           3.2
+        0.01
+                                                       3.15
+      0.0075                                           3.1
+       0.005                                           3.05
+      0.0025                                           3
+          0                                            2.95
+    -0.0025                                            2.9
+               1       1.5     2       2.5        3           1   1.5       2   2.5   3
+
+
+
+Figure 4: (a) Coupling fρ′ fρT′ from the Borel sum-rule (B.9) as a function of the Borel-
+parameter. Solid line: mρ′ = 1.4 GeV, dashed line: mρ′ = 2 GeV. s0 = (mρ′ + 0.1 GeV)2 .
+(b) χ(1 GeV) from (B.5) with q 2 = 0 with two resonances, ρ(770) and an effective ρ′ , as a
+function of the Borel-parameter. Identification of curves as in (a).
+
+    Alternatively, and this constitutes the 2nd procedure, one investigates the Borel sum-
+rule
+               2   2               −m2 /M 2
+  mρ fρ fρT e−mρ /M + mρ′ fρ′ fρT′ e ρ′ =
+                                             Z ∞                              
+                      4 αs          M2             ds −s/M 2     1 m20     hG2 i
+      = −2hq̄qi 1 +            ln 2 − γE − 1 −        e        −       +0·         ,(B.9)
+                      3 π           µ           s0  s            3 M2       M4
+where for simplicity we have substituted the sum over higher resonances by the contri-
+bution of one effective state ρ′ and consider the mass mρ′ as a free parameter. The sum
+rule (B.9) can be used to extract the product fρ′ fρT′ as a function of M 2 , s0 and mρ′ . We
+find that for mρ′ ≥ 1.4 GeV there is a reasonable stability-plateau in the Borel-parameter
+M 2 , as shown in Fig. 4. Varying mρ′ between 1.4 and 2.0 GeV and fixing the continuum
+threshold as s0 = (mρ′ + 0.1 GeV)2 , we find from (B.5)
+                               χ(1 GeV) = (3.15 ± 0.10) GeV−2 ,                       (B.10)
+which is perfectly consistent with the value obtained from local-duality sum-rules.
+    We are now in a position to quote our final value for χ(1 GeV). Averaging over the
+results from local-duality sum rules with three and four resonances, and the result from
+
+                                                  27
+Borel sum-rules, we obtain the central value 3.15 GeV−2. In estimating the uncertainty,
+we take into account that the ρ(770) is the dominant contribution, so that ∆χ/χ =
+∆(fρ fρT )/(fρ fρT ) in good approximation. Adding in quadrature the uncertainties from
+∆fρ = 10 MeV, ∆fρT = 10 MeV and the uncertainty quoted in (B.10), we finally arrive at
+the estimate quoted in (3.13).
+
+B.1.2    Higher moments
+Let us now turn to the shape of the photon DA. At first sight, assuming the vector-
+dominance approximation in (B.1) 1/(−q 2 ) → 1/m2ρ at q 2 → 0, one is led to the conclusion
+that the photon DA schould be strongly peaked at the end-points, with the quark conden-
+sate contribution δ(u) + δ(1 − u) somewhat smoothened by contributions of condensates
+of higher dimension. We start by giving a qualitative argument why this picture is wrong.
+    To this end, it is convenient to consider the Gegenbauer-moments of the correlation
+function (B.1) defined as
+                                           Z 1
+                   2     1    2(2n + 3)
+               χn (q ) = 2                     du Cn3/2 (2u − 1)Φ(u, q 2 )
+                        q 3(n + 1)(n + 2) 0
+                                                                            
+                           2(2n + 3) 1     (n + 1)(n + 2) m20         4    6
+                       =−                +                     + O(n /q ) ,                (B.11)
+                               3      q2          6         q4
+
+where for simplicity we suppress radiative corrections. Obviously χ0 (q 2 ) = χ(q 2 ), and the
+coefficients φn in the expansion of the photon DA over the Gegenbauer-polynomials (3.4)
+are given by φn = χn (q 2 = 0)/χ. Assuming that the correlation function χn for arbitrary
+n is saturated by the contribution of the ρ-meson and using (3.11), one obtains
+
+                                                       (2n + 3)
+                                             φVDM
+                                              n   =                                        (B.12)
+                                                          3
+and                            X 1                                      1h            i
+               φγ (u) = 6uū                (2n + 3) Cn3/2 (2u − 1) =     δ(u) + δ(ū) ,   (B.13)
+                               n even
+                                        3                               2
+as expected.
+    To see why this is wrong, consider the expansion of the VDM-type contribution in a
+power series
+                                        1       1    m2
+                          χn (q 2 ) ≃ 2     = −    −     + ...                  (B.14)
+                                     m − q2     q2    q4
+The comparison of the two expansions (B.11) and (B.14) shows that in order for them to
+be consistent the mass of the resonance has to grow rapidly with n: mn ∼ n. Alternatively,
+one can say that the low-mass ρ-meson constribution becomes irrelevant for large n.
+    To see what this means, let us generalize the vector-dominance approximation by
+allowing the effective mass of the resonance to be n-dependent and, in particular, choose
+the mass such as to reproduce the first two terms in the operator product expansion:
+
+                                  m2n,eff = m20 (n + 1)(n + 2)/6 .                         (B.15)
+
+                                                     28
+It is easy to see that in this approximation
+
+                                 (2n + 3) m20,eff      2(2n + 3)
+                          φn =             2
+                                                  =                 .                   (B.16)
+                                    3     mn,eff    3(n + 1)(n + 2)
+
+One obtains in this model
+                                   X         2(2n + 3)
+                   φγ (u) = 6uū                          Cn3/2 (2u − 1) = 1 ,          (B.17)
+                                   n even
+                                          3(n + 1)(n + 2)
+
+that is a flat DA with no momentum fraction dependence: the peaks at the end-points have
+disappeared. Note that our argumentation only invokes the structure of nonperturbative
+power-like corrections in the operator product expansion. Taking into account perturbative
+gluon radiation is expected to further suppress the end-point behaviour, as illustrated in
+Fig. 2 for the example of the instanton model.
+    Trying to be somewhat more quantitative, we can write the generalization of (B.5) to
+arbitrary Gegenbauer-moments:
+                                                n+1
+                                                      !            Z ∞
+                  X mi fi f T φi,n 2            X 1 αs                         1
+      2                     i
+ χn (q )hq̄qi = −         2     2
+                                  + (2n+3)                CF hq̄qi      ds         2)
+                                                                                      , (B.18)
+                   i
+                        m i − q     3           j=1
+                                                    j   π           s 0
+                                                                           s(s − q
+
+where φi,n is the nth coefficient in the Gegenbauer-expansion of the DA of the ith reso-
+                                    P
+nance. Note that γn − γhq̄qi = 4CF n+1 j=1 (1/j). For n = 2, one can construct local-duality
+sum rules:
+         X                                                                    
+                    T               14                4 αs (µ) 11      s0   131
+             mi fi fi (µ)φi,2(µ) = − hq̄qi(µ) 1 +                    ln 2 −        ,
+                                     3                3 π         6    µ     36
+        X                                                              
+               3    T               14            22 αs (µ)         2
+             mi fi fi (µ)φi,2(µ) = − hq̄qi(µ)               s0 + 2m0 (µ) ,            (B.19)
+                                     3            9 π
+
+where we suppress a third sum rule, analogous to the 3rd equation in (B.7), because
+the factorization approximation for the gluon condensate contribution is known to be
+unreliable.
+    A comparison with (B.7) shows that the expression on the r.-h.s. of the first sum rule
+is by a factor 1.36 larger (assuming s0 = 2.5 GeV2 ), whereas the r.-h.s of the second sum
+rule increases by roughly a factor 3. This is consistent with the pattern suggested above,
+that higher resonances start to play a decisive rôle. Using a model with two resonances,
+ρ(770) and ρ(1450), and the continuum treshold s0 = 2.5 GeV2 one obtains the small
+value φ2 = 0.07. The problem with this procedure is that the fit “wants” a negative value
+of the second Gegenbauer-coefficient φρ,2 , which contradicts a more direct QCD sum rule
+evaluation of this coefficient from diagonal sum-rules [23]. If the value [23], φρ,2 = 0.2±0.1,
+is enforced, and, say, the mass of the resonance is taken as free parameter, the result for
+φ2 increases by almost an order of magnitude. In our point of view such an instability
+indicates that no reliable conclusion can be drawn on the value of φ2 in the QCD sum rule
+approach.
+
+
+                                                29
+B.2      Twist-3 Distributions
+To leading-order accuracy of the conformal expansion we only need the parameter f3γ
+defined in (4.1). It can be estimated from the correlation function
+    Z
+   i d4 xe−iqx h0|T q̄(0)G̃zν (0)γz γ5 q(0)q̄(x)γβ q(x)|0i = f3γ (q 2 )(qz)(zβ qν − (qz)gνβ ) + . . . ,
+                                                                                     (B.20)
+where the Lorentz-structure is chosen in order to pick up the relevant coupling of twist-
+3 corresponding to the transverse projection Gzν → Gz⊥ and to suppress contributions
+of twist-4. f3γ is obtained as f3γ (0). The operator product expansion of f3γ (q 2 ), up to
+contributions of dimension 6, reads
+                                                
+               2    αs q 2 1       −q 2               1 D αs 2 E 8 παs hq̄qi2
+         f3γ (q ) =            ln       + const.   +         G −                , (B.21)
+                    4π π 2 36       µ2               24q 2 π        9    q4
+and the ρ-meson contribution can be obtained by a standard QCD sum-rule calculation,
+                                       Z s0
+          2 2      −m2ρ /M 2   αs 1              −s/M 2   1 D αs 2 E 8 παs hq̄qi2
+        mρ fρ ζ3ρ e          =              ds se       +       G +               . (B.22)
+                               4π 36π 2 0                 24 π       9 M2
+Using s0 = 1.5 GeV2 and h απs G2 i = 0.012 GeV4 [30], we obtain from this sum rule (at the
+normalization point µ = 1 GeV)
+                                     ζ3ρ (1 GeV) = 0.10 ± 0.05,                                   (B.23)
+which is by a factor 3 larger than the result quoted in [31] and obtained in Ref. [33] from
+the diagonal correlation function of two quark-antiquark-gluon operators.
+    In vector-dominance approximation f3γ = −fρ2 ζ3ρ . Including the continuum contribu-
+tions, f3γ is obtained as13
+                                                     αs s 0 1
+                                f3γ (0) = −fρ2 ζ3ρ +           .                     (B.24)
+                                                     4π π 2 36
+Using the value of ζ3ρ given in (B.23) we obtain the estimate (at the normalization point
+µ = 1 GeV)
+                              f3γ = −(0.0039 ± 0.0020) GeV2                          (B.25)
+with s0 = 1.5 GeV2. The correction to the vector-dominance approximation is small,
+∼ 5 %.
+   To next-to-leading order in the conformal spin, we have two parameters, ωγA and ωγV ,
+which are defined by the following matrix-elements:
+                               →         ←                                          3
+                z (gGαν z α (i D z) − (i D z)gGαν z α )q|0iF = eq (pz)2 Fνz f3γ ωγV + O(zν ),
+           h0|q̄/
+                                                                                    28
+            h                 i    3                                                 3
+        z γ5 iDz, g G̃µν z µ q − (i∂z)q̄/
+   h0|q̄/                                  z γ5 g G̃µν z µ q|0iF = eq i(pz)2 Fνz f3γ ωγA + O(zν ),
+                                   7                                                 28
+                                                                                              (B.26)
+  13
+    In order to obtain this formula, we express the continuum contribution to (B.21) via a dispersion
+           R µ2
+relation ∼ s0F ds = µ2F − s0 , where µF is the factorization scale. The quadratically divergent term ∼ µ2F
+matches the contribution of low momenta in the perturbative contributions of twist-1 in (2.18) which have
+to be subtracted to avoid double counting. We prefer to define perturbative contributions in such a way
+as to include all momenta down to zero, and therefore have to omit quadratically divergent parts of the
+higher-twist operators. Thus we only keep the term in s0 .
+
+                                                   30
+where [., .] stands for the commutator. In the vector-dominance approximation ωγA = ω3ρ A
+       V      V
+and ωγ = ω3ρ . The numbers given in (4.10) are quoted from [33] and have to be taken with
+caution. Since even for leading twist we have been not able to draw reliable conclusions
+on similar parameters from the sum rules, we consider the given numbers as an order-of-
+magnitude estimate. From the general experience of similar calculations we expect that
+this is rather an upper bound.
+
+
+References
+ [1] P. Kroll and M. Raulfs, Phys. Lett. B 387 (1996) 848;
+     A. V. Radyushkin and R. T. Ruskov, Nucl. Phys. B 481 (1996) 625;
+     I. V. Musatov and A. V. Radyushkin, Phys. Rev. D 56 (1997) 2713.
+
+ [2] D. Müller et al., Fortsch. Phys. 42 (1994) 101;
+     X. D. Ji, Phys. Rev. Lett. 78 (1997) 610;
+     A. V. Radyushkin, Phys. Lett. B 380 (1996) 417.
+
+ [3] M. Beneke, T. Feldmann and D. Seidel, Nucl. Phys. B 612 (2001) 25;
+     S. W. Bosch and G. Buchalla, Nucl. Phys. B 621 (2002) 459;
+     A. Ali and A. Y. Parkhomenko, Eur. Phys. J. C 23 (2002) 89.
+
+ [4] E. Witten, Nucl. Phys. B 120 (1977) 189;
+     W. A. Bardeen and A. J. Buras, Phys. Rev. D 20 (1979) 166 [E: D 21 (1979) 2041];
+     D. W. Duke and J. F. Owens, Phys. Rev. D 22 (1980) 2280.
+
+ [5] J. S. Schwinger, Phys. Rev. 82 (1951) 664.
+
+ [6] L. F. Abbott, Nucl. Phys. B 185 (1981) 189; Acta Phys. Polon. B 13 (1982) 33.
+
+ [7] E. V. Shuryak and A. I. Vainshtein, Nucl. Phys. B 199 (1982) 451.
+
+ [8] M. S. Dubovikov and A. V. Smilga, Nucl. Phys. B 185 (1981) 109.
+
+ [9] B. L. Ioffe and A. V. Smilga, Nucl. Phys. B 232 (1984) 109.
+
+[10] V. A. Novikov et al., Fortsch. Phys. 32 (1985) 585.
+
+[11] I. I. Balitsky, V. M. Braun and A. V. Kolesnichenko, Sov. J. Nucl. Phys. 48 (1988)
+     348 [Yad. Fiz. 48 (1988) 547]; Nucl. Phys. B 312 (1989) 509.
+
+[12] V. L. Chernyak and A. R. Zhitnitsky, JETP Lett. 25 (1977) 510; Sov. J. Nucl. Phys.
+     31 (1980) 544 [Yad. Fiz. 31 (1980) 1053];
+     V. L. Chernyak, V. G. Serbo and A. R. Zhitnitsky, JETP Lett. 26 (1977) 594; Sov.
+     J. Nucl. Phys. 31 (1980) 552 [Yad. Fiz. 31 (1980) 1069];
+     G. P. Lepage and S. J. Brodsky, Phys. Lett. B 87 (1979) 359; Phys. Rev. Lett. 43
+     (1979) 545 [E: 43 (1979) 1625]; Phys. Rev. D 22 (1980) 2157;
+     S. J. Brodsky, G. P. Lepage and A. A. Zaidi, Phys. Rev. D 23 (1981) 1152;
+
+
+                                           31
+    A. V. Efremov and A. V. Radyushkin, Phys. Lett. B 94 (1980) 245; Theor. Math.
+    Phys. 42 (1980) 97 [Teor. Mat. Fiz. 42 (1980) 147].
+
+[13] A. Ali and V. M. Braun, Phys. Lett. B 359 (1995) 223.
+
+[14] V. Y. Petrov et al., Phys. Rev. D 59 (1999) 114018;
+     M. Praszalowicz and A. Rostworowski, local NJL model,” Phys. Rev. D 64 (2001)
+     074003.
+
+[15] I. I. Balitsky and V. M. Braun, Nucl. Phys. B 311 (1989) 541.
+
+[16] V. M. Belyaev et al., Phys. Rev. D 51 (1995) 6177.
+
+[17] J. C. Collins, Renormalization, Cambridge University Press, Cambridge (1984).
+
+[18] I. I. Balitsky and V. M. Braun, Nucl. Phys. B 361 (1991) 93.
+
+[19] J. D. Bjorken and S. D. Drell, Relativistic Quantum Mechanics, McGraw-Hill, New
+     York (1964).
+
+[20] M. Wüsthoff, Phys. Rev. D 56 (1997) 4311.
+
+[21] D. Y. Ivanov and M. Wüsthoff, Eur. Phys. J. C 8 (1999) 107.
+
+[22] V. L. Chernyak and A. R. Zhitnitsky, Phys. Rept. 112 (1984) 173.
+
+[23] P. Ball and V. M. Braun, Phys. Rev. D 54 (1996) 2182.
+
+[24] M. A. Shifman and M. I. Vysotsky, Nucl. Phys. B 186 (1981) 475.
+
+[25] I. I. Balitsky and A. V. Yung, Phys. Lett. B 129 (1983) 328.
+
+[26] D. E. Groom et al. [Particle Data Group], Eur. Phys. J. C 15 (2000) 1.
+
+[27] V. M. Belyaev and Y. I. Kogan, Yad. Fiz. 40 (1984) 1035.
+
+[28] I. I. Balitsky, A. V. Kolesnichenko and A. V. Yung, Yad. Fiz. 41 (1985) 282.
+
+[29] V. M. Braun et al., hep-ph/0206305.
+
+[30] M. A. Shifman, A. I. Vainshtein and V. I. Zakharov, Nucl. Phys. B 147 (1979) 385,
+     448.
+
+[31] P. Ball et al., Nucl. Phys. B 529 (1998) 323.
+
+[32] P. Ball and V. M. Braun, Nucl. Phys. B 543 (1999) 201.
+
+[33] A. R. Zhitnitsky, I. R. Zhitnitsky and V. L. Chernyak, Sov. J. Nucl. Phys. 41 (1985)
+     284 [Yad. Fiz. 41 (1985) 445].
+
+[34] V. M. Braun and I. E. Filyanov, Z. Phys. C 48 (1990) 239 [Sov. J. Nucl. Phys. 52
+     (1990) 126].
+
+                                            32
+[35] S. Ferrara et al., Phys. Lett. B 38 (1972) 333.
+
+[36] V. M. Braun et al., Nucl. Phys. B 553 (1999) 355.
+
+[37] V. M. Braun, G. P. Korchemsky and A. N. Manashov, Nucl. Phys. B 603 (2001) 69.
+
+
+
+
+                                            33
+

@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-25",
+  "status": "plan_agreed_awaiting_fresh_session_execution_approval",
+  "canonical_project": "project.org",
+  "execution_hold": {
+    "active": true,
+    "reason": "Author explicitly requests that a fresh Codex session ask for approval before starting the calculation plan in project.org.",
+    "approval_granted": false
+  },
+  "agreed": {
+    "duality_shape_a": 1,
+    "effective_threshold": "sigma_0 = s_eff = Table_II_s0",
+    "borel_parameters": "keep_axial_and_pseudoscalar_independent",
+    "new_work_location": "review/recalculation_a1_20261025",
+    "preserve_previous_results": true,
+    "final_manuscript_read_only": true
+  },
+  "intercept_ratio": {
+    "definition": "eta = tilde_s_A / tilde_s_P",
+    "value": "m_A^2/m_P^2",
+    "recommended": "m_A^2/m_P^2",
+    "status": "central_prescription_selected_execution_approval_pending",
+    "fixed_during_borel_ratio_scan": true
+  },
+  "central_borel_ratio": {
+    "definition": "r = M_A^2/M_P^2",
+    "proposed_from_prior_discussion": "m_A^2/m_P^2",
+    "status": "central_prescription_in_agreed_plan_execution_approval_pending",
+    "DA_localization_in_manuscript_convention": "u0=1/(1+r) for kernel m_Q^2-u*P_A^2-(1-u)*p_P^2"
+  },
+  "retained_external_angles_deg": {
+    "Ds": {"central": 26.6, "quoted_uncertainty": 0.6},
+    "Bs": {"central": 38.5, "quoted_uncertainty": 0.1}
+  },
+  "initial_windows_GeV2": {
+    "Ds2460": {"effective_M2": [3.0, 4.5], "s_eff": [8.5, 9.5]},
+    "Ds2536": {"effective_M2": [3.0, 4.5], "s_eff": [9.0, 10.0]},
+    "Bs5750": {"effective_M2": [10.0, 14.0], "s_eff": [39.0, 41.0]},
+    "Bs5830": {"effective_M2": [10.0, 14.0], "s_eff": [40.0, 42.0]}
+  },
+  "full_numerical_recalculation_started": false,
+  "photon_normalization": {
+    "status": "investigation_plan_agreed_matching_and_documented_RG_pending",
+    "source_review": "review/referee_a_photon_normalization_20261025/README.md",
+    "new_input_or_scheme_adopted": false
+  },
+  "production_changed": false
+}

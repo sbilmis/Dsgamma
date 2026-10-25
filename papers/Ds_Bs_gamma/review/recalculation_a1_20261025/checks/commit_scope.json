@@ -1,0 +1,20 @@
+{
+  "scope": "Handoff, references and supporting review material only",
+  "source_root": "/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma",
+  "files": 266,
+  "excluded_large_raw_scans": [
+    "review/referee_a_borel_asymmetry_20261025/Bs5750_scan.npz",
+    "review/referee_a_borel_asymmetry_20261025/Bs5830_scan.npz",
+    "review/referee_a_borel_asymmetry_20261025/Ds2460_scan.npz",
+    "review/referee_a_borel_asymmetry_20261025/Ds2536_scan.npz"
+  ],
+  "production_changes_included": false,
+  "push_requested": false,
+  "execution_approval_pending": true,
+  "excluded_ignored_artifacts": [
+    "review/correctness_audit_20261019/bc_folder_followup/wolfram_run.log",
+    "review/correctness_audit_20261019/isolated_checks/outputs/python_transition_run.log",
+    "review/correctness_audit_20261019/printed_appendix_run.log",
+    "review/correctness_audit_20261019/references/article_R1.bbl"
+  ]
+}

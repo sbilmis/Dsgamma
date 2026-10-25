@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-25",
+  "scope": "Document structure, links and preservation only; no physics calculation",
+  "tproj_headings_preserved": true,
+  "next_task_count": 1,
+  "local_links_checked": 17,
+  "protected_files_checked": 409,
+  "protected_files_changed": [],
+  "reference_snapshots_checked": 4,
+  "execution_approval_pending": true,
+  "project_org_sha256": "80b17e9116e2d5243a90fc369b99715a421e4188ffd6dbd3b7dc7278f61ce8f5",
+  "emacs_org_parser": {
+    "status": "passed",
+    "headlines": 30
+  }
+}

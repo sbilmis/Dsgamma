@@ -1,0 +1,14 @@
+{
+	"scripts\/mathematica_twopoint_ds1_matrix_check.wl":{
+		"syntax_pass":true,
+		"d5_matches_independent_derivation":true
+	},
+	"scripts\/mathematica_twopoint_bs1_matrix_check.wl":{
+		"syntax_pass":true,
+		"d5_matches_independent_derivation":true
+	},
+	"scripts\/build_twopoint_ds1_matrix_notebook.wl":{
+		"syntax_pass":true,
+		"d5_matches_independent_derivation":true
+	}
+}

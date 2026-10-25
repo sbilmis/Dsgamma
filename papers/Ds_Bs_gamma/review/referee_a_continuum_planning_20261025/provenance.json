@@ -1,0 +1,15 @@
+{
+  "source_benchmark": "review/referee_a_borel_asymmetry_20261025/benchmark_midpoints.csv",
+  "file_hashes": {
+    "absolute_hard_retention.csv": "eda3f54b0e6d145d9e25d362c810d5b5204253850bde60b8aa72297f419cea71",
+    "working_point_diagnostics.py": "c10592e3f018464d7e3a822f6f424ce1e46f6d432d02d6d8926b01c6703870f7",
+    "hard_retention_midpoints.csv": "4059ecb1f6b136dbf5055c9b13f21a832e4336546b1ac18a809ae6b68d45b17f",
+    "README.md": "5e87ecb7944503b7a6337ad9b284b0cb770f8ab6ba60e629fa1a55fe89547c56",
+    "perturbative_to_total.csv": "dc43c0b45023d9673cc918c0c364a8d86fd2d6fb02816b2e1663a234356d300f",
+    "hard_retention_windows.csv": "db38baa3fb2a979404b8f7eabbd3c5cfc6c6dee1b94dfe9a7faa70ccc6959360",
+    "referee_continuum_comment.tex": "e2971771f8c62639867ef299153c285e718d2a9b059cf4308a4fbd9dc2bcedd2",
+    "numerical_check.json": "7f351ed6004538873e9d490ffd0695f603767b0745ad93258bd1b46aa59b8694"
+  },
+  "protected_files_changed": [],
+  "new_width_ensemble_run": false
+}

@@ -1,0 +1,1092 @@
+                                                  Lattice QCD determination of the normalization of the leading-twist photon
+                                                        distribution amplitude and susceptibility of the quark condensate
+                                                                                                         D. Bečirević
+                                                                           IJCLab, Pôle Théorie (Bat. 210), CNRS/IN2P3 et Université,
+                                                                                         Paris-Saclay, 91405 Orsay, France
+
+                                                                                             G. Gagliardi and F. Sanfilippo
+                                                                             Istituto Nazionale di Fisica Nucleare, Sezione di Roma Tre,
+                                                                                   Via della Vasca Navale 84, I-00146 Rome, Italy
+
+                                                                                                          S. Bacchio
+                                                                Computation-based Science and Technology Research Center, The Cyprus Institute,
+                                                                             20 Konstantinou Kavafi Street, 2121 Nicosia, Cyprus
+
+
+
+
+arXiv:2404.10644v1 [hep-lat] 16 Apr 2024
+                                                                                            (Dated: April 17, 2024)
+                                                            The normalization of the leading-twist photon distribution amplitude (DA), fγ⊥ , is an important
+                                                         ingredient in the study of exclusive processes involving the photon emission by means of QCD
+                                                         sum-rules. In this paper we determine the up- , down- and strange-quark contribution to fγ⊥ by
+                                                         exploiting its relation to the zero-momentum two-point correlation function of the electromagnetic
+                                                                   µ
+                                                         current Jem  and the electric component of the tensor current T µν . To that end we employ the gauge
+                                                         ensembles obtained by using Nf = 2 + 1 + 1 Wilson-Clover twisted-mass quark flavors, generated
+                                                         by the Extended Twisted Mass (ETM) Collaboration, and after adding all sources of systematic
+                                                         uncertainties, we obtain a total error of 1.5% and 3.5%, respectively, for the light- (u and d) and
+                                                         strange-quark contribution to fγ⊥ (2 GeV) in the MS scheme, thus improving their accuracy by a
+                                                                                                                                        ⊥
+                                                         factor of 2.3 and 2.8, respectively. For the strange-quark contribution fγ,s     (2 GeV), we observe a
+                                                         discrepancy with respect to previous lattice calculations. By combining our result with the world
+                                                         average lattice value of the chiral condensate, we obtain for the susceptibility of the quark condensate
+                                                                                                       −2
+                                                         χMS               MS
+                                                           d (2 GeV) ≃ χu (2 GeV) = 2.17(12) GeV          .
+
+
+                                                                                                 I.   INTRODUCTION
+
+                                              QCD sum rules (QCDSR) proved to be an efficient method to get the phenomenologically interesting information
+                                           about the nonperturbative dynamics of hadrons. For the description of electromagnetic properties of hadrons, including
+                                           the processes with a photon emission, the authors of Refs. [1, 2] modified the standard QCDSR methodology [3]
+                                           and studied the correlation functions in an external electromagnetic field. From the initial application in computing
+                                           the nucleon magnetic moments and the radiative ∆ → pγ decay rate, the approach has been broadly employed in
+                                           numerous applications including the hadronic correction to the Z ∗ γ ∗ γ-vertex, entering the electroweak contribution to
+                                           (g − 2)µ [4], computation of the neutron electric dipole moment [5, 6], studies of chirality violation in the exclusive
+                                           photoproduction of hard dijets [7], evaluation of the hadronic matrix element of the radiative decays of heavy-light
+                                           mesons [8, 9] as well as many other processes involving the leading-twist photon distribution amplitude (DA) [10, 11].
+                                           A key nonperturbative quantity needed in this description is the susceptibility of the quark condensate, χ, which
+                                           measures the response of the chiral condensate to the presence of an external electromagnetic field. As we shall see, it
+                                                                                                                 ⊥       ⊥
+                                           is related to the normalization of the leading-twist photon DA, fγ,q    , as fγ,q = χq ⟨q̄q⟩, where each quantity depends
+                                           on the renormalization scale in a given renormalization scheme, and q stands for the (light) quark flavor. It appears
+                                                                                       ⊥
+                                           that it is more convenient to compute fγ,q     directly on the lattice and then combine the result with a known value
+                                                   MS                            MS
+                                           of ⟨q̄q⟩ (2 GeV) [12] to extract χq (2 GeV). The estimate based on the vector meson dominance for the case of
+                                                                                                                                      −2
+                                           lightest flavors in the isospin limit mu = md ≡ mℓ 1 yields χMS ℓ (2 GeV) = 1.9(1) GeV        , in good agreement with the
+                                                              MS                        −2
+                                           QCDSR result, χℓ (2 GeV) = 2.1(2) GeV [10], but both being considerably different from the values advocated in
+                                           Refs. [15, 16]. This situation clearly called for a lattice QCD determination of this quantity. The first such attempts
+                                           were made in a setup with Nf = 2 [17] and Nf = 2 + 1 [18] but without accounting for the effects of renormalization.
+                                                                                                                               ⊥
+                                           Another attempt was made in Ref. [19], but a detailed lattice QCD study of fγ,q          with Nf = 2 + 1 staggered quark
+                                           flavors was performed in Ref. [20], and then considerably improved in Ref. [21] where, in the vanishing quark mass
+
+
+                                           1 In this approximation the ρ-meson pole saturates the sum in the expression given in Ref. [10], so that we have χ      T
+                                                                                                                                                          ℓ = −fρ fρ /(mρ ⟨q̄q⟩). In
+                                                                                                       3           T
+                                             the numerical evaluation we then use ⟨q̄q⟩ = −(272(5) MeV) [12], and fρ /fρ = 0.68(2) [13], as obtained in lattice QCD, together with
+                                             fρexp ≃ 208 MeV and mρ = 0.77 GeV [14].
+                                                                                                                                      2
+
+                               ⊥
+limit, the resulting value of fγ,ℓ (2 GeV) = −(45.4 ± 1.6) MeV has been quoted. That value then corresponds to
+                            −2                                 ⊥
+χMS
+  ℓ (2 GeV) = 2.3(1) GeV       . In this paper we calculate fγ,q , with q ∈ {u, d, s}, from the two-point correlation
+functions computed on the gauge field configurations generated by using the twisted mass QCD on the lattice with
+Nf = 2 + 1 + 1 Wilson-Clover dynamical quarks [22].
+   The ensembles of gauge field configurations that we use correspond to three lattice spacings a ∈ [0.056, 0.08] fm and
+the spatial volumes V = L3 with L ∈ [5.0, 7.7] fm [23–26]. After taking the continuum and infinite-volume limits, and
+by adding all sources of systematic uncertainties in quadrature, we obtain a total error of 1.5% for u, d and 3.5% for
+the s quark. That represents the improvement by a factor of more than 2 over the previous lattice QCD estimate of
+these quantities. Our final results in the MS scheme are:
+                                                       ⊥
+                                                      fγ,u (2 GeV) = −43.73(64) MeV ,                                               (1)
+
+                                                        ⊥
+                                                       fγ,d (2 GeV) = −44.45(74) MeV ,                                              (2)
+
+                                                        ⊥
+                                                       fγ,s (2 GeV) = −51.0(1.8) MeV ,                                              (3)
+which include the nonperturbative subtraction and multiplicative renormalization constants computed in the RI”-MOM
+scheme, cf. Ref. [27], and then converted to the MS scheme by using the 4-loop perturbative expressions available in
+Ref. [28].
+
+
+       II.   NORMALIZATION OF THE PHOTON DA AND ITS RELATION TO THE MAGNETIC
+                       SUSCEPTIBILITY OF THE QUARK CONDENSATE
+
+  Let us first consider the coupling of a photon to the tensor density Tqαβ (x, µ) = ZT (µ) q̄(x)σ αβ q(x), and introduce
+ ⊥
+fγ,q (p2 , µ) as
+                                                                            ⊥                    β α
+                                         ⟨0|Tqαβ (0, µ)|γ(p2 , ελ )⟩ = ieq fγ,q (p2 , µ)(εα  β
+                                                                                          λ p − ελ p ) ,                            (4)
+         is the photon polarization, we use σ µν = (i/2)[γ µ , γ ν ], and eq = eQq is the electric charge of the q−quark,
+where ελ √
+with e = 4παem , and Qu = +2/3, Qd,s = −1/3. Note that ZT (µ) is the scale- and scheme-dependent renormalization
+                                                            ⊥              ⊥
+constant of the tensor density. For a real photon p2 = 0, fγ,q (0, µ) ≡ fγ,q  (µ) corresponds to the normalization of the
+                                                            2
+q-quark contribution to the leading-twist photon DA [10].
+  To leading order in the electromagnetic interaction, the matrix element defined in Eq. (4) can be expanded as 3
+                                                  Z
+                                                             
+            ⟨0|Tqαβ (0, µ)|γ(p2 , ελ )⟩QCD+QED = i d4 x ⟨0|T Tqαβ (0, µ)Jem ν
+                                                                              (x)Aν (x) |γ(p2 , ελ )⟩ + O(αem
+                                                                                                           3/2
+                                                                                                               )
+
+                                                         = ελ,ν Hqαβν (p) + O(αem
+                                                                               3/2
+                                                                                   ).                                               (5)
+       µ
+               P            µ
+where Jem ≡      q eq q̄γ       q is the electromagnetic current, and we introduced the hadronic tensor
+                                                       Z
+                                                                       
+                                          Hqαβν (p) ≡ i d4 x e−ipx ⟨0|T Tqαβ (0, µ) Jem
+                                                                                     ν
+                                                                                        (x) |0⟩ .                                   (6)
+
+By virtue of Lorentz invariance the hadronic tensor Hqαβν (p) can be written in terms of a single scalar form factor
+Hq (p2 , µ) as
+                            Z
+                                                                                                     
+               Hq (p) ≡ i d4 x e−ipx ⟨0|T Tqαβ (0, µ) Jem
+                 αβν                                    ν
+                                                           (x) |0⟩ ≡ ieq Hq (p2 , µ) g αν pβ − g βν pα ,         (7)
+
+                                                                                            ⊥
+so that, to leading order in the electromagnetic interaction, one arrives at Hq (p2 , µ) = fγ,q (p2 , µ).
+
+
+2 To be more specific, f ⊥ (µ) is a factor multiplying the leading twist photon DA defined through the matrix element of a nonlocal
+                         γ,q
+  operator (near light cone, x2 = 0), namely
+                                                                                                  Z 1
+                                                                                          α β
+                                ⟨0|q̄(x)σ αβ W−x
+                                              x
+                                                 q(−x)|γ(p2 , ελ )⟩ = ieq χ⟨q̄q⟩(pβ εα
+                                                                                     λ − p ελ )         dueipx(2u−1) ϕγ (u),
+                                                                                                   0
+
+  where Wxy is the Wilson line. In this way, the distribution is normalized as usual, 01 duϕγ (u) = 1, and fγ,q
+                                                                                                            ⊥ (µ) = χ(µ) ⟨q̄q⟩(µ).
+                                                                                             R
+3 Our choice of the sign is consistent with D = ∂ − ie A , which is the same convention used in Ref. [10] for the covariant derivative.
+                                             µ     µ     q µ
+                                                                                                                                     3
+
+   The form factor Hq (0, µ) is also related to the zero-temperature magnetic susceptibility χq (µ) of the quark condensate
+⟨q̄q⟩(µ). The latter is defined through the relation [10]
+                                            ⟨0|Tqαβ (0, µ)|0⟩B ≡ F αβ eq χq (µ)⟨q̄q⟩(µ) ,                                          (8)
+
+where F αβ ≡ ∂ α Aβ − ∂ β Aα is the electromagnetic field-strength tensor, corresponding to a constant weak background
+magnetic field B, and ⟨. . . ⟩B means the expectation value evaluated in such a magnetic background field.
+  The connection between Hq (0, µ) and χq (µ) can be easily worked out since
+                                            Z
+                                                        
+                      ⟨0|Tqαβ (0, µ)|0⟩B = i d4 x⟨0|T Tqαβ (0, µ) Jemν
+                                                                       (x) |0⟩Aν (x) + O(αem3/2
+                                                                                                ).                  (9)
+
+                                            ⃗ is the constant and uniform magnetic field, alows us to write, to leading
+Choosing A0 = 0, Aj = εjkℓ xk B ℓ /2, where B
+order in the magnetic field,
+                                                     Z
+                                             Bℓ ∂                     
+                    ⟨0|Tqαβ (µ)|0⟩B = −εjkℓ            d4 x e−ipx ⟨0|T Tqαβ (0, µ) Jem
+                                                                                    j
+                                                                                       (x) |0⟩
+                                              2 ∂pk                                            p2 =0
+
+
+                                                                    B ℓ  αj βk         
+                                         = −eq Hq (0, µ) εjkℓ            g g − g βj g αk = eq Hq (0, µ)F αβ ,                     (10)
+                                                                    2
+                                                                            ⊥
+which, after a comparison with Eq. (8), gives χq (µ)⟨q̄q⟩(µ) = Hq (0, µ) = fγ,q (µ). Similar expressions, relating χq (µ) to
+current-current correlators have already been derived in Ref. [21], where the authors considered a rotating magnetic
+background field and the correlation function between the electromagnetic current (Jem ) and the magnetic part, Tqij
+(i ̸= j), of the tensor current.
+
+
+                               A.    Extracting Hq (0, µ) from Euclidean lattice correlators
+
+  To compute the form factor Hq (0, µ) we will be working in the so-called time-momentum representation and set
+p = (p0 , 0, 0, 0). We can write
+                 3                Z ∞                 Z
+              1 X 0jj                                            1X      
+                   H (p) = i             dt e−ip0 t       d3 x       ⟨0|T Tq0j (0, µ) Jem
+                                                                                       j
+                                                                                          (⃗x, t) |0⟩ = ieq Hq (p20 , µ) p0 .     (11)
+              3 j=1 q               −∞                           3 j
+
+The crucial ingredient that makes this calculation possibile is the observation that for small enough values of |p0 | the
+previous expression can be analytically continued to Euclidean time without encountering any obstruction since QCD
+has a mass gap. 4 For small |p0 | we can thus write:
+                                                                    Z ∞
+                               i X 0jj
+                             −       Hq (p) = eq Hq (p20 , µ)p0 = −      dt e−p0 t Cq (t, µ) ,                       (12)
+                               3 j                                   −∞
+
+
+where Cq (t, µ) is the Euclidean lattice correlator
+                                              Z       X
+                                            i               
+                                Cq (t, µ) ≡      d3 x   ⟨0|T Tq0j (0, µ) Jem
+                                                                          j
+                                                                             (⃗x, t) |0⟩E ,                                       (13)
+                                            3         j
+
+and the subscript E indicates that the correlation function is evaluated in the Euclidean theory. The zero-momentum
+correlator, Cq (t, µ), is the nonperturbative object that we compute by means of QCD simulations on the lattice. The
+only renormalization constant needed in this work is ZT (µ) to which we will come back later on. In the following, for
+notational simplicity, we will drop out the renormalization scale dependence.
+  After taking the p0 -derivative of both sides of Eq. (12) at p0 = 0 we obtain the key expression:
+                                                 Z ∞
+                                               2      dt t Cq (t) = eq Hq (0) ,                                  (14)
+                                                          0
+
+
+
+
+4 The analytic continuation is possible for |p | < E , where E is the energy of the lightest hadronic state propagating between the two
+                                              0     0         0
+  currents. In QCD the threshold energy is E0 = 2Mπ .
+                                                                                                                         4
+
+where we used the fact that Cq (t) is odd under the Euclidean time reflection.
+   Notice, however, that the expression (14) is well defined only in the chiral limit. For a non-zero quark mass, instead,
+the contact term between the tensor and electromagnetic currents generates a logarithmic divergence in Eq. (14)
+which must be properly subtracted away. The logarithmic divergence is present already in the free theory where
+the corresponding correlator Cqfree (t), owing to the asymptotic freedom, is a good approximation of the full QCD
+correlator Cq (t) only for very short time separations t ≪ Λ−1       −1
+                                                             QCD , mq . The free theory calculation is discussed in detail
+in Appendix A. Here we only quote the final result, namely,
+
+                                                    eq Nc m2q                        eq Nc mq
+                             Cqfree (t) = −sgn(t)             K1 (2mq |t|)    ≃    −          ,                       (15)
+                                                     2π 2 |t|                   −1
+                                                                           0<t≪mq     4π 2 t2
+
+where K1 (x) is the modified Bessel function of the second kind. Since Cqfree (t) ∝ mq /t2 at small times, the regularized
+time-integral develops a logarithmic divergence:
+                                Z ∞
+                              2      dt t Cqfree (t) ≃ eq c0 mq log(mq /Λ) + regular terms ,                          (16)
+                                  Λ−1
+
+with c0 = 2Nc /(2π)2 ≃ 0.15 for Nc = 3. In the lattice regularization, the ultraviolet cut-off Λ−1 is given by the
+lattice spacing a. In order to define the form factor Hq (0) at non-zero quark mass, it is thus necessary to provide a
+prescription on how the logarithmic divergence is subtracted away. To this end we adopt a convenient prescription,
+described in Ref. [20], and define the subtracted (finite) form factor H q via
+                                                                  
+                                                                ∂
+                                            H q (0) = 1 − mq          Hq (0) .                                    (17)
+                                                              ∂mq
+
+Note that this prescription leaves the chiral limit unchanged, i.e.,
+                                      Z ∞                            
+                                                            ∂
+                                    2     dt t Cq (t) − mq      Cq (t) = eq H q (0) .                                 (18)
+                                       0                   ∂mq
+
+As discussed in Refs. [20, 21], the log-derivative will not only cancel the divergent contribution proportional to
+mq log(amq ), but also the finite terms, proportional to powers of the quark mass mq . The main result of this paper,
+which we are going to discuss in the next Sections, is the accurate determination of H q (0) for the physical light
+(q = u, d) and strange (q = s) quarks, by making use of the gauge ensembles recently generated by the Extended
+Twisted Mass (ETM) Collaboration [23–26].
+
+
+                                     III.   DETAILS OF THE COMPUTATION
+
+   Our results have been obtained by using the gauge field configurations generated by the ETM Collaboration
+employing the Iwasaki gluon action [29] and Nf = 2 + 1 + 1 flavors of Wilson-Clover twisted-mass fermions at maximal
+twist [22]. This framework guarantees the automatic O(a) improvement of on-shell parity-even quantities [30, 31]. Basic
+information regarding the ensembles of gauge field configurations used in this work is collected in Table I. For more
+details the reader is referred to Refs. [23–26]. In Table II we give the values of the renormalization constants needed for
+the present work. The ensembles listed in Table I correspond to three values of the lattice spacing a ∈ [0.056, 0.08] fm,
+and the size of the lattice box L ∈ [5.09, 7.64] fm. The mass of the light sea-quarks has been tuned so as to give
+(almost) the physical pion mass. For all the ensembles, the strange and the charm sea-quarks are set to within about
+5% of their physical masses, defined through the requirement that, cf. Refs. [24–26],
+                                         MDs                       mc
+                                             = 7.9 ± 0.1 ,            = 11.8 ± 0.2 .                                  (19)
+                                         fDs                       ms
+
+
+
+We work in a mixed-action framework in which the valence strange quark is discretized as an Osterwalder-Seiler
+fermion [31, 32]. On each ensemble we evaluate the lattice correlator Cs (t) for two different values of the valence
+strange quark mass. The two simulated values, given in Table III, then allow us to interpolate to the physical strange
+quark mass which, as in Refs. [25, 33], we define by requiring Mηss′ = Mηphys
+                                                                           ss′
+                                                                               = 689.9(5) MeV [34], with ηss′ being a
+fictitious pseudoscalar meson made of two mass degenerate quarks s and s′ having mass equal to that of the strange
+                                                                                                                                     5
+
+
+                   Ensemble        β               (L3 × T )/a4               a [fm]            amℓ        Mπ [MeV]       L [fm]
+
+                      B64        1.778               643 × 128            0.07957 (13)        0.00072      140.2 (0.2)     5.09
+
+                      B96        1.778               963 × 192            0.07957 (13)        0.00072      140.2 (0.2)     7.64
+
+                      C80        1.836               803 × 160            0.06821 (13)        0.00060      136.7 (0.2)     5.46
+
+                     D96         1.900               963 × 192            0.05692 (12)        0.00054      140.8 (0.2)     5.46
+
+
+TABLE I: Parameters of the ETM ensembles used in this work: the light-quark bare mass, (amℓ = amu = amd ) and the
+corresponding pion mass (Mπ ), the lattice spacing (a), and the spatial size of lattice box L. The lattice spacing values are
+determined in a way explained in Appendix B of Ref. [25], i.e., by using fπisoQCD = 130.4(2) MeV for the pion decay constant.
+We refer to [25] for more information regarding the statistics of the used ensembles.
+
+
+                                   ensemble                       ZV                ZA              ZTMS (2 GeV)
+
+                                           B64           0.706379(24)          0.74294(24)           0.847(1)(1)
+
+                                           B96           0.706405(17)          0.74267(17)           0.847(1)(1)
+
+                                           C80           0.725404(19)          0.75830(16)           0.863(1)(2)
+
+                                           D96           0.744108(12)          0.77395(12)           0.887(1)(2)
+
+TABLE II: Renormalization constants (RCs) of the quark bilinear operators corresponding to the ETM ensembles of Table I.
+ZV , ZA , and ZT stand for the RCs of the vector, axial and tensor operator, respectively. ZT has been determined nonpertur-
+batively in Ref. [27] in the RI ′′ -scheme and then converted to the MS. The scale independent renormalization constants ZV
+and ZA have been determined in Ref. [25] using the Ward identity method.
+
+
+quark. Besides the two valence strange quark masses, we employ a second value of the valence bare light quark mass,
+indicated in Table III as am′ℓ , different from the sea light quark mass already given in Table I. For each flavor q, having
+results for (at least) two different valence quark masses is necessary in order to compute the derivative ∂Cq (t)/∂mq
+entering the definition of H q (0) in Eq. (18), as we describe in the next Section.
+  The Euclidean correlators Cq=u,d,s (t) in Eq. (13) have been evaluated for the aforementioned valence quark masses
+for each of the ensembles listed in Table I. Note that Cq (t) contains both a connected [Cqconn (t)] and a disconnected
+[Cqdisc (t)] contribution. If we define the electromagnetic current as,
+                                              X
+                                  µ
+                                Jem (x) =          Jqµ′ (x),        Jqµ′ (x) = eq′ q̄ ′ (x)γ µ q ′ (x) ,                (20)
+                                                 q ′ =u,d,s,c
+
+we can write Cq (t) = Cqconn (t) + Cqdisc (t), with
+                                    Z             (                   )
+                      conn        i      3          0j       j
+                    Cq (t) =           d x ⟨0|T T q (0, µ) J q (⃗x, t) |0⟩E
+                                  3
+                                        Z
+                                 eq                                                           
+                               =            d3 x ⟨Tr γ 0 γ j Sq (0, (⃗x, t))γ j Sq ((⃗x, t), 0) ⟩U                                 (21)
+                                 3
+                                       Z                  (                              )
+                                   i
+                      Cqdisc (t) =           3
+                                            d x ⟨0|T            T 0j         j
+                                                                  q (0, µ) J em (⃗
+                                                                                 x, t)       |0⟩E
+                                  3
+
+                                            X                 Z
+                                                       eq ′                                                            
+                               =−                                 d3 x ⟨Tr γ 0 γ j Sq (0, 0) Tr γ j Sq′ ((⃗x, t), (⃗x, t)) ⟩U ,    (22)
+                                                        3
+                                       q ′ =u,d,s,c
+                                                                                                                                                                                                6
+
+
+
+
+FIG. 1: Graphical representation of the quark-line connected (left diagram) and disconnected (right diagram) contributions to
+the Euclidean correlator Cq (t).
+
+                           0                                                                                           0.025
+                       -0.002
+                                                                           D96                                          0.02                                              D96
+                       -0.004
+
+
+
+
+ Cudisc(t)/Cuconn(t)                                                                             Csdisc(t)/Csconn(t)
+                       -0.006
+                                                                                                                       0.015
+                       -0.008
+                        -0.01
+                                                                                                                        0.01
+                       -0.012
+                       -0.014                                                                                          0.005
+                       -0.016
+                       -0.018                                                                                             0
+                                0   0.1   0.2   0.3   0.4    0.5     0.6   0.7   0.8   0.9   1                                 0   0.1   0.2   0.3   0.4    0.5     0.6   0.7   0.8   0.9   1
+                                                            t [fm]                                                                                         t [fm]
+
+FIG. 2: Ratio between the disconnected (Cqdisc (t)) and connected (Cqconn (t)) contributions to the correlator Cq (t) for q = u
+(left-plot) and q = s (right-plot). The data correspond to the results obtained on the D96 ensemble.
+
+
+where by Sq (x, y) we denote the propagator of the q-quark, and ⟨. . . ⟩U indicates the average over the SU(3) gauge
+field configurations, and the trace Tr[. . .] is taken over the color and spin indices. The connected and disconnected
+contributions are sketched in Figure 1. While the connected part Cqconn (t) receives the contribution from the q−quark
+component of the electromagnetic current, the disconnected diagram receives contributions from all quark flavors. The
+latter vanishes exactly in the U(3) limit mu = md = ms of the three-flavor theory, due to eu + ed + es = 0. In absence
+of the disconnected contribution, the form factors H̄u (0) and H̄d (0) corresponding to the up- and down-quark are
+exactly equal. Indeed, for mu = md ≡ mℓ , one has Cuconn (t)/eu = Cdconn (t)/ed (see also Eq. (14)). The disconnected
+part of the correlator, for mu = md ≡ mℓ , satisfies instead Cudisc (t) = Cddisc (t), which produces a shift of the form
+factor of the down quark which is two times larger (and opposite in sign) with respect to that of the up quark.
+   For the connected part, the inversions of the Dirac operator have been performed using O(103 ) and O(60) stochastic
+sources, respectively for the light and the strange quarks. The sources are randomly distributed over time, diagonal in
+spin and dense in color. Various noise-reduction techniques are instead employed for disconnected loops. These are the
+one-end-trick [35], the exact deflation of low-modes [36], and hierarchical probing [37]. In contrast to the connected
+contribution, the disconnected loops have been computed using a single value of the valence quark mass for each of
+the Nf = 2 + 1 + 1 active quark flavors. For the light quarks u, d, this mass is equal to the sea quark mass amℓ , cf.
+Table I, while for the strange and charm quarks the simulated valence quark masses are obtained by tuning the Ω and
+Λc baryons to their physical values respectively. In Figure 2 we show the ratio between the disconnected (Cqdisc (t)) and
+connected (Cqconn (t)) contributions to the correlator Cq (t), for q = u, s. Clearly the disconnected contribution is orders
+of magnitude smaller than the connected one. After inspection, we find that the disconnected term produces a shift of
+the form factor Hq (0) of order 0.5%, 1% and 0.3%, respectively for q = u, d, and s.
+   Finally, another feature of our calculation is that the (completely dominant) connected part of the light- and
+strange-quark correlators are always evaluated employing two distinct discretized versions of the local tensor and
+vector currents given by,
+                                                            Tq0j,tm = ZT (µ)q̄+ γ 0 γ j q− ,                                   Jqj,tm = ZA q̄+ γ j q− ,                                     (23)
+
+                                                            Tq0j,OS = ZT (µ)q̄+ γ 0 γ j q+ ,                                   Jqj,OS = ZV q̄+ γ j q+ ,                                     (24)
+where ZA and ZV are the (finite) renormalization constants of the axial and vector currents, which in twisted-mass
+QCD are chirally rotated with respect to (w.r.t.) the ones of the standard Wilson fermions. In the previous equation,
+the subscript ± on the quark-fields, corresponds to a specific choice of the Wilson r−parameter (see e.g. [25] and
+references therein), given by
+                                                                                       rq± = (−1)± .                                                                                        (25)
+                                                                                                                                7
+
+Since the twisted Wilson term, accompanied by the appropriate critical mass counterterm (for both sea and various
+valence quark fields), is a dimension-five irrelevant operator, the currents Tqtm , Jqtm and TqOS , JqOS , when plugged into
+the expression (13), produce Euclidean correlators having the same continuum limit. Notice also that the label “tm”
+stands for twisted-mass and “OS” for Osterwalder-Seiler regularization. At finite lattice spacing, however, the two
+correlators are affected by different discretization effects, allowing one to approach the continuum limit from two
+different directions. The results shown in Figure 2 have been obtained by using Cqconn in the “tm” regularization. In
+the following, we will present the results obtained using both the “tm” and the “OS” currents, which, as it will be
+discussed, can simultaneously be used to reach the continuum limit and achieve a better control of extrapolation.
+Moreover, we will oftentimes adopt the notation X tm (OS) , to indicate that a given lattice observable X has been
+evaluated using the tm (OS) current. We emphasize once again that the values of ZA and ZV for each of our ensembles
+listed in Table I are provided in Table II.
+
+
+                                             A.    Evaluating the derivative ∂Cq (t)/∂mq
+
+  We now discuss a delicate point regarding the derivative ∂Cq (t)/∂mq for q = u, d, s. We start by splitting it to a
+valence- and a sea-quark contribution as
+                                                   ∂Cq (t)   ∂Cq (t)    ∂Cq (t)
+                                                           =          +          .                                            (26)
+                                                    ∂mq       ∂mq val    ∂mq sea
+In order to properly define the two contributions, we start from the path integral representation of a generic observable
+O(mq ). For the sake of simplicity and to avoid unnecessary complications, we consider the continuum action of a
+single quark field q(x) of the bare quark mass, mq , and we avoid explicitly writing the gauge field. We have
+                                          Z                            Z           
+                                     1
+                      ⟨O(mq )⟩ =            [dq̄dq] exp −S0 [q̄, q] − mq d4 x q̄q(x) O(q̄, q, mq ) ,                 (27)
+                                  Z(mq )
+where S0 is the action in the massless limit and Z(mq ) is the partition function of the theory, i.e.,
+                                          Z                           Z           
+                               Z(mq ) ≡ [dq̄dq] exp −S0 [q̄, q] − mq d4 x q̄q(x) .                                            (28)
+
+The expressions for the two terms on the right hand side of Eq. (26), read:
+                             Z                            Z           
+    ∂O(mq )⟩           1                                                  ∂                     ∂O(mq )
+                  ≡            [dq̄dq] exp −S0 [q̄, q] − mq d4 x q̄q(x)       O(q̄, q, mq ) ≡ ⟨         ⟩,                    (29)
+      ∂mq     val   Z(m  q )                                             ∂m q                    ∂mq
+
+                               Z                                      Z           
+      ∂O(mq )      1                          ∂                                                        ∂ ln Z(mq )
+               ≡                   [dq̄dq]          exp −S0 [q̄, q] − mq d4 x q̄q(x)   O(q̄, q, mq ) −             ⟨O(mq )⟩
+       ∂mq sea   Z(mq )                      ∂mq                                                           ∂mq
+                        Z
+                   =−       d4 x [ ⟨q̄q(x) O(mq )⟩ − ⟨q̄q(x)⟩⟨O(mq )⟩ ] .                                                     (30)
+
+Notice that the two contributions (29,30) only involve the expectation values in the theory with a fixed sea-quark mass
+mq , and therefore the derivative ∂Cq (t)/∂mq can be computed without having to generate new gauge configurations
+at different values of the sea-quark masses. In summary, the valence contribution to the derivative can be evaluated
+from the slope of the observable O(mq ) w.r.t. the valence quark mass, while keeping the sea quark mass fixed. The
+sea quark contribution, instead, is given (up to a minus sign) by the gauge connected part of the correlation between
+the observable O(mq ) and the spacetime integral of the scalar density q̄q(x).
+   Bearing in mind Eqs. (29,30) we can now discuss our calculation of ∂Cq (t)/∂mq . Given the smallness of the
+disconnected part, Cqdisc (t), of the full correlator Cq (t), we neglect in our calculations its contribution to the derivative
+∂Cq /∂mq , considering only the contribution from the dominant connected part. We start by discussing the valence
+                                                       (L)         (H)
+contribution to the derivative. If we denote by mq and mq the respective lowest and highest simulated valence
+quark masses for each flavor q = u, d, s, and by Cq (t, mq ) the Euclidean correlator evaluated with a given valence mq
+(at the fixed simulated values of the sea-quark masses), we determine the valence contribution as,
+
+                        ∂Cq (t)    Cq (t, mH             L
+                                           q ) − Cq (t, mq )
+                                 ≃                           + O(∆mq ) ,              ∆mq ≡ mH    L
+                                                                                             q − mq .                         (31)
+                         ∂mq val             ∆mq
+                                                                                                                                          8
+
+
+                                              Ensemble           amL
+                                                                   s          amH
+                                                                                s          am′ℓ
+
+                                                 B64             0.019        0.021      0.0006675
+
+                                                 B96             0.019        0.021      0.0006675
+
+                                                 C80             0.016        0.018      0.000585
+
+                                                 D96             0.014        0.015      0.0004964
+
+                                                                                                            ′
+TABLE III: Values of the two bare strange-quark masses, amL       H
+                                                          s and ams , and of the valence light quark mass amℓ (see text
+for details), for each of the four ensembles of Table I.
+
+
+The simulated valence quark masses are ensured to satisfy |∆mq | ≲ 0.1 mq of the average mass, in both situations
+q = u, d and q = s, cf. Tables I-III. Clearly, our evaluation of the valence contribution to the derivative using Eq. (31)
+is acceptable only if ∆mq is sufficiently small so that the higher order corrections to Eq. (31) are indeed negligible.
+We tested the validity of this assumption on a single ensemble (B64), and in the (more relevant) case of the strange
+quark contribution, by considering in addition to the valence masses given in Table III) two more values, namely,
+ams = 0.018, 0.020. We evaluated the derivative using all four masses and found that the typical error committed
+by estimating the derivative using Eq. (31) is about 2%, thus similar in size as our (total) statistical error of H s (0).
+For that reason we attribute an additional 2% of systematic uncertainty to the strange quark mass derivative of the
+correlator evaluated using Eq. (31). In the case of the light quark contribution, instead, no additional systematic
+uncertainty is added, given that the contribution of the derivative for q = u, d is approximately one order of magnitude
+smaller than for q = s, and this systematic effect is much smaller than the statistical error of our results.
+   In the case of the sea quark contribution to the derivative, we make use of Eq. (30) and of our determination of the
+light and strange scalar densities, to compute ∂Cq (t)/∂mq sea using,
+                                        Z                                       
+                       ∂Cq (t)⟩             4
+                                   = − d x ⟨q̄q(x) Cq (t)⟩ − ⟨q̄q(x)⟩⟨Cq (t)⟩ ,          q = u, d, s .                (32)
+                         ∂mq sea
+It is important to notice that the product mq ∂/∂mq entering Eq. (18) is Renormalization Group Invariant (RGI),
+hence Eqs. (31)-(32) can be evaluated using the bare quark masses and the bare scalar densities.
+   As it will be detailed in the numerical Section, the subtraction of the log-derivative in Eq. (18) has a much higher
+impact in the case of the strange-quark, where the contribution is enhanced due to the large quark-mass ratio
+ms /mℓ ∼ 27 w.r.t. the case of the light quarks. In practice, it turns out that the subtraction is an order 5% effect in
+the case q = u, d, while it is of about 30 − 40% in the case q = s.
+
+
+
+
+                                                 IV.     NUMERICAL RESULTS
+
+   We now turn to the results of our lattice calculation of H q (0) for q = u, d, s. At finite lattice spacing we evaluate
+the (unsubtracted) form factor Hq (0) from the knowledge of the correlator Cq (na), with n ∈ {1, . . . , T /(2a)}, where T
+is the physical temporal lattice extent. We use the following discretized version of the integral (14),
+                                                       nX
+                                                        max                 nX
+                                                                             max
+
+                                           Hq (0) =           Iq (n, a) ≡          2a2 n · Cq (na) ,                                   (33)
+                                                       n=1                  n=1
+
+where nmax ≤ T /2a is chosen large enough so that the sum in the previous equation already converged to its nmax → ∞
+limit within errors. We optimize the value of nmax so as to exclude from integration the contribution from the very
+large Euclidean times which only increase the noise in the resulting Hq (0), but give no contribution to its signal. In
+the plots shown in Figure 3 we illustrate the behavior of Iq (n, a) and of its partial sums, for a selected gauge ensemble,
+the “tm” regularization, and for both the up- and the strange-quark contributions 5 As it can be appreciated from the
+
+
+5 The down-quark contribution is very similar to the up-quark one. Their difference is proportional to the disconnected diagram in Figure 1,
+
+  which is two orders of magnitude smaller than the connected part.
+                                                                                                                                                          9
+
+                                                                                90
+         50                                                                     80
+                                                                                70
+         40
+                                                                                60
+
+         30                                                                     50
+ [MeV]                                                                  [MeV]   40
+                                           −10 × Iu(t/a, a)                                                                 −4 × Is(t/a, a)
+         20                                      t/a
+                                                 X                              30                                               t/a
+                                                                                                                                 X
+                                                − Iu(n, a)                                                                      − Is(n, a)
+                                                 n=1                            20                                               n=1
+         10
+                                                                                10
+         0                                                                      0
+              0   0.5       1             1.5           2         2.5                0   0.2   0.4   0.6   0.8     1      1.2    1.4   1.6     1.8    2
+                                 t [fm]                                                                          t [fm]
+
+FIG. 3: The values of Iq (n, a) (blue data points) and of its partial sums (red data points) on our finest lattice spacing ensem-
+ble and for the “tm” regularization. The left and right panels correspond to the cases q = u and q = s, respectively. For the
+strange-quark contribution the results have been already interpolated to the physical strange quark mass.
+
+                                                                                60
+         50
+                                                                                50
+         40
+                                                                                40
+
+         30
+ [MeV]                                                                  [MeV]
+                             [sea+valence] −10 × I u(t/a, a)                    30                           [sea+valence] −4 × I s(t/a, a)
+
+         20                 [valence only] −10 × I u(t/a, a)                                                 [valence only] −4 × I s(t/a, a)
+                                                 t/a                            20                                               t/a
+                                                 X                                                                               X
+                                                − I u(n, a)                                                                     − I s(n, a)
+         10                                      n=1                            10                                               n=1
+
+
+
+         0                                                                      0
+              0   0.5       1             1.5           2         2.5                0   0.2   0.4   0.6   0.8     1      1.2    1.4   1.6     1.8    2
+                                 t [fm]                                                                          t [fm]
+
+FIG. 4: The values of I q (n, a) (blue data points) and of its partial sum (red data points) on our finest lattice spacing en-
+semble and for the “tm” regularization. The left and right figures correspond to the cases q = u and q = s, respectively. For
+the strange-quark contribution the results have been already interpolated to the physical strange quark mass. The data points
+in light-blue correspond to the value of I q (n, a) obtained neglecting the sea-quark contribution in Eq. (32) to the quark-mass
+derivative of the correlator.
+
+
+plots, the integrand Iq (t/a, a) is peaked at very short time separations t, of the order of the lattice spacing, with the
+peak being more pronounced in the case of the strange quark. This is a manifestation of the logarithmic divergence
+affecting Hq (0), which is expected to be more sizable for heavier quarks, and which we subtract away by using the
+prescription described above and specified in Eq. (18). To this purpose, we evaluate on each gauge ensemble the
+mass-derivative of the correlator Cq (t) for q = u, d, s, using the procedure discussed in Section III A. We then compute
+the subtracted form-factor H̄q (0) as,
+                                            nX
+                                             max               nX
+                                                                max                        
+                                                                        2          ∂Cq (na)
+                                H q (0) =     I q (n, a) ≡     2a n · Cq (na) − mq            .                                                      (34)
+                                          n=1              n=1
+                                                                                    ∂mq
+
+The subtracted counterpart of Figure 3 is shown in Figure 4. The effect of the subtraction amounts to a O(5%) shift of
+the form factor in the case of the up- and down-quark, while for the strange-quark, as expected, such an effect is much
+larger and the subtracted form factor H s (0) is ≃ 30 − 40% smaller than the unsubtracted one, Hs (0). In Figure 4 we
+show separately the value of I q (n, a) obtained by neglecting the sea quark contribution to the derivative (Eq. (32)).
+While the sea quark contribution to the derivative is smaller than the valence one (by about one order of magnitude in
+the case of the strange-quark) it is non-negligible w.r.t. our current statistical accuracy. For that reason both terms in
+Eq. (26) should be and are taken into account. The results for the unsubtracted and subtracted form factors, Hq (0)
+and H q (0), for both regularization schemes and for q = u, d, s are presented in Table IV.
+                                                                                                                            10
+
+
+        Ensemble Form factor [MeV] tm (q = u)         tm (q = d)    tm (q = s)   OS (q = u)    OS (q = d)     OS (q = s)
+
+           B64          −Hq (0)         46.59(15)     47.29(20)     78.98(18)     45.86(14)    46.58(20)      78.61(18)
+
+                        −H q (0)        43.65(21)     44.35(28)     51.01(75)     42.84(19)    43.56(26)      50.69(74)
+
+           B96          −Hq (0)         46.79(14)     47.51(19)     78.97(17)     46.05(13)    46.76(19)      78.59(17)
+
+                        −H q (0)        43.88(20)     44.60(28)     50.97(86)     43.28(23)    43.99(30)      50.64(85)
+
+           C80          −Hq (0)         46.23(17)     47.03(19)     81.00(18)     45.72(16)    46.52(19)      80.72(17)
+
+                        −H q (0)        43.44(33)     44.24(30)     50.18(86)     43.31(28)    44.12(28)      50.02(84)
+
+           D96          −Hq (0)         46.68(19)     47.38(24)     84.21(25)     46.28(20)    46.98(23)      84.00(24)
+
+                        −H q (0)        43.69(24)     44.38(28)     51.10(80)     43.35(26)    44.05(28)      50.95(79)
+
+TABLE IV: Results of the unsubtracted [Hq (0)] and subtracted [H q (0)] form factors obtained for each of the ensembles of
+gauge field configurations specified in Table I, for both the light non-strange q = u, d and the strange quark case q = s. As
+described in the text, we use two kinds of regularization schemes, denoted by “tm” and “OS”, and the form factor results are
+provided for both regularizations.
+
+
+
+
+   We now move to the discussion of extrapolation of our lattice results both to the continuum (a → 0) and to the
+infinite volume (L → ∞).
+
+
+                                   A.   Continuum and infinite-volume extrapolation
+
+  As described in the previous Sections, we evaluated the (subtracted) form factors H u,d,s (0) on the ensembles listed
+in Table I by using the “tm” and the “OS” regularizations. Apart from B96, all the ensembles from Table I have
+very similar spatial volumes. The ensembles C80 and D96 have (within uncertainties) the lattice extent L ≈ 5.46 fm,
+while for the ensemble B64 it is slightly shorter, 5.09 fm. For the ensemble B96, instead, it is much larger, i.e. more
+than L ≈ 7.5 fm. Our strategy to perform the combined extrapolation to the continuum and infinite volume limit
+can be summarized as follows. From the knowledge of the form factors on the ensembles B64 and B96 we interpolate
+H q (0) at β = 1.778 to the reference lattice extent of Lref = 5.46 fm. The interpolation is performed separately for
+the two regularizations (“tm” and “OS”), using a linear function in exp{−Mπ L}. In this way we can perform the
+continuum extrapolation at fixed volume Vref = L3ref . We then associate to our extrapolated results at Vref a systematic
+uncertainty ∆L H q due to finite size effects (FSE’s), which we estimate as
+                                                  (                 !)
+                                                     r
+                                                              ∆rq
+                               ∆L H q = max        ∆q erf √             ,     q = u, d, s ,                          (35)
+                                          r=tm,OS             2σ∆rq
+
+where we have defined
+                                                       r               r
+                                            ∆rq = H q (0, B96) − H q (0, B64) ,                                            (36)
+
+and σ∆rq is its statistical uncertainty. The continuum extrapolation at V = Vref is carried out through a combined fit
+of the two regularizations (“tm” and “OS”) to the common continuum limit result, using the linear ansatz in a2
+                        tm                                   OS
+                      H q (0, a2 ) = Aq + Bqtm a2 ,        H q (0, a2 ) = Aq + BqOS a2 ,      q = u, d, s ,                (37)
+
+where Aq , Bqtm and BqOS are the free fit parameters. We have minimized χ2 which properly takes into account the
+correlation between the data obtained with “tm” and “OS” regularizations at the same value of β. The results of the
+combined continuum and infinite volume extrapolations are shown in the plots shown in Figure 5. The red and blue
+data points correspond to the results obtained with two regularizations at L = Lref , while the red and blue bands
+                                                                                                                                                                                            11
+
+         48                                                                                                48
+
+         47                                   tm-regularization L = Lref                                   47                                            tm-regularization L = Lref
+
+         46                                   OS-regularization L = Lref                                   46                                            OS-regularization L = Lref
+
+
+ −H u(0) [MeV]                                                                                     −H d(0) [MeV]
+         45                                                                                                45
+
+         44                                                                                                44
+
+         43                                                                                                43
+
+         42                                                                                                42
+
+         41                                                                                                41
+                 0   0.001   0.002   0.003    0.004 0.005            0.006     0.007     0.008                     0       0.001     0.002     0.003     0.004    0.005   0.006   0.007   0.008
+                                             a2 [fm2]                                                                                                  a2 [fm2]
+
+                                                       56
+                                                                                                 tm-regularization L = Lref
+                                                       54
+                                                                                                 OS-regularization L = Lref
+
+
+                                               −H s(0) [MeV]
+                                                       52
+
+                                                       50
+
+                                                       48
+
+                                                       46
+
+                                                       44
+                                                               0   0.001     0.002     0.003     0.004             0.005     0.006     0.007     0.008
+                                                                                               a2 [fm2]
+
+FIG. 5: Continuum limit extrapolation of H u (0) (top-left panel), H d (0) (top-right panel), and H s (0) (bottom panel). The
+dark red and dark blue data points correspond to our results at L = Lref obtained by respectively using the ‘tm” and “OS”
+regularization. In order to highlight the typical size of the FSE’s we also show the raw data of the ensembles B64 and B96
+(light red and light blue data points) at a ≃ 0.079 fm. Finally, the coloured bands correspond to the best fit functions obtained
+in the continuum limit extrapolation using the ansatz (37).
+
+
+correspond to the best fit functions with a common continuum limit value. For both H u (0), H d (0) and H s (0) the
+χ2 /Ndof of the fit is 0.6 − 0.7 with Ndof = 3. In order to highlight the typical size of the FSE’s we show in the same
+figure the raw data obtained on the B64 and B96 ensembles at a ≃ 0.079 fm. They are shown as light red and light
+blue data points for the “tm” and “OS” regularizations, respectively. A few comments are in order: First of all, the
+observed FSE’s are very small, completely negligible (within errors) for H s (0), however similar in size to our statistical
+error for H u (0) and H d (0). Furthermore, the typical size of the cutoff effects is very modest and at most of the order of
+a few percent for both contributions. As it can be seen from the plots, the two regularizations give rise to very similar
+results already at our simulated values of the lattice spacing. This is different from what has been observed in the case
+                                                                     †
+of the correlation function of two electromagnetic currents, ⟨Jem Jem   ⟩, which enters the lattice calculation of the leading
+order hadronic vacuum polarization contribution to (g − 2)µ [25]. Our qualitative explanation of this feature is that,
+as shown by our tree level calculation in Appendix A, the “tm” and “OS” tensor-vector correlation functions coincide
+to all orders in O(αs0 an mrq ), and they only differ at order O(αs ). This is not true for the vector-vector correlation
+function (see Appendix E of Ref. [25]). In the continuum and the infinite-volume limit, our final results in the MS
+scheme, read:
+                                                ⊥
+                              H u (0, 2 GeV) = fγ,u (2 GeV) = −43.73(52)Lref (38)FSE MeV = −43.73(64) MeV ,                                                                               (38)
+
+                                                 ⊥
+                               H d (0, 2 GeV) = fγ,d (2 GeV) = −44.45(67)Lref (32)FSE MeV = −44.45(74) MeV ,                                                                              (39)
+
+                                                 ⊥
+                               H s (0, 2 GeV) = fγ,s (2 GeV) = −51.0(1.8)Lref (0)FSE MeV = −51.0(1.8) MeV ,                                                                               (40)
+where the first error corresponds to the total (statistical and systematic) error obtained after performing the continuum
+extrapolation at L = Lref , and the second one to the estimate of the FSE’s obtained by using Eq. (35). Our
+                                                                   ⊥                 ⊥
+results can be compared with those of Ref. [21], namely fγ,u          (2 GeV) ≃ fγ,d   (2 GeV) = −45.4(1.5) MeV and
+                                                                                                                           12
+
+  ⊥                                                                                    ⊥
+fγ,s (2 GeV) = −68(5) MeV. While we find a good agreement with Ref. [21] for fγ,u/d        , we disagree by several standard
+                 ⊥
+deviations for fγ,s . It must be noted that, in contrast to what is done in this work, the strange quark mass derivative
+of the form-factor Hs (0), which is needed in order to cancel the logarithmic divergence of the unsubtracted form
+factor (18), has been estimated indirectly in Ref. [21], from the dependence of the form factor Hu/d (0) on the light
+quark mass mℓ . Besides the observed discrepancy in the strange quark case, we obtain that the resulting uncertainties
+in both H u/d (0) and H s (0) are smaller than those quoted in Ref. [21] by a factor 2.3 and 2.8, respectively. That gain in
+precision does not translate to the precision of the value of susceptibility of the quark condensate. The reason is that the
+current value of ⟨q̄q⟩ as extracted from the simulations with Nf = 2 + 1 dynamical flavors, ⟨q̄q⟩ = −(272(5) MeV)3 [12],
+is more accurate than the one obtained from simulations with Nf = 2 + 1 + 1, ⟨q̄q⟩ = −(286(23) MeV)3 [12]. By using
+                                                             −2                                     −2
+the latter value we obtain χMS u (2 GeV) = 1.87(45) GeV         and χMSd (2 GeV) = 1.90(46) GeV        . However, since the
+inclusion of the charm quark in the sea is very unlikely to affect the value of the quark condensate obtained from
+simulations with Nf = 2 + 1, we may as well use the MS value obtained from simulations with Nf = 2 + 1 at µ = 2 GeV,
+                                                                                     −2                                   −2
+⟨q̄q⟩ = −(272(5) MeV)3 [12], which then leads to χMS   u (2 GeV) = 2.17(12) GeV         and χMS
+                                                                                              d (2 GeV) = 2.21(13) GeV       .
+
+
+                                                  V.   CONCLUSIONS
+
+                                                                                        ⊥
+  In this work we computed the normalization of the photon’s leading twist DA, fγ,q       (0), by means of numerical
+simulations of QCD with Nf = 2 + 1 + 1 dynamical quarks on the lattice. We rely on the gauge field configurations
+generated by the ETM Collaboration on which we compute the desired two-point correlation functions. We included
+the disconnected diagrams in our computation even though we verified that their contribution is orders of magnitude
+smaller than the connected ones. The additive and multiplicative renormalization is carried out fully nonperturbatively
+and then converted to the MS scheme by using the 4-loop perturbative matching.
+  By using two various lattice regularizations (denoted as “tm” and “OS” in the text) we were able to better control
+the extrapolation to the continuum limit. After a careful assessment of systematic uncertainties due to continuum
+extrapolation (a → 0) and to the physical volume (L → ∞) we find that the normalization of the leading twist DA of
+a photon coupling to u or d quark, in the MS renormalization scheme, is
+                                             ⊥
+                                            fγ,u (2 GeV) = −43.73(64) MeV ,                                              (41)
+
+                                             ⊥
+                                            fγ,d (2 GeV) = −44.45(74) MeV ,                                              (42)
+
+while the coupling to the strange quark is,
+                                              ⊥
+                                             fγ,s (2 GeV) = −51.0(1.8) MeV .                                             (43)
+
+Both results represent improvement with respect to the previous lattice QCD estimates. It was shown in Ref. [21]
+      ⊥                                                                       ⊥
+that fγ,u/d are indistinguishable from their values in the chiral limit, lim fγ,u/d . One can therefore deduce the value
+                                                                          mℓ →0
+                                                                   ⊥
+of the magnetic susceptibility of the quark condensate, χd ≃ χu = fγ,u /⟨q̄q⟩ = 2.17(12) GeV−2 , where we used the
+FLAG value of ⟨q̄q⟩MS (2 GeV) obtained from simulations with Nf = 2 + 1 [12]. One would eventually prefer to use
+the condensate value from simulations with Nf = 2 + 1 + 1 but its current value is much less accurate, although its
+value is unlikely to change with respect to the Nf = 2 + 1 result.
+
+
+                                            VI.   ACKNOWLEDGEMENTS
+
+  We thank all the members of the ETM Collaboration for the most enjoyable collaboration, the authors of Ref. [10]
+for correspondence, and of Ref. [21] for comments on the manuscript. We gratefully acknowledge CINECA and
+EuroHPC JU for giving this project access to Leonardo supercomputing hosted at CINECA. We acknowledge CINECA
+for the provision of GPU time under the specific initiative INFN-LQCD123 and IscrB S-EPIC. F.S. and G.G are
+supported by the Italian Ministry of University and Research (MIUR) under grant PRIN20172LNEEZ. F.S. and
+G.G. are supported by INFN under GRANT73/CALAT. F.S. is supported by ICSC – Centro Nazionale di Ricerca in
+High Performance Computing, Big Data and Quantum Computing, funded by European Union – NextGenerationEU.
+S.B. has received funding from the European High-Performance Computing Joint Undertaking (JU) under grant
+agreement No 101118139. The JU receives support from the European Union’s Horizon Europe Programme. The
+authors gratefully acknowledge the Gauss Centre for Supercomputing e.V. (www.gauss-centre.eu) for funding this
+project by providing computing time on the GCS Supercomputers SuperMUC-NG at Leibniz Supercomputing Centre
+                                                                                                                           13
+
+and JUWELS [38] at Juelich Supercomputing Centre. The authors acknowledge the Texas Advanced Computing
+Center (TACC) at The University of Texas at Austin for providing HPC resources (Project ID PHY21001). The
+authors gratefully acknowledge PRACE for awarding access to HAWK at HLRS within the project with Id Acid
+4886. We acknowledge the Swiss National Supercomputing Centre (CSCS) and the EuroHPC Joint Undertaking
+for awarding this project access to the LUMI supercomputer, owned by the EuroHPC Joint Undertaking, hosted by
+CSC (Finland) and the LUMI consortium through the Chronos programme under project IDs CH17-CSCS-CYP and
+CH21-CSCS-UNIBE as well as the EuroHPC Regular Access Mode under project ID EHPC-REG-2021R0095. The
+open-source packages tmLQCD [39–42], LEMON [43], DD-αAMG [44–47],QPhiX [48, 49] and QUDA [50–52] have
+been used in the ensemble generation.
+
+
+
+
+ [1] I.I. Balitsky and A.V. Yung, Proton and Neutron Magnetic Moments from QCD Sum Rules, Phys. Lett. B 129 (1983) 328.
+ [2] B.L. Ioffe and A.V. Smilga, Nucleon Magnetic Moments and Magnetic Properties of Vacuum in QCD, Nucl. Phys. B 232
+     (1984) 109.
+ [3] M.A. Shifman, A.I. Vainshtein and V.I. Zakharov, QCD and Resonance Physics. Theoretical Foundations, Nucl. Phys. B
+     147 (1979) 385.
+ [4] A. Czarnecki, W.J. Marciano and A. Vainshtein, Refinements in electroweak contributions to the muon anomalous magnetic
+     moment, Phys. Rev. D 67 (2003) 073006 [hep-ph/0212229].
+ [5] M. Pospelov and A. Ritz, Electric dipole moments as probes of new physics, Annals Phys. 318 (2005) 119 [hep-ph/0504231].
+ [6] S. Narison, A Fresh Look into the Neutron EDM and Magnetic Susceptibility, Phys. Lett. B 666 (2008) 455 [0806.2618].
+ [7] V.M. Braun, S. Gottwald, D.Y. Ivanov, A. Schafer and L. Szymanowski, Exclusive photoproduction of hard dijets and
+     magnetic susceptibility of QCD vacuum, Phys. Rev. Lett. 89 (2002) 172001 [hep-ph/0206305].
+ [8] P. Colangelo, F. De Fazio and A. Ozpineci, Radiative transitions of D*(sJ)(2317) and D(sJ)(2460), Phys. Rev. D 72 (2005)
+     074004 [hep-ph/0505195].
+ [9] J. Rohrwild, Determination of the magnetic susceptibility of the quark condensate using radiative heavy meson decays,
+     JHEP 09 (2007) 073 [0708.1405].
+[10] P. Ball, V.M. Braun and N. Kivel, Photon distribution amplitudes in QCD, Nucl. Phys. B 649 (2003) 263
+     [hep-ph/0207307].
+[11] I.V. Anikin and L. Szymanowski, Gluon poles and photon distribution amplitudes in Drell-Yan-like processes, Eur. Phys. J.
+     A 54 (2018) 130 [1804.05016].
+[12] Flavour Lattice Averaging Group (FLAG) collaboration, FLAG Review 2021, Eur. Phys. J. C 82 (2022) 869
+     [2111.09849].
+[13] RBC, UKQCD collaboration, 2+1 flavor domain wall QCD on a (2 fm)*83 lattice: Light meson spectroscopy with L(s) =
+     16, Phys. Rev. D 76 (2007) 014504 [hep-lat/0701013].
+[14] Particle Data Group collaboration, Review of Particle Physics, PTEP 2022 (2022) 083C01.
+[15] A. Vainshtein, Perturbative and nonperturbative renormalization of anomalous quark triangles, Phys. Lett. B 569 (2003)
+     187 [hep-ph/0212231].
+[16] O. Cata, Relations between vacuum condensates and low energy parameters from a rational approach, Phys. Rev. D 81
+     (2010) 054011 [0911.4736].
+[17] P.V. Buividovich, M.N. Chernodub, E.V. Luschevskaya and M.I. Polikarpov, Chiral magnetization of non-Abelian vacuum:
+     A Lattice study, Nucl. Phys. B 826 (2010) 313 [0906.0488].
+[18] V.V. Braguta, P.V. Buividovich, T. Kalaydzhyan, S.V. Kuznetsov and M.I. Polikarpov, The Chiral Magnetic Effect and
+     chiral symmetry breaking in SU(3) quenched lattice gauge theory, Phys. Atom. Nucl. 75 (2012) 488 [1011.3795].
+[19] C. McNeile, A. Bazavov, C.T.H. Davies, R.J. Dowdall, K. Hornbostel, G.P. Lepage et al., Direct determination of the
+     strange and light quark condensates from full lattice QCD, Phys. Rev. D 87 (2013) 034503 [1211.6577].
+[20] G.S. Bali, F. Bruckmann, M. Constantinou, M. Costa, G. Endrodi, S.D. Katz et al., Magnetic susceptibility of QCD at zero
+     and at finite temperature from the lattice, Phys. Rev. D 86 (2012) 094512 [1209.6015].
+[21] G.S. Bali, G. Endrődi and S. Piemonte, Magnetic susceptibility of QCD matter and its decomposition from the lattice,
+     JHEP 07 (2020) 183 [2004.08778].
+[22] Alpha collaboration, Lattice QCD with a chirally twisted mass term, JHEP 08 (2001) 058 [hep-lat/0101001].
+[23] Extended Twisted Mass collaboration, Quark masses using twisted-mass fermion gauge ensembles, Phys. Rev. D 104
+     (2021) 074515 [2104.13408].
+[24] Extended Twisted Mass collaboration, Ratio of kaon and pion leptonic decay constants with Nf=2+1+1 Wilson-clover
+     twisted-mass fermions, Phys. Rev. D 104 (2021) 074520 [2104.06747].
+[25] C. Alexandrou et al., Lattice calculation of the short and intermediate time-distance hadronic vacuum polarization
+     contributions to the muon magnetic moment using twisted-mass fermions, 2206.15084.
+[26] C. Alexandrou et al., Simulating twisted mass fermions at physical light, strange and charm quark masses, Phys. Rev. D 98
+     (2018) 054518 [1807.00495].
+[27] C. Alexandrou et al., Moments of the nucleon transverse quark spin densities using lattice QCD, Phys. Rev. D 107 (2023)
+     054504 [2202.09871].
+                                                                                                                               14
+
+[28] J.A. Gracey, Tensor current renormalization in the RI’ scheme at four loops, Phys. Rev. D 106 (2022) 085008
+     [2208.14527].
+[29] Y. Iwasaki, Renormalization Group Analysis of Lattice Theories and Improved Lattice Action: Two-Dimensional Nonlinear
+     O(N) Sigma Model, Nucl. Phys. B 258 (1985) 141.
+[30] R. Frezzotti and G.C. Rossi, Chirally improving Wilson fermions. 1. O(a) improvement, JHEP 08 (2004) 007
+     [hep-lat/0306014].
+[31] R. Frezzotti and G.C. Rossi, Chirally improving Wilson fermions. II. Four-quark operators, JHEP 10 (2004) 070
+     [hep-lat/0407002].
+[32] K. Osterwalder and E. Seiler, Gauge Field Theories on the Lattice, Annals Phys. 110 (1978) 440.
+[33] R. Frezzotti, G. Gagliardi, V. Lubicz, G. Martinelli, F. Mazzetti, C.T. Sachrajda et al., Lattice calculation of the Ds meson
+     radiative form factors over the full kinematical range, 2306.05904.
+[34] S. Borsanyi et al., Leading hadronic contribution to the muon magnetic moment from lattice QCD, Nature 593 (2021) 51
+     [2002.12347].
+[35] UKQCD collaboration, Decay width of light quark hybrid meson from the lattice, Phys. Rev. D 73 (2006) 074506
+     [hep-lat/0603007].
+[36] A.S. Gambhir, A. Stathopoulos and K. Orginos, Deflation as a Method of Variance Reduction for Estimating the Trace of a
+     Matrix Inverse, SIAM J. Sci. Comput. 39 (2017) A532 [1603.05988].
+[37] A. Stathopoulos, J. Laeuchli and K. Orginos, Hierarchical probing for estimating the trace of the matrix inverse on toroidal
+     lattices, 1302.4018.
+[38] Jülich Supercomputing Centre, JUWELS Cluster and Booster: Exascale Pathfinder with Modular Supercomputing
+     Architecture at Juelich Supercomputing Centre, Journal of large-scale research facilities 7 (2021) .
+[39] K. Jansen and C. Urbach, tmLQCD: A Program suite to simulate Wilson Twisted mass Lattice QCD, Comput. Phys.
+     Commun. 180 (2009) 2717 [0905.3331].
+[40] A. Abdel-Rehim, F. Burger, A. Deuzeman, K. Jansen, B. Kostrzewa, L. Scorzato et al., Recent developments in the
+     tmLQCD software suite, PoS LATTICE2013 (2014) 414 [1311.5495].
+[41] A. Deuzeman, K. Jansen, B. Kostrzewa and C. Urbach, Experiences with OpenMP in tmLQCD, PoS LATTICE2013
+     (2014) 416 [1311.4521].
+[42] ETM collaboration, Twisted mass ensemble generation on GPU machines, PoS LATTICE2022 (2023) 340 [2212.06635].
+[43] ETM collaboration, Lemon: an MPI parallel I/O library for data encapsulation using LIME, Comput. Phys. Commun. 183
+     (2012) 1321 [1106.4177].
+[44] A. Frommer, K. Kahl, S. Krieg, B. Leder and M. Rottmann, Adaptive Aggregation-Based Domain Decomposition Multigrid
+     for the Lattice Wilson–Dirac Operator, SIAM J. Sci. Comput. 36 (2014) A1581 [1303.1377].
+[45] C. Alexandrou, S. Bacchio, J. Finkenrath, A. Frommer, K. Kahl and M. Rottmann, Adaptive Aggregation-based Domain
+     Decomposition Multigrid for Twisted Mass Fermions, Phys. Rev. D 94 (2016) 114509 [1610.02370].
+[46] S. Bacchio, C. Alexandrou and J. Finkerath, Multigrid accelerated simulations for Twisted Mass fermions, EPJ Web Conf.
+     175 (2018) 02002 [1710.06198].
+[47] C. Alexandrou, S. Bacchio and J. Finkenrath, Multigrid approach in shifted linear systems for the non-degenerated twisted
+     mass operator, Comput. Phys. Commun. 236 (2019) 51 [1805.09584].
+[48] B. Joó, D.D. Kalamkar, T. Kurth, K. Vaidyanathan and A. Walden, Optimizing wilson-dirac operator and linear solvers for
+     intel® knl, in High Performance Computing: ISC High Performance 2016 International Workshops, ExaComm,
+     E-MuCoCoS, HPC-IODC, IXPUG, IWOPH, Pˆ 3MA, VHPC, WOPSSS, Frankfurt, Germany, June 19–23, 2016, Revised
+     Selected Papers 31, pp. 415–427, Springer, 2016.
+[49] M. Schröck, S. Simula and A. Strelchenko, Accelerating Twisted Mass LQCD with QPhiX, PoS LATTICE2015 (2016) 030
+     [1510.08879].
+[50] M.A. Clark, R. Babich, K. Barros, R.C. Brower and C. Rebbi, Solving Lattice QCD systems of equations using mixed
+     precision solvers on GPUs, Comput. Phys. Commun. 181 (2010) 1517 [0911.3191].
+[51] R. Babich, M.A. Clark, B. Joo, G. Shi, R.C. Brower and S. Gottlieb, Scaling Lattice QCD beyond 100 GPUs, in SC11
+     International Conference for High Performance Computing, Networking, Storage and Analysis Seattle, Washington,
+     November 12-18, 2011, 2011, DOI [1109.2935].
+[52] M.A. Clark, B. Joó, A. Strelchenko, M. Cheng, A. Gambhir and R.C. Brower, Accelerating Lattice QCD Multigrid on GPUs
+     Using Fine-Grained Parallelization, in SC ’16: Proceedings of the International Conference for High Performance
+     Computing, Networking, Storage and Analysis, pp. 795–806, 2016, DOI [1612.07873].
+
+
+                                       Appendix A: Tree-level calculation of Cq (t)
+
+  In this appendix we present the calculation of the free-theory correlator on the lattice, and obtain the relation
+appearing in Eq. (16). In the twisted-mass regularization, the momentum-space free-theory propagator of a quark-field
+ψq of mass mq is given by
+                                                                             P
+                                                      −iγµ p̃µ + mq + irγ5 a2 µ p̂2µ
+                                   ⟨ψq (p)ψ̄q (−p)⟩ = P                 P        2 ,                          (A1)
+                                                          p̃2 + m2 + a2       p̂2
+                                                        µ µ       q   4      µ µ
+                                                                                                                                    15
+
+where r = ±1 is the sign of the twisted Wilson term, the γ µ are here the Euclidean gamma matrices ({γ µ , γ ν } = 2δ µν ),
+and
+                                                        1                                2       apµ
+                                                p̃µ =     sin (apµ ),            p̂µ =     sin (     ).                            (A2)
+                                                        a                                a        2
+
+The coordinate-space quark propagator is then given by (x0 − y0 = t)
+                                        Z πa        Z πa                                             a
+                                                                                                       P 2
+                                         dp0                d3 p ip0 t ip·(x−y) −iγµ p̃µ + mq + irγ5 2 µ p̂µ
+                    ⟨ψq (x)ψ̄q (y)⟩ =                            e e           · P                P        2 ,                   (A3)
+                                      −π 2π             −π (2π)3                      2 + m2 + a2         2
+                                       a                 a                         p̃
+                                                                                  µ µ       q   4       p̂
+                                                                                                       µ µ
+
+
+The integral over p0 can be easily computed using the residue theorem. The denominator in Eq. (A1) can be written
+as:
+                                                                   !2
+                           X               a2           X                   2
+                              p̃2µ + m2q +                  p̂2µ        = − 2 A(p) (cosh (iap0 ) − cosh (aEp )) ,                  (A4)
+                            µ
+                                           4            µ
+                                                                           a
+
+where A(p) and Ep are defined as
+
+                        1                                                 a2 B(p)                                   a2 X 2 2
+              A(p) = 1 + a2 p̂2 ,            cosh (aEp ) = 1 +                    ,         B(p) = m2q + p̂2 +           p̂ p̂ .
+                        2                                                  2A(p)                                    2 i<j i j
+
+The momentum-space lattice quark propagator has two poles in the complex plane at ip0 = ±Ep , and the corresponding
+residue can be computed using
+
+                                                      (ip0 − Ep )                           1
+                  D−1 (p) ≡     lim a2                                         =p                          .                       (A5)
+                              ip0 →Ep       2A(p) (cosh (iap0 ) − cosh (aEp ))    B(p) · (4A(p) + a2 B(p))
+
+Using the previous results, Eq. (A3) can be written for t ̸= 0 as
+                                            Z πa
+                                                   d3 p −Ep |t| eip·(x−y)
+                     ⟨ψq (x)ψ̄q (y)⟩ =                  e
+                                               −π
+                                                a
+                                                  (2π)3           D(p)
+                                                                                                   
+                                                   γ0                                 a         B(p)
+                                        ·    sgn(t) sinh (aEp ) − iγ · p̃ + mq + irγ5     p̂2 −         ,                          (A6)
+                                                   a                                  2         A(p)
+
+The free-theory vector-tensor lattice correlator
+                                               Z
+                                          ieq               
+                       Cfree,q (t, a) ≡ −         d3 x ⟨0|T ψ̄q (0)σ 0j ψq (0)ψ̄q (x, t)γ j ψq (x, t) |0⟩ ,
+                                           3
+                                              Z
+                                          eq                                                            
+                                      =−         d3 x Tr γ 0 γ j ⟨ψq (0)ψ̄q (x, t)⟩γ j ⟨ψq (x, t)ψ̄q (0)⟩ ,                        (A7)
+                                           3
+
+where Tr[.] is intended over both color and Dirac indices, can be evaluated using Eq. (A6). The result is
+                                                                         Z π/a
+                                                   8eq Nc                                                 sinh (aEp )
+                             Cfree,q (t, a) = −           sgn(t)                 d3 p e−2Ep |t| (amq )                .            (A8)
+                                                   (2π)3                  −π/a                             a2 D2 (p)
+
+It is interesting to notice that the dependence on the twisted-Wilson term completely disappeared, therefore at tree
+level the “tm” and “OS” regularization, which as already discussed in the main text differ by the relative sign of the
+parameter r between the forward and backward quark propagators, produce exactly the same result.
+   The continuum correlator can be then obtained through the replacement
+                                                    q
+                                sinh(aEp ) → aEp → a p2 + m2q ,                          D2 (p) → 4(p2 + m2q ) ,                   (A9)
+                                                                                                                     16
+
+so that one has
+                                                                          Z ∞        √ 2 2
+                                                          2eq Nc                                 mq
+                      Cfree,q (t) ≡ Cfree,q (t, 0) = −           sgn(t)      d3 p e−2 p +mq t q
+                                                          (2π)3           −∞                    p + m2q
+                                                                                                 2
+
+
+                                                      Z ∞           √ 2 2
+                                      e q Nc                                     mq |p|2
+                                =−           sgn(t)         d|p| e−2 |p| +mq t q
+                                        π2            0                         |p|2 + m2q
+
+                                      e q Nc        m2q
+                                =−           sgn(t)     K1 (2mq |t|) ,                                            (A10)
+                                       2π 2          t
+where Kn (x) are the modified Bessel functions of the second kind. From the previous equation, using K1 (x) = x−1 +O(x),
+it is immediate to show the validity of Eq. (16).
+

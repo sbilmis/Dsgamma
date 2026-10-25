@@ -1,0 +1,152 @@
+{
+  "status": "conditional_appendix_reconstruction_not_validated_original_rerun",
+  "primary_formula": "tan(2 theta)=2 F_A1/F_A2, branch 0<=theta<90 degrees",
+  "assignment": "F_A1=-AB, F_A2=AA-BB, motivated by independently checked leading terms",
+  "unresolved": "Original numerical implementation and mixed-condensate coefficient discrepancy",
+  "scope": "central light-condensate change only; all other inputs and windows fixed",
+  "qq_scale_GeV": 1.0,
+  "qq_old_GeV3": -0.0165,
+  "qq_new_GeV3": -0.013823999999999998,
+  "ss_old_GeV3": -0.013200000000000002,
+  "ss_new_GeV3": -0.011059199999999998,
+  "kappa_s": 0.8,
+  "mixed_old_GeV5": -0.010560000000000002,
+  "mixed_new_GeV5": -0.008847359999999999,
+  "decrease_in_condensate_magnitude_percent": 16.218181818181833,
+  "fixed_inputs": {
+    "l": 0.126,
+    "z": 0.8,
+    "G2": 0.4737410112522892,
+    "G3": 0.57
+  },
+  "sectors": [
+    {
+      "sector": "Ds",
+      "m": 1.27,
+      "M2_min": 3.0,
+      "M2_max": 6.0,
+      "s0_min": 9.0,
+      "s0_max": 11.0,
+      "published_angle": 26.6,
+      "quoted_sigma": 0.6
+    },
+    {
+      "sector": "Bs",
+      "m": 4.18,
+      "M2_min": 9.0,
+      "M2_max": 13.0,
+      "s0_min": 42.0,
+      "s0_max": 44.0,
+      "published_angle": 38.5,
+      "quoted_sigma": 0.1
+    }
+  ],
+  "results": [
+    {
+      "sector": "Ds",
+      "grid_shape": [
+        21,
+        21
+      ],
+      "midpoint": {
+        "sector": "Ds",
+        "M2_GeV2": 4.5,
+        "s0_GeV2": 10.0,
+        "theta_old_deg": 26.73607043239077,
+        "theta_new_deg": 26.92123404408811,
+        "delta_theta_deg": 0.18516361169734097,
+        "quoted_sigma_deg": 0.6,
+        "delta_over_quoted_sigma": 0.3086060194955683,
+        "delta_percent_of_reconstructed_old_angle": 0.6925610559172343,
+        "A1_old": -0.15897860397508193,
+        "A1_new": -0.16111082371328572,
+        "A2_old": -0.2355152958980892,
+        "A2_new": -0.23546402743179093
+      },
+      "delta_min_deg": 0.11868031982160687,
+      "delta_max_deg": 0.368437282117533,
+      "minimum_at_M2_s0": [
+        6.0,
+        11.0
+      ],
+      "maximum_at_M2_s0": [
+        3.0,
+        9.0
+      ],
+      "delta_decreases_with_M2_on_grid": true,
+      "delta_decreases_with_s0_on_grid": true,
+      "theta_old_grid_min_deg": 25.646623429771253,
+      "theta_old_grid_max_deg": 27.697766910938036,
+      "theta_new_grid_min_deg": 25.76530374959286,
+      "theta_new_grid_max_deg": 27.87848356482803
+    },
+    {
+      "sector": "Bs",
+      "grid_shape": [
+        21,
+        21
+      ],
+      "midpoint": {
+        "sector": "Bs",
+        "M2_GeV2": 11.0,
+        "s0_GeV2": 43.0,
+        "theta_old_deg": 38.322373093793395,
+        "theta_new_deg": 38.37946932323904,
+        "delta_theta_deg": 0.05709622944564785,
+        "quoted_sigma_deg": 0.1,
+        "delta_over_quoted_sigma": 0.5709622944564785,
+        "delta_percent_of_reconstructed_old_angle": 0.14898928442115456,
+        "A1_old": -0.2152945928264215,
+        "A1_new": -0.21714061001508822,
+        "A2_old": -0.10222551767493376,
+        "A2_new": -0.10218814759932093
+      },
+      "delta_min_deg": 0.04441634101959124,
+      "delta_max_deg": 0.07963420514153086,
+      "minimum_at_M2_s0": [
+        13.0,
+        44.0
+      ],
+      "maximum_at_M2_s0": [
+        9.0,
+        42.0
+      ],
+      "delta_decreases_with_M2_on_grid": true,
+      "delta_decreases_with_s0_on_grid": true,
+      "theta_old_grid_min_deg": 38.119109970327784,
+      "theta_old_grid_max_deg": 38.48753663803645,
+      "theta_new_grid_min_deg": 38.163526311347375,
+      "theta_new_grid_max_deg": 38.56717084317798
+    }
+  ],
+  "maximum_256_vs_512_node_angle_difference_deg": 6.394884621840902e-14,
+  "maximum_affine_condensate_residual": 0.0,
+  "protected_manuscript_file_count": 11,
+  "protected_and_source_hashes_unchanged": true,
+  "hashes": {
+    "final_manuscript/all.bib": "99410eb92b09d7c83e3ff70a64fdb760eea83ec58daaa61148f1a4bbd7457d3e",
+    "final_manuscript/appendix_revised.tex": "1971a7a4deb29c87d0daa8ea63e3059aa1a5e03fa4e4ccabdddef81f09ee620d",
+    "final_manuscript/fig1.pdf": "8e34e4a43ab0aa9e0d9b3e32ace1c1ca2831d1a767500dd73a776f18b212d12e",
+    "final_manuscript/fig2.pdf": "7f251911b869b66bc186be85bc7845ac966bdd887e03c44d4a14038b209e18f4",
+    "final_manuscript/fig3.pdf": "638105e68f8773da9bcf851fb7ebbd273bf1356452f798e11e19c3e887f44018",
+    "final_manuscript/main3_savci.tex": "1656f0f46c4be8defc952e657739b1dde39c3ddbc4b133a5a84c59afe4e0bb46",
+    "final_manuscript/my_preamble.tex": "82403b77ef1d05ec5ba408dc676643094295ad37a97e2f47d4df2e6c98acae1c",
+    "final_manuscript/numerical_analysis_revised.tex": "08dc1caaea1a07717497668107f5cc718d52cd83dd0f0d60f385a6bbb62dd2a4",
+    "final_manuscript/orcidlink.sty": "2941c36b772ae89cbcaca60fb14d888b59e41733c6255c5a0ef23043c190bc74",
+    "final_manuscript/theoretical_framework_revised.tex": "c1178df7fcc2a529250b276403a40e03ef9aa5cd83482142c81cb14b40db6d78",
+    "final_manuscript/utcaps_mod.bst": "16a2d0ee607a9a11a1ac8b9d7b06675ee34dd41c40c77f46dd07f6715d4f86dd",
+    "review/referee1_item1/compare_condensate_inputs.py": "9b44935a251459a29333437bcfdefbef17ab92ab2ae7cab6adfc63c840c703a1",
+    "review/correctness_audit_20261019/check_printed_appendix.py": "6d10c1afef532cc398a4b4b0b5bf89ce10cc7aaa5da3ab6cee69d3e3697cb7a9",
+    "review/correctness_audit_20261019/references/article_R1.tex": "1d08095064c6d2c88f2f65f6f4ff4590fbd50486ae3529744659301ab6a76446",
+    "review/correctness_audit_20261019/references/PhysRevD.111.014005.pdf": "7dea738285d57c2ab25fd89937b5f4ada0565c1ba7e60cf9aca0193123660c80",
+    "scripts/twopoint_ds1_matrix_sumrule.py": "a64267ae6693d14881f3368ce4908dc8116d475c87e5e1242ce3a87452df7716",
+    "scripts/twopoint_bs1_matrix_sumrule.py": "5c027b48e5bf29238dee4f65451bfbff2030e539ebab0b68841935d0ba5666c7",
+    "scripts/mixing_angle_inputs.py": "d70578355686d43811a2a2f9f12e68295fe19c9ee00af9f282b2ac1d8a110f64"
+  },
+  "limitations": [
+    "Grid extrema are sampled extrema, not a continuous optimization proof.",
+    "Quoted-error comparisons do not propagate or validate the original uncertainties.",
+    "No scale running, change of strange mass, or change of kappa uncertainty is included.",
+    "No numerical replacement of the published external angle inputs is made."
+  ]
+}

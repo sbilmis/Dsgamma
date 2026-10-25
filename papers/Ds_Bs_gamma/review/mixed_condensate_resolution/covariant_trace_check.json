@@ -1,0 +1,8 @@
+{
+  "points": 24,
+  "color_trace": 4.0,
+  "sigma_trace": 48.0,
+  "maximum_absolute_error": 1.1102230246251565e-15,
+  "checks": "Independent gamma/color contraction, transverse projection, rest/boosted momentum",
+  "all_pass": true
+}

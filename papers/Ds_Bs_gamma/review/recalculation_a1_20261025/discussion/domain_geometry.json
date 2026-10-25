@@ -1,0 +1,23 @@
+{
+  "purpose": "Geometric illustration only; no OPE or width evaluated",
+  "mass_A_GeV": 2.53512,
+  "mass_P_GeV": 1.96835,
+  "cases": [
+    {
+      "assignment": "Equal intercepts",
+      "eta": 1.0,
+      "s_eff_GeV2": 9.5,
+      "intercept_P_GeV2": 19.0,
+      "intercept_A_GeV2": 19.0,
+      "line_at_diagonal": 1.0
+    },
+    {
+      "assignment": "Mass-proportional intercepts",
+      "eta": 1.658793763454404,
+      "s_eff_GeV2": 9.5,
+      "intercept_P_GeV2": 15.227053120947623,
+      "intercept_A_GeV2": 25.258540752816838,
+      "line_at_diagonal": 0.9999999999999998
+    }
+  ]
+}

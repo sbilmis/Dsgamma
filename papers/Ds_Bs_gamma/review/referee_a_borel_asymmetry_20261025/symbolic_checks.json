@@ -1,0 +1,12 @@
+{
+	"checks":{
+		"effective_borel":"0",
+		"saddle_fraction":"0",
+		"saddle_tau":"0",
+		"pole_exponents_mass_ratio":"0"
+	},
+	"L_T4gamma":"-1\/10*((-1 + z)*z*(167 + z*(-408 + z*(892 + z*(-983 + 392*z))))) + 6*z*Log[z]",
+	"Lprime_T4gamma":"-1\/10*((-1 + z)*(227 + z*(-923 + z*(2977 + z*(-4523 + 2352*z))))) + 6*Log[z]",
+	"orientation":"production aq-aqb; not manuscript aqb-aq",
+	"saddle":"{{tau -> K^(-1), a -> (1 + r)^(-1)}}"
+}

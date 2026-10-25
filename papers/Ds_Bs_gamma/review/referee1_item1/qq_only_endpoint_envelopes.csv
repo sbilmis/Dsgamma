@@ -1,0 +1,5 @@
+sector,input_set,M2_GeV2,s0_GeV2,qq_center_GeV3,qq_lower_GeV3,qq_upper_GeV3,theta_central_deg,theta_endpoint_min_deg,theta_endpoint_max_deg,interpretation
+Ds,earlier_qq,4.5,10.0,-0.0165,-0.018,-0.015,26.73607043239077,26.630881221231107,26.840252314636807,qq_only_endpoint_envelope_not_total_uncertainty
+Ds,updated_qq,4.5,10.0,-0.013823999999999998,-0.015625,-0.012167,26.92123404408811,26.79696486334702,27.034310528194354,qq_only_endpoint_envelope_not_total_uncertainty
+Bs,earlier_qq,11.0,43.0,-0.0165,-0.018,-0.015,38.322373093793395,38.28996218874129,38.354491109318026,qq_only_endpoint_envelope_not_total_uncertainty
+Bs,updated_qq,11.0,43.0,-0.013823999999999998,-0.015625,-0.012167,38.37946932323904,38.34114394714607,38.41436601283618,qq_only_endpoint_envelope_not_total_uncertainty

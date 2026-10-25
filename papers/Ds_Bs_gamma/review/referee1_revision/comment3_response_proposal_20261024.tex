@@ -1,0 +1,68 @@
+% Proposed response to Comment 3, using the agreed saved-baseline figures.
+% Upload decay_constant_ratio_vs_theta.pdf into the reply project.
+% The reply preamble needs graphicx and amsmath.
+% Correct the manuscript Figure 1/Figure 2 image swap before submission.
+% This fragment does not claim that the Figure 3 caption has been edited.
+% No OPE correction or numerical baseline replacement is implied.
+
+\noindent\textbf{Response:}
+
+We thank the referee for highlighting the independent interest of the
+decay constants and their potential application to nonleptonic $B$ decays.
+We have added Fig.~1 in Sec.~III of the revised manuscript, showing
+$f_1(\theta)$ and $f_2(\theta)$ separately for both the charm-strange
+and bottom-strange sectors. This displays the individual quantities
+entering our radiative-decay sum rules. The corresponding ratio
+$f_2(\theta)/f_1(\theta)$ requested by the referee is presented in
+Fig.~\ref{fig:referee1-ratio} of this response.
+
+Both figures use the same representative QCD inputs, two-point Borel
+parameters, and continuum thresholds as the angular scan of the radiative
+widths. The decay constants are recalculated at each angle, and the ratio
+is formed from their values at that same angle. For these fixed input
+choices, we obtain
+\begin{equation}
+\left.\frac{f_2^{(D_s)}}{f_1^{(D_s)}}\right|_{\theta=26.6^\circ}
+\simeq0.418,
+\qquad
+\left.\frac{f_2^{(B_s)}}{f_1^{(B_s)}}\right|_{\theta=38.5^\circ}
+\simeq0.166.
+\end{equation}
+These are illustrative values at fixed inputs, rather than new estimates
+with propagated uncertainties. The radiative-width angular scan also
+includes the angle dependence of both decay constants.
+
+For the suggested factorization application, we clarify that the $f_i$
+in our manuscript are defined through the rotated interpolating currents.
+The weak axial-current constants in the charm-strange sector, defined by
+$\langle0|\bar s\gamma_\mu\gamma_5 c|A_i\rangle
+=m_{A_i}f_{A,i}\eta_\mu$, are related to these quantities within the
+adopted assumption that each rotated current couples to its corresponding
+physical state. The inverse current rotation gives
+\begin{equation}
+f_{A,1}=\sin\theta\,f_1^{(D_s)},\qquad
+f_{A,2}=\cos\theta\,f_2^{(D_s)},\qquad
+\frac{f_{A,2}}{f_{A,1}}=\cot\theta\,
+\frac{f_2^{(D_s)}}{f_1^{(D_s)}}.
+\end{equation}
+The nonleptonic branching-fraction ratio additionally requires the
+$B\to D$ transition form factors and phase-space factors. A numerical
+analysis of those decays is beyond the scope of the present radiative
+study.
+
+% This numbering applies to figures in the referee-response document only.
+\renewcommand{\thefigure}{R\arabic{figure}}
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=\linewidth]{decay_constant_ratio_vs_theta.pdf}
+  \caption{Mixing-angle dependence of the ratio $f_2(\theta)/f_1(\theta)$
+  of the rotated-current decay constants for the (a) charm-strange and
+  (b) bottom-strange sectors. Both constants are recalculated at each
+  angle with the same fixed representative inputs used for Fig.~1
+  of the revised manuscript. Red dash-dotted lines mark the adopted
+  central angles $26.6^\circ$ and $38.5^\circ$ in the respective panels;
+  gray dotted lines mark the heavy-quark-limit reference $35.3^\circ$.
+  The curves illustrate the angular dependence at fixed inputs;
+  no uncertainty bands are shown.}
+  \label{fig:referee1-ratio}
+\end{figure}

@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-25",
+  "documents": [
+    {
+      "file": "review/recalculation_a1_20261025/baseline/reference_documents/manuscript_r1-2.pdf",
+      "original_path": "/Users/sbilmis/Downloads/r1-2.pdf",
+      "sha256": "c98df89e77db2edcfaa9bd510ad5068807974732580f80c13bfbf7c3858df4a2",
+      "role": "Latest author-supplied manuscript; Prism remains live."
+    },
+    {
+      "file": "review/recalculation_a1_20261025/baseline/reference_documents/referee_A_report.pdf",
+      "original_path": "/Users/sbilmis/Downloads/dv14652_report_1_a.pdf",
+      "sha256": "0835bfe215f74827afa90aa1d312ee0fffb41b212da816da015d138549c8da6c",
+      "role": "Report addressed by this recalculation."
+    },
+    {
+      "file": "review/recalculation_a1_20261025/baseline/reference_documents/referee_B_reply_current.pdf",
+      "original_path": "/Users/sbilmis/Downloads/ref1_reply-1.pdf",
+      "sha256": "a5a7dc959b005d220499a64f35da9102423b327a8da27d97d08285ced2b9b826",
+      "role": "Existing response letter for cross-reference consistency."
+    },
+    {
+      "file": "review/recalculation_a1_20261025/baseline/reference_documents/tproj.snippet",
+      "original_path": "/Users/sbilmis/.emacs.d/snippets/org-mode/tproj",
+      "sha256": "1c8f4c41f5a385e706054d66043869f2caa990e27a4077c2bb9cca07da71179c",
+      "role": "Author project-notebook template used for project.org."
+    }
+  ]
+}

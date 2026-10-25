@@ -1,0 +1,62 @@
+% Response-only addition for Referee 1, item 1. No manuscript insertion.
+% DRAFT: Discuss the completed conditional comparison with the author first.
+
+\noindent\textbf{Author-review note (not for submission):}
+The numbers below use the documented reconstruction of the earlier appendix,
+with $F_{A1}=-\widehat\Pi_{AB}$ and
+$F_{A2}=\widehat\Pi_{AA}-\widehat\Pi_{BB}$ as motivated by the leading terms.
+The leading mixed-condensate coefficient has since been derived independently:
+the current implementation omits a heavy-line contribution, and the complete
+leading result also differs from the printed expressions used below.
+See \texttt{review/mixed\_condensate\_resolution/README.md}.
+The values below are retained as a record of the printed-appendix
+reconstruction; they are not validated by that new derivation. The original
+numerical implementation remains unidentified. Select and validate the
+prescription for the reported comparison before finalizing this paragraph;
+do not represent it as a verified rerun of the original calculation.
+
+\medskip
+\noindent\textbf{Proposed response paragraph:}
+
+To examine the sensitivity to the condensate input, we performed a paired
+numerical comparison using a reconstruction of the earlier sum-rule
+expressions. We changed the central value at $\mu=1\,\mathrm{GeV}$ from
+\begin{equation}
+\langle\bar q q\rangle_{\mathrm{old}}
+=-0.0165\,\mathrm{GeV}^3
+\quad\text{to}\quad
+\langle\bar q q\rangle_{\mathrm{new}}
+=-(0.240)^3\,\mathrm{GeV}^3
+=-0.013824\,\mathrm{GeV}^3,
+\end{equation}
+holding all other inputs and the sum-rule prescription fixed.
+The strange and mixed condensates were changed consistently through
+\begin{equation}
+\langle\bar s s\rangle=0.8\langle\bar q q\rangle,
+\qquad
+\langle\bar s g_s\sigma\!\cdot\!G s\rangle
+=m_0^2\langle\bar s s\rangle,
+\qquad m_0^2=0.8\,\mathrm{GeV}^2.
+\end{equation}
+At the working-window midpoints, $(M^2,s_0)=(4.5,10)\,\mathrm{GeV}^2$
+for $D_s$ and $(11,43)\,\mathrm{GeV}^2$ for $B_s$, the shifts
+$\Delta\theta=\theta_{\mathrm{new}}-\theta_{\mathrm{old}}$ are
+\begin{equation}
+\Delta\theta_{D_s}=+0.185^\circ,
+\qquad
+\Delta\theta_{B_s}=+0.057^\circ.
+\end{equation}
+A $21\times21$ grid over each earlier working region gives
+\begin{equation}
+\Delta\theta_{D_s}=0.119^\circ\text{--}0.368^\circ,
+\qquad
+\Delta\theta_{B_s}=0.044^\circ\text{--}0.080^\circ,
+\end{equation}
+for $M^2=3$--$6\,\mathrm{GeV}^2$, $s_0=9$--$11\,\mathrm{GeV}^2$
+in the charm-strange sector and $M^2=9$--$13\,\mathrm{GeV}^2$,
+$s_0=42$--$44\,\mathrm{GeV}^2$ in the bottom-strange sector.
+Thus, within this comparison, the condensate-induced shifts remain smaller
+than the quoted angle uncertainties of $0.6^\circ$ and $0.1^\circ$ throughout
+the sampled regions. This is a central-input sensitivity check; it is not
+a new extraction of the mixing angles or a propagation of all input
+uncertainties. We retain the published mixing angles as external inputs.

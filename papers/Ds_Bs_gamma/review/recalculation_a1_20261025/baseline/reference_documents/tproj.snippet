@@ -1,0 +1,62 @@
+# -*- mode: snippet -*-
+# name: Project notebook (PROJECT.org)
+# key: tproj
+# group: org
+# --
+#+TITLE: ${1:Project name}
+#+CATEGORY: project
+#+PROPERTY: PROJECT_ID ${2:project-id}
+#+STARTUP: overview
+#+TODO: NEXT(n) TODO(t) WAITING(w@/!) | DONE(d!) CANCELLED(c@)
+
+* Goal
+${3:What outcome defines success?}
+
+* Current status
+- Updated: [`(format-time-string "%Y-%m-%d %a %H:%M")`]
+- Working / verified: ${4:Describe the last verified state; say unknown if not checked}
+- Unverified / blocked:
+- Open first: File, section, or issue; continue with the canonical NEXT task.
+- Handoff: Machine / branch; pending sync or other-machine actions.
+- Built / tested version (if relevant):
+- Installed / deployed version (if relevant):
+# Keep this snapshot short. A successful build does not prove installation or runtime behavior.
+
+* Context
+Short background needed to understand the project.
+
+* Milestones (optional)
+# Omit for small projects. These are outcomes, not a duplicate task queue.
+** ${5:Meaningful project outcome}
+Done when: ${6:Observable acceptance criteria for this milestone}
+
+* Tasks
+- Canonical tracker: ${7:PROJECT.org / GitHub Issues / other}
+# Default: one NEXT. Multiple NEXT items require independent work and explicit owners.
+# If an issue tracker owns the queue, link to it instead of duplicating its tasks here.
+# TODO = committed work; WAITING = external dependency with its reason recorded.
+# Uncommitted possibilities belong under Questions / Ideas. Checkboxes are task steps.
+
+** NEXT ${8:Concrete outcome to achieve next}
+Done when: ${9:Observable completion condition, including relevant constraints}
+
+- [ ] ${10:First supporting step}
+
+Verification: ${11:How to check the outcome}
+Result / evidence:
+# Record actual results or evidence links after checking; leave blank until then.
+
+** TODO ${12:Another committed task, not just an idea}
+Done when:
+
+* Notes
+
+* Decisions
+
+* Questions / Ideas
+
+* References
+
+* Work Log
+
+$0

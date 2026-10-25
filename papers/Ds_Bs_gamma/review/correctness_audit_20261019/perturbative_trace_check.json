@@ -1,0 +1,17 @@
+{
+  "points": 24,
+  "max_relative_error": 2.003191037248861e-14,
+  "status": "Current LO matrix passes independent cut-loop trace check",
+  "printed_appendix_massless_limit": {
+    "A1_label": "AA-BB",
+    "A1_matches": "minus current AB",
+    "A2_label": "AB",
+    "A2_matches": "current AA-BB",
+    "limitation": "Printed-label mismatch is not proof of an error in original numerical code"
+  },
+  "sha256": {
+    "scripts/twopoint_ds1_matrix_sumrule.py": "a64267ae6693d14881f3368ce4908dc8116d475c87e5e1242ce3a87452df7716",
+    "review/correctness_audit_20261019/references/PhysRevD.111.014005.pdf": "7dea738285d57c2ab25fd89937b5f4ada0565c1ba7e60cf9aca0193123660c80",
+    "review/correctness_audit_20261019/references/article_R1.tex": "1d08095064c6d2c88f2f65f6f4ff4590fbd50486ae3529744659301ab6a76446"
+  }
+}

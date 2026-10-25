@@ -1,0 +1,474 @@
+#+TITLE: Ds/Bs radiative decays — referee revision and isolated recalculation
+#+CATEGORY: project
+#+PROPERTY: PROJECT_ID ds-bs-gamma-referee-rerun-20261025
+#+STARTUP: overview
+#+TODO: NEXT(n) TODO(t) WAITING(w@/!) | DONE(d!) CANCELLED(c@)
+
+* Goal
+Produce a validated, reproducible revision of the four heavy-strange radiative
+channels, all four current manuscript figures, the additional signed-contribution
+panels, and the response-only diagnostics. Address the referee's concerns using
+consistent general-Borel kernels, continuum subtraction, photon normalization,
+physical-state residues, and shared-input uncertainties. Deliver proposed LaTeX
+text and figures for the author to insert into Prism.
+
+All new calculation work belongs in =review/recalculation_a1_20261025/=.
+Keep =final_manuscript/=, production code, existing results, and old figures
+unchanged. No calculation may start before the author gives the requested
+fresh-session approval.
+
+* Current status
+- Updated: [2026-10-25 Sun 19:40]
+- Working / verified: discussion and handoff preparation complete; source
+  snapshots, protected-file hashes, earlier diagnostics, and reference PDFs exist.
+  The leading-dimension-five correction has been derived and checked separately.
+- Unverified / blocked: full general-Borel transition implementation, finite-ms
+  photon-input matching, quantitative pole separation, updated windows and
+  correlated uncertainty results. These are work to do, not validated results.
+- Open first: this file's canonical NEXT task, then the linked evidence.
+- Handoff: local workspace =/Users/sbilmis/Dsgamma/papers/Ds_Bs_gamma=.
+  The author subsequently requested a local Git commit of the handoff and
+  supporting review material. Existing production changes are outside that
+  checkpoint. No push, cross-machine synchronization, background job or
+  schedule was requested. Preserve the existing dirty working tree.
+- Built / tested version: the saved production baseline and isolated historical
+  checks only. No new physics calculation or regenerated result figure exists
+  for the combined revision described here.
+- Installed / deployed version: not applicable; Prism is edited by the author.
+- Approval status: NOT YET REQUESTED IN THE FRESH SESSION; NOT GRANTED.
+
+* Context
+The current report is Referee A's =dv14652_report_1_a.pdf=. It raises two major
+issues (current/pole separation and reliability of the suppressed amplitude),
+plus continuum subtraction, photon normalization/scales, DA definitions,
+uncertainty correlations, momentum assignment, an auxiliary integral, and the
+pure-axial benchmark. The earlier favorable report is labelled Referee B in
+the current response letter; do not confuse these reports.
+
+The author agreed to the proposed investigation and requested this =tproj=
+handoff. This authorizes preparing the plan now; the next Codex session must
+ask before beginning the calculation. After that explicit approval, work
+through the technical checks and implementation autonomously within this
+review-only scope. A derivation is not an author preference: resolve signs,
+conventions and algebra from evidence. If an unresolved scientific choice
+prevents defensible final predictions, explain the concrete alternatives
+before adopting one.
+
+* Milestones (optional)
+** Consistent definitions and implementable sum rules
+Done when: photon matching/scales, DA/momentum conventions, the a=1 continuum
+prescription and boundary terms, and the two-point residue/pole treatment have
+documented derivations and successful relevant controls.
+
+** Validated central predictions and uncertainty analysis
+Done when: all four channels pass the documented working-region checks,
+paired comparisons isolate the changes, and a reproducible ensemble retains
+shared inputs and distinguishes statistical intervals from model variations.
+
+** Complete author-review package
+Done when: four manuscript figures, signed-contribution panels, response-only
+diagnostics, tables, captions and reply text use the same validated result set;
+style and numerical consistency are checked; protected files remain unchanged.
+
+* Tasks
+- Canonical tracker: =project.org= (this file).
+- =review/referee_reply_todo.md= records history and evidence; it does not own
+  a second active task queue.
+- Keep one NEXT task. Mark completed tasks only when their stated evidence
+  exists. Record approval, decisions and numerical results in Work Log.
+
+** NEXT Obtain the author's approval in the fresh Codex session
+:PROPERTIES:
+:CUSTOM_ID: approval-before-calculation
+:END:
+Done when: the author explicitly approves starting this review-only plan and
+the approval is recorded with its date and scope.
+
+- [ ] Read this file, =AGENTS.md=, the newest TODO handoff, and the calculation
+  and photon-normalization READMEs linked under References.
+- [ ] Briefly summarize the central prescription, remaining scientific checks,
+  figure deliverables and read-only boundary.
+- [ ] Ask the author: "May I start the review-only calculation plan in
+  project.org, beginning with photon matching/scales and convention checks,
+  then validating the kernels and residues before the full rerun and figures?
+  The existing results and final_manuscript will remain unchanged."
+- [ ] Wait for an explicit answer. Reading sources and preparing discussion
+  are allowed; do not start derivations, physics checks, scans, ensembles,
+  executable calculation changes, or result plots while approval is pending.
+- [ ] On approval, record it here, release the execution hold in =decisions.json=,
+  mark this task DONE, and promote the next task. Do not repeatedly request
+  the same approval once it has been granted and remains in scope.
+
+Verification: the recorded author message explicitly permits execution;
+neither this prepared notebook nor elapsed time counts as approval.
+Result / evidence: pending fresh-session author approval.
+
+** TODO Establish the isolated implementation and convention ledger
+Done when: every new entry point writes only to the review workspace and a
+single convention document connects the manuscript, reference papers and code.
+
+- [ ] Read the preserved baseline without running old production entry points.
+  Validate the protected-file manifest and inventory available Python, numerical
+  libraries, Wolfram and plotting tools. Do not silently substitute a less
+  complete calculation when a dependency is missing.
+- [ ] Use =src/= for new code, =checks/= for controls, =results/= for data,
+  =figures/= for exports, and =response/= for proposed author-facing text.
+  Keep caches/build products there as well.
+- [ ] Record Fourier phases, current locations, tensor momentum, axial and
+  pseudoscalar virtualities, current/state rotations, DA phases, integrated
+  vector DA convention, and the mapping to the reference papers.
+- [ ] Reconcile u0 versus 1-u0 in every two- and three-particle term; derive
+  the support for unequal Borels. Do not reflect only one DA family.
+- [ ] Resolve the Appendix B4 primed variable/denominator and B(u) coefficient
+  discrepancies. Establish whether unlisted DA contributions vanish for the
+  chosen projection or were omitted; document their treatment.
+
+Verification: dimensions, signs, momentum assignments and DA definitions agree
+between derivation and implementation; all output paths are review-local.
+Result / evidence: pending.
+
+** TODO Establish photon normalization matching and reproducible scale evolution
+Done when: a defensible normalization and hard/soft prescription are specified
+at the retained accuracy, with any remaining matching uncertainty explicit.
+
+- [ ] Start from the saved photon-normalization source review. Treat the
+  lattice mass-derivative subtraction separately from multiplicative
+  tensor-current running.
+- [ ] Compare the lattice definition with the finite-ms photon-DA prescription
+  and perturbative kernels. Derive any justified conversion; identify any
+  additional information needed. A single normalization value may not suffice.
+- [ ] Use the Janowski–Pullin–Zwicky discussion as a matching framework to
+  examine, not as permission to copy its numerical input without translation.
+- [ ] Specify mass, DA and interpolating-current scales and schemes; document
+  alpha_s inputs, evolution order and flavor-threshold treatment. Replace the
+  unexplained fixed 1.08 estimate in the new implementation with reproducible
+  evolution only after its applicable definition is established.
+- [ ] Separate the lattice statistical/systematic error from an additional
+  matching or truncation uncertainty. Do not assume the latter is negligible.
+
+Verification: hard and soft terms use compatible definitions without omitted
+or double-counted contributions; scale evolution is independently checked.
+If compatibility cannot be established, present the concrete limitation before
+claiming final predictions. Do not apply (1-ms*d/dms) to the full meson sum rule.
+Result / evidence: pending.
+
+** TODO Implement general-Borel kernels and a=1 continuum subtraction
+Done when: the actual transition kernels, including all retained terms and
+surface contributions, are derived and implemented for independent Borels.
+
+- [ ] Use the central prescription and starting windows under Decisions.
+- [ ] Derive/check the hard double-spectral treatment. The old calibrated
+  diagonal density does not establish the general unequal-Borel kernel.
+- [ ] Implement the linear two-variable domain and distributional boundary
+  terms for each kernel, including numerator virtualities, endpoint terms
+  and logarithms. Do not apply one common subtraction factor to all soft terms.
+- [ ] Evaluate two-particle DAs and their derivatives at the derived fractions;
+  recompute three-particle convolutions with their correct support.
+- [ ] Verify uncut, symmetric-Borel and appropriate symmetric-domain limits
+  against Pullin–Zwicky. Their D.18 control applies to its specified kernel
+  class, not to every higher-twist contribution.
+- [ ] Compare an independent numerical/transcription check at representative
+  points, and the pure-axial transition kernel against the cited earlier LCSR
+  with translated conventions and identical inputs.
+
+Verification: all analytic limit controls and numerical precision checks pass.
+Keep kernel validation distinct from physical pole-separation validation.
+Result / evidence: pending.
+
+** TODO Recompute two-point residues and quantify physical pole separation
+Done when: the revised residues and current-state coupling assumptions are
+supported quantitatively throughout the accepted working regions.
+
+- [ ] Incorporate the already derived leading-d5 addition into review copies
+  of both-sector two-point code; state its leading-ms Wilson-coefficient
+  approximation. Do not re-open that coefficient as an unresolved derivation.
+- [ ] Refit/recompute residues, masses and acceptance diagnostics with
+  consistent input scales and current conventions.
+- [ ] Evaluate the rotated off-diagonal correlator throughout the two-point
+  windows. Explain the chosen diagnostic and its relation to pole residues.
+- [ ] Assess both poles and unwanted-state contamination. If exclusive
+  coupling is not justified, develop a defensible two-pole treatment and
+  discuss any required change of the extraction before final predictions.
+- [ ] Retain the published mixing angles as external inputs; do not silently
+  refit them to remove a residual or to reproduce a previous width.
+
+Verification: representative d5 controls reproduce the saved derivation;
+positivity/mass/window checks and off-diagonal/pole diagnostics are reported.
+Formal orthogonality alone is not the quantitative test requested by Referee A.
+Result / evidence: pending.
+
+** TODO Validate paired benchmarks, working regions and sensitivity choices
+Done when: changes are separated by controlled comparisons and the working
+regions and uncertainty design are justified before the full ensemble.
+
+- [ ] Reproduce the preserved fixed-input baseline in isolation; use identical
+  inputs in successive comparisons of continuum, unequal Borels, DA/kernel,
+  photon-input and residue changes. Record the order and combined result.
+- [ ] Compare new-continuum r=1 and r=r_mass at fixed eta; scan an explicitly
+  documented admissible neighborhood. Include equal-intercept eta=1 as a
+  separate domain-sensitivity control. Do not vary eta with r.
+- [ ] Start from Table II, then check both individual Borel channels,
+  continuum suppression, OPE contributions and two-point mass reproduction.
+  Record failed points and reasons. Do not tune windows to recover a width.
+- [ ] Report signed perturbative/twist contributions in both bases and both
+  physical combinations, plus absolute contributions relative to the residual.
+  Signed pert/total is not a pole fraction; label hard-retention proxies.
+- [ ] Choose source-supported leading-twist shape and independent twist-four
+  parameter ranges. Hold normalization fixed in shape-only tests; satisfy
+  the twist-four EOM constraint and vary all affected DAs coherently.
+- [ ] Resolve zeta1+11*zeta2-2*zeta2_plus=7/2 versus rounded old inputs
+  before final scans. Do not silently reuse inconsistent central parameters.
+- [ ] Record sampling distributions, truncations, correlations, rejection
+  criteria, parameter ranges and precision goals before the final ensemble.
+- [ ] Assess uncalculated radiative/higher-twist effects in absolute amplitude
+  units; distinguish an estimate from a computed correction and from a
+  statistical confidence interval.
+
+Verification: saved paired tables and working-region diagnostics support the
+selected prescription; scan ranges have a documented rationale.
+Result / evidence: pending.
+
+** TODO Run the shared-input uncertainty analysis for all four channels
+Done when: one reproducible ensemble supplies all final numerical results and
+their uncertainties, with adequate numerical/Monte Carlo precision.
+
+- [ ] Share each sampled QCD input and mixing angle between its residue and
+  transition calculations; carry correlations between paired states and
+  derived ratios. Correct the recorded charm independent-sampling issue.
+- [ ] Recompute residues with the same draw and a documented two-point
+  auxiliary-parameter prescription. Retain the complete input/draw mapping.
+- [ ] Use fixed documented random seeds and report requested, accepted and
+  rejected draws with reasons. Extend sampling only when precision warrants.
+- [ ] Save signed amplitudes, invariant components, residues, widths and all
+  varied inputs, rather than only summary medians.
+- [ ] Produce medians, 16th/84th percentiles and a compact uncertainty budget;
+  distinguish probabilistic intervals from auxiliary/model envelopes.
+- [ ] Assess separately whether the hierarchy of widths is robust and whether
+  the specific sub-keV claim survives. Do not predetermine the conclusion.
+
+Verification: independent point checks agree; all tables and plotted summaries
+are reconstructed from the same saved ensemble; protected hashes are unchanged.
+Result / evidence: pending.
+
+** TODO Regenerate the four manuscript figures and additional diagnostic panels
+Done when: the inventory under Notes is complete, all figures use validated
+new data, and their appearance matches the current manuscript.
+
+- [ ] Create a single plotting-style configuration based on the existing
+  manuscript and accepted signed-panel builder. Reuse the established colors,
+  line meanings, typography, panel ordering, units and reference-angle markers.
+- [ ] Recompute f1(theta) and f2(theta) at every angle for both the individual
+  residue figure and width figure. The old angular builder already did this;
+  do not describe the revision as fixing a previously frozen-residue plot.
+- [ ] Regenerate the signed Pi_A/Pi_B/Pi_2 panel for Ds2536, with Pi_2 as the
+  third panel, and provide equivalent both-sector/channel diagnostics.
+- [ ] Regenerate response-only f2/f1, paired Borel/domain/DA sensitivity
+  tables or curves, working-window diagnostics and the uncertainty budget.
+- [ ] Save vector PDFs, PNG previews, source CSV/JSON, plotting scripts and
+  input/code provenance. Keep current manuscript figure numbers separate
+  from historical builder-directory numbers.
+- [ ] Inspect every export at manuscript size: no clipped labels, obscured
+  curves, ambiguous signs or mislabeled uncertainty shading. Adapt data
+  limits to the new results; do not preserve old limits that hide them.
+
+Verification: figure data reproduce the numerical tables; the physical
+component sums agree; captions identify fixed inputs, bands, scales and
+central prescription. Every image/caption pairing is checked.
+Result / evidence: pending.
+
+** TODO Prepare the copy-paste revision and referee-response package
+Done when: the author can review and insert all proposed changes into Prism
+without guessing locations, figure filenames, definitions or result versions.
+
+- [ ] Supply LaTeX captions, proposed insertions keyed to the current manuscript,
+  and updated numerical/uncertainty tables for both sectors.
+- [ ] Draft Referee A's reply item by item, leading with evidence for the major
+  concerns and linking each numerical claim to a saved result.
+- [ ] Check the existing Referee B reply for claims/figures affected by the new
+  calculation. Preserve the response-only f2/f1 choice and the vector-paper
+  statement. Do not silently revise the conditional old-angle input study.
+- [ ] State any material limitations and changes in conclusions honestly.
+  Proposed text must not say an insertion has already been made in Prism.
+- [ ] Deliver an index of files and one reproduction entry point after
+  validation; verify all protected source/manuscript/result hashes.
+
+Verification: numbers, figure labels and conventions agree across the package;
+no unresolved diagnostic is represented as a validated final result.
+Result / evidence: pending. Manuscript adoption remains with the author.
+
+* Notes
+** Figure inventory and numbering
+The current manuscript reference is =r1-2.pdf=, preserved locally below.
+Historical source-folder numbers are not current manuscript figure numbers.
+
+| Destination | Content and layout | Existing source/style reference |
+|-------------+--------------------+---------------------------------|
+| Manuscript Fig. 1 | f1(theta), f2(theta); Ds left, Bs right; MeV | review/referee1_revision/build_decay_constant_figures.py |
+| Manuscript Fig. 2 | Signed g(0) versus effective M^2; four channels in 2x2; three thresholds | figures/figure1_borel_form_factors/plot_figure1_preview.py |
+| Manuscript Fig. 3 | Widths versus theta; Ds left, Bs right; keV; residues recomputed | figures/figure2_mixing_angle_widths/plot_figure2_preview.py |
+| Manuscript Fig. 4 | Width distributions in 2x2; median and 16th/84th percentiles | figures/figure5_monte_carlo_widths/plot_figure5_preview.py |
+| Additional panel | Pi_A, Pi_B, Pi_2=cos(theta)Pi_A-sin(theta)Pi_B; signed GeV^3 | review/referee_a_major_ii/plot_signed_invariants.py |
+| Response only | f2(theta)/f1(theta), both sectors; never f1/f2 | review/referee1_revision/build_decay_constant_figures.py |
+| Response diagnostics | Borel/domain/DA sensitivity, working-region checks, uncertainty budget | new validated review data |
+
+The extra panel is prepared in addition to the four existing figures. Its
+final manuscript versus response placement and any consequent renumbering
+will be stated in the proposed insertion package; do not change Prism.
+Cover both Ds and Bs consistently. Save physical combinations for lower
+and higher states even when only the suppressed-channel panel is highlighted.
+
+** Figure style to preserve
+- Authoritative appearance: the copied current manuscript, not an arbitrary
+  older export. Both Mathematica/MaTeX and Python previews exist; their
+  typography differs. The accepted panel matches the manuscript's sans-serif
+  presentation. Use that coherent style and inspect the actual PDF.
+- White background, boxed axes, inward ticks on all four sides, no grid;
+  legible sans-serif/math text, compact legends and panel titles.
+- Lower-state/angular f1 curves: solid blue =#0047ab=; higher-state/f2:
+  dashed near-black =#111111=. Preserve these meanings across both sectors.
+- Threshold curves: blue solid, orange-red =#cc3300= dashed, black dash-dot,
+  ordered by increasing threshold.
+- Preferred-angle markers: red =#b22222= dash-dot at 26.6 and 38.5 degrees;
+  heavy-quark reference 35.3 degrees: gray dotted.
+- Signed component panel: perturbative blue solid; twist 2 orange-red dashed;
+  twist 3 green =#14864b= dash-dot; total twist 4 purple =#8c4ab0= dotted;
+  total near-black solid and slightly heavier. Retain a gray zero line.
+- Store separate two-/three-particle twist-four pieces as well as the subtotal;
+  never count the subtotal and its pieces twice.
+- Existing scale guide: curve widths about 1.8--2.1 pt, axes about 0.8 pt,
+  labels 10--11 pt, ticks/annotations 8.5--9 pt. Two-column figures are
+  about 7.1 inches wide; the three-panel draft is 9.6 x 3.45 inches, requiring
+  a readability check after manuscript scaling.
+- Angular scans initially cover 25--45 degrees. Keep display ranges explicit
+  and do not confuse these scans with the Gaussian angle priors.
+- Threshold bands are envelopes, not confidence intervals. Histograms use
+  blue fill, black median, red dashed percentile markers. Show or state any
+  omitted tails; do not renormalize a cropped histogram without explanation.
+- Export vector PDF and 240--300 dpi PNG; SVG is useful for the extra panel.
+  Include complete units and never relabel g2 data as Pi_2.
+
+** Workspace and portability
+- Protected baseline manifest:
+  [[file:review/recalculation_a1_20261025/baseline/protected_files_sha256.json][409 recorded file hashes]].
+- Source snapshot: =review/recalculation_a1_20261025/baseline/source_snapshot/=
+  (92 copied sources, including the shared photon-DA module).
+- On another machine, resolve repository-relative paths locally. The original
+  manifest has absolute source paths: map the original repository prefix to
+  the local checkout for verification, while preserving the original hashes.
+  Treat external shared modules separately and use the recorded snapshot.
+- Reference PDFs and snippet are copied under =baseline/reference_documents/=;
+  [[file:review/recalculation_a1_20261025/baseline/reference_documents/provenance.json][document provenance]]
+  records original paths and hashes. Do not depend on another machine having
+  the same Downloads directory.
+- Preserve existing tracked and untracked work. Do not clean, reset, archive
+  further files, overwrite production entry points, or silently import new
+  samples into old result tables.
+- Git handoff scope: this notebook, AGENTS.md, CURRENT_WORKFLOW.md and the
+  supporting review material. Generated caches/build files and the four large
+  provisional unequal-Borel raw .npz scans remain local; their scripts,
+  benchmark tables and summary diagnostics are included. This commit does
+  not capture the separate pre-existing production edits. A fresh checkout
+  must distinguish its production files from the preserved source snapshots
+  and recorded baseline hashes.
+
+* Decisions
+** Central prescription for the approved future calculation
+- Continuum shape: a=1; diagonal crossing sigma_0=s_eff equals the Table II s0.
+- Domain ratio: eta=tilde_s_A/tilde_s_P=m_A^2/m_P^2.
+  Intercepts: tilde_s_P=s_eff*(1+eta)/eta and tilde_s_A=s_eff*(1+eta).
+  They are not the two-point continuum thresholds.
+- Borel ratio, independently defined: r=M1^2/M2^2=m_A^2/m_P^2 centrally.
+  M1 belongs to the axial channel; M2 to the pseudoscalar.
+- For K=M_eff^2: M1^2=(1+r)K, M2^2=(1+r)K/r,
+  u0=1/(1+r) in the manuscript convention. Translate each reference's labels.
+- Fix the continuum domain while scanning r. In paired comparisons use
+  identical inputs; document whether sampled masses update central eta/r.
+- Published angles remain external: Ds 26.6 +/- 0.6 degrees,
+  Bs 38.5 +/- 0.1 degrees. No automatic refit of the original 2025 study.
+- The old tensor-current normalization 1/(m_Q+m_s) was present in the
+  calculations and absent only in print. This is an established author fact.
+- Photon matching procedure is agreed for investigation; no replacement
+  normalization or finite-mass scheme has yet been selected or validated.
+
+** Starting working regions
+| Channel | Effective K in GeV^2 | s_eff in GeV^2 |
+|---------+----------------------+----------------|
+| Ds2460 | 3--4.5 | 8.5--9.5 |
+| Ds2536 | 3--4.5 | 9--10 |
+| Bs5750 | 10--14 | 39--41 |
+| Bs5830 | 10--14 | 40--42 |
+
+The earlier two-point sampling windows were Ds 2--2.7 and Bs 6.5--7.3 GeV^2,
+with perturbative pole-retention >=0.5, d5 fraction <=0.15 and mass-fit
+tolerance 30 MeV; the bottom continuum-gap condition was 0.45--1.05 GeV.
+Read the original records for exact definitions and thresholds. These are
+starting criteria to reassess, not proof that the revised calculation passes.
+
+** Interpretation and approval boundaries
+- Current manuscript edits remain the author's task in Prism; final_manuscript
+  is read-only, including build artifacts.
+- The previously obtained 0.183 -> 5.18 keV unequal-Borel diagnostic kept old
+  continuum/hard assumptions. It is neither a forecast of the a=1 result nor
+  a replacement for the manuscript Monte Carlo median.
+- The leading-d5 correction is resolved at its stated order but is not yet
+  applied to production. Its small fixed-point effect does not validate a
+  full refit or uncertainty analysis.
+- Formal current rotation does not establish exclusive physical-state
+  coupling. Keep this question separate from the settled normalization typo.
+- f2/f1 is for the referee response only. Individual f1 and f2 are for the
+  manuscript. Vector-final-state radiative ratios belong to the separate
+  paper, which the author says is nearing completion.
+- No rerun, background calculation, commit, synchronization or publication
+  is authorized merely by creating this file.
+
+* Questions / Ideas
+- Exact finite-ms matching and any required additional input: to be resolved
+  by the approved technical investigation, not assumed from the lattice error.
+- Quantitative admissibility of single-pole/exclusive-current extraction:
+  to be determined; a two-pole alternative may require a new author decision.
+- Source-supported DA/twist-four/Borel-scan ranges: document before the final
+  scan. Routine technical choices do not require repeated permission.
+- Final placement of extra panels and whether selected sensitivity plots are
+  more readable than a compact response table: decide from the validated data.
+- Full NLO or an extended OPE is not silently included in this scope. Report
+  estimated omitted effects and propose additional work if needed.
+
+* References
+- [[file:AGENTS.md][Project instructions and established author facts]]
+- [[file:review/referee_reply_todo.md][Dated discussion history and handoff]]
+- [[file:review/recalculation_a1_20261025/README.md][Isolated recalculation preparation]]
+- [[file:review/recalculation_a1_20261025/decisions.json][Machine-readable decisions and execution hold]]
+- [[file:review/referee_a_photon_normalization_20261025/README.md][Photon matching/scales source review and local PDFs]]
+- [[file:review/referee_a_continuum_planning_20261025/README.md][Continuum derivation checks and working-region evidence]]
+- [[file:review/mixed_condensate_resolution/README.md][Resolved leading-d5 derivation and proposed patch]]
+- [[file:review/correctness_audit_20261019/REPORT.md][Baseline provenance and shared-input audit]]
+- [[file:review/referee_a_major_ii/README.md][Signed component data, accepted panel and conventions]]
+- [[file:review/referee_a_borel_asymmetry_20261025/README.md][Provisional old-prescription unequal-Borel diagnostic]]
+- [[file:CURRENT_WORKFLOW.md][Production source/dependency map]]
+- [[file:review/recalculation_a1_20261025/baseline/reference_documents/manuscript_r1-2.pdf][Current manuscript snapshot]]
+- [[file:review/recalculation_a1_20261025/baseline/reference_documents/referee_A_report.pdf][Referee A report]]
+- [[file:review/recalculation_a1_20261025/baseline/reference_documents/referee_B_reply_current.pdf][Current Referee B reply]]
+- [[file:review/recalculation_a1_20261025/baseline/reference_documents/tproj.snippet][Exact author tproj snippet used for this notebook]]
+
+* Work Log
+** [2026-10-25 Sun] Plan and fresh-session handoff prepared
+- Author requested =project.org= using the =tproj= snippet and explicitly
+  required the fresh Codex session to ask approval before calculations.
+- Expanded the author's snippet structure and filled the scope, single NEXT,
+  task sequence, acceptance criteria, figure inventory/style and source links.
+- Saved local copies of the current manuscript, both relevant report/reply
+  documents, and the snippet, with source hashes.
+- Connected the notebook to AGENTS.md and review records. No physics
+  calculation, regenerated result figure, or manuscript edit was performed.
+- Verification: Emacs Org parsed all 29 headlines; all 17 local links resolve;
+  all four reference snapshots match their source hashes; all 409 protected
+  baseline files are unchanged. Evidence is saved in
+  =review/recalculation_a1_20261025/checks/project_handoff_validation.json=.
+- Execution approval: pending; record the future author's answer below.
+
+** [2026-10-25 Sun] Local Git checkpoint requested
+- Author instruction: "yes also do commit".
+- Commit the handoff and supporting review record; keep earlier production
+  edits and the other paper's work outside its scope.
+- This is permission for the local commit, not for calculations or a push.
+- The fresh-session calculation approval remains pending.

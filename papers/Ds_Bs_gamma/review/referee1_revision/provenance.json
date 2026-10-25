@@ -1,0 +1,83 @@
+{
+  "purpose": "Referee 1 item 3: fixed-input angle scans consistent with existing Figure 2",
+  "interpretation": "Rotated-current residues, not unconditionally weak axial-current decay constants",
+  "uncertainty": "No uncertainty bands; not marginalized posterior predictions",
+  "source_sha256": {
+    "figures/figure2_mixing_angle_widths/figure2_mixing_angle_widths.csv": "131321ade08f1f6173debb7b93631d8e050c5514f693ea9e38c92b91e47de384",
+    "figures/figure2_mixing_angle_widths/build_figure2_data.py": "0146d8ae94ed479bbb93af418f537c4948292b08efd3362d205c8f9ae72f9ad8",
+    "scripts/twopoint_ds1_matrix_sumrule.py": "a64267ae6693d14881f3368ce4908dc8116d475c87e5e1242ce3a87452df7716",
+    "outputs/twopoint_ds1_matrix_mc.csv": "28ab007d79d3bb44197092470187b96f0fa689876d7a8af042cd55c6426aca1f",
+    "outputs/twopoint_bs1_matrix_mc.csv": "9915e6318f9c073cbeddc799867076251684f03869e2ceb4cd0509cc559db295"
+  },
+  "selected_two_point_samples": {
+    "Ds": {
+      "accepted": "1",
+      "M2_GeV2": "2.3802068512485777",
+      "s0_mix_GeV2": "9.355997546719513",
+      "mc_GeV": "1.2637930377218576",
+      "ms_GeV": "0.09253147636085218",
+      "ss_GeV3": "-0.011082057162831099",
+      "m0_sq_GeV2": "0.8558871207176576",
+      "theta_deg": "26.734947422801195",
+      "theta_matrix_deg": "30.90786006652924",
+      "Pi12_normalized": "0.18978513875765407",
+      "s01_GeV2": "7.95",
+      "s02_GeV2": "10.025",
+      "m_eff1_GeV": "2.4588219772553916",
+      "m_eff2_GeV": "2.5343968227017784",
+      "f1_GeV": "0.40507688257876956",
+      "f2_GeV": "0.16889582355569996",
+      "pole_fraction1": "0.583638975747777",
+      "pole_fraction2": "0.6989515636556332",
+      "d5_fraction1": "0.01767407433685764",
+      "d5_fraction2": "0.0869217392167109"
+    },
+    "Bs": {
+      "M2_GeV2": "6.952839983345881",
+      "s0_mix_GeV2": "46.873410859054914",
+      "mb_GeV": "4.16517751874728",
+      "ms_GeV": "0.09502975462317743",
+      "ss_GeV3": "-0.01157953242933529",
+      "m0_sq_GeV2": "0.8216052920794109",
+      "mass_low_GeV": "5.754930507494625",
+      "mass_high_GeV": "5.828731435338958",
+      "theta_deg": "38.50550506000979",
+      "theta_matrix_deg": "39.305715076314385",
+      "Pi12_normalized": "0.08078416980670856",
+      "s01_GeV2": "44.75",
+      "s02_GeV2": "43.225",
+      "sqrt_s01_minus_m1_GeV": "0.9346135726352012",
+      "sqrt_s02_minus_m2_GeV": "0.7458407940916381",
+      "m_eff1_GeV": "5.754962793514093",
+      "m_eff2_GeV": "5.828300402353736",
+      "f1_GeV": "0.5478353285848393",
+      "f2_GeV": "0.09108774160998909",
+      "pole_fraction1": "0.8178418113818327",
+      "pole_fraction2": "0.5708576689281846",
+      "d5_fraction1": "0.0031851297476270736",
+      "d5_fraction2": "0.036940410045172234",
+      "accepted": "1"
+    }
+  },
+  "angle_grid": {
+    "min_degrees": 25,
+    "max_degrees": 45,
+    "points_per_sector": 161
+  },
+  "maximum_absolute_agreement_error_GeV": 1.1102230246251565e-16,
+  "number_of_residue_comparisons_with_existing_csv": 1288,
+  "final_manuscript_unchanged": true,
+  "final_manuscript_sha256": {
+    "final_manuscript/all.bib": "99410eb92b09d7c83e3ff70a64fdb760eea83ec58daaa61148f1a4bbd7457d3e",
+    "final_manuscript/appendix_revised.tex": "1971a7a4deb29c87d0daa8ea63e3059aa1a5e03fa4e4ccabdddef81f09ee620d",
+    "final_manuscript/fig1.pdf": "8e34e4a43ab0aa9e0d9b3e32ace1c1ca2831d1a767500dd73a776f18b212d12e",
+    "final_manuscript/fig2.pdf": "7f251911b869b66bc186be85bc7845ac966bdd887e03c44d4a14038b209e18f4",
+    "final_manuscript/fig3.pdf": "638105e68f8773da9bcf851fb7ebbd273bf1356452f798e11e19c3e887f44018",
+    "final_manuscript/main3_savci.tex": "1656f0f46c4be8defc952e657739b1dde39c3ddbc4b133a5a84c59afe4e0bb46",
+    "final_manuscript/my_preamble.tex": "82403b77ef1d05ec5ba408dc676643094295ad37a97e2f47d4df2e6c98acae1c",
+    "final_manuscript/numerical_analysis_revised.tex": "08dc1caaea1a07717497668107f5cc718d52cd83dd0f0d60f385a6bbb62dd2a4",
+    "final_manuscript/orcidlink.sty": "2941c36b772ae89cbcaca60fb14d888b59e41733c6255c5a0ef23043c190bc74",
+    "final_manuscript/theoretical_framework_revised.tex": "c1178df7fcc2a529250b276403a40e03ef9aa5cd83482142c81cb14b40db6d78",
+    "final_manuscript/utcaps_mod.bst": "16a2d0ee607a9a11a1ac8b9d7b06675ee34dd41c40c77f46dd07f6715d4f86dd"
+  }
+}

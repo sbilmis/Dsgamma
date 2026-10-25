@@ -1,0 +1,67 @@
+% INSERTION: r1.pdf, p. 11, immediately after the paragraph below the
+% two decay-constant sum rules ending "presented in Appendix C."
+% Place before "Substituting the residues obtained from the two-point sum rules..."
+% Aliev:2025mixing is the key in the local bibliography. Check the Prism key.
+% This summarizes the earlier angle method; it does not report an input update.
+
+For completeness, we briefly summarize the determination of the mixing angle
+in Ref.~\cite{Aliev:2025mixing}. The two basis currents have the same mass
+dimension, with the tensor current normalized by $1/(m_Q+m_s)$.\footnote{This
+factor was inadvertently omitted from the printed definition
+of the tensor current in Ref.~\cite{Aliev:2025mixing}, but was included in
+the calculations underlying that work.}
+In the two-state description adopted in that analysis, the angle is determined
+by imposing a vanishing off-diagonal spin-one correlator in the rotated basis.
+With the current convention used here, the rotation is
+\begin{equation}
+ R(\theta)=
+ \begin{pmatrix}
+  \sin\theta & \cos\theta\\
+  \cos\theta & -\sin\theta
+ \end{pmatrix}.
+ \label{eq:r1-angle-rotation}
+\end{equation}
+Writing the Borel-transformed and continuum-subtracted correlator matrix as
+$\widehat{\boldsymbol\Pi}$, the condition is
+\begin{equation}
+ R(\theta)\widehat{\boldsymbol\Pi}R^T(\theta)
+ =\begin{pmatrix}
+   \widehat\Pi_{11}&0\\0&\widehat\Pi_{22}
+  \end{pmatrix},
+ \qquad
+ \widehat{\boldsymbol\Pi}=
+ \begin{pmatrix}
+  \widehat\Pi_{AA}&\widehat\Pi_{AB}\\
+  \widehat\Pi_{AB}&\widehat\Pi_{BB}
+ \end{pmatrix},
+ \label{eq:r1-angle-diagonalization}
+\end{equation}
+where the matrix entries in the angle sum rule are evaluated with a common
+Borel parameter and continuum-subtraction prescription. The vanishing
+off-diagonal entry gives
+\begin{equation}
+ \frac{1}{2}\sin(2\theta)
+ \bigl(\widehat\Pi_{AA}-\widehat\Pi_{BB}\bigr)
+ +\cos(2\theta)\widehat\Pi_{AB}=0.
+ \label{eq:r1-angle-offdiagonal}
+\end{equation}
+This condition does not require the two physical diagonal correlators to be
+equal. Indeed, defining
+$\Delta=\widehat\Pi_{11}-\widehat\Pi_{22}$, the inverse rotation yields
+\begin{align}
+ \widehat\Pi_{AA}-\widehat\Pi_{BB}&=-\cos(2\theta)\Delta,
+ \nonumber\\
+ 2\widehat\Pi_{AB}&=\sin(2\theta)\Delta.
+ \label{eq:r1-angle-inverse}
+\end{align}
+For nondegenerate correlators, their common factor $\Delta$ cancels in
+the ratio, giving
+\begin{equation}
+ \tan(2\theta)=
+ -\frac{2\widehat\Pi_{AB}(M^2,s_0)}
+ {\widehat\Pi_{AA}(M^2,s_0)-\widehat\Pi_{BB}(M^2,s_0)}.
+ \label{eq:r1-angle-sumrule}
+\end{equation}
+Thus, different pole masses and residues are compatible with this relation.
+The mixing angles obtained in Ref.~\cite{Aliev:2025mixing} are used as external
+inputs in the present analysis and are quoted in the numerical section below.

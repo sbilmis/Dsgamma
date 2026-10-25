@@ -1,0 +1,127 @@
+{
+  "status": "isolated_verified_d5_completion; no production replacement",
+  "condensate_comparisons": [
+    {
+      "sector": "Ds",
+      "midpoint": {
+        "sector": "Ds",
+        "M2_GeV2": 4.5,
+        "s0_GeV2": 10.0,
+        "old_implementation_theta_old_qq_deg": 30.049649603624495,
+        "old_implementation_theta_new_qq_deg": 30.22675263170015,
+        "completed_d5_theta_old_qq_deg": 30.0639788894731,
+        "completed_d5_theta_new_qq_deg": 30.238959739760794,
+        "old_implementation_condensate_shift_deg": 0.17710302807565625,
+        "completed_d5_condensate_shift_deg": 0.17498085028769594,
+        "change_in_sensitivity_deg": -0.002122177787960311,
+        "quoted_angle_error_deg": 0.6
+      },
+      "completed_d5_shift_min_deg": 0.11598423705774863,
+      "completed_d5_shift_max_deg": 0.33116171204581946,
+      "maximum_change_in_sensitivity_deg": 0.00396156778058554,
+      "scope": "current exact-mass LO plus local operators through dimension five; not original angle extraction"
+    },
+    {
+      "sector": "Bs",
+      "midpoint": {
+        "sector": "Bs",
+        "M2_GeV2": 11.0,
+        "s0_GeV2": 43.0,
+        "old_implementation_theta_old_qq_deg": 39.43370317882067,
+        "old_implementation_theta_new_qq_deg": 39.47840931775074,
+        "completed_d5_theta_old_qq_deg": 39.43118550473998,
+        "completed_d5_theta_new_qq_deg": 39.476311933803046,
+        "old_implementation_condensate_shift_deg": 0.04470613893006714,
+        "completed_d5_condensate_shift_deg": 0.04512642906306752,
+        "change_in_sensitivity_deg": 0.0004202901330003783,
+        "quoted_angle_error_deg": 0.1
+      },
+      "completed_d5_shift_min_deg": 0.03614790610198071,
+      "completed_d5_shift_max_deg": 0.06004707148728983,
+      "maximum_change_in_sensitivity_deg": 0.0010087732446493192,
+      "scope": "current exact-mass LO plus local operators through dimension five; not original angle extraction"
+    }
+  ],
+  "representative_residue_impact": [
+    {
+      "sector": "Ds",
+      "state": 1,
+      "theta_deg": 26.6,
+      "M2_GeV2": 2.3802068512485777,
+      "s0_GeV2": 7.95,
+      "f_old_MeV": 404.996722115162,
+      "f_completed_d5_MeV": 404.414529854335,
+      "f_change_percent": -0.14375233897855333,
+      "fixed_numerator_width_ratio": 1.0028812581038637,
+      "fixed_numerator_width_change_percent": 0.28812581038637486,
+      "old_effective_mass_GeV": 2.458807849138786,
+      "completed_d5_effective_mass_GeV": 2.458569724495143
+    },
+    {
+      "sector": "Ds",
+      "state": 2,
+      "theta_deg": 26.6,
+      "M2_GeV2": 2.3802068512485777,
+      "s0_GeV2": 10.025,
+      "f_old_MeV": 169.09404678615945,
+      "f_completed_d5_MeV": 169.38039417020653,
+      "f_change_percent": 0.16934208476848678,
+      "fixed_numerator_width_ratio": 0.9966217419434497,
+      "fixed_numerator_width_change_percent": -0.3378258056550343,
+      "old_effective_mass_GeV": 2.5341835976588856,
+      "completed_d5_effective_mass_GeV": 2.53420362811249
+    },
+    {
+      "sector": "Bs",
+      "state": 1,
+      "theta_deg": 38.5,
+      "M2_GeV2": 6.952839983345881,
+      "s0_GeV2": 44.75,
+      "f_old_MeV": 547.8344580461469,
+      "f_completed_d5_MeV": 547.9953553971305,
+      "f_change_percent": 0.029369702584491897,
+      "fixed_numerator_width_ratio": 0.9994128646208412,
+      "fixed_numerator_width_change_percent": -0.058713537915877634,
+      "old_effective_mass_GeV": 5.754965591370786,
+      "completed_d5_effective_mass_GeV": 5.753569043871688
+    },
+    {
+      "sector": "Bs",
+      "state": 2,
+      "theta_deg": 38.5,
+      "M2_GeV2": 6.952839983345881,
+      "s0_GeV2": 43.225,
+      "f_old_MeV": 91.09416366497541,
+      "f_completed_d5_MeV": 90.98770658334283,
+      "f_change_percent": -0.11686487624400499,
+      "fixed_numerator_width_ratio": 1.0023414011382907,
+      "fixed_numerator_width_change_percent": 0.2341401138290733,
+      "old_effective_mass_GeV": 5.828191993887779,
+      "completed_d5_effective_mass_GeV": 5.833858182462683
+    }
+  ],
+  "protected_hashes": {
+    "final_manuscript/numerical_analysis_revised.tex": "08dc1caaea1a07717497668107f5cc718d52cd83dd0f0d60f385a6bbb62dd2a4",
+    "final_manuscript/fig2.pdf": "7f251911b869b66bc186be85bc7845ac966bdd887e03c44d4a14038b209e18f4",
+    "final_manuscript/fig3.pdf": "638105e68f8773da9bcf851fb7ebbd273bf1356452f798e11e19c3e887f44018",
+    "final_manuscript/fig1.pdf": "8e34e4a43ab0aa9e0d9b3e32ace1c1ca2831d1a767500dd73a776f18b212d12e",
+    "final_manuscript/my_preamble.tex": "82403b77ef1d05ec5ba408dc676643094295ad37a97e2f47d4df2e6c98acae1c",
+    "final_manuscript/main3_savci.tex": "1656f0f46c4be8defc952e657739b1dde39c3ddbc4b133a5a84c59afe4e0bb46",
+    "final_manuscript/appendix_revised.tex": "1971a7a4deb29c87d0daa8ea63e3059aa1a5e03fa4e4ccabdddef81f09ee620d",
+    "final_manuscript/all.bib": "99410eb92b09d7c83e3ff70a64fdb760eea83ec58daaa61148f1a4bbd7457d3e",
+    "final_manuscript/orcidlink.sty": "2941c36b772ae89cbcaca60fb14d888b59e41733c6255c5a0ef23043c190bc74",
+    "final_manuscript/utcaps_mod.bst": "16a2d0ee607a9a11a1ac8b9d7b06675ee34dd41c40c77f46dd07f6715d4f86dd",
+    "final_manuscript/theoretical_framework_revised.tex": "c1178df7fcc2a529250b276403a40e03ef9aa5cd83482142c81cb14b40db6d78",
+    "scripts/twopoint_ds1_matrix_sumrule.py": "a64267ae6693d14881f3368ce4908dc8116d475c87e5e1242ce3a87452df7716",
+    "scripts/twopoint_bs1_matrix_sumrule.py": "5c027b48e5bf29238dee4f65451bfbff2030e539ebab0b68841935d0ba5666c7",
+    "outputs/twopoint_ds1_matrix_mc.csv": "28ab007d79d3bb44197092470187b96f0fa689876d7a8af042cd55c6426aca1f",
+    "outputs/twopoint_bs1_matrix_mc.csv": "9915e6318f9c073cbeddc799867076251684f03869e2ceb4cd0509cc559db295",
+    "outputs/final_window_mc_scan.csv": "e60526db2c791ccbadb0b7cec3c32c356f89809cb3b0d21fd63842c53d2a5c16"
+  },
+  "protected_sources_and_outputs_unchanged": true,
+  "limitations": [
+    "No threshold refit or accepted-ensemble regeneration.",
+    "No revised full uncertainties or publication widths are inferred.",
+    "Does not reproduce the original larger-OPE calculation."
+  ]
+}

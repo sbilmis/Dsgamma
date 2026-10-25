@@ -1,0 +1,12 @@
+{
+	"source":"\/Users\/sbilmis\/developer\/physics\/Bc_mixing\/BcMixingMomentum.wl",
+	"mapping":"mb -> ms (antiquark), mc -> mQ (quark)",
+	"Bc_density_divided_by_current_spin_averaged_density":{
+		"AA":3,
+		"AB":3,
+		"BB":3
+	},
+	"pass":true,
+	"interpretation":"All three perturbative entries agree up to one common factor 3, which cancels in tan(2 theta). No mass-dependent tensor-current rescaling is applied.",
+	"limitation":"This does not supply strange-quark or mixed-condensate terms, or reproduce the original Ds\/Bs numerical implementation."
+}

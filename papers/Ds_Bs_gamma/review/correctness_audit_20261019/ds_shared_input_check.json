@@ -1,0 +1,123 @@
+{
+  "baseline_reproduced": true,
+  "baseline_max_absolute_errors": {
+    "M2": 0.0,
+    "s0": 0.0,
+    "theta_deg": 0.0,
+    "f1_GeV": 0.0,
+    "f2_GeV": 0.0,
+    "T_A": 0.0,
+    "T_B": 0.0,
+    "g_GeV_inv": 0.0,
+    "Gamma_keV": 0.0
+  },
+  "samples": 500,
+  "seed": 20260705,
+  "changed": "Transition mc, ms, ss use selected residue sample; fperp fixed; chi=fperp/ss",
+  "unchanged": "Same angle, residues, photon-shape and other draws, transition M2/s0",
+  "status": "Audit variant only; original scripts and outputs unchanged",
+  "sha256": {
+    "scripts/final_window_monte_carlo.py": "46e92d301317f4dae8209b5b15b7fa41d11f1160a9f182e84b30a4704635bced",
+    "scripts/lattice_photon_normalization_comparison.py": "21861e6772c248ae0846844b79bcf1abac26324c8cbd6c49ad07fdf8eed96bb9",
+    "outputs/final_window_mc_scan.csv": "e60526db2c791ccbadb0b7cec3c32c356f89809cb3b0d21fd63842c53d2a5c16",
+    "outputs/twopoint_ds1_matrix_mc.csv": "28ab007d79d3bb44197092470187b96f0fa689876d7a8af042cd55c6426aca1f"
+  },
+  "summaries": [
+    {
+      "state": "Ds1_2460",
+      "observable": "Gamma_keV",
+      "mode": "saved_sampling_replay",
+      "mean": 46.85453680254471,
+      "std": 9.694034141392422,
+      "p16": 37.40924892983252,
+      "median": 45.91568346895833,
+      "p84": 56.00370401534817,
+      "min": 24.983448481093372,
+      "max": 83.1382526856982
+    },
+    {
+      "state": "Ds1_2460",
+      "observable": "Gamma_keV",
+      "mode": "shared_QCD_inputs",
+      "mean": 46.69722063124902,
+      "std": 9.682401434469657,
+      "p16": 36.94792869525346,
+      "median": 45.534203449558305,
+      "p84": 56.22191868262021,
+      "min": 24.997674961509404,
+      "max": 84.81970085523757
+    },
+    {
+      "state": "Ds1_2460",
+      "observable": "g_GeV_inv",
+      "mode": "saved_sampling_replay",
+      "mean": 0.46967340032891536,
+      "std": 0.048085013178451375,
+      "p16": 0.42095272766437053,
+      "median": 0.46761048165689734,
+      "p84": 0.5169402572543486,
+      "min": 0.3447255734802182,
+      "max": 0.6280895370005827
+    },
+    {
+      "state": "Ds1_2460",
+      "observable": "g_GeV_inv",
+      "mode": "shared_QCD_inputs",
+      "mean": 0.4688808937839915,
+      "std": 0.04802430601854746,
+      "p16": 0.4191505181508958,
+      "median": 0.46609623162172514,
+      "p84": 0.5165925962390198,
+      "min": 0.34521440870196746,
+      "max": 0.6352728932531997
+    },
+    {
+      "state": "Ds1_2536",
+      "observable": "Gamma_keV",
+      "mode": "saved_sampling_replay",
+      "mean": 1.154947305277783,
+      "std": 1.5776384714865166,
+      "p16": 0.07087149393155638,
+      "median": 0.5503390266051187,
+      "p84": 2.2805617779349574,
+      "min": 8.799024378444127e-08,
+      "max": 9.766115642768087
+    },
+    {
+      "state": "Ds1_2536",
+      "observable": "Gamma_keV",
+      "mode": "shared_QCD_inputs",
+      "mean": 1.2148444148351756,
+      "std": 1.6067801816206484,
+      "p16": 0.04958523859493944,
+      "median": 0.6524677759161368,
+      "p84": 2.384698735617968,
+      "min": 3.262372880249356e-06,
+      "max": 12.329989545900617
+    },
+    {
+      "state": "Ds1_2536",
+      "observable": "g_GeV_inv",
+      "mode": "saved_sampling_replay",
+      "mean": 0.04937356013493762,
+      "std": 0.03587003492825398,
+      "p16": 0.015112448543737176,
+      "median": 0.042123808899133836,
+      "p84": 0.08571894820930373,
+      "min": 1.683851465494879e-05,
+      "max": 0.17741738964726578
+    },
+    {
+      "state": "Ds1_2536",
+      "observable": "g_GeV_inv",
+      "mode": "shared_QCD_inputs",
+      "mean": 0.05050132149135737,
+      "std": 0.03697446052115166,
+      "p16": 0.01263914061836379,
+      "median": 0.04586395420859965,
+      "p84": 0.08766465994174737,
+      "min": 0.00010248493541953341,
+      "max": 0.19942959667491944
+    }
+  ]
+}

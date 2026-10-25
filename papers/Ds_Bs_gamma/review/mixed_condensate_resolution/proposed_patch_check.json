@@ -1,0 +1,12 @@
+{
+  "applied_to_production": false,
+  "patched_python_points": 4,
+  "maximum_absolute_error": 2.168404344971009e-19,
+  "other_local_components_unchanged": true,
+  "files": [
+    "scripts/twopoint_ds1_matrix_sumrule.py",
+    "scripts/mathematica_twopoint_ds1_matrix_check.wl",
+    "scripts/mathematica_twopoint_bs1_matrix_check.wl",
+    "scripts/build_twopoint_ds1_matrix_notebook.wl"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+	"linear_n1_through_n4_residuals":[
+		0,
+		0,
+		0,
+		0
+	],
+	"curved_n3_direct_exact":"3\/16",
+	"curved_n3_printed_exact":"1\/4",
+	"curved_n3_missing_term_exact":"-1\/16",
+	"scope":"Analytic test kernels only; no production or physics result changed"
+}

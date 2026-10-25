@@ -1,0 +1,14 @@
+{
+  "protected_manuscript_files": 11,
+  "protected_manuscript_unchanged": true,
+  "archived_files": 27,
+  "archived_hashes_verified": true,
+  "active_python_paths_present": 21,
+  "preorganization_manifest_files": 398,
+  "changed_in_manifest": [
+    "scripts/README.md"
+  ],
+  "missing_in_manifest": [],
+  "transition_quantities_passed": 187,
+  "baseline_outputs_and_active_scientific_sources_unchanged": true
+}

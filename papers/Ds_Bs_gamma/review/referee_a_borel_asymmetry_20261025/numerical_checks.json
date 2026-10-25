@@ -1,0 +1,13 @@
+{
+  "baseline": {
+    "points": 372,
+    "max_abs_g_error": 8.43769498715119e-15,
+    "max_abs_width_error_keV": 1.6484591469634324e-12
+  },
+  "max_line_vs_rectangle_error": 2.1668566940746814e-09,
+  "max_line_quadrature_order_error": 4.263256414560601e-14,
+  "max_Lprime_analytic_vs_finite_difference_error": 5.119238366546597e-13,
+  "max_hard_quadrature_abs_change": 9.435979775318515e-12,
+  "all_primary_results_finite": true,
+  "protected_or_reference_files_changed": []
+}

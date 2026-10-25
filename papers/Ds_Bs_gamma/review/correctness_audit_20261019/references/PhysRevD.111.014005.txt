@@ -1,0 +1,500 @@
+                                      PHYSICAL REVIEW D 111, 014005 (2025)
+
+
+
+              Mixing angle between 3P1 and 1P1 states in heavy axial vector mesons within
+                                  the QCD sum rules framework
+                                       T. M. Aliev ,1,* S. Bilmis ,1,2,† and M. Savci          1,‡
+                         1
+                         Department of Physics, Middle East Technical University, Ankara, 06800, Turkey
+                                        2
+                                         TUBITAK ULAKBIM, Ankara, 06510, Turkey
+
+           (Received 15 August 2024; revised 25 November 2024; accepted 17 December 2024; published 8 January 2025)
+
+                In this study, we calculate the mixing angles between the axial-vector mesons D1ðs1Þ − D01ðs1Þ and
+              B1ðs1Þ − B01ðs1Þ using the QCD sum rules approach. Our results are θ1 ¼ 28.2  0.6°, θ2 ¼ 26.6  0.6°,
+              θ3 ¼ 38.6  0.1°, and θ4 ¼ 38.5  0.1°. These values are in good agreement with the predictions of heavy
+              quark effective theory, particularly for the mixing angle θ ¼ 35.3°, and are compatible with several existing
+              results in the literature. The predicted mixing angles can be tested through the analysis of semileptonic
+              decays such as Bc → B1 lν, Bc → B0s1 lν, Bs → Ds1 lν, and Bs → D0s1 lν, which can be investigated at
+              experimental facilities such as LHCb and Belle II.
+
+              DOI: 10.1103/PhysRevD.111.014005
+
+
+
+                    I. INTRODUCTION                                   10–30 MeV between B1 and B01 (see [1] and references
+                                                                      therein).
+   The quark model has been very successful in the
+                                                                         The mixing angle is fundamental not only for under-
+classification of hadrons. According to the quark model,
+                                                                      standing the nature of heavy axial-vector mesons but also
+axial-vector mesons with quantum numbers J P ¼ 1þ are
+                                                                      for accurately determining their decay widths, which are
+grouped into a nonet. In spectroscopic notation n2Sþ1 Lj ,
+                                                                      critical for both theoretical studies and experimental
+there are two types of lowest p-wave mesons: 13 P1 and                verification.
+11 P1 with C-parity C ¼ þ1 and C ¼ −1, respectively.                     One of the earliest comprehensive analyses of the mixing
+These states are usually denoted as AA and AB . The                   angles for L ¼ 1 mesons was conducted using the relativ-
+physical mass eigenstates are mixtures of AA and AB states.           istic quark model [3]. Since then, the mixing angle θ has
+The physical states A and A0 are defined in terms of AA and           been studied extensively using alternative approaches,
+AB as follows:                                                        including Bethe-Salpeter method [4], relativistic quark
+                                                                      models [3,5–8], nonrelativistic quark models [1,9], QCD
+                 A ¼ AA sin θ þ AB cos θ;                             potential models [10], constituent quark model [11,12],
+                 A0 ¼ AA cos θ − AB sin θ;                    ð1Þ     chiral quark model [13], Coulomb-gauge QCD model [14],
+                                                                      3P pair creation model [15], and strong decay model [16]
+                                                                         0
+where θ is the mixing angle between AA and AB states.                 (see also review paper [17]).
+   In this study, we focus our attention on charmed and
+bottom mesons with states J P ¼ 1þ . Specifically, we
+consider the mixing between D1 − D01 ðθ1 Þ, Ds1 − D0s1 ðθ2 Þ,
+                                                                      TABLE I. The heavy-light mesons with J P ¼ 1þ [2]. For the
+B1 − B01 ðθ3 Þ, and Bs1 − B0s1 ðθ4 Þ, which are listed with their
+                                                                      undiscovered states B01 and B0s1 , the mass values are adapted from
+associated masses in Table I. Note that although B1 and Bs1           theoretical predictions [1].
+states have not been discovered yet, different theoretical
+approaches predicted slightly smaller mass splittings of              State-pair                       States                 Mass (MeV)
+                                                                      D1 − D01 ðθ1 Þ                 D1 ð2420Þ                2421.4  0.6
+  *
+    Contact author: taliev@metu.edu.tr                                                               D1 ð2430Þ                 2427  36
+  †
+  ‡
+    Contact author: sbilmis@metu.edu.tr                               Ds1 − D0s1 ðθ2 Þ               Ds1 ð2460Þ               2459.5  0.6
+    Contact author: savci@metu.edu.tr                                                                Ds1 ð2536Þ               2535.1  0.1
+Published by the American Physical Society under the terms of         B1 − B01 ðθ3 Þ                 B1 ð5710Þ                   5710
+the Creative Commons Attribution 4.0 International license.                                          B1 ð5721Þ                5726.1  1.3
+Further distribution of this work must maintain attribution to        Bs1 − B0s1 ðθ4 Þ               Bs1 ð5820Þ                  5820
+the author(s) and the published article’s title, journal citation,                                   Bs1 ð5830Þ               5828.7  0.4
+and DOI. Funded by SCOAP3.
+
+
+
+2470-0010=2025=111(1)=014005(8)                                014005-1                      Published by the American Physical Society
+T. M. ALIEV, S. BILMIS, and M. SAVCI                                                       PHYS. REV. D 111, 014005 (2025)
+
+                                                                                ð0ÞAA                                  ð0ÞAB
+   In this work, we calculate the mixing angles θ using the       cos θ sin θðΠμν       − Π0BB        2       2
+                                                                                           μν Þ þ ðcos θ − sin θÞΠμν           ¼ 0;
+QCD sum rules approach, following the methodology first
+                                                                                                                                  ð5Þ
+introduced in [18]. The paper is organized as follows. In
+Sec. II, we derive the sum rules for the mixing angles of
+13 P1 and 11 P1 states for heavy axial-vector mesons. In          where Πð0Þij are the correlation functions for the unmixed
+Sec. III, we perform a numerical analysis of the sum rules        states, i.e.,
+for the mixing angles, and the final section contains our                           Z
+                                                                             ð0Þij                    ð0Þi    ð0Þj
+conclusion.                                                                Πμν ¼ i d4 x eipx h0jTfJμ ðxÞJ̄ν gj0i:        ð6Þ
+
+      II. THEORETICAL FRAMEWORK AND                                  For axial-vector current, the correlation function can be
+        DERIVATION OF MIXING ANGLES                               expressed in terms of two independent invariant structures:
+   In general, mass eigenstates do not coincide with flavor                                          
+eigenstates. Hence, the mass eigenstates can be represented         ð0Þij 2      ij   2
+                                                                                                pμ pν            2
+                                                                                                                    pμ pν
+                                                                  Πμν ðp Þ ¼ Π1 ðp Þ gμν − 2            þ Πij2 ðp Þ       : ð7Þ
+as linear combinations of flavor eigenstates. This implies                                       p                   p2
+that the interpolating currents for Ai and A0i mesons can be                                 p p
+described as linear combinations of the currents for flavor          The structure gμν − pμ 2 ν is associated with spin-1 par-
+eigenstates, i.e.,                                                ticles. Thus, we consider only this structure. Extracting the
+                                                                  coefficient of this structure from Eq. (5), the mixing angles
+                               ð0Þ              ð0Þ               are finally determined as
+              JAi μ ¼ sin θi JAi μ þ cos θi JBi μ ;
+                                ð0Þ             ð0Þ
+              JA0i μ ¼ cos θi JAi μ − sin θi JBi μ ;       ð2Þ                                         2ΠAB
+                                                                                                         1
+                                                                                        tan 2θ ¼ −             :                  ð8Þ
+                                                                                                     ΠAA
+                                                                                                      1 − Π1
+                                                                                                            BB
+
+where the superscript (0) denotes the current in the flavor
+eigenstates and                                                      It is worth noting that different conventions for the sign
+                                                                  of mixing angles are used in the literature. This variation
+                       ð0Þ                                        arises from the choice of quark ordering in representing the
+                      JAμ ¼ q̄γ μ γ 5 Q;
+                                                                  heavy-light quark system, which can be written either as
+                       ð0Þ
+                      JBν ¼ iq̄σ να pα γ 5 Q;              ð3Þ    q̄Q or Q̄q. This difference in representation leads to
+                                                                  opposite signs for the mixing angles. In our analysis, we
+with q and Q representing the light and heavy quarks,             adopt the convention presented in [19], where the system is
+respectively. Here i ¼ 1, 2, 3, 4 correspond to the axial-        written as Qq̄.
+vector D1, Ds1 , B1 , and Bs1 states.                                With the conventions defined, we proceed to calculate
+   To determine the mixing angles θi , we follow the method       the theoretical part of the correlation function in the deep
+presented in [18] and start by considering the correlation        Euclidean region (p2 ≪ 0) using the OPE. The explicit
+function:                                                         expressions for the interpolating currents are employed,
+                   Z                                              and Wick’s theorem is applied. After this operation, the
+        ðAA0 Þ                                                    correlation function is obtained in terms of quark propa-
+      Πμν ðpÞ ¼ d4 xeipx h0jTfJ Aμ ðxÞJ̄ 0A0ν ð0Þgj0i: ð4Þ
+                                                                  gators as follows:
+                                                                                   Z
+   To find the sum rules for the mixing angle θi , the              ð0ÞAA
+                                                                  Πμν ðp Þ ¼ −i d4 xeipx Tr½Sab
+                                                                            2
+                                                                                                    q ð−xÞγ μ γ 5 SQ ðxÞγ ν γ 5 ;
+                                                                                                                   ba
+correlation function is evaluated in two different domains.
+On one side, it is calculated in terms of hadrons by                               Z
+                                                                    ð0ÞAB
+saturating a full set of hadrons carrying the same quantum        Πμν ðp2 Þ ¼ −i d4 xeipx Tr½Sab                  α
+                                                                                                    q ð−xÞσ μα p γ 5 SQ ðxÞγ ν γ 5 ;
+                                                                                                                       ba
+
+numbers as the interpolating currents. On the other side, the                      Z
+                                                                    ð0ÞBB
+correlation function is calculated in the deep Euclidean          Πμν ðp2 Þ ¼ −i d4 xeipx Tr½Sab                  α
+                                                                                                    q ð−xÞσ μα p γ 5
+region (p2 ≪ 0) using the operator product expansion
+                                                                                              β
+                                                                                   Q ðxÞσ νβ p γ 5 :                             ð9Þ
+(OPE). These two representations are then matched, and                          × Sba
+to suppress higher states and the continuum, a Borel
+transformation with respect to the variable −p2 is per-           The quark propagators for the light and heavy quarks in the
+formed. Since the currents J Aμ and J0A0 ν create only A and A0   x representation are given by Eqs. (9) and (10), respec-
+mesons from the vacuum, the hadronic part of the corre-           tively, where Gμν is the gluon field strength tensor, and K i
+lation function vanishes. Using Eqs. (2) and (3) from             are the modified Bessel functions of the second kind
+Eq. (4) we get                                                    (see [2,20]),
+
+
+
+
+                                                            014005-2
+MIXING ANGLE BETWEEN 3P1 AND 1P1 …                                                                   PHYS. REV. D 111, 014005 (2025)
+
+                           iδab         δab           iδab g2s x2 x       2       i           μν
+                                                                                          ab σ x þ xσ
+                                                                                                         μν
+                                                                                                               δab x2
+                q ðxÞ ¼
+              iSab                x
+                                  = −        h q̄qi −               h q̄qi  þ        g  G
+                                                                                       s μν                 þ         hg q̄σGqi
+                          2π 2 x4        12               25 35               32π 2               x2            192 s
+                            δab x4                              mq δab imq δab x              mq δab g2s x4
+                          − 10 3 hq̄qihg2s G2 i þ    − 2 2 þ                       hq̄qi −               hq̄qi2
+                            2 3                                 4π x          48                  27 35
+                              mq          ab μν         2
+                                                               imq δab x2 x                 mq δab 2
+                          þ         g   G μν σ    lnð−x   Þ −               hg   q̄σGqi  −          x lnð−x2 Þhg2s G2 i þ    ;        ð10Þ
+                            32π 2                                  27 32                    29 3π 2
+                                      s                                        s
+
+
+
+                           pﬃﬃﬃﬃﬃﬃﬃﬃ             pﬃﬃﬃﬃﬃﬃﬃﬃ                                       pﬃﬃﬃﬃﬃﬃﬃﬃ            pﬃﬃﬃﬃﬃﬃﬃﬃ 
+           m2Q δab      K 2 mQ −x2          K 1 mQ −x2                 mQ gs Gab  μν       μν    μν
+                                                                                                    K 1 mQ −x2
+ Q ðxÞ ¼
+Sab                  ix     pﬃﬃﬃﬃﬃﬃﬃﬃ    þ           pﬃﬃﬃﬃﬃﬃﬃﬃ     −                   iðσ x þ xσ Þ     pﬃﬃﬃﬃﬃﬃﬃﬃ   þ 2σ K 0 mQ −x2
+                                                                                                                        μν
+           ð2πÞ2           ð −x2 Þ2                   −x2               8ð2πÞ2                           −x2
+                                             pﬃﬃﬃﬃﬃﬃﬃﬃ                      pﬃﬃﬃﬃﬃﬃﬃﬃ
+             hg2s G2 iδab                K 1 mQ −x2                    4
+                                                                         K 2 mQ −x2
+           − 6 2           ðimQ x − 6Þ         pﬃﬃﬃﬃﬃﬃﬃﬃ       þ mQ x            pﬃﬃﬃﬃﬃﬃﬃﬃ
+             2 3 ð2πÞ2                              −x2                       ð −x2 Þ2
+                                        pﬃﬃﬃﬃﬃﬃﬃﬃ                   pﬃﬃﬃﬃﬃﬃﬃﬃ2 
+             hg3s G3 iδab     ixx2 K 1 mQ −x2                     K 2  mQ −x
+           þ 8 2        2
+                            −            pﬃﬃﬃﬃﬃﬃﬃﬃ      þ ixx4         pﬃﬃﬃﬃﬃﬃﬃﬃ
+             2 3 ð2πÞ          m    Q      −x   2
+                                                                      ð −x2 Þ2
+                          pﬃﬃﬃﬃﬃﬃﬃﬃ2               pﬃﬃﬃﬃﬃﬃﬃﬃ2 
+              10 4 K 2 mQ −x                 K 1 mQ −x
+           þ      x       pﬃﬃﬃﬃﬃﬃﬃﬃ     þ x4         pﬃﬃﬃﬃﬃﬃﬃﬃ      :                                                               ð11Þ
+             mQ         ð −x Þ   2   2                 −x2
+
+
+                                                                 p p
+   The invariant function for the Lorentz structure gμν − pμ 2 ν           summarizes the working regions of these parameters, which
+can be expressed with its imaginary part (spectral density)                are chosen to ensure the stability and convergence of the
+via the dispersion relation:                                               sum rules.
+                                                                              Since M2 and s0 are auxiliary parameters, the mixing angle
+                               Z ∞
+                       2                   ρij
+                                             1 ðsÞ                         should be independent of them. The working region of M 2 ,
+                  Πij
+                   1 ðp Þ ¼           ds           :            ð12Þ
+                                m2Q        s − p2                          where the mixing angle is very weakly dependent on
+                                                                           these parameters, is determined by imposing specific
+Using the explicit expressions for the light and heavy quark               conditions.
+propagators, the spectral density can be calculated straight-                 The upper limit of M2 is determined by demanding that
+forwardly. The expressions for the spectral densities are                  higher state and continuum contributions remain below
+presented in the Appendix. After performing Borel trans-
+formation over the variable ð−p2 Þ and imposing quark-
+hadron duality, we get                                                     TABLE II.      The numerical values of the input parameters.
+                          Z s
+               ij    2
+                             0
+                                          −s=M 2 ;                        m̄s ð1 GeVÞ                                           0.126 GeV [2]
+             Π1 ðM Þ ¼         dsρij
+                                   1 ðsÞe               ð13Þ
+                              m2Q                                         m̄b ðm̄b Þ                                         4.18þ0.03
+                                                                                                                                 −0.02 GeV [2]
+                                                                          m̄c ðm̄c Þ                                    ð1.27  0.02Þ GeV [2]
+where s0 is the continuum threshold in the corresponding                  hq̄qið1 GeVÞ                      ð−1.65  0.15Þ × 10−2 GeV3 [21]
+channel. Finally, substituting these results into Eq. (8), we             hs̄si                                    ð0.8  0.2Þhq̄qi GeV3 [21]
+can determine the mixing angle.                                           m20                                           ð0.8  0.2Þ GeV2 [21]
+                                                                          hg2 G2 i                            4π 2 ð0.012  0.006Þ GeV4 [22]
+                                                                          hg3 G3 i                                   ð0.57  0.29Þ GeV6 [23]
+              III. NUMERICAL ANALYSIS
+   After having established the theoretical framework, we
+conduct a numerical analysis of the sum rules to determine                 TABLE III. The working regions for the Borel mass parameter
+the mixing angle in this section. We begin by listing                      M 2 and the continuum threshold s0 .
+the input parameters used in the sum rules in Table II.
+The heavy quark masses are given in the MS scheme, while                                             M 2 (GeV2 )                    s0 (GeV2 )
+the values of strange quark mass and the quark condensate                  D1                        3 ≤ M2 ≤ 6                       91
+are presented at μ ¼ 1 GeV scale.                                          Ds1                       3 ≤ M2 ≤ 6                      10  1
+   In addition to these input parameters, there are two                    B1                       8 ≤ M 2 ≤ 12                     41  1
+auxiliary parameters in the sum rules: the Borel mass                      Bs1                      9 ≤ M 2 ≤ 13                     43  1
+parameter M 2 and the continuum threshold s0 . Table III
+
+
+                                                                   014005-3
+T. M. ALIEV, S. BILMIS, and M. SAVCI                                                          PHYS. REV. D 111, 014005 (2025)
+
+
+
+
+ FIG. 1.   Dependency of mixing angles on M 2 at several fixed values s0 : (a)D1 − D01 , (b)Ds1 − D0s1 , (c) B1 − B01 , (d) Bs1 − B0s1 .
+
+
+40% of the total result. This condition can be expressed as           we generated statistical distributions for the mixing angles.
+                                                                      The central values and uncertainties were extracted through
+                  R s0                   2                            Gaussian fits to these distributions (see Fig. 2).
+                   m2Q
+                         dsρ1 ðsÞe−s=M
+                  R∞                         ≥ 0.6:         ð14Þ         The values of the mixing angles obtained from
+                                         2
+                   m2Q
+                         dsρ1 ðsÞe−s=M                                Monte Carlo analysis are collected in Table IV. For
+                                                                      completeness, we present the predictions of other
+                                                                      approaches existing in the literature.
+   The lower limit of M2 is determined by requiring that                 Our results for θ1 ¼ 28.2  0.6°, θ2 ¼ 26.6  0.6°,
+the operator product expansion should be convergent.                  θ3 ¼ 38.6  0.1°, and θ4 ¼ 38.5  0.1° are notably close
+Specifically, the contribution of the highest dimensional             to the positive angle predicted by heavy quark effective
+condensate must be less than 10% of the total result. The             theory θ ¼ þ35.3° [19]. The small deviations can be
+continuum threshold s0 is selected to minimize the varia-             attributed to finite heavy quark mass corrections.
+tion of the mixing angle within the Borel mass working                   A key advantage of the method used in this work is that
+region. These conditions lead to the following working                the mixing angles are determined only by QCD parameters
+regions for M 2 and s0 , as summarized in Table III.                  and are free from hadronic degrees of freedom. This
+   Having determined the working regions of M 2 and s0 ,              independence is particularly important, as many alternative
+the mixing angles θ between the axial-vector mesons                   approaches rely on meson mass inputs that are not yet well
+D1ðs1Þ − D01ðs1Þ and B1ðs1Þ − B01ðs1Þ are evaluated. Their            determined experimentally, introducing uncertainties into
+dependence on M2 at several fixed s0 values are presented             their predictions.
+in Fig. 1.
+   To account for uncertainties in the input parameters, as
+                                                                                            IV. CONCLUSION
+well as the auxiliary parameters M2 and s0 , we performed a
+Monte Carlo analysis. By randomly sampling these param-                  In this study, we calculated the mixing angles between
+eters 5000 times within their respective uncertainty ranges,          the axial-vector mesons D1ðs1Þ − D01ðs1Þ and B1ðs1Þ − B01ðs1Þ
+
+
+                                                               014005-4
+MIXING ANGLE BETWEEN 3P1 AND 1P1 …                                                              PHYS. REV. D 111, 014005 (2025)
+
+
+
+
+FIG. 2. Distribution of normalized counts for the mixing angles θ1 , θ2 , θ3 , and θ4 , obtained through a Monte Carlo analysis to determine
+their uncertainties. The input parameters were randomly varied within their uncertainties. The histograms represent the normalized counts,
+and the red curves show Gaussian fits to the resulting distributions: (a) D1 − D01 , (b) Ds1 − D0s1 , (c) B1 − B01 , (d) Bs1 − B0s1 .
+
+within the framework of QCD sum rules. Our results are                  predictions of heavy quark effective theory in the heavy
+θ1 ¼ 28.2  0.6°, θ2 ¼ 26.6  0.6°, θ3 ¼ 38.6  0.1°, and               quark limit, for the mixing angle θ ¼ 35.3°. Furthermore,
+θ4 ¼ 38.5  0.1° and are in good agreement with the                     our results show compatibility with several existing studies
+
+TABLE IV. Comparison of mixing angles between the heavy axial-vector mesons. Here θ1 , θ2 , θ3 , and θ4 describe the mixing angles
+between the D1ðs1Þ − D01ðs1Þ and B1ðs1Þ − B01ðs1Þ states, respectively.
+
+Reference                        θ1                          θ2                                 θ3                                 θ4
+Present Work                28.2  0.6°                 26.6  0.6°                      38.6  0.1°                          38.5  0.1°
+[1]                                                                                  −35.2°                               −39.6°
+[4]                           −25.7°                      −37.5°                                                               
+[6]                        −58.3  9.0°                                                                                     
+[7]                            35.1°                      −60.4°                           −55.4°                               −55.3°
+[9]                                                                                  −34.6°                               −34.9°
+[10]                           29.0°                       26.0°                            31.7°                                27.3°
+[11]                           43.5°                       58.4°                                                               
+[12]                                                   −45.4°                                                               
+[14]                           34.0°                       33.0°                            35.0°                                34.8°
+[15]                           25.7°                       37.5°                            30.3°                                39.1°
+[16]                       −54.7°ð35.3°Þ               −54.7°ð35.3°Þ                    −54.7°ð35.3°Þ                        −54.7°ð35.3°Þ
+[3]                           −26.0°                      −38.0°                           −31.0°                               −40.0°
+[5]                                                                                30.3°ð43.6°Þ                        39.1°ð37.9°Þ
+[8]                                                                         −73.5  3.5°ð−36.5  3.5°Þ                      
+[13]                           −55°                        −55°                                                                
+
+
+
+                                                                  014005-5
+T. M. ALIEV, S. BILMIS, and M. SAVCI                                                         PHYS. REV. D 111, 014005 (2025)
+
+in the literature. A key advantage of our approach is its              the need for further theoretical refinements and experimen-
+independence from hadronic degrees of freedom.                         tal investigations.
+   Our predictions for the mixing angles can be tested
+through the analysis of semileptonic decays of B and Bc
+mesons. Specifically, decays such as Bc → B1 lν,                             APPENDIX: THE EXPRESSION OF THE
+Bc → B0s1 lν, Bs → Ds1 lν, and Bs → D0s1 lν offer promis-                          SPECTRAL DENSITIES
+ing areas for experimental verification at facilities such as
+                                                                         Spectral densities corresponding to gμν structure in the
+LHCb and Belle II.
+                                                                       polarization operator.
+   The discrepancies observed between our results and
+those obtained using other theoretical approaches highlight
+
+
+                        −mQ =M 2       2      1
+            ρAA
+             1 − ρ1 ¼ e
+                  BB
+                                                   m5 ½4ðhg2 G2 iÞ2 m2Q þ 24m20 mq mQ hg3 G3 ihq̄qi
+                                           2 3 M 14 Q
+                                            9 4
+
+                                1
+                          −          m3 ½ð52ðhg2 G2 iÞ2 − 72hg3 G3 im20 Þm2Q
+                            29 34 M12 Q
+                          þ 48m20 mq mQ ð4hg3 G3 i þ hg2 G2 im2Q Þhq̄qi
+                                   1
+                          þ                 mQ f2mQ ½mQ ð14ðhg2 G2 iÞ2 − 51hg3 G3 im20 − 12hg2 G2 im20 m2Q Þ
+                              28 33 M10
+                          þ 6mq hg3 G3 iðm20 þ 2m2Q Þ − 48hg2 G2 im20 mq m2Q ghq̄qi
+                               1
+                          −           f5hg2 G2 i − 6mQ ½7m20 mQ − 2m3Q − 2mq ð6m20 − m2Q ÞgmQ hg2 G2 ihq̄qi
+                            2 3 M8
+                               6 3
+
+                                  1
+                          þ 8 3           f6mQ hg3 G3 i½23m20 mQ − 8m3Q þ mq ð30m20 þ 8m2Q Þghq̄qi
+                            2 3 mQ M8
+                               1
+                          −          fhg2 G2 i½4m20 mQ − 6m3Q − mq ð4m20 − 7m2Q Þ − 12m20 mq m4Q ghq̄qi
+                            144M6
+                                 1
+                          þ              hg3 G3 i½2m20 þ 12mq mQ þ 7m2Q hq̄qi
+                            288mQ M 6
+                              1
+                          −        ½2mQ ðhg2 G2 i − 6m20 m2Q Þ − 3mq ðhg2 G2 i − 4m20 m2Q Þhq̄qi
+                            48M4
+                                   1
+                          þ                 hg3 G3 iðmq m2Q þ 2π 2 hq̄qiÞ
+                            192mQ M 4 π 2
+                               1
+                          −           mQ ½hg2 G2 imq þ 24π 2 ðm20 þ 2mq mQ Þhq̄qi
+                            96M2 π 2
+                                  1
+                          −                 hg3 G3 iðmq þ 2mQ Þ
+                            384mQ M2 π 2
+                                1
+                          þ            ½hg2 G2 iðmq þ mQ Þ − 24π 2 hq̄qiðm20 − 2mq mQ þ 4m2Q Þ
+                            96mQ π 2
+                                  1
+                          −            hg3 G3 ið3mq þ 8mQ Þ
+                            384m3Q π 2
+                            Z s
+                                0         2     1                 3
+                          −       dse−s=M         2
+                                                    hg2 G2 i þ         2
+                                                                         fðs − m2Q Þ½smQ − m3Q − mq ðs þ m2Q Þg :          ðA1Þ
+                              2
+                             mQ              32sπ              8m Q sπ
+
+
+
+
+                                                                014005-6
+MIXING ANGLE BETWEEN 3P1 AND 1P1 …                                                          PHYS. REV. D 111, 014005 (2025)
+
+              −mQ =M2       2       1
+        ρAB
+         1 ¼e                   − 8 4 12 m3Q ½14ðhg2 G2 iÞ2 m2Q þ 96hg3 G3 im20 mq mQ hq̄qi
+                                 23M
+                     1
+               −            mQ ½−ð22ðhg2 G2 iÞ2 − 36hg3 G3 im20 Þm2Q
+                 27 33 M 10
+               − 7m20 mq mQ ð17hg3 G3 i þ 4hg2 G2 im2Q Þhq̄qi
+                     1
+               −           hg2 G2 imQ f25hg2 G2 i − 6mQ ½5m20 mQ − mq ð14m20 − 4m2Q Þghq̄qi
+                 26 33 M 8
+                       1
+               þ 6 2           hg3 G3 i½5ðhg2 G2 i þ m20 m2Q Þ − mq mQ ð23m20 − 10m2Q Þhq̄qi
+                 2 3 mQ M 8
+                       1
+               þ              ½3hg2 G2 iðhg2 G2 i − 6m20 m2Q Þ þ mq mQ hg2 G2 ið20m20 − 39m2Q Þ þ 72m20 mq m5Q hq̄qi
+                 432mQ M6
+                       1
+               þ 6 3 2 6 hg3 G3 i½108m20 mQ − mq ð20m20 þ 81m2Q Þhq̄qi
+                 2 3 mQ M
+                      1
+               −             mq ½3hg3 G3 i − 4m2Q ð3hg2 G2 i − 14m20 m2Q Þhq̄qi
+                   96m2Q M 4
+                     1
+               þ            f2hg2 G2 i − 3mQ ½4m20 mQ − mq ðm20 þ 4m2Q Þghq̄qi
+                 12mQ M2
+                      1
+               −              hg3 G3 ið2mq − mQ Þ
+                 96mQ M 2 π 2
+                    1
+               −           f35hg2 G2 im2Q − 2mq ½hg2 G2 imQ þ 8π 2 ðm20 þ 9m2Q Þhq̄qig
+                 96m2Q π 2
+                    1
+               −           ½hg3 G3 ið5mq − 2mQ Þ
+                 96m3Q π 2
+                 Z s
+                     0          2     1                              1
+               þ       dse−s=M         2 2
+                                           hg2 G2 ið4s − m2Q Þ −               hg3 G3 ið2s þ m2Q Þ
+                   2
+                  mQ               48s π                         384m2Q s2 π 2
+                      1
+               −             ðs − m2Q Þ2 ðs2 − 6smq mQ − m4Q Þ :                                                                ðA2Þ
+                   8π m2Q s2
+                        2
+
+
+
+
+[1] Q. li, R.-H. Ni, and X.-H. Zhong, Towards establishing an         [7] Q. Li, T. Wang, Y. Jiang, G.-L. Wang, and C.-H. Chang,
+    abundant B and Bs spectrum up to the second orbital                   Mixing angle and decay constants of J P ¼ 1þ heavy-light
+    excitations, Phys. Rev. D 103, 116010 (2021),                         mesons, Phys. Rev. D 100, 076020 (2019).
+[2] R. L. Workman et al. (Particle Data Group Collaboration),         [8] Y. Sun, Q.-T. Song, D.-Y. Chen, X. Liu, and S.-L. Zhu,
+    Review of particle physics, Prog. Theor. Exp. Phys. 2022,             Higher bottom and bottom-strange mesons, Phys. Rev. D
+    083C01 (2022).                                                        89, 054026 (2014).
+[3] S. Godfrey and R. Kokoski, The properties of p wave mesons        [9] Q.-F. Lü, T.-T. Pan, Y.-Y. Wang, E. Wang, and D.-M. Li,
+    with one heavy quark, Phys. Rev. D 43, 1679 (1991).                   Excited bottom and bottom-strange mesons in the quark
+[4] S. Godfrey and K. Moats, Properties of excited charm and              model, Phys. Rev. D 94, 074012 (2016).
+    charm-strange mesons, Phys. Rev. D 93, 034035 (2016).            [10] S. N. Gupta and J. M. Johnson, Quantum chromodynamic
+[5] S. Godfrey, K. Moats, and E. S. Swanson, B and Bs meson               potential model for light heavy quarkonia and the heavy
+    spectroscopy, Phys. Rev. D 94, 054025 (2016).                         quark effective theory, Phys. Rev. D 51, 168 (1995),
+[6] G.-L. Wang, Q. Li, T. Wang, T.-F. Feng, X.-G. Wu, and            [11] J. Vijande, F. Fernandez, and A. Valcarce, Constituent quark
+    C.-H. Chang, The solution to the ‘1/2 vs 3/2’ puzzle, Eur.            model study of the meson spectra, J. Phys. G 31, 481
+    Phys. J. C 82, 1027 (2022).                                           (2005),
+
+
+
+                                                               014005-7
+T. M. ALIEV, S. BILMIS, and M. SAVCI                                                       PHYS. REV. D 111, 014005 (2025)
+
+[12] Y. Yamada, A. Suzuki, M. Kazuyama, and M. Kimura, P-wave       [18] T. M. Aliev, A. Ozpineci, and V. Zamiralov, Mixing angle
+     charmed-strange mesons, Phys. Rev. C 72, 065202 (2005),             of hadrons in QCD: A new view, Phys. Rev. D 83, 016008
+[13] X.-h. Zhong and Q. Zhao, Strong decays of heavy-light mesons        (2011).
+     in a chiral quark model, Phys. Rev. D 78, 014029 (2008),       [19] T. Barnes, N. Black, and P. R. Page, Strong
+[14] L. M. Abreu, A. G. Favero, F. J. Llanes-Estrada, and A. G.          decays of strange quarkonia, Phys. Rev. D 68, 054014
+     Sánchez, Mixing and mq dependence of axial vector mesons            (2003).
+     in the Coulomb gauge QCD model, Phys. Rev. D 100,              [20] Z.-W. Huang and J. Liu, Analytic calculation of doubly
+     116012 (2019),                                                      heavy hadron spectral density in coordinate space, arXiv:
+[15] J. Ferretti and E. Santopinto, Open-flavor strong decays of         1205.3026.
+     open-charm and open-bottom mesons in the 3P0 model,            [21] B. L. Ioffe, QCD at low energies, Prog. Part. Nucl. Phys. 56,
+     Phys. Rev. D 97, 114020 (2018),                                     232 (2006).
+[16] F. E. Close and E. S. Swanson, Dynamics and decay of           [22] B. L. Ioffe, Condensates in quantum chromodynamics,
+     heavy-light hadrons, Phys. Rev. D 72, 094004 (2005),                Phys. At. Nucl. 66, 30 (2003).
+[17] H.-X. Chen, W. Chen, X. Liu, Y.-R. Liu, and S.-L. Zhu, A       [23] S. Narison, QCD spectral sum rules 2022, Nucl. Part. Phys.
+     review of the open charm and open bottom systems, Rept.             Proc. 324–329, 94 (2023).
+     Prog. Phys. 80, 076201 (2017).
+
+
+
+
+                                                              014005-8
+

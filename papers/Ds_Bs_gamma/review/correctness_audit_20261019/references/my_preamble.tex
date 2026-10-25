@@ -1,0 +1,372 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PACKAGES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage[hyperfootnotes=false]{hyperref}
+\hypersetup{linkcolor=red,
+citecolor=green,
+filecolor=cyan,
+urlcolor=magenta}
+
+
+%% for \mathbb{Z}
+\usepackage{amsfonts}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%%%%to use identity matrix symbol
+\usepackage{bbm}
+
+% to use identity \mathbb{1}
+\usepackage{bbold}
+
+\usepackage{adjustbox}
+\usepackage{booktabs}
+
+% to colorize tables
+\usepackage{colortbl}
+
+
+\usepackage{cancel}
+
+\usepackage{color}
+\usepackage{xcolor}
+
+\usepackage{graphicx}
+\usepackage{xspace}
+
+\usepackage{units}
+%\usepackage{siunitx}
+
+%to use feynman slashed notation
+\usepackage{slashed}
+
+%for writing tensor in a neat form
+\usepackage{tensor}
+
+% For using ${\degree}$ symbol
+\usepackage{gensymb}
+
+% for giving reference to equations in a format [1-3] for instance
+\usepackage{cleveref}
+
+
+%%for Tables
+\usepackage{tabularx}
+\usepackage{multirow}
+
+
+\usepackage{setspace}
+\usepackage{orcidlink}
+
+%to use to images side by side
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{enumerate}
+\usepackage{enumitem}
+
+%%% For chemical symbols
+\usepackage[version=3]{mhchem}
+%% Example \ce{^{12}C}
+
+\usepackage{lipsum}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%OPTIONAL%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% This package has useful simplification, bra, ket notation etc.
+% \usepackage{physics}
+
+% \usepackage{tikz}
+% \usepackage{tikz-feynman}
+% \tikzfeynmanset{compat=1.0.0}
+
+
+
+%For times new roman font 
+% \usepackage{fontspec}
+% \setmainfont{Times New Roman}
+
+
+%%For turkish characters
+%use \selectlanguage{turkish}
+% \usepackage[utf8]{inputenc}
+% \usepackage[english,turkish]{babel}
+% \usepackage[T1]{fontenc}
+
+
+
+% \usepackage{dcolumn}
+% \usepackage{stmaryrd}
+% \usepackage{mathrsfs}
+% \usepackage{epsfig}
+
+
+%%% For MacOS
+% \graphicspath{{/Users/selcuk/my_thesis/Figures/}{/Users/selcuk/my_thesis/Figures/nu_properties/}{/Users/selcuk/my_thesis/Figures/noncommutative/}{/Users/selcuk/my_thesis/Figures/dark_photon/}{/Users/selcuk/my_thesis/Feynman_Diagrams_Jaxo/}{/Users/selcuk/my_thesis/Feynman_Diagrams_Jaxo/thesis_diagrams/}{/Users/selcuk/my_thesis/Feynman_Diagrams_Jaxo/noncommutative/}{/Users/selcuk/my_thesis/Feynman_Diagrams_Jaxo/dark_photon/}{/Users/selcuk/my_thesis/Figures/nu_e_experiments/}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Definitions 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\def \L {\mathcal{L}} %Lagrangian density
+
+
+
+\newcommand{\qbarq}{\langle \bar{q} q \rangle}
+\newcommand{\ubaru}{\langle \bar u u \rangle}
+\newcommand{\dbard}{\langle \bar d d \rangle}
+\newcommand{\sbars}{\langle \bar s s \rangle}
+\newcommand{\GG}{\langle g_s^2 G^2 \rangle}
+
+%% define new commands with parameters
+\newcommand{\mcal}[1]{\mathcal{#1}}
+
+\newcommand{\hc}{\ensuremath{\text{h.c.}}}
+\newcommand{\ii}{\ensuremath{\text{i}}}
+\newcommand{\dd}{\ensuremath{\text{d}}}
+\newcommand{\BR}{\ensuremath{\text{BR}}}
+
+
+% new commands for turkish characters
+\newcommand{\ga}{\u{g}}
+\newcommand{\Ga}{\u{G}}
+\newcommand{\ca}{\c{c}}
+\newcommand{\Ca}{\c{C}}
+\newcommand{\sa}{\c{s}}
+\newcommand{\Saa}{\c{S}}
+\newcommand{\oa}{{\"{o}}}
+\newcommand{\Oa}{{\"{O}}}
+\newcommand{\ua}{{\"{u}}}
+\newcommand{\Ua}{{\"{U}}}
+\newcommand{{\ia} }{{\i}}
+\newcommand{{\Ia} }{{\.I}}
+%%%%%%
+
+\newcommand{\gbl}{g_{B-L}}
+\newcommand{\map}{m_{A^\prime}}
+
+
+% identity matrix 
+\newcommand{\ident}{\mathbbm{1}}
+
+\newcommand{\fig}[1]{Figure~(\ref{fig:#1})}
+\newcommand{\tab}[1]{Table~(\ref{tab:#1})}
+\newcommand{\eq}[1]{Equation~(\ref{eq:#1})}
+
+\newcommand{\image}[3]{\includegraphics[scale=#1, angle=#2]{#3}}
+
+\newcommand{\ra}{\rightarrow}
+\newcommand{\la}{\leftarrow}
+\newcommand{\Ra}{\Rightarrow}
+\newcommand{\La}{\Leftarrow}
+\newcommand{\lra}{\leftrightarrow}
+\newcommand{\Lra}{\Longrightarrow}
+\newcommand{\Lla}{\Longleftrightarrow}
+\newcommand{\calm}{\mathcal{M}}
+
+\newcommand{\numubar}{$\bar{\nu}_\mu$~}
+\newcommand{\nutaubar}{$\bar{\nu}_\tau$~}
+\newcommand{\nuebar}{$\bar{\nu}_e$~}
+
+\newcommand{\numubare}{$\bar{\nu}_\mu - e^-$~}
+\newcommand{\numue}{$\nu_\mu - e^-$~}
+
+\newcommand{\nutaubare}{$\bar{\nu}_\tau - e^-$~}
+\newcommand{\nutaue}{$\nu_\tau - e^-$~}
+
+\newcommand{\nuebare}{$\bar{\nu}_e - e^-$~}
+\newcommand{\nuee}{$\nu_e - e^-$~}
+
+\newcommand{\smunu}{\sigma^{\mu\nu}}
+\newcommand{\ssubmunu}{\sigma_{\mu\nu}}
+
+\newcommand{\gmu}{\gamma^\mu}
+\newcommand{\gsubmu}{\gamma_\mu}
+
+\newcommand{\gnu}{\gamma^\nu}
+\newcommand{\gsubnu}{\gamma_\nu}
+
+\newcommand{\gfive}{\gamma^5}
+\newcommand{\gmunu}{g^{\mu\nu}}
+\newcommand{\gsubmunu}{g_{\mu\nu}}
+
+\newcommand{\gzero}{\gamma^0}
+
+\newcommand{\Be}{^7Be}
+
+\newcommand{\cve}{c_V^e}
+\newcommand{\cae}{c_A^e}
+\newcommand{\cvnu}{c_V^\nu}
+\newcommand{\canu}{c_A^\nu}
+
+\newcommand{\sw}{\sin^{2}\theta_w}
+
+\newcommand{\ubarp}[1]{\bar{u}(p_#1)}
+\newcommand{\ubarmp}[1]{\bar{u}(-p_#1)}
+%\newcommand{\up}{u(p_#)}
+
+\newcommand{\nubarp}[1]{\bar{\nu}(p_#1)}
+\newcommand{\nubarmp}[1]{\bar{\nu}(-p_#1)}
+
+\newcommand{\tet}[3]{\theta_{#1}^{#2#3}}
+\newcommand{\ttt}[3]{\theta^{#1#2#3}}
+
+
+% \newcommand{\beq}{\begin{eqnarray}}% can be used as {equation} or  {eqnarray}
+% \newcommand{\eeq}{\end{eqnarray}}
+
+\def\Lambdanc{\Lambda_{NC}}
+\def\s2tw{{\rm sin ^2 \theta_{W}}}
+
+% \newcommand{\ra}{\rightarrow}
+% \newcommand{\beq}{\begin{eqnarray}}% can be used as {equation} or  {eqnarray}
+% \newcommand{\eeq}{\end{eqnarray}}
+%\newcommand{\Tcc}{T_{cc}^+}
+
+
+\def\ds{\displaystyle}
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\bea{\begin{eqnarray}}
+\def\eea{\end{eqnarray}}
+\def\ve{\vert}
+\def\vel{\left|}
+\def\ver{\right|}
+\def\nnb{\nonumber}
+\def\lla{\left<}
+\def\rra{\right>}
+\def\nnb{\nonumber}
+\def\la{\langle}
+\def\ra{\rangle}
+\def\qs{\la \bar s s \ra}
+\def\qu{\la \bar u u \ra}
+\def\qd{\la \bar d d \ra}
+\def\qq{\la \bar q q \ra}
+\def\gGgG{\la g^2 G^2 \ra}
+\def\es{ &=& }
+\def\ar{&+& }
+\def\ek{&-& }
+\def\cp{&\times&}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\qq{\langle \bar q q \rangle}
+\def\uu{\langle \bar u u \rangle}
+\def\dd{\langle \bar d d \rangle}
+\def\sp{\langle \bar s s \rangle}
+\def\GG{\langle g_s^2 G^2 \rangle}
+\def\Tr{\mbox{Tr}}
+\def\figt#1#2#3{
+        \begin{figure}
+        $\left. \right.$
+        \vspace*{-2cm}
+        \begin{center}
+        \includegraphics[width=10cm]{#1}
+        \end{center}
+        \vspace*{-0.2cm}
+        \caption{#3}
+        \label{#2}
+        \end{figure}
+	}
+	
+\def\figb#1#2#3{
+        \begin{figure}
+        $\left. \right.$
+        \vspace*{-1cm}
+        \begin{center}
+        \includegraphics[width=10cm]{#1}
+        \end{center}
+        \vspace*{-0.2cm}
+        \caption{#3}
+        \label{#2}
+        \end{figure}
+                }
+
+
+\def\ds{\displaystyle}
+\def\bea{\begin{eqnarray}}
+\def\eea{\end{eqnarray}}
+\def\beeq{\begin{eqnarray}}
+\def\eeeq{\end{eqnarray}}
+\def\ve{\vert}
+\def\vel{\left|}
+\def\ver{\right|}
+\def\nnb{\nonumber}
+\def\ga{\left(}
+\def\dr{\right)}
+\def\aga{\left\{}
+\def\adr{\right\}}
+\def\lla{\left<}
+\def\rra{\right>}
+\def\rar{\rightarrow}
+\def\lrar{\leftrightarrow}  
+\def\nnb{\nonumber}
+\def\la{\langle}
+\def\ra{\rangle}
+\def\ba{\begin{array}}
+\def\ea{\end{array}}
+\def\tr{\mbox{Tr}}
+\def\ssp{{\Sigma^{*+}}}
+\def\sso{{\Sigma^{*0}}}
+\def\ssm{{\Sigma^{*-}}}
+\def\xis0{{\Xi^{*0}}}
+\def\xism{{\Xi^{*-}}}
+\def\qs{\la \bar s s \ra}
+\def\qu{\la \bar u u \ra}
+\def\qd{\la \bar d d \ra}
+\def\qq{\la \bar q q \ra}
+\def\gGgG{\la g^2 G^2 \ra}
+\def\q{\gamma_5 \not\!q}
+\def\x{\gamma_5 \not\!x}
+\def\g5{\gamma_5}
+\def\sb{S_Q^{cf}}
+\def\sd{S_d^{be}}
+\def\su{S_u^{ad}}
+%\def\ss{S_s^{??}}
+\def\sbp{{S}_Q^{'cf}}
+\def\sdp{{S}_d^{'be}}
+\def\sup{{S}_u^{'ad}}
+\def\ssp{{S}_s^{'??}}
+
+\def\sig{\sigma_{\mu \nu} \gamma_5 p^\mu q^\nu}
+\def\fo{f_0(\frac{s_0}{M^2})}
+\def\ffi{f_1(\frac{s_0}{M^2})}
+\def\fii{f_2(\frac{s_0}{M^2})}
+\def\O{{\cal O}}
+\def\sl{{\Sigma^0 \Lambda}}
+\def\es{\!\!\! &=& \!\!\!}
+\def\ap{\!\!\! &\approx& \!\!\!}
+\def\ar{&+& \!\!\!}
+\def\ek{&-& \!\!\!}
+\def\kek{\!\!\!&-& \!\!\!}
+\def\cp{&\times& \!\!\!}
+\def\se{\!\!\! &\simeq& \!\!\!}
+\def\eqv{&\equiv& \!\!\!}
+\def\kpm{&\pm& \!\!\!}
+\def\kmp{&\mp& \!\!\!}
+\def\mcdot{\!\cdot\!}
+\def\erar{&\rightarrow&}
+
+% .........................................................
+
+\def\simlt{\stackrel{<}{{}_\sim}}
+\def\simgt{\stackrel{>}{{}_\sim}}
+
+\def\olra{\stackrel{\leftrightarrow}}
+\def\ola{\stackrel{\leftarrow}}
+\def\ora{\stackrel{\rightarrow}}
+\def\orala{\stackrel{\rightarrow(\leftarrow)}}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
